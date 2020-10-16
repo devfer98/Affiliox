@@ -14,6 +14,7 @@
   text-decoration: none;
   font-size: 25px;
 }
+
 .navigation hr {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
 }
@@ -41,8 +42,11 @@
   margin-bottom: 18px;
   transition: 0.3s;
 }
+
+
 .sidenav a i {
   margin-left: 10px;
+  
 }
 
 .sidenav a:hover {

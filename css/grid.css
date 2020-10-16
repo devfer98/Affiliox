@@ -1,0 +1,130 @@
+/* div{
+    border: 2px solid green;
+} */
+
+.fitcontent{
+    min-width: fit-content;
+}
+
+.container {
+    width: 100%;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 2px solid green; */
+}
+
+.row {
+    margin-right: 5px;
+    margin-left: 5px;
+    /* border: 2px solid red; */
+}
+
+.col1 {
+    margin: auto;
+    padding: 10px;
+    width: 8.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col2 {
+    margin: auto;
+    padding: 10px;
+    width: 16.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col3 {
+    margin: auto;
+    padding: 10px;
+    width: 25%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col4 {
+    margin: auto;
+    padding: 10px;
+    width: 33%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col5 {
+    margin: auto;
+    padding: 10px;
+    width: 41.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col6 {
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col7 {
+    margin: auto;
+    padding: 10px;
+    width: 58.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+  
+.col8 {
+    margin: auto;
+    padding: 10px;
+    width: 66.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col9 {
+    margin: auto;
+    padding: 10px;
+    width: 75%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col10 {
+    margin: auto;
+    padding: 10px;
+    width: 83.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col11 {
+    margin: auto;
+    padding: 10px;
+    width: 91.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col12 {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}

@@ -1,0 +1,31 @@
+.Back-container{
+    position: relative;
+    
+    color: white;
+  }
+
+  .top-left   {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 3vw;
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+
+
+  .cont p{
+
+    font-size: 15px;
+    color: black;
+
+  }
+  
+  .cont h4{
+    color: black;
+    margin-left:  40px;
+    font-weight: bold;
+    font-size: 20px;
+  }
