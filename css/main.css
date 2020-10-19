@@ -1,0 +1,112 @@
+.inp div input{
+    padding: 13px;
+    width: 30VW;
+    border: none;
+    background:rgb(248, 248, 248); 
+    margin-top: 20px;
+    border-radius: 9px;
+}
+
+.inp div input:focus {
+    
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.inp div textarea:focus {
+    
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+
+.inp div input[type=radio]{
+    margin-top: 20px;
+    padding-top:20px;
+    padding-left: 7px;
+    width: 5VW;
+    border: none;
+
+}
+
+.inp div textarea{
+    width: 29vw;
+    border: none;
+    font-weight: bold;
+    background:rgb(248, 248, 248)
+}
+.inp div input[type=checkbox]{
+    float: left;
+    width: 3VW;
+
+    width: 5VW;
+    border: none;
+
+}
+
+/*-----------------------bottom part----------------------------------------------*/
+
+.bottom-part img {
+	width: 150px; height: auto;
+	
+}
+
+.bottom-part ul{
+	display: inline-block;
+	width: 15vw;
+	overflow-wrap: normal;	
+}
+
+.bottom-part ul p{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	
+}
+.bottom-part ul a {
+	display: block;
+	margin-bottom: 10px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 15px;
+}
+.bottom-part ul a:hover{
+ 	text-decoration: underline;
+ }
+
+/*-----------------------------------company COPYRIGHT----------*/
+.company-address {
+	
+	background: #6666ff;
+	padding: 2px;
+	width: 100%;
+	text-align: center;
+	font-size: 10px !important;
+}
+
+.company-address ul li {
+	
+	display: inline;
+	font-weight: bold;
+	font-size: 15px !important;
+	margin-right: 50px;
+}
+
+#bot-line{
+	
+	background: #6666ff;
+	padding: 2px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px !important;
+}
+#bot-line ul li{
+
+	display: inline;
+	font-weight: bold;
+	font-size: 20px !important;
+	margin-right: 50px;
+}
