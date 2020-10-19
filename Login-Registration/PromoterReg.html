@@ -1,0 +1,168 @@
+
+
+<html>
+<head>
+	<title>Affiliox-Sign up</title>
+	<link rel="stylesheet" type="text/css" href="../css/Registration.css">
+	<link rel="stylesheet" type="text/css" href="../css/Signin.css">
+	<script type="text/javascript" src="../js/validation.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+	<!-------------- Top-Navigation-Bar ---------------------->
+	<div id="main" class="navigation">
+		<ul>
+			
+			<li><a href="">Affiliox</a></li></a>
+			<li style="float: right;">user-name</li>
+		</ul>
+		<hr>
+		<!-- inner part of the evry dashboard -->
+
+	<!--  Promoter Registration  head--------------------------------------------->	
+	<div class="Reg-container">
+
+		<div class="sign-note">
+			<p>Create a Promoter Account</p>
+			<hr>
+		</div> 
+	        <!------------------ Promoter Registration Form------------------->
+		<div class= "inner-part">
+			<div class= "inp">
+			<h2 style="font-family: 'Lato', sans-serif;">Promoter Details</h2>
+			<form id="signUp"  >
+
+			<div>
+			<label for="fname"><i class="fa fa-user"></i> &nbsp;Full Name</label><br>
+			<input type="text" id="fname" name="fullname"  maxlength="50"  required placeholder="Kamal sachintha"> <br>
+			</div>
+
+			<div>
+			<label for="lname"><i class="fa fa-mail-bulk"></i>&nbsp; Email</label><br>
+			<input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" maxlength="50" required required placeholder=" KSPerera@gmail.com"><br>
+			</div>
+			
+			<div>
+			<label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
+			<input type="text" id="phn-no" name="phn-no" pattern="[0-9]{10,}" maxlength="14" required placeholder=" 0771123344"><br>
+			</div>
+			
+			<div>
+			<label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
+			<input type="date" id="Birth" name="dob"  required placeholder=" Perera"><br><br>
+			</div>
+			<!------------------Gender Radio ------------------>
+			<div>
+			
+			<label style="font-size: 18px;"for="gender"> Select your Gender</label>	<br><br>
+			<label for="male">Male &nbsp;&nbsp;&nbsp;</label>
+			<input type="radio" id="m/ale" name="gender" required value="male"><br>
+			<label for="female">Female </label>
+			<input type="radio" id="female" name="gender" required value="female">
+		
+			</div>
+			<!------------------Address section------------------->
+			<div>
+			
+			<label for="Address"><i class="fa fa-address-card"></i> Address Line 1</label><br>
+			<input type="text" id="line1" name="aline1" maxlength="50" required placeholder=" No 23/3 B">
+			<input type="text" id="line2" name="aline2" maxlength="50" required placeholder=" Jayasekara Mawatha"><br>
+			<label for="city"><i class="fa fa-city"></i>  City</label><br>
+			<input type="text" id="city" name="acity"  maxlength="50" required placeholder=" Warakapola">
+			<input type="text" id="country" name="acountry"  required placeholder=" Srilanka"><br>
+			
+			</div>
+			<!------------------ ------------------->
+			<div>
+			<label for="status">Marital status</label><br>
+			<input type="text" id="status" name="status" placeholder=" Married"><br>
+			</div>
+
+			<h2 style="font-family: 'Lato', sans-serif;">Channel Reference Links</h2>
+			<div>
+			<br>
+			<textarea rows = "7" cols = "55" name = "description">Enter Channel links....
+			</textarea><br>
+			<p> Use ; to Seperate New Links </p>
+			</div>
+			
+
+			<div>
+			<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
+			<input type="text" name="Username-field" placeholder="Username"><br>
+			</div>
+			
+			<div>
+			<label for="Password-field"><i class="fa fa-key"></i> Password</label><br>			
+			<input type="password" name="Password-field" id="pass-field" placeholder="********"><br>
+			<label for="Confirm-Password-field"><i class="fa fa-key"></i> Confirm Password</label><br>			
+			<input type="password" name="Confirm-Password-field" id="Con-pass-field" placeholder="********">
+			<input type="checkbox" onclick="passVisibility()">Show Password<br>
+			</div>
+			<!------------------Buttons------------------->
+
+			</div>
+			<div class="btnn">
+				<button type="submit" id="submit" value="submit">Submit</button>	
+				<button type="reset" value="reset">Reset</button>	
+			</div>
+			<br><br>
+			</form>
+			
+		</div> <br><br>
+
+		
+
+
+		
+	</div>
+	
+<hr>	
+  <div class="bottom-part">
+			<a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO"></a>
+			<ul>
+				<p>Main Menu</p>
+				<a href="">Affiliox Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			</ul>
+
+			<ul>
+				<p>Company</p>
+				<a href="">Address</a>
+				<a href="">Email</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			</ul>
+
+			<ul>
+				<p>Discover</p>
+				<a href="">Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			</ul>
+			<ul>
+				<p>Find Us on</p>
+				<a href="">Facebook</a>
+				<a href="">Twitter</a>
+				<a href="">Instagram</a>
+				<a href="">Youtube</a>
+			</ul>
+		</div> 
+		
+
+		<div id="bot-line">
+			<ul>
+				<li> © All Right reserved</li>
+				<li>Affiliox 2020 ™</li>
+			</ul>
+		</div>
+</body>
+</html>

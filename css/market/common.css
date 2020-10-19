@@ -1,0 +1,204 @@
+.clearfix {
+	overflow: auto;
+
+  }
+.container{
+	margin-right: 10%; margin-left: 10%;
+
+}
+
+/*------------------------nav-bar-------------------*/
+
+.nav-bar img{
+	float: left;
+	width: 110px;
+}
+
+hr{
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+   }
+
+.nav-bar ul{
+	float: right;
+	padding:2%;
+	
+	}
+
+.nav-bar i{
+	margin-right: 5px;
+	
+	
+}
+
+.nav-bar ul a{
+	border: 2px solid orange;
+	display: inline-table;
+	color: rgb(10, 10, 10);
+	text-decoration: none;
+	background: rgb(255, 255, 255);
+	padding: 8px;
+	border-radius: 4px;
+	transition: all 0.4s ease 0.3s;
+	margin-top: 10px;
+	
+}
+
+.nav-bar ul input {
+	width: 260px;
+	padding: 8px;
+}
+
+.nav-bar ul a:hover{
+	background: orange;
+    opacity: 1;
+
+	letter-spacing: 0.5px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+/*-----------------------Heading-------------------*/
+.sign-note p{
+	text-align: center;
+	margin-top: 150px;
+	font-size: 50PX;
+}
+
+/*------------------------Text box animations-------------------*/
+.textbox 	{
+
+	margin: auto;
+	width:35%;
+	padding: 10px;
+
+	
+}
+.textbox input {
+	width: 300px;
+	padding: 8px;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+		 box-shadow: 0 8px 6px -6px black;
+}
+.textbox-visbility {
+	
+	width: 200px;
+	padding: px;
+	margin: auto;
+	width: 35%;
+
+	padding: 10px;
+}
+.textbox a{
+	color: black;
+    padding: 10px;
+    width: 100px;
+	margin: 0;
+    background: white;
+    border-radius: 5px;
+    border-style: none;
+    border: 2px solid orange;
+    margin-top: 100px;
+    /*opacity: 0.6;*/
+	transition: 0.3s;
+	text-decoration: none;
+	
+}
+
+.link {
+	text-align: center;
+
+}
+.link a:hover{
+	color: rgb(194, 81, 6);
+    opacity: 1;
+}
+.textbox a:hover{
+    background: orange;
+    opacity: 1;
+}
+
+
+
+/*-----------------------bottom part----------------------------------------------*/
+
+.bottom-part img {
+
+	width: 150px; height: auto;
+	
+}
+
+.bottom-part ul{
+	display: inline-block;
+	width: 15vw;
+	overflow-wrap: normal;
+
+
+	
+}
+.bottom-part ul p{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	
+}
+.bottom-part ul a {
+	display: block;
+	margin-bottom: 10px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 15px;
+	
+
+}
+ .bottom-part ul a:hover{
+ 	text-decoration: underline;
+ }
+
+/*-----------------------------------company COPYRIGHT----------*/
+.company-address {
+	
+	background: #6666ff;
+	padding: 2px;
+	width: 100%;
+	text-align: center;
+	font-size: 10px !important;
+}
+
+.company-address ul li {
+	
+	display: inline;
+	font-weight: bold;
+	font-size: 15px !important;
+	margin-right: 50px;
+}
+
+#bot-line{
+	
+	background: #6666ff;
+	padding: 2px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px !important;
+}
+#bot-line ul li{
+
+	display: inline;
+	font-weight: bold;
+	font-size: 20px !important;
+	margin-right: 50px;
+	
+	
+	
+
+
+}
+
+
+
+
+
+
