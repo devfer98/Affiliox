@@ -1,0 +1,236 @@
+.clearfix {
+	  overflow: auto;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+.container {
+  width: 1000px; 
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+h2 {
+  margin-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 2px solid black;
+}
+
+html {font-family: 'Open Sans', sans-serif;}
+/*-------------------top navigation bar--------------------*/
+
+header {
+  background: #fafafa;
+  overflow: auto;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+header .open-btn {
+  float: left;
+  margin-left: 50px;
+}
+
+header .affiliox a {
+  float: left;
+  margin-left: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+header .loggedin {
+  float: right;
+}
+
+hr {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*------------------------Registration Form-------------------*/
+
+
+.inner-part  {
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background:rgb(248, 248, 248);
+  padding: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.inp div label{
+  font-weight: bold;
+  font-size: 17px;  
+}
+
+.inp div input{
+  padding: 13px;
+  width: 30VW;
+  border: none;
+  background:rgb(248, 248, 248); 
+  margin-top: 20px;
+  border-radius: 9px;  
+}
+
+.inp div input:focus {  
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.inp div textarea:focus { 
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.inp div input[type=radio]{
+  margin-top: 20px;
+  padding-top:20px;
+  padding-left: 7px;
+  width: 5VW;
+  border: none; 
+}
+
+.inp div textarea{
+  width: 29vw;
+  border: none;
+  font-weight: bold;
+  background:rgb(248, 248, 248)
+}
+
+.inp div input[type=checkbox]{
+  float: left;
+  width: 3VW;
+  width: 5VW;
+  border: none;   
+}
+
+.inp div input[type=date]{
+  margin-top: 20px;
+  padding-top:20px;
+  padding-left: 7px;
+  width:22vw;
+  border: none;
+}
+
+.btn button {
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  width: 150px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  display: inline-block;
+}
+
+.btn button:hover {
+  background: #28a745;
+  color: white;
+  
+}
+
+.inner-part form input {
+    padding: .375rem .75rem;
+    width: 300px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    display: inline-block;
+}
+
+.bottom-part table {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 1200px;
+}
+
+}
+.bottom-part table td {
+  padding: 15px;
+}
+
+.bottom-part .thead {
+  font-weight: bold;
+}
+/*--------------------footer-tag--------------------*/
+.footer {
+  border-top: 2px solid black;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer ul li {
+  font-size: 17px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.footer ul li a {
+  font-size: 17px;
+}
+
+.footer ul li a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 800px){
+
+  .container { margin: auto; padding: 10px; width: 100%;}
+
+  .container h2 {text-align: center;}
+
+  form input { margin: auto; padding: 10px; width: 100%; }
+
+}
+
+
+
+@media screen and (max-width: 650px) {
+       /* Smaller devices */
+  .container { margin: auto; padding: 10px; width: 100%;}
+
+  .container h2 {text-align: center;}
+
+  form input { margin: auto; padding: 10px; width: 100%; }
+       
+}
+
+@media screen and (max-width: 500px){
+    /*header {display: flex; flex-wrap: wrap;}*/
+    .affiliox {float: right;}
+
+    .container { margin: auto; padding: 10px; width: 100%;}
+
+    .container h2 {text-align: center;}
+
+    form input { margin: auto; padding: 10px; width: 100%; }
+  
+}
+
+@media screen and (max-width: 450px) {
+       /* Even Smaller devices */
+    .affiliox {float: right;}
+
+    table tr td { display: block; justify-content:center; align-items:center; display:flex; }
+
+    form input { margin: auto; padding: 10px; width: 100%; margin-top: 50px;}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+       /* Even Smaller devices */
+       .affiliox {float: right;}
+}    
+
