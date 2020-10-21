@@ -1,3 +1,197 @@
+.clearfix {
+	overflow: auto;
+
+  }
+.container1{
+	margin-right: 10%; 
+	margin-left: 10%;
+
+}
+
+/*------------------------nav-bar-------------------*/
+
+.nav-bar img{
+	/* float: left; */
+	width: 110px;
+}
+
+hr{
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+   }
+
+.nav-bar ul{
+	/* float: right; */
+	 padding:2%; 
+	padding-top: 30px;
+}
+
+
+.nav-bar ul a {
+	border: 2px solid orange;
+	display: inline-flex;
+	color: rgb(10, 10, 10);
+	text-decoration: none;
+	background: rgb(255, 255, 255);
+	padding: 8px;
+	border-radius: 4px;
+	transition: all 0.4s ease 0.3s;
+	margin-top: 10px;
+	
+}
+
+.nav-bar ul a:hover{
+	background: orange;
+    opacity: 1;
+	letter-spacing: 0.5px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+/*-------------------logged in side navigation bar--------------------*/
+.navigation ul li {
+	list-style: none;
+	display: inline;
+	font-size: 30px;
+  }
+  
+  .navigation ul li a {
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 25px;
+  }
+  
+  .navigation hr {
+	  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidenav {
+	height: 100%; 
+	width: 0; 
+	position: fixed;
+	z-index: 1; 
+	top: 0;
+	left: 0;
+	background: #eee; 
+	overflow-x: hidden;
+	padding-top: 60px; 
+	transition: 0.5s; 
+  }
+  
+  .sidenav  a {
+	padding: 10px 10px 10px 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 17px;
+	color: black;
+	display: block;
+	margin-bottom: 18px;
+	transition: 0.3s;
+  }
+  
+  
+  .sidenav a i {
+	margin-left: 10px;
+	
+  }
+  
+  .sidenav a:hover {
+	color: #eee;
+	background: lightblue;
+  }
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	color: black; 
+  }
+  
+  /* #main {
+	transition: margin-left .5s;
+	padding: 20px;
+  } */
+
+/*-------------------Inner content-------------------*/
+
+.sign-note p{
+	text-align: center;
+	margin-top: 150px;
+	font-size: 50PX;
+}
+
+/* *.inner-part h3 {
+	text-decoration: underline;
+	margin-left: 10px;
+	font-family: 'Roboto Mono', monospace;
+  }
+  *.inner-part p {
+	  margin-left: 10px;
+	  font-family: 'Nunito', sans-serif;
+  } */
+  .inner-part  {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	/* margin-left: 350px;
+	margin-right: 150px; */
+	background: #eee;
+	padding: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .inner-part button {
+	font-weight: bold;
+	padding: 10px;
+	width: 200px;
+	margin: 0px;
+	background: white;
+	border-radius: 5px;
+	border-style: none;
+	border: 2px solid orange;
+	margin-top: 20px;
+	/* align-self: center; */
+	transition: 0.3s;
+	/* text-align: center; */
+  
+  }
+  .inner-part button:hover {
+	background: orange;
+	opacity: 1;
+  }
+
+  
+
+
+.inp div {
+    margin-top: 0px;
+    /* width: 30VW; */
+    padding: 20px;
+	/* background: rgb(248, 248, 248); */
+   
+}
+
+.inp div p{
+    font-weight: bold;
+}
+
+.inp div label{
+    font-weight: bold;
+    font-size: 17px;   
+}
+
+.inp div input[type=date]{
+    margin-top: 20px;
+    padding-top:20px;
+    padding-left: 7px;
+    /* width:22vw; */
+	border: none;
+}
+
+
+
 .inp div input{
     padding: 13px;
     width: 30VW;
@@ -21,7 +215,6 @@
   box-shadow: 0 0 10px #719ECE;
 }
 
-
 .inp div input[type=radio]{
     margin-top: 20px;
     padding-top:20px;
@@ -32,7 +225,7 @@
 }
 
 .inp div textarea{
-    width: 29vw;
+    /* width: 29vw; */
     border: none;
     font-weight: bold;
     background:rgb(248, 248, 248)
@@ -40,15 +233,13 @@
 .inp div input[type=checkbox]{
     float: left;
     width: 3VW;
-
     width: 5VW;
     border: none;
-
 }
 
 /*-----------------------bottom part----------------------------------------------*/
 
-.bottom-part img {
+/* .bottom-part img {
 	width: 150px; height: auto;
 	
 }
@@ -57,23 +248,40 @@
 	display: inline-block;
 	width: 15vw;
 	overflow-wrap: normal;	
+} */
+
+.bottom-part{
+	float: left;
 }
 
-.bottom-part ul p{
+.bottom-part img {
+	width: 200px; height: auto;	
+}
+
+.bottom-part div{
+	display: block;
+	overflow-wrap: normal;
+	/* border: 2px solid blue;	 */
+}
+
+.bottom-part div p{
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
 	font-size: 18px;
+	padding-top: 20px;
+	/* border: 2px solid blue;	 */
 	
 }
-.bottom-part ul a {
+.bottom-part div a {
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	text-decoration: none;
 	text-align: center;
 	font-size: 15px;
+	/* border: 2px solid blue;	 */
 }
-.bottom-part ul a:hover{
+.bottom-part div a:hover{
  	text-decoration: underline;
  }
 

@@ -79,9 +79,9 @@
     font-family: 'Nunito', sans-serif;
 }
 .inner-part  {
-  margin-top: 50px;
-  margin-left: 350px;
-  margin-right: 150px;
+  /* margin-top: 50px; */
+  /* margin-left: 350px; */
+  /* margin-right: 150px; */
   background: #eee;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

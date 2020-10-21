@@ -1,10 +1,40 @@
-/* div{
-    border: 2px solid green;
-} */
+ div{
+
+  -webkit-box-sizing: border-box; 
+
+/*
+
+
+    -webkit-box-sizing: border-box; 
+    border: 1px solid black;
+
+
+*/
+} 
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+  }
 
 .fitcontent{
     min-width: fit-content;
 }
+
+.container2 {
+  width: 100%;
+  /* padding-right: 15px;
+  padding-left: 15px; */
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 2px solid green; */
+}
+
 
 .container {
     width: 100%;
@@ -16,14 +46,15 @@
 }
 
 .row {
-    margin-right: 5px;
-    margin-left: 5px;
-    /* border: 2px solid red; */
+    position: relative;
+    width: 100%;
+    /* margin-left: 10px;
+    margin-right: 10px; */
 }
 
 .col1 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 8.333333%;
     position: relative;
     float: left;
@@ -32,7 +63,7 @@
 
 .col2 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 16.666667%;
     position: relative;
     float: left;
@@ -41,7 +72,7 @@
 
 .col3 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 25%;
     position: relative;
     float: left;
@@ -50,8 +81,8 @@
 
 .col4 {
     margin: auto;
-    padding: 10px;
-    width: 33.333333%;
+    /* padding: 10px; */
+    width: 33%;
     position: relative;
     float: left;
     /* border: 2px solid blue; */
@@ -59,7 +90,7 @@
 
 .col5 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 41.666667%;
     position: relative;
     float: left;
@@ -68,7 +99,7 @@
 
 .col6 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 50%;
     position: relative;
     float: left;
@@ -77,7 +108,7 @@
 
 .col7 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 58.333333%;
     position: relative;
     float: left;
@@ -86,7 +117,7 @@
   
 .col8 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 66.666667%;
     position: relative;
     float: left;
@@ -95,7 +126,7 @@
 
 .col9 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 75%;
     position: relative;
     float: left;
@@ -104,7 +135,7 @@
 
 .col10 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 83.333333%;
     position: relative;
     float: left;
@@ -113,7 +144,7 @@
 
 .col11 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 91.666667%;
     position: relative;
     float: left;
@@ -122,9 +153,120 @@
 
 .col12 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
     width: 100%;
     position: relative;
     float: left;
     /* border: 2px solid blue; */
 }
+
+.col-center {
+    float: none;
+}
+
+/* .row-center{
+  align-self: center;
+} */
+
+h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+  
+  h4 {
+    font-size: 1.125rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-regular {
+    font-weight: 400;
+  }
+  
+  .font-heavy {
+    font-weight: 700;
+  }
+  
+  /* POSITIONING */
+  
+  .left {
+    text-align: left;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+  .center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .justify {
+    text-align: justify;
+  }
+  .bot-margin{
+    margin-bottom: 220px;
+  }
+  .hidden-sm {
+    display: block;
+  }
+
+  @media only screen and (max-width: 600px) {
+    [class*="col"] {
+        width: 100%;
+        /* padding: 0px; */
+      }
+
+    body{
+        background-color: darkcyan;
+      }
+
+    .nav-bar ul a{
+        display: block;
+    }
+    .nav-bar ul input{
+        width: 100%;
+       
+    }
+    .hidden-sm {
+        display:none;
+      }
+
+    .inp div input{
+      width: 100%;
+    }
+
+    /* account selection */
+    .account-btn a{
+        display: block;
+        width: 100%;
+    }
+    .account-btn ul a{
+      padding-left: 0%;
+    }
+} 
