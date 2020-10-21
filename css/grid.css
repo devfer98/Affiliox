@@ -52,9 +52,16 @@ body {
     margin-right: 10px; */
 }
 
+.row-padding{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .col1 {
     margin: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 8.333333%;
     position: relative;
     float: left;
@@ -64,6 +71,8 @@ body {
 .col2 {
     margin: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 16.666667%;
     position: relative;
     float: left;
@@ -73,6 +82,8 @@ body {
 .col3 {
     margin: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 25%;
     position: relative;
     float: left;
@@ -82,6 +93,8 @@ body {
 .col4 {
     margin: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 33%;
     position: relative;
     float: left;
@@ -91,6 +104,8 @@ body {
 .col5 {
     margin: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 41.666667%;
     position: relative;
     float: left;
@@ -100,6 +115,8 @@ body {
 .col6 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 50%;
     position: relative;
     float: left;
@@ -109,6 +126,8 @@ body {
 .col7 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 58.333333%;
     position: relative;
     float: left;
@@ -118,6 +137,8 @@ body {
 .col8 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 66.666667%;
     position: relative;
     float: left;
@@ -127,6 +148,8 @@ body {
 .col9 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 75%;
     position: relative;
     float: left;
@@ -136,6 +159,8 @@ body {
 .col10 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 83.333333%;
     position: relative;
     float: left;
@@ -145,6 +170,8 @@ body {
 .col11 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 91.666667%;
     position: relative;
     float: left;
@@ -154,6 +181,8 @@ body {
 .col12 {
     margin: auto;
     /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 100%;
     position: relative;
     float: left;
