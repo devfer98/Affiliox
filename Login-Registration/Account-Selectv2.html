@@ -1,8 +1,7 @@
 <html>
   <head>
-	<title>Affiliox-Sign in</title>
-	
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <title>Affiliox-Account-type</title>
+    <link rel="stylesheet" type="text/css" href="../css/Signin.css" />
     <link rel="stylesheet" type="text/css" href="../css/customer-grid.css" />
     <script type="text/javascript" src="../js/Signin.js"></script>
     <script
@@ -14,7 +13,7 @@
   <body>
     <!---Navigation bar-------------------------------------------->
     <div class="container">
-      <div class="nav-bar center">
+      <div class="nav-bar clearfix row center">
         <div class="col2">
           <a href="../index.html"
             ><img src="../images/LOGO.png" alt="Affiliox LOGO"
@@ -36,66 +35,46 @@
             <input type="text" name="search" placeholder="Headsets" />
             <a href="">&nbsp;<i class="fas fa-search"></i></a>
           </ul>
-        </div>
-      </div>
-
-      <div class="row">
-		  <div class="col12">
-        <hr>
-		  </div>
-        
+		</div>
+		
 	  </div>
 	  
+      <div class="row">
+		  <hr />
+	 </div>
 
-	<!-- Sign in --------------------------------------------->	
-	<div class="row margint50">
-
-		<div class=" col12 sign-note center">
-			<h1>Sign in to your Account</h1>
-
-		</div>
-
-	</div> 
-	<!------------------------Sign in text-boxs------------------->
-
-	<div class="row margint50">
-		<div class= " col12 search signin label center">
-      <label style="text-align: left;" for="Username-field"><i class="fa fa-user-alt"></i> Username :</label>
-      <input type="text" name="Username-field" placeholder="Super Unqiue Username"> <br></br>
-      <label for="password-field"><i class="fa fa-key"></i> Passsword :</label>
-			<input  type="password" name="Password-field" id="pass-field" placeholder="********"><br><br>
-			<input style="width:5%;box-shadow: 0 0 0px #719ECE;"type="checkbox" onclick="passVisibility()">Show Password		
-     
-		</div>
-
-	</div>
-	<div class="row">
-		<div class="nav-bar col12 center " >
-      <ul>
-      <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Sign in</a>
-    </ul>
-		</div>
-	</div>
-	<div class="row center ">
-		<div class ="col12">
-    <div class="marginb50">
-		<a href="">Forgot Password?</a>
-    <a href="">Need an Account?</a>
-    </div>
+      <!-- Account type head --------------------------------------------->
+      
+        <div class="row sign-note">
+          <p>Select Account Type</p>
 		</div>
 	</div>
 		
-	
-	
+		<!------------------------Account type buttons------------------->
+		<div class="container2">
+			<div class="row account-btn">
+				<div class="col12 center ">
+				
+				<a  href="">&nbsp;Customer</a>
+				<a href="">&nbsp;Seller</a>
+				<a href="">&nbsp;Promoter</a>
+				
+				</div>
+				<div class="row bot-margin center font-regular ">
+					<p style="font-size:25px;">Join to our system from above accounts</p>
+					
+			   </div>
+		  
+			</div>
 
-		<!-- bottom-part-------------------------------------------->
-      
-    <div class="row">
-		  <div class="col12">
-        <hr>
-		  </div>
-        
-	  </div>
+			<div class="row">
+				<hr />
+		   </div>
+
+
+     
+      <!-- bottom-part-------------------------------------------->
+	
       <div class="row bottom-part">
         <div class="col4 hidden-sm center">
           <a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
@@ -146,9 +125,8 @@
             <li>Affiliox 2020 ™</li>
           </ul>
         </div>
-      </div>
-
-
-    </div>  <!--Container------------------------------------------>
+	  </div>
+	</div>
+    </div>
   </body>
 </html>

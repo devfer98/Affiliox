@@ -9,36 +9,55 @@
 }
 
 /*------------------------nav-bar-------------------*/
+.fotter{
 
+	position: fixed; 
+	bottom: 0; 
+}
 .nav-bar img{
 	/* float: left; */
 	width: 110px;
 }
 
+
+
 hr{
 	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+	padding-left: 0;
+	padding-right: 0;
    }
 
+.hrCustom hr{
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.5);
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+
+}
 .nav-bar ul{
 	/* float: right; */
 	 padding:2%; 
 	padding-top: 30px;
 }
+/*-----------------------links buttons and inputs----------------*/
 
-
-.nav-bar ul a {
+.nav-bar ul a,button {
 	border: 2px solid orange;
 	display: inline-flex;
 	color: rgb(10, 10, 10);
 	text-decoration: none;
+	font-weight: bold;
 	background: rgb(255, 255, 255);
 	padding: 8px;
+	margin-left: 6PX;
 	border-radius: 4px;
 	transition: all 0.4s ease 0.3s;
 	margin-top: 10px;
+	z-index: 10000;
+	
 }
 
-.nav-bar ul a:hover{
+.nav-bar ul a:hover , button:hover{
 	background: orange;
     opacity: 1;
 	letter-spacing: 0.5px;
@@ -48,126 +67,89 @@ hr{
 	transition: all 0.4s ease 0s;
 }
 
-/*------------------------Sign in heading-------------------*/
-.sign-note p{
-	text-align: center;
-	margin-top: 150px;
-	font-size: 50PX;
-}
 
-/*------------------------Sign in text-boxs-------------------*/
-.textbox 	{
-
-	margin: auto;
-	width:35%;
-	padding: 10px;
-
-	
-}
-.textbox input {
-	width: 300px;
-	padding: 8px;
-	-webkit-box-shadow: 0 8px 6px -6px black;
-	-moz-box-shadow: 0 8px 6px -6px black;
-		 box-shadow: 0 8px 6px -6px black;
-}
-.textbox-visbility {
-	
-	width: 200px;
-	padding: px;
-	margin: auto;
-	width: 35%;
-
-	padding: 10px;
-}
-.textbox a{
-	
-	color: black;
-    padding: 10px;
-    width: 100px;
-	margin: 0;
-    background: white;
-    border-radius: 5px;
-    border-style: none;
-    border: 2px solid orange;
-    margin-top: 100px;
-    /*opacity: 0.6;*/
-	transition: 0.3s;
-	text-decoration: none;
-	
-}
-
-.link {
-	text-align: center;
-
-}
-.link a:hover{
-	color: rgb(194, 81, 6);
-    opacity: 1;
-}
-.textbox a:hover{
-    background: orange;
-    opacity: 1;
-}
-
-.search input{
+.search input,textarea{
   
     border: none;
-    background:rgb(248, 248, 248); 
+    background:rgb(235, 235, 235); 
 	border-radius: 6px;
 	width: 70%;
 	margin-top: 0px;
 	padding: 11px;
+	resize: none;
 
     
   }
-  .search input:focus {
+
+  .label{
+
+    font-weight: bold;
+	font-size: 17px;
+  }
+  .boxsummery{
+
+	background:rgb(235, 235, 235); 
+	-webkit-box-shadow: 0px 5px 20px -10px rgba(0,0,0,0.57);
+
+	padding: 10px;
+	border-radius: 6px;
+	overflow: hidden;
+
+  }
+
+  .signin input{
+
+	width: 30%;
+  }
+
+  .search input:focus  ,.search textarea:focus {
     outline: none !important;
     border:1px solid #719ECE;
     box-shadow: 0 0 10px #719ECE;
 }
 
-/*---------------------account select boxes------------------*/
-
-#link{
-	text-decoration: initial;
+.searchCkeck  input:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
 }
-.account-btn a{	
-	
-	color: rgb(19, 18, 18);	
-	text-align: center;
-	display: inline-table;
-	width: 25%;
-	height: 120px;
-	padding-top: 60px;
-	background: white;
-    border-radius: 5px;
-    border-style: none;
-	border: 2px solid orange;
+
+
+/*-----------------------margins----------------------------------------------*/
+.margint50{
 	margin-top: 50px;
-    /*opacity: 0.6;*/
-	transition: 0.3s;
-	font-weight: bold;
-	font-size: 35px;
-	text-decoration: none;
 }
-.account-btn a:hover{
-	background: orange;
-	color: azure;
-    opacity: 1;
+.margint20{
+	margin-top: 20px;
+}
+.margint100{
+	
+	margin-top: 100px;
 }
 
-
-/*------------------------pw reset test-------------------*/
-
-.text p{
-	text-align: left;
-	font-size: 20PX;
+.marginb100{
+	margin-bottom: 100px;
 }
-.pw-reset{
-text-align: center;
-margin-top: 150px;
-font-size: 40PX;
+
+.marginb50p{
+	margin-bottom: 50px;
+}
+.marginb50{
+	margin-bottom: 50px;
+}
+.marginl50{
+	margin-left: 50px;
+}
+
+.marginl100{
+	margin-left: 100px;
+}
+
+.marginr100{
+	margin-right: 100px;
+}
+
+.rowMargin{
+	margin-top: 30px;
 }
 /*-----------------------bottom part----------------------------------------------*/
 .bottom-part{
@@ -177,13 +159,10 @@ font-size: 40PX;
 .bottom-part img {
 	width: 150px; height: auto;
 	padding-top: 20px;
-
-	
 }
 
 .bottom-part ul{
 	display: block;
-	
 	overflow-wrap: normal;	
 }
 
@@ -206,8 +185,9 @@ font-size: 40PX;
  }
 
 /*-----------------------------------company COPYRIGHT----------*/
+
 .company-address {
-	
+
 	background: #6666ff;
 	padding: 2px;
 	width: 100%;
@@ -240,7 +220,22 @@ font-size: 40PX;
 }
 
 
-
-
+/*-----------------------------------Image Positioning---------*/
+.holder {
+	position: relative;
+	display: block;
+}
+.holder img {
+	position: relative;
+	display: block;
+	width: 100%;
+	border-radius: 1%;
+	
+}
+.imgw img{
+	width: 100%;
+	border-radius: 10%;
+	
+}
 
 

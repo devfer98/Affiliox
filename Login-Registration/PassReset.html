@@ -1,100 +1,152 @@
 <html>
-<head>
-	<title>Affiliox-Password Reset</title>
-	<link rel="stylesheet" type="text/css" href="../css/Signin.css">
-	<script type="text/javascript" src="../js/Signin.js"></script>
-	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
-<body>
-
-		<!---Navigation bar-------------------------------------------->
-		<div class="nav-bar clearfix">
-				
-					<a href="../index.html"><img src="../images/LOGO.png" alt="Affiliox LOGO"></a>
-				
-			<ul>
-				<input type="text" name="search" placeholder="Headsets">
-				<a href="">&nbsp;<i class="fas fa-search"></i></a>
-			</ul>
-			<ul>
-				
-				<a href=""><i class="fas fa-home"></i>Home</a>
-				<a href=""><i class="fas fa-address-card"></i>About Us</a>
-				<a href=""><i class="fas fa-inbox"></i>Help</a>
-				<a href=""><i class="fas fa-users"></i>Account</a>
-				<a href="" style="margin-right: 60px;"><i class="fas fa-shopping-cart"></i>Add to cart</a>
-
-			</ul>
-			
-		</div>
-		<HR>
-
-	<!-- Text Head--------------------------------------------->	
-	<div class="container">
-
-		<div class="pw-reset">
-			<br>
-			<p>Enter Your New Password below</p>
-			
-		</div> 
-	<!---Reset password area---------------------------------------->
-		<div class= "textbox">
-			<input type="password" name="new-pass"  id="pass-field"placeholder="********"> <br></br>
-			<input type="password" name="confirm-new-pass" id="con-pass-field" placeholder="********"><br>
-		</div>
-		<div class= "textbox-visbility">
-			<input type="checkbox" onclick="passVisibility()">Show Password
-		</div></br>
-		<div class="textbox">
-			<a href="">&nbsp;Reset Password</a>
-		<br>
-
+  <head>
+	<title>Affiliox-Password-Reset</title>
 	
-		</div><br>
-		<br><br>
-	</div>
-		<hr>
-		<br>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/customer-grid.css" />
+    <script type="text/javascript" src="../js/Signin.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6cdc06033e.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!---Navigation bar-------------------------------------------->
+    <div class="container">
+      <div class="nav-bar center">
+        <div class="col2">
+          <a href="../index.html"
+            ><img src="../images/LOGO.png" alt="Affiliox LOGO"
+          /></a>
+        </div>
 
-		<!--bottom-part-------------------------------------------->
-		<div class="bottom-part">
-			<a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO"></a>
-			<ul>
-				<p>Main Menu</p>
-				<a href="">Affiliox Home</a>
-				<a href="">About us</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			</ul>
+        <div class="col6 center">
+          <ul>
+            <a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+            <a href=""><i class="fas fa-address-card"></i>&nbsp;About Us</a>
+            <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
+            <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+            <a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
+          </ul>
+        </div>
 
-			<ul>
-				<p>Company</p>
-				<a href="">Address</a>
-				<a href="">Email</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			</ul>
+        <div class="col4 search fitcontent center">
+          <ul>
+            <input type="text" name="search" placeholder="Headsets" />
+            <a href="">&nbsp;<i class="fas fa-search"></i></a>
+          </ul>
+        </div>
+      </div>
 
-			<ul>
-				<p>Discover</p>
-				<a href="">Home</a>
-				<a href="">About us</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			</ul>
-			<ul>
-				<p>Find Us on</p>
-				<a href="">Facebook</a>
-				<a href="">Twitter</a>
-				<a href="">Instagram</a>
-				<a href="">Youtube</a>
-			</ul>
-		</div> 
+      <div class="row">
+		  <div class="col12">
+        <hr>
+		  </div>
+        
+	  </div>
+	  
 
-		<div class="company-address">
-			<ul>
-				<li> © All Right reserved</li>
-				<li>Affiliox 2020 ™</li>
-			</ul>
+	<!-- Sign in --------------------------------------------->	
+	<div class="row ">
+
+		<div class=" col12 sign-note center ">
+      <div class="marginb100 margint50">
+			<h1>Reset your Password</h1>
+
 		</div>
-</body>
+
+	</div> 
+	<!------------------------Sign in text-boxs------------------->
+
+	<div class="row ">
+		<div class= " col12 search signin center">
+     
+			New Password &nbsp; &nbsp; &nbsp; : <input type="password" name="password" id="con-pass-field" placeholder="*********"> <br></br>
+			Confirm Password : <input  type="password" name="con-password" id="pass-field" placeholder="********"><br><br>
+			<input style="width:5%;box-shadow: 0 0 0px #719ECE;"type="checkbox" onclick="passVisibility()">Show Password		
+     
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="nav-bar col12 center " >
+      <div class="marginb50">
+      <ul>
+      <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Reset Password</a>
+    </ul>
+      </div>
+		</div>
+	</div>
+
+		
+	
+	
+
+		<!-- bottom-part-------------------------------------------->
+  
+		  <div class="col12">
+    
+		  </div>
+    <div class="row">
+		  <div class="col12">
+        <hr>
+		  </div>
+        
+	  </div>
+      <div class="row bottom-part mar">
+        <div class="col4 hidden-sm center">
+          <a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
+        </div>
+
+        <div class="col2">
+          <ul>
+            <p>Main Menu</p>
+            <a href="">Affiliox Home</a>
+            <a href="">About us</a>
+            <a href="">Help</a>
+            <a href="">Account</a>
+          </ul>
+        </div>
+        <div class="col2">
+          <ul>
+            <p>Company</p>
+            <a href="">Address</a>
+            <a href="">Email</a>
+            <a href="">Help</a>
+            <a href="">Account</a>
+          </ul>
+        </div>
+        <div class="col2">
+          <ul>
+            <p>Discover</p>
+            <a href="">Home</a>
+            <a href="">About us</a>
+            <a href="">Help</a>
+            <a href="">Account</a>
+          </ul>
+        </div>
+        <div class="col2">
+          <ul>
+            <p>Find Us on</p>
+            <a href="">Facebook</a>
+            <a href="">Twitter</a>
+            <a href="">Instagram</a>
+            <a href="">Youtube</a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col12 company-address">
+          <ul>
+            <li>© All Right reserved</li>
+            <li>Affiliox 2020 ™</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>  <!--Container------------------------------------------>
+  </body>
 </html>
