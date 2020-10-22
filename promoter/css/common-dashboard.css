@@ -14,7 +14,6 @@
   text-decoration: none;
   font-size: 25px;
 }
-
 .navigation hr {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
 }
@@ -42,11 +41,8 @@
   margin-bottom: 18px;
   transition: 0.3s;
 }
-
-
 .sidenav a i {
   margin-left: 10px;
-  
 }
 
 .sidenav a:hover {
@@ -79,14 +75,13 @@
     font-family: 'Nunito', sans-serif;
 }
 .inner-part  {
-  /* margin-top: 50px; */
-  /* margin-left: 350px; */
-  /* margin-right: 150px; */
+  margin-top: 50px;
+  margin-left: 350px;
+  margin-right: 150px;
   background: #eee;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
 .first-name {
   border: 2px solid black;
   margin-bottom: 15px;
@@ -165,5 +160,4 @@
 
 .footer p  {
   display: inline;
-#main .inner-part h2 {
 }

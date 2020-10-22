@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seller Dashboard</title>
+	<title>Common Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="css/common-dashboard.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -61,7 +61,6 @@
   		<a href="#">Mini Store<i class="fas fa-store"></i></a>
   		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
   		<a href="#">Statstics<i class="fas fa-chart-line"></i></i></a>
-		<a href="#">View Orders<i class="fas fa-chart-line"></i></i></a>
   		<a href="#">Transactions<i class="fas fa-money-check-alt"></i></a>
   		<a href="#">Feedback<i class="fas fa-phone-square"></i></i></a>
   		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
@@ -70,3 +69,4 @@
 
 </body>
 </html>
+
