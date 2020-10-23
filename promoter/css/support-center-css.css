@@ -119,6 +119,13 @@ hr {
   font-family: 'Open Sans', sans-serif;
   resize: none;
 }
+
+textarea:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 .inner-part form textarea {
   padding: 10px;
 }

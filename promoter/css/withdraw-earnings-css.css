@@ -133,6 +133,12 @@ table td {
   letter-spacing: 1px;
 }
 
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 #c-a:hover {
   background-color: #fafafa;
   color: black;
