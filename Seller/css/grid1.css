@@ -1,15 +1,6 @@
  div{
 
   -webkit-box-sizing: border-box; 
-
-/*
-
-
-    -webkit-box-sizing: border-box; 
-    border: 1px solid black;
-
-
-*/
 } 
 
 body {
@@ -46,8 +37,10 @@ body {
 }
 
 .row {
-    position: relative;
+    /* position: relative; */
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     /* margin-left: 10px;
     margin-right: 10px; */
 }
@@ -60,137 +53,138 @@ body {
 .col1 {
     margin: auto;
     /* padding: 10px; */
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 8.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col2 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 16.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col3 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 25%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col4 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 33%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col5 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 41.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col6 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 50%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col7 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 58.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
   
 .col8 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 66.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col9 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 75%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col10 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 83.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col11 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 91.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col12 {
-    margin: auto;
+    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
     width: 100%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col-center {
-    float: none;
+    /* float: none; */
+    margin: auto;
 }
 
 /* .row-center{
@@ -268,6 +262,8 @@ h1 {
   @media only screen and (max-width: 600px) {
     [class*="col"] {
         width: 100%;
+        /* padding-right: 15px;
+        padding-left: 15px; */
         /* padding: 0px; */
       }
 
