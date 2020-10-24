@@ -10,6 +10,12 @@
 
 /*------------------------nav-bar-------------------*/
 
+/* Ministore  */
+.dialogBox{
+	background-color: gray;
+}
+
+
 .nav-bar img{
 	/* float: left; */
 	width: 110px;
@@ -47,6 +53,23 @@ hr{
 	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
+}
+
+.search input{
+  
+    border: none;
+    background:rgb(248, 248, 248); 
+	border-radius: 6px;
+	width: 70%;
+	margin-top: 0px;
+	padding: 11px;
+
+    
+}
+.search input:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
 }
 
 /*-------------------logged in side navigation bar--------------------*/
@@ -117,10 +140,16 @@ hr{
 
 /*-------------------Inner content-------------------*/
 
-.sign-note p{
+/* .welcome-note p{
 	text-align: center;
 	margin-top: 150px;
-	font-size: 50PX;
+	font-size: 40px;
+} */
+
+.title p{
+	text-align: center;
+	margin-top: 100px;
+	font-size: 40PX;
 }
 
   .inner-part  {
@@ -187,10 +216,10 @@ button:hover {
     font-size: 17px;   
 }
 
-.inp div input,textarea{
+.inp div input,textarea,select{
     padding: 13px;
 	width: 90%;
-	min-width: 250px;
+	min-width: 200px;
 	border: 2px solid rgb(235, 235, 235);
     background:rgb(248, 248, 248); 
     margin-top: 20px;
@@ -217,7 +246,10 @@ button:hover {
   box-shadow: 0 0 10px #719ECE;
 }
 
-
+.inp div input[type=color]{
+	width: 100px;
+	min-width: 100px;
+}
 
 .inp div input[type=date]{
     margin-top: 20px;

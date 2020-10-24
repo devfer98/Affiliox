@@ -275,7 +275,7 @@ h1 {
         display: block;
     }
     .nav-bar ul input{
-        width: 100%;
+        width: 90%;
        
     }
     .hidden-sm {
@@ -285,6 +285,11 @@ h1 {
     /* .inp div input{
       width: 100%;
     } */
+
+    /* Ministore */
+    .dialogBox{
+      background-color: gray;
+    }
 
     /* account selection */
     .account-btn a{

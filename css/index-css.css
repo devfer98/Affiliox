@@ -72,8 +72,9 @@
 	margin-bottom: 50px;
 	display: inline-block;
   	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  	width: 200px;
-  	margin-left: 10px;
+	width: 200px;
+	margin-left: 79px;
+	text-align: center;
   	font-family: arial;
 }
 
@@ -82,17 +83,22 @@
   	font-size: 18px;
 }
 
-
 .card p button {
-  border: none;
-  outline: 0;
-  padding: 10px;
-  color: white;
-  outline: #9999ff;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
 }
+  
+.card button:hover {
+	opacity: 0.7;
+}
+
 .show-hide-button-1 {
 	margin-top: 50px;
 	margin-left: 550px;
@@ -109,7 +115,7 @@
 
 /*-----------------------latest list----------------------------------------------*/
 
-.card {
+/* .card {
 	display: inline-block;
   	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   	max-width: 300px;
@@ -121,24 +127,18 @@
 .price {
   	color: grey;
   	font-size: 18px;
-}
+} */
 
-.card p button {
+/* .card p button {
   border: none;
   outline: 0;
-  padding: 12px;
+  padding: 10px;
   color: white;
-  background-color: #000;
-  text-align: center;
+  outline: #9999ff;
   cursor: pointer;
   width: 100%;
   font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-
+} */
 
 /*-----------------------bottom part----------------------------------------------*/
 
