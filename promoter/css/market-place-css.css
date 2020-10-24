@@ -106,6 +106,12 @@ hr {
     display: inline-block;
 }
 
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 .top-part button {
     width: 80px;
     line-height: 1.5;

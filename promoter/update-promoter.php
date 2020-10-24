@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td id="td-1">Birthday:</td>
-						<td id="td-2"><input type="number" name="dob" placeholder="year-mm-dd" pattern="[1-9]{4}-[1-12]{2}-[1-30]{2}"></td>
+						<td id="td-2"><input type="date" name="dob" placeholder="year-mm-dd" pattern="[1-9]{4}-[1-12]{2}-[1-30]{2}"></td>
 					</tr>
 					<tr>
 						<td id="td-1">Email:</td>

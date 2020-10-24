@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Promoter Dashboard</title>
+  <title>Review Feedback</title>
   <link rel="stylesheet" type="text/css" href="css/review-feedback-css.css">
   <link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
