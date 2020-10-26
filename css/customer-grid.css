@@ -1,24 +1,29 @@
- div{
+html {
+  font-family: 'Open Sans', sans-serif;
+
+}
+div{
 
   -webkit-box-sizing: border-box; 
 
-
-
-
- 
-
- 
-
 /*
-
-
     -webkit-box-sizing: border-box; 
-    
-
+ 
+      
 
 */
 } 
+.bor2{
+  border:0.5px solid rgb(158, 40, 40)
+}
 
+.bor3{
+  border:0.5px solid rgb(50, 216, 16)
+}
+.border{
+  -webkit-box-sizing: border-box; 
+  border:0.5px solid rgb(162, 162, 162)
+}
 body {
     height: 100%;
     width: 100%;
@@ -274,6 +279,9 @@ h1 {
   .sm-width{
     width: 60%;
   }
+  .half-width{
+    width:50%;
+  }
   .signin input{
     width: 100%;
     }
@@ -292,3 +300,67 @@ h1 {
       padding-bottom:10px;
     }
 } 
+
+@media screen and (max-width: 810px){
+
+  [class*="col"] {
+    width: 100%;
+    padding: 0px;
+  }
+.nav-bar ul a{
+    display: block;
+}
+.nav-bar ul input{
+    width: 100%;
+}
+.hidden-sm {
+    display:none;
+  }
+.account-btn a{
+    display: block;
+    width: 100%;
+}
+.account-btn ul a{
+  padding-left: 0%;
+}
+textarea{
+  .sm-text-width textarea{
+  width: 100%;
+}
+width: 80%;
+}
+
+.sm-width{
+width: 60%;
+}
+.half-width{
+width:50%;
+}
+.signin input{
+width: 100%;
+}
+
+.marginl100{
+  margin-left:0px ;
+}
+.marginr100{
+  margin-right: 0px;
+}
+.sm-center{
+  text-align: center;
+}
+
+.col12{
+  padding-bottom:10px;
+}
+
+}
+
+
+@media screen and (max-width: 900px){
+.mm-fullwidth{ 
+    width: 100%;
+    padding: 1px;
+  
+}
+}
