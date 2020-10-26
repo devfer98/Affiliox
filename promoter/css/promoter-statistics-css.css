@@ -20,8 +20,8 @@ h2 {
 /*-------------------side navigation bar--------------------*/
 header {
   background: #fafafa;
-  overflow: auto;
-  padding: 20px;
+  /*overflow: auto;*/
+  /*padding: 20px;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 25px;
   font-weight: bold;
@@ -29,24 +29,15 @@ header {
 
 header .open-btn {
   float: left;
-  margin-left: 50px;
-}
-
-header .affiliox a {
-  float: left;
-  margin-left: 50px;
-  text-decoration: none;
-  color: black;
-}
-
-header .loggedin {
-  float: right;
+  position: relative;
+  top: 25px;
+  margin-left: 80px;
+  margin-right: 50px;
 }
 
 hr {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
 }
-
 
 .sidenav {
   height: 100%; 
@@ -90,6 +81,106 @@ hr {
   padding: 20px;
 }
 
+/*------------------main navigation---------------------------------*/
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 20;
+}
+
+li  {
+  padding: 15px;
+}
+
+.logo-name a {
+  /*position: relative;*/
+  /*top: 12px;*/
+  color: #1f3d7a;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.item  {
+  position: relative;
+  left: 100px;
+  top: 16px;
+}
+
+.item  a {
+  text-decoration: none;
+  border: 2px solid #28a745;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: -10px;
+  padding: 4px;
+  border-radius: 0.25rem;
+  color: #1f3d7a;
+
+}
+
+.item a:hover {
+  background: #28a745;
+    opacity: 1;
+  letter-spacing: 0.5px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  color: #f5f5f6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.push {
+  margin-left: auto;
+  position: relative;
+  top: 15px;
+}
+
+.last {
+  position: relative;
+  top: 15px;
+}
+
+.push input {
+  padding: 5px;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border: 2px solid #ced4da; 
+  width: 180px;
+}
+
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+  text-decoration: underline;
+}
+
+.push button {
+  padding: 5px;
+  margin-left: 5px;
+  background: none;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border:  2px solid #28a745;
+  font-weight: bold;
+}
+
+.push button:hover {
+  background:#28a745;
+  color: #f5f5f6;
+}
+
+.last select{
+  padding: 5px;
+  width: 90px;
+  border: 2px solid black;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 0.25rem;
+}
 /*-------------------Inner content-------------------*/
 #columnchart_values {
   margin-left: 100px;
