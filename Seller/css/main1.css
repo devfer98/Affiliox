@@ -3,11 +3,11 @@ html {font-family: 'Open Sans', sans-serif;}
 	overflow: auto;
 
   }
-.container1{
+/* .container1{
 	margin-right: 10%; 
 	margin-left: 10%;
 
-}
+} */
 
 /*------------------------nav-bar-------------------*/
 
@@ -121,7 +121,7 @@ hr{
 .sign-note p{
 	text-align: center;
 	margin-top: 150px;
-	font-size: 50PX;
+	font-size: 40PX;
 }
 
 /* *.inner-part h3 {

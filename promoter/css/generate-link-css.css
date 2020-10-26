@@ -116,6 +116,12 @@ hr {
     border-radius: .25rem;
 }
 
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 .area button {
     width: 75px; 
     line-height: 1.5;

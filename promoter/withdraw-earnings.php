@@ -29,8 +29,9 @@
 					<td>Tansfer Method :</td>
 					<td>
 						<select>
-							<option>Paypal</option>
-							<option>Bank Transfer</option>
+							<option value="">Select Payout Method</option>
+							<option value="paypal">Paypal</option>
+							<option value="BT">Bank Transfer</option>
 						</select>
 					</td>
 				</tr>

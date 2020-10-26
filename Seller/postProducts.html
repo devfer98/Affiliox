@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seller Edit Profile</title>
+	<title>Add Product</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
-	<link rel="stylesheet" type="text/css" href="css/main1.css">
-	<link rel="stylesheet" type="text/css" href="css/grid1.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
 	<script src="../js/common-dashboard.js"></script>
@@ -19,88 +19,62 @@
 			<li style="float: right;">user-name</li>
 		</ul>
 		<div class="row">
-			<hr class="col12"/>
-		</div>
+            <hr class="col12"/>
+        </div>
 		
 		<!-- <div class="Reg-container"> -->
 		<div class="row">
-			<div class="col6 col-center title">
-				<p>Edit Seller Details</p>
+			<div class="col12 center title">
+				<p>Add Product</p>
 				<!-- <hr> -->
 			</div> 
 				<!------------------Seller Registration Form------------------->
 		</div>
 		<div class="row row-padding">	
-			<!-- <div class="col3"></div> -->
-			<div class="col6 col-center inner-part">
-			<!-- <div class="col6"> -->
+			<div class="col8 col-center inner-part inp">
 			<form>
-			<!-- <div class= "inner-part"> -->
-			<!-- <div class=> -->
-				<div class= "inp">
-				<h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2>
-				<div>
-				<label for="fname"><i class="fa fa-user"></i> &nbsp;Full Name</label><br>
-				<input type="text" id="fname" name="fullname" placeholder="Kamal sachintha"> <br>
+				<!-- <div class= "inp"> -->
+				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
+				<div class="row col6">
+				<label for="fname"> &nbsp;Name</label><br>
+				<input type="text" id="fname" name="fullname" placeholder="Kamal sachintha">
 				</div>
-				<div>
-				<label for="lname"><i class="fa fa-mail-bulk"></i>&nbsp; Email</label><br>
-				<input type="text" id="email" name="email" placeholder=" KSPerera@gmail.com"><br>
+				<div class="row col8">
+				<label for="lname">&nbsp; Description</label><br>
+				<textarea id="email" name="email" placeholder=" KSPerera@gmail.com"></textarea>
+                </div>
+                <div class="row" style="padding:0px;">
+				<div class="col6 fitcontent">
+				<label for="phn-no">&nbsp; Quantity</label><br>
+				<input type="text" id="phn-no" name="phn-no" placeholder=" 0771123344">
 				</div>
-				<div>
-				<label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
-				<input type="text" id="phn-no" name="phn-no" placeholder=" 0771123344"><br>
-				</div>
-				<div>
-				<label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
-				<input type="date" id="Birth" name="dob" placeholder=" Perera"><br><br>
-				</div>
-				<!------------------Gender Radio ------------------>
-				<div>
-				<label style="font-size: 18px;"for="gender"> Select your Gender</label>	<br><br>
-				<label for="male">Male &nbsp;&nbsp;&nbsp;</label>
-				<input type="radio" id="m/ale" name="gender" value="male"><br>
-				<label for="female">Female </label>
-				<input type="radio" id="female" name="gender" value="female">
-				</div>
-				
+				<div class="col6">
+				<label for="dob">&nbsp; Price</label><br>
+				<input type="text" id="Birth" name="dob" placeholder=" Perera">
+                </div>
+                </div>
 				<!------------------Address section------------------->
-				<div>
-				<label for="Address"><i class="fa fa-address-card"></i> Address Line 1</label><br>
+				<div class="row col6">
+				<label for="Address">Commission Rate</label><br>
 				<input type="text" id="line1" name="aline1" placeholder=" No 23/3 B">
 				</div>
-				<div>
-				<label for="Address"><i class="fa fa-address-card"></i> Address Line 2</label><br>
-				<input type="text" id="line2" name="aline2" placeholder=" Jayasekara Mawatha"><br>
+				<div class="row col6">
+				<label for="Address">Images</label><br>
+				<input type="file" id="line2" name="aline2" placeholder=" Jayasekara Mawatha"><br>
 				</div>
-				<div>
-				<label for="city"><i class="fa fa-city"></i>  City</label><br>
-				<input type="text" id="city" name="acity" placeholder=" Warakapola">
-				</div>
-				<div>
-				<label for="city"><i class="fa fa-city"></i>Country</label><br>
-				<input type="text" id="country" name="acountry" placeholder=" Srilanka"><br>
-				</div>
-				<!------------------ ------------------->
-	
-				<h2 style="font-family: 'Lato', sans-serif;">Login Details</h2>
-				
-				<div>
-				<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
-				<input type="text" name="Username-field" placeholder="Username"><br>
-				</div>
-				</div>
+
+				<!-- </div> -->
 			<!------------------Buttons------------------->
-				<div>
-					<button type="submit" value="submit">Save</button>	
+				<div class="row col12">
+					<button class="center" type="submit" value="submit">Save</button>	
 				</div>
 			<!-- </div> -->
 			</form>
 			</div>
 		</div>
 
-		<div class="row row-padding col12">
-			<hr />
+		<div class="row row-padding">
+			<hr class="col12"/>
 	    </div>
 
 		<!-- bottom-part-------------------------------------------->
