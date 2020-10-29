@@ -45,14 +45,16 @@ li  {
 .item  {
 	position: relative;
 	left: 30px;
-	top: 30px;
+	top: 28px;
 }
 
 .item  a {
 	text-decoration: none;
 	border: 2px solid #28a745;
 	font-weight: bold;
-	padding: 8px;
+	font-size: 15px;
+	margin-left: -10px;
+	padding: 4px;
 	border-radius: 0.25rem;
 	color: #1f3d7a;
 
@@ -83,7 +85,7 @@ li  {
 }
 
 .push input {
-	padding: 8px;
+	padding: 5px;
 	border-radius: 0.25rem;
 	font-family: 'Open Sans', sans-serif;
 	border: 2px solid #ced4da; 
@@ -98,7 +100,7 @@ input:focus{
 }
 
 .push button {
-	padding: 8px;
+	padding: 5px;
 	margin-left: 5px;
 	background: none;
 	border-radius: 0.25rem;
@@ -113,7 +115,7 @@ input:focus{
 }
 
 .last select{
-	padding: 8px;
+	padding: 5px;
 	width: 90px;
 	border: 2px solid black;
 	font-family: 'Open Sans', sans-serif;
@@ -141,7 +143,7 @@ input:focus{
 .mySlides {
   display: none;
 }
-<<<<<<< HEAD
+
 */
 .card {
 	margin-bottom: 50px;
@@ -150,13 +152,11 @@ input:focus{
 	width: 200px;
 	margin-left: 79px;
 	text-align: center;
-  	font-family: arial;
-=======
+}
 
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
->>>>>>> 980dd83f985efe91ab8ace8a5fe425427acd9470
 }
 
 .prev:hover, .next:hover {
@@ -173,7 +173,6 @@ input:focus{
   text-align: center;
 }
 
-<<<<<<< HEAD
 .card p button {
 	border: none;
 	outline: 0;
@@ -195,9 +194,11 @@ input:focus{
 	margin-left: 550px;
 	padding: 8px;
 	background: no-repeat;
-	border: 2px solid #9999ff; border-radius: 8px;
+	border: 2px solid #9999ff; 
+	border-radius: 8px;
 	width: 200px;
-=======
+}
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -219,7 +220,6 @@ input:focus{
 
 .active, .dot:hover {
   background-color: #717171;
->>>>>>> 980dd83f985efe91ab8ace8a5fe425427acd9470
 }
 
 .fade {
@@ -239,9 +239,7 @@ input:focus{
   to {opacity: 1}
 }
 
-
-<<<<<<< HEAD
-/* .card {
+.card {
 	display: inline-block;
   	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   	max-width: 300px;
@@ -253,8 +251,8 @@ input:focus{
 .price {
   	color: grey;
   	font-size: 18px;
-} */
-=======
+} 
+
 /*-----------------------featured item list------------------------*/
 .card {
   display: inline-block;
@@ -275,20 +273,9 @@ input:focus{
   font-size: 18px;
   margin: 10px 0 10px 0;
 }
->>>>>>> 980dd83f985efe91ab8ace8a5fe425427acd9470
 
-/* .card p button {
-  border: none;
-  outline: 0;
-  padding: 10px;
-<<<<<<< HEAD
-  color: white;
-  outline: #9999ff;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-} */
-=======
+.card p button {
+  background: #d6e0f5;
   outline: #9999ff;
   cursor: pointer;
   width: 100%;
@@ -300,11 +287,11 @@ input:focus{
 }
 
 .card button:hover {
+  color: #1a3365;
   background:  rgb(215, 225, 244);
-  color: #1f3d7a;
   border-bottom: 2px solid #1f3d7a;
 }
->>>>>>> 980dd83f985efe91ab8ace8a5fe425427acd9470
+
 
 /*-----------------------bottom part----------------------------------------------*/
 .bottom-part table {
@@ -319,14 +306,20 @@ input:focus{
   width: 200px;
 }
 
+table tr { line-height: 40px; }
+
 .bottom-part table tr td a {
 	text-decoration: none;
 	color: #1f3d7a;
 }
 
 .bottom-part table tr td a:hover {
-	text-decoration: underline;
+	color: red;
 }
+
+/*table i {
+	color: #99ff99
+}*/
 
 /*--------------------footer-tag--------------------*/
 .footer {
