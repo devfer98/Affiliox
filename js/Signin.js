@@ -12,6 +12,14 @@ function passVisibility() {
     } else {
         pwState2.type = "password";
     }
+
+    
+    var pwState3 = document.getElementById("current-pass-field");
+    if (pwState3.type === "password") {
+        pwState3.type = "text";
+    } else {
+        pwState3.type = "password";
+    }
   }
 
 

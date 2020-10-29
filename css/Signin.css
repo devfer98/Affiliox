@@ -27,7 +27,8 @@ hr{
 
 
 .nav-bar ul a {
-	border: 2px solid orange;
+	border: 2px solid ;
+	border-color: #28a745;
 	display: inline-flex;
 	color: rgb(10, 10, 10);
 	text-decoration: none;
@@ -39,7 +40,7 @@ hr{
 }
 
 .nav-bar ul a:hover{
-	background: orange;
+	background:#28a745;
     opacity: 1;
 	letter-spacing: 0.5px;
 	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
@@ -89,7 +90,8 @@ hr{
     background: white;
     border-radius: 5px;
     border-style: none;
-    border: 2px solid orange;
+	border: 2px solid ;
+	border-color: #28a745;
     margin-top: 100px;
     /*opacity: 0.6;*/
 	transition: 0.3s;
@@ -142,8 +144,8 @@ hr{
 	padding-top: 60px;
 	background: white;
     border-radius: 5px;
-    border-style: none;
-	border: 2px solid orange;
+	border: 2px solid ;
+	border-color: #28a745;
 	margin-top: 50px;
     /*opacity: 0.6;*/
 	transition: 0.3s;
@@ -152,7 +154,7 @@ hr{
 	text-decoration: none;
 }
 .account-btn a:hover{
-	background: orange;
+	background: #28a745;
 	color: azure;
     opacity: 1;
 }

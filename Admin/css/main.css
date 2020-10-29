@@ -1,4 +1,3 @@
-html {font-family: 'Open Sans', sans-serif;}
 .clearfix {
 	overflow: auto;
 
@@ -10,6 +9,12 @@ html {font-family: 'Open Sans', sans-serif;}
 } */
 
 /*------------------------nav-bar-------------------*/
+
+/* Ministore  */
+.dialogBox{
+	background-color: gray;
+}
+
 
 .nav-bar img{
 	/* float: left; */
@@ -48,6 +53,23 @@ hr{
 	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
+}
+
+.search input{
+  
+    border: none;
+    background:rgb(248, 248, 248); 
+	border-radius: 6px;
+	width: 70%;
+	margin-top: 0px;
+	padding: 11px;
+
+    
+}
+.search input:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
 }
 
 /*-------------------logged in side navigation bar--------------------*/
@@ -118,33 +140,28 @@ hr{
 
 /*-------------------Inner content-------------------*/
 
-.sign-note p{
+/* .welcome-note p{
 	text-align: center;
 	margin-top: 150px;
+	font-size: 40px;
+} */
+
+.title p{
+	text-align: center;
+	margin-top: 100px;
 	font-size: 40PX;
 }
 
-/* *.inner-part h3 {
-	text-decoration: underline;
-	margin-left: 10px;
-	font-family: 'Roboto Mono', monospace;
-  }
-  *.inner-part p {
-	  margin-left: 10px;
-	  font-family: 'Nunito', sans-serif;
-  } */
   .inner-part  {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	/* margin-left: 350px;
-	margin-right: 150px; */
 	background: #eee;
 	padding: 30px;
 	padding-bottom: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
-  .inner-part button {
+  /* .inner-part button {
 	font-weight: bold;
 	padding: 10px;
 	width: 200px;
@@ -154,23 +171,38 @@ hr{
 	border-style: none;
 	border: 2px solid orange;
 	margin-top: 20px;
-	/* align-self: center; */
 	transition: 0.3s;
-	/* text-align: center; */
   
   }
   .inner-part button:hover {
 	background: orange;
 	opacity: 1;
-  }
+  } */
 
-  
+button {
+	font-weight: bold;
+	padding: 10px;
+	width: 200px;
+	margin: 0px;
+	background: white;
+	border-radius: 5px;
+	border-style: none;
+	border: 2px solid orange;
+	margin-top: 20px;
+	transition: 0.3s;
+
+}
+button:hover {
+	background: orange;
+	opacity: 1;
+} 
 
 
 .inp div {
     margin-top: 0px;
     /* width: 30VW; */
-    padding: 20px;
+	padding: 20px;
+	/* border: 2px solid orange; */
 	/* background: rgb(248, 248, 248); */
    
 }
@@ -184,20 +216,11 @@ hr{
     font-size: 17px;   
 }
 
-.inp div input[type=date]{
-    margin-top: 20px;
-    padding-top:20px;
-    padding-left: 7px;
-    /* width:22vw; */
-	border: none;
-}
-
-
-
-.inp div input{
+.inp div input,textarea,select{
     padding: 13px;
-    width: 30VW;
-    border: none;
+	width: 90%;
+	min-width: 200px;
+	border: 2px solid rgb(235, 235, 235);
     background:rgb(248, 248, 248); 
     margin-top: 20px;
     border-radius: 9px;
@@ -210,11 +233,30 @@ hr{
     box-shadow: 0 0 10px #719ECE;
 }
 
+/* .inp div textarea{
+    border: 2px solid orange;
+    font-weight: bold;
+    background:rgb(248, 248, 248)
+} */
+
 .inp div textarea:focus {
     
   outline: none !important;
   border:1px solid #719ECE;
   box-shadow: 0 0 10px #719ECE;
+}
+
+.inp div input[type=color]{
+	width: 100px;
+	min-width: 100px;
+}
+
+.inp div input[type=date]{
+    margin-top: 20px;
+    padding-top:20px;
+    padding-left: 13px;
+    /* width:22vw; */
+	border: none;
 }
 
 .inp div input[type=radio]{
@@ -223,15 +265,8 @@ hr{
     padding-left: 7px;
     width: 5VW;
     border: none;
-
 }
 
-.inp div textarea{
-    /* width: 29vw; */
-    border: none;
-    font-weight: bold;
-    background:rgb(248, 248, 248)
-}
 .inp div input[type=checkbox]{
     float: left;
     width: 3VW;

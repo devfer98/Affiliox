@@ -6,15 +6,32 @@
 	<link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
 	<script src="js/withdraw-earnings-js.js"></script>
 </head>
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
 		<header>
 			<div class="open-btn" onclick="openNav()">&#9776;</div>
-			<div class="affiliox"><a href="">Affiliox</a></div>
-			<div class="loggedin">Welcome User name</div>
+			<nav class="top-nav">
+			<ul class="main-nav">
+				<li class="logo-name"><a href="">Affiliox</a></li>
+				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
+				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
+				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
+				<!-- <li class="item"><a href=""><i class="fas fa-user"></i>&nbsp;&nbsp;Account</a></li>
+				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li> -->
+				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
+				<li class="last">
+					<select>
+						<option value="sign in">Sign In</option>
+						<option value="login">Login</option>
+						<option value="logout">Logout</option>
+					</select>
+				</li>
+			</ul>
+		</nav>
+		
 		</header>
 		<hr>	
 	<div class="container">

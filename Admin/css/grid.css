@@ -1,30 +1,8 @@
-html {
-  font-family: 'Open Sans', sans-serif;
-
-}
-div{
+ div{
 
   -webkit-box-sizing: border-box; 
-  border: 1px solid black;
-
-/*
-    -webkit-box-sizing: border-box; 
- 
-      
-
-*/
 } 
-.bor2{
-  border:0.5px solid rgb(158, 40, 40)
-}
 
-.bor3{
-  border:0.5px solid rgb(50, 216, 16)
-}
-.border{
-  -webkit-box-sizing: border-box; 
-  border:0.5px solid rgb(162, 162, 162)
-}
 body {
     height: 100%;
     width: 100%;
@@ -35,14 +13,10 @@ body {
     font-size: 100%;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
 .fitcontent{
     min-width: fit-content;
 }
+
 .container2 {
   width: 100%;
   /* padding-right: 15px;
@@ -55,7 +29,6 @@ body {
 
 .container {
     width: 100%;
-   
     /* padding-right: 15px;
     padding-left: 15px; */
     margin-right: auto;
@@ -64,127 +37,160 @@ body {
 }
 
 .row {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+
+.row-padding{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .col1 {
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 8.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col2 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 16.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col3 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 25%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col4 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 33%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col5 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 41.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col6 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 50%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col7 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 58.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
   
 .col8 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 66.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col9 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 75%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col10 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 83.333333%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col11 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 91.666667%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col12 {
-    margin: auto;
-    padding: 10px;
+    /* margin: auto; */
+    /* padding: 10px; */
+    /* padding-bottom: 10px;
+    padding-top: 10px; */
     width: 100%;
     position: relative;
-    float: left;
+    /* float: left; */
     /* border: 2px solid blue; */
 }
 
-.fullWidth{
-	padding-left: 0;
-	padding-right: 0;
+.col-center {
+    /* float: none; */
+    margin: auto;
 }
 
-.lm-half-width{
-  width:50%;
-}
+/* .row-center{
+  align-self: center;
+} */
+
 h1 {
     font-size: 2.5rem;
   }
@@ -192,16 +198,8 @@ h1 {
   h2 {
     font-size: 2rem;
   }
-
-  .h2{
-    font-size: 2rem;
-  }
   
   h3 {
-    font-size: 1.375rem;
-  }
-
-  .h3 {
     font-size: 1.375rem;
   }
   
@@ -264,17 +262,36 @@ h1 {
   @media only screen and (max-width: 600px) {
     [class*="col"] {
         width: 100%;
-        padding: 0px;
+        /* padding-right: 15px;
+        padding-left: 15px; */
+        /* padding: 0px; */
       }
+
+    body{
+        background-color: darkcyan;
+      }
+
     .nav-bar ul a{
         display: block;
     }
     .nav-bar ul input{
-        width: 100%;
+        width: 90%;
+       
     }
     .hidden-sm {
         display:none;
       }
+
+    /* .inp div input{
+      width: 100%;
+    } */
+
+    /* Ministore */
+    .dialogBox{
+      background-color: gray;
+    }
+
+    /* account selection */
     .account-btn a{
         display: block;
         width: 100%;
@@ -282,99 +299,4 @@ h1 {
     .account-btn ul a{
       padding-left: 0%;
     }
-    textarea{
-      width: 100%;
-  }
-  .sm-text-width textarea{
-    width: 80%;
-  }
-
-  .sm-width{
-    width: 60%;
-  }
-  .half-width{
-    width:50%;
-  }
-  .signin input{
-    width: 100%;
-    }
-
-    .marginl100{
-      margin-left:0px ;
-    }
-    .marginr100{
-      margin-right: 0px;
-    }
-    .sm-center{
-      text-align: center;
-    }
-
-    .col12{
-      padding-bottom:10px;
-    }
 } 
-
-@media screen and (max-width: 810px){
-
-  [class*="col"] {
-    width: 100%;
-    padding: 0px;
-  }
-.nav-bar ul a{
-    display: block;
-}
-.nav-bar ul input{
-    width: 100%;
-}
-.hidden-sm {
-    display:none;
-  }
-.account-btn a{
-    display: block;
-    width: 100%;
-}
-.account-btn ul a{
-  padding-left: 0%;
-}
-textarea{
-  
-  width: 100%;
-}
-.sm-text-width textarea{
-width: 80%;
-}
-
-.sm-width{
-width: 60%;
-}
-.half-width{
-width:50%;
-}
-.signin input{
-width: 100%;
-}
-
-.marginl100{
-  margin-left:0px ;
-}
-.marginr100{
-  margin-right: 0px;
-}
-.sm-center{
-  text-align: center;
-}
-
-.col12{
-  padding-bottom:10px;
-}
-
-}
-
-
-@media screen and (max-width: 900px){
-.mm-fullwidth{ 
-    width: 100%;
-    padding: 1px;
-  
-}
-}
