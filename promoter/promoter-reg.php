@@ -11,6 +11,7 @@
 </head>
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
+	<header>
 	<nav class="top-nav">
 			<ul class="main-nav">
 				<li class="logo"><a href="index.html" style="border: none;"><img src="images/affiliox.png"></a></li>
@@ -21,15 +22,17 @@
 				<li class="item"><a href=""><i class="fas fa-user"></i>&nbsp;&nbsp;Account</a></li>
 				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li>
 				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
-				<li class="last">
+				<!-- <li class="last">
 					<select>
 						<option value="sign in">Sign In</option>
 						<option value="login">Login</option>
 						<option value="logout">Logout</option>
 					</select>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
+	</header>
+	<hr>	
 	<!-------------- Top-Navigation-Bar ---------------------->
 
 	<div class="container">
