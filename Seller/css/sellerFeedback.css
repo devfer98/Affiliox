@@ -1,0 +1,94 @@
+.top h4 {
+    margin: 20px 0 20px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+  
+  #overall-review-table {
+    background: #fafafa;
+    /*margin: 0 auto;*/
+  }
+  
+  .overall-review table {
+    border: 2px solid black;
+    border-radius: .25rem;
+    background: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+  }
+  
+  .overall-review table th {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  
+  .overall-review table td{
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .inner-line p {
+    border-bottom: 2px solid black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
+  
+  
+  .customer-review-1  table {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 700px;
+    border: 2px solid black;
+    border-radius: .25rem;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+  }
+  
+  .customer-review-1  table td {
+    padding: 20px;
+  }
+  
+  .customer-review-1 table input {
+      width: 120px; 
+      line-height: 1.5;
+      font-size: 1rem;
+      padding: .250rem .40rem;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      color: #28a745;
+      background-color: white;
+      border-color: #28a745;
+      cursor: pointer;
+  }
+  
+  table input:hover {
+      background-color: #28a745;
+      color: white;
+  }
+  
+  textarea {
+    border: 1px solid black;
+    border-radius: .25rem;
+    height: 70px;
+    width: 300px;
+    padding: 5px;
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  textarea:focus{
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+  }
+  
+  #cus-name {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: 1px;
+  }
