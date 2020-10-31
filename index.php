@@ -249,3 +249,5 @@
 		<script src="js/index-script.js"></script>
 </body>
 </html>
+
+<?php mysqli_close($connection); ?>

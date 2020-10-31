@@ -24,8 +24,8 @@
         <li class="last">
           <select>
               <select name="direction" onchange="location = this.value;">
-              <option value="../index.html">SELECT</option>
-              <option value="../index.html">Logout</option>
+              <option value="../index.php">SELECT</option>
+              <option value="../index.php">Logout</option>
               <option value="">Login</option>
           </select>
           </select>
