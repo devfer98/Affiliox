@@ -1,0 +1,99 @@
+table {
+    border: 2px solid #ddd;
+    border-radius: .25rem;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  table td {
+    width: 250px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .money-withdrawal-form table tr td select,input{
+      width: 250px; 
+      line-height: 1.5;
+      font-size: 1rem;
+      padding: .375rem .75rem;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      color: black;
+      background-color: #fafafa;
+      border-color: #28a745;
+      cursor: pointer;
+      margin-bottom: 50px;
+      margin-top:40px;
+      font-family: 'Open Sans', sans-serif;
+  }
+  
+  .money-withdrawal-form input:hover {
+    background: green;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+  }
+  
+  input:focus{
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+  }
+  
+  #c-a:hover {
+    background-color: #fafafa;
+    color: black;
+  }
+  
+  .money-withdrawal-form  td {
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 800px){
+
+    .container { margin: auto; padding: 10px; width: 100%;}
+  
+    .container h2 {text-align: center;}
+  
+    form input { margin: auto; padding: 10px; width: 100%; }
+  
+  }
+  
+  
+  
+  @media screen and (max-width: 650px) {
+         /* Smaller devices */
+    .container { margin: auto; padding: 10px; width: 100%;}
+  
+    .container h2 {text-align: center;}
+  
+    form input { margin: auto; padding: 10px; width: 100%; }
+         
+  }
+  
+  @media screen and (max-width: 500px){
+      /*header {display: flex; flex-wrap: wrap;}*/
+      .affiliox {float: right;}
+  
+      .container { margin: auto; padding: 10px; width: 100%;}
+  
+      .container h2 {text-align: center;}
+  
+      form input { margin: auto; padding: 10px; width: 100%; }
+    
+  }
+  
+  @media screen and (max-width: 450px) {
+         /* Even Smaller devices */
+      .affiliox {float: right;}
+  
+      table tr td { display: block; justify-content:center; align-items:center; display:flex; }
+  
+      form input { margin: auto; padding: 10px; width: 100%; margin-top: 50px;}
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+         /* Even Smaller devices */
+         .affiliox {float: right;}
+  }

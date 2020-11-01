@@ -1,0 +1,85 @@
+/* Tab Design */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+  
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    /* padding: 6px 12px; */
+    border: 1px solid #ccc;
+    border-top: none;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* content inside tab */
+
+.tabcontent .heading div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.tabcontent .record div{
+    /* border: 2px solid orange; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.heading{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.record{
+    margin-bottom: 10px;
+    border-radius: 5px;
+	border-style: none;
+	border: 2px solid #dddddd;
+}
+
+
+  /* table {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 30px;
+  }
+
+  table tr{
+    border-radius: 5px;
+	border-style: none;
+	border: 2px solid orange;
+  }
+  
+  table td {
+    padding: 35px;
+    font-size: 17px;
+    width: 250px;
+  }
+  
+  #td-1 {
+    font-weight: bold;
+  } */

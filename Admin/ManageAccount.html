@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seller Transactions</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
+	<title>Manage Accounts</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="css/sellerTransactions.css">
+	<link rel="stylesheet" type="text/css" href="../css/customer-grid.css" />
+	<link rel="stylesheet" type="text/css" href="css/manage.css">
+	<script src="js/tabs.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
 	<script src="../js/common-dashboard.js"></script>
@@ -19,49 +20,62 @@
 			<li><a href="">Affiliox</a></li></a>
 			<li style="float: right;">user-name</li>
 		</ul>
+		<br/><br/>
+		<hr>
+		<div class="row">
+			<div class="col12 center title">
+				<p>Manage Accounts</p>
+			</div> 
+		</div>
+		
+		<div class="heading">
+        <p>&nbsp; <i class='fas fa-user-cog'></i> Manage Accounts &nbsp;
+		<button type="submit" value="submit"><a href="AddAdmin.html">Add New Admin</a></button></p>
+		</div>
+		<br/><br/>
+		<div class="body">
+			<table>
+				<tr>
+					<th>Full Name</th>
+					<th>UserID</th>
+					<th>Email</th>
+					<th>MobileNo</th>
+					<th>Position</th>
+				</tr>
+				<tr>
+					<td>Peter</td>
+					<td>user1</td>
+					<td>peter@gmail.com</td>
+					<td>0771122333</td>
+					<td>IT Consultant</td>
+				</tr>
+				<tr>
+					<td>Griffin</td>
+					<td>user2</td>
+					<td>griffin@gmail.com</td>
+					<td>0751100222</td>
+					<td>Database Administrator</td>
+				</tr>
+				<tr>
+					<td>Lily</td>
+					<td>user3</td>
+					<td>lily@gmail.com</td>
+					<td>0778899666</td>
+					<td>IT Consultant</td>
+				</tr>
+				<tr>
+					<td>John</td>
+					<td>user4</td>
+					<td>john@gmail.com</td>
+					<td>0755566333</td>
+					<td>Admin</td>
+				</tr>
+			</table>
+		</div>	
+		<br/><br/><br/><br/>			
 		<div class="row row-padding">
 			<hr class="col12"/>
-		</div>
-		<div class="col8 col-center inner-part">
-			<h2><i class="fas fa-money-check-alt"></i>&nbsp; &nbsp;Balance Withdrawal</h2>
-			<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. <a id="payout-history" href="payout-history.php">Click Here</a></p>
-
-			<div class="money-withdrawal-form">
-				<form>
-					<table>
-					<tr>
-						<td>Tansfer Method :</td>
-						<td>
-							<select>
-								<option value="">Select Payout Method</option>
-								<option value="paypal">Paypal</option>
-								<option value="BT">Bank Transfer</option>
-							</select>
-						</td>
-					</tr>
-						<tr>
-							<td>Current Amount :</td>
-							<td>26.14 $USD</td>
-						</tr>
-						<tr>
-							<td>Change Amount :</td>
-							<td><input type="text" name="amount" required="" placeholder="$ 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a"></td>
-						</tr>
-					<tr>
-						<td>
-							<input type="submit" name="submit" value="Submit">
-						</td>
-						<td>
-							<input type="reset" name="reset" value="Reset">
-						</td>
-					</tr>
-				</table>
-				</form>
-			</div> <!-- money-withdrawal-form -->
-		</div>
-		<div class="row row-padding">
-			<hr class="col12"/>
-		</div>
+	    </div>
 
 		<!-- bottom-part-------------------------------------------->
 		<div class="row bottom-part">
@@ -119,14 +133,11 @@
 	</div> 
 	<div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="sellerProfile.html">User profile<i class="far fa-user"></i></a>
-  		<a href="ministore.html">Mini Store<i class="fas fa-store"></i></a>
-  		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
-  		<a href="sellerStatistics.html">Statstics<i class="fas fa-chart-line"></i></i></a>
-		<a href="viewOrders.html">View Orders<i class="fas fa-chart-line"></i></i></a>
-  		<a href="sellerTransactions.html">Transactions<i class="fas fa-money-check-alt"></i></a>
-  		<a href="sellerFeedback.html">Feedback<i class="fas fa-phone-square"></i></i></a>
-  		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
+  		<a href="AdminDashboard.html">Dashboard<i class='fas fa-ellipsis-h'></i></a>
+  		<a href="AdminProfile.html">User Profile<i class="far fa-user"></i></a>
+  		<a href="ManageAccount.html">Manage Accounts<i class='fas fa-user-cog'></i></a>
+  		<a href="AdminStatistics.html">Statistics<i class="fas fa-chart-line"></i></i></a>
+  		<a href="#">Review Feedback<i class='fas fa-comments'></i></a>
 	</div>
 	<span onclick="openNav()"></span>
 

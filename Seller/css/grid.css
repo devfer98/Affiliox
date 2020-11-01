@@ -17,22 +17,19 @@ body {
     min-width: fit-content;
 }
 
-.container2 {
+/* .container2 {
   width: 100%;
-  /* padding-right: 15px;
-  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
-  /* border: 2px solid green; */
-}
+} */
 
 
 .container {
     width: 100%;
-    /* padding-right: 15px;
-    padding-left: 15px; */
     margin-right: auto;
     margin-left: auto;
+    /* padding-right: 15px;
+    padding-left: 15px; */
     /* border: 2px solid green; */
 }
 
@@ -51,128 +48,83 @@ body {
 }
 
 .col1 {
-    margin: auto;
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 8.333333%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col2 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 16.666667%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col3 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 25%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col4 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 33%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col5 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 41.666667%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col6 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 50%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col7 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 58.333333%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
   
 .col8 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 66.666667%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col9 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 75%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col10 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 83.333333%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col11 {
-    /* margin: auto; */
     /* padding: 10px; */
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     width: 91.666667%;
     position: relative;
-    /* float: left; */
     /* border: 2px solid blue; */
 }
 
 .col12 {
-    /* margin: auto; */
     /* padding: 10px; */
     /* padding-bottom: 10px;
     padding-top: 10px; */
@@ -191,7 +143,7 @@ body {
   align-self: center;
 } */
 
-h1 {
+/* h1 {
     font-size: 2.5rem;
   }
   
@@ -231,7 +183,7 @@ h1 {
   
   .font-heavy {
     font-weight: 700;
-  }
+  } */
   
   /* POSITIONING */
   
@@ -268,7 +220,7 @@ h1 {
       }
 
     body{
-        background-color: darkcyan;
+        /* background-color: darkcyan; */
       }
 
     .nav-bar ul a{

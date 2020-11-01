@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Statistics</title>
+  <link rel="stylesheet" type="text/css" href="css/adminstatistics.css">
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="js/promoter-statistics-js.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  	<!-------------- Top-Navigation-Bar ---------------------->
+	<div class="container">
+		<div class="nav-bar row center">
+			<div class="col2">
+				<a href="../index.html"><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
+			</div>
+
+			<div class="col6 center">
+				<ul>
+					<a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+					<a href=""><i class="fas fa-address-card"></i>&nbsp;About Us</a>
+					<a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
+					<a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+					<a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
+				</ul>
+			</div>
+
+			<div class="col4 search fitcontent center">
+				<ul>
+					<input type="text" name="search" placeholder="Headsets" />
+					<a href="">&nbsp;<i class="fas fa-search"></i></a>
+				</ul>
+			</div>
+		</div>
+        <hr>    
+    <div class="container">
+      <h2>&nbsp;<i class="fas fa-chart-line"></i>&nbsp; &nbsp;Admin Statistics</h2>
+        
+        <div id="piechart">
+        <script type="text/javascript">
+            google.charts.load("current", {packages:['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Draw the chart and set the chart values
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Type', 'ClicksPerDay'],
+						['Direct Traffic', 8],
+						['Organic Traffic', 13],
+						['Referral Traffic', 6],
+						['Social Traffic', 26],
+						['Email Traffic', 6]
+					]);
+
+				var options = {'title':'Traffic Type', 'width':650, 'height':450};
+
+				var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+				chart.draw(data, options);
+				}
+      </script>
+      </div>
+
+      <div class="heading">
+        <p>&nbsp; <i class="fas fa-chart-line"></i> Overall Statistics </p>
+           <table>
+             <tr>
+               <th>Traffic Types</th>
+               <th>Clicks Per Day</th>
+             </tr>
+             <tr>
+               <td>Direct Traffic</td>
+               <td>8</td>
+             </tr>
+             <tr>
+               <td>Organic Traffic</td>
+               <td>13</td>
+             </tr>
+             <tr>
+               <td>Referral Traffic</td>
+               <td>6</td>
+             </tr>
+             <tr>
+               <td>Social Traffic</td>
+               <td>26</td>
+             </tr>
+			 <tr>
+               <td>Email Traffic</td>
+               <td>6</td>
+             </tr>
+           </table>
+     </div> <!-- heading --> 
+	<br/><br/>
+	<hr>
+	
+  <div class="row">
+			<div class="col12">
+				<hr/>
+			</div>
+		</div>
+		<div class="row bottom-part">
+			<div class="col4 hidden-sm center">
+				<a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
+			</div>
+
+			<div class="col2">
+				<ul>
+					<p>Main Menu</p>
+					<a href="">Affiliox Home</a>
+					<a href="">About us</a>
+					<a href="">Help</a>
+					<a href="">Account</a>
+				</ul>
+			</div>
+			<div class="col2">
+				<ul>
+					<p>Company</p>
+					<a href="">Address</a>
+					<a href="">Email</a>
+					<a href="">Help</a>
+					<a href="">Account</a>
+				</ul>
+			</div>
+			<div class="col2">
+				<ul>
+					<p>Discover</p>
+					<a href="">Home</a>
+					<a href="">About us</a>
+					<a href="">Help</a>
+					<a href="">Account</a>
+				</ul>
+			</div>
+			<div class="col2">
+				<ul>
+					<p>Find Us on</p>
+					<a href="">Facebook</a>
+					<a href="">Twitter</a>
+					<a href="">Instagram</a>
+					<a href="">Youtube</a>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col12 company-address">
+				<ul>
+					<li>© All Right reserved</li>
+					<li>Affiliox 2020 ™</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>

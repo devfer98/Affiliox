@@ -1,3 +1,25 @@
+<?php require_once('../include/connection.php'); ?>
+
+<?php 
+	
+
+	$promoter_details = '';
+
+	//getting the details of the registerd user
+	$query = "SELECT * FROM promoter WHERE userID = '{userID}' ";
+	$details 	= mysqli_query($connection, $query);
+
+	if ($details) {
+		while ($detail = mysqli_fetch_assoc($details)) {
+
+		}
+	} else {
+		echo "Database query error";
+	}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +45,10 @@
 				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li> -->
 				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
 				<li class="last">
-					<select>
-						<option value="sign in">Sign In</option>
-						<option value="login">Login</option>
-						<option value="logout">Logout</option>
+					<select name="direction" onchange="location = this.value;">
+						<option value="../index.php">SELECT</option>
+						<option value="../index.php">Logout</option>
+						<option value="">Login</option>
 					</select>
 				</li>
 			</ul>
@@ -40,29 +62,36 @@
 		<div class="inner-part">
 			<table>
 				<tr>
-					<td id="td-1">Your Name:</td>
-					<td>Sample name is here</td>
+					<td id="td-1">Your Name :</td>
+					<td><?php $promoter_details = "{$detail['name']};</td>"?></td>
 				</tr>
 				<tr>
-					<td id="td-1">Date of Birth:</td>
-					<td>Sample DOB is here</td>
+					<td id="td-1">Date of Birth :</td>
+					<td><?php $promoter_details = "{$detail['dob']}"; ?></td>
 				</tr>
 				<tr>
-					<td id="td-1">Primary Email:</td>
+					<td id="td-1">Account ID :</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td id="td-1">Primary Email :</td>
 					<td>sample@gmail.com</td>
 				</tr>
 				<tr>
-					<td id="td-1">Mobile Number:</td>
+					<td id="td-1">Mobile Number :</td>
 					<td>Sample number is here</td>
 				</tr>
 				<tr>
-					<td id="td-1">Address:</td>
+					<td id="td-1">Address :</td>
 					<td>Sample address is here</td>
 				</tr>
 				<tr>
-					<td id="td-1">State:</td>
+					<td id="td-1">Country :</td>
 					<td>Sample state is here</td>
 				</tr>
+
+				<?php echo $promoter_details; ?>
+
 			</table>
 
 			<form action="update-promoter.php">
@@ -95,3 +124,4 @@
 </body>
 </html>
 
+<?php mysqli_close($connection) ?>

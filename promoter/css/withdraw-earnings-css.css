@@ -18,7 +18,7 @@ h2 {
 
 p {font-family: 'Open Sans', sans-serif;}
 
-#payout-history {text-decoration: none;}
+#payout-history {text-decoration: underline; color: #1f3d7a;}
 
 #payout-history:hover {color: red; text-decoration: underline; text-transform: uppercase;}
 /*-------------------side navigation bar--------------------*/
@@ -91,6 +91,7 @@ hr {
   display: flex;
   list-style: none;
   font-size: 20;
+  margin-bottom: -60px;
 }
 
 li  {
@@ -140,7 +141,7 @@ li  {
 
 .push {
   margin-left: auto;
-  /*top: 15px;*/
+  top: 15px;
 }
 
 .last {
@@ -155,7 +156,7 @@ li  {
   border: 2px solid #ced4da; 
   width: 180px;
   position: relative;
-  top: -20px;
+  top: -21px;
 }
 
 input:focus{

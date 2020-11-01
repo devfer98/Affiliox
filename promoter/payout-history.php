@@ -23,9 +23,11 @@
         <li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
         <li class="last">
           <select>
-            <option value="sign in">Sign In</option>
-            <option value="login">Login</option>
-            <option value="logout">Logout</option>
+              <select name="direction" onchange="location = this.value;">
+              <option value="../index.php">SELECT</option>
+              <option value="../index.php">Logout</option>
+              <option value="">Login</option>
+          </select>
           </select>
         </li>
       </ul>

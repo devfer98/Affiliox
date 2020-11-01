@@ -23,10 +23,10 @@
 				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li> -->
 				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
 				<li class="last">
-					<select>
-						<option value="sign in">Sign In</option>
-						<option value="login">Login</option>
-						<option value="logout">Logout</option>
+					<select name="direction" onchange="location = this.value;">
+						<option value="../index.php">SELECT</option>
+						<option value="../index.php">Logout</option>
+						<option value="">Login</option>
 					</select>
 				</li>
 			</ul>
@@ -37,7 +37,7 @@
 	<div class="container">
 		<h2><i class="fas fa-money-check-alt"></i>&nbsp; &nbsp;Balance Withdrawal</h2>
 
-		<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. <a id="payout-history" href="payout-history.php">Click Here</a></p>
+		<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. <a id="payout-history" href="payout-history.php">CLICK HERE</a></p>
 
 		<div class="money-withdrawal-form">
 			<form>

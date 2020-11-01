@@ -184,16 +184,20 @@ input:focus{
 
 /*-------------------Inner content-------------------*/
 table {
+  position: relative;
+  top: 40px;
   font-family: 'Open Sans', sans-serif;
   margin-top: 60px;
   margin: 0 auto;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem; 
 }
 
 table td {
   padding: 35px;
   border-bottom: 1px solid #ddd;
   font-size: 17px;
-  width: 250px;
+  width: 350px;
 }
 
 #td-1 {
@@ -211,7 +215,7 @@ form input  {
     background-color: #28a745;
     border-color: #28a745;
     cursor: pointer;
-    margin: 50px 0 50px 250px; 
+    margin: 80px 0 50px 150px; 
 }
 
 form input:hover {
@@ -241,6 +245,34 @@ form input:hover {
 }
 
 /*--------------------responsive media queries--------------------*/
+@media screen and ( max-width: 1175px;){
+    .container { margin: auto; padding: 10px; width: 100%;}
+
+  .container h2 {text-align: center;}  /*align title to the center of the page*/
+
+  form input { margin: auto; padding: 10px; width: 100%; } 
+
+  header {  padding: 30px;}
+
+ .logo-name {position: relative; left: 500px;}
+
+ .item {
+  position: relative; top: 50px; margin-left: -150px; margin-right: 150px; margin-top: 25px; margin-bottom: 25px;
+ }
+
+ .push {position: relative; top: 50px; margin-top: 25px; margin-bottom: 25px;}
+
+ .last {
+  position: relative; top: 50px; margin-top: 25px; margin-bottom: 25px;
+ }
+
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 800px){
 
@@ -249,6 +281,16 @@ form input:hover {
   .container h2 {text-align: center;}  /*align title to the center of the page*/
 
   form input { margin: auto; padding: 10px; width: 100%; } 
+
+  header {  padding: 30px;}
+
+  .item a {position: relative;  top: 60px; display: grid; width: 150px; 
+            margin-left: -315px;margin-right: 310px; margin-bottom: 50px; 
+          }
+
+         
+
+   .logo-name a { position: relative; margin: 100%;  }
 
 }
 

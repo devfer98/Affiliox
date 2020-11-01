@@ -23,10 +23,10 @@
 				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li> -->
 				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
 				<li class="last">
-					<select>
-						<option value="sign in">Sign In</option>
-						<option value="login">Login</option>
-						<option value="logout">Logout</option>
+					<select name="direction" onchange="location = this.value;">
+						<option value="../index.php">SELECT</option>
+						<option value="../index.php">Logout</option>
+						<option value="">Login</option>
 					</select>
 				</li>
 			</ul>
@@ -37,7 +37,7 @@
 	<div class="container">
 		<h2><i class="fas fa-user"></i>&nbsp; &nbsp; Edit Profile Details</h2>
 		<div class="inner-part">
-			<form action="" method="post">
+			<form action="promoter-dashboard.php" method="post">
 				<table>
 					<tr>
 						<td id="td-1">Your ID:</td>
@@ -79,11 +79,8 @@
 						<td id="td-1">Phone Number:</td>
 						<td id="td-2"><input type="number" name="phoneNo" placeholder="000-0000000" pattern="[0]{1}[7]{1}[0-9]{1}-[0-9]{3}-[0-9]{4}"></td>
 					</tr>
-					<tr>
-						<td id="td-1"></td>
-						<td id="td-2"><input type="submit" name="submit" value="Submit" id="td-3"></td>
-					</tr>
 				</table>
+				<input type="submit" name="submit" value="Submit" class="btn">
 			</form>						
 		</div><!-- inner-part -->
 

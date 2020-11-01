@@ -185,16 +185,20 @@ input:focus{
 
 /*-------------------Inner content-------------------*/
 table {
+  position: relative;
+  top: 50px;
   font-family: 'Open Sans', sans-serif;
   margin-top: 60px;
   margin: 0 auto;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem; 
 }
 
 table td {
   padding: 15px;
   border-bottom: 1px solid #ddd;
   font-size: 17px;
-  width: 200px;
+  width: 300px;
 }
 
 #td-1 {
@@ -232,9 +236,15 @@ input:focus{
   box-shadow: 0 0 10px #719ECE;
 }
 
-#td-3:hover {
-    background-color:#28a745;
-    color: white;
+.btn {
+  position: relative;
+  margin: 90px 0 60px 150px;
+}
+
+.btn:hover {
+    background-color:white;
+    color: #28a745;
+    border: 1px solid #28a745;
 }
 /*--------------------footer-tag--------------------*/
 .footer {
