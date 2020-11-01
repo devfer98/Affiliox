@@ -1,0 +1,435 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+
+}
+div{
+
+  -webkit-box-sizing: border-box; 
+ 
+ 
+
+/*
+    -webkit-box-sizing: border-box; 
+   border: 1px solid black;
+        
+
+*/
+} 
+.bor2{
+  border:0.5px solid rgb(158, 40, 40)
+}
+
+.bor3{
+  border:0.5px solid rgb(50, 216, 16)
+}
+.border{
+  -webkit-box-sizing: border-box; 
+  border:0.5px solid rgb(162, 162, 162)
+}
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+    
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+.fitcontent{
+    min-width: fit-content;
+}
+.container2 {
+  width: 100%;
+  /* padding-right: 15px;
+  padding-left: 15px; */
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 2px solid green; */
+}
+
+
+.container {
+    width: 100%;
+   
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 2px solid green; */
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.col1 {
+    margin: auto;
+    padding: 10px;
+    width: 8.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.sm-1 {
+  margin: auto;
+  padding: 10px;
+  width: 8.333333%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+.col2 {
+    margin: auto;
+    padding: 10px;
+    width: 16.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.sm-2 {
+  margin: auto;
+  padding: 10px;
+  width: 16.666667%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+.col3 {
+    margin: auto;
+    padding: 10px;
+    width: 25%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col4 {
+    margin: auto;
+    padding: 10px;
+    width: 33%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col5 {
+    margin: auto;
+    padding: 10px;
+    width: 41.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col6 {
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col7 {
+    margin: auto;
+    padding: 10px;
+    width: 58.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+  
+.col8 {
+    margin: auto;
+    padding: 10px;
+    width: 66.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col9 {
+    margin: auto;
+    padding: 10px;
+    width: 75%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+.sm-9 {
+  margin: auto;
+  padding: 10px;
+  width: 75%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+
+.col10 {
+    margin: auto;
+    padding: 10px;
+    width: 83.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+
+.sm-10 {
+  margin: auto;
+  padding: 10px;
+  width: 83.333333%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+.col11 {
+    margin: auto;
+    padding: 10px;
+    width: 91.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col12 {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.fullWidth{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.lm-half-width{
+  width:50%;
+}
+h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+
+  .h2{
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+
+  .h3 {
+    font-size: 1.375rem;
+  }
+  
+  h4 {
+    font-size: 1.125rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-regular {
+    font-weight: 400;
+  }
+  
+  .font-heavy {
+    font-weight: 700;
+  }
+  
+  /* POSITIONING */
+  
+  .left {
+    text-align: left;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+  .center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .justify {
+    text-align: justify;
+  }
+  .bot-margin{
+    margin-bottom: 220px;
+  }
+  .hidden-sm {
+    display: block;
+  }
+
+  .hidden-xm{
+    display:none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    [class*="col"] {
+        width: 100%;
+        padding: 0px;
+      }
+
+      .hidden-xm{
+        display:block;
+      }
+    .nav-bar ul a{
+        display: block;
+    }
+    .nav-bar ul input{
+        width: 100%;
+    }
+    .hidden-sm {
+        display:none;
+      }
+    .account-btn a{
+        display: block;
+        width: 100%;
+    }
+    .account-btn ul a{
+      padding-left: 0%;
+    }
+    textarea{
+      width: 100%;
+  }
+  .sm-text-width textarea{
+    width: 80%;
+  }
+
+  .sm-width{
+    width: 60%;
+    
+  }
+  .half-width{
+    width:50%;
+  }
+  .signin input{
+    width: 100%;
+    }
+  
+  
+
+    .marginl100{
+      margin-left:0px ;
+    }
+    .marginr100{
+      margin-right: 0px;
+    }
+    .sm-center{
+      text-align: center;
+    }
+
+    .col12{
+      padding-bottom:10px;
+    }
+} 
+
+@media screen and (max-width: 810px){
+
+  [class*="col"] {
+    width: 100%;
+    padding: 0px;
+  }
+.nav-bar ul a{
+    display: block;
+}
+.nav-bar ul input{
+    width: 100%;
+}
+.hidden-sm {
+    display:none;
+  }
+  .hidden-xm{
+    display:block;
+  }
+.account-btn a{
+    display: block;
+    width: 100%;
+}
+.account-btn ul a{
+  padding-left: 0%;
+}
+textarea{
+  
+  width: 100%;
+}
+.sm-text-width textarea{
+width: 80%;
+}
+
+.sm-width{
+width: 60%;
+}
+.half-width{
+width:50%;
+}
+.signin input{
+width: 100%;
+}
+
+.marginl100{
+  margin-left:0px ;
+}
+.marginr100{
+  margin-right: 0px;
+}
+.sm-center{
+  text-align: center;
+}
+
+.col12{
+  padding-bottom:10px;
+}
+
+}
+
+
+@media screen and (max-width: 900px){
+
+.mm-fullwidth{ 
+    width: 100%;
+    padding: 1px;
+}
+
+}
+
