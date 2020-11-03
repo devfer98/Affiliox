@@ -28,7 +28,7 @@ header {
 header .open-btn {
   float: left;
   position: relative;
-  top: 25px;
+  top: 40px;
   margin-left: 80px;
   margin-right: 50px;
 }
@@ -100,11 +100,18 @@ li  {
   letter-spacing: 1px;
 }
 
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
 .item  {
   position: relative;
-  left: 100px;
-  top: 16px;
+  left: 70px;
+  top: 20px;
 }
+
 
 .item  a {
   text-decoration: none;

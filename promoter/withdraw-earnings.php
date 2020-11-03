@@ -3,7 +3,7 @@
 <head>
 	<title>Withdraw Earnings</title>
 	<link rel="stylesheet" type="text/css" href="css/withdraw-earnings-css.css">
-	<link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
+	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 			<div class="open-btn" onclick="openNav()">&#9776;</div>
 			<nav class="top-nav">
 			<ul class="main-nav">
-				<li class="logo-name"><a href="">Affiliox</a></li>
+				<li class="logo"><a href="index.php" style="border: none;"><img src="../images/SideLogo.png"></a></li>
 				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
 				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
 				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
@@ -40,32 +40,23 @@
 		<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. <a id="payout-history" href="payout-history.php">CLICK HERE</a></p>
 
 		<div class="money-withdrawal-form">
-			<form>
+			<form action="withdraw-earnings.php" method="post">
 				<table>
-				<tr>
-					<td>Tansfer Method :</td>
-					<td>
-						<select>
-							<option value="">Select Payout Method</option>
-							<option value="paypal">Paypal</option>
-							<option value="BT">Bank Transfer</option>
-						</select>
-					</td>
-				</tr>
 					<tr>
 						<td>Current Amount :</td>
 						<td>26.14 $USD</td>
 					</tr>
 					<tr>
 						<td>Change Amount :</td>
-						<td><input type="text" name="amount" required="" placeholder="$ 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a"></td>
+						<td><input type="number" name="ammount" required="" placeholder="$ 00.00"
+						 id="c-a" required="" step="0.01"></td>
 					</tr>
 				<tr>
 					<td>
-						<input type="submit" name="submit" value="Submit">
+						<button type="submit" name="submit" onclick="return confirm('Are you want to actually transfer this amount ?')">Submit</button>
 					</td>
 					<td>
-						<input type="reset" name="reset" value="Reset">
+						<button type="reset">Reset</button>
 					</td>
 				</tr>
 			</table>
@@ -96,3 +87,5 @@
 
 </body>
 </html>
+
+

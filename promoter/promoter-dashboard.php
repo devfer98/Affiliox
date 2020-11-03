@@ -1,30 +1,8 @@
-<?php require_once('../include/connection.php'); ?>
-
-<?php 
-	
-
-	$promoter_details = '';
-
-	//getting the details of the registerd user
-	$query = "SELECT * FROM promoter WHERE userID = '{userID}' ";
-	$details 	= mysqli_query($connection, $query);
-
-	if ($details) {
-		while ($detail = mysqli_fetch_assoc($details)) {
-
-		}
-	} else {
-		echo "Database query error";
-	}
-
- ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Promoter Dashboard</title>
-	<link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
+	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/promoter-dashboard-css.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
@@ -37,7 +15,7 @@
 			<div class="open-btn" onclick="openNav()">&#9776;</div>
 			<nav class="top-nav">
 			<ul class="main-nav">
-				<li class="logo-name"><a href="">Affiliox</a></li>
+				<li class="logo"><a href="index.php" style="border: none;"><img src="../images/SideLogo.png"></a></li>
 				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
 				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
 				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
@@ -63,11 +41,11 @@
 			<table>
 				<tr>
 					<td id="td-1">Your Name :</td>
-					<td><?php $promoter_details = "{$detail['name']};</td>"?></td>
+					<td>kko</td>
 				</tr>
 				<tr>
 					<td id="td-1">Date of Birth :</td>
-					<td><?php $promoter_details = "{$detail['dob']}"; ?></td>
+					<td>kok</td>
 				</tr>
 				<tr>
 					<td id="td-1">Account ID :</td>
@@ -90,7 +68,7 @@
 					<td>Sample state is here</td>
 				</tr>
 
-				<?php echo $promoter_details; ?>
+				
 
 			</table>
 
@@ -124,4 +102,4 @@
 </body>
 </html>
 
-<?php mysqli_close($connection) ?>
+

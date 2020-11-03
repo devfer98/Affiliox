@@ -1,80 +1,35 @@
-<?php require_once('../include/connection.php'); ?>
+<?php require_once('include/connection.php'); ?>
 
 <?php 
 
-	$errors = array();
-		$name = '';
-		$aLine1 = '';
-		$aLine2 = '';
-		$city = '';
-		$country = '';
-		$status = '';
-		$dob = '';
-		$email = '';
-		$phoneNo = '';
-		$password = '';
-
-
 	if (isset($_POST['submit'])) {
 		
-		$name = $_POST['name'];
-		$aLine1 = $_POST['aLine1'];
-		$aLine2 = $_POST['aLine2'];
-		$city = $_POST['city'];
-		$country = $_POST['country'];	
-		$status = $_POST['status'];
-		$dob = $_POST['dob'];
-		$email = $_POST['email'];
-		$phoneNo = $_POST['phoneNo'];
-
-		//----check email address alreaduy exists----//
-		
-		//prevent query injection//
+		$name = mysqli_real_escape_string($connection, $_POST['name']);
 		$email = mysqli_real_escape_string($connection, $_POST['email']);
-		$query = "SELECT * FROM promoter WHERE $email = '{$email}' LIMIT 1";
-		$result_set = mysqli_query($connection, $query);
+		$phoneNo = mysqli_real_escape_string($connection, $_POST['phoneNo']);
+		$dob = mysqli_real_escape_string($connection, $_POST['dob']);
+		$status = mysqli_real_escape_string($connection, $_POST['status']);
+		$aLine1 = mysqli_real_escape_string($connection, $_POST['aLine1']);
+		$aLine2 = mysqli_real_escape_string($connection, $_POST['aLine2']);
+		$city = mysqli_real_escape_string($connection, $_POST['city']);
+		$country = mysqli_real_escape_string($connection, $_POST['country']);
+		$gender = mysqli_real_escape_string($connection, $_POST['gender']);
+		$password = mysqli_real_escape_string($connection, $_POST['password']);
+		$hashed_password = sha1($password);
 
-		if ($result_set) {
-			if (mysqli_fetch_assoc($result_set) == 1) {
-				$errors = 'Email address already exists';
-			}
-		}//----check email address alreaduy exists----//
+		$query = "INSERT INTO promoter (name, email, phoneNo, dob, status, aLine1, aLine2, city, country, gender, password) VALUES ('{$name}', '{$email}', '{$phoneNo}', '{$dob}', '{$status}', '{$aLine1}', '{$aLine2}', '{$city}', '{$country}', '{$gender}', '{$hashed_password}')";
 
-		//If there are not any errors
-		if (empty($errors)) {
-			//prevent query injection//
-			$name = mysqli_real_escape_string($connection, $_POST['name']);
-			$aLine1 = mysqli_real_escape_string($connection, $_POST['aLine1']);
-			$aLine2 = mysqli_real_escape_string($connection, $_POST['aLine2']);
-			$city = mysqli_real_escape_string($connection, $_POST['city']);
-			$country = mysqli_real_escape_string($connection, $_POST['country']);
-			$gender = mysqli_real_escape_string($connection, $_POST['gender']);
-			$status = mysqli_real_escape_string($connection, $_POST['status']);
-			$dob = mysqli_real_escape_string($connection, $_POST['dob']);
-			$phoneNo = mysqli_real_escape_string($connection, $_POST['phoneNo']);
-			$password = mysqli_real_escape_string($connection, $_POST['password']);
-			$hashed_password = sha1($password);
+		$result = mysqli_query($connection, $query);
 
-			//create insert query
-			$query = "INSERT INTO promoter ( ";
-			$query .= "name, aLine1, aLine2, city, country, gender, status, dob, email, phoneNo, password";
-			$query .= ") VALUES (";
-			$query .= "'{$name}', '{$aLine1}', '{$aLine2}', '{$city}', '{$country}', '{$gender}', '{$status}', '{$dob}', '{$email}', '{$phoneNo}', '{$hashed_password}'";
-			$query .= ")";
-
-			$result = mysqli_query($connection, $query);
-
-
-			if ($result) {
-				//if query successfull redirec to the dashboard
-				header('Location:promoter-dashboard.php?promoter_added=true?');
-			} else {
-				$error[] = 'Fail to add the new record'; 
-			}
+		if ($result) {
+			header('Location:promoter-dashboard.php');
 		}
+
 	}
 
+
  ?>
+	
 
 
 <!DOCTYPE html>
@@ -115,47 +70,47 @@
 		<form action="promoter-reg.php" method="post">
 			<table>
 				<tr>
-					<td>Full Name</td>
+					<td colspan="2">Full Name</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="text" name="name" placeholder="Your full name" autofocus="" <?php echo 'value="' . $name . '"'; ?> ></td>
+					<td colspan="2"><input type="text" name="name" placeholder="Your full name"></td>
 				</tr>
 				<tr>
 					<td>Email</td>
 					<td>Phone Number</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="email" id="email" placeholder="Your Email" <?php echo 'value="' . $email . '"'; ?> ></td>
-					<td><input type="telephone" name="phoneNo" placeholder="Phone Number" <?php echo 'value="' . $phoneNo . '"'; ?> ></td>
+					<td><input type="text" name="email" placeholder="Your Email"></td>
+					<td><input type="text" name="phoneNo" placeholder="Phone Number"></td>
 				</tr>
 				<tr>
 					<td>Date of Birth</td>
 					<td>Material Status</td>
 				</tr>
 				<tr>
-					<td><input type="date" name="dob" <?php echo 'value="' . $dob . '"'; ?> ></td>
+					<td><input type="date" name="dob"></td>
 
-					<td><input type="text" name="status" placeholder="Material Status" <?php echo 'value="' . $status . '"'; ?> ></td>
+					<td><input type="text" name="status" placeholder="Material Status"></td>
 				</tr>
 				<tr>
 					<td colspan="2">Address Line 1</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="text" name="aLine1" placeholder="Address Line 1" <?php echo 'value="' . $aLine1 . '"'; ?> ></td>
+					<td colspan="2"><input type="text" name="aLine1" placeholder="Address Line 1"></td>
 				</tr>
 				<tr>
 					<td colspan="2">Address Line 2</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="text" name="aLine2" placeholder="Address Line 2" <?php echo 'value="' . $aLine2 . '"'; ?> ></td>
+					<td colspan="2"><input type="text" name="aLine2" placeholder="Address Line 2"></td>
 				</tr>
 				<tr>
 					<td>City</td>
 					<td>Country</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="city" placeholder="Current City" <?php echo 'value="' . $city . '"'; ?> ></td>
-					<td><input type="text" name="country" placeholder="Your Country" <?php echo 'value="' . $country . '"'; ?> ></td>
+					<td><input type="text" name="city" placeholder="Current City"></td>
+					<td><input type="text" name="country" placeholder="Your Country"></td>
 				</tr>
 				<tr>
 					<td colspan="2">Select Your Gender</td>
@@ -166,32 +121,32 @@
 				<tr>
 					<td>Female &nbsp;<input type="radio" name="gender" value="female"></td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td colspan="2">Channel Reference Link</td>
-				</tr>
-				<tr>
+				</tr> -->
+				<!-- <tr>
 					<td colspan="2"><textarea placeholder="Enter your promoting channel links"></textarea></td>
-				</tr>
-				<tr>
+				</tr> -->
+				<!-- <tr>
 					<td>Promoter Login Credentials</td>
 				</tr>
 				<tr>
 					<td colspan="2">User Name</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="text" name="name" placeholder="User Name" <?php echo 'value="' . $name . '"'; ?> ></td>
-				</tr>
+					<td colspan="2"><input type="text" name="" placeholder="User Name"></td>
+				</tr> -->
 				<tr>
 					<td>Password</td>
-					<td>Confirm Password</td>
+					<!-- <td>Confirm Password</td> -->
 				</tr>
 				<tr>
-					<td><input type="password" name="password" placeholder="*****"  id="typePassword" ></td>
-					<td><input type="password" name="password" placeholder="*****"  id="conPassword" ></td>
+					<td><input type="password" name="password"  id="typePassword" ></td>
+					<!-- <td><input type="password" name="password" placeholder="*****"  id="conPassword" ></td> -->
 				</tr>
 				<tr>
 					<td>Note:- Password must be less than 8 characters.</td>
-					<td><input type="checkbox" name="" onclick="passVisibility()"> &nbsp; Show password</td>
+					<!-- <td><input type="checkbox" name="" onclick="passVisibility()"> &nbsp; Show password</td> -->
 				</tr>
 				<tr id="btn">
 					<td><button type="submit" name="submit">Submit</button></td>
@@ -244,4 +199,4 @@
 </body>
 </html>
 
-<?php mysqli_close($connection) ?>
+<?php mysqli_close($connection); ?>

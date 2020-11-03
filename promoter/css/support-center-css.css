@@ -84,6 +84,7 @@ hr {
 }
 
 /*------------------main navigation---------------------------------*/
+
 .main-nav {
   display: flex;
   list-style: none;
@@ -104,10 +105,17 @@ li  {
   letter-spacing: 1px;
 }
 
+
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
 .item  {
   position: relative;
-  left: 100px;
-  top: 16px;
+  left: 70px;
+  top: 20px;
 }
 
 .item  a {
@@ -183,7 +191,6 @@ input:focus{
   font-family: 'Open Sans', sans-serif;
   border-radius: 0.25rem;
 }
-
 
 /*-------------------Inner content-------------------*/
 .inner-part {
