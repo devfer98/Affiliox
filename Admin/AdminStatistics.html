@@ -3,42 +3,77 @@
 <head>
   <title>Admin Statistics</title>
   <link rel="stylesheet" type="text/css" href="css/adminstatistics.css">
-  <link rel="stylesheet" type="text/css" href="../css/common.css" />
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <link rel="stylesheet" type="text/css" href="../customer/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../customer/css/customer-grid.css" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="../js/Signin.js"></script>
+  <script type="text/javascript" src="../js/nav-fixed.js"></script>
+  <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="js/promoter-statistics-js.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
-  	<!-------------- Top-Navigation-Bar ---------------------->
-	<div class="container">
-		<div class="nav-bar row center">
-			<div class="col2">
-				<a href="../index.html"><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
+  	<!---Navigation bar-------------------------------------------->
+		<div class="container">
+			<div class="backcolor"> 
+			  <div class="row hidden-xm marginb100 backcolor">
+			  <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
+				  
+				<div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+				<div class="sm-9">
+				  <a href="../index.html"><img src="../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+				</div>
+				<div class="sm-2 ">
+				  <div class="selector margint20">
+					<select>
+					  <option value="sign in">Sign In</option><br/>
+					  <option value="login">Login</option><br/>
+					</select>
+				  </div>
+				</div>
+				
+		
+			  </div>
 			</div>
-
-			<div class="col6 center">
-				<ul>
+			  <div class=" nav-bar center backcolor">
+				<div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
+				<div class="col2 hidden-sm">
+				  <a href="../index.html"><img src="../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+				</div>
+		
+				<div class="col4 center">
+				  <ul>
 					<a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
-					<a href=""><i class="fas fa-address-card"></i>&nbsp;About Us</a>
+					<a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
 					<a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
 					<a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
-					<a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
-				</ul>
-			</div>
-
-			<div class="col4 search fitcontent center">
-				<ul>
+				  </ul>
+				</div>
+		
+				<div class="col4 search fitcontent center">
+				  <ul>
 					<input type="text" name="search" placeholder="Headsets" />
-					<a href="">&nbsp;<i class="fas fa-search"></i></a>
-				</ul>
-			</div>
-		</div>
-        <hr>    
+					<a href=""><i class="fas fa-search"></i></a>
+				  </ul>
+				</div>
+				<div class="col1 hidden-sm ">
+				  <div class="selector margint20">
+					<select>
+					  <option value="sign in">Sign in</option><br/>
+					  <option value="login">Login</option><br/>
+		
+					</select>
+				  </div>
+		
+				</div>
+				<div class="row">
+					<div class="col12 fullwidth">
+				  <hr>
+					</div>
+				  
+			  </div>
+			</div> 
     <div class="container">
       <h2>&nbsp;<i class="fas fa-chart-line"></i>&nbsp; &nbsp;Admin Statistics</h2>
         
@@ -103,60 +138,78 @@
 				<hr/>
 			</div>
 		</div>
-		<div class="row bottom-part">
-			<div class="col4 hidden-sm center">
-				<a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
-			</div>
-
-			<div class="col2">
-				<ul>
-					<p>Main Menu</p>
-					<a href="">Affiliox Home</a>
-					<a href="">About us</a>
-					<a href="">Help</a>
-					<a href="">Account</a>
-				</ul>
-			</div>
-			<div class="col2">
-				<ul>
-					<p>Company</p>
-					<a href="">Address</a>
-					<a href="">Email</a>
-					<a href="">Help</a>
-					<a href="">Account</a>
-				</ul>
-			</div>
-			<div class="col2">
-				<ul>
-					<p>Discover</p>
-					<a href="">Home</a>
-					<a href="">About us</a>
-					<a href="">Help</a>
-					<a href="">Account</a>
-				</ul>
-			</div>
-			<div class="col2">
-				<ul>
-					<p>Find Us on</p>
-					<a href="">Facebook</a>
-					<a href="">Twitter</a>
-					<a href="">Instagram</a>
-					<a href="">Youtube</a>
-				</ul>
-			</div>
-		</div>
-
+		<!-- bottom-part-------------------------------------------->
 		<div class="row">
-			<div class="col12 company-address">
-				<ul>
-					<li>© All Right reserved</li>
-					<li>Affiliox 2020 ™</li>
-				</ul>
+			<div class="col12 fullwidth">
+		  <hr>
 			</div>
+		  
+	  </div>
+	  <div class="row center backcolor">
+  
+		
+		<div class=" col3 img-span hidden-sm">
+		  <td ><img src="../images/SideLogo.png"  width='200'></td>
 		</div>
+  
+		<div class="col9  nav-bar center">       
+	  <table class="row center sm-table">
+		  <tr class="thead center">
+		  
+		  <td>Main Menu</td>
+		  <td>Find us On</td>
+		  <td>Contact us</td>
+		</tr>
+	  
+		<tr>
+		  <!-- <td></td> -->
+		  <td><a href="">About Affiliox <i class="fas fa-users"></i></a></td>
+		  <td><a href=""></i>FaceBook <i class="fab fa-facebook-f"></i></a></td>
+		  <td>Address: Sri Lanka.</td>
+		</tr>
+		<tr>
+		  <!-- <td></td> -->
+		  <td><a href="">Help & Support <i class="fas fa-question-circle"></a></td>
+		  <td><a href="">Twitter <i class="fab fa-twitter"></i></a></td>
+		  <td>Phone: 011-1234567</td>
+		</tr>
+		<tr>
+		  <!-- <td></td> -->
+		  <td><a href="">Privacy & Policy <i class="fas fa-shield-alt"></i></a></td>
+		  <td><a href="">Youtube <i class="fab fa-youtube"></i></a></td>
+		  <td>Email: affiliox@gmail.com</td>	
+		</tr>
+  
+	  </table>
+	  </div> 
+	  
+	   </div>  
+	   <!-- bottom-part -->
+  
+	   <div class="row footer backcolor paddingt20">
+		
+		<ul>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</li>
+			<li> Affiliox &trade;</li>
+		</ul>
+  </div>	 <!-- footer -->
+  
+</div>
+
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="AdminDashboard.html">Dashboard<i class='fas fa-ellipsis-h'></i></a>
+	<a href="AdminProfile.html">User Profile<i class="far fa-user"></i></a>
+	<a href="ManageAccount.html">Manage Accounts<i class='fas fa-user-cog'></i></a>
+	<a href="AdminStatistics.html">Statistics<i class="fas fa-chart-line"></i></i></a>
+	<a href="ReviewFeedback.html">Review Feedback<i class='fas fa-comments'></i></a>
+</div>
+<span onclick="openNav()"></span>
 
 
-	</div>
-
+</div>
+<!--Container------------------------------------------>
 </body>
+
 </html>
