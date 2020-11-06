@@ -77,7 +77,7 @@
 					</tr>
 					<tr>
 						<td id="td-1">Phone Number:</td>
-						<td id="td-2"><input type="number" name="phoneNo" placeholder="000-0000000" pattern="[0]{1}[7]{1}[0-9]{1}-[0-9]{3}-[0-9]{4}"></td>
+						<td id="td-2"><input type="telephone" name="phoneNo" placeholder="000-0000000"></td>
 					</tr>
 				</table>
 				<input type="submit" name="submit" value="Submit" class="btn">
