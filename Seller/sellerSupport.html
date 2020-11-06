@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Accounts</title>
+	<title>Add Product</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="../css/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="css/manage.css">
-	<script src="js/tabs.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
 	<script src="../js/common-dashboard.js"></script>
@@ -20,59 +18,61 @@
 			<li><a href="">Affiliox</a></li></a>
 			<li style="float: right;">user-name</li>
 		</ul>
-		<br/><br/>
-		<hr>
+		<div class="row">
+            <hr class="col12"/>
+        </div>
+		
+		<!-- <div class="Reg-container"> -->
 		<div class="row">
 			<div class="col12 center title">
-				<p>Manage Accounts</p>
+				<p>Add Product</p>
+				<!-- <hr> -->
 			</div> 
+				<!------------------Seller Registration Form------------------->
 		</div>
-		
-		<div class="heading">
-        <p>&nbsp; <i class='fas fa-user-cog'></i> Manage Accounts &nbsp;
-		<button type="submit" value="submit"><a href="AddAdmin.html">Add New Admin</a></button></p>
+		<div class="row row-padding">	
+			<div class="col8 col-center inner-part inp">
+			<form>
+				<!-- <div class= "inp"> -->
+				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
+				<div class="row col6 padding">
+				<label for="fname"> &nbsp;Name</label><br>
+				<input type="text" id="fname" name="fullname" placeholder="">
+				</div>
+				<div class="row col8 padding">
+				<label for="lname">&nbsp; Description</label><br>
+				<textarea id="email" name="email" placeholder=""></textarea>
+                </div>
+                <div class="row">
+				<div class="col6 fitcontent padding">
+				<label for="phn-no">&nbsp; Quantity</label><br>
+				<input type="text" id="phn-no" name="phn-no" placeholder="">
+				</div>
+				<div class="col6 padding">
+				<label for="dob">&nbsp; Price</label><br>
+				<input type="text" id="Birth" name="dob" placeholder="">
+                </div>
+                </div>
+				<!------------------Address section------------------->
+				<div class="row col6 padding">
+				<label for="Address">Commission Rate</label><br>
+				<input type="text" id="line1" name="aline1" placeholder="">
+				</div>
+				<div class="row col6 padding">
+				<label for="Address">Images</label><br>
+				<input type="file" id="line2" name="aline2" placeholder=""><br>
+				</div>
+
+				<!-- </div> -->
+			<!------------------Buttons------------------->
+				<div class="row col12 padding">
+					<button class="center" type="submit" value="submit">Save</button>	
+				</div>
+			<!-- </div> -->
+			</form>
+			</div>
 		</div>
-		<br/><br/>
-		<div class="body">
-			<table>
-				<tr>
-					<th>Full Name</th>
-					<th>UserID</th>
-					<th>Email</th>
-					<th>MobileNo</th>
-					<th>Position</th>
-				</tr>
-				<tr>
-					<td>Peter</td>
-					<td>user1</td>
-					<td>peter@gmail.com</td>
-					<td>0771122333</td>
-					<td>IT Consultant</td>
-				</tr>
-				<tr>
-					<td>Griffin</td>
-					<td>user2</td>
-					<td>griffin@gmail.com</td>
-					<td>0751100222</td>
-					<td>Database Administrator</td>
-				</tr>
-				<tr>
-					<td>Lily</td>
-					<td>user3</td>
-					<td>lily@gmail.com</td>
-					<td>0778899666</td>
-					<td>IT Consultant</td>
-				</tr>
-				<tr>
-					<td>John</td>
-					<td>user4</td>
-					<td>john@gmail.com</td>
-					<td>0755566333</td>
-					<td>Admin</td>
-				</tr>
-			</table>
-		</div>	
-		<br/><br/><br/><br/>			
+
 		<div class="row row-padding">
 			<hr class="col12"/>
 	    </div>
@@ -133,11 +133,14 @@
 	</div> 
 	<div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="AdminDashboard.html">Dashboard<i class='fas fa-ellipsis-h'></i></a>
-  		<a href="AdminProfile.html">User Profile<i class="far fa-user"></i></a>
-  		<a href="ManageAccount.html">Manage Accounts<i class='fas fa-user-cog'></i></a>
-  		<a href="AdminStatistics.html">Statistics<i class="fas fa-chart-line"></i></i></a>
-  		<a href="#">Review Feedback<i class='fas fa-comments'></i></a>
+  		<a href="#">User profile<i class="far fa-user"></i></a>
+  		<a href="#">Mini Store<i class="fas fa-store"></i></a>
+  		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
+  		<a href="#">Statstics<i class="fas fa-chart-line"></i></i></a>
+		<a href="#">View Orders<i class="fas fa-chart-line"></i></i></a>
+  		<a href="#">Transactions<i class="fas fa-money-check-alt"></i></a>
+  		<a href="#">Feedback<i class="fas fa-phone-square"></i></i></a>
+  		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
 	</div>
 	<span onclick="openNav()"></span>
 

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seller Profile</title>
+	<title>Seller Feedback</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
 	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="css/sellerFeedback.css">
+	<link rel="stylesheet" type="text/css" href="css/market.css">
+	<link rel="stylesheet" type="text/css" href="css/sellerProfile.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/sellerFeedback.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
 	<script src="../js/common-dashboard.js"></script>
@@ -23,15 +25,12 @@
 		<div class="row row-padding">
 			<hr class="col12"/>
 		</div>
-		<div class="col8 col-center inner-part">
-			<h2><i class="far fa-comment-dots"></i>&nbsp; &nbsp;Review Feedback</h2>
+		<div class="row row-padding">	
+			<div class="col12 center title">
+				<p>Review Feedbacks</p>
+			</div>  <!-- top -->
 
-			<div class="top">
-				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</h4>
-			</div> <!-- top -->
-
-			<div class="overall-review">
+			<div class="feedback row col8 col-center inner-part">
 				<table id="overall-review-table">
 				<tr>
 					<th>Value</th>
@@ -59,115 +58,71 @@
 					<td>10%</td>
 					</tr>
 					<tr>
-					<td>Bad</td>
-					<td style="color: red;">Not Rated</td>
-					<td>5%</td>
+					<td style="border: none;">Bad</td>
+					<td style="color: red;border: none;">Not Rated</td>
+					<td style="border: none;">5%</td>
 					</tr>
 				</table>
-				</div> <!--overall-review -->
-				<br><br>
-				<div class="inner-line">
-				<p>Customer Reviews</p>
+			</div> <!--overall-review -->
+
+			<div class="col12 center title">
+				<p>Customer Reviews Feedbacks</p>
+			</div> 
+
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+			<form action="" method="post">
+				<div class="row col12">
+					<h3 class="center">John Smith</h3>
 				</div>
+				<div class="row">
+				<div class="col6 padding">
+					<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+				</div>
+				<div class="col6 padding fitcontent">
+					<label>Reply</label><br/>
+					<input type="text" id="Birth" name="dob" placeholder="">
+				</div>
+				</div>
+				<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
+			</form>
+			</div>
 
-			<div class="customer-review-1">
-
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
 				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">John Smith</th>
-					</tr>
-					<tr>
-					<td>Fantastic Store</td>
-					<td><textarea placeholder="Write Reply" name="reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="reply" value="Submit Reply"></td>
-					</tr>
-				</table>
+					<div class="row col12">
+						<h3 class="center">John Smith</h3>
+					</div>
+					<div class="row">
+					<div class="col6 padding">
+						<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+					</div>
+					<div class="col6 padding fitcontent">
+						<label>Reply</label><br/>
+						<input type="text" id="Birth" name="dob" placeholder="">
+					</div>
+					</div>
+					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
 				</form>
+			</div>
 
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
 				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">Smith Merry</th>
-					</tr>
-					<tr>
-					<td>Amaizing! Easy to search.</td>
-					<td><textarea placeholder="Write Reply" name="reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="reply" value="Submit Reply"></td>
-					</tr>
-				</table>
+					<div class="row col12">
+						<h3 class="center">John Smith</h3>
+					</div>
+					<div class="row">
+					<div class="col6 padding">
+						<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+					</div>
+					<div class="col6 padding fitcontent">
+						<label>Reply</label><br/>
+						<input type="text" id="Birth" name="dob" placeholder="">
+					</div>
+					</div>
+					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
 				</form>
-
-				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">Lilly Benjamin</th>
-					</tr>
-					<tr>
-					<td>Thanks a lot! Your support was incredibly helpful.</td>
-					<td><textarea placeholder="Write Reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="" value="Submit Reply"></td>
-					</tr>
-				</table>
-				</form>
-
-				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">Mark Benny</th>
-					</tr>
-					<tr>
-					<td>Very happy. Quick Deliver and communication</td>
-					<td><textarea placeholder="Write Reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="" value="Submit Reply"></td>
-					</tr>
-				</table>
-				</form>
-
-				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">James Mary</th>
-					</tr>
-					<tr>
-					<td>Thank you so much</td>
-					<td><textarea placeholder="Write Reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="" value="Submit Reply"></td>
-					</tr>
-				</table>
-				</form>
-
-				<form action="" method="post">
-				<table>
-					<tr>
-					<th colspan="2" id="cus-name">George</th>
-					</tr>
-					<tr>
-					<td>Fast and fabulous.</td>
-					<td><textarea placeholder="Write Reply" required=""></textarea></td>
-					</tr>
-					<tr>
-					<td></td>
-					<td><input type="submit" name="" value="Submit Reply"></td>
-					</tr>
-				</table>
-				</form>
-			</div> <!-- customer-review-1 -->
+			</div>
+			
 		</div>
 		<div class="row row-padding">
 			<hr class="col12"/>
