@@ -56,7 +56,7 @@
   }
 .nav-bar img{
 	margin-top: 14px;
-	float: left;
+	float: center;
 	width: 200px;
 }
 .open-btn {
@@ -94,6 +94,9 @@
 	width: 100%;
 	padding: px;
 	z-index: 400;
+	box-shadow:0px 3px 7px 0 rgba(0, 0, 0, 0.5);
+	padding-left: 0;
+	padding-right: 0;
 	
 
 
@@ -103,6 +106,7 @@ hr{
 	padding-left: 0;
 	padding-right: 0;
    }
+
 
 .hrCustom hr{
 	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.5);
@@ -118,7 +122,7 @@ hr{
 }
 /*-----------------------links buttons and inputs----------------*/
 
-.nav-bar ul a,button {
+.nav-bar ul a,button ,.icon {
 	border: 1px solid #28a745; 
 	margin:auto;
 	display:inline-flex;
@@ -136,7 +140,7 @@ hr{
 	background:rgb(255, 255, 255); 
 }
 
-.nav-bar ul a:hover , button:hover{
+.nav-bar ul a:hover , button:hover , .icon:hover{
 	
 	background: #28a745;
     opacity: 1;
@@ -245,6 +249,10 @@ hr{
 }
 .margint20{
 	margin-top: 20px;
+}
+
+.margint45{
+	margin-top: 45px;
 }
 .margint100{
 	

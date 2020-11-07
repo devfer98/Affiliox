@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="../../customer/css/common.css" />
   <link rel="stylesheet" type="text/css" href="../../customer/css/customer-grid.css" />
     <script type="text/javascript" src="../js/Signin.js"></script>
+    <script type="text/javascript" src="../../customer/js/nav-fixed.js"></script>
     <script
       src="https://kit.fontawesome.com/6cdc06033e.js"
       crossorigin="anonymous"
@@ -14,38 +15,68 @@
   <body>
     <!---Navigation bar-------------------------------------------->
     <div class="container">
-      <div class="nav-bar center">
-        <div class="col2">
-          <a href="../index.html"
-            ><img src="../images/LOGO.png" alt="Affiliox LOGO"
-          /></a>
-        </div>
-
-        <div class="col6 center">
-          <ul>
-            <a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
-            <a href=""><i class="fas fa-address-card"></i>&nbsp;About Us</a>
-            <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-            <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
-            <a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
-          </ul>
-        </div>
-
-        <div class="col4 search fitcontent center">
-          <ul>
-            <input type="text" name="search" placeholder="Headsets" />
-            <a href="">&nbsp;<i class="fas fa-search"></i></a>
-          </ul>
+      <div class="backcolor"> 
+        <div class="row hidden-xm marginb100 backcolor">
+        <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
+            
+          <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+          <div class="sm-9">
+            <a href="../index.html"><img src="../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+          </div>
+          <div class="sm-2 ">
+            <div class="selector margint20">
+              <select>
+                <option value="sign in">Sign In</option><br/>
+                <option value="login">Login</option><br/>
+              </select>
+            </div>
+          </div>
+          
+  
         </div>
       </div>
-
-      <div class="row">
-		  <div class="col12">
-        <hr>
-		  </div>
-        
-	  </div>
-	  
+        <div class=" nav-bar center backcolor">
+          <div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
+          <div class="col2 hidden-sm">
+            <a href="../index.html"><img src="../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+          </div>
+  
+          <div class="col4 center">
+            <ul>
+              <a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+              <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
+              <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
+              <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+            </ul>
+          </div>
+  
+          <div class="col4 search fitcontent center">
+            <ul>
+              <input type="text" name="search" placeholder="Headsets" />
+              <a href=""><i class="fas fa-search"></i></a>
+            </ul>
+          </div>
+          <div class="col1 hidden-sm ">
+            <div class="selector margint20">
+              <select>
+                <option value="sign in">Sign in</option><br/>
+                <option value="login">Login</option><br/>
+  
+              </select>
+            </div>
+  
+          </div>
+  
+  
+        </div>
+      
+        <div class="row">
+        <div class="col12 fullwidth">
+          <hr>
+        </div>
+          
+      </div>
+    </div>
 
 	<!-- Sign in --------------------------------------------->	
 	<div class="row ">
