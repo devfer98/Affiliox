@@ -16,7 +16,7 @@ h2 {
   border-bottom: 2px solid black;
 }
 
-
+html {font-family: 'Open Sans', sans-serif;}
 /*-------------------side navigation bar--------------------*/
 header {
   background: #fafafa;
@@ -30,7 +30,7 @@ header {
 header .open-btn {
   float: left;
   position: relative;
-  top: 25px;
+  top: 40px;
   margin-left: 80px;
   margin-right: 50px;
 }
@@ -63,6 +63,7 @@ hr {
   margin-bottom: 18px;
   transition: 0.3s;
 }
+
 .sidenav a i {
   margin-left: 10px;
 }
@@ -102,10 +103,17 @@ li  {
   letter-spacing: 1px;
 }
 
+
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
 .item  {
   position: relative;
-  left: 100px;
-  top: 16px;
+  left: 70px;
+  top: 20px;
 }
 
 .item  a {
@@ -181,17 +189,21 @@ input:focus{
   font-family: 'Open Sans', sans-serif;
   border-radius: 0.25rem;
 }
+
 /*-------------------Inner content-------------------*/
 #columnchart_values {
   margin-left: 100px;
 }
 
 .heading p {
+  border-bottom: 2px solid black; 
+  width: 200px;
   font-family: 'Open Sans', sans-serif;
+  margin-top: 50px;
   margin-bottom: 20px;
   font-weight: bold;
-  border-bottom: 2px solid black;
 }
+
 
 .heading table {
   border: 1px solid black;
@@ -210,6 +222,7 @@ input:focus{
   font-family: 'Open Sans', sans-serif;
   border-radius: .25rem;
   margin-left:auto;
+  margin-top: 50px;
   margin-right:auto;
   margin-bottom: 100px;
 }
@@ -223,6 +236,7 @@ input:focus{
 }
 
 .inner-part th {
+  background: #f5f5f6;
   padding: 20px;
   border-bottom: 2px solid black;
 }

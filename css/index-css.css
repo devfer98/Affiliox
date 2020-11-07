@@ -38,26 +38,15 @@ li  {
 }
 
 .logo img {
-	width: 100px;
-	height: 100px;
+	width: 200px;
 	position: relative;
-	left: 20px;
+	left: 70px;
 	
-}
-
-.logo-name a {
-	position: relative;
-	top: 12px;
-	color: #1f3d7a;
-	font-size: 50px;
-	text-decoration: none;
-	font-family: 'Bebas Neue', cursive;
-	letter-spacing: 1px;
 }
 
 .item  {
 	position: relative;
-	left: 30px;
+	left: 90px;
 	top: 28px;
 }
 

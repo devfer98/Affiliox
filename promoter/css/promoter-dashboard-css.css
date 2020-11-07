@@ -29,7 +29,7 @@ header {
 header .open-btn {
   float: left;
   position: relative;
-  top: 25px;
+  top: 40px;
   margin-left: 80px;
   margin-right: 50px;
 }
@@ -84,27 +84,23 @@ hr {
 .main-nav {
   display: flex;
   list-style: none;
-  font-size: 20;
+  font-size: 20px;
 }
 
 li  {
   padding: 15px;
 }
 
-.logo-name a {
-  /*position: relative;*/
-  /*top: 12px;*/
-  color: #1f3d7a;
-  font-size: 50px;
-  text-decoration: none;
-  font-family: 'Bebas Neue', cursive;
-  letter-spacing: 1px;
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px;
+  
 }
-
 .item  {
   position: relative;
-  left: 100px;
-  top: 16px;
+  left: 70px;
+  top: 20px;
 }
 
 .item  a {

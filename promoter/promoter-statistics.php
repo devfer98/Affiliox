@@ -4,11 +4,10 @@
   <title>Promoter Statistics</title>
   <link rel="stylesheet" type="text/css" href="css/promoter-statistics-css.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="js/promoter-statistics-js.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
   <!-------------- Top-Navigation-Bar ---------------------->
@@ -16,7 +15,7 @@
         <div class="open-btn" onclick="openNav()">&#9776;</div>
         <nav class="top-nav">
       <ul class="main-nav">
-        <li class="logo-name"><a href="">Affiliox</a></li>
+        <li class="logo"><a href="../index.php" style="border: none;"><img src="../images/SideLogo.png"></a></li>
         <li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
         <li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
         <li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
@@ -38,42 +37,7 @@
               
     <div class="container">
       <h2><i class="fas fa-chart-line"></i>&nbsp; &nbsp;Promoter Statistics</h2>
-        
-        <div id="columnchart_values">
-        <script type="text/javascript">
-            google.charts.load("current", {packages:['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-              var data = google.visualization.arrayToDataTable([
-                ["Element", "Amount", { role: "style" } ],
-                ["Total Promoted Items", 778.48, "#b87333"],
-                ["Total Sales", 567.98, "silver"],
-                ["Total Returns", 78.74, "gold"],
-                ["Most Selling Items", 354.12, "color: #e5e4e2"],
-                ["Net Income", 99.91, "color: #ddd"]
-              ]);
-
-              var view = new google.visualization.DataView(data);
-              view.setColumns([0, 1,
-                               { calc: "stringify",
-                                 sourceColumn: 1,
-                                 type: "string",
-                                 role: "annotation" },
-                               2]);
-
-              var options = {
-                title: "Statistic Methods, Amount in USD $",
-                width: 800,
-                height: 500,
-                bar: {groupWidth: "80%"},
-                legend: { position: "none" },
-              };
-              var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-              chart.draw(view, options);
-          }
-      </script>
-      </div>
-
+     
       <div class="heading">
         <p>Overall List Statistics</p>
            <table>
@@ -102,6 +66,7 @@
 
      <br><br>
      <div class="inner-part">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Consequuntur soluta, ab quod! Iure dolore est perspiciatis voluptatem corporis sed quas, excepturi mollitia possimus commodi, nobis maiores necessitatibus quo, aspernatur debitis!</p>
        <table>
          <tr>
            <th colspan="2" >Total Promoted Items</th>
@@ -185,6 +150,5 @@
       <a href="support-center.php">Support<i class="fas fa-envelope-open-text"></i></a>
   </div>
   <span onclick="openNav()"></span>
-
 </body>
 </html>

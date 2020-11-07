@@ -25,7 +25,6 @@ p {font-family: 'Open Sans', sans-serif;}
 
 header {
   background: #fafafa;
-  /*overflow: auto;*/
   /*padding: 20px;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 25px;
@@ -35,7 +34,7 @@ header {
 header .open-btn {
   float: left;
   position: relative;
-  top: 25px;
+  top: 40px;
   margin-left: 80px;
   margin-right: 50px;
 }
@@ -68,6 +67,7 @@ hr {
   margin-bottom: 18px;
   transition: 0.3s;
 }
+
 .sidenav a i {
   margin-left: 10px;
 }
@@ -91,11 +91,12 @@ hr {
   display: flex;
   list-style: none;
   font-size: 20;
-  margin-bottom: -60px;
 }
 
 li  {
   padding: 15px;
+  position: relative;
+  margin-bottom: -38px;
 }
 
 .logo-name a {
@@ -108,10 +109,17 @@ li  {
   letter-spacing: 1px;
 }
 
+
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
 .item  {
   position: relative;
-  left: 100px;
-  top: 16px;
+  left: 70px;
+  top: 20px;
 }
 
 .item  a {
@@ -141,6 +149,7 @@ li  {
 
 .push {
   margin-left: auto;
+  position: relative;
   top: 15px;
 }
 
@@ -150,13 +159,13 @@ li  {
 }
 
 .push input {
+  position: relative;
+  top: -35px;
   padding: 5px;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
   border: 2px solid #ced4da; 
   width: 180px;
-  position: relative;
-  top: -21px;
 }
 
 input:focus{
@@ -167,6 +176,9 @@ input:focus{
 }
 
 .push button {
+  position: relative;
+  top: -35px;
+  width: 100px;
   padding: 5px;
   margin-left: 5px;
   background: none;
@@ -174,8 +186,6 @@ input:focus{
   font-family: 'Open Sans', sans-serif;
   border:  2px solid #28a745;
   font-weight: bold;
-  position: relative;
-  top: -22px;
 }
 
 .push button:hover {
@@ -208,7 +218,7 @@ table td {
   font-weight: bold;
 }
 
-.money-withdrawal-form table tr td select,input{
+.money-withdrawal-form table tr td select,input,button{
     width: 250px; 
     line-height: 1.5;
     font-size: 1rem;
@@ -224,7 +234,7 @@ table td {
     font-family: 'Open Sans', sans-serif;
 }
 
-.money-withdrawal-form input:hover {
+.money-withdrawal-form button:hover {
   background: green;
   font-weight: bold;
   color: white;
