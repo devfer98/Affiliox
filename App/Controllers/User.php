@@ -5,7 +5,7 @@ class User extends \Core\Controller{
 
     public function indexAction(){
         echo 'Index method is called';
-        View::display('User/Interfaces/feedback.html');
+        View::display('Common/Account-Selectv2.html');
     }
 
     public function addAction(){
