@@ -1,36 +1,3 @@
-<?php require_once('include/connection.php'); ?>
-
-<?php 
-
-	if (isset($_POST['submit'])) {
-		
-		$name = mysqli_real_escape_string($connection, $_POST['name']);
-		$email = mysqli_real_escape_string($connection, $_POST['email']);
-		$phoneNo = mysqli_real_escape_string($connection, $_POST['phoneNo']);
-		$dob = mysqli_real_escape_string($connection, $_POST['dob']);
-		$status = mysqli_real_escape_string($connection, $_POST['status']);
-		$aLine1 = mysqli_real_escape_string($connection, $_POST['aLine1']);
-		$aLine2 = mysqli_real_escape_string($connection, $_POST['aLine2']);
-		$city = mysqli_real_escape_string($connection, $_POST['city']);
-		$country = mysqli_real_escape_string($connection, $_POST['country']);
-		$gender = mysqli_real_escape_string($connection, $_POST['gender']);
-		$password = mysqli_real_escape_string($connection, $_POST['password']);
-		$hashed_password = sha1($password);
-
-		$query = "INSERT INTO promoter (name, email, phoneNo, dob, status, aLine1, aLine2, city, country, gender, password) VALUES ('{$name}', '{$email}', '{$phoneNo}', '{$dob}', '{$status}', '{$aLine1}', '{$aLine2}', '{$city}', '{$country}', '{$gender}', '{$hashed_password}')";
-
-		$result = mysqli_query($connection, $query);
-
-		if ($result) {
-			header('Location:promoter-dashboard.php');
-		}
-
-	}
-
-
- ?>
-	
-
 
 <!DOCTYPE html>
 <html>
@@ -38,7 +5,8 @@
 	<title>Promoter-sign up</title>
 	<link rel="shortcut icon" href="images/affiliox.png" type="image/x-icon">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/promoter-reg-css.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/../../public/css/promoter/promoter-reg-css.css"> -->
+	<link rel="stylesheet" href="E:/xampp/htdocs/Group-Project/Affiliox/public/css/Promoter/promoter-reg-css.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -198,5 +166,3 @@
 		<script src="js/promoter-reg-js.js"></script>
 </body>
 </html>
-
-<?php mysqli_close($connection); ?>

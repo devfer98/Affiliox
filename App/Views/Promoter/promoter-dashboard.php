@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<title>Support Service</title>
-	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
+<head>
+	<title>Promoter Dashboard</title>
+	<link rel="shortcut icon" href="../../../public/images/promoter/logoOnly.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../../../public/css/promoter/promoter-dashboard-css.css">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/support-center-css.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
-	<script src="js/support-center-js.js"></script>
+	<script src="../../../public/js/promoter/promoter-dashboard-js.js"></script>
 </head>
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
@@ -14,7 +15,7 @@
 			<div class="open-btn" onclick="openNav()">&#9776;</div>
 			<nav class="top-nav">
 			<ul class="main-nav">
-				<li class="logo"><a href="index.php" style="border: none;"><img src="../images/SideLogo.png"></a></li>
+				<li class="logo"><a href="index.php" style="border: none;"><img src="../../../public/images/promoter/SideLogo.png"></a></li>
 				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
 				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
 				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
@@ -30,37 +31,51 @@
 				</li>
 			</ul>
 		</nav>
+			
 		</header>
 		<hr>
 		<!-- inner part of the evry dashboard -->
 	<div class="container">
-		<h2><i class="fas fa-ticket-alt"></i>&nbsp; &nbsp;Support Center - Submit Your Requset</h2>
+		<h2><i class="fas fa-user"></i>&nbsp; &nbsp;Profile Details</h2>
 		<div class="inner-part">
-			<h3>Important</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. <br> <br>Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<form action="" method="post">
-				<select name="problem" id="problem" required="">
-					<option value="">Pleace Select Your Request</option>
-					<option value="AP">Account Problem</option>
-					<option value="VP">Verification Problem</option>
-					<option value="PP">Payout Problem</option>
-					<option value="SU">Suggestion</option>
-					<option value="AC">Account Cancellation</option>
-					<option value="O">Other</option>
-				</select> <br>
-				<div class="text-area">
-					<textarea name="textdata" placeholder="Explain your problem" required=""></textarea>
-				</div> <br>
-				<div class="button">
-					<button type="submit" onclick="return confirm('We received your Request. We will let you know more by email.');"><i class="fas fa-share"></i>  Send Request</button>
-				</div>
-			</form>
-		</div> <!-- inner-part -->
+			<table>
+				<tr>
+					<td id="td-1">Your Name :</td>
+					<td>kko</td>
+				</tr>
+				<tr>
+					<td id="td-1">Date of Birth :</td>
+					<td>kok</td>
+				</tr>
+				<tr>
+					<td id="td-1">Account ID :</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td id="td-1">Primary Email :</td>
+					<td>sample@gmail.com</td>
+				</tr>
+				<tr>
+					<td id="td-1">Mobile Number :</td>
+					<td>Sample number is here</td>
+				</tr>
+				<tr>
+					<td id="td-1">Address :</td>
+					<td>Sample address is here</td>
+				</tr>
+				<tr>
+					<td id="td-1">Country :</td>
+					<td>Sample state is here</td>
+				</tr>
+
+				
+
+			</table>
+
+			<form action="update-promoter.php">
+				<input type="submit" name="edit-details" value="Edit Details">
+			</form>					
+		</div><!-- inner-part -->
 
 	</div> <!-- container -->
 
@@ -86,4 +101,5 @@
 
 </body>
 </html>
+
 

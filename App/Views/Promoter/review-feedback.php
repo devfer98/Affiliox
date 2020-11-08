@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Review Feedback</title>
-  <link rel="stylesheet" type="text/css" href="css/review-feedback-css.css">
-  <link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
+ <link rel="shortcut icon" href="../../../public/images/promoter/logoOnly.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../../public/css/promoter/review-feedback-css.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="js/review-feedback-js.js"></script>
+  <script src="../../../public/js/promoter/promoter-dashboard-js.js"></script>
 </head>
 <body>
   <!-------------- Top-Navigation-Bar ---------------------->
@@ -15,7 +15,7 @@
         <div class="open-btn" onclick="openNav()">&#9776;</div>
         <nav class="top-nav">
       <ul class="main-nav">
-        <li class="logo"><a href="index.php" style="border: none;"><img src="../images/SideLogo.png"></a></li>
+        <li class="logo"><a href="index.php" style="border: none;"><img src="../../../public/images/promoter/SideLogo.png"></a></li>
         <li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
         <li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
         <li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
