@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Controllers;
 use Core\View;
-require_once("../Models/Buyer.php");
+use App\Models;
+
 
 class Signup extends \Core\Controller {
 
@@ -19,8 +21,8 @@ class Signup extends \Core\Controller {
     }
 
     public function buyerToDBAction(){
-
-
+        
+        $user = new Buyer();
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 
@@ -40,10 +42,10 @@ class Signup extends \Core\Controller {
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
 
-       
-            if((EmailCompair($email))|| (NameCompair($userID)) ){
+        
+            if(EmailCompair($email) ){
                 if($password == $con_password){
-                    addUserDB($userID ,$name,$$aLine1,$aLine2,$city,$country,$gender,$status,$email,$phoneNo,$password);
+                    $user->addBuyer($userID ,$name,$status,$email,$password,$phoneNo,$age,$dob,$gender,$country,$city,$aLine1,$aLine2);
                 }else{
                     echo("Password Mismatched");
                 }
