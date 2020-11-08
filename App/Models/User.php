@@ -1,22 +1,20 @@
 <?php
 
 namespace App\Models;
-use PDO;
+
 
 class User extends \Core\Connect{
 
-        public static function showData()
-        {
-            try{
-
-                $db = static::getDB();
-                $stmt =$db->query('SELECT * FROM test10 ');
-                $result =$stmt->fetchALL(PDO::FETCH_ASSOC);
-                return $result;
-
-            }  catch (PDOException $e){
-                echo $e->getMessage();
+                
+    
+            public function save()
+            {   
+                $stmt = $mysqli->prepare("INSERT INTO buyer (userID, name, email, password, phoneNo, age, dob, gender, country, city, line1, line2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("sss", $_POST['name'], $_POST['age']);
+                $stmt->execute();
+                $stmt->close();
             }
-        }
+    
     }
+
 

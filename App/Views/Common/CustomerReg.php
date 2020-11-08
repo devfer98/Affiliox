@@ -85,7 +85,7 @@
 		</div>
 		<!-----------------Customer-Registration Form------------------->
 		
-			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();">
+			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Signup/buyerToDB">
 		<div class="row ">
 			<div class="col12">
 				<div class=" marginl100">

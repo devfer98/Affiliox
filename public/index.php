@@ -27,17 +27,17 @@ $newrouter = new Core\Router();
 
 $newrouter->add('{controller}/{action}');
 
-$newrouter->add('user/{controller}/{action}');
-$newrouter->add('user/{controller}/{id:\d+}/{action}');
+// $newrouter->add('user/{controller}/{action}');
+// $newrouter->add('user/{controller}/{id:\d+}/{action}');
 
-$newrouter->add('seller/{controller}/{action}');
-$newrouter->add('seller/{controller}/{id:\d+}/{action}');
+// $newrouter->add('seller/{controller}/{action}');
+// $newrouter->add('seller/{controller}/{id:\d+}/{action}');
 
-$newrouter->add('promoter/{controller}/{action}');
-$newrouter->add('promoter/{controller}/{id:\d+}/{action}');
+// $newrouter->add('promoter/{controller}/{action}');
+// $newrouter->add('promoter/{controller}/{id:\d+}/{action}');
 
-$newrouter->add('admin/{controller}/{action}');
-$newrouter->add('admin/{controller}/{id:\d+}/{action}');
+// $newrouter->add('admin/{controller}/{action}');
+// $newrouter->add('admin/{controller}/{id:\d+}/{action}');
 
 
 echo'<pre>';
