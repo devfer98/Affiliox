@@ -1,28 +1,24 @@
 <?php
 
-class Customer  extends \Core\Connect{
-
-    private $conn;
+namespace App\Models;
+class Buyer extends \Core\Connect{
+    
+    
 
     function __construct() {
-        $conn = static::getDB();
+       
     }
     
     public function addBuyer($userID, $name, $status,$email, $password, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2) {
-        // $addBuyer="insert into buyer values ('".$userID."', '".$name."', '".$line1."', '".$line2."', '".$city."', 
-        // '".$country."', '".$gender."', '".$age."', 'active', '".$dob."', '".$email."', '".$phoneNo."', '".$password."')";
-                
-        // mysqli_query($conn,$addBuyer)or die (mysqli_error($conn));
 
-        $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssissss", $userID, $name, $line1, $line2, $city, $country, $gender, $age, $dob, $email, $phoneNo, $password);
+        $conn=static::connectDB();
+
+        $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssssisssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password);
         if ($stmt->execute()) {
-            $stmt->bind_result($result);
-
-            
-           
-            
+            $stmt->close();
         }else{
+            echo 'SQL Error';
             return false;
         }
     }
@@ -49,23 +45,22 @@ class Customer  extends \Core\Connect{
     
     function EmailCompair($email){
 
-        
-        $stmt = $conn->prepare("select * from buyer where email = '".$email."'");
-        $stmt->bind_param("s",$email);
-        if ($stmt->execute()) {
-           
-            $stmt->bind_result($result);
-            $numRows =$stmt->num_rows;
-            if($numRows == 0){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            return false;
+        $conn=static::connectDB();
 
+         $stmt = $conn->prepare('select * from buyer where email = ?');
+         $stmt->bind_param("s",$email);
+         if($stmt->execute()){
+
+            $stmt->store_result();
+
+             if($stmt->num_rows > 0 ){
+                 return false;
+             }
+                 return true;
+ 
         }
-
     }
+
+    
     
 }

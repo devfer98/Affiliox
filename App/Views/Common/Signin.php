@@ -88,7 +88,7 @@
 
             </div>
             <!------------------------Sign in text-boxs------------------->
-
+            <form  method="POST" action="../Login/auth">
             <div class="row margint50">
                 <div class=" col12 search signin label center">
                     <label style="text-align: left;" for="Username-field"><i class="fa fa-user-alt"></i> Username
@@ -105,10 +105,12 @@
             <div class="row">
                 <div class="nav-bar col12 center ">
                     <ul>
-                        <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Sign in</a>
+                        <button type="submit" value="submit"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign in</button>
                     </ul>
                 </div>
             </div>
+
+            </form>
             <div class="row center ">
                 <div class="col12">
                     <div class="marginb50">

@@ -3,38 +3,15 @@ namespace Core;
 
 
 abstract class Connect{
-    // protected static function connectDB(){
-    //     static $db =null;
-    //     if($db === null){
-    //         $host= "localhost";
-    //         $dbName="test2";
-    //         $user="root";
-    //         $password="";
-
-    //         try {
-    //             $db= new PDO ("mysql:host =$host;dbname=$dbname",$username,$password);
-    //             return $db;
-    //         } catch (PDOException $e) {
-    //             echo $e->getMessage();
-    //         }
-
-    //     }
-
-    // }
 
     protected static function connectDB(){
-        static $db =null;
-        if($db === null){
             $servername = "localhost";
             $username = "root";
             $password = "";
             $dbname = "affiliox";
-
+            $conn = mysqli_connect($servername, $username, $password, $dbname) or die("DB connection failed");
+            return $conn;
             
-            $db = mysqli_connect($servername, $username, $password, $dbname) or die("DB connection failed");
-            return $db;
-        }
-
     }
 
 }

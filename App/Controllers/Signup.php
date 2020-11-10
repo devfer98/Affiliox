@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use Core\View;
-use App\Models;
+use App\Models\Buyer;
 
 
 class Signup extends \Core\Controller {
@@ -28,7 +28,6 @@ class Signup extends \Core\Controller {
         $dob = strtotime($userDob); 
         $difference = $now - $dob;
         $age = floor($difference / 31556926);
-
         $userID  	=$_POST['Username-field'];
         $name       =$_POST['fullname'];
         $aLine1	    =$_POST['aline1'];
@@ -41,14 +40,11 @@ class Signup extends \Core\Controller {
         $phoneNo    =$_POST['phn-no'];	
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
-
+        $pw_md5 =md5($password);
         
-            if(EmailCompair($email) ){
-                if($password == $con_password){
-                    $user->addBuyer($userID ,$name,$status,$email,$password,$phoneNo,$age,$dob,$gender,$country,$city,$aLine1,$aLine2);
-                }else{
-                    echo("Password Mismatched");
-                }
+            if($user->EmailCompair($email) ){
+                    $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
+                    echo "Success";
             }else{
                 echo "User already exist";
             }	

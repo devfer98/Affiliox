@@ -5,7 +5,9 @@ use App\Models;
 class Product extends \Core\Controller {
 
     public function indexAction(){
+
         View::display('User/Interfaces/productDetails.html');
+        
     }
 
     public function addAction(){

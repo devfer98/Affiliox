@@ -20,12 +20,12 @@ $newrouter = new Core\Router();
 
 //Match URL
 
-// $newrouter->add('', ['controller'=>'Home', 'action'=>'index']);
+   $newrouter->add('', ['controller'=>'Home', 'action'=>'index']);
 // $newrouter->add('pord', ['controller' => 'Prod', 'action' => 'index']);
 // $newrouter->add('posts', ['controller' => 'Posts', 'action' => 'index']);
 // $newrouter->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
 
-$newrouter->add('{controller}/{action}');
+    $newrouter->add('{controller}/{action}');
 
 // $newrouter->add('user/{controller}/{action}');
 // $newrouter->add('user/{controller}/{id:\d+}/{action}');
@@ -40,9 +40,9 @@ $newrouter->add('{controller}/{action}');
 // $newrouter->add('admin/{controller}/{id:\d+}/{action}');
 
 
-echo'<pre>';
-echo htmlspecialchars(print_r($newrouter->getRoutes(), true));
-echo'</pre>';
+// echo'<pre>';
+// echo htmlspecialchars(print_r($newrouter->getRoutes(), true));
+// echo'</pre>';
 
 
 $url=$_SERVER['QUERY_STRING'];
