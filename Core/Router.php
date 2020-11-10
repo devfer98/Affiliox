@@ -46,15 +46,12 @@ class Router
             $set=explode('&',$url,3);
             if(strpos($set[0], '=') === false){
                     $url =$set[0];
-
             }else{
                 $url = '';
-            }
-          
+            }    
       }
         return $url;
     }
-
 
 
     public function deliver($url)
