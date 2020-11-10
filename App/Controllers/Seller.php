@@ -8,21 +8,17 @@ class Seller extends \Core\Controller{
         View::display('Common/Account-Selectv2.html');
     }
 
-    public function addAction(){
-        echo 'Seller add method is called';
-        
-        $status = $this->Seller->addSeller('dilshan98', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
-    }
-
     public function get(){
         echo "get method is called";
-        // $this->\Models\Seller->getSeller();
 
-        // echo'<pre>';
-        // echo htmlspecialchars(print_r($_GET, true));
-        // echo'</pre>';
+        echo'<pre>';
+        echo htmlspecialchars(print_r($_GET, true));
+        echo'</pre>';
     }
 
+    public function addTransAction(){
+       
+    }
     
     protected function before()
     {
