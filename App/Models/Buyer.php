@@ -17,11 +17,8 @@ class Customer  extends \Core\Connect{
         $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssssissss", $userID, $name, $line1, $line2, $city, $country, $gender, $age, $dob, $email, $phoneNo, $password);
         if ($stmt->execute()) {
-            $stmt->bind_result($result);
-
-            
-           
-            
+            return true;
+            // $stmt->bind_result($result);
         }else{
             return false;
         }
