@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use Core\View;
 use App\Models\Buyer;
+use App\Models\Seller;
+use App\Models\Promoter;
 
 
 class Signup extends \Core\Controller {
@@ -50,6 +52,25 @@ class Signup extends \Core\Controller {
             }	
         header('');
         exit;
+    }
 
+    public function sellerToDBAction(){
+        $seller = new Seller();
+        $status = $seller->addSeller('dilshan98', ' ', ' ', ' ', ' ', 0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+        if($status){
+            echo "Success";
+        }else{
+            echo "Unsuccessful";
+        }
+    }
+
+    public function promoterToDBAction(){
+        $promoter = new Promoter();
+        $status = $promoter->addPromoter('dilshan98', ' ', ' ', ' ', ' ', 0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+        if($status){
+            echo "Success";
+        }else{
+            echo "Unsuccessful";
+        }
     }
 }

@@ -3,11 +3,10 @@
 class Feedback {
 
     function __construct() {
-        include ("php/connect.php");
     }
     
     public function addFeedback() {
-
+        
     }
 
     public function addReply() {
