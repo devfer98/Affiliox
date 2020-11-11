@@ -87,7 +87,7 @@
 		</div>
 		<!-----------------Seller-Registration Form------------------->
 		
-			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();">
+			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm(); " action="../Signup/sellerToDB">
 		<div class="row">
 			<div class="col12">
 				<div class=" marginl100">

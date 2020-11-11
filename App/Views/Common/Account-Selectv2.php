@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Affiliox-Account-type</title>
+    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -90,9 +91,9 @@
 			<div class="row account-btn">
 				<div class="col12 center ">
 				
-				<a  href="">&nbsp;Customer</a>
-				<a href="">&nbsp;Seller</a>
-				<a href="">&nbsp;Promoter</a>
+				<a  href="../signup/buyer">&nbsp;Customer</a>
+				<a href="../signup/seller">&nbsp;Seller</a>
+				<a href="../signup/promoter">&nbsp;Promoter</a>
 				
 				</div>
 				<div class="row bot-margin center font-regular ">

@@ -20,7 +20,7 @@ $newrouter = new Core\Router();
 
 //Match URL
 
-   $newrouter->add('', ['controller'=>'Home', 'action'=>'index']);
+   $newrouter->add('', ['controller'=>'User', 'action'=>'index']);
 // $newrouter->add('pord', ['controller' => 'Prod', 'action' => 'index']);
 // $newrouter->add('posts', ['controller' => 'Posts', 'action' => 'index']);
 // $newrouter->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);

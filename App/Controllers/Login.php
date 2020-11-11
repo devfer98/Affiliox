@@ -7,12 +7,14 @@ use App\Models\User;
 
 class Login extends \Core\Controller {
 
-    public function viewAction(){
+    public function indexAction(){
         // View::display('Common/Signin.php');
 
         $this->view->display('Common/Signin.php');
 
     }
+
+
 
     public function authAction(){
         $user = new User();
@@ -38,6 +40,14 @@ class Login extends \Core\Controller {
                    
                 }                   
        }
+
+       public function forgetAction(){
+       
+
+        $this->view->display('Common/PassResetcode.php');
+
+    }
+
     
 
     }   

@@ -4,8 +4,7 @@ use Core\View;
 class User extends \Core\Controller{
 
     public function indexAction(){
-        echo 'Index method is called';
-        View::display('Common/Account-Selectv2.html');
+       $this->view->display('Common/index.php');
     }
 
     public function addAction(){
@@ -20,15 +19,7 @@ class User extends \Core\Controller{
     }
 
     
-    protected function before()
-    {
-        echo 'Login ? ';
-    }
 
-    protected function after()
-    {
-        echo ' Bye ? ';
-    }
 
 
 }

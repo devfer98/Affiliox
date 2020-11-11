@@ -59,20 +59,14 @@
 				<select>
 				  <option value="sign in">Sign in</option><br/>
 				  <option value="login">Login</option><br/>
-	
 				</select>
 			  </div>
-	
 			</div>
-	
-	
 		  </div>
-		
 		  <div class="row">
 			  <div class="col12 fullwidth">
 			<hr>
-			  </div>
-			
+			  </div>		
 		</div>
 	  </div>
 		<!-- Customer Registration Text--------------------------------------------->
@@ -93,7 +87,10 @@
 				</div>
 			</div>
 		</div>
-		
+		<div class="row  center">
+            <div class="errorMsg">
+				
+            <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p></div></div>
 			<div class="row rowMargin ">
 				<div class="col12">
 					<div>

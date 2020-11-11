@@ -7,7 +7,7 @@ class Admin {
     }
     
     public function addAdmin() {
-
+        
     }
 
     public function getAdmin() {

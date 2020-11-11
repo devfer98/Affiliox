@@ -3,7 +3,7 @@ namespace App\Controllers;
 class Admin extends \Core\Controller {
 
     public function indexAction(){
-        echo ' Admin Index method is called';
+        $this->view->display('Customer/CompletedOrders.html');
     }
 
     public function addAction(){

@@ -9,8 +9,15 @@ use App\Models\Promoter;
 
 class Signup extends \Core\Controller {
 
+    public function createAction(){
+       
+
+        $this->view->display('Common/Account-Selectv2.php');
+
+    }
+
     public function buyerAction(){
-        View::display('Common/CustomerReg.php');
+        $this->view->display('Common/CustomerReg.php');
 
     }
 
@@ -18,8 +25,8 @@ class Signup extends \Core\Controller {
         View::display('Common/SelllerReg.php');
     }
 
-    public function addAction(){
-        echo 'Admin add method is called';
+    public function promoterAction(){
+        $this->view->display('Common/PromoterReg.php');
     }
 
     public function buyerToDBAction(){
@@ -43,26 +50,76 @@ class Signup extends \Core\Controller {
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
         $pw_md5 =md5($password);
-        
-            if($user->EmailCompair($email) ){
+        if($password != $con_password){
+
+        }
+        $res =$user->EmailCompair($email,$userID);
+            if($res==true){
                     $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
-                    echo "Success";
+                    header('Location:../Signup/BuyerSuccess');
             }else{
+                $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
+                $this->view->UImsg = $UImsg;
+                $this->view->display('Common/CustomerReg.php');   
+                    
                 echo "User already exist";
+                
             }	
-        header('');
-        exit;
     }
 
     public function sellerToDBAction(){
-        $seller = new Seller();
-        $status = $seller->addSeller('dilshan98', ' ', ' ', ' ', ' ', 0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
-        if($status){
-            echo "Success";
-        }else{
-            echo "Unsuccessful";
+        
+        $user = new Seller();
+        $userDob= $_POST['dob'];  
+        $now = time();   
+        $dob = strtotime($userDob); 
+        $difference = $now - $dob;
+        $age = floor($difference / 31556926);
+        $userID  	=$_POST['Username-field'];
+        $name       =$_POST['fullname'];
+        $aLine1	    =$_POST['aline1'];
+        $aLine2     =$_POST['aline2'];	    
+        $city       =$_POST['acity'];      	
+        $country    =$_POST['country'];	
+        $gender 	=$_POST['gender'];
+        $status 	=$_POST['status'];
+        $email  	=$_POST['email'];
+        $phoneNo    =$_POST['phn-no'];	
+        $storeName  =$_POST['store'];
+        $password   =$_POST['Password-field'];	
+        $con_password   =$_POST['Confirm-Password-field'];	
+        $accStatus ='Inactive';
+        $wCount =0;
+        $pw_md5 =md5($password);
+        if($password != $con_password){
+
         }
+        $res =$user->EmailCompair($email,$userID);
+            if($res==true){
+                    $user->addSeller($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2,$storeName,$accStatus,$wCount);
+                    header('Location:../Signup/SellerSuccess');
+            }else{
+                $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
+                $this->view->UImsg = $UImsg;
+                $this->view->display('Common/CustomerReg.php');   
+                    
+                echo "User already exist";
+                
+            }	
+        
+        
     }
+
+
+    // public function sellerToDBAction(){
+    //     $seller = new Seller();
+    //     $status = $seller->addSeller('dilshan98', ' ', ' ', ' ', ' ', 0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+    //     if($status){
+    //         echo "Success";
+    //     }else{
+    //         echo "Unsuccessful";
+    //     }
+    // }
 
     public function promoterToDBAction(){
         $promoter = new Promoter();
@@ -73,4 +130,12 @@ class Signup extends \Core\Controller {
             echo "Unsuccessful";
         }
     }
+    
+    public function BuyerSuccessAction(){
+        $this->view->display('Common/Cus_RegSuccess.php');
+    }
+    public function SellerSuccessAction(){
+        $this->view->display('Common/SP-RegSuccess.php');
+    }
+
 }

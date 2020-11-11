@@ -2,6 +2,7 @@
 
 <head>
     <title>Affiliox-Sign in</title>
+    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -118,8 +119,8 @@
             <div class="row center ">
                 <div class="col12">
                     <div class="marginb50">
-                        <a href="">Forgot Password?</a>
-                        <a href="">Need an Account?</a>
+                        <a href="../login/forget">Forgot Password?</a>
+                        <a href="../signup/create">Need an Account?</a>
                     </div>
                 </div>
             </div>

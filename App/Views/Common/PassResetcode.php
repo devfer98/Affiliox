@@ -130,7 +130,7 @@
 
       
       <div class=" col3 img-span hidden-sm">
-        <td ><img src="/images/Products/SideLogo.png"  width='200'></td>
+        <td ><img src="/images/Logo/SideLogo.png"  width='200'></td>
       </div>
 
       <div class="col9  nav-bar center">       
