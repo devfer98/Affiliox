@@ -2,6 +2,12 @@
 namespace core;
 abstract class Controller
 {
+
+    function __construct() {
+        $this->view = new View();
+    }
+
+
     public function __call($name,$args){
 
         $method =$name.'Action';

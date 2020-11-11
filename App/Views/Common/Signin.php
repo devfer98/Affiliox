@@ -89,13 +89,17 @@
             </div>
             <!------------------------Sign in text-boxs------------------->
             <form  method="POST" action="../Login/auth">
+            <div class="row  center">
+            <div class="errorMsg">
+            <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p></div></div>
             <div class="row margint50">
                 <div class=" col12 search signin label center">
+
                     <label style="text-align: left;" for="Username-field"><i class="fa fa-user-alt"></i> Username
                         :</label>
-                    <input type="text" name="Username-field" placeholder="Super Unqiue Username"> <br></br>
+                    <input type="text" name="Username-field" required placeholder="Super Unqiue Username"> <br></br>
                     <label for="password-field"><i class="fa fa-key"></i> Passsword :</label>
-                    <input type="password" name="Password-field" id="pass-field" placeholder="********"><br><br>
+                    <input type="password" name="Password-field" id="pass-field"  required placeholder="********"><br><br>
                     <input style="width:5%;box-shadow: 0 0 0px #719ECE;" type="checkbox" onclick="passVisibility()">Show
                     Password
 

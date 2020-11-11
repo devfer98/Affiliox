@@ -8,23 +8,37 @@ use App\Models\User;
 class Login extends \Core\Controller {
 
     public function viewAction(){
-        View::display('Common/Signin.php');
+        // View::display('Common/Signin.php');
+
+        $this->view->display('Common/Signin.php');
 
     }
 
     public function authAction(){
         $user = new User();
+        $UImsg="Username or password incorrect!";
+      
+    
         $name       =$_POST['Username-field'];
         $password   =$_POST['Password-field'];	
         $pw_md5=md5($password);
-
+       
                $result= $user->authenticate($name,$pw_md5);
-                echo $result;
-            
+                if($result==1){
+                    header("Location:../BuyerCon/accountIndex");
+                }elseif ($result==2) {
+                    header("Location:../Signup/seller");
+                }elseif ($result==3){
+                    header("Location:../BuyerCon/accountIndex");
+                 }elseif ($result==4){
+                    header("Location:../BuyerCon/accountIndex");
+                }else{
+                    $this->view->UImsg = $UImsg;
+                    $this->view->display('Common/Signin.php');
+                   
+                }                   
        }
-
-
-
+    
 
     }   
 

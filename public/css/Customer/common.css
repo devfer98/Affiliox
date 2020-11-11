@@ -11,6 +11,16 @@
 
 }
 
+.back403{
+	
+	background-color: black;
+}
+
+.errorMsg {
+	color: brown;
+	font-size: larger;
+
+}
 /*------------------------nav-bar-------------------*/
 .sidenav {
 	height: 100%; 

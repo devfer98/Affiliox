@@ -1,4 +1,5 @@
 <html>
+<?php  echo $_SESSION['type'];?>
 
 <head>
   <title>Affiliox-market</title>
@@ -45,8 +46,8 @@
           <ul>
             <a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
             <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
-            <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-            <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+            <a href="../BuyerCon/helpIndex"><i class="fas fa-inbox"></i>&nbsp;Help</a>
+            <a href="../BuyerCon/accountIndex"><i class="fas fa-users"></i>&nbsp;Account</a>
           </ul>
         </div>
 

@@ -26,7 +26,6 @@ class Buyer extends \Core\Connect{
     public function updateBuyer($userID, $name, $email, $phoneNo, $country, $city, $line1, $line2) {
         $updateBuyer = "update buyer SET name='".$name."',aLine1='".$line1."', aLine2='".$line2."', city='".$city."'
         , country='".$country."', email='".$email."', phoneNo='".$phoneNo."' WHERE userID='".$userID."'";
-
         mysqli_query($conn,$updateBuyer)or die (mysqli_error($conn));
     }
 
@@ -39,7 +38,6 @@ class Buyer extends \Core\Connect{
     public function getBuyer($userID) {
         $query = "select emp_id from buyer WHERE userID = '".$userID."'";
         $buyer = mysqli_query($conn,$query);
-
         return $buyer;
     }
     
