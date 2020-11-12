@@ -27,6 +27,7 @@ class Router
 
     {
         $url= $this->removeQuery($url);
+        
         foreach ($this->routes as $route => $params) {
             if(preg_match($route,$url,$matches)){
                 foreach ($matches as $key => $value) {
@@ -47,6 +48,7 @@ class Router
             if(strpos($set[0], '=') === false){
                     $url =$set[0];
             }else{
+
                 $url = '';
             }    
       }

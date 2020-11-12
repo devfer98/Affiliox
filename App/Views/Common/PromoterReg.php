@@ -2,11 +2,11 @@
 
 <head>
 	<title>Affiliox-PromoterRegistration</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
-    <script type="text/javascript" src="/js/Common/Signin.js"></script>
-	<script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
+	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+  <script type="text/javascript" src="/js/Common/Signin.js"></script>
+  <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
 	
 	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
 			  
 			<div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
 			<div class="sm-9">
-			  <a href="/index.html"><img src="/images/Products/Sidelogo.png" alt="Affiliox LOGO"/></a>
+			  <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
 			</div>
 			<div class="sm-2 ">
 			  <div class="selector margint20">
@@ -87,7 +87,7 @@
 		</div>
 		<!-----------------Promoter-Registration Form------------------->
 		
-			<form class="search label marginl100 sm-center" method="posst" onsubmit="return validateForm();">
+			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm(); " action ="../Signup/promoterToDB">
 		<div class="row ">
 			<div class="col12">
 				<div class=" marginl100">
@@ -184,7 +184,7 @@
 					<div>
 						<label for="channels"><i class="fa fa-facebook-square"></i> <i class="fa fa-instagram"></i> <i class="fa fa-youtube-square"> <i class="fa fa-twitter-square"></i></i>&nbsp;Channel Reference Links</label><br>
 						<br>
-						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="200"></textarea><br>
+						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="300"></textarea><br>
 						<p class="font-heavy" required> Use ; to Seperate New Links </p>
 					</div>
 				</div>
@@ -251,7 +251,7 @@
 
 	
 	<div class=" col3 img-span hidden-sm">
-	  <td ><img src="/images/Products/SideLogo.png"  width='200'></td>
+	  <td ><img src="/images/Logo/SideLogo.png"  width='200'></td>
 	</div>
 
 	<div class="col9  nav-bar center">       

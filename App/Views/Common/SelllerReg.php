@@ -1,5 +1,5 @@
 <html>
-
+<?php echo $_SESSION['type']; ?>
 <head>
 	<title>Affiliox-Seller-Registration</title>
 	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">

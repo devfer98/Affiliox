@@ -27,11 +27,12 @@ class Login extends \Core\Controller {
        
                $result= $user->authenticate($name,$pw_md5);
                 if($result==1){
+                    
                     header("Location:../BuyerCon/accountIndex");
                 }elseif ($result==2) {
-                    header("Location:../Signup/seller");
+                    header("Location:../SellerCon/accountIndex");
                 }elseif ($result==3){
-                    header("Location:../BuyerCon/accountIndex");
+                    header("Location:../Promoter/Market");
                  }elseif ($result==4){
                     header("Location:../BuyerCon/accountIndex");
                 }else{

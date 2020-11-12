@@ -1,32 +1,32 @@
 <?php
-namespace App\Controllers;
-use Core\View;
-use App\Models;
-class Session {
+// namespace App\Controllers;
+// use Core\View;
+// use App\Models;
+// class Session {
 
-    public static function init() {
-        session_start();
-    }
+//     // public static function init() {
+//     //     session_start();
+//     // }
 
-    public static function set($key, $value) {
-        $_SESSION[$key] = $value;
-    }
+//     // public static function set($key, $value) {
+//     //     $_SESSION[$key] = $value;
+//     // }
 
-    public static function get($key) {
-        if (isset($_SESSION[$key]))
-            return $_SESSION[$key];
-    }
-    public static function buyerAccess($key) {
-        if ( ($_SESSION[$key] == 'buyer') ){
-            return true;
+//     // public static function get($key) {
+//     //     if (isset($_SESSION[$key]))
+//     //         return $_SESSION[$key];
+//     // }
+//     // public static function buyerAccess($key) {
+//     //     if ( ($_SESSION[$key] == 'buyer') ){
+//     //         return true;
 
-        }else{
-            return false;
-        }
-    }
-    public static function destroy() {
-        //unset($_SESSION);
-        session_destroy();
-    }
+//     //     }else{
+//     //         return false;
+//     //     }
+//     // }
+//     // public static function destroy() {
+//     //     //unset($_SESSION);
+//     //     session_destroy();
+//     // }
 
-}
+// }

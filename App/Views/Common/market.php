@@ -1,6 +1,6 @@
 <html>
-<?php  echo $_SESSION['type'];?>
 
+<?php echo $_SESSION['type']; ?>
 <head>
   <title>Affiliox-market</title>
   <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />

@@ -5,7 +5,7 @@ use Core\View;
 use App\Models\User;
 
 
-class BuyerCon extends \Core\Controller {
+class SellerCon extends \Core\Controller {
 
     public function accountIndexAction(){
         $this->view->display('Common/market.php');
@@ -26,7 +26,7 @@ class BuyerCon extends \Core\Controller {
         if(session_id() == '') {
             session_start();
         }
-        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'buyer') ){
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
             return true;
         }else{
             header("Location:../Login/index");

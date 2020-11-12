@@ -19,7 +19,20 @@ class User extends \Core\Controller{
     }
 
     
+    public function HomeAction(){
+        echo 'add method is called';
+    }
+    public function AboutUSAction(){
+        echo 'add method is called';
+    }
+    public function HelpAction(){
+        echo 'add method is called';
+    }
+    public function AccountAction(){
+        echo 'add method is called';
+    }
 
-
-
+    public function FacebookAction(){
+        echo 'add method is called';
+    }
 }

@@ -59,11 +59,11 @@
                 </div>
                 <div class="col1 hidden-sm ">
                     <div class="selector margint20">
-                        <select>
-                            <option value="sign in">Sign in</option><br />
-                            <option value="login">Login</option><br />
-
-                        </select>
+                    <select name="direction" onchange="location = this.value;">
+                          <option value="../">SELECT</option>
+                          <option value="../index.php">Logout</option>
+                          <option value="../login/index">Login</option>
+                     </select>
                     </div>
 
                 </div>
