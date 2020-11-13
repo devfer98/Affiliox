@@ -28,13 +28,13 @@ class Login extends \Core\Controller {
                $result= $user->authenticate($name,$pw_md5);
                 if($result==1){
                     
-                    header("Location:../BuyerCon/accountIndex");
+                    header("Location:../Buyer/accountIndex");
                 }elseif ($result==2) {
-                    header("Location:../SellerCon/accountIndex");
+                    header("Location:../Seller/accountIndex");
                 }elseif ($result==3){
                     header("Location:../Promoter/Market");
                  }elseif ($result==4){
-                    header("Location:../BuyerCon/accountIndex");
+                    header("Location:../Buyer/accountIndex");
                 }else{
                     $this->view->UImsg = $UImsg;
                     $this->view->display('Common/Signin.php');
@@ -42,14 +42,22 @@ class Login extends \Core\Controller {
                 }                   
        }
 
-       public function forgetAction(){
-       
-
+    public function forgetAction(){
         $this->view->display('Common/PassResetcode.php');
-
     }
 
-    
+    public function LogoutAction(){
+        if(session_id() == '') {
+            session_start();
+        }
+        unset($_SESSION['type']);
+        unset($_SESSION['username']);
 
-    }   
+        if(session_id() != '') {
+            session_destroy();
+        }
+        $this->view->display('Common/index.php');
+    }
+
+ }   
 

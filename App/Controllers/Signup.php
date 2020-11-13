@@ -163,4 +163,11 @@ class Signup extends \Core\Controller {
         $this->view->display('Common/SP-RegSuccess.php');
     }
 
+    protected function before()
+    {   
+        if(session_id() == '') {
+            session_start();
+        }
+
+    }
 }

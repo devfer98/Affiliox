@@ -59,11 +59,21 @@
                 </div>
                 <div class="col1 hidden-sm ">
                     <div class="selector margint20">
-                    <select name="direction" onchange="location = this.value;">
-                          <option value="../">SELECT</option>
-                          <option value="../index.php">Logout</option>
-                          <option value="../login/index">Login</option>
+                    <form>
+                    <select name="direction" id="select-nav" onchange="location = this.value;">
+                        <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
+
+                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="../login/logout">Logout</option>';
+                        }else{
+                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="../Signup/create">Signup</option>';
+                            echo '<option value="../login/index">Login</option>';
+
+                    
+                        }?>
                      </select>
+				</form>	
                     </div>
 
                 </div>
