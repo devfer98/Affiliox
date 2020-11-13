@@ -1,34 +1,37 @@
 <?php
+
 namespace App\Controllers;
 use Core\View;
-class Seller extends \Core\Controller{
+use App\Models\User;
 
-    public function indexAction(){
-        echo 'Index method is called';
-        View::display('Common/Account-Selectv2.html');
+
+class SellerCon extends \Core\Controller {
+
+    public function accountIndexAction(){
+        $this->view->display('Common/market.php');
+        // $this->view->display('Common/market.php');
+
     }
 
-    public function get(){
-        echo "get method is called";
+    public function helpIndexAction(){
 
-        echo'<pre>';
-        echo htmlspecialchars(print_r($_GET, true));
-        echo'</pre>';
-    }
+        $this->view->display('Common/SelllerReg.php');
+        
+     }
 
-    public function addTransAction(){
-       
-    }
-    
+
+
     protected function before()
-    {
-        echo 'Login ? ';
+    {   
+        if(session_id() == '') {
+            session_start();
+        }
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
+            return true;
+        }else{
+            header("Location:../Login/index");
+            
+        }
     }
-
-    protected function after()
-    {
-        echo ' Bye ? ';
-    }
-
 
 }
