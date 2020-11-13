@@ -257,6 +257,6 @@
   				<li> Affiliox &trade;</li>
   			</ul>
 		</div>	 <!-- footer -->
-		<script src="/js/Promoter/index-script.js"></script>
+		<script src="js/Promoter/index-script.js"></script>
 </body>
 </html>

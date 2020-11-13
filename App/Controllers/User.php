@@ -35,4 +35,14 @@ class User extends \Core\Controller{
     public function FacebookAction(){
         echo 'add method is called';
     }
+
+    protected function before()
+    {   
+        if(session_id() == '') {
+            session_start();
+        }
+
+    }
+
+
 }

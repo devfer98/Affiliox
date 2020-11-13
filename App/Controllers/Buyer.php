@@ -5,7 +5,7 @@ use Core\View;
 use App\Models\User;
 
 
-class BuyerCon extends \Core\Controller {
+class Buyer extends \Core\Controller {
 
     public function accountIndexAction(){
         $this->view->display('Common/market.php');
