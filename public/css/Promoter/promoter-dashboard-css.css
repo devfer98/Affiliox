@@ -189,7 +189,7 @@ table {
   border-radius: 0.25rem; 
 }
 
-table td {
+.inner-part table td {
   padding: 35px;
   border-bottom: 1px solid #ddd;
   font-size: 17px;
@@ -218,9 +218,43 @@ form input:hover {
     background-color: white;
     color: #28a745;
 }
+
+/*-----------------------bottom part----------------------------------------------*/
+.bottom-part table {
+  font-family: 'Open Sans', sans-serif;
+  width: 1200px;
+  border: none; 
+  margin: 50px 150px 40px 180px;
+  margin-bottom: 70px;
+}
+
+.thead td{
+  font-weight: bold;
+  border-bottom: none;
+  font-size: 18px;
+  text-decoration: underline;
+  width: 200px;
+  border-top: none;
+  /*  */
+}
+
+table tr { line-height: 40px; }
+
+.bottom-part table tr td a {
+	text-decoration: none;
+  color: #1f3d7a;
+}
+
+.bottom-part table tr td a:hover {
+	color: red;
+}
+
+/*table i {
+	color: #99ff99
+}*/
+
 /*--------------------footer-tag--------------------*/
 .footer {
-  border-top: 2px solid black;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -228,16 +262,6 @@ form input:hover {
 .footer ul li {
   font-size: 17px;
   display: inline-block;
-  padding: 10px;
-}
-
-.footer ul li a {
-  font-size: 17px;
-}
-
-.footer ul li a:hover {
-  color: red;
-  text-decoration: underline;
 }
 
 /*--------------------responsive media queries--------------------*/
