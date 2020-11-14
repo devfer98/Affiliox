@@ -1,22 +1,32 @@
 <?php
+
 namespace App\Controllers;
 use Core\View;
-use App\Models\TransactionM;
+use App\Models\Buyer;
+use App\Models\Seller;
+use App\Models\Promoter;
+
 class Transaction extends \Core\Controller{
 
-    public function indexAction(){
-        echo 'Index method is called';
-        View::display('Common/Account-Selectv2.html');
-    }
-
-    public function addPromoAction(){
-        $trans = new TransactionM();
-        $status = $trans->addTransPromo(1.0, ' ', ' ', 'dilshan98');
-        if($status){
-            echo "Success";
-        }else{
-            echo "Unsuccessful";
-        }
+   
+    public function promoterTransToDBAction(){
+        
+        $user = new Promoter();  
+        $ammount    = $_POST['ammount'];
+        $status = 1;	    
+       // $res =$user->EmailCompair($email,$userID);
+           if(isset($_POST['ammount'])){
+                    $user->transPromo($ammount,$status);
+                    header('Location:../Transaction/promoterTransSuccess');
+            }
+            else{
+                $UImsg= 'Invalid ammount !';
+                $this->view->UImsg = $UImsg;
+                $this->view->display('Promoter/withdraw-earnings.php');   
+                    
+                echo "User already exist";
+                
+            }	
     }
 
     public function getAction(){
@@ -41,5 +51,8 @@ class Transaction extends \Core\Controller{
         echo ' Bye ? ';
     }
 
+    public function promoterTransSuccessAction(){
+        $this->view->display('Promoter/payout-history.php');
+    }
 
 }
