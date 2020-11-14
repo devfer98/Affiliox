@@ -4,14 +4,14 @@
 	<title>Seller Transactions</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
 	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="css/market.css">
-	<link rel="stylesheet" type="text/css" href="css/tabs.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/market.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/tabs.css">
 	<!-- <link rel="stylesheet" type="text/css" href="css/sellerTransactions.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
-	<script src="../js/common-dashboard.js"></script>
+	<script src="/js/Seller/common-dashboard.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>

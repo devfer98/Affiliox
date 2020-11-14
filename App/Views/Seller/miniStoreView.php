@@ -3,9 +3,9 @@
 <head>
 	<title>Ministore View</title>
 	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/market.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/market.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 </head>
