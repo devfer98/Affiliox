@@ -248,9 +248,37 @@ textarea:focus{
   background-color: white;
   color: #28a745;
 }
+/*-----------------------bottom part----------------------------------------------*/
+.bottom-part table {
+  font-family: 'Open Sans', sans-serif;
+	margin: 50px 150px 40px 180px;
+	width: 1200px;
+}
+
+.thead td{
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  width: 200px;
+}
+
+table tr { line-height: 40px; }
+
+.bottom-part table tr td a {
+	text-decoration: none;
+	color: #1f3d7a;
+}
+
+.bottom-part table tr td a:hover {
+	color: red;
+}
+
+/*table i {
+	color: #99ff99
+}*/
+
 /*--------------------footer-tag--------------------*/
 .footer {
-  border-top: 2px solid black;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -258,16 +286,6 @@ textarea:focus{
 .footer ul li {
   font-size: 17px;
   display: inline-block;
-  padding: 10px;
-}
-
-.footer ul li a {
-  font-size: 17px;
-}
-
-.footer ul li a:hover {
-  color: red;
-  text-decoration: underline;
 }
 
 

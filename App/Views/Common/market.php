@@ -18,24 +18,23 @@
   <div class="container">
     <div class="backcolor"> 
       <div class="row hidden-xm marginb100 backcolor">
-      <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
-          
-        <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
-        <div class="sm-9">
-          <a href="/index.html"><img src="/imagesLogo/Sidelogo.png" alt="Affiliox LOGO"/></a>
-        </div>
-        <div class="sm-2 ">
-          <div class="selector margint20">
-            <select>
-              <option value="sign in">Sign In</option><br/>
-              <option value="login">Login</option><br/>
-            </select>
+        <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
+          <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+            <div class="sm-9">
+              <a href="/index.html"><img src="/imagesLogo/Sidelogo.png" alt="Affiliox LOGO"/></a>
+            </div>
+            <div class="sm-2 ">
+              <div class="selector margint20">
+                <select>
+                  <option value="sign in">Sign In</option><br/>
+                  <option value="login">Login</option><br/>
+                </select>
+              </div>
+            </div>
+            
+
           </div>
         </div>
-        
-
-      </div>
-    </div>
       <div class=" nav-bar center backcolor">
         <div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
         <div class="col2 hidden-sm">
@@ -72,8 +71,8 @@
 
             
             }?>
-        </select>
-				</form>	
+          </select>
+          </form>	
           </div>
 
         </div>

@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Update Ministore</title>
+	<title>Create Ministore</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
 	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
-	<script src="../js/common-dashboard.js"></script>
+	<script src="/js/Seller/common-dashboard.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
-		<ul class="">
-			<li onclick="openNav()">&#9776;</li>
-			<li><a href="">Affiliox</a></li></a>
-			<li style="float: right;">user-name</li>
-		</ul>
-		<div class="row">
-            <hr class="col12"/>
-        </div>
+		<?php 
+			//if(session_id() == '') {
+			//         session_start();
+			//     }
+			//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
+				require "sellerHeader.php";
+			//}else{
+				// header("Location:../Login/index");	
+			//}
+		?>
 		
 		<!-- <div class="Reg-container"> -->
 		<div class="row">
 			<div class="col12 center title">
-				<p>Update MiniStore</p>
+				<p>Create MiniStore</p>
 				<!-- <hr> -->
 			</div> 
 				<!------------------Seller Registration Form------------------->
@@ -36,57 +38,51 @@
 			<form>
 				<!-- <div class= "inp"> -->
 				<h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Details</h2>
-<<<<<<< HEAD
-				<div class="row col8">
-				<label for="sname"> &nbsp;Store Name</label><br>
-				<input type="text" id="sname" name="sname" placeholder="Enter your Store name" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required> <br>
-=======
 				<div class="row col8 padding">
 				<label for="fname"> &nbsp;Store Name</label><br>
 				<input type="text" id="fname" name="fullname" placeholder="">
->>>>>>> a7a6b64cafe9ff227832a14acb58f8d9435afaec
                 </div>
                 <div class="row col6 padding">
                 <label for="Address">Logo</label><br>
-                <input type="file" id="line2" name="aline2" placeholder="" required><br>
+                <input type="file" id="line2" name="aline2" placeholder=""><br>
                 </div>
 				<div class="row col12 padding">
 				<label for="lname">&nbsp; Home Page Title</label><br>
-				<input type="text" id="lname" name="lname" placeholder="Home page name" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required> <br>
+				<input type="text" id="email" name="email" placeholder="">
                 </div>
                 <!-- <div class="row" style="padding:0px;"> -->
 				<div class="row col12 padding">
 				<label for="phn-no">&nbsp; Description</label><br>
-				<textarea id="phn-no" name="phn-no" placeholder="" minlength="15" maxlength="100" required></textarea>
+				<textarea id="phn-no" name="phn-no" placeholder=""></textarea>
 				</div>
 				<div class="row col12 padding">
 				<label for="dob">&nbsp; About Us</label><br>
-				<textarea id="Birth" name="dob" placeholder=" " minlength="15" maxlength="100" required></textarea>
+				<textarea id="Birth" name="dob" placeholder=" "></textarea>
                 </div>
                 <!-- </div> -->
 				<div class="row col12 padding">
 				<label for="Address">Contact Us</label><br>
-				<textarea type="text" id="line1" name="aline1" placeholder="" minlength="15" maxlength="100" required></textarea>
+				<textarea type="text" id="line1" name="aline1" placeholder=""></textarea>
                 </div>
 
                 <h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Design</h2>
 				<div class="row col6 padding">
 				<label for="Address">Home Page Images</label><br>
-				<input type="file" id="line2" name="aline2" placeholder="" required><br>
+				<input type="file" id="line2" name="aline2" placeholder=""><br>
                 </div>
                 <div class="row">
                 <div class="col6 fitcontent padding">
                 <label for="Address">Navigation Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder="" required><br>
+                <input type="color" id="line2" name="aline2" placeholder=""><br>
                 </div>
                 <div class="col6 padding">
                 <label for="Address">Button Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder="" required><br>
+                <input type="color" id="line2" name="aline2" placeholder=""><br>
                 </div>
                 </div>
                 <div class="row col4 padding">
                 <label for="Address">Font</label><br>
-                <select name="cars" id="cars" required>
+                <select name="cars" id="cars">
                     <option value="volvo"> Arial</option>
                     <option value="saab">Times New Roman</option>
                     <option value="mercedes">Helvetica</option>
@@ -161,18 +157,6 @@
 		  </div>
 		<!-- inner-part -->	
 	</div> 
-	<div id="mySidenav" class="sidenav">
-  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="#">User profile<i class="far fa-user"></i></a>
-  		<a href="#">Mini Store<i class="fas fa-store"></i></a>
-  		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
-  		<a href="#">Statstics<i class="fas fa-chart-line"></i></i></a>
-		<a href="#">View Orders<i class="fas fa-chart-line"></i></i></a>
-  		<a href="#">Transactions<i class="fas fa-money-check-alt"></i></a>
-  		<a href="#">Feedback<i class="fas fa-phone-square"></i></i></a>
-  		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
-	</div>
-	<span onclick="openNav()"></span>
 
 </body>
 </html>
