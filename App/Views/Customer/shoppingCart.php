@@ -1,11 +1,11 @@
 <html>
 
 <head>
-  <title>Affiliox-Current-Orders</title>
-	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
-    <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
+  <title>Affiliox-Cart</title>
+  <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+  <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
   <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -19,7 +19,7 @@
           
         <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
         <div class="sm-9">
-          <a href="/index.html"><img src="/images?Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
+          <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
         </div>
         <div class="sm-2 ">
           <div class="selector margint20">
@@ -75,40 +75,18 @@
         
     </div>
   </div>
-
     <!-- Container content  --------------------------------------------->
 
 
     
     <div class="row center">
 
-        <div class="col10 ">
+        <div class="col9 ">
 
           <div class="row ">
-            <div class="margint50 marginb50 ">
-            
-              <div class="block">
-              <button class="h3"><i class="fas fa-clock fa"></i>&nbsp;Current Orders</button>
-              <button  class="h3"><i class="fas fa-check-square"></i>&nbsp;Completed Orders</button>
-              
+            <div class="margint50 marginb50">
+            <h2><i class="fas fa-shopping-cart"></i> &nbsp; Shopping Cart</h2>
             </div>
-          
-            </div>
-          </div>
-          <div class=" row margint50 marginb50 ">
-            
-            <div class="left">
-            <h2 ><i class="fas fa-clock fa"></i>&nbsp;Current Orders</h2>
-            <div class="row">
-              <div class="col12 hrCustom lm-half-width">
-                <hr />
-              </div>
-            </div>
-        
-            
-            
-          </div>
-        
           </div>
          <!-- Loop area --------------------------------------------->
           
@@ -119,7 +97,7 @@
               <img class="images" src="/images/Products/drone.jpg" style="width:100%">
             </div>
 
-            <div class="col4">
+            <div class="col5 ">
               <div class="margint20 left">
               <h3>Inspire 1</h3>
               <p>Price:Rs 4000.00</p>
@@ -127,24 +105,16 @@
               </div>
             </div>
 
-            <div class="col2 search label">
+            <div class="col3 search label">
               <div class="margint20">
               <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-              <input style="z-index: 1;" type="number" id="quantity" name="quantity" readonly placeholder="1"> <br>
+              <input style="z-index: 1;" type="number" id="quantity" name="quantity" placeholder="1"> <br>
             </div>
             </div>
 
-            <div class="col3">
-              <div class="">
-                <p>ETA : 24/Nov/2020</p>
-
-                <div class="col12 nav-bar center">
-                  <button>&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
-                  <button>&nbsp; Order Received &nbsp;</button>
-                  <button >Order not Recived</button>
-
-                </div>
-
+            <div class="col1">
+              <div class="margint50 link-trash ">
+                <a href=""> <i class="fas fa-trash fa-1x"></i></a>
               </div>
             </div>
     
@@ -161,7 +131,7 @@
             <img class="images" src="/images/Products/action-camera.jpg" style="width:100%">
           </div>
 
-          <div class="col4">
+          <div class="col5">
             <div class="margint20 left">
             <h3>Go Pro-G4</h3>
             <p>Price :Rs 4200.00</p>
@@ -169,23 +139,15 @@
             </div>
           </div>
 
-          <div class="col2 search label">
+          <div class="col3 search label">
             <div class="margint20">
             <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-            <input readonly  type="number" id="quantity" name="quantity" placeholder="1"> <br>
+            <input  type="number" id="quantity" name="quantity" placeholder="1"> <br>
           </div>
           </div>
-          <div class="col3">
-            <div class="">
-              <p>ETA : 24/Nov/2020</p>
-
-              <div class="col12 nav-bar center">
-                <button>&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
-                <button>&nbsp; Order Received &nbsp;</button>
-                <button >Order not Recived</button>
-
-              </div>
-
+          <div class="col1">
+            <div class="margint50 link-trash">
+              <a href=""> <i class="fas fa-trash fa-1x"></i></a>
             </div>
           </div>
   
@@ -204,7 +166,7 @@
           <img class="images" src="/images/Products/i-phone.png" style="width:100%">
         </div>
 
-        <div class="col4 ">
+        <div class="col5 ">
           <div class=" left">
           <h3>I-Phone Xs</h3>
           <p>Price :Rs 72000.00</p>
@@ -212,24 +174,16 @@
           </div>
         </div>
 
-        <div class="col2 search label">
+        <div class="col3 search label">
           <div class="margint20">
           <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
           <input style="z-index: 1;" type="number" id="quantity" name="quantity" placeholder="1"> <br>
         </div>
         </div>
 
-        <div class="col3">
-          <div class="">
-            <p>ETA : 24/Nov/2020</p>
-
-            <div class="col12 nav-bar center">
-              <button>&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
-              <button>&nbsp; Order Received &nbsp;</button>
-              <button >Order not Recived</button>
-
-            </div>
-
+        <div class="col1">
+          <div class="margint50 link-trash">
+            <a href=""> <i class="fas fa-trash fa-1x"></i></a>
           </div>
         </div>
 
@@ -243,10 +197,53 @@
 
         </div>
 
+        <div class="col3   mm-fullwidth">
+          <div class="margint50 marginb50">
+            <div class="boxsummery">
+              <div class="col12 hrCustom">
+                <div class="margint100 center">
+                  <h2 >Summary</h2>
+                  <hr />
+                </div>
+              </div>
+  
+              <div class="col12 hrCustom">
+                <div>
+                  <p> SUBTOTAL : 82200.00 </p>
+                  
+                  <p> TAXES : 400.00 </p>
+                  <hr />
+                </div>
+              </div>
+              <div class="col12">
+                <div class="marginb100 boxsummery center">
+                  <h3 >
+                    <div>Total</div>
+                    <div>RS 82600.00</h3></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
     </div>  
+
+    
+
+    <div class="row ">
+
+      <div class="col12 ">
+        <div class="center marginb50">
+          <button type="submit" value="submit"> &nbsp; Proceed  &nbsp; </button>
+
+        </div>
+      </div>
+    </div>
+
+
     <!-- bottom-part-------------------------------------------->
+
     <div class="row">
 		  <div class="col12 fullwidth">
         <hr>
@@ -316,7 +313,6 @@
   		<a href="">Support<i class="fas fa-envelope-open-text"></i></a>
 	</div>
 	<span onclick="openNav()"></span>
-
 
   </div>
   <!--Container------------------------------------------>

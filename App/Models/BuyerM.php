@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-class Buyer extends \Core\Connect{
+class BuyerM extends \Core\Connect{
  
     function __construct() {
         
@@ -34,9 +34,34 @@ class Buyer extends \Core\Connect{
     }
 
     public function getBuyer($userID) {
-        $query = "select emp_id from buyer WHERE userID = '".$userID."'";
-        $buyer = mysqli_query($conn,$query);
-        return $buyer;
+        $conn=static::connectDB();
+        $query = "select * from buyer WHERE userID = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            while ($row = $result->fetch_assoc()) {
+                $arry['username'] = $row['userID'];
+                $arry['fullname'] = $row['name'];
+                $arry['address1'] = $row['aLine1'];
+                $arry['address2'] = $row['aLine2'];
+                $arry['city'] = $row['city'];
+                $arry['country'] = $row['country'];
+                $arry['gender'] = $row['gender'];
+                $arry['age'] = $row['age'];
+                $arry['marital'] = $row['status'];
+                $arry['dob'] = $row['dob'];
+                $arry['gender'] = $row['gender'];
+                $arry['email'] = $row['email'];
+                $arry['num'] = $row['phoneNo'];
+                
+            }
+            return $arry;
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
     }
     
     function EmailCompair($email,$username){

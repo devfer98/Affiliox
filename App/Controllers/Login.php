@@ -9,8 +9,10 @@ class Login extends \Core\Controller {
 
     public function indexAction(){
         // View::display('Common/Signin.php');
-
+        $this->view->display('Templete/Buyer_header.php');
         $this->view->display('Common/Signin.php');
+        $this->view->display('Templete/Buyer_footter.php');
+        
 
     }
 
@@ -27,8 +29,7 @@ class Login extends \Core\Controller {
        
                $result= $user->authenticate($name,$pw_md5);
                 if($result==1){
-                    
-                    header("Location:../Buyer/accountIndex");
+                    header("Location:../Buyer/Market");
                 }elseif ($result==2) {
                     header("Location:../Seller/accountIndex");
                 }elseif ($result==3){

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php echo $_SESSION['type']; ?>
+
 <head>
 	<title>Affiliox</title>
 	<link rel="shortcut icon" href="/images/promoter/logoOnly.png" type="image/x-icon">
@@ -21,7 +21,6 @@
 				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
 				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
 				<li class="item"><a href=""><i class="fas fa-user"></i>&nbsp;&nbsp;Account</a></li>
-				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li>
 				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
 				<li class="last">
 				<form>

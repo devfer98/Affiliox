@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use Core\View;
-use App\Models\Buyer;
+use App\Models\BuyerM;
 use App\Models\Seller;
 use App\Models\Promoter;
 
@@ -37,6 +37,7 @@ class Signup extends \Core\Controller {
         $dob = strtotime($userDob); 
         $difference = $now - $dob;
         $age = floor($difference / 31556926);
+        
         $userID  	=$_POST['Username-field'];
         $name       =$_POST['fullname'];
         $aLine1	    =$_POST['aline1'];

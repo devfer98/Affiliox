@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Affiliox-Completed-Orders</title>
+  <title>Affiliox-Feedbacks</title>
 	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -82,71 +82,72 @@
     
     <div class="row center">
 
-        <div class="col12">
+        <div class=" ">
+          <div class=" row margint50 marginb50 ">
+            <div class="left">
+            <h2 ><i class="fas fa-clock fa"></i>&nbsp;Previous Feedbacks</h2>
+            <div class="row">
 
-          <div class="margint50 marginb50 ">
-            <h2>Start a Conversation with the Seller</h2>
+              <div class="col12 hrCustom lm-half-width">
+                <hr />
+              </div>
+            </div>
+          </div>
           </div>
          <!-- Loop area --------------------------------------------->
           
           <div class="row" >
-            <div clas="sm-width center">
+            <div clas="center">
               <div class="boxsummery shoppingBlock marginb20 margint20 center ">
-                <div class="row" >
-            <div class="col3 imgw">
+
+            <div class="col2 imgw">
               <img class="images" src="/images/Products/drone.jpg" style="width:100%">
             </div>
 
-            <div class="col4">
+            <div class="col3">
               <div class="margint20 left">
               <h3>Inspire 1</h3>
               <p>Price:Rs 4000.00</p>
               <p>Delivery:Free</p>
               </div>
             </div>
-
-            <div class="col2 search label">
-              <div class="margint20">
-              <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-              <input style="z-index: 1;" type="number" id="quantity" name="quantity" readonly placeholder="1"> <br>
-            </div>
-            </div>
-
-            <div class="col3">
-              <div class="margint20">
-                <h4>ETA : 24/Nov/2020</h4>
-                
-              </div>
-            </div>
-              </div>
-              <div class="row left margint20 " >
-                <h4>Store Name :Shan's Tech area</h4></br>
-                <h4>Order Code :213ZWE31YASD092</h4>
-
-              </div>
-
-              <div class="row rowMargin label search">
-                <div class="col12">
-                  <div>
-                    <label for="message"><i class="fas fa-envelope-square"></i>&nbsp;Type Your message here</label><br>
-                    <br>
-                    <textarea rows = "7" cols = "55" name = "description" placeholder="...."></textarea><br>
-                    <p class="font-heavy"> Seller will respond to your request via the provided email</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row rowMargin marginb100 search">
-                <div class="col12 center">
-                  <div class=>
-                    <button type="submit" value="submit">Send Message</button>
-                  </div>
+            <div class="col7">
+              <div class="margint50 center width80">
+                <div class="width90">
+               
+                <textarea readonly class="row" rows="3" name="comment-space"> Good Quality brand new, for the given price.</textarea><br>
                 </div>
               </div>
             </div>
-
+            </div>
           </div>
         </div>
+
+        <div class="row center ">
+          <div clas="center">
+            <div class="boxsummery shoppingBlock marginb20 margint20 center">
+
+          <div class="col2 imgw center">
+            <img class="images" src="/images/Products/action-camera.jpg" style="width:100%">
+          </div>
+          <div class="col3">
+            <div class="margint20 left">
+            <h3>Go Pro-G4</h3>
+            <p>Price :Rs 4200.00</p>
+            <p>Delivery: Charged</p>
+            </div>
+          </div>
+          <div class="col7">
+            <div class="margint50">
+              <textarea readonly class="row" rows="3" name="comment-space"> Good Focus ,great pictures .</textarea><br>
+
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
         <!-- Loop area --------------------------------------------->
 
 
@@ -154,7 +155,6 @@
 
         </div>
 
-    </div>  
     <!-- bottom-part-------------------------------------------->
     <div class="row">
 		  <div class="col12 fullwidth">
@@ -225,6 +225,7 @@
   		<a href="">Support<i class="fas fa-envelope-open-text"></i></a>
 	</div>
 	<span onclick="openNav()"></span>
+
 
   </div>
   <!--Container------------------------------------------>
