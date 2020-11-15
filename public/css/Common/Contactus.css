@@ -65,7 +65,7 @@
   }
   
   @media screen and (max-width: 600px) {
-    .acolumn, {
+    .acolumn {
       width: 100%;
       margin-top: 0;
     }
