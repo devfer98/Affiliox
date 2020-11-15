@@ -1,10 +1,10 @@
 <html>
 
 <head>
-  <title>Review Feedbacks</title>
+  <title>Verify Users</title>
   <link rel="stylesheet" type="text/css" href="../../customer/css/common.css" />
   <link rel="stylesheet" type="text/css" href="../../customer/css/customer-grid.css" />
-  <link rel="stylesheet" type="text/css" href="../css/tab.css" />
+  <link rel="stylesheet" type="text/css" href="../css/verify.css" />
   <link rel="stylesheet" type="text/css" href="../css/manage.css">
   <script type="text/javascript" src="../js/tab.js"></script>
   <script type="text/javascript" src="../../js/Signin.js"></script>
@@ -88,7 +88,7 @@
         <div class=" ">
           <div class=" row margint50 marginb50 ">
             <div class="left">
-            <h2 ><i class='fas fa-star'></i>&nbsp;Review Feedbacks</h2>
+            <h2 ><i class='fas fa-star'></i>&nbsp;Verify Users</h2>
             <div class="row">
 
               <div class="col12 hrCustom lm-half-width">
@@ -99,88 +99,86 @@
           </div>
          <!-- content area --------------------------------------------->
          <div class="tab">
-          <button class="tablinks" onclick="openPage(event,'SellerFeedback')" id="defaultOpen">Seller Feedbacks</button>
-          <button class="tablinks" onclick="openPage(event,'PromoterFeedback')">Promoter Feedbacks</button>
+          <button class="tablinks button1" onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
+          <button class="tablinks button1" onclick="openPage(event,'PromoterReg')">Promoter Pending Approvals</button>
          
-          <div id="SellerFeedback" class="tabcontent">
+          <div id="SellerReg" class="tabcontent">
             <div class="body">
               <table>
                 <tr>
-                  <th>Full Name</th>
+                  <th>Username</th>
                   <th>UserID</th>
                   <th>Email</th>
-                  <th>Date Created</th>
-                  <th>Action</th>
+                  <th colspan="2">Action</th>
                 </tr>
                 <tr>
                   <td>Peter</td>
                   <td>seller1</td>
                   <td>peter@gmail.com</td>
-                  <td>19th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>Griffin</td>
                   <td>seller2</td>
                   <td>griffin@gmail.com</td>
-                  <td>22nd September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>Lily</td>
                   <td>seller3</td>
                   <td>lily@gmail.com</td>
-                  <td>10th October 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>John</td>
                   <td>seller4</td>
                   <td>john@gmail.com</td>
-                  <td>15th October 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
               </table>
             </div>	
           </div>
          
-          <div id="PromoterFeedback" class="tabcontent">
+          <div id="PromoterReg" class="tabcontent">
             <div class="body">
               <table>
                 <tr>
                   <th>Full Name</th>
                   <th>UserID</th>
                   <th>Email</th>
-                  <th>Date Created</th>
-                  <th>Action</th>
+                  <th colspan="2">Action</th>
                 </tr>
                 <tr>
                   <td>Michel</td>
                   <td>promoter1</td>
                   <td>michel@gmail.com</td>
-                  <td>8th August 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>Joe</td>
                   <td>promoter2</td>
                   <td>joe@gmail.com</td>
-                  <td>10th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>Liza</td>
                   <td>promoter3</td>
                   <td>liza@gmail.com</td>
-                  <td>19th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
                 <tr>
                   <td>Jhon</td>
                   <td>promoter4</td>
                   <td>jhon@gmail.com</td>
-                  <td>10th OCtober 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button class="button button1">Approve</button></td>
+                  <td><button class="button button2">Deny</button></td>
                 </tr>
               </table>
             </div>
