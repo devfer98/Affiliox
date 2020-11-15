@@ -1,0 +1,340 @@
+.clearfix {
+    overflow: auto;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+.container {
+  width: 1000px; 
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+h2 {
+  margin-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 2px solid black;
+}
+
+/*-------------------side navigation bar--------------------*/
+header {
+  background: #fafafa;
+  /*overflow: auto;*/
+  /*padding: 20px;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+header .open-btn {
+  float: left;
+  position: relative;
+  top: 40px;
+  margin-left: 80px;
+  margin-right: 50px;
+}
+
+hr {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  background: #eee; 
+  overflow-x: hidden;
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+
+.sidenav  a {
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  color: black;
+  display: block;
+  margin-bottom: 18px;
+  transition: 0.3s;
+}
+.sidenav a i {
+  margin-left: 10px;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: black; 
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/*------------------main navigation---------------------------------*/
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 20;
+}
+
+li  {
+  padding: 15px;
+}
+
+.logo-name a {
+  /*position: relative;*/
+  /*top: 12px;*/
+  color: #1f3d7a;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
+.item  {
+  position: relative;
+  left: 70px;
+  top: 20px;
+}
+
+.item  a {
+  text-decoration: none;
+  border: 2px solid #28a745;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: -10px;
+  padding: 4px;
+  border-radius: 0.25rem;
+  color: #1f3d7a;
+
+}
+
+.item a:hover {
+  background: #28a745;
+    opacity: 1;
+  letter-spacing: 0.5px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  color: #f5f5f6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.push {
+  margin-left: auto;
+  position: relative;
+  top: 15px;
+}
+
+.last {
+  position: relative;
+  top: 15px;
+}
+
+.push input {
+  padding: 5px;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border: 2px solid #ced4da; 
+  width: 180px;
+}
+
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+  text-decoration: underline;
+}
+
+.push button {
+  padding: 5px;
+  margin-left: 5px;
+  background: none;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border:  2px solid #28a745;
+  font-weight: bold;
+}
+
+.push button:hover {
+  background:#28a745;
+  color: #f5f5f6;
+}
+
+.last select{
+  padding: 5px;
+  width: 90px;
+  border: 2px solid black;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 0.25rem;
+}
+
+/*-------------------Inner content-------------------*/
+
+.area {
+  border: 1px solid black;
+  background: #fafafa;
+  border-radius: .25rem;
+  padding: 70px;
+  width: auto;
+  margin-top: 50px;
+  margin-bottom: 200px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.area label {
+  font-weight: bold;
+}
+
+.area input {
+    width: 500px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.area button {
+    width: 75px; 
+    line-height: 1.5;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    color: white;
+    background-color: #28a745;
+    border-color: #28a745;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.area button:hover {
+    background-color: white;
+    color: #28a745;
+}
+
+/*-----------------------bottom part----------------------------------------------*/
+.bottom-part table {
+  font-family: 'Open Sans', sans-serif;
+	margin: 50px 150px 40px 180px;
+	width: 1200px;
+}
+
+.thead td{
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  width: 200px;
+}
+
+table tr { line-height: 40px; }
+
+.bottom-part table tr td a {
+	text-decoration: none;
+	color: #1f3d7a;
+}
+
+.bottom-part table tr td a:hover {
+	color: red;
+}
+
+/*table i {
+	color: #99ff99
+}*/
+
+/*--------------------footer-tag--------------------*/
+.footer {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer ul li {
+  font-size: 17px;
+  display: inline-block;
+}
+/*--------------------responsive media queries--------------------*/
+
+@media screen and (max-width: 800px){
+
+  .container { margin: auto; padding: 10px; width: 100%;}
+
+  .container h2 {text-align: center;}  /*align title to the center of the page*/
+
+  .area { padding: 10px; width: 100%;}
+
+
+  .area input { width: 300px;}
+
+}
+
+
+
+@media screen and (max-width: 650px) {
+    
+  .container { margin: auto; padding: 10px; width: 100%;}
+
+  .container h2 {text-align: center;} /*align title to the center of the page*/
+
+  form input { margin: auto; padding: 10px; width: 100%; } 
+
+}
+
+
+@media screen and (max-width: 500px){
+  
+    .container { margin: auto; padding: 10px; width: 100%;}
+
+    .container h2 {text-align: center;} /*align title to the center of the page*/
+
+    form input { margin: auto; padding: 10px; width: 100%; }
+
+    .affiliox {float: right;}
+}
+
+
+@media screen and (max-width: 450px) {
+       /* Even Smaller devices */
+    .affiliox {float: right;}
+
+    table tr td { display: block; justify-content:center; align-items:center; display:flex; }
+
+    form input { margin: auto; padding: 10px; width: 100%; margin-top: 50px;}
+
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+       /* Even Smaller devices */
+       .affiliox {float: right;}
+
+       .area input { width: 250px; margin-top: 20px;}
+
+       .area button { margin-top: 20px;}
+}    

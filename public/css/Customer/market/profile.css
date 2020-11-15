@@ -1,0 +1,17 @@
+table {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 60px;
+    margin: 0 auto;
+  }
+  
+  table td {
+    padding: 35px;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+    width: 250px;
+  }
+  
+  #td-1 {
+    font-weight: bold;
+  }
+  

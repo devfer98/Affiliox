@@ -213,7 +213,7 @@
 		<div class="bottom-part">
 			<table>
 				<tr class="thead">
-					<td rowspan="4"><img src="promoter/images/affiliox.png" height='150' width='150'></td>
+					<td rowspan="4"><img src="public/images/promoter/affiliox.png" height='150' width='150'></td>
 					<td>Main Menu</td>
 					<td>Find us On</td>
 					<td>Contact us</td>
@@ -246,6 +246,6 @@
   				<li> Affiliox &trade;</li>
   			</ul>
 		</div>	 <!-- footer -->
-		<script src="js/index-script.js"></script>
+		<script src="/js/Promoter/index-script.js"></script>
 </body>
 </html>

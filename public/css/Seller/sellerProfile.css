@@ -1,0 +1,111 @@
+.container1 {
+    width: 1000px; 
+    margin: 0 auto;
+}
+
+.container1 h2 {
+    margin-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 2px solid black;
+}
+
+/*-------------------Inner content-------------------*/
+table {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 60px;
+    margin: 0 auto;
+  }
+  
+  table td {
+    padding: 35px;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  #td-1 {
+    font-weight: bold;
+  }
+
+  .feedback table td {
+    /* padding: 35px; */
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+    /* width: 250px; */
+    width: 200px;
+    text-align: center;
+  }
+  
+  /* form input  {
+      width: 300px; 
+      line-height: 1.5;
+      font-size: 1rem;
+      padding: .375rem .75rem;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      color: white;
+      background-color: #28a745;
+      border-color: #28a745;
+      cursor: pointer;
+      margin: 50px 0 50px 0px; 
+  }
+  
+  form input:hover {
+      background-color: white;
+      color: #28a745;
+  } */
+
+  /*--------------------responsive media queries--------------------*/
+
+@media screen and (max-width: 800px){
+
+    .container1 { margin: auto; padding: 10px; width: 100%;}
+  
+    .container1 h2 {text-align: center;}  /*align title to the center of the page*/
+  
+    form input { margin: auto; padding: 10px; width: 100%; } 
+  
+  }
+  
+  
+  
+  @media screen and (max-width: 650px) {
+      
+    .container1 { margin: auto; padding: 10px; width: 100%;}
+  
+    .container1 h2 {text-align: center;} /*align title to the center of the page*/
+  
+    form input { margin: auto; padding: 10px; width: 100%; }      
+  }
+  
+  
+  @media screen and (max-width: 500px){
+    
+      .container1 { margin: auto; padding: 10px; width: 100%;}
+  
+      .container1 h2 {text-align: center;} /*align title to the center of the page*/
+  
+      form input { margin: auto; padding: 10px; width: 100%; }
+  
+      .affiliox {float: right;}
+  }
+  
+  
+  @media screen and (max-width: 450px) {
+         /* Even Smaller devices */
+      .affiliox {float: right;}
+  
+      table tr td { display: block; justify-content:center; align-items:center; display:flex; }
+  
+      form input { margin: auto; padding: 10px; width: 100%; margin-top: 50px;}
+  }
+  
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+         /* Even Smaller devices */
+         .affiliox {float: right;}
+  }    
+  
+  

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seller Feedback</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
+	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/market.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/sellerProfile.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/sellerFeedback.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
+	<script src="/js/Seller/common-dashboard.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+	<!-------------- Top-Navigation-Bar ---------------------->
+	<div id="main" class="container navigation">
+		<ul class="">
+			<li onclick="openNav()">&#9776;</li>
+			<li><a href="">Affiliox</a></li></a>
+			<li style="float: right;">user-name</li>
+		</ul>
+		<div class="row row-padding">
+			<hr class="col12"/>
+		</div>
+		<div class="row row-padding">	
+			<div class="col12 center title">
+				<p>Review Feedbacks</p>
+			</div>  <!-- top -->
+
+			<div class="feedback row col8 col-center inner-part">
+				<table id="overall-review-table">
+				<tr>
+					<th>Value</th>
+					<th>Rated Method</th>
+					<th>Percentage</th>
+				</tr>
+				<tr>            
+					<td>Excellent</td>
+					<td><i id="star" class="fas fa-star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+					<td>60%</td>
+					</tr>
+					<tr>
+					<td>Great</td>
+					<td><i id="star" class="fas fa-star"><i class="fas fa-star"><i class="fas fa-star"><i class="fas fa-star"></td>
+					<td>10%</td>
+					</tr>
+					<tr>
+					<td>Average</td>
+					<td><i id="star" class="fas fa-star"><i class="fas fa-star"></td>
+					<td>15%</td>
+					</tr>
+					<tr>
+					<td>Poor</td>
+					<td><i id="star" i class="fas fa-star-half-alt"></i></td>
+					<td>10%</td>
+					</tr>
+					<tr>
+					<td style="border: none;">Bad</td>
+					<td style="color: red;border: none;">Not Rated</td>
+					<td style="border: none;">5%</td>
+					</tr>
+				</table>
+			</div> <!--overall-review -->
+
+			<div class="col12 center title">
+				<p>Customer Reviews Feedbacks</p>
+			</div> 
+
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+			<form action="" method="post">
+				<div class="row col12">
+					<h3 class="center">John Smith</h3>
+				</div>
+				<div class="row">
+				<div class="col6 padding">
+					<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+				</div>
+				<div class="col6 padding fitcontent">
+					<label>Reply</label><br/>
+					<input type="text" id="Birth" name="dob" placeholder="">
+				</div>
+				</div>
+				<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
+			</form>
+			</div>
+
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+				<form action="" method="post">
+					<div class="row col12">
+						<h3 class="center">John Smith</h3>
+					</div>
+					<div class="row">
+					<div class="col6 padding">
+						<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+					</div>
+					<div class="col6 padding fitcontent">
+						<label>Reply</label><br/>
+						<input type="text" id="Birth" name="dob" placeholder="">
+					</div>
+					</div>
+					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
+				</form>
+			</div>
+
+			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+				<form action="" method="post">
+					<div class="row col12">
+						<h3 class="center">John Smith</h3>
+					</div>
+					<div class="row">
+					<div class="col6 padding">
+						<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+					</div>
+					<div class="col6 padding fitcontent">
+						<label>Reply</label><br/>
+						<input type="text" id="Birth" name="dob" placeholder="">
+					</div>
+					</div>
+					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
+				</form>
+			</div>
+			
+		</div>
+		<div class="row row-padding">
+			<hr class="col12"/>
+		</div>
+
+		<!-- bottom-part-------------------------------------------->
+		<div class="row bottom-part">
+			<div class="col3 hidden-sm center">
+			  <a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
+			</div>
+	
+			<div class="col2">
+			  <!-- <ul> -->
+				<p>Main Menu</p>
+				<a href="">Affiliox Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			  <!-- </ul> -->
+			</div>
+			<div class="col2">
+			  <!-- <ul> -->
+				<p>Company</p>
+				<a href="">Address</a>
+				<a href="">Email</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			  <!-- </ul> -->
+			</div>
+			<div class="col2">
+			  <!-- <ul> -->
+				<p>Discover</p>
+				<a href="">Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			  <!-- </ul> -->
+			</div>
+			<div class="col2">
+			  <!-- <ul> -->
+				<p>Find Us on</p>
+				<a href="">Facebook</a>
+				<a href="">Twitter</a>
+				<a href="">Instagram</a>
+				<a href="">Youtube</a>
+			  <!-- </ul> -->
+			</div>
+		  </div>
+	
+		  <div class="row">
+			<div class="col12 company-address">
+			  <ul>
+				<li>© All Right reserved</li>
+				<li>Affiliox 2020 ™</li>
+			  </ul>
+			</div>
+		  </div>
+		<!-- inner-part -->	
+	</div> 
+	<div id="mySidenav" class="sidenav">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<a href="sellerProfile.html">User profile<i class="far fa-user"></i></a>
+  		<a href="ministore.html">Mini Store<i class="fas fa-store"></i></a>
+  		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
+  		<a href="sellerStatistics.html">Statstics<i class="fas fa-chart-line"></i></i></a>
+		<a href="viewOrders.html">View Orders<i class="fas fa-chart-line"></i></i></a>
+  		<a href="sellerTransactions.html">Transactions<i class="fas fa-money-check-alt"></i></a>
+  		<a href="sellerFeedback.html">Feedback<i class="fas fa-phone-square"></i></i></a>
+  		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
+	</div>
+	<span onclick="openNav()"></span>
+
+</body>
+</html>
