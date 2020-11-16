@@ -74,7 +74,7 @@
                         <div class="col3">
                             <div class="">
                                 <div class="col12 nav-bar center">
-                                    <button>&nbsp;&nbsp; Buy Product &nbsp;&nbsp;</button>
+                                    <button onclick="location.href='../Buyer/ContactSeller'">&nbsp;&nbsp; Buy Product &nbsp;&nbsp;</button>
                                 </div>
                             </div>
                         </div>

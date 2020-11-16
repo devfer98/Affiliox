@@ -41,23 +41,33 @@ class BuyerM extends \Core\Connect{
         if ($stmt->execute()) {
             $result = $stmt->get_result();
             
-            while ($row = $result->fetch_assoc()) {
-                $arry['username'] = $row['userID'];
-                $arry['fullname'] = $row['name'];
-                $arry['address1'] = $row['aLine1'];
-                $arry['address2'] = $row['aLine2'];
-                $arry['city'] = $row['city'];
-                $arry['country'] = $row['country'];
-                $arry['gender'] = $row['gender'];
-                $arry['age'] = $row['age'];
-                $arry['marital'] = $row['status'];
-                $arry['dob'] = $row['dob'];
-                $arry['gender'] = $row['gender'];
-                $arry['email'] = $row['email'];
-                $arry['num'] = $row['phoneNo'];
-                
+            if ($result->num_rows >0)
+            {
+                return $result;
+                // while($row = $result->fetch_assoc()){   
+
+                //    return  $row['userID'];  
+                // }
             }
-            return $arry;
+               
+
+            // while ($row = $result->fetch_assoc()) {
+            //     // $arry['username'] = $row['userID'];
+            //     // $arry['fullname'] = $row['name'];
+            //     // $arry['address1'] = $row['aLine1'];
+            //     // $arry['address2'] = $row['aLine2'];
+            //     // $arry['city'] = $row['city'];
+            //     // $arry['country'] = $row['country'];
+            //     // $arry['gender'] = $row['gender'];
+            //     // $arry['age'] = $row['age'];
+            //     // $arry['marital'] = $row['status'];
+            //     // $arry['dob'] = $row['dob'];
+            //     // $arry['gender'] = $row['gender'];
+            //     // $arry['email'] = $row['email'];
+            //     // $arry['num'] = $row['phoneNo'];
+                
+            // }
+            
         }else{
             $result = 'Error sql';
             return $result;

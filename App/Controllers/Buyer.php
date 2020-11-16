@@ -12,14 +12,17 @@ class Buyer extends \Core\Controller {
 
      // Buyer Account Functions -----------------------------//
      public function AccountAction(){
-      $UImsg= [];
+
+     
+        
         $userID=$_SESSION['username'];
         $user= new BuyerM();
         $result = $user->getBuyer($userID);
-        $UImsg=$result;
-        echo $UImsg['dob'];
 
-        $this->view->display('Customer/accountView.php');
+         $UImsg=$result;
+         $this->view->$UImsg=$UImsg;
+         $this->view->display('Customer/accountView.php');
+
      }
 
       // Buyer Market Functions -----------------------------//

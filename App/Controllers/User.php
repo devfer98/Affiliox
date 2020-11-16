@@ -18,7 +18,6 @@ class User extends \Core\Controller{
         echo'</pre>';
     }
 
-    
     public function HomeAction(){
         echo 'add method is called';
     }

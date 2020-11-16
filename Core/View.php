@@ -27,10 +27,10 @@ Class View{
 
         $file = "../App/Views/$view";
         if(is_readable($file)){
-            // include $header;
+            include $header;
             // require $header;
             require $file;
-            // include $footer;
+            include $footer;
             // require $footer;
 
         }else {
