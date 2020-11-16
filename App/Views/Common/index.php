@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php echo $_SESSION['type']; ?>
+<?php echo $_SESSION["userID"]; ?>
 <head>
 	<title>Affiliox</title>
 	<link rel="shortcut icon" href="/images/promoter/logoOnly.png" type="image/x-icon">

@@ -41,31 +41,31 @@
 			<table>
 				<tr>
 					<td id="td-1">Your Name :</td>
-					<td>kko</td>
+					<td><?php echo  $_SESSION["name"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Date of Birth :</td>
-					<td>kok</td>
+					<td><?php echo  $_SESSION["dob"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Account ID :</td>
-					<td>2</td>
+					<td><?php echo  $_SESSION["userID"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Primary Email :</td>
-					<td>sample@gmail.com</td>
+					<td><?php echo  $_SESSION["email"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Mobile Number :</td>
-					<td>Sample number is here</td>
+					<td><?php echo  $_SESSION["phoneNo"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Address :</td>
-					<td>Sample address is here</td>
+					<td><?php echo  $_SESSION["aLine"]; ?></td>
 				</tr>
 				<tr>
 					<td id="td-1">Country :</td>
-					<td>Sample state is here</td>
+					<td><?php echo  $_SESSION["country"]; ?></td>
 				</tr>
 
 				

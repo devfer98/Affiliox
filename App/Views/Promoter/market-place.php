@@ -34,7 +34,7 @@
       </header>
       <hr>	
 	  <div class="container">
-      <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome to Market Place</h2>
+      <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome <?php echo $_SESSION["userID"];  ?> to the Market Place</h2>
 		<div class="top-part">
         <input type="search" name="search" placeholder="seach">
         <button type="search" name="submit">Search</button>

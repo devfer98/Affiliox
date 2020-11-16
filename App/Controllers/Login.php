@@ -27,7 +27,6 @@ class Login extends \Core\Controller {
        
                $result= $user->authenticate($name,$pw_md5);
                 if($result==1){
-                    
                     header("Location:../Buyer/accountIndex");
                 }elseif ($result==2) {
                     header("Location:../Seller/accountIndex");

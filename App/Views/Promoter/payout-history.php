@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,27 +39,44 @@
 	<div class="container">
 		<h2><i class="far fa-file-alt"></i>&nbsp; &nbsp;Payout History</h2>						
 		<div class="table">
-			
+	
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat.</p>
+			<h2>Welcome <?php echo $_SESSION['userID']; ?></h2>
+			
+			<!-- <a href="../Promoter/listAllTrans">List All Transaction</a> -->
+			
 			<table style="width:100%">
   				<tr>
     				<th>Transaction ID</th>
     				<th>Amount</th>
     				<th>Status</th>
-    				<th>Date</th>
-  				</tr>
-  				
-          <!-- <?php echo $payout_list; ?> -->
+					<th>Date</th>
+				</tr>
+				<tr>
+				<?php
+					echo "<tr>";
+						echo "<td>" . $_SESSION["transID"] . "</td>";
+						echo "<td>" . $_SESSION['ammount'] . "</td>";
+						echo "<td>" . $_SESSION['status'] . "</td>";
+						echo "<td>" . $_SESSION['date'] . "</td>";
+					echo "</tr>";
+					
 
+				?>
+				</tr>
+			
 			</table>
-		</div> <!-- table -->	
+			</div> 
+		
+
 		<hr style="height:2px;border:none;color:#333;background-color:#333;">
 	</div> <!-- container -->	
 
 		<!-- bottom-part-------------------------------------------->
+	
 		<div class="bottom-part">
 			<table>
 				<tr class="thead">

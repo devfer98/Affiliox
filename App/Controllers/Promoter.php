@@ -2,7 +2,11 @@
 
 namespace App\Controllers;
 use Core\View;
+use App\Models\TransactionPromo;
+use App\Models\PromoterProfile;
 use App\Models\User;
+use App\Models\Buyer;
+use App\Models\Seller;
 
 
 class Promoter extends \Core\Controller {
@@ -26,6 +30,10 @@ class Promoter extends \Core\Controller {
     }
 
     public function promoterProfileAction() {
+
+        $promodetails = new PromoterProfile();
+
+        $promodetails->getPromoterProfile();
         $this->view->display('Promoter/promoter-dashboard.php');
     }
 
@@ -42,8 +50,19 @@ class Promoter extends \Core\Controller {
     }
 
     public function transHistoryAction() {
+        $promotrans = new TransactionPromo();
+
+        $promotrans->getTransPromo();
         $this->view->display('Promoter/payout-history.php');
+        
     }
+
+    // public function listAllTransAction() {
+
+    //     $promotrans = new TransactionPromo();
+
+    //     $promotrans->getTransPromo();
+    // }
 
     public function promoterFeedbackAction() {
         $this->view->display('Promoter/review-feedback.php');
@@ -53,9 +72,31 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/support-center.php');
     }
 
-    protected function before()
 
-    {   
+    public function promoterTransToDBAction(){
+        
+        $user = new TransactionPromo();
+        $ammount= $_POST['ammount'];
+        $status = 1 ;
+        $date = date("Y-m-d");
+        $userID = $_SESSION["userID"];
+        
+        if($ammount= $_POST['ammount']) {
+            $user->addTransPromo($ammount, $status, $userID, $date);
+        header('Location:../Promoter/promoterTransSuccess');
+        } else    {
+            $UImsg= 'Invalid ammount please Try Again';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Promoter/withdraw-earnings.php');
+        }             
+    }
+
+
+    public function promoterTransSuccessAction(){
+        $this->view->display('Promoter/withdraw-earnings.php');
+    }
+
+    protected function before() {   
         if(session_id() == '') {
             session_start();
         }
@@ -66,5 +107,7 @@ class Promoter extends \Core\Controller {
             
         }
     }
+
+    
 
 }
