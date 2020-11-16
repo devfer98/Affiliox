@@ -10,7 +10,6 @@ class Seller extends \Core\Controller {
     public function accountIndexAction(){
         $this->view->display('Common/market.php');
         // $this->view->display('Common/market.php');
-
     }
 
     public function helpIndexAction(){

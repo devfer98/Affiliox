@@ -1,5 +1,4 @@
 <html>
-
 <?php echo $_SESSION['type']; ?>
 <head>
   <title>Affiliox-market</title>
@@ -18,23 +17,24 @@
   <div class="container">
     <div class="backcolor"> 
       <div class="row hidden-xm marginb100 backcolor">
-        <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
-          <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
-            <div class="sm-9">
-              <a href="/index.html"><img src="/imagesLogo/Sidelogo.png" alt="Affiliox LOGO"/></a>
-            </div>
-            <div class="sm-2 ">
-              <div class="selector margint20">
-                <select>
-                  <option value="sign in">Sign In</option><br/>
-                  <option value="login">Login</option><br/>
-                </select>
-              </div>
-            </div>
-            
-
+      <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
+          
+        <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+        <div class="sm-9">
+          <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
+        </div>
+        <div class="sm-2 ">
+          <div class="selector margint20">
+            <select>
+              <option value="sign in">Sign In</option><br/>
+              <option value="login">Login</option><br/>
+            </select>
           </div>
         </div>
+        
+
+      </div>
+    </div>
       <div class=" nav-bar center backcolor">
         <div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
         <div class="col2 hidden-sm">
@@ -54,7 +54,7 @@
           <ul>
             <input type="text" name="search" placeholder="Headsets" />
             <a href=""><i class="fas fa-search"></i></a>
-          </ul>
+          </ul> 
         </div>
         <div class="col1 hidden-sm ">
           <div class="selector margint20">
@@ -62,7 +62,7 @@
           <select name="direction" id="select-nav" onchange="location = this.value;">
             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                echo '<option value="" selected disabled hidden data-content = "fas fa-User"></option>';
+                echo '<option value="" selected disabled hidden></option>';
                 echo '<option value="../login/logout">Logout</option>';
             }else{
                 echo '<option value="" selected disabled hidden></option>';
@@ -71,8 +71,8 @@
 
             
             }?>
-          </select>
-          </form>	
+        </select>
+				</form>	
           </div>
 
         </div>
@@ -229,8 +229,6 @@
           <div class="">
             <div class="col12 nav-bar center">
               <button>&nbsp;&nbsp; Buy Product &nbsp;&nbsp;</button>
-
-
             </div>
 
           </div>
@@ -239,10 +237,9 @@
         </div>
 
       </div>
-    </div
+          </div>
 
-        <!-- Loop area --------------------------------------------->
-
+     
         </div>
 
         </div>
@@ -309,13 +306,12 @@
 
   <div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="">User profile<i class="far fa-user"></i></a>  		
-      <a href="">Marker Place<i class="fab fa-shopify"></i></a>
-      <a href="">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
-  		<a href="">Orders<i class="fas fa-chart-line"></i></i></a>
-  		<a href="">Transactions<i class="fas fa-money-check-alt"></i></a>
-  		<a href="">Feedback<i class="fas fa-phone-square"></i></i></a>
-  		<a href="">Support<i class="fas fa-envelope-open-text"></i></a>
+  		<a href="../Buyer/Account">User profile<i class="far fa-user"></i></a>  		
+      <a href="../Buyer/Market">Marker Place<i class="fab fa-shopify"></i></a>
+      <a href="../Buyer/ShoppingCart">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
+  		<a href="../Buyer/CurrentOrders">Orders<i class="fas fa-chart-line"></i></i></a>
+  		<a href="../Buyer/FeedbackView">Feedback<i class="fas fa-phone-square"></i></i></a>
+  		<a href="../Common/Help">Support<i class="fas fa-envelope-open-text"></i></a>
 	</div>
 	<span onclick="openNav()"></span>
 
