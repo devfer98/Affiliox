@@ -1,0 +1,105 @@
+
+.dropdown-btnN {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+ .dropdown-btnN:hover {
+  color: #f1f1f1;
+}
+.dropdown-containerN {
+  display:block;
+  color: #818181;
+  padding-left: 8px;
+  
+
+}
+
+.dropdown-containerN a:hover {
+  color: #f5f5f6;
+	background: #28a745;
+	
+}
+
+.dropdown-containerN a:active {
+  color: rgb(255, 255, 255);  
+	
+}
+
+.fa-caret-downN {
+  float: right;
+  padding-right: 8px;
+}
+
+.dropdown-priceN{
+  font-weight:bold;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav-filN {
+	height: 100%; 
+	width: 0; 
+	position: fixed;
+	z-index: 1; 
+	top: 0;
+	left: 0;
+	background: #eee; 
+	overflow-x: hidden;
+	padding-top: 60px; 
+	transition: 0.5s; 
+	z-index: 500;
+  }
+
+  .sidenav-filN  a {
+	padding: 10px 10px 10px 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	color: black;
+	display: block;
+	margin-bottom: 18px;
+	transition: 0.3s;
+  }
+
+  .sidenav-filN a:hover{
+    color:#ffffff;
+    border-radius: 5px;
+  }
+  .sidenav-filN a i {
+	margin-left: 10px;
+  }
+  
+  .sidenav-filN .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	color: black; 
+  }
+
+.icon-floN i{
+  float: left;
+  text-align: center;
+}

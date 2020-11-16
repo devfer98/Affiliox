@@ -18,9 +18,8 @@ class Buyer extends \Core\Controller {
         $userID=$_SESSION['username'];
         $user= new BuyerM();
         $result = $user->getBuyer($userID);
-
          $UImsg=$result;
-         $this->view->$UImsg=$UImsg;
+         $this->view->UImsga=$UImsg;
          $this->view->display('Customer/accountView.php');
 
      }

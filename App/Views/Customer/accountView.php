@@ -29,15 +29,13 @@
             <div class="errorMsg">
                 <p><?php 
 				
-				
-				if(isset($this->UImsg) and !empty($this->UImsg)){
-					
-					while($row = $this->$UImsg->fetch_assoc()){   
-                  	return  $row['userID'];  
-					}
-					
-					}  
-					
+				if(isset($this->UImsga) and !empty($this->UImsga)){
+					while($row = $this->UImsga->fetch_assoc()){   
+                        echo $row['userID']."<br/>"; 
+                        echo $row['name']."<br/>";
+                        echo $row['city']."<br/>";   
+					}	
+				}  
 				?></p>
             </div>
             <div class="row">

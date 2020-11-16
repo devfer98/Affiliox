@@ -1,0 +1,435 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+
+}
+div{
+
+  -webkit-box-sizing: border-box; 
+ 
+ 
+
+/*
+    -webkit-box-sizing: border-box; 
+   border: 1px solid black;
+        
+
+*/
+} 
+.bor2N{
+  border:0.5px solid rgb(158, 40, 40)
+}
+
+.bor3N{
+  border:0.5px solid rgb(50, 216, 16)
+}
+.borderN{
+  -webkit-box-sizing: border-box; 
+  border:0.5px solid rgb(162, 162, 162)
+}
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+    
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+.fitcontentN{
+    min-width: fit-content;
+}
+.container2N {
+  width: 100%;
+  /* padding-right: 15px;
+  padding-left: 15px; */
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 2px solid green; */
+}
+
+
+.containerN {
+    width: 100%;
+   
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 2px solid green; */
+}
+
+.rowN {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.col1N {
+    margin: auto;
+    padding: 10px;
+    width: 8.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.sm-1N {
+  margin: auto;
+  padding: 10px;
+  width: 8.333333%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+.col2N {
+    margin: auto;
+    padding: 10px;
+    width: 16.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.sm-2N {
+  margin: auto;
+  padding: 10px;
+  width: 16.666667%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+.col3N {
+    margin: auto;
+    padding: 10px;
+    width: 25%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col4N {
+    margin: auto;
+    padding: 10px;
+    width: 33%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col5N {
+    margin: auto;
+    padding: 10px;
+    width: 41.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col6N {
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col7N {
+    margin: auto;
+    padding: 10px;
+    width: 58.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+  
+.col8N {
+    margin: auto;
+    padding: 10px;
+    width: 66.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col9N {
+    margin: auto;
+    padding: 10px;
+    width: 75%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+.sm-9N {
+  margin: auto;
+  padding: 10px;
+  width: 75%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+
+.col10N {
+    margin: auto;
+    padding: 10px;
+    width: 83.333333%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+
+.sm-10N {
+  margin: auto;
+  padding: 10px;
+  width: 83.333333%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
+.col11N {
+    margin: auto;
+    padding: 10px;
+    width: 91.666667%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.col12N {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    float: left;
+    /* border: 2px solid blue; */
+}
+
+.fullWidthN{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.lm-half-widthN{
+  width:50%;
+}
+h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+
+  .h2{
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+
+  .h3 {
+    font-size: 1.375rem;
+  }
+  
+  h4 {
+    font-size: 1.125rem;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-regular {
+    font-weight: 400;
+  }
+  
+  .font-heavy {
+    font-weight: 700;
+  }
+  
+  /* POSITIONING */
+  
+  .leftN {
+    text-align: left;
+  }
+  
+  .rightN {
+    text-align: right;
+  }
+  
+  .centerN {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .justifyN {
+    text-align: justify;
+  }
+  .bot-marginN{
+    margin-bottom: 220px;
+  }
+  .hidden-smN {
+    display: block;
+  }
+
+  .hidden-xmN{
+    display:none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    [class*="col"] {
+        width: 100%;
+        padding: 0px;
+      }
+
+      .hidden-xmN{
+        display:block;
+      }
+    .nav-barN ul a{
+        display: block;
+    }
+    .nav-barN ul input{
+        width: 100%;
+    }
+    .hidden-smN {
+        display:none;
+      }
+    .account-btnN a{
+        display: block;
+        width: 100%;
+    }
+    .account-btnN ul a{
+      padding-left: 0%;
+    }
+    textarea{
+      width: 100%;
+  }
+  .sm-text-widthN textarea{
+    width: 80%;
+  }
+
+  .sm-widthN{
+    width: 60%;
+    
+  }
+  .half-widthN{
+    width:50%;
+  }
+  .signinN input{
+    width: 100%;
+    }
+  
+  
+
+    .marginl100N{
+      margin-left:0px ;
+    }
+    .marginr100N{
+      margin-right: 0px;
+    }
+    .sm-centerN{
+      text-align: center;
+    }
+
+    .col12N{
+      padding-bottom:10px;
+    }
+} 
+
+@media screen and (max-width: 810px){
+
+  [class*="col"] {
+    width: 100%;
+    padding: 0px;
+  }
+.nav-barN ul a{
+    display: block;
+}
+.nav-barN ul input{
+    width: 100%;
+}
+.hidden-smN {
+    display:none;
+  }
+  .hidden-xmN{
+    display:block;
+  }
+.account-btnN a{
+    display: block;
+    width: 100%;
+}
+.account-btnN ul a{
+  padding-left: 0%;
+}
+textarea{
+  
+  width: 100%;
+}
+.sm-text-widthN textarea{
+width: 80%;
+}
+
+.sm-widthN{
+width: 60%;
+}
+.half-widthN{
+width:50%;
+}
+.signinN input{
+width: 100%;
+}
+
+.marginl100N{
+  margin-left:0px ;
+}
+.marginr100N{
+  margin-right: 0px;
+}
+.sm-centerN{
+  text-align: center;
+}
+
+.col12N{
+  padding-bottom:10px;
+}
+
+}
+
+
+@media screen and (max-width: 900px){
+
+.mm-fullwidthN{ 
+    width: 100%;
+    padding: 1px;
+}
+
+}
+
