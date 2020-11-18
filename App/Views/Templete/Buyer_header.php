@@ -24,10 +24,18 @@
                     </div>
                     <div class="sm-2 ">
                         <div class="selector margint20">
-                            <select>
-                                <option value="sign in">Sign In</option><br />
-                                <option value="login">Login</option><br />
-                            </select>
+                        <select name="direction" id="select-nav" onchange="location = this.value;">
+                            <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
+
+                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="../login/logout">Logout</option>';
+                        }else{
+                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="../Signup/create">Signup</option>';
+                            echo '<option value="../login/index">Login</option>';
+                   
+                        }?>
+                        </select>
                         </div>
                     </div>
 

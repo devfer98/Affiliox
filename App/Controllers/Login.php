@@ -9,9 +9,9 @@ class Login extends \Core\Controller {
 
     public function indexAction(){
         // View::display('Common/Signin.php');
-        $this->view->display('Templete/Buyer_header.php');
+   
         $this->view->display('Common/Signin.php');
-        $this->view->display('Templete/Buyer_footter.php');
+
         
 
     }

@@ -13,24 +13,47 @@ class Buyer extends \Core\Controller {
      // Buyer Account Functions -----------------------------//
      public function AccountAction(){
 
-     
-        
-        $userID=$_SESSION['username'];
-        $user= new BuyerM();
-        $result = $user->getBuyer($userID);
-
+         $userID=$_SESSION['username'];
+         $user= new BuyerM();
+         $result = $user->getBuyer($userID);
          $UImsg=$result;
-         $this->view->$UImsg=$UImsg;
+         $this->view->UImsg=$UImsg;
          $this->view->display('Customer/accountView.php');
 
+     
+// $to_email = "lawthenuka@gmail.com";
+// $subject = "Simple Email Test via PHP";
+// $body = "Hi, This is test email send by PHP Script";
+// $headers = "From: affiliox.xyz@gmail.com";
+
+// if (mail($to_email, $subject, $body, $headers)) {
+//     echo "Email successfully sent to $to_email...";
+// } else {
+//     echo "Email sending failed...";
+// }
+
      }
+
+     public function EditAccountAction(){
+
+      $userID=$_SESSION['username'];
+      $user= new BuyerM();
+      $result = $user->getBuyer($userID);
+      $UImsg=$result;
+      $this->view->UImsg=$UImsg;
+      $this->view->display('Customer/UpdateAccount.php');
+   }
 
       // Buyer Market Functions -----------------------------//
      public function MarketAction(){
         $this->view->display('Customer/market.php');
      }
 
-
+      // Buyer password reset Functions -----------------------------//
+      public function PasswordResetAction(){
+         $this->view->display('Customer/PassReset-afterLogin.php');
+      }
+      
 
       // Shopping cart  Functions -----------------------------//
      public function ShoppingCartAction(){

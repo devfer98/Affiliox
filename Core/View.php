@@ -21,9 +21,9 @@ Class View{
         }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'admin') ) {
             // $header="../App/Views/Templete/admin_Header.php";
             // $footer="../App/Views/Templete/admin_Footer.php";
-        }else{}
-            // $header="../App/Views/Templete/User_Header.php";
-            // $footer="../App/Views/Templete/User_Footer.php";
+        }else
+            $header="../App/Views/Templete/User_Header.php";
+            $footer="../App/Views/Templete/User_Footer.php";
 
         $file = "../App/Views/$view";
         if(is_readable($file)){
