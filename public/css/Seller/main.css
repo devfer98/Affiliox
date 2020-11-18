@@ -17,7 +17,7 @@ html {font-family: 'Open Sans', sans-serif;}
 }
 
 
-.nav-bar img{
+/* .nav-bar img{
 	width: 110px;
 }
 
@@ -69,10 +69,10 @@ hr{
     outline: none !important;
     border:1px solid #719ECE;
     box-shadow: 0 0 10px #719ECE;
-}
+} */
 
 /*-------------------logged in side navigation bar--------------------*/
-.navigation ul li {
+/* .navigation ul li {
 	list-style: none;
 	display: inline;
 	font-size: 30px;
@@ -130,7 +130,7 @@ hr{
 	font-size: 36px;
 	margin-left: 50px;
 	color: black; 
-  }
+  } */
   
   /* #main {
 	transition: margin-left .5s;
@@ -188,7 +188,6 @@ button {
 	border-style: none;
 	border: 2px solid orange;
 	transition: 0.3s;
-	/* margin-top: 20px; */
 }
 
 button:hover {
@@ -215,7 +214,7 @@ button:hover {
     font-size: 17px;   
 }
 
-.inp div input,textarea,select{
+/* .inp div input,textarea,select{
     padding: 13px;
 	width: 90%;
 	min-width: 200px;
@@ -223,7 +222,7 @@ button:hover {
     background:rgb(248, 248, 248); 
     margin-top: 20px;
     border-radius: 9px;
-}
+} */
 
 .inp div input:focus {
     
@@ -254,7 +253,6 @@ button:hover {
     margin-top: 20px;
     padding-top:20px;
     padding-left: 13px;
-    /* width:22vw; */
 	border: none;
 }
 
@@ -273,7 +271,6 @@ button:hover {
     border: none;
 }
 
-.
 
 /*-----------------------bottom part----------------------------------------------*/
 

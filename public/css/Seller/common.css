@@ -1,28 +1,28 @@
 @import url("https://kit.fontawesome.com/6cdc06033e.js" );
 
 
-.clearfix {
+.clearfixN {
 	overflow: auto;
 
   }
-.container1{
+.container1N{
 	margin-right: 10%; 
 	margin-left: 10%;
 
 }
 
-.back403{
+.back403N{
 	
 	background-color: black;
 }
 
-.errorMsg {
+.errorMsgN {
 	color: brown;
 	font-size: larger;
 
 }
 /*------------------------nav-bar-------------------*/
-.sidenav {
+.sidenavN {
 	height: 100%; 
 	width: 0; 
 	position: fixed;
@@ -36,7 +36,7 @@
 	z-index: 500;
   }
 
-  .sidenav  a {
+  .sidenavN  a {
 	padding: 10px 10px 10px 32px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -49,14 +49,14 @@
 	transition: 0.3s;
   }
 
-  .sidenav a:hover{
+  .sidenavN a:hover{
 	  color:#28a745;
   }
-  .sidenav a i {
+  .sidenavN a i {
 	margin-left: 10px;
   }
   
-  .sidenav .closebtn {
+  .sidenavN .closebtn {
 	position: absolute;
 	top: 0;
 	right: 25px;
@@ -64,12 +64,12 @@
 	margin-left: 50px;
 	color: black; 
   }
-.nav-bar img{
+.nav-barN img{
 	margin-top: 14px;
 	float: center;
 	width: 200px;
 }
-.open-btn {
+.open-btnN {
 	float: left;
 	position: relative;
 	top: 40px;
@@ -78,24 +78,24 @@
 
   }
   
-.backcolor{
+.backcolorN{
 	background: #fafafa;
 }
 
-.sticky {
+.stickyN {
 	overflow: hidden;
 	position: fixed;
 	top: 0;
 	width: 100%;
   }
 
-  .bot {
+  .botN {
 	overflow: hidden;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
   }
-.sm-header{
+.sm-headerN{
 	
 	
 	overflow: hidden;
@@ -118,21 +118,21 @@ hr{
    }
 
 
-.hrCustom hr{
+.hrCustomN hr{
 	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.5);
 	text-align: center;
 	padding-left: 0;
 	padding-right: 0;
 
 }
-.nav-bar ul{
+.nav-barN ul{
 	/* float: right; */
 	 padding:2%; 
 	padding-top: 30px;
 }
 /*-----------------------links buttons and inputs----------------*/
 
-.nav-bar ul a,button ,.icon {
+.nav-barN ul a,button ,.icon {
 	border: 1px solid #28a745; 
 	margin:auto;
 	display:inline-flex;
@@ -150,7 +150,7 @@ hr{
 	background:rgb(255, 255, 255); 
 }
 
-.nav-bar ul a:hover , button:hover , .icon:hover{
+.nav-barN ul a:hover , button:hover , .icon:hover{
 	
 	background: #28a745;
     opacity: 1;
@@ -162,10 +162,10 @@ hr{
 	color: #f5f5f6;
 }
 
-.block button:active , .nav-bar ul a:active  ,button:active{
+.blockN button:active , .nav-bar ul a:active  ,button:active{
  color: rgb(255, 255, 255);  
   }
-.search input,textarea{
+.searchN input,textarea{
   
     border: none;
     background:rgb(235, 235, 235); 
@@ -177,7 +177,7 @@ hr{
 	border: 1px solid #ced4da;
  
   }
-  .selector select{
+  .selectorN select{
 	margin-top: 20px;
 	text-align: center;
 	width: 100%;
@@ -191,25 +191,25 @@ hr{
 	color: #1f3d7a;
 	
   }
-  .selector select option{
+  .selectorN select option{
 	font-size: 15px;
 	padding:6px;
   }
-  .label{
+  .labelN{
     font-weight: bold;
 	font-size: 17px;
   }
-  .boxsummery{
+  .boxsummeryN{
 	background:rgb(250, 250, 247); 
 	-webkit-box-shadow: 0px 5px 20px -10px rgba(0,0,0,0.57);
 	padding: 10px;
 	border-radius: 6px;
 	overflow: hidden;
   }
-  .boxsummery p{
+  .boxsummeryN p{
 	padding-left:2em;
   }
-  .shoppingBlock{
+  .shoppingBlockN{
 	  width: 80%;
 	  padding-bottom: 10px;
 	  background:rgb(250, 250, 250) !important; 
@@ -217,25 +217,25 @@ hr{
 	  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	  box-shadow: 0px 4px 10px rgba(0,0,0,0.57);
   }
-  .signin input{
+  .signinN input{
 
 	width: 30%;
   }
 
   html {font-family: 'Open Sans', sans-serif;}
 
-.search input:focus  ,.search textarea:focus {
+.searchN input:focus  ,.search textarea:focus {
     outline: none !important;
     border:1px solid #719ECE;
     box-shadow: 0 0 10px #719ECE;
 }
 
-.searchCkeck  input:focus {
+.searchCkeckN  input:focus {
     outline: none !important;
     border:1px solid #719ECE;
 }
 
-.radio-hover input[type="radio"]{
+.radio-hoverN input[type="radio"]{
 	width:5%;
 	box-shadow: 0 0 0px #719ECE
 }
@@ -243,147 +243,147 @@ hr{
 	background:rgb(172, 172, 172); 
 }
 
-.link-trash a i{
+.link-trashN a i{
 	color: rgb(102, 102, 102);
 	text-align: center;
 	z-index: 9999999;
 
 }
 
-.link-teash a i:hover{
+.link-teashN a i:hover{
 	color: rgb(225, 129, 129);
 }
 /*-----------------------margins----------------------------------------------*/
-.margint50{
+.margint50N{
 	margin-top: 50px;
 }
-.margint20{
+.margint20N{
 	margin-top: 20px;
 }
 
-.margint45{
+.margint45N{
 	margin-top: 45px;
 }
-.margint100{
+.margint100N{
 	
 	margin-top: 100px;
 }
-.margint50p{
+.margint50pN{
 	
 	margin-top: 50%;
 }
-.marginb100{
+.marginb100N{
 	margin-bottom: 100px;
 }
 
-.marginb50p{
+.marginb50pN{
 	margin-bottom: 50px;
 }
 
-.marginb20{
+.marginb20N{
 	margin-bottom: 20px;
 }
-.marginb50{
+.marginb50N{
 	margin-bottom: 50px;
 }
 
-.marginl20{
+.marginl20N{
 	margin-left: 20px;
 }
-.marginl50{
+.marginl50N{
 	margin-left: 50px;
 }
 
-.marginl100{
+.marginl100N{
 	margin-left: 100px;
 }
 
-.marginr100{
+.marginr100N{
 
 	margin-right: 100px;
 }
 
-.marginr50p{
+.marginr50pN{
 	margin-right: 43%;
 }
 
-.paddingt20{
+.paddingt20N{
 	padding-top: 20px;
 }
 
-.rowMargin{
+.rowMarginN{
 	margin-top: 30px;
 }
 /*-----------------------bottom part----------------------------------------------*/
 
-.thead td{
+.theadN td{
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
 }
 
-.img-span img{
+.img-spanN img{
 	margin-top: 50px;
 	
 }
-.sm-table tr { line-height: 40px; }
+.sm-tableN tr { line-height: 40px; }
 
-.sm-table tr td a {
+.sm-tableN tr td a {
 	text-decoration: none;
 	color: #1f3d7a;
 }
 
-.sm-table tr td a:hover {
+.sm-tableN tr td a:hover {
 	color: red;
 }
 
-.footer {
+.footerN {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
   }
   
-  .footer ul li {
+  .footerN ul li {
 	font-size: 17px;
 	display: inline-block;
   }
 
 
 
-.bottom-part{
+.bottom-partN{
 	float: left;
 }
 
-.bottom-part img {
+.bottom-partN img {
 	width: 150px; height: auto;
 	padding-top: 20px;
 }
 
-.bottom-part ul{
+.bottom-partN ul{
 	display: block;
 	overflow-wrap: normal;	
 }
 
-.bottom-part ul p{
+.bottom-partN ul p{
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
 	font-size: 18px;
 	
 }
-.bottom-part ul a {
+.bottom-partN ul a {
 	display: block;
 	margin-bottom: 10px;
 	text-decoration: none;
 	text-align: center;
 	font-size: 15px;
 }
-.bottom-part ul a:hover{
+.bottom-partN ul a:hover{
  	text-decoration: underline;
  }
 
 /*-----------------------------------company COPYRIGHT----------*/
 
-.company-address {
+.company-addressN {
 
 	background: #6666ff;
 	padding: 2px;
@@ -392,7 +392,7 @@ hr{
 	font-size: 10px !important;
 }
 
-.company-address ul li {
+.company-addressN ul li {
 	
 	display: inline;
 	font-weight: bold;
@@ -400,7 +400,7 @@ hr{
 	margin-right: 50px;
 }
 
-#bot-line{
+#bot-lineN{
 	
 	background: #6666ff;
 	padding: 2px;
@@ -408,7 +408,7 @@ hr{
 	text-align: center;
 	font-size: 12px !important;
 }
-#bot-line ul li{
+#bot-lineN ul li{
 
 	display: inline;
 	font-weight: bold;
@@ -418,18 +418,18 @@ hr{
 
 
 /*-----------------------------------Image Positioning---------*/
-.holder {
+.holderN {
 	position: relative;
 	display: block;
 }
-.holder img {
+.holderN img {
 	position: relative;
 	display: block;
 	width: 100%;
 	border-radius: 1%;
 	
 }
-.imgw img{
+.imgwN img{
 	width: 100%;
 	border-radius: 10%;
 	max-width: 400px;
@@ -446,15 +446,15 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 /****** Style Star Rating Widget *****/
 
-.rating { 
+.ratingN { 
   border: none;
   float: center;
 
 
 }
 
-.rating > input { display: none; } 
-.rating > label:before { 
+.ratingN > input { display: none; } 
+.ratingN > label:before { 
   margin: 5px;
   font-size: 1.25em;
   font-family: FontAwesome;
@@ -462,21 +462,21 @@ h1 { font-size: 1.5em; margin: 10px; }
   content: "\f005";
 }
 
-.rating > .half:before { 
+.ratingN > .half:before { 
   content: "\f089";
   position: absolute;
 }
 
-.rating > label { 
+.ratingN > label { 
   color: #ddd; 
  float: right; 
 }
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.ratingN > input:checked ~ label, /* show gold star when clicked */
+.ratingN:not(:checked) > label:hover, /* hover current star */
+.ratingN:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.ratingN > input:checked + label:hover, /* hover current star when changing rating */
+.ratingN > input:checked ~ label:hover,
+.ratingN > label:hover ~ input:checked ~ label, /* lighten current selection */
+.ratingN > input:checked ~ label:hover ~ label { color: #FFED85;  } 

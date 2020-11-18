@@ -39,9 +39,9 @@
 
 		<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. 
 		<a id="payout-history" href="../Promoter/transHistory">CLICK HERE</a></p>
-
+	<p></p>
 		<div class="money-withdrawal-form">
-			<form method="post" action="../Transaction/promoterTransToDB">
+			<form method="post" action="../Promoter/promoterTransToDB">
 				<table>
 					<tr>
 						<td>Current Amount :</td>
@@ -49,12 +49,12 @@
 					</tr>
 					<tr>
 						<td>Change Amount :</td>
-						<td><input type="number" name="ammount" required="" placeholder="$ 00.00"
-						 id="c-a" required="" step="0.01"></td>
+						<td><input type="number" name="ammount"  id="c-a"></td>
 					</tr>
 				<tr>
 					<td>
-						<button type="submit" name="submit" onclick="return confirm('Are you want to actually transfer this amount ?')">Submit</button>
+						<button type="submit" name="submit">Submit</button>
+						<!-- onclick="return confirm('Are you want to actually transfer this amount ?')" -->
 					</td>
 					<td>
 						<button type="reset">Reset</button>

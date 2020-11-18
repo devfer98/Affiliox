@@ -27,8 +27,7 @@
                 </div>
             </div>
             <div class="errorMsg">
-
-
+            
                 <!-- if(isset($this->UImsg) and !empty($this->UImsg)){
 					
 					while($row = $this->UImsg->fetch_assoc()){   
