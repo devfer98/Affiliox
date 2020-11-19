@@ -7,7 +7,32 @@ class Admin extends \Core\Controller {
         $this->view->display('Customer/market.php');
     }
 
-    public function addAction(){
-        echo 'Admin add method is called';
+    public function ApproveRegAction(){
+        $this->view->display('Admin/VerifyUser.php');
     }
+
+    public function ApprovesSellerAction(){
+        $this->view->display('Admin/AddAdmin.html');
+    }
+
+    public function AddAdminsAction(){
+        $this->view->display('Admin/AddAdmin.html');
+    }
+
+
+
+    protected function before()
+    {      
+       
+        if(session_id() == '') {
+            session_start();
+        }
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'admin') ){
+            return true;
+        }else{
+            header("Location:../Login/index");
+            
+        }
+    }
+
 }

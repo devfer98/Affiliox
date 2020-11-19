@@ -18,11 +18,11 @@
             <div class="row hidden-xm marginb100 backcolor">
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
 
-                    
-                    <div class="sm-8">
+                    <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+                    <div class="sm-9">
                         <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                     </div>
-                    <div class="sm-2">
+                    <div class="sm-2 ">
                         <div class="selector margint20">
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
@@ -43,12 +43,14 @@
                 </div>
             </div>
             <div class=" nav-bar center backcolor">
-
+                <div class="col1 open-btn hidden-sm" onclick="openNav()">
+                    &#9776;
+                </div>
                 <div class="col2 hidden-sm">
                     <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                 </div>
 
-                <div class="col5 center">
+                <div class="col4 center">
                     <ul>
                         <a href="../Buyer/Index"><i class="fas fa-home"></i>&nbsp;Home</a>
                         <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
@@ -85,7 +87,7 @@
             </div>
         </div>
 
-        <div class="fullwidth row">
+        <div class="row">
             <div class="col12 fullwidth">
                 <hr>
             </div>

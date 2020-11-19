@@ -17,7 +17,17 @@
 }
 
 .errorMsg {
-	color: brown;
+	color:(209, 21, 21);
+	font-size: larger;
+
+}
+.errorMsgSuccess p{
+	color: rgb(15, 187, 87);
+	font-size: larger;
+
+}
+.errorMsgFailed p{
+	color: rgb(209, 21, 21);
 	font-size: larger;
 
 }
