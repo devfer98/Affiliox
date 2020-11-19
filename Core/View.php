@@ -11,19 +11,19 @@ Class View{
         if(isset($_SESSION['type']) && ($_SESSION['type'] == 'buyer') ){
             $header="../App/Views/Templete/Buyer_Header.php";
             $footer="../App/Views/Templete/Buyer_Footer.php";
-        }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'selller') ) {
-            // $header="../App/Views/Templete/Seller_Header.php";
-            // $footer="../App/Views/Templete/Seller_Footer.php";
+        }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ) {
+            // $header="../App/Views/Templete/sellerHeader.php";
+            // $footer="../App/Views/Templete/sellerFooter.php";
         }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'promoter') ) {
             // $header="../App/Views/Templete/Promoter_Header.php";
             // $footer="../App/Views/Templete/Promoter_Footer.php";
         }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'admin') ) {
             // $header="../App/Views/Templete/admin_Header.php";
             // $footer="../App/Views/Templete/admin_Footer.php";
-        }else
+        }else{
             $header="../App/Views/Templete/User_Header.php";
             $footer="../App/Views/Templete/User_Footer.php";
-
+        }
         $file = "../App/Views/$view";
         if(is_readable($file)){
             include $header;

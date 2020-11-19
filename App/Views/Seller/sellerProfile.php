@@ -45,6 +45,7 @@
 		//     }
 		//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
 			require "sellerHeader.php";
+			echo $_SESSION['type'];
 		//}else{
 			// header("Location:../Login/index");	
 		//}

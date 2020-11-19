@@ -30,8 +30,9 @@ class User extends \Core\Connect{
                      }
                 }
                 $stmt = $conn->prepare("SELECT * FROM seller WHERE userID = ? AND password= ? AND accountStatus = ?");
-                $accStats='Inactive';
+                $accStats='Active';
                 $stmt->bind_param("sss", $username, $password,$accStats);
+               //  $stmt->bind_param("iii", $username, $password,$accStats);
                 if($stmt->execute()){
 
                     $result = $stmt->get_result();
@@ -48,8 +49,8 @@ class User extends \Core\Connect{
               }
 
               $stmt = $conn->prepare("SELECT * FROM promoter WHERE userID = ? AND password= ? AND accountStatus = ?");
-              $accStats='Inactive';
-              $stmt->bind_param("iii", $username, $password,$accStats);
+              $accStats='Active';
+              $stmt->bind_param("sss", $username, $password,$accStats);
               if($stmt->execute()){
 
                   $result = $stmt->get_result();
