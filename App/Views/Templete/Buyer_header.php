@@ -38,14 +38,10 @@
                         </select>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div class=" nav-bar center backcolor">
-                <div class="col1 open-btn hidden-sm" onclick="openNav()">
-                    &#9776;
-                </div>
+                <div class="col1 open-btn hidden-sm" onclick="openNav()"> &#9776;</div>
                 <div class="col2 hidden-sm">
                     <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                 </div>
@@ -59,7 +55,7 @@
                     </ul>
                 </div>
 
-                <div class="col4 search fitcontent center">
+                <div class="col4 search  fullWidth center">
                     <ul>
                         <input type="text" name="search" placeholder="Headsets" />
                         <a href=""><i class="fas fa-search"></i></a>
@@ -87,8 +83,8 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col12 fullwidth">
+        <div class="fullwidth col12full">
+            <div class=" fullwidth">
                 <hr>
             </div>
         </div>

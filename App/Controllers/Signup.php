@@ -89,13 +89,13 @@ class Signup extends \Core\Controller {
         $storeName  =$_POST['store'];
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
-        $accStatus ='Inactive';
+        $accStatus ='Pending';
         $wCount =0;
         $pw_md5 =md5($password);
 
 
         if($password != $con_password){
-
+            
         }
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
@@ -133,7 +133,7 @@ class Signup extends \Core\Controller {
         $phoneNo    =$_POST['phn-no'];	
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
-        $accStatus ='Inactive';
+        $accStatus ='Pending';
         $Chnnels = $_POST['description'];
         $arrs=explode(";",$Chnnels);
         $pw_md5 =md5($password);

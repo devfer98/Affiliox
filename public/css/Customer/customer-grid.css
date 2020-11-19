@@ -215,7 +215,14 @@ body {
     float: left;
     /* border: 2px solid blue; */
 }
-
+.col12full {
+  margin: auto;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
 .fullWidth{
 	padding-left: 0;
 	padding-right: 0;
@@ -430,6 +437,10 @@ width: 100%;
     width: 100%;
     padding: 1px;
 }
+.search input {
 
+  padding-right:  0;
+  padding-left: 0;
+}
 }
 

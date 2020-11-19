@@ -34,6 +34,7 @@ class BuyerM extends \Core\Connect{
     }
 
     public function getBuyer($userID) {
+        
         $conn=static::connectDB();
 
         $query = "select * from buyer WHERE userID = ?";
