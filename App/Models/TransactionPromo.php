@@ -26,25 +26,29 @@ class TransactionPromo extends \Core\Connect{
     }
 
     // WHERE userID = '{$_SESSION["userID"]}' 
-    public function getTransPromo() {
-
+    public function getTransPromo($userID)  {
         $conn=static::connectDB();
-        $sql = "SELECT transID, ammount, status, date FROM transaction WHERE userID = '{$_SESSION["userID"]}' ";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                
-                $_SESSION['transID'] = $row["transID"];
-                $_SESSION['ammount'] = $row["ammount"];
-                $_SESSION['status'] = $row["status"];
-                $_SESSION['date'] = $row["date"];
-            }
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
+
+        $query = "select * from transaction WHERE userID = ?";
         
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows > 0 ){
+                return $result;
+                // while($row = $result->fetch_assoc()){   
+
+                //    return  $row['userID'];  
+                // }
+            }
+            
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
     }
 
     

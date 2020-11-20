@@ -49,7 +49,7 @@ class User extends \Core\Connect{
 
               $stmt = $conn->prepare("SELECT * FROM promoter WHERE userID = ? AND password= ? AND accountStatus = ?");
               $accStats='Inactive';
-              $stmt->bind_param("iii", $username, $password,$accStats);
+              $stmt->bind_param("sss", $username, $password,$accStats);
               if($stmt->execute()){
 
                   $result = $stmt->get_result();
@@ -59,7 +59,7 @@ class User extends \Core\Connect{
                    }else{
                       $flag=3;
                       session_start();
-                      $_SESSION["userID"] = $username;
+                      $_SESSION["username"] = $username;
                       $_SESSION["type"] = 'promoter';
                       return $flag;
                    }
