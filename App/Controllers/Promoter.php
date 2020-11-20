@@ -12,6 +12,39 @@ use App\Models\Seller;
 class Promoter extends \Core\Controller {
 
 
+    public function promoterProfileAction() {
+
+         $userID = $_SESSION['username'];
+         $user = new PromoterProfile();
+         $result = $user->getPromoterProfile($userID);
+         $UImsg = $result;
+         $this->view->UImsg=$UImsg;
+         $this->view->display('Promoter/promoter-dashboard.php');
+    }
+
+    public function promoterProfileUpdateAction() {
+
+        $userID = $_SESSION['username'];
+        $user = new PromoterProfile();
+        $result = $user->getPromoterProfile($userID);
+        $UImsg = $result;
+        $this->view->UImsg=$UImsg;
+        $this->view->display('Promoter/update-promoter.php');
+    }
+
+    public function transHistoryAction() {
+
+        $userID = $_SESSION['username'];
+        $user = new TransactionPromo();
+        $result = $user->getTransPromo($userID);
+        $UImsg = $result;
+        $this->view->UImsg=$UImsg;
+        $this->view->display('Promoter/payout-history.php');
+        
+    }
+    
+
+
     public function MarketAction(){
         $this->view->display('Promoter/market-place.php');    
      }
@@ -29,18 +62,6 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/generate-link.php');
     }
 
-    public function promoterProfileAction() {
-
-        $promodetails = new PromoterProfile();
-
-        $promodetails->getPromoterProfile();
-        $this->view->display('Promoter/promoter-dashboard.php');
-    }
-
-    public function editpromoterAction() {
-        $this->view->display('Promoter/update-promoter.php');
-    }
-
     public function staticPromoterAction() {
         $this->view->display('Promoter/promoter-statistics.php');
     }
@@ -48,21 +69,6 @@ class Promoter extends \Core\Controller {
     public function promoterTransAction() {
         $this->view->display('Promoter/withdraw-earnings.php');
     }
-
-    public function transHistoryAction() {
-        $promotrans = new TransactionPromo();
-
-        $promotrans->getTransPromo();
-        $this->view->display('Promoter/payout-history.php');
-        
-    }
-
-    // public function listAllTransAction() {
-
-    //     $promotrans = new TransactionPromo();
-
-    //     $promotrans->getTransPromo();
-    // }
 
     public function promoterFeedbackAction() {
         $this->view->display('Promoter/review-feedback.php');
@@ -72,6 +78,9 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/support-center.php');
     }
 
+    public function IndexAction(){
+        $this->view->display('Promoter/index.php');
+     }
 
     public function promoterTransToDBAction(){
         
@@ -79,7 +88,7 @@ class Promoter extends \Core\Controller {
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
-        $userID = $_SESSION["userID"];
+        $userID = $_SESSION["username"];
         
         if($ammount= $_POST['ammount']) {
             $user->addTransPromo($ammount, $status, $userID, $date);

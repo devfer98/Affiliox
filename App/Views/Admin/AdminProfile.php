@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Profile</title>
-	<link rel="stylesheet" type="text/css" href="../../customer/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="../../customer/css/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="../css/adminprofile.css">
-  <script type="text/javascript" src="../../js/Signin.js"></script>
-  <script type="text/javascript" src="../../js/nav-fixed.js"></script>
-  <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Affiliox-AdminProfile</title>
+	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Admin/adminprofile.css">
+    <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
+	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
@@ -107,7 +107,7 @@
 					</tr>
 				</table>
 	
-				<form action="EditAdmin.html">
+				<form action="EditAdmin.php">
 					<input type="submit" name="edit-details" value="Edit Details">
 				</form>					
 			</div><!-- inner-part -->

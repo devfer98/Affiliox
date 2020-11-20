@@ -39,6 +39,11 @@
 				?></p>
             </div>
             <div class="row">
+                <?php  
+                if(isset($this->UImsg) and !empty($this->UImsg)){
+					
+					while($row = $this->UImsg->fetch_assoc()) {          
+            ?>
                 <table class="profileTable">
                     <tr>
                         <td id="td-1">Your Name:</td>

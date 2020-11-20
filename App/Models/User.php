@@ -60,7 +60,7 @@ class User extends \Core\Connect{
                    }else{
                       $flag=3;
                       session_start();
-                      $_SESSION["userID"] = $username;
+                      $_SESSION["username"] = $username;
                       $_SESSION["type"] = 'promoter';
                       return $flag;
                    }

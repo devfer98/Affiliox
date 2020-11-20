@@ -19,6 +19,30 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/AddAdmin.html');
     }
 
+    public function AdminDashboardAction(){
+        $this->view->display('Admin/AdminDashboard.php');
+    }
+
+    public function AdminProfileAction(){
+        $this->view->display('Admin/AdminProfile.php');
+    }
+
+    public function AdminStatisticsAction(){
+        $this->view->display('Admin/AdminStatistics.php');
+    }
+
+    public function EditAdminAction(){
+        $this->view->display('Admin/EditAdmin.php');
+    }
+
+    public function ManageAccountAction(){
+        $this->view->display('Admin/ManageAccount.php');
+    }
+
+    public function ReviewFeedbackAction(){
+        $this->view->display('Admin/ReviewFeedback.php');
+    }
+
 
 
     protected function before()
