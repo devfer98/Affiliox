@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b9b310ae2b7eb1b82627fbe30da82365cdf5533
 <head>
 	<title>Affiliox</title>
 	<link rel="shortcut icon" href="/images/promoter/logoOnly.png" type="image/x-icon">

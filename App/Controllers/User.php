@@ -7,9 +7,12 @@ class User extends \Core\Controller{
        $this->view->display('Common/index.php');
     }
 
-    public function addAction(){
-        echo 'add method is called';
-    }
+    public function PasswordResetAction(){
+        $Email = $_POST['email'];
+        $user= new User();
+        $result = $user->Email($userID);
+        
+     }
 
     public function get(){
         echo "get method is called";

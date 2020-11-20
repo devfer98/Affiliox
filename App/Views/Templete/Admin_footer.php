@@ -1,8 +1,10 @@
-        <div class="row fullwidth ">
-            <div class="col12 fullwidth">
-                <hr>
-            </div>
-        </div>
+
+      <div class="row">
+          <div class="col12 fullwidth">
+              <hr>
+          </div>
+
+      </div>
       <div class="row center backcolor">
 
 
@@ -55,13 +57,14 @@
       <!--Container------------------------------------------>
 
       <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="../Buyer/Account">User profile<i class="far fa-user"></i></a>
-          <a href="../Buyer/Market">Marker Place<i class="fab fa-shopify"></i></a>
-          <a href="../Buyer/ShoppingCart">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
-          <a href="../Buyer/CurrentOrders">Orders<i class="fas fa-chart-line"></i></i></a>
-          <a href="../Buyer/FeedbackView">Feedback<i class="fas fa-phone-square"></i></i></a>
-          <a href="../Common/Help">Support<i class="fas fa-envelope-open-text"></i></a>
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="AdminDashboard.html">Dashboard<i class='fas fa-ellipsis-h'></i></a>
+	<a href="AdminProfile.html">User Profile<i class="far fa-user"></i></a>
+	<a href="ManageAccount.html">Manage Accounts<i class='fas fa-users-cog'></i></a>
+	<a href="../Admin/ApproveReg">Approve Registrations<i class="fas fa-user-check"></i></a>
+	<a href="../Admin/AddAdmins">Add Admins<i class='fas fa-user-plus'></i></a>
+	<a href="AdminStatistics.html">View Statistics<i class="fas fa-chart-line"></i></i></a>
+	<a href="ReviewFeedback.html">Review Feedbacks<i class='fas fa-comments'></i></a>
       </div>
-      <span onclick="openNav()"></span>
+<span onclick="openNav()"></span>
       

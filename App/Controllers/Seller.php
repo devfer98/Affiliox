@@ -8,7 +8,7 @@ use App\Models\User;
 class Seller extends \Core\Controller {
 
     public function accountIndexAction(){
-        $this->view->display('Common/market.php');
+        $this->view->display('Seller/sellerProfile.php');
         // $this->view->display('Common/market.php');
     }
 
