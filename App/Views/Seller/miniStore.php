@@ -12,23 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
-		<?php 
-			//if(session_id() == '') {
-			//         session_start();
-			//     }
-			//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-				require "sellerHeader.php";
-			//}else{
-				// header("Location:../Login/index");	
-			//}
-		?>
 
         <div class="row" style="margin-top: 20px;">
-			<a class="col4 center" href="miniStoreView.html"><button>View Ministore</button></a>
-            <a class="col4 center" href="updateMinistore.html"><button>Update Ministore</button></a>
-            <a class="col4 center" href="postProducts.html"><button>Add Products</button></a>
+			<button onclick="location.href='../Ministore/ministoreView';">View Ministore</button>
+            <button onclick="location.href='../Ministore/update';">Update Ministore</button>
+            <button onclick="location.href='../Ministore/addProduct';">Add Products</button>
 		</div>
 		
 		<!-- <div class="Reg-container"> -->
@@ -49,7 +38,7 @@
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
-                              <p><a href="updateProduct.html"><button>Update Product</button></a></p>
+                              <p><button onclick="location.href='../Ministore/updateProduct';">Update Product</button></p>
                               <button>Delete Product</button>
                     </div>
         
@@ -82,18 +71,6 @@
                     </div>
             </div>
 		</div>
-
-		<!-- bottom-part-------------------------------------------->
-		<?php 
-		//if(session_id() == '') {
-		//         session_start();
-		//     }
-		//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-			require "sellerFooter.php";
-		//}else{
-			// header("Location:../Login/index");	
-		//}
-		?>
 	</div>
 
 </body>

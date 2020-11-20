@@ -14,15 +14,6 @@
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
-		<ul class="">
-			<li onclick="openNav()">&#9776;</li>
-			<li><a href="">Affiliox</a></li></a>
-			<li style="float: right;">user-name</li>
-		</ul>
-		<div class="row">
-            <hr class="col12"/>
-        </div>
-		
 		<!-- <div class="Reg-container"> -->
 		<div class="row">
 			<div class="col12 center title">
@@ -73,77 +64,7 @@
 			</form>
 			</div>
 		</div>
-
-		<div class="row row-padding">
-			<hr class="col12"/>
-	    </div>
-
-		<!-- bottom-part-------------------------------------------->
-		<div class="row bottom-part">
-			<div class="col3 hidden-sm center">
-			  <a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
-			</div>
-	
-			<div class="col2">
-			  <!-- <ul> -->
-				<p>Main Menu</p>
-				<a href="">Affiliox Home</a>
-				<a href="">About us</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			  <!-- </ul> -->
-			</div>
-			<div class="col2">
-			  <!-- <ul> -->
-				<p>Company</p>
-				<a href="">Address</a>
-				<a href="">Email</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			  <!-- </ul> -->
-			</div>
-			<div class="col2">
-			  <!-- <ul> -->
-				<p>Discover</p>
-				<a href="">Home</a>
-				<a href="">About us</a>
-				<a href="">Help</a>
-				<a href="">Account</a>
-			  <!-- </ul> -->
-			</div>
-			<div class="col2">
-			  <!-- <ul> -->
-				<p>Find Us on</p>
-				<a href="">Facebook</a>
-				<a href="">Twitter</a>
-				<a href="">Instagram</a>
-				<a href="">Youtube</a>
-			  <!-- </ul> -->
-			</div>
-		  </div>
-	
-		  <div class="row">
-			<div class="col12 company-address">
-			  <ul>
-				<li>© All Right reserved</li>
-				<li>Affiliox 2020 ™</li>
-			  </ul>
-			</div>
-		  </div>
-		<!-- inner-part -->	
-	</div> 
-	<div id="mySidenav" class="sidenav">
-  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="#">User profile<i class="far fa-user"></i></a>
-  		<a href="#">Mini Store<i class="fas fa-store"></i></a>
-  		<a href="#">Marker Place<i class="fab fa-shopify"></i></a>
-  		<a href="#">Statstics<i class="fas fa-chart-line"></i></i></a>
-		<a href="#">View Orders<i class="fas fa-chart-line"></i></i></a>
-  		<a href="#">Transactions<i class="fas fa-money-check-alt"></i></a>
-  		<a href="#">Feedback<i class="fas fa-phone-square"></i></i></a>
-  		<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
-	</div>
-	<span onclick="openNav()"></span>
+	</div>	
 
 </body>
 </html>

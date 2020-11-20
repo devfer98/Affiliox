@@ -12,7 +12,7 @@ class Admin extends \Core\Controller {
     }
 
     public function ApprovesSellerAction(){
-        $this->view->display('Admin/AddAdmin.html');
+        $this->view->display('Admin/AddAdmin.php');
     }
 
     public function AddAdminsAction(){
