@@ -61,10 +61,10 @@
 				<p>Customer Reviews Feedbacks</p>
 			</div> 
 
-			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
 			<form action="" method="post">
 				<div class="row col12">
-					<h3 class="center">John Smith</h3>
+					<h3 class="center">Nike Shoe - John Smith</h3>
 				</div>
 				<div class="row">
 				<div class="col6 padding">
@@ -79,10 +79,10 @@
 			</form>
 			</div>
 
-			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
 				<form action="" method="post">
 					<div class="row col12">
-						<h3 class="center">John Smith</h3>
+						<h3 class="center">Nike Shoe - John Smith</h3>
 					</div>
 					<div class="row">
 					<div class="col6 padding">
@@ -97,10 +97,10 @@
 				</form>
 			</div>
 
-			<div class="col8 col-center inp boxsummery" style="margin-bottom: 20px;">
+			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
 				<form action="" method="post">
 					<div class="row col12">
-						<h3 class="center">John Smith</h3>
+						<h3 class="center">Nike Shoe - John Smith</h3>
 					</div>
 					<div class="row">
 					<div class="col6 padding">

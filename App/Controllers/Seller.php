@@ -24,9 +24,9 @@ class Seller extends \Core\Controller {
         
     }
 
-    public function profileEditAction(){
+    public function marketAction(){
 
-        $this->view->display('Seller/editSeller.php');
+        $this->view->display('Common/market.php');
         
     }
 
@@ -74,15 +74,15 @@ class Seller extends \Core\Controller {
 
     protected function before()
     {   
-    //     if(session_id() == '') {
-    //         session_start();
-    //     }
-    //     if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-    //         return true;
-    //     }else{
-    //         header("Location:../Login/index");
+        if(session_id() == '') {
+            session_start();
+        }
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
+            return true;
+        }else{
+            header("Location:../Login/index");
             
-    //     }
+        }
     }
 
 }

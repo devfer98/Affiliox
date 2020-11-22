@@ -45,7 +45,7 @@
 				<label for="dob">&nbsp;Amount</label><br>
 				<input type="number" name="amount" required="" placeholder="$ 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a">
 			</div>
-			<div class="row col12 padding">
+			<div class="row col12 padding commonB">
 				<button class="center" type="submit" value="submit">Submit</button>	
 				<button class="center" type="reset" value="submit">Reset</button>	
 			</div>

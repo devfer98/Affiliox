@@ -1,16 +1,16 @@
-<div class="row fullwidth ">
-    <div class="col12 fullwidth">
+<div class="rowN fullwidthN">
+    <div class="col12N fullwidthN">
         <hr>
     </div>
 </div>
-<div class="row center backcolor">
-    <div class=" col3 img-span hidden-sm">
+<div class="rowN centerN backcolorN">
+    <div class=" col3N img-spanN hidden-smN">
         <td><img src="/images/Logo/SideLogo.png" width='200'></td>
     </div>
 
-    <div class="col9  nav-bar center">
-        <table class="row center sm-table">
-            <tr class="thead center">
+    <div class="col9N  nav-barN centerN">
+        <table class="rowN centerN sm-tableN">
+            <tr class="theadN centerN">
 
                 <td>Main Menu</td>
                 <td>Find us On</td>
@@ -40,7 +40,7 @@
     </div>
 
 </div>
-<div class="row footer backcolor paddingt20">
+<div class="rowN footerN backcolorN paddingt20N">
 
     <ul>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

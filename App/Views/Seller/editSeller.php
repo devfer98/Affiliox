@@ -79,8 +79,8 @@
 				</div>
 				
 			<!------------------Buttons------------------->
-				<div class="row col12 padding">
-					<button class="center" type="submit" value="submit">Save</button>	
+				<div class="row col12 padding commonB">
+					<button class="center " type="submit" value="submit">Save</button>	
 				</div>
 			</form>
 			</div>

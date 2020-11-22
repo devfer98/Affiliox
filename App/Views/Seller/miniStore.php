@@ -14,10 +14,10 @@
 <body>
 	<div id="main" class="container navigation">
 
-        <div class="row" style="margin-top: 20px;">
-			<button onclick="location.href='../Ministore/ministoreView';">View Ministore</button>
-            <button onclick="location.href='../Ministore/update';">Update Ministore</button>
-            <button onclick="location.href='../Ministore/addProduct';">Add Products</button>
+        <div class="row commonB" style="margin-top: 20px;">
+			<button class="center" onclick="location.href='../Ministore/ministoreView';">View Ministore</button>
+            <button class="center" onclick="location.href='../Ministore/update';">Update Ministore</button>
+            <button class="center" onclick="location.href='../Ministore/addProduct';">Add Products</button>
 		</div>
 		
 		<!-- <div class="Reg-container"> -->
@@ -32,9 +32,9 @@
                 <!-- <div class="row row-padding col12">
                     <button class="center">Add Product</button>
                 </div> -->
-                <div class="row">
+                <div class="row commonB">
                     <div class="card">
-                          <img src="images/i-phone.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/i-phone.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
@@ -43,7 +43,7 @@
                     </div>
         
                     <div class="card">
-                          <img src="images/i-phone-earphone.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/i-phone-earphone.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
@@ -52,7 +52,7 @@
                     </div>
         
                     <div class="card">
-                          <img src="images/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/nike-shoe.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
@@ -61,7 +61,7 @@
                     </div>
         
                     <div class="card">
-                          <img src="images/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/nike-shoe.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>

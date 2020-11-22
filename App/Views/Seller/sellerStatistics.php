@@ -59,7 +59,7 @@
         <div id="columnchart_values" class="col8 col-center"></div>
       </div>
 
-      <div class="row col6 col-center inner-part">
+      <div class="row col6 col-center inner-part data">
         <table>
           <!-- <tr>
             <th>Color Category</th>
@@ -90,7 +90,7 @@
 
       <br><br>
       <div class="row col8 col-center boxsummery inp" style="margin-bottom: 20px;">
-        <div class="col3" style="padding: 0px;"><img class="imgw" src="../images/action-camera.jpg"></div>
+        <div class="col3" style="padding: 0px;"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
 				<div class="col9">
 					<div class="row padding"><h3 class="col6">Inspire 1</h3> <p class="col6">Price :Rs 4000.00</p></div>
           <div class="row padding">
@@ -115,7 +115,7 @@
       </div>
       
       <div class="row col8 col-center boxsummery inp" style="margin-bottom: 20px;">
-        <div class="col3" style="padding: 0px;"><img class="imgw" src="../images/action-camera.jpg"></div>
+        <div class="col3" style="padding: 0px;"><img class="imgw" src="/images/Seller/i-phone-earphone.png"></div>
 				<div class="col9">
 					<div class="row padding"><h3 class="col6">Inspire 1</h3> <p class="col6">Price :Rs 4000.00</p></div>
           <div class="row padding">

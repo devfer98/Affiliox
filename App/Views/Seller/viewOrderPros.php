@@ -21,7 +21,7 @@
 			<div class="col12 center title">
 				<p>Order Details</p>
 			</div> 
-            <div class="col8 col-center inner-part">
+            <div class="col8 col-center inner-part data">
                 <table>
 					<tr>
 						<td id="td-1">Order ID</td>
@@ -44,8 +44,8 @@
 						<td>Sample address is here</td>
 					</tr>
 					<tr>
-						<td id="td-1">Total Amount</td>
-						<td>Sample state is here</td>
+						<td id="td-1" style="border: none;">Total Amount</td>
+						<td style="border: none;">Sample state is here</td>
 					</tr>
 				</table>
 			</div>
@@ -53,13 +53,13 @@
 				<p>Ordered Products</p>
 			</div> 
 			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="../images/action-camera.jpg"></div>
+				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
 				<div class="col5 padding">
-					<h3>Inspire 1</h3>
+					<h3>Nike Shoe</h3>
 					<p>Price :Rs 4000.00</p>
 					<p>Delivery:Free</p>
 				</div>
-				<div class="col3 fitcontent padding">
+				<div class="col3 fitcontent padding commonB">
 					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
 					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
 					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
@@ -67,13 +67,13 @@
 			</div>
 
 			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="../images/action-camera.jpg"></div>
+				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
 				<div class="col5 padding">
-					<h3>Inspire 1</h3>
+					<h3>Nike Shoe</h3>
 					<p>Price :Rs 4000.00</p>
 					<p>Delivery:Free</p>
 				</div>
-				<div class="col3 fitcontent padding">
+				<div class="col3 fitcontent padding commonB">
 					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
 					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
 					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
@@ -81,21 +81,21 @@
 			</div>
 
 			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="../images/action-camera.jpg"></div>
+				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
 				<div class="col5 padding">
-					<h3>Inspire 1</h3>
+					<h3>Nike Shoe</h3>
 					<p>Price :Rs 4000.00</p>
 					<p>Delivery:Free</p>
 				</div>
-				<div class="col3 fitcontent padding">
+				<div class="col3 fitcontent padding commonB">
 					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
 					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
 					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
 				</div>
 			</div>
 
-			<div class="row col12" style="margin-top: 10px;">
-				<a class="col4 center" href="viewOrders.html"><button class="center" type="submit" value="submit">Back</button></a>	
+			<div class="row col12 commonB" style="margin-top: 10px;">
+				<button class="center" onclick="location.href='../Seller/order';">Back</button>
 			</div>
 		</div>
 	</div> 

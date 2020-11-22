@@ -57,7 +57,7 @@
 
 				<!-- </div> -->
 			<!------------------Buttons------------------->
-				<div class="row col12 padding">
+				<div class="row col12 padding commonB">
 					<button class="center" type="submit" value="submit">Save</button>	
 				</div>
 			<!-- </div> -->

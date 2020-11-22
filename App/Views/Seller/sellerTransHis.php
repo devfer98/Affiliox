@@ -58,7 +58,7 @@
 			</div>
         </div>
         
-        <div class="row col12" style="margin-top: 10px;">
+        <div class="row col12 commonB" style="margin-top: 10px;">
             <button class="center" onclick="location.href='../Seller/transaction';">Back</button>
         </div>
 		

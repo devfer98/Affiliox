@@ -3,10 +3,10 @@
 <head>
 	<title>Seller Profile</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
-	<!-- <link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
+	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
-	<link rel="stylesheet" type="text/css" href="/css/Seller/sellerProfile.css"> -->
+	<link rel="stylesheet" type="text/css" href="/css/Seller/sellerProfile.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet"> -->
 	<!-- <script src="/js/Seller/common-dashboard.js"></script> -->
@@ -38,10 +38,17 @@
 	</div>
 	<span onclick="openNav()"></span> -->
 
-		<div class="container1">
-			<h2><i class="fas fa-user"></i>&nbsp; &nbsp;Seller Profile Details</h2>
-			<!-- <div class="inner-part"> -->
+		<div class="container">
+			<!-- <h2><i class="fas fa-user"></i>&nbsp; &nbsp;Seller Profile Details</h2> -->
 			<div>
+			<div class="row">
+				<div class="col12 center title">
+					<p><i class="fas fa-user"></i>&nbsp; &nbsp;Seller Profile Details</p>
+					<!-- <hr> -->
+				</div> 
+			</div>
+			<div class="row row-padding">
+			<div class="col6 col-center inner-part inp data">
 				<table>
 					<tr>
 						<td id="td-1">Your Name:</td>
@@ -68,12 +75,15 @@
 						<td>Sample state is here</td>
 					</tr>
 				</table>
-	
+			
+				<div class="row col12 commonB">
 				<!-- <form action="update-promoter.php" style="text-align: center;"> -->
-					<button onclick="location.href='/Seller/profileEdit';">Edit Details</button>
+					<button class="center" onclick="location.href='/Seller/profileEdit';">Edit Details</button>
 				<!-- </form>					 -->
+				</div>
+			
 			</div><!-- inner-part -->
-	
+			</div>
 		</div> <!-- container -->
 		<!-- <div class="row row-padding">
 			<hr class="col12"/>

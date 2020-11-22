@@ -12,10 +12,10 @@
 <body>
 
 	<!---Navigation bar-------------------------------------------->
-	<div class="container">
+	<div class="container commonB">
 		<div class="row row-padding dialogBox">
-			<button onclick="location.href='../Ministore/update';">Change</button>
-			<button onclick="location.href='../Ministore/ministore';">Done</button>
+			<button class="center" onclick="location.href='../Ministore/update';">Change</button>
+			<button class="center" onclick="location.href='../Ministore/ministore';">Done</button>
 		</div>
 
 		<div class="nav-bar clearfix row center">

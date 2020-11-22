@@ -40,7 +40,7 @@
           <button class="tablinks button1" de onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
           <button class="tablinks button1" onclick="openPage(event,'PromoterReg')">Promoter Pending Approvals</button>
          
-          <div id="SellerReg" class="tabcontent">
+          <div id="SellerReg" class="tabcontent" style="display: block;">
             <div class="body">
               <table>
                 <tr>
