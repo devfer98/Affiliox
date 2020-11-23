@@ -61,17 +61,7 @@ class Login extends \Core\Controller {
           
         return $link;
 
-        $decryption_iv = '1039485765431245'; 
-          
-        // Store the decryption key 
-        $decryption_key = "ARKDUTHFBHWJXKFGKR"; 
-          
-        // Use openssl_decrypt() function to decrypt the data 
-        $decryption=openssl_decrypt ($encryption, $ciphering,  
-                $decryption_key, $options, $decryption_iv); 
-          
-        // Display the decrypted string 
-        echo "Decrypted String: " . $decryption; 
+       
      } 
 
      function Decode_getCode($code) { 
@@ -92,6 +82,32 @@ class Login extends \Core\Controller {
         // Display the decrypted string 
         return $decryption; 
      } 
+     public function passwordResetMessage($code,$Email)
+    {
+        $subject = "Password Reset Code";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+
+        $headers .= '"From: Affiliox.xyz@gmail.com' . "\r\n";     
+
+        
+			$message = '<html><body>';
+
+			$message .= '<table style="border-color: #666;" cellpadding="10">';
+			$message .= "<tr style='background: #eee; font-size:30px'><td><strong>You have Resquested to Reset the Password</strong> </td></tr>";
+			$message .= "<tr><td>To reset your password, click on this link (or copy and paste it into your browser):</td></tr>";
+            $message .= "<tr><td><a href=$code>Reset code</a></td></tr>";
+            $message .= "</table>";
+			$message .= "<p>If you did not request to reset your password, simply disregard this email. No changes will be made to your account. Remember,This link contains the access to your account DO NOT share with others.</p>";
+			$message .= "</body></html>";
+			
+            
+        if (mail($Email,$subject,$message,$headers)) {
+            return true;
+        } else {
+           return false;
+        }
+    }
 
     public function forgetAction(){
 
@@ -102,14 +118,20 @@ class Login extends \Core\Controller {
             $result = $user->PW_EmailCompair($Email);
 
             if($result){
-                $State=1;
-                $code=$this->getCode($Email);
-                echo $code;
-                $UImsg ='Reset Code Has been Sent To Your Email-Address'; 
+                $State= 1;
+                $code=$this->getcode($Email);
+                $mail=$this->passwordResetMessage($code,$Email);
+                if($mail){
+                    $UImsg ='Reset Code Has been Sent To Your Email-Address';
+                }else{
+                    $UImsg ='Error Occured While Sending the Email';
+                }
                 $this->view->UImsg = $UImsg;
                 $this->view->State = $State;
-                $this->view->display('Common/PassResetcode.php');    
+                $this->view->display('Common/PassResetcode.php'); 
+
             }else{
+
                 $State=0;
                 $UImsg ='Email-Address Not Found In Our System'; 
                 $this->view->UImsg = $UImsg;
@@ -123,11 +145,14 @@ class Login extends \Core\Controller {
         }
     }
 
+    
     function urlpart($url){
         if($url != ''){
             $set=explode('&',$url,3);
             if(strpos($set[0], '=') === false){
                     $url =$set[1];
+                    // start_session();
+                    // $_SESSION['code']=$url;
             }else{
 
                 return false;
@@ -140,10 +165,13 @@ class Login extends \Core\Controller {
     public function ResetPassword(){
        if(isset($_POST['password'])){
             $pass=$_POST['password'];
+
+            $pass=md5($pass);
+            
+            $user =new User();
             $url=$_SERVER['QUERY_STRING'];
             $code =$this->urlpart($url);
             $getEmail=$this->Decode_getCode($code);
-            $user =new User();
             $result=$user->Emailcompair($getEmail,$pass);
             if($result){
                 
@@ -151,7 +179,6 @@ class Login extends \Core\Controller {
                 $this->view->State = $State;
                 $UImsg ='Successfull!! ,Please Login With your New Password'; 
                 $this->view->UImsg = $UImsg;  
-                echo "hi";
                 $this->view->display('Common/PassReset.php');
             }else{
                 $State=0;
@@ -161,7 +188,22 @@ class Login extends \Core\Controller {
                 $this->view->display('Common/PassReset.php');
             }
         }else{
-            $this->view->display('Common/PassReset.php');
+
+            $url=$_SERVER['QUERY_STRING'];
+            echo $url;
+            $code =$this->urlpart($url);
+            $getEmail=$this->Decode_getCode($code);
+
+            $user =new User();
+            $result=$user-> PW_EmailCompair($getEmail);
+                if($result){
+                    $this->view->Code = $code;  
+                    $this->view->display('Common/PassReset.php');
+
+                }else{
+                    header('Location:../login/index');
+                }
+            
         }
         
     }

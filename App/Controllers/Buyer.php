@@ -21,16 +21,7 @@ class Buyer extends \Core\Controller {
          $this->view->display('Customer/accountView.php');
 
      
-// $to_email = "lawthenuka@gmail.com";
-// $subject = "Simple Email Test via PHP";
-// $body = "Hi, This is test email send by PHP Script";
-// $headers = "From: affiliox.xyz@gmail.com";
 
-// if (mail($to_email, $subject, $body, $headers)) {
-//     echo "Email successfully sent to $to_email...";
-// } else {
-//     echo "Email sending failed...";
-// }
 
      }
 

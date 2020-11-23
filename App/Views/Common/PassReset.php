@@ -27,7 +27,7 @@
 
 	</div> 
 	<!------------------------Sign in text-boxs------------------->
-  <form method="POST" action="../login/ResetPassword">
+  <form method="POST" action="../login/ResetPassword?<?php echo $this->Code;?>">
 	<div class="row ">
 		<div class= " col12 search signin center">
      

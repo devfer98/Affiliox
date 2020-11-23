@@ -6,6 +6,7 @@ Class View{
     public function display($view){
         if(session_id() == '') {
             session_start();
+            
         }
 
         if(isset($_SESSION['type']) && ($_SESSION['type'] == 'buyer') ){
@@ -21,13 +22,15 @@ Class View{
         }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'admin') ) {
             $header="../App/Views/Templete/Admin_header.php";
             $footer="../App/Views/Templete/Admin_footer.php";
-        }else{
+        }elseif (!isset($_SESSION['type']) || ($_SESSION['type'] == '')){
     
             $header="../App/Views/Templete/User_header.php";
             $footer="../App/Views/Templete/User_footer.php";
         }
+
         $file = "../App/Views/$view";
         if(is_readable($file)){
+        
             include $header;
             // require $header;
             require $file;

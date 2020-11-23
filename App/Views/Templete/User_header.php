@@ -19,7 +19,7 @@
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
 
                     
-                    <div class="sm-8">
+                    <div class="sm-10">
                         <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                     </div>
                     <div class="sm-2">
