@@ -216,6 +216,15 @@ body {
     /* border: 2px solid blue; */
 }
 
+.col12fullN {
+  margin: auto;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  float: left;
+  /* border: 2px solid blue; */
+}
+
 .fullWidthN{
 	padding-left: 0;
 	padding-right: 0;

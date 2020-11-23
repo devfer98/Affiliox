@@ -49,7 +49,7 @@ class User extends \Core\Connect
       }
 
       $stmt = $conn->prepare("SELECT * FROM promoter WHERE userID = ? AND password= ? AND accountStatus = ?");
-      $accStats = 'Inactive';
+      $accStats = 'Active';
       $stmt->bind_param("sss", $username, $password, $accStats);
       if ($stmt->execute()) {
 

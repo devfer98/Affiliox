@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-class Seller extends \Core\Connect {
+class SellerM extends \Core\Connect {
 
     function __construct() {
         // include ("php/connect.php");
@@ -55,11 +55,42 @@ class Seller extends \Core\Connect {
     }
 
     public function getPending() {
-        
+        $conn=static::connectDB();
+                // $flag=0;
+
+                $stmt = $conn->prepare("SELECT * FROM seller WHERE accountStatus = 'Pending'");
+                // $stmt->bind_param("s", "Pending");
+                if($stmt->execute()){
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }else{
+                    echo 'SQL Error';
+                }
     }
 
     public function getStatistics() {
         
+    }
+
+    public function updateStatus($userID, $status) {
+        $conn=static::connectDB();
+        $accStatus;
+        if($status==1){
+            $accStatus="Active";
+        }elseif($status==2){
+            $accStatus="Rejected";
+            // echo $accStatus;  
+        }else{
+
+        }
+        $stmt = $conn->prepare("UPDATE seller SET accountStatus = ? WHERE userID = ?");
+        $stmt->bind_param("ss", $accStatus, $userID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
     }
 
     function EmailCompair($email,$username){

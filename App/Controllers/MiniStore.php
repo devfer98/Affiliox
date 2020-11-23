@@ -32,7 +32,7 @@ class MiniStore extends \Core\Controller {
         
     }
 
-    public function postProductAction(){
+    public function addProductAction(){
 
         $this->view->display('Seller/postProduct.php');
         

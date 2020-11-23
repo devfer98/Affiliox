@@ -10,131 +10,66 @@
 	<script src="/js/promoter/update-promoter-js.js"></script>
 </head>
 <body>
-	<!-------------- Top-Navigation-Bar ---------------------->
-		<header>
-			<div class="open-btn" onclick="openNav()">&#9776;</div>
-			<nav class="top-nav">
-			<ul class="main-nav">
-				<li class="logo"><a href="index.php" style="border: none;"><img src="/images/promoter/SideLogo.png"></a></li>
-				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
-				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
-				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
-				<!-- <li class="item"><a href=""><i class="fas fa-user"></i>&nbsp;&nbsp;Account</a></li>
-				<li class="item"><a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a></li> -->
-				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
-				<li class="last">
-					<select name="direction" onchange="location = this.value;">
-						<option value="../index.php">SELECT</option>
-						<option value="../index.php">Logout</option>
-						<option value="">Login</option>
-					</select>
-				</li>
-			</ul>
-		</nav>
-		</header>
-		<hr>
+	
 		<!-- inner part of the evry dashboard -->
 	<div class="container">
 		<h2><i class="fas fa-user"></i>&nbsp; &nbsp; Edit Profile Details</h2>
 		<div class="inner-part">
+		<?php  
+            if(isset($this->UImsg) and !empty($this->UImsg)){
+				while($row = $this->UImsg->fetch_assoc()) {          
+        ?>
 			<form action="../Promoter/promoterProfile" method="post">
 				<table>
 					<tr>
 						<td id="td-1">Your ID:</td>
-						<td id="td-2"><input type="number" name="userID" readonly></td>
+						<td id="td-2"><input type="" name="userID" value="<?php echo $row['userID'] ?>" readonly></td>
 					</tr>
 					<tr>
-						<td id="td-1">Name:</td>
-						<td id="td-2"><input type="text" name="name" min="0" max="50"></td>
-					</tr>
-					<tr>
-						<td id="td-1">Address line - 1:</td>
-						<td id="td-2"><input type="text" name="aLine1"></td>
-					</tr>
-					<tr>
-						<td id="td-1">Address line - 2:</td>
-						<td id="td-2"><input type="text" name="aLine2"></td>
-					</tr>
-					<tr>
-						<td id="td-1">City:</td>
-						<td id="td-2"><input type="text" name="city"></td>
-					</tr>
-					<tr>
-						<td id="td-1">Country:</td>
-						<td id="td-2"><input type="text" name="country"></td>
-					</tr>
-					<tr>
-						<td id="td-1">Status:</td>
-						<td id="td-2"><input type="text" name="status"></td>
-					</tr>
-					<tr>
-						<td id="td-1">Birthday:</td>
-						<td id="td-2"><input type="date" name="dob" placeholder="year-mm-dd" pattern="[1-9]{4}-[1-12]{2}-[1-30]{2}"></td>
+						<td id="td-1"> Full Name:</td>
+						<td id="td-2"><input type="text" name="name" value="<?php echo $row['name'] ?>" min="0" max="50"></td>
 					</tr>
 					<tr>
 						<td id="td-1">Email:</td>
-						<td id="td-2"><input type="email" name="email"></td>
+						<td id="td-2"><input type="text" name="email" value="<?php echo $row['email'] ?>"></td>
 					</tr>
 					<tr>
 						<td id="td-1">Phone Number:</td>
-						<td id="td-2"><input type="telephone" name="phoneNo" placeholder="000-0000000"></td>
+						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" pattern="[1-9]{4}-[1-12]{2}-[1-30]{2}"></td>
 					</tr>
+					<tr>
+						<td id="td-1">Date of Birth:</td>
+						<td id="td-2"><input type="date" name="dob" value="<?php echo $row['dob'] ?>"></td>
+					</tr>
+					<tr>
+						<td id="td-1">Address Line 1:</td>
+						<td id="td-2"><input type="text" name="aLine1" value="<?php echo $row['aLine1'] ?>"></td>
+					</tr>
+					<tr>
+						<td id="td-1">Address Line 2:</td>
+						<td id="td-2"><input type="text" name="aLine2" value="<?php echo $row['aLine2'] ?>"></td>
+					</tr>
+					<tr>
+						<td id="td-1">City</td>
+						<td id="td-2"><input type="text" name="city" value="<?php echo $row['city'] ?>"></td>
+					</tr>
+					<tr>
+						<td id="td-1">Country:</td>
+						<td id="td-2"><input type="text" name="country" value="<?php echo $row['country'] ?>"></td>
+					</tr>
+					
 				</table>
 				<input type="submit" name="submit" value="Submit" class="btn">
-			</form>						
+			</form>	
+			<?php
+				}
+			}
+			?>
 		</div><!-- inner-part -->
 		<hr style="height:2px;border:none;color:#333;background-color:#333;">
 	</div> <!-- container -->
 	
-		<!-- bottom-part-------------------------------------------->
-		<div class="bottom-part">
-			<table>
-				<tr class="thead">
-					<td rowspan="4"><img src="/images/promoter/affiliox.png" height='150' width='150'></td>
-					<td>Main Menu</td>
-					<td>Find us On</td>
-					<td>Contact us</td>
-				</tr>
-				<tr>
-					<!-- <td></td> -->
-					<td><a href="">About Affiliox <i class="fas fa-users"></i></a></td>
-					<td><a href=""></i>FaceBook <i class="fab fa-facebook-f"></i></a></td>
-					<td>Address: Sri Lanka.</td>
-				</tr>
-				<tr>
-					<!-- <td></td> -->
-					<td><a href="">Help & Support <i class="fas fa-question-circle"></a></td>
-					<td><a href="">Twitter <i class="fab fa-twitter"></i></a></td>
-					<td>Phone: 011-1234567</td>
-				</tr>
-				<tr>
-					<!-- <td></td> -->
-					<td><a href="">Privacy & Policy <i class="fas fa-shield-alt"></i></a></td>
-					<td><a href="">Youtube <i class="fab fa-youtube"></i></a></td>
-					<td>Email: affiliox@gmail.com</td>	
-				</tr>
-			</table>
-		</div> <!-- bottom-part -->
 		
-		<div class="footer">
-  			<ul>
-  				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  				tempor incididunt ut labore et dolore magna aliqua.</li>
-  				<li> Affiliox &trade;</li>
-  			</ul>
-		</div>	 <!-- footer -->	
-	</div> <!-- navigation -->
-
-	<div id="mySidenav" class="sidenav">
-  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="../Promoter/promoterProfile">User profile<i class="far fa-user"></i></a>
-  		<a href="../Promoter/Market">Marker Place<i class="fab fa-shopify"></i></a>
-  		<a href="../Promoter/staticPromoter">Statstics<i class="fas fa-chart-line"></i></i></a>
-  		<a href="../Promoter/promoterTrans">Transactions<i class="fas fa-money-check-alt"></i></a>
-  		<a href="../Promoter/promoterFeedback">Feedback<i class="fas fa-phone-square"></i></i></a>
-  		<a href="../Promoter/promoterSupport">Support<i class="fas fa-envelope-open-text"></i></a>
-	</div>
-	<span onclick="openNav()"></span>
 
 </body>
 </html>

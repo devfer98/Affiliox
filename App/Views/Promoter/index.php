@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
-<<<<<<< HEAD
-=======
 
->>>>>>> 9b9b310ae2b7eb1b82627fbe30da82365cdf5533
+<html>
+<?php $_SESSION['type']='promoter'; ?>
+
 <head>
 	<title>Affiliox</title>
 	<link rel="shortcut icon" href="/images/promoter/logoOnly.png" type="image/x-icon">
@@ -14,38 +13,7 @@
 </head>
 <body>
 
-		<!---Navigation bar-------------------------------------------->
-	<header>
-		<nav class="top-nav">
-			<ul class="main-nav">
-				<li class="logo"><a href="index.php" style="border: none;"><img src="/images/Promoter/SideLogo.png"></a></li>
-				<!-- <li class="logo-name"><a href="">Affiliox</a></li> -->
-				<li class="item"><a href=""><i class="fas fa-home"></i>&nbsp;Home</a></li>
-				<li class="item"><a href=""><i class="fas fa-users"></i>&nbsp;About Us</a></li>
-				<li class="item"><a href=""><i class="fas fa-question-circle"></i>&nbsp;Help & Support</a></li>
-				<li class="item"><a href=""><i class="fas fa-user"></i>&nbsp;&nbsp;Account</a></li>
-				<li class="push"><input type="search" name="" placeholder="search"><button><i class="fas fa-search"></i> &nbsp;Search</button></li>
-				<li class="last">
-				<form>
-				<select name="direction" id="select-nav" onchange="location = this.value;">
-				<?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
-
-						echo '<option value="" selected disabled hidden></option>';
-						echo '<option value="../index.php">Logout</option>';
-				}else{
-						echo '<option value="" selected disabled hidden></option>';
-						echo '<option value="../Signup/create">Signup</option>';
-						echo '<option value="../login/index">Login</option>';
-
-				
-				}?>
-                     </select>
-				</form>	
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<hr id="first-hr">
+	<!---Navigation bar-------------------------------------------->
 
 	<!-- welcome-note --------------------------------------------->	
 	<div class="container">
@@ -219,11 +187,11 @@
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 		</div> <!-- latest -->
-			<hr>
+	
 		</div> <!-- container -->
 
 		<!-- bottom-part-------------------------------------------->
-		<div class="bottom-part">
+        <div class="bottom-part">
 			<table>
 				<tr class="thead">
 					<td rowspan="4"><img src="/images/promoter/affiliox.png" height='150' width='150'></td>
@@ -258,7 +226,19 @@
   				tempor incididunt ut labore et dolore magna aliqua.</li>
   				<li> Affiliox &trade;</li>
   			</ul>
-		</div>	 <!-- footer -->
-		<script src="/js/Promoter/index-script.js"></script>
+		</div>	 <!-- footer -->	
+</div>
+
+	<div id="mySidenav" class="sidenav">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<a href="../Promoter/promoterProfile">User profile<i class="far fa-user"></i></a>
+  		<a href="../Promoter/Market">Marker Place<i class="fab fa-shopify"></i></a>
+  		<a href="../Promoter/staticPromoter">Statstics<i class="fas fa-chart-line"></i></i></a>
+  		<a href="../Promoter/promoterTrans">Transactions<i class="fas fa-money-check-alt"></i></a>
+  		<a href="../Promoter/promoterFeedback">Feedback<i class="fas fa-phone-square"></i></i></a>
+  		<a href="../Promoter/promoterSupport">Support<i class="fas fa-envelope-open-text"></i></a>
+	</div> <!-- sidenav -->
+	<span onclick="openNav()"></span>
+    <script src="/js/Promoter/index-script.js"></script>
 </body>
 </html>
