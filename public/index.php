@@ -2,6 +2,7 @@
 //Controller files
 // require '../App/Controllers/User.php';
 // autoload controller files
+// require_once 'config.php';
 
 spl_autoload_register(function($class){
     $root=dirname(__DIR__);

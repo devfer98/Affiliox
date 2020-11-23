@@ -24,6 +24,12 @@ class Seller extends \Core\Controller {
         
     }
 
+    public function profileEditAction(){
+
+        $this->view->display('Seller/editSeller.php');
+        
+    }
+
     public function marketAction(){
 
         $this->view->display('Common/market.php');

@@ -18,7 +18,7 @@
   <!---Navigation bar-------------------------------------------->
   <div class="container">
 
-  <?php echo $_SESSION["type"] ?>
+  <!-- <?php echo $_SESSION["type"] ?> -->
     <!-- Container content  --------------------------------------------->
    
     <div class="row center">
@@ -37,7 +37,7 @@
           </div>
          <!-- content area --------------------------------------------->
          <div class="tab">
-          <button class="tablinks button1" de onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
+          <button class="tablinks button1 active" de onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
           <button class="tablinks button1" onclick="openPage(event,'PromoterReg')">Promoter Pending Approvals</button>
          
           <div id="SellerReg" class="tabcontent" style="display: block;">
@@ -45,38 +45,25 @@
               <table>
                 <tr>
                   <th>Username</th>
-                  <th>UserID</th>
                   <th>Email</th>
+                  <th>City</th>
                   <th colspan="2">Action</th>
                 </tr>
-                <tr>
-                  <td>Peter</td>
-                  <td>seller1</td>
-                  <td>peter@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>Griffin</td>
-                  <td>seller2</td>
-                  <td>griffin@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>Lily</td>
-                  <td>seller3</td>
-                  <td>lily@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>seller4</td>
-                  <td>john@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
+                <?php 
+                  if(isset($this->pendSellers) and !empty($this->pendSellers) and $this->pendSellers->num_rows>0){
+                    while($row = $this->pendSellers->fetch_assoc()){   
+                      echo "<tr><td>".$row['userID']."</td>"; 
+                      echo "<td>".$row['email']."</td>"; 
+                      echo "<td>".$row['city']."</td>"; 
+                      echo "<form method='post' action ='../Admin/UpdateSellStatus'>";
+                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      echo "<td><button name='status' type='submit' value='1' class='button button1'>Approve</button></td>";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></tr></form>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='5'>No Pending Sellers</td></tr>";
+                  }  
+                ?>
               </table>
             </div>	
           </div>
@@ -85,39 +72,26 @@
             <div class="body">
               <table>
                 <tr>
-                  <th>Full Name</th>
-                  <th>UserID</th>
+                  <th>Username</th>
                   <th>Email</th>
+                  <th>city</th>
                   <th colspan="2">Action</th>
                 </tr>
-                <tr>
-                  <td>Michel</td>
-                  <td>promoter1</td>
-                  <td>michel@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>Joe</td>
-                  <td>promoter2</td>
-                  <td>joe@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>Liza</td>
-                  <td>promoter3</td>
-                  <td>liza@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
-                <tr>
-                  <td>Jhon</td>
-                  <td>promoter4</td>
-                  <td>jhon@gmail.com</td>
-                  <td><button class="button button1">Approve</button></td>
-                  <td><button class="button button2">Deny</button></td>
-                </tr>
+                <?php 
+                  if(isset($this->pendPromoters) and !empty($this->pendPromoters) and $this->pendPromoters->num_rows>0){
+                    while($row = $this->pendPromoters->fetch_assoc()){   
+                      echo "<tr><td>".$row['userID']."</td>"; 
+                      echo "<td>".$row['email']."</td>"; 
+                      echo "<td>".$row['city']."</td>"; 
+                      echo "<form method='post' action ='../Admin/UpdateProStatus'>";
+                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      echo "<td><button name='status' type='submit' value='1' class='button button1'>Approve</button></td>";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></tr></form>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='5'>No Pending Promoters</td></tr>";
+                  }  
+                ?>
               </table>
             </div>
           </div>

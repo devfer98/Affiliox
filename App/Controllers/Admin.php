@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 use Core\View;
+use App\Models\SellerM;
+use App\Models\PromoterM;
 class Admin extends \Core\Controller {
 
     public function indexAction(){
@@ -8,6 +10,10 @@ class Admin extends \Core\Controller {
     }
 
     public function ApproveRegAction(){
+        $seller= new SellerM();
+        $this->view->pendSellers=$seller->getPending();
+        $promoter= new PromoterM();
+        $this->view->pendPromoters=$promoter->getPending();
         $this->view->display('Admin/VerifyUser.php');
     }
 
@@ -43,7 +49,19 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/ReviewFeedback.php');
     }
 
+    public function UpdateSellStatusAction(){
+        $seller = new SellerM();
+        $seller->updateStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ApproveReg");
+        $this->ApproveRegAction();
+    }
 
+    public function UpdateProStatusAction(){
+        $promoter = new PromoterM();
+        $promoter->updateStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ApproveReg");
+        $this->ApproveRegAction();
+    }
 
     protected function before()
     {      
