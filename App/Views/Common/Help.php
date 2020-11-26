@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Affiliox-AboutUs</title>
-	<link rel="stylesheet" type="text/css" href="../../customer/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="../../customer/css/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="../css/Aboutus.css" />
-	<script type="text/javascript" src="../../js/Signin.js"></script>
-	<script type="text/javascript" src="../../js/nav-fixed.js"></script>
+	<title>Affiliox-Help</title>
+	<link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Common/Help.css" />
+	<script type="text/javascript" src="/js/Common/help.js"></script>
+	<script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
 	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -73,96 +73,39 @@
 		  <!-- inner-part-------------------------------------------->
 		  
 		  <div class="container">
-			<div class="about">
-				<h1>About Affiliox</h1>
-				<br/>
-				<h3>Adding Value To Existing E-Commerce</h3>
+			<div class="help">
+				<h1 style="text-shadow: 4px 4px 10px #0000ff;color: white;">Help & Support</h1>
 			</div>
 		 </div>
 		  <br/>
-		  <h2 style="text-align:center">Our Goals</h2>
-			<div class="abtcolumn">
-			  <div class="acard">
-				<img src="../images/goal1.png" alt="Lily" style="width:100%">
-				<div class="acontainer">
-				  <h4>Connecting Buyer, Seller, and Promoter together</h4>
-				  <p>The main objective of this system is to create a platform where all Buyers, 
-					  Sellers, and Promoters can connect and communicate so that these parties in 
-					  our system can benefit themselves from each other. 
-					  Buyer, Sellers and Promoters are under our terms and conditions to keep 
-					  the system running consistently. Buyers interact with our system so that 
-					  they can purchase things that they see through social media.</p>
-				</div>
-			  </div>
-			</div>
-		  
-			<div class="abtcolumn">
-			  <div class="acard">
-				<img src="../images/goal2.jpg" alt="Mike" style="width:100%">
-				<div class="acontainer">
-					<h4>Allowing Small and Medium Sellers to create their own Mini Store</h4>
-					<p>We will be allowing Sellers who do not have an online store to create their 
-						own Mini Store on our E-commerce site So that they do not only sell products online
-						but also have their own online store. In this Mini Store, we will only give a limited 
-						number of design options, which will make their store unique. Also, 
-						Buyers who come to a Seller’s Mini Store have the option of searching all 
-						products under every Mini Store in our Affiliox E-commerce site. 
-						Sellers will benefit considerably from having a Mini Store because then they 
-						can brand their products with their store.</p>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="abtcolumn">
-			  <div class="acard">
-				<img src="../images/goal3.png" alt="John" style="width:100%">
-				<div class="acontainer">
-					<h4>Allowing Social Media users to earn money through social media</h4>
-					<p>Social media users who have popular or regular accounts can register as
-						promoters in our System and earn money by promoting products. Through this,
-						people can use their social media existence as an income generation method.</p>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <br/> 
-		  <h2 style="text-align:center">Our Team</h2>
-			<div class="abtcolumn">
-			  <div class="card">
-				<img src="../images/profile2.jpg" alt="Lily" style="width:100%">
-				<div class="acontainer">
-				  <h3>Lily Jane</h3>
-				  <p class="title"><b>IT Administrator</b></p>
-				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				  <p>lily@example.com</p>
-				</div>
-			  </div>
-			</div>
-		  
-			<div class="abtcolumn">
-			  <div class="card">
-				<img src="../images/profile1.jpg" alt="Mike" style="width:100%">
-				<div class="acontainer">
-				  <h3>Mike Ross</h3>
-				  <p class="title"><b>Web Developer</b></p>
-				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				  <p>mike@example.com</p>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="abtcolumn">
-			  <div class="card">
-				<img src="../images/profile3.jpg" alt="John" style="width:100%">
-				<div class="acontainer">
-				  <h3>John Doe</h3>
-				  <p class="title"><b>Designer</b></p>
-				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				  <p>john@example.com</p>
-				</div>
-			  </div>
-			</div>
-		  </div>
+          <div class="acontainer">
+            <div style="text-align:center">
+                <h2>FAQ! Need Help?</h2>
+				<br/>
+				<h3>Want to find out how Affiliox can solve problems
+                    specific to your business? Let's Talk
+                </h3>
+            </div>
+            <div class="arow">
+              <div class="acolumn">
+                <img src="../images/help.png " style="width:100%">
+              </div>
+              <div class="acolumn">
+                <button class="accordion">Section 1</button>
+					<div class="panel1">
+  						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				<button class="accordion">Section 2</button>
+					<div class="panel1">
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				
+              </div>
+            </div>
+          </div>
+          
+
+
 		<!-- bottom-part-------------------------------------------->
 <div class="row">
 	<div class="col12 fullwidth">

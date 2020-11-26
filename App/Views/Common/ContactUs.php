@@ -2,11 +2,10 @@
 <html>
 <head>
 	<title>Affiliox-ContactUs</title>
-	<link rel="stylesheet" type="text/css" href="../../customer/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="../../customer/css/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="../css/Contactus.css" />
-	<script type="text/javascript" src="../../js/Signin.js"></script>
-	<script type="text/javascript" src="../../js/nav-fixed.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Common/Contactus.css" />
+	<script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
 	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -88,7 +87,7 @@
             </div>
             <div class="arow">
               <div class="acolumn">
-                <img src="../images/help.png " style="width:100%">
+                <img src="/images/Common/help.png " style="width:100%">
               </div>
               <div class="acolumn">
                 <form action="/action_page.php">
