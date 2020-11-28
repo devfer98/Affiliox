@@ -158,8 +158,9 @@
           </table>
         </form>
       </div> <!-- customer-review-1 -->
+      </div> <!-- container -->
       <hr style="height:2px;border:none;color:#333;background-color:#333;">
-    </div> <!-- container -->
+   
 
             <!-- bottom-part-------------------------------------------->
             

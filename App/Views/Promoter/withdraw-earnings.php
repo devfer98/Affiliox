@@ -12,36 +12,50 @@
 <body>
 	
 	<div class="container">
-		<h2><i class="fas fa-money-check-alt"></i>&nbsp; &nbsp;Balance Withdrawal</h2>
+		<h2><i class="fas fa-money-check-alt"></i>&nbsp; &nbsp;Transaction Management</h2>
 
-		<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. 
-		<a id="payout-history" href="../Promoter/transHistory">CLICK HERE</a></p>
-	<p></p>
+		<p><b>Withdraw Earnings:</b> Use this page to transfer your balance to your preferred method of payout. You should have minimum payout amount available in your account. To see the list and status of your payouts. 
+		<a id="payout-history" href="../Promoter/transHistory">CLICK HERE <i class="fas fa-history"></i></a></p>
+		
+		<div class="error-msg">
+			<p><?php if(isset($this->errmsg) and !empty($this->errmsg)){echo $this->errmsg;}  ?></p>
+		</div>
+		<div class="success-msg">
+			<p><?php if(isset($this->successmsg) and !empty($this->successmsg)){echo $this->successmsg;}  ?></p>
+		</div>
 		<div class="money-withdrawal-form">
 			<form method="post" action="../Promoter/promoterTransToDB">
 				<table>
 					<tr>
-						<td>Current Amount :</td>
-						<td>26.14 $USD</td>
+						<td class = td1>Current Amount :</td>
+						<td>82.14 USD</td>
 					</tr>
 					<tr>
-						<td>Change Amount :</td>
-						<td><input type="number" name="ammount"  id="c-a" step="0.01" required></td>
+						<td class = td1>Change Amount :</td>
+						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0"></td>
 					</tr>
-				<tr>
+					<tr>
+						<td class = td1>Transfer Cost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+						<td>$ 0</td>
+					</tr>
+					<tr>
+						<td colspan =2> *By requesting a transfer you agree with Affiliox.com terms and conditions.</td>
+					</tr>
+					<tr>
 					<td>
-						<button type="submit" name="submit">Submit</button>
-						<!-- onclick="return confirm('Are you want to actually transfer this amount ?')" -->
+						<button type="submit" name="submit" onclick="return confirm('Are you want to actually transfer this amount ?')">Transfer</button>
+						
 					</td>
 					<td>
-						<button type="reset">Reset</button>
+						<button type="reset">Cancel</button>
 					</td>
 				</tr>
 			</table>
 			</form>
 		</div> <!-- money-withdrawal-form -->
+		</div> <!-- container -->
 		<hr style="height:2px;border:none;color:#333;background-color:#333;">
-	</div> <!-- container -->
+	
 
 		<!-- bottom-part-------------------------------------------->
 		

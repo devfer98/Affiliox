@@ -115,7 +115,6 @@ class Signup extends \Core\Controller {
     public function promoterToDBAction(){
         
         $user = new Promoter();
-       
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 
@@ -140,6 +139,7 @@ class Signup extends \Core\Controller {
         if($password != $con_password){
 
         }
+
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
                     $user->addPromoter($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2,$accStatus,$arrs);

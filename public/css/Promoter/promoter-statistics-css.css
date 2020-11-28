@@ -64,6 +64,13 @@ hr {
   transition: 0.3s;
 }
 
+.sidenav a:hover {
+  color: #28a745;
+  /* font-weight: bold; */
+  font-weight: bold;
+}
+
+
 .sidenav a i {
   margin-left: 10px;
 }
@@ -103,7 +110,6 @@ li  {
   letter-spacing: 1px;
 }
 
-
 .logo img {
   width: 200px;
   position: relative;
@@ -113,16 +119,17 @@ li  {
 .item  {
   position: relative;
   left: 70px;
-  top: 20px;
+  top: 30px;
 }
+
 
 .item  a {
   text-decoration: none;
-  border: 2px solid #28a745;
+  border: 1px solid #28a745;
   font-weight: bold;
   font-size: 15px;
   margin-left: -10px;
-  padding: 4px;
+  padding: 7px;
   border-radius: 0.25rem;
   color: #1f3d7a;
 
@@ -130,34 +137,37 @@ li  {
 
 .item a:hover {
   background: #28a745;
-    opacity: 1;
+  opacity: 1;
   letter-spacing: 0.5px;
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
   box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
   transition: all 0.4s ease 0s;
   color: #f5f5f6;
-  text-decoration: underline;
   font-weight: bold;
 }
 
 .push {
   margin-left: auto;
   position: relative;
-  top: 15px;
+  top: 25px;
+}
+
+.push button i {
+  padding: 5px; 
 }
 
 .last {
   position: relative;
-  top: 15px;
+  top: 18px;
 }
 
 .push input {
-  padding: 5px;
+  padding: 8px;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
-  border: 2px solid #ced4da; 
-  width: 180px;
+  border: 1px solid #000c18; 
+  width: 300px;
 }
 
 input:focus{
@@ -168,12 +178,12 @@ input:focus{
 }
 
 .push button {
-  padding: 5px;
+  padding: 6px;
   margin-left: 5px;
   background: none;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
-  border:  2px solid #28a745;
+  border:  1px solid #28a745;
   font-weight: bold;
 }
 
@@ -183,13 +193,14 @@ input:focus{
 }
 
 .last select{
-  padding: 5px;
+  padding: 7px;
   width: 90px;
-  border: 2px solid black;
+  border: 1px solid black;
   font-family: 'Open Sans', sans-serif;
   border-radius: 0.25rem;
+  position: relative;
+  top: 8px;
 }
-
 /*-------------------Inner content-------------------*/
 #columnchart_values {
   margin-left: 100px;
@@ -244,15 +255,16 @@ input:focus{
 /*-----------------------bottom part----------------------------------------------*/
 .bottom-part table {
   font-family: 'Open Sans', sans-serif;
-	margin: 50px 150px 40px 180px;
-	width: 1200px;
+  margin: 30px 0 10px 120px;
+  /* margin-left: 110px; */
+	/* width: 1200px; */
 }
 
 .thead td{
   font-weight: bold;
   font-size: 18px;
   text-decoration: underline;
-  width: 200px;
+  width: 500px;
 }
 
 table tr { line-height: 40px; }

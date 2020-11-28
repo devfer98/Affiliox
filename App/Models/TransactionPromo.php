@@ -15,7 +15,7 @@ class TransactionPromo extends \Core\Connect{
 
         $conn=static::connectDB();
         $stmt = $conn->prepare("INSERT INTO transaction (ammount, status,  userID, date) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("iiss", $ammount, $status,  $userID, $date);
+        $stmt->bind_param("diss", $ammount, $status,  $userID, $date);
         if ($stmt->execute()) {
             $stmt->close();
             return true;
@@ -39,21 +39,14 @@ class TransactionPromo extends \Core\Connect{
             
             if ($result->num_rows > 0 ){
                 return $result;
-                // while($row = $result->fetch_assoc()){   
-
-                //    return  $row['userID'];  
-                // }
+            } else {
+                $result = null;
+                return  $result ;
             }
-            
-        }else{
-            $result = 'Error sql';
-            return $result;
-        }
+        } 
     }
 
-    
-
-    
+  
 
     protected function before()
     {

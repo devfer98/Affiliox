@@ -519,6 +519,7 @@ h1 { font-size: 1.5em; margin: 10px; }
  float: right; 
 }
 
+
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
@@ -527,3 +528,4 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
