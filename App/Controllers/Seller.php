@@ -30,6 +30,12 @@ class Seller extends \Core\Controller {
         
     }
 
+    public function marketAction(){
+
+        $this->view->display('Common/market.php');
+        
+    }
+
     public function statisticsAction(){
 
         $this->view->display('Seller/sellerStatistics.php');
@@ -74,15 +80,15 @@ class Seller extends \Core\Controller {
 
     protected function before()
     {   
-    //     if(session_id() == '') {
-    //         session_start();
-    //     }
-    //     if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-    //         return true;
-    //     }else{
-    //         header("Location:../Login/index");
+        if(session_id() == '') {
+            session_start();
+        }
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
+            return true;
+        }else{
+            header("Location:../Login/index");
             
-    //     }
+        }
     }
 
 }

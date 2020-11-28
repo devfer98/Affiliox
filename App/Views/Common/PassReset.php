@@ -27,12 +27,14 @@
 
 	</div> 
 	<!------------------------Sign in text-boxs------------------->
-  <form method="POST" action="../login/ResetPassword">
+  <form method="POST" onsubmit="return  ValidatePassword();" action="../login/ResetPassword?<?php echo $this->Code;?>">
 	<div class="row ">
 		<div class= " col12 search signin center">
      
-			New Password &nbsp; &nbsp; &nbsp; : <input type="password" name="password" id="con-pass-field" placeholder="*********"> <br></br>
-			Confirm Password : <input  type="password" name="con-password" id="pass-field" placeholder="********"><br><br>
+			New Password &nbsp; &nbsp; &nbsp; : <input type="password" name="password" id="con-pass-field"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  							title="Password should be same to the required type."placeholder="*********"> <br></br>
+			Confirm Password : <input  type="password" name="con-password" id="pass-field" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  							title="Password should be same to the required type." placeholder="********"><br><br>
 			<input style="width:5%;box-shadow: 0 0 0px #719ECE;"type="checkbox" onclick="passVisibility()">Show Password		
      
 		</div>
@@ -42,7 +44,7 @@
 		<div class="nav-bar col12 center " >
       <div class="marginb50">
       <ul>
-      <button><i class="fas fa-sign-out-alt"></i>&nbsp;Reset Password</b>
+      <button type="submit" value="submit"><i class="fas fa-sign-out-alt"></i>&nbsp;Reset Password</b>
     </ul>
       </div>
 		</div>
@@ -51,4 +53,5 @@
 
     </div> 
   </body>
+  <script type="text/javascript" src="/js/Common/Signin.js"></script>
 </html>

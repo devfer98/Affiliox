@@ -178,21 +178,43 @@ hr{
 	opacity: 1;
   } */
 
-button {
+.commonB button {
+	border: 1px solid #28a745; 
+	margin:auto;
+	font-size: 15px;
+	color: #1f3d7a;
+	text-decoration: none;
 	font-weight: bold;
-	padding: 10px;
+	/* margin-left: 3px; */
+	padding: 8px;
+	border-radius: 0.25rem;
+	transition: all 0.4s ease 0.3s;
+	margin-top: 10px;
+	z-index: 10;
+	outline: none;
+	background:rgb(255, 255, 255); 
+	/* font-weight: bold;
+	padding: 10px; */
 	width: 200px;
-	margin: 0px;
+	/* margin: 0px;
 	background: white;
 	border-radius: 5px;
 	border-style: none;
 	border: 2px solid orange;
-	transition: 0.3s;
+	transition: 0.3s; */
 }
 
-button:hover {
-	background: orange;
-	opacity: 1;
+.commonB button:hover {
+	background: #28a745;
+    opacity: 1;
+	letter-spacing: 0.5px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+	color: #f5f5f6;
+	/* background: orange;
+	opacity: 1; */
 } 
 
 
@@ -214,7 +236,7 @@ button:hover {
     font-size: 17px;   
 }
 
-/* .inp div input,textarea,select{
+.inp div input,textarea,.inp select{
     padding: 13px;
 	width: 90%;
 	min-width: 200px;
@@ -222,7 +244,7 @@ button:hover {
     background:rgb(248, 248, 248); 
     margin-top: 20px;
     border-radius: 9px;
-} */
+}
 
 .inp div input:focus {
     

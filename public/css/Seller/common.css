@@ -132,7 +132,7 @@ hr{
 }
 /*-----------------------links buttons and inputs----------------*/
 
-.nav-barN ul a,button ,.icon {
+.nav-barN ul a ,.icon {
 	border: 1px solid #28a745; 
 	margin:auto;
 	display:inline-flex;
@@ -150,7 +150,7 @@ hr{
 	background:rgb(255, 255, 255); 
 }
 
-.nav-barN ul a:hover , button:hover , .icon:hover{
+.nav-barN ul a:hover, .icon:hover{
 	
 	background: #28a745;
     opacity: 1;

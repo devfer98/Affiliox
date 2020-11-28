@@ -202,7 +202,7 @@ hr{
 	font-size: 20px;
 }
 .search input,textarea{
-  
+	
     border: none;
     background:rgb(235, 235, 235); 
 	border-radius: 6px;
@@ -211,6 +211,7 @@ hr{
 	padding: 11px;
 	resize: none;
 	border: 1px solid #ced4da;
+	text-indent: 10px;
  
   }
   select {

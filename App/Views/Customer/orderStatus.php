@@ -47,11 +47,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
                 <div class="row">
                     <div class="col12 hrCustom">
                         <hr>

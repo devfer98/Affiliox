@@ -3,8 +3,8 @@
 namespace App\Controllers;
 use Core\View;
 use App\Models\BuyerM;
-use App\Models\Seller;
-use App\Models\Promoter;
+use App\Models\SellerM;
+use App\Models\PromoterM;
 
 
 class Signup extends \Core\Controller {
@@ -31,7 +31,7 @@ class Signup extends \Core\Controller {
 
     public function buyerToDBAction(){
         
-        $user = new Buyer();
+        $user = new BuyerM();
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 
@@ -70,7 +70,7 @@ class Signup extends \Core\Controller {
 
     public function sellerToDBAction(){
         
-        $user = new Seller();
+        $user = new SellerM();
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 
@@ -114,7 +114,12 @@ class Signup extends \Core\Controller {
 
     public function promoterToDBAction(){
         
+<<<<<<< HEAD
         $user = new Promoter();
+=======
+        $user = new PromoterM();
+       
+>>>>>>> c0c6168c28b5b9a6868879bcf28a50ab30106196
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 

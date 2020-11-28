@@ -33,12 +33,12 @@
 
         </div>
         <!------------------------Sign in text-boxs------------------->
-        <form method ="POST" action ="../login/forget"> 
+        <form method="POST" action="../login/forget">
             <div class="row ">
                 <div class=" col12 search signin ">
 
                     <div class="marginl100 margin margint50 sm-center">
-                        Email : <input type="resetcode" name="resetcode" placeholder="Magic.piper@gmail.com">
+                        Email : <input type="resetcode" name="resetcode"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Incorrect Email Format." placeholder="Magic.piper@gmail.com">
                     </div>
 
                 </div>
@@ -48,12 +48,13 @@
                 <div class="nav-bar col12 ">
                     <div class="marginl100 sm-center marginb50">
                         <ul>
-                            <button><i class="fas fa-sign-out-alt" onclick="validateForm();"></i>&nbsp;Send Email</button>
+                            <button><i class="fas fa-sign-out-alt" type="submit" value='submit' onclick="validateForm();"></i>&nbsp;Send
+                                Email</button>
                         </ul>
                     </div>
                 </div>
             </div>
-             <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
                         if($this->State==1) {
 
                            ?><div class="center marginb50 errorMsgSuccess"><?php
@@ -61,9 +62,9 @@
                         }else{
                           ?><div class="center marginb50 errorMsgFailed"> <?php
                         }                 
-                  }  ?> 
-                <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
-            </div>
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                </div>
 
         </form>
 

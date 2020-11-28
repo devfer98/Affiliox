@@ -10,13 +10,13 @@
 } */
 
 /*-------------------Inner content-------------------*/
-table {
+  .data table {
     font-family: 'Open Sans', sans-serif;
     margin-top: 60px;
     margin: 0 auto;
   }
   
-  table td {
+  .data table td {
     padding: 35px;
     border-bottom: 1px solid #ddd;
     font-size: 17px;
@@ -24,8 +24,14 @@ table {
     text-align: center;
   }
   
-  #td-1 {
+  .data #td-1 {
     font-weight: bold;
+  }
+
+  .feedback table {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 60px;
+    margin: 0 auto;
   }
 
   .feedback table td {
@@ -97,7 +103,7 @@ table {
          /* Even Smaller devices */
       .affiliox {float: right;}
   
-      table tr td { display: block; justify-content:center; align-items:center; display:flex; }
+      table tr th td { display: block; justify-content:center; align-items:center; display:flex; }
   
       form input { margin: auto; padding: 10px; width: 100%; margin-top: 50px;}
   }

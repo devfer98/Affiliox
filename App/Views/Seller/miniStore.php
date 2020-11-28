@@ -12,23 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
-		<?php 
-			//if(session_id() == '') {
-			//         session_start();
-			//     }
-			//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-				require "sellerHeader.php";
-			//}else{
-				// header("Location:../Login/index");	
-			//}
-		?>
 
-        <div class="row" style="margin-top: 20px;">
-			<a class="col4 center" href="miniStoreView.html"><button>View Ministore</button></a>
-            <a class="col4 center" href="updateMinistore.html"><button>Update Ministore</button></a>
-            <a class="col4 center" href="postProducts.html"><button>Add Products</button></a>
+        <div class="row commonB" style="margin-top: 20px;">
+			<button class="center" onclick="location.href='../Ministore/ministoreView';">View Ministore</button>
+            <button class="center" onclick="location.href='../Ministore/update';">Update Ministore</button>
+            <button class="center" onclick="location.href='../Ministore/addProduct';">Add Products</button>
 		</div>
 		
 		<!-- <div class="Reg-container"> -->
@@ -43,27 +32,18 @@
                 <!-- <div class="row row-padding col12">
                     <button class="center">Add Product</button>
                 </div> -->
-                <div class="row">
+                <div class="row commonB">
                     <div class="card">
-                          <img src="images/i-phone.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/i-phone.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
-                              <p><a href="updateProduct.html"><button>Update Product</button></a></p>
+                              <p><button onclick="location.href='../Ministore/updateProduct';">Update Product</button></p>
                               <button>Delete Product</button>
                     </div>
         
                     <div class="card">
-                          <img src="images/i-phone-earphone.png" alt="Denim Jeans" style="width:100%">
-                              <h4>Tailored Jeans</h4>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button>Update Product</button></p>
-                              <button>Delete Product</button>
-                    </div>
-        
-                    <div class="card">
-                          <img src="images/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/i-phone-earphone.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
@@ -72,7 +52,16 @@
                     </div>
         
                     <div class="card">
-                          <img src="images/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+                          <img src="/images/Seller/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+                              <h4>Tailored Jeans</h4>
+                              <p class="price">$19.99</p>
+                              <p>Some text about the jeans..</p>
+                              <p><button>Update Product</button></p>
+                              <button>Delete Product</button>
+                    </div>
+        
+                    <div class="card">
+                          <img src="/images/Seller/nike-shoe.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
@@ -82,18 +71,6 @@
                     </div>
             </div>
 		</div>
-
-		<!-- bottom-part-------------------------------------------->
-		<?php 
-		//if(session_id() == '') {
-		//         session_start();
-		//     }
-		//if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
-			require "sellerFooter.php";
-		//}else{
-			// header("Location:../Login/index");	
-		//}
-		?>
 	</div>
 
 </body>

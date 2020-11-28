@@ -15,68 +15,7 @@
 <body>
 	<!---Navigation bar-------------------------------------------->
     <div class="container">
-		<div class="backcolor"> 
-		  <div class="row hidden-xm marginb100 backcolor">
-		  <div class=" nav-bar sm-logo-nav hidden-xm hrup sm-header backcolor " >
-			  
-			<div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
-			<div class="sm-9">
-			  <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
-			</div>
-			<div class="sm-2 ">
-			  <div class="selector margint20">
-				<select>
-				  <option value="sign in">Sign In</option><br/>
-				  <option value="login">Login</option><br/>
-				</select>
-			  </div>
-			</div>
-			
 
-		  </div>
-		</div>
-		  <div class=" nav-bar center backcolor">
-			<div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
-			<div class="col2 hidden-sm">
-			  <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO"/></a>
-			</div>
-	
-			<div class="col4 center">
-			  <ul>
-				<a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
-				<a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
-				<a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-				<a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
-			  </ul>
-			</div>
-	
-			<div class="col4 search fitcontent center">
-			  <ul>
-				<input type="text" name="search" placeholder="Headsets" />
-				<a href=""><i class="fas fa-search"></i></a>
-			  </ul>
-			</div>
-			<div class="col1 hidden-sm ">
-			  <div class="selector margint20">
-				<select>
-				  <option value="sign in">Sign in</option><br/>
-				  <option value="login">Login</option><br/>
-	
-				</select>
-			  </div>
-	
-			</div>
-	
-	
-		  </div>
-		
-		  <div class="row">
-			  <div class="col12 fullwidth">
-			<hr>
-			  </div>
-			
-		</div>
-	  </div>
 		<!-- Promoter Registration Text--------------------------------------------->
 		<div class="row">
 			<div class="col12">
@@ -115,7 +54,7 @@
 				<div class="col6">
 					<div class="">
 						<label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
-						<input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10" maxlength="10" 
+						<input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10" maxlength="10"  pattern="[0-9]*"
        					title="Please enter a valid phone number" required><br>
 					</div>
 				</div>
@@ -139,12 +78,12 @@
 
 			<div class="row rowMargin">
 				<div class="col12">
-					<div>
+				<div>
 						<!------------------Address section------------------->
 						<label for="Addressl1"><i class="fa fa-address-card"></i> Address Line 1</label><br>
-						<input type="text" id="line1" name="aline1" placeholder="Address Line 1" minlength="5" maxlength="100" required><br><br>
+						<input type="text" id="line1" name="aline1" placeholder="Address Line 1" minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required><br><br>
 						<label for="Addressl2"><i class="fa fa-address-card"></i> Address Line 2</label><br>
-						<input type="text" id="line2" name="aline2" placeholder="Address Line 2" minlength="5" maxlength="100" required><br>
+						<input type="text" id="line2" name="aline2" placeholder="Address Line 2" minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters."required><br>
 						<!------------------ ------------------->
 					</div>
 				</div>
@@ -184,7 +123,7 @@
 					<div>
 						<label for="channels"><i class="fa fa-facebook-square"></i> <i class="fa fa-instagram"></i> <i class="fa fa-youtube-square"> <i class="fa fa-twitter-square"></i></i>&nbsp;Channel Reference Links</label><br>
 						<br>
-						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="300"></textarea><br>
+						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="300" pattern="^[a-zA-Z0-9,-.'()/: ]*$"></textarea><br>
 						<p class="font-heavy" required> Use ; to Seperate New Links </p>
 					</div>
 				</div>
@@ -201,7 +140,7 @@
 					<div class="col12">
 						<div>
 							<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
-							<input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+							<input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100" pattern="[a-zA-Z0-9\s]*" title="Remove unwanted characters." required><br>
 						</div>
 					</div>
 				</div>
@@ -241,75 +180,8 @@
 
     <!-- bottom-part-------------------------------------------->
 
-    <div class="row">
-		<div class="col12 fullwidth">
-	  <hr>
-		</div>
-	  
   </div>
-  <div class="row center backcolor">
 
-	
-	<div class=" col3 img-span hidden-sm">
-	  <td ><img src="/images/Logo/SideLogo.png"  width='200'></td>
-	</div>
-
-	<div class="col9  nav-bar center">       
-  <table class="row center sm-table">
-	  <tr class="thead center">
-	  
-	  <td>Main Menu</td>
-	  <td>Find us On</td>
-	  <td>Contact us</td>
-	</tr>
-  
-	<tr>
-	  <!-- <td></td> -->
-	  <td><a href="">About Affiliox <i class="fas fa-users"></i></a></td>
-	  <td><a href=""></i>FaceBook <i class="fab fa-facebook-f"></i></a></td>
-	  <td>Address: Sri Lanka.</td>
-	</tr>
-	<tr>
-	  <!-- <td></td> -->
-	  <td><a href="">Help & Support <i class="fas fa-question-circle"></a></td>
-	  <td><a href="">Twitter <i class="fab fa-twitter"></i></a></td>
-	  <td>Phone: 011-1234567</td>
-	</tr>
-	<tr>
-	  <!-- <td></td> -->
-	  <td><a href="">Privacy & Policy <i class="fas fa-shield-alt"></i></a></td>
-	  <td><a href="">Youtube <i class="fab fa-youtube"></i></a></td>
-	  <td>Email: affiliox@gmail.com</td>	
-	</tr>
-
-  </table>
-  </div> 
-  
-   </div>  
-   <!-- bottom-part -->
-
-	  <div class="row footer backcolor paddingt20">
-	
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</li>
-				<li> Affiliox &trade;</li>
-			</ul>
-	  </div>	 <!-- footer -->
-	  
-</div>
-
-  <div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="">User profile<i class="far fa-user"></i></a>  		
-	<a href="">Marker Place<i class="fab fa-shopify"></i></a>
-	<a href="">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
-		<a href="">Orders<i class="fas fa-chart-line"></i></i></a>
-		<a href="">Transactions<i class="fas fa-money-check-alt"></i></a>
-		<a href="">Feedback<i class="fas fa-phone-square"></i></i></a>
-		<a href="">Support<i class="fas fa-envelope-open-text"></i></a>
-  </div>
-  <span onclick="openNav()"></span>
 	<!--Container------------------------------------------>
 	<script type="text/javascript" src="/js/Common/Signin.js"></script>
 </body>
