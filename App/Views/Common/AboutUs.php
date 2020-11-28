@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Affiliox-AboutUs</title>
+	<link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+	<link rel="stylesheet" type="text/css" href="/css/Common/Aboutus.css" />
+	<script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
+	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<body>
+
+	<!---Navigation bar-------------------------------------------->
+	<div class="container">
+		<div class="backcolor"> 
+		  	<div class="row hidden-xm marginb100 backcolor">
+		  	<div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor " >
+			  
+			<div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
+			<div class="sm-9">
+			  <a href="../../index.html"><img src="../../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+			</div>
+			<div class="sm-2 ">
+			  <div class="selector margint20">
+				<select>
+				  <option value="sign in">Sign In</option><br/>
+				  <option value="login">Login</option><br/>
+				</select>
+			  </div>
+			</div>
+			</div>
+			</div>
+		</div>
+		<div class=" nav-bar center backcolor">
+			<div class="col1 open-btn hidden-sm" onclick="openNav()">&#9776;</div>
+			<div class="col2 hidden-sm">
+			  <a href="../../index.html"><img src="../../images/Sidelogo.png" alt="Affiliox LOGO"/></a>
+			</div>
+	
+			<div class="col4 center">
+			  <ul>
+				<a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+				<a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
+				<a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
+				<a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+			  </ul>
+			</div>
+	
+			<div class="col4 search fitcontent center">
+			  <ul>
+				<input type="text" name="search" placeholder="Headsets" />
+				<a href=""><i class="fas fa-search"></i></a>
+			  </ul>
+			</div>
+			<div class="col1 hidden-sm ">
+			  	<div class="selector margint20">
+					<select>
+				 	 <option value="sign in">Sign in</option><br/>
+				 	 <option value="login">Login</option><br/>
+					</select>
+			 	</div>
+			</div>
+		 </div>
+	</div>
+		
+		<div class="row">
+		<div class="col12 fullwidth">
+	  <hr>
+		</div>
+	  
+		  <!-- inner-part-------------------------------------------->
+		  
+		  <div class="container">
+			<div class="about">
+				<h1>About Affiliox</h1>
+				<br/>
+				<h3>Adding Value To Existing E-Commerce</h3>
+			</div>
+		 </div>
+		  <br/>
+		  <h2 style="text-align:center">Our Goals</h2>
+			<div class="abtcolumn">
+			  <div class="acard">
+				<img src="/images/Common/goal1.png" alt="Lily" style="width:100%">
+				<div class="acontainer">
+				  <h4>Connecting Buyer, Seller, and Promoter together</h4>
+				  <p>The main objective of this system is to create a platform where all Buyers, 
+					  Sellers, and Promoters can connect and communicate so that these parties in 
+					  our system can benefit themselves from each other. 
+					  Buyer, Sellers and Promoters are under our terms and conditions to keep 
+					  the system running consistently. Buyers interact with our system so that 
+					  they can purchase things that they see through social media.</p>
+				</div>
+			  </div>
+			</div>
+		  
+			<div class="abtcolumn">
+			  <div class="acard">
+				<img src="/images/Common/goal2.jpg" alt="Mike" style="width:100%">
+				<div class="acontainer">
+					<h4>Allowing Small and Medium Sellers to create their own Mini Store</h4>
+					<p>We will be allowing Sellers who do not have an online store to create their 
+						own Mini Store on our E-commerce site So that they do not only sell products online
+						but also have their own online store. In this Mini Store, we will only give a limited 
+						number of design options, which will make their store unique. Also, 
+						Buyers who come to a Seller’s Mini Store have the option of searching all 
+						products under every Mini Store in our Affiliox E-commerce site. 
+						Sellers will benefit considerably from having a Mini Store because then they 
+						can brand their products with their store.</p>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="abtcolumn">
+			  <div class="acard">
+				<img src="/images/Common/goal3.png" alt="John" style="width:100%">
+				<div class="acontainer">
+					<h4>Allowing Social Media users to earn money through social media</h4>
+					<p>Social media users who have popular or regular accounts can register as
+						promoters in our System and earn money by promoting products. Through this,
+						people can use their social media existence as an income generation method.</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <br/> 
+		  <h2 style="text-align:center">Our Team</h2>
+			<div class="abtcolumn">
+			  <div class="card">
+				<img src="/images/Common/profile2.jpg" alt="Lily" style="width:100%">
+				<div class="acontainer">
+				  <h3>Lily Jane</h3>
+				  <p class="title"><b>IT Administrator</b></p>
+				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+				  <p>lily@example.com</p>
+				</div>
+			  </div>
+			</div>
+		  
+			<div class="abtcolumn">
+			  <div class="card">
+				<img src="/images/Common/profile1.jpg" alt="Mike" style="width:100%">
+				<div class="acontainer">
+				  <h3>Mike Ross</h3>
+				  <p class="title"><b>Web Developer</b></p>
+				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+				  <p>mike@example.com</p>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="abtcolumn">
+			  <div class="card">
+				<img src="/images/Common/profile3.jpg" alt="John" style="width:100%">
+				<div class="acontainer">
+				  <h3>John Doe</h3>
+				  <p class="title"><b>Designer</b></p>
+				  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+				  <p>john@example.com</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<!-- bottom-part-------------------------------------------->
+<div class="row">
+	<div class="col12 fullwidth">
+  <hr>
+	</div>
+  
+</div>
+<div class="row center backcolor">
+
+
+<div class=" col3 img-span hidden-sm">
+  <td ><img src="../../images/SideLogo.png"  width='200'></td>
+</div>
+
+<div class="col9  nav-bar center">       
+<table class="row center sm-table">
+  <tr class="thead center">
+  
+  <td>Main Menu</td>
+  <td>Find us On</td>
+  <td>Contact us</td>
+</tr>
+
+<tr>
+  <!-- <td></td> -->
+  <td><a href="">About Affiliox <i class="fas fa-users"></i></a></td>
+  <td><a href=""></i>FaceBook <i class="fab fa-facebook-f"></i></a></td>
+  <td>Address: Sri Lanka.</td>
+</tr>
+<tr>
+  <!-- <td></td> -->
+  <td><a href="">Help & Support <i class="fas fa-question-circle"></a></td>
+  <td><a href="">Twitter <i class="fab fa-twitter"></i></a></td>
+  <td>Phone: 011-1234567</td>
+</tr>
+<tr>
+  <!-- <td></td> -->
+  <td><a href="">Privacy & Policy <i class="fas fa-shield-alt"></i></a></td>
+  <td><a href="">Youtube <i class="fab fa-youtube"></i></a></td>
+  <td>Email: affiliox@gmail.com</td>	
+</tr>
+
+</table>
+</div> 
+
+</div>  
+<!-- bottom-part -->
+
+  <div class="row footer backcolor paddingt20">
+
+		<ul>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</li>
+			<li> Affiliox &trade;</li>
+		</ul>
+  </div>	 <!-- footer -->
+  
+</div>
+
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="#">User profile<i class="far fa-user"></i></a>
+	<a href="#">Mini Store<i class="fas fa-store"></i></a>
+	<a href="#">Market Place<i class="fab fa-shopify"></i></a>
+	<a href="#">Feedback<i class="fas fa-phone-square"></i></i></a>
+	<a href="#">Support<i class="fas fa-envelope-open-text"></i></a>
+</div>
+<span onclick="openNav()"></span>
+
+
+</div>
+<!--Container------------------------------------------>
+</body>
+
+</html>

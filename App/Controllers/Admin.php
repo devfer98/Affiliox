@@ -49,6 +49,14 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/ReviewFeedback.php');
     }
 
+    public function PendPromoterAction(){
+        $this->view->display('Admin/PendPromoter.php');
+    }
+
+    public function PendSellerAction(){
+        $this->view->display('Admin/PendSeller.php');
+    }
+
     public function UpdateSellStatusAction(){
         $seller = new SellerM();
         $seller->updateStatus($_POST['username'], $_POST['status']);
