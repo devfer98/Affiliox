@@ -2,7 +2,6 @@
 namespace Core;
 
 Class View{
-    // public $UImsga;
     public function display($view){
         if(session_id() == '') {
             session_start();

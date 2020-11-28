@@ -69,7 +69,7 @@
                   <div class="margint20">
                     <label for="message"><i class="fas fa-envelope-square"></i>&nbsp;Type Your message here</label><br>
                     <br>
-                    <textarea rows = "7" cols = "55" name = "description" placeholder="...."></textarea><br>
+                    <textarea rows = "7" cols = "55" name = "description"  pattern="^[a-zA-Z0-9,-.'()/ ]*$" placeholder="...."></textarea><br>
                     <p class="font-heavy"> Seller will respond to your request via the provided email</p>
                   </div>
                 </div>

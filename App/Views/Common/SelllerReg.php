@@ -51,14 +51,14 @@
                     <div>
                         <label for="email"><i class="fa fa-mail-bulk"></i>&nbsp; Email</label><br>
                         <input type="text" id="email" name="email" placeholder="enter your e-mail"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,}$"
                             title="Please fill the filed required format." required><br>
                     </div>
                 </div>
                 <div class="col6">
                     <div class="">
                         <label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
-                        <input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10"
+                        <input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10" pattern="[0-9]*"
                             maxlength="10" title="Please enter a valid phone number" required><br>
                     </div>
                 </div>
@@ -87,10 +87,10 @@
                         <!------------------Address section------------------->
                         <label for="Addressl1"><i class="fa fa-address-card"></i> Address Line 1</label><br>
                         <input type="text" id="line1" name="aline1" placeholder="Address Line 1" minlength="5"
-                            maxlength="100" required><br><br>
+                            maxlength="100"  pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required><br><br>
                         <label for="Addressl2"><i class="fa fa-address-card"></i> Address Line 2</label><br>
                         <input type="text" id="line2" name="aline2" placeholder="Address Line 2" minlength="5"
-                            maxlength="100" required><br>
+                            maxlength="100"   pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required><br>
                         <!------------------ ------------------->
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                     <div>
                         <label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
                         <input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100"
-                            pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+                        pattern="[a-zA-Z0-9'-'\s]*" title="Invalid USername Format." required><br>
                     </div>
                 </div>
             </div>

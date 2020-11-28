@@ -54,7 +54,7 @@
 				<div class="col6">
 					<div class="">
 						<label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
-						<input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10" maxlength="10" 
+						<input type="tel" id="phn-no" name="phn-no" placeholder="Phone number" minlength="10" maxlength="10"  pattern="[0-9]*"
        					title="Please enter a valid phone number" required><br>
 					</div>
 				</div>
@@ -78,12 +78,12 @@
 
 			<div class="row rowMargin">
 				<div class="col12">
-					<div>
+				<div>
 						<!------------------Address section------------------->
 						<label for="Addressl1"><i class="fa fa-address-card"></i> Address Line 1</label><br>
-						<input type="text" id="line1" name="aline1" placeholder="Address Line 1" minlength="5" maxlength="100" required><br><br>
+						<input type="text" id="line1" name="aline1" placeholder="Address Line 1" minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required><br><br>
 						<label for="Addressl2"><i class="fa fa-address-card"></i> Address Line 2</label><br>
-						<input type="text" id="line2" name="aline2" placeholder="Address Line 2" minlength="5" maxlength="100" required><br>
+						<input type="text" id="line2" name="aline2" placeholder="Address Line 2" minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters."required><br>
 						<!------------------ ------------------->
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 					<div>
 						<label for="channels"><i class="fa fa-facebook-square"></i> <i class="fa fa-instagram"></i> <i class="fa fa-youtube-square"> <i class="fa fa-twitter-square"></i></i>&nbsp;Channel Reference Links</label><br>
 						<br>
-						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="300"></textarea><br>
+						<textarea rows = "7" cols = "55" name = "description" placeholder="Enter Channel links...." minlength="10" maxlength="300" pattern="^[a-zA-Z0-9,-.'()/: ]*$"></textarea><br>
 						<p class="font-heavy" required> Use ; to Seperate New Links </p>
 					</div>
 				</div>
@@ -140,7 +140,7 @@
 					<div class="col12">
 						<div>
 							<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
-							<input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+							<input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100" pattern="[a-zA-Z0-9\s]*" title="Remove unwanted characters." required><br>
 						</div>
 					</div>
 				</div>

@@ -15,46 +15,60 @@
 <body>
     <!---Navigation bar-------------------------------------------->
     <div class="container">
- 
+
         <!-- Sign in --------------------------------------------->
         <!-- <div class="row "> -->
 
-            <div class=" col12 sign-note center ">
-                <div class="marginb100 margint50">
-                    <h1>Reset your Password</h1>
-
-                </div>
+        <div class=" col12 sign-note center ">
+            <div class="marginb100 margint50">
+                <h1>Reset your Password</h1>
 
             </div>
-            <!------------------------Sign in text-boxs------------------->
 
+        </div>
+        <!------------------------Sign in text-boxs------------------->
+        <form method="POST" onsubmit="ValidatePassword()" action="../Buyer/PasswordReset">
             <div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                </div>
                 <div class=" col12 search signin center">
+                    
                     Current Password &nbsp; : <input type="password" name="current_password" id="current-pass-field"
-                        placeholder="*********"> <br></br>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password should be same to the required type." placeholder="*********"> <br></br>
                     New Password &nbsp; &nbsp; &nbsp; : <input type="password" name="password" id="con-pass-field"
-                        placeholder="*********"> <br></br>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password should be same to the required type." placeholder="*********"> <br></br>
                     Confirm Password : <input type="password" name="con-password" id="pass-field"
-                        placeholder="********"><br><br>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password should be same to the required type." placeholder="********"><br><br>
                     <input style="width:5%;box-shadow: 0 0 0px #719ECE;" type="checkbox" onclick="passVisibility()">Show
                     Password
 
                 </div>
 
             </div>
-            
-            <div class="row">
-                <div class="nav-bar col12 center ">
-                    <div class="marginb50">
-                        <ul>
-                            <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Reset Password</a>
-                        </ul>
-                    </div>
+ 
+        <div class="row">
+            <div class="nav-bar col12 center ">
+                <div class="marginb50">
+                        <button type="submit" ><i class="fas fa-sign-out-alt"></i>&nbsp;Reset Password</button>
+
                 </div>
             </div>
+        </div>
+    </form>
+        <!-- bottom-part-------------------------------------------->
 
-            <!-- bottom-part-------------------------------------------->
- 
 
     </div>
     <!--Container------------------------------------------>

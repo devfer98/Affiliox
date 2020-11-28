@@ -31,12 +31,29 @@ function validateEmail(email) {
     alert("You have entered an invalid email address!")
     return (false)
 }
+function ValidatePassword() {
+    
+    var password = document.getElementById("pass-field").value;
+    var confirmPassword = document.getElementById("con-pass-field").value;
+    if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }else   
+        return true;
+    
+}
 
 var userEmail = document.getElementById("email");
 
 function validateForm() {
+    var isValidatePassword = ValidatePassword();
     var isValidEmail = validateEmail(userEmail.value);
-    return isValidEmail;
+    
+    if(isValidatePassword && isValidEmail){
+        return true;
+    }else   
+        return false;
+    
 }
 
 

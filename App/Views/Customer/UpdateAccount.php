@@ -66,8 +66,7 @@
             <div class="row rowMargin">
                 <div class="col6">
                     <div>
-                        <label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of
-                            Birth</label><br>
+                        <label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
                         <input type="date" id="Birth" name="dob" disabled value="<?php echo $row['dob'] ?>" readonly placeholder="Perera"><br><br>
                     </div>
                 </div>

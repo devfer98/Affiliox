@@ -22,15 +22,37 @@ class BuyerM extends \Core\Connect{
     }
 
     public function updateBuyer($userID, $name, $email, $phoneNo, $country, $city, $line1, $line2) {
-        $updateBuyer = "update buyer SET name='".$name."',aLine1='".$line1."', aLine2='".$line2."', city='".$city."'
-        , country='".$country."', email='".$email."', phoneNo='".$phoneNo."' WHERE userID='".$userID."'";
-        mysqli_query($conn,$updateBuyer)or die (mysqli_error($conn));
+        // $updateBuyer = "update buyer SET name='".$name."',aLine1='".$line1."', aLine2='".$line2."', city='".$city."'
+        // , country='".$country."', email='".$email."', phoneNo='".$phoneNo."' WHERE userID='".$userID."'";
+        // mysqli_query($conn,$updateBuyer)or die (mysqli_error($conn));
+    }
+
+    public function updatePassword($current_passs,$new_pass,$username)
+    {
+        $conn=static::connectDB();
+        $query = "select * from buyer WHERE userID = ? && password =? ";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss",$username,$current_passs);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result(); 
+            if ($result->num_rows >0) {
+                $query2 = "UPDATE buyer SET password=? WHERE userID=?";
+                $stmt2 = $conn->prepare($query2);
+                $stmt2->bind_param("ss",$new_pass,$username);
+                if ($stmt2->execute()) {
+                    return true;
+                }else
+                    return false;
+            }else{
+                return false;
+            }
+        }
     }
 
     public function removeBuyer($userID) {
-        $query = "update buyer SET status='removed' WHERE userID='".$userID."'";
+        // $query = "update buyer SET status='removed' WHERE userID='".$userID."'";
 
-        mysqli_query($conn,$query)or die (mysqli_error($conn));
+        // mysqli_query($conn,$query)or die (mysqli_error($conn));
     }
 
     public function getBuyer($userID) {

@@ -35,7 +35,7 @@
                 <div class="row nav-bar">
                     <div class="col8 search fitcontent center">
                         <ul>
-                            <input type="text" name="search" placeholder="Clothing , Phones , Toys" />
+                            <input type="text" name="search" placeholder="Clothing , Phones , Toys" pattern="^[a-zA-Z0-9 ]{3,50}$"   title="Invalid characters." />
                             <a href=""><i class="fas fa-search "></i>&nbsp; Search </a>
                         </ul>
                     </div>

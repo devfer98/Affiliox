@@ -38,7 +38,7 @@
                 <div class=" col12 search signin ">
 
                     <div class="marginl100 margin margint50 sm-center">
-                        Email : <input type="resetcode" name="resetcode" placeholder="Magic.piper@gmail.com">
+                        Email : <input type="resetcode" name="resetcode"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Incorrect Email Format." placeholder="Magic.piper@gmail.com">
                     </div>
 
                 </div>
@@ -48,7 +48,7 @@
                 <div class="nav-bar col12 ">
                     <div class="marginl100 sm-center marginb50">
                         <ul>
-                            <button><i class="fas fa-sign-out-alt" onclick="validateForm();"></i>&nbsp;Send
+                            <button><i class="fas fa-sign-out-alt" type="submit" value='submit' onclick="validateForm();"></i>&nbsp;Send
                                 Email</button>
                         </ul>
                     </div>

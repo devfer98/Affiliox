@@ -57,7 +57,7 @@
 
                 <div class="col4 search  fullWidth center">
                     <ul>
-                        <input type="text" name="search" placeholder="Headsets" />
+                        <input type="text" name="search" placeholder=" Search" pattern="^[a-zA-Z0-9 ]*$" />
                         <a href=""><i class="fas fa-search"></i></a>
                     </ul>
                 </div>
