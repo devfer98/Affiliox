@@ -24,6 +24,34 @@
 			<button class="center" onclick="location.href='../Ministore/ministore';">Done</button>
 		</div>
 
+		<!-- <div class="nav-bar clearfix row center">
+			<div class="col2">
+			<a href="../index.html">
+				<img src="../images/LOGO.png" alt="Affiliox LOGO"/>
+			</a>
+			</div>
+	
+			<div class="col6 center">
+			<ul>
+				<a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+				<a href=""><i class="fas fa-address-card"></i>&nbsp;About Us</a>
+				<a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
+				<a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+				<a href=""><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
+			</ul>
+			</div>
+	
+			<div class="col4 search fitcontent center">
+			<ul>
+				<input type="text" name="search" placeholder="Headsets" />
+				<a href="">&nbsp;<i class="fas fa-search"></i></a>
+			</ul>
+			</div>	
+		</div>
+		<div class="row">
+			<hr class="col12"/>
+		</div> -->
+
 		<div class="containerN">
 			<div class=" ">
 				<div class="rowN hidden-xmN marginb100N backcolorN">
@@ -201,55 +229,52 @@
 		</div>
 		<!-- </div> container -->
 		<br><br>
-		<div class="rowN fullwidthN">
-			<div class="col12N fullwidthN">
-				<hr>
-			</div>
+		<!-- <div class="row row-padding">
+			<hr class="col12"/>
 		</div>
-		<div class="rowN centerN backcolorN">
-			<div class=" col3N img-spanN hidden-smN">
-				<td><img src="/images/Logo/SideLogo.png" width='200'></td>
+		<div class="row bottom-part">
+			<div class="col3 hidden-sm center">
+			  <a href=""><img src="../images/LOGO.png" alt="Affiliox LOGO" /></a>
 			</div>
-
-			<div class="col9N  nav-barN centerN">
-				<table class="rowN centerN sm-tableN">
-					<tr class="theadN centerN">
-
-						<td>Main Menu</td>
-						<td>Find us On</td>
-						<td>Contact us</td>
-					</tr>
-
-					<tr>
-						<!-- <td></td> -->
-						<td><a href="">About Affiliox <i class="fas fa-users"></i></a></td>
-						<td><a href=""></i>FaceBook <i class="fab fa-facebook-f"></i></a></td>
-						<td>Address: Sri Lanka.</td>
-					</tr>
-					<tr>
-						<!-- <td></td> -->
-						<td><a href="">Help & Support <i class="fas fa-question-circle"></a></td>
-						<td><a href="">Twitter <i class="fab fa-twitter"></i></a></td>
-						<td>Phone: 011-1234567</td>
-					</tr>
-					<tr>
-						<!-- <td></td> -->
-						<td><a href="">Privacy & Policy <i class="fas fa-shield-alt"></i></a></td>
-						<td><a href="">Youtube <i class="fab fa-youtube"></i></a></td>
-						<td>Email: affiliox@gmail.com</td>
-					</tr>
-
-				</table>
+	
+			<div class="col2">
+				<p>Main Menu</p>
+				<a href="">Affiliox Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
 			</div>
-
-		</div>
-		<div class="rowN footerN backcolorN paddingt20N">
-
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</li>
-				<li> Affiliox &trade;</li>
-			</ul>
-		</div>
-	</body>
+			<div class="col2">
+				<p>Company</p>
+				<a href="">Address</a>
+				<a href="">Email</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			</div>
+			<div class="col2">
+				<p>Discover</p>
+				<a href="">Home</a>
+				<a href="">About us</a>
+				<a href="">Help</a>
+				<a href="">Account</a>
+			</div>
+			<div class="col2">
+				<p>Find Us on</p>
+				<a href="">Facebook</a>
+				<a href="">Twitter</a>
+				<a href="">Instagram</a>
+				<a href="">Youtube</a>
+			</div>
+		  </div>
+	
+		  <div class="row">
+			<div class="col12 company-address">
+			  <ul>
+				<li>© All Right reserved</li>
+				<li>Affiliox 2020 ™</li>
+			  </ul>
+			</div>
+		  </div>
+	</div> -->
+</body>
 </html>

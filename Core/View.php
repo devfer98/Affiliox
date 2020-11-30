@@ -30,13 +30,15 @@ Class View{
 
         $file = "../App/Views/$view";
         if(is_readable($file)){
-        
-            include $header;
-            // require $header;
-            require $file;
-            include $footer;
-            // require $footer;
-
+            if($view!="Seller/miniStoreView.php"){
+                include $header;
+                // require $header;
+                require $file;
+                include $footer;
+                // require $footer;
+            }else{
+                require $file;
+            }
         }else {
 
             echo "$file not Found";

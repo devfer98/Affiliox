@@ -63,12 +63,15 @@
 
 			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
 			<form action="" method="post">
-				<div class="row col12">
+				<div class="row col12 padding">
 					<h3 class="center">Nike Shoe - John Smith</h3>
 				</div>
 				<div class="row">
 				<div class="col6 padding">
-					<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
+					<label>Comment</label><br/>
+					<!-- <input readonly type="text" id="Birth" name="comment" placeholder="very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot"> -->
+					<textarea readonly type="text" id="Birth" name="comment" placeholder="very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot"></textarea>
+					<!-- <p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p> -->
 				</div>
 				<div class="col6 padding fitcontent">
 					<label>Reply</label><br/>

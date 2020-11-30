@@ -36,7 +36,8 @@
           </div>
           </div>
          <!-- content area --------------------------------------------->
-         <div class="tab">
+         <div class="tab marginb50
+         ">
           <button class="tablinks button1 active" de onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
           <button class="tablinks button1" onclick="openPage(event,'PromoterReg')">Promoter Pending Approvals</button>
          

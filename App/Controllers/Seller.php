@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use Core\View;
 use App\Models\User;
-
+use App\Models\Feedback;
 
 class Seller extends \Core\Controller {
 
