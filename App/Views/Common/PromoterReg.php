@@ -65,7 +65,7 @@
 				<div class="col6">
 					<div>
 						<label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
-						<input type="date" id="Birth" name="dob" required><br><br>
+						<input type="date" id="Birth" name="dob"><br><br>
 					</div>
 				</div>
 				<div class="col6">

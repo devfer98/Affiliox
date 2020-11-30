@@ -20,9 +20,10 @@
             <input type="text" name="link" id="myInput" placeholder="You can Copy this Link">
             <button onclick="myFunction()">Copy</button>
         </div> <!-- area -->	
+        </div> <!-- container -->
         <hr style="height:2px;border:none;color:#333;background-color:#333;">
 
-	     </div> <!-- container -->
+	     
         <!-- bottom-part-------------------------------------------->
         
 
