@@ -19,6 +19,11 @@ class Admin extends \Core\Controller {
 
     public function ApprovesSellerAction(){
         $this->view->display('Admin/AddAdmin.php');
+    } 
+
+    public function ManageAccountAction(){
+        
+        $this->view->display('Admin/ManageAccount.php');
     }
 
     public function AddAdminsAction(){
@@ -39,10 +44,6 @@ class Admin extends \Core\Controller {
 
     public function EditAdminAction(){
         $this->view->display('Admin/EditAdmin.php');
-    }
-
-    public function ManageAccountAction(){
-        $this->view->display('Admin/ManageAccount.php');
     }
 
     public function ReviewFeedbackAction(){
