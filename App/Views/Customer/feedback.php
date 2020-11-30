@@ -100,7 +100,7 @@
                                                 Feedback</label><br>
                                             <br>
                                             <textarea rows="7" cols="55" name="description" minlength="5"
-                                                maxlength="250" required placeholder="...."></textarea><br>
+                                                maxlength="250"  pattern="^[a-zA-Z0-9,-.'()/ ]*$" required placeholder="...."></textarea><br>
                                             <p class="font-heavy">Your Feedback will help many customers</p>
                                         </div>
                                     </div>

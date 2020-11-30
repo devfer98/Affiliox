@@ -37,12 +37,12 @@
         <div class="row margint50">
             <div class=" col12 search signin label center">
 
-                <label style="text-align: left;" for="Username-field"><i class="fa fa-user-alt"></i> Username:</label>
-                <input type="text" name="Username-field" required placeholder="Super Unqiue Username"> <br></br>
-                <label for="password-field"><i class="fa fa-key"></i> Passsword :</label>
-                <input type="password" name="Password-field" id="pass-field" required placeholder="********"><br><br>
-                <input style="width:5%;box-shadow: 0 0 0px #719ECE;" type="checkbox" onclick="passVisibility()">Show
-                Password
+                <label style="text-align: left;" for="Username-field"><i class="fa fa-user-alt"></i> Username :</label>
+                <input type="text" name="Username-field"minlength="5" maxlength="100" pattern="[a-zA-Z0-9'-'\s]*" title="Invalid Username Format." required placeholder="Super Unqiue Username"> <br></br>
+                <label for="password-field"><i class="fa fa-key"></i> Password :</label>
+                <input type="password" name="Password-field" id="pass-field" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  							title="Password should be same to the required type."  required placeholder="********"><br><br>
+                <input style="width:5%;box-shadow: 0 0 0px #719ECE;" type="checkbox" onclick="passVisibility()">Show Password
 
             </div>
 

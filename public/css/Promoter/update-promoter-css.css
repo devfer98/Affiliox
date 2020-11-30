@@ -63,6 +63,14 @@ hr {
   margin-bottom: 18px;
   transition: 0.3s;
 }
+
+.sidenav a:hover {
+  color: #28a745;
+  /* font-weight: bold; */
+  font-weight: bold;
+}
+
+
 .sidenav a i {
   margin-left: 10px;
 }
@@ -85,11 +93,21 @@ hr {
 .main-nav {
   display: flex;
   list-style: none;
-  font-size: 20px;
+  font-size: 20;
 }
 
 li  {
   padding: 15px;
+}
+
+.logo-name a {
+  /*position: relative;*/
+  /*top: 12px;*/
+  color: #1f3d7a;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
 }
 
 .logo img {
@@ -101,16 +119,17 @@ li  {
 .item  {
   position: relative;
   left: 70px;
-  top: 20px;
+  top: 30px;
 }
+
 
 .item  a {
   text-decoration: none;
-  border: 2px solid #28a745;
+  border: 1px solid #28a745;
   font-weight: bold;
   font-size: 15px;
   margin-left: -10px;
-  padding: 4px;
+  padding: 7px;
   border-radius: 0.25rem;
   color: #1f3d7a;
 
@@ -125,27 +144,30 @@ li  {
   box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
   transition: all 0.4s ease 0s;
   color: #f5f5f6;
-  text-decoration: underline;
   font-weight: bold;
 }
 
 .push {
   margin-left: auto;
   position: relative;
-  top: 15px;
+  top: 25px;
+}
+
+.push button i {
+  padding: 5px; 
 }
 
 .last {
   position: relative;
-  top: 15px;
+  top: 18px;
 }
 
 .push input {
-  padding: 5px;
+  padding: 8px;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
-  border: 2px solid #ced4da; 
-  width: 180px;
+  border: 1px solid #000c18; 
+  width: 300px;
 }
 
 input:focus{
@@ -156,12 +178,12 @@ input:focus{
 }
 
 .push button {
-  padding: 5px;
+  padding: 6px;
   margin-left: 5px;
   background: none;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
-  border:  2px solid #28a745;
+  border:  1px solid #28a745;
   font-weight: bold;
 }
 
@@ -171,14 +193,14 @@ input:focus{
 }
 
 .last select{
-  padding: 5px;
+  padding: 7px;
   width: 90px;
-  border: 2px solid black;
+  border: 1px solid black;
   font-family: 'Open Sans', sans-serif;
   border-radius: 0.25rem;
+  position: relative;
+  top: 8px;
 }
-
-
 /*-------------------Inner content-------------------*/
 table {
   position: relative;
@@ -186,19 +208,20 @@ table {
   font-family: 'Open Sans', sans-serif;
   margin-top: 60px;
   margin: 0 auto;
-  border: 1px solid #cccccc;
+  border: 1px solid #1f3d7a;;
   border-radius: 0.25rem; 
 }
 
 .inner-part table td {
   padding: 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1.4px solid #ddd;
   font-size: 17px;
   width: 300px;
 }
 
 #td-1 {
   font-weight: bold;
+  font-size: 18px;
 }
 
 table td input {
@@ -242,30 +265,28 @@ input:focus{
     color: #28a745;
     border: 1px solid #28a745;
 }
+
 /*-----------------------bottom part----------------------------------------------*/
 .bottom-part table {
   font-family: 'Open Sans', sans-serif;
-  width: 1200px;
-  border: none; 
-  margin: 50px 150px 40px 180px;
-  margin-bottom: 70px;
+  margin: 10px 0 50px 120px;
+  border: none;
+  /* margin-left: 110px; */
+	/* width: 1200px; */
 }
 
 .thead td{
   font-weight: bold;
-  border-bottom: none;
   font-size: 18px;
   text-decoration: underline;
-  width: 200px;
-  border-top: none;
-  /*  */
+  width: 500px;
 }
 
 table tr { line-height: 40px; }
 
 .bottom-part table tr td a {
 	text-decoration: none;
-  color: #1f3d7a;
+	color: #1f3d7a;
 }
 
 .bottom-part table tr td a:hover {
@@ -275,6 +296,7 @@ table tr { line-height: 40px; }
 /*table i {
 	color: #99ff99
 }*/
+
 
 /*--------------------footer-tag--------------------*/
 .footer {

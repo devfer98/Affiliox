@@ -19,8 +19,9 @@
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat.</p>
-			
-			<p>ssd</p>
+			<div class="error-msg">
+				<p><?php if(isset($this->empty) and !empty($this->empty)){echo $this->empty;}  ?></p>
+			</div>
 			<div class="table-list">
 			<?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
@@ -34,7 +35,7 @@
 					while($row = $this->UImsg->fetch_assoc()) {
 						echo "<tr>";
                             echo "<td>" . $row['transID'] . "</td>";
-                        	echo "<td>" . $row['ammount'] . " $" . "</td>";
+                        	echo "<td>" . "$ " . $row['ammount'] . "</td>";
                             echo "<td>" . $row['status'] . "</td>";
                             echo "<td>" . $row['date'] . "</td>";
 						echo "</tr>";
@@ -44,9 +45,9 @@
 				echo "</table>"; 
 			?>
 			</div>
-
-		<hr style="height:2px;border:none;color:#333;background-color:#333;">
-	</div> <!-- container -->	
+			</div> <!-- container -->	
+		<hr style="height:2px;border:none;color:#333;background-color:#333; margin-top:150px; margin-bottom:-150px ">
+	
 
 		<!-- bottom-part-------------------------------------------->
 	

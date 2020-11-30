@@ -13,7 +13,7 @@
 	
 		<!-- inner part of the evry dashboard -->
 	<div class="container">
-		<h2><i class="fas fa-user"></i>&nbsp; &nbsp; Edit Profile Details</h2>
+		<h2><i class="fas fa-user"></i>&nbsp; &nbsp; Update Personal Information</h2>
 		<div class="inner-part">
 		<?php  
             if(isset($this->UImsg) and !empty($this->UImsg)){
@@ -22,7 +22,7 @@
 			<form action="../Promoter/promoterProfile" method="post">
 				<table>
 					<tr>
-						<td id="td-1">Your ID:</td>
+						<td id="td-1">Your ID: <p style="font-size: 12px; color: red">* View only</p></td>
 						<td id="td-2"><input type="" name="userID" value="<?php echo $row['userID'] ?>" readonly></td>
 					</tr>
 					<tr>
@@ -35,7 +35,7 @@
 					</tr>
 					<tr>
 						<td id="td-1">Phone Number:</td>
-						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" pattern="[1-9]{4}-[1-12]{2}-[1-30]{2}"></td>
+						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" pattern="[0-9]{10}"></td>
 					</tr>
 					<tr>
 						<td id="td-1">Date of Birth:</td>
@@ -66,8 +66,9 @@
 			}
 			?>
 		</div><!-- inner-part -->
+		</div> <!-- container -->
 		<hr style="height:2px;border:none;color:#333;background-color:#333;">
-	</div> <!-- container -->
+	
 	
 		
 

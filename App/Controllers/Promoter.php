@@ -36,10 +36,25 @@ class Promoter extends \Core\Controller {
 
         $userID = $_SESSION['username'];
         $user = new TransactionPromo();
+        
         $result = $user->getTransPromo($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
-        $this->view->display('Promoter/payout-history.php');
+
+        if($result == null) {
+            // $empty = $result;
+            $empty= "You have not yet made any transaction!";
+            $this->view->empty=$empty;
+            $this->view->display('Promoter/payout-history.php');
+        } else {
+            $UImsg = $result;
+            $this->view->UImsg=$UImsg;
+            $this->view->display('Promoter/payout-history.php');
+        }
+
+
+
+        // $UImsg = $result;
+        // $this->view->UImsg=$UImsg;
+        // $this->view->display('Promoter/payout-history.php');
         
     }
     
@@ -85,23 +100,27 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         
         $user = new TransactionPromo();
+        $limit = 82.14;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
         $userID = $_SESSION["username"];
         
-        if($ammount= $_POST['ammount']) {
+        if($limit > $ammount && $ammount = $_POST['ammount'] ) {
             $user->addTransPromo($ammount, $status, $userID, $date);
-        header('Location:../Promoter/promoterTransSuccess');
+            header('Location:../Promoter/promoterTransSuccess');
+           
         } else    {
-            $UImsg= 'Invalid ammount please Try Again';
-            $this->view->UImsg = $UImsg;
+            $errmsg= 'Please enter the valid amount of transfer and try again.';
+            $this->view->errmsg = $errmsg;
             $this->view->display('Promoter/withdraw-earnings.php');
         }             
     }
 
 
     public function promoterTransSuccessAction(){
+        $successmsg= 'Your Transaction Process is Success!';
+        $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
