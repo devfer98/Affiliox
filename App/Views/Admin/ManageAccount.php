@@ -84,7 +84,7 @@
 		<div class="heading">
         <p>&nbsp; <i class='fas fa-user-cog'></i> Manage Accounts &nbsp;
 		</div>
-		<br/><br/>
+		<br/>
 		<div class="body">
 			<table>
 				<tr>
@@ -126,7 +126,7 @@
 					<td><button>Edit</button></td>
 					<td><button>Remove</button></td>
 				</tr>
-			</table>
+			</table> 
 		</div>	
 		<br/><br/><br/><br/>			
 		

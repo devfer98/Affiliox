@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
 	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
   <link rel="stylesheet" type="text/css" href="/css/Admin/manage.css">
-  <link rel="stylesheet" type="text/css" href="/css/Admin/tab.css">
+  <link rel="stylesheet" type="text/css" href="/css/Admin/verify.css">
   <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
   <script type="text/javascript" src="js/Admin/tab.js"></script>
 	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
@@ -99,10 +99,10 @@
           </div>
          <!-- content area --------------------------------------------->
          <div class="tab">
-          <button class="tablinks" onclick="openPage(event,'SellerFeedback')" id="defaultOpen">Seller Feedbacks</button>
-          <button class="tablinks" onclick="openPage(event,'PromoterFeedback')">Promoter Feedbacks</button>
+          <button class="tablinks button1 active" de onclick="openPage(event,'SellerFeedback')" id="defaultOpen">Seller Feedbacks</button>
+          <button class="tablinks button1" onclick="openPage(event,'PromoterFeedback')">Promoter Feedbacks</button>
          
-          <div id="SellerFeedback" class="tabcontent">
+          <div id="SellerFeedback" class="tabcontent" style="display: block;">
             <div class="body">
               <table>
                 <tr>
@@ -117,28 +117,28 @@
                   <td>seller1</td>
                   <td>peter@gmail.com</td>
                   <td>19th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>Griffin</td>
                   <td>seller2</td>
                   <td>griffin@gmail.com</td>
                   <td>22nd September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>Lily</td>
                   <td>seller3</td>
                   <td>lily@gmail.com</td>
                   <td>10th October 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>John</td>
                   <td>seller4</td>
                   <td>john@gmail.com</td>
                   <td>15th October 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
               </table>
             </div>	
@@ -159,28 +159,28 @@
                   <td>promoter1</td>
                   <td>michel@gmail.com</td>
                   <td>8th August 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>Joe</td>
                   <td>promoter2</td>
                   <td>joe@gmail.com</td>
                   <td>10th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>Liza</td>
                   <td>promoter3</td>
                   <td>liza@gmail.com</td>
                   <td>19th September 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
                 <tr>
                   <td>Jhon</td>
                   <td>promoter4</td>
                   <td>jhon@gmail.com</td>
                   <td>10th OCtober 2020</td>
-                  <td><button><a href=#>View Feedback</a></button></td>
+                  <td><button>View Feedback</button></td>
                 </tr>
               </table>
             </div>
