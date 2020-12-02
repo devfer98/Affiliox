@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
@@ -12,8 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
-    <div class="container">
+
+    <div class="container3">
+
         <div class=" ">
             <div class="row hidden-xm marginb100 backcolor">
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
@@ -24,8 +25,8 @@
                     </div>
                     <div class="sm-2 ">
                         <div class="selector margint20">
-                        <select name="direction" id="select-nav" onchange="location = this.value;">
-                            <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
+                            <select name="direction" id="select-nav" onchange="location = this.value;">
+                                <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
                             echo '<option value="" selected disabled hidden></option>';
                             echo '<option value="../login/logout">Logout</option>';
@@ -35,12 +36,12 @@
                             echo '<option value="../login/index">Login</option>';
                    
                         }?>
-                        </select>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class=" nav-bar center backcolor">
+            <div class="nav-bar center backcolor">
                 <div class="col1 open-btn hidden-sm" onclick="openNav()"> &#9776;</div>
                 <div class="col2 hidden-sm">
                     <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
@@ -49,9 +50,9 @@
                 <div class="col4 center">
                     <ul>
                         <a href="../Buyer/Index"><i class="fas fa-home"></i>&nbsp;Home</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
-                        <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+                        <a href="../User/AboutUs"><i class="fas fa-users"></i>&nbsp;About Us</a>
+                        <a href="../User/Help"><i class="fas fa-inbox"></i>&nbsp;Help</a>
+                        <a href="../Buyer/Account"><i class="fas fa-users"></i>&nbsp;Account</a>
                     </ul>
                 </div>
 
@@ -88,6 +89,7 @@
                 <hr>
             </div>
         </div>
-     </div>
-</body>
+    </div>
+
+
 </html>

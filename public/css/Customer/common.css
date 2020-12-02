@@ -10,6 +10,10 @@
 	margin-left: 10%;
 
 }
+.container3{
+	width: 100%;
+
+}
 
 .back403{
 	
@@ -486,7 +490,8 @@ option:hover{
 }
 
 /*-----------------------------------Feedback rating---------*/
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+@import url(//https://kit.fontawesome.com/6cdc06033e.js);
 
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }

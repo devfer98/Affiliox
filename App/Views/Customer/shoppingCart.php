@@ -175,7 +175,7 @@
 
             <div class="col12 ">
                 <div class="center marginb50">
-                    <button type="submit" value="submit"> &nbsp; Proceed &nbsp; </button>
+                    <button onclick="location.href='../Buyer/Delivery'" type="submit" value="submit"> &nbsp; Proceed &nbsp; </button>
 
                 </div>
             </div>

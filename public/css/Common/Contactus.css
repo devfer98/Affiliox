@@ -1,4 +1,5 @@
   .contact {
+  
     padding: 60px;
     text-align: center;
     background-image: url("/images/Common/contact.png");
@@ -6,7 +7,7 @@
     background-position: center;
     background-size: auto;
     color:black;
-    margin-top: 30px;
+
   }
 
 #country {
@@ -28,6 +29,14 @@
   } 
 
 #fname {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  #email {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;

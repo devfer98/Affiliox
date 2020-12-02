@@ -61,12 +61,12 @@ hr {
   display: block;
   margin-bottom: 18px;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .sidenav a:hover {
   color: #28a745;
   /* font-weight: bold; */
-  font-weight: bold;
 }
 
 .sidenav a i {
@@ -164,7 +164,7 @@ li  {
   padding: 8px;
   border-radius: 0.25rem;
   font-family: 'Open Sans', sans-serif;
-  border: 1px solid #000c18; 
+  border: 1px solid #ced4da;; 
   width: 300px;
 }
 

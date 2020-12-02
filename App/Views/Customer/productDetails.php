@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Affiliox-Sign in</title>
+    <title>Affiliox-Product</title>
     <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -24,8 +24,8 @@
 
                 <div class="col12 holder center">
                     <img class="images" src="/images/Products/drone.jpg" style="width:100%">
-                    <img class="images" src="/images/Products/drone2.jpg" style="width:100%">
                     <img class="images" src="/images/Products/drone3.jpg" style="width:100%">
+                    <img class="images" src="/images/Products/drone2.jpg" style="width:100%">
                     <div class="margint20">
                         <button class="" onclick="increment(-1)">&nbsp;&#10094;&nbsp;</button>
                         <button class="" onclick="increment(1)">&nbsp;&#10095;&nbsp;</button>
@@ -52,7 +52,7 @@
                             <input style="width: 60%;" type="number" id="price" name="price" placeholder="4000.00"
                                 readonly> <br>
                         </div>
-                        <p id="test" class="center">Price Included with Delivery Charges</p>
+                        <p id="test" class="center">Price without Delivery Charges</p>
                     </div>
 
                     <div class="col6 quantity center">
@@ -79,8 +79,8 @@
                     </div>
                 </div>
                 <div class="col12 nav-bar center">
-                    <button>Add to cart </button>
-                    <button>Delivery Charges </button>
+                    <button onclick="location.href='../Buyer/shoppingCart'">Add to cart </button>
+                    <button onclick="location.href='../Buyer/Delivery'">Delivery Charges </button>
                 </div>
             </div>
 

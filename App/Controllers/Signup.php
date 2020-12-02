@@ -22,7 +22,7 @@ class Signup extends \Core\Controller {
     }
 
     public function sellerAction(){
-        View::display('Common/SelllerReg.php');
+        $this->view->display('Common/SelllerReg.php');
     }
 
     public function promoterAction(){
@@ -114,12 +114,8 @@ class Signup extends \Core\Controller {
 
     public function promoterToDBAction(){
         
-<<<<<<< HEAD
-        $user = new Promoter();
-=======
         $user = new PromoterM();
        
->>>>>>> c0c6168c28b5b9a6868879bcf28a50ab30106196
         $userDob= $_POST['dob'];  
         $now = time();   
         $dob = strtotime($userDob); 

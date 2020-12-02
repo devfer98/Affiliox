@@ -60,7 +60,7 @@
           <a href="../Buyer/ShoppingCart">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
           <a href="../Buyer/CurrentOrders">Orders<i class="fas fa-chart-line"></i></i></a>
           <a href="../Buyer/FeedbackView">Feedback<i class="fas fa-phone-square"></i></i></a>
-          <a href="../Common/Help">Support<i class="fas fa-envelope-open-text"></i></a>
+          <a href="../Buyer/Help">Support<i class="fas fa-envelope-open-text"></i></a>
       </div>
       <span onclick="openNav()"></span>
       
