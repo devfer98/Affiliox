@@ -21,15 +21,24 @@ class User extends \Core\Controller{
         echo'</pre>';
     }
 
-    public function HomeAction(){
-        echo 'add method is called';
+    public function MarketAction(){
+        $this->view->display('Customer/market.php');
     }
+
+    public function ProductAction()
+    {
+       $this->view->display('Customer/productDetails.php');
+    }
+
+    
     public function AboutUSAction(){
-        echo 'add method is called';
+        $this->view->display('Common/AboutUs.php');
     }
     public function HelpAction(){
-        echo 'add method is called';
+        $this->view->display('Common/ContactUs.php');
     }
+
+
     public function AccountAction(){
         echo 'add method is called';
     }

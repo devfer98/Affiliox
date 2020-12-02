@@ -17,11 +17,11 @@
 
 	<!-- welcome-note --------------------------------------------->	
 	<div class="container">
-
-		<div class="welcome-note">
-			<p>Welcome to the Affiliox home page </p>
+		<br><br><br>
+		<div style ="margin-bottom:50px;"class="welcome-noteL">
+			<p>Welcome to the Affiliox</p>
 		</div> <!-- welcome-note -->
-		<div class="slideshow-container">
+		<div >
 
 			  <div class="mySlides fade">
 			    <div class="numbertext">1 / 3</div>
@@ -29,26 +29,10 @@
 			    <div class="text">Hello Customer !</div>
 			  </div>
 
-			  <div class="mySlides fade">
-			    <div class="numbertext">2 / 3</div>
-			    <img src="/images/promoter/carousel-2.jpg" style="width: 100%">
-			    <div class="text">Hello Seller !</div>
-			  </div>
-
-			  <div class="mySlides fade">
-			    <div class="numbertext">3 / 3</div>
-			    <img src="/images/promoter/carousel-3.jpg" style="width: 100%">
-			    <div class="text">Hello Promoter !</div>
-			  </div>
 		</div>  <!-- slideshow-container -->
 			<br>
 
-			<!-- The dots/circles -->
-			<div style="text-align:center">
-			  <span class="dot" onclick="currentSlide(1)"></span>
-			  <span class="dot" onclick="currentSlide(2)"></span>
-			  <span class="dot" onclick="currentSlide(3)"></span>
-			</div>
+
 
 		<!--featured -------------------------------------------->
 		<div class="featured">

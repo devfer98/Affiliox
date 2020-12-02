@@ -219,6 +219,13 @@ input:focus{
 	border-bottom: 2px solid black;
 }
 
+.welcome-noteL p {
+
+  padding-top: 100px;
+	font-size: 40px;
+
+}
+
 /*-----------------------Inner carousel--------------------------*/
 
 .slideshow-container {

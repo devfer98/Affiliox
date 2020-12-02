@@ -75,13 +75,24 @@ class Buyer extends \Core\Controller
    }
 
 
+   // Product view  Functions -----------------------------//
+   public function ProductAction()
+   {
+      $this->view->display('Customer/productDetails.php');
+   }
+
+
    // Shopping cart  Functions -----------------------------//
    public function ShoppingCartAction()
    {
       $this->view->display('Customer/shoppingCart.php');
    }
 
-
+      // Delivery  Functions -----------------------------//
+      public function DeliveryAction()
+      {
+         $this->view->display('Customer/delivery.php');
+      }
 
    // Buyer Orders Functions -----------------------------//
    public function CurrentOrdersAction()
@@ -139,7 +150,11 @@ class Buyer extends \Core\Controller
    }
 
 
-
+   // Buyer Feedbacks Functions -----------------------------//
+   public function HelpAction()
+   {
+      $this->view->display('Common/ContactUs.php');
+   }
 
    protected function before()
    {

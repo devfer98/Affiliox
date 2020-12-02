@@ -85,7 +85,7 @@
                                         <button onclick="location.href='../Buyer/OrderSuccess'">&nbsp; Order Received
                                             &nbsp;</button>
                                         <button onclick="location.href='../Buyer/ContactSeller'">Order not
-                                            Recived</button>
+                                            Received</button>
 
                                     </div>
 
@@ -126,7 +126,7 @@
                                     <div class="col12 nav-bar center">
                                         <button>&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
                                         <button>&nbsp; Order Received &nbsp;</button>
-                                        <button>Order not Recived</button>
+                                        <button>Order not Received</button>
 
                                     </div>
 
@@ -172,7 +172,7 @@
                                     <div class="col12 nav-bar center">
                                         <button>&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
                                         <button>&nbsp; Order Received &nbsp;</button>
-                                        <button>Order not Recived</button>
+                                        <button>Order not Received</button>
 
                                     </div>
 
