@@ -29,13 +29,21 @@ Class View{
 
         $file = "../App/Views/$view";
         if(is_readable($file)){
-        
-            include $header;
-            // require $header;
-            require $file;
-            include $footer;
-            // require $footer;
-
+            if($view!="Seller/miniStoreView.php"){
+                include $header;
+                // require $header;
+                require $file;
+                include $footer;
+                // require $footer;
+            }else{
+                // $header="../App/Views/Templete/User_header.php";
+                // $footer="../App/Views/Templete/User_footer.php";
+                // include $header;
+                // require $header;
+                require $file;
+                // include $footer;
+                // require $footer;
+            }
         }else {
 
             echo "$file not Found";
