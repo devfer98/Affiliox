@@ -22,7 +22,7 @@ class Signup extends \Core\Controller {
     }
 
     public function sellerAction(){
-        View::display('Common/SelllerReg.php');
+        $this->view->display('Common/SelllerReg.php');
     }
 
     public function promoterAction(){

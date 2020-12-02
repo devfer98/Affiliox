@@ -25,7 +25,7 @@
             </div>
 
             <div class=" col12  sm-center ">
-                <div class="margint50 ">
+                <div class="margint50  center">
                     <p>Enter Your Username or Emaill Address</p>
                     <p>We will send the Password reset code to your Email address</p>
                 </div>
@@ -35,9 +35,9 @@
         <!------------------------Sign in text-boxs------------------->
         <form method="POST" action="../login/forget">
             <div class="row ">
-                <div class=" col12 search signin ">
+                <div class=" col12 search  center signin ">
 
-                    <div class="marginl100 margin margint50 sm-center">
+                    <div class="margin margint50 sm-center">
                         Email : <input type="resetcode" name="resetcode"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Incorrect Email Format." placeholder="Magic.piper@gmail.com">
                     </div>
 
@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="nav-bar col12 ">
-                    <div class="marginl100 sm-center marginb50">
+                    <div class="marginl100 sm-center center marginb50">
                         <ul>
                             <button><i class="fas fa-sign-out-alt" type="submit" value='submit' onclick="validateForm();"></i>&nbsp;Send
                                 Email</button>

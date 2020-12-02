@@ -1,6 +1,6 @@
 <html>
 
-<?php echo $_SESSION['type']; ?>
+
 
 <head>
     <title>Affiliox-market</title>

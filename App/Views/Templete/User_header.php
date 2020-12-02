@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container3">
         <div class=" ">
             <div class="row hidden-xm marginb100 backcolor">
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
 
                     
                     <div class="sm-10">
-                        <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
+                        <a href="../"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                     </div>
                     <div class="sm-2">
                         <div class="selector margint20">
@@ -45,22 +45,22 @@
             <div class=" nav-bar center backcolor">
 
                 <div class="col2 hidden-sm">
-                    <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
+                    <a href="../"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                 </div>
 
                 <div class="col5 center">
                     <ul>
-                        <a href="../Buyer/Index"><i class="fas fa-home"></i>&nbsp;Home</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
-                        <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+                        <a href="../"><i class="fas fa-home"></i>&nbsp;Home</a>
+                        <a href="../User/AboutUs"><i class="fas fa-users"></i>&nbsp;About Us</a>
+                        <a href="../User/Help"><i class="fas fa-inbox"></i>&nbsp;Help</a>
+                        <a href="../login/index"><i class="fas fa-users"></i>&nbsp;Account</a>
                     </ul>
                 </div>
 
                 <div class="col4 search fitcontent center">
                     <ul>
                         <input type="text" name="search" placeholder=" Search" pattern="^[a-zA-Z0-9 ]*$" />
-                        <a href=""><i class="fas fa-search"></i></a>
+                        <a href="../User/Market"><i class="fas fa-search"></i></a>
                     </ul>
                 </div>
                 <div class="col1 hidden-sm ">

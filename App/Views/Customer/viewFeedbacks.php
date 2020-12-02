@@ -74,10 +74,11 @@
                                 </div>
                             </div>
                             <div class="col7">
-                                <div class="margint50">
-                                    <textarea readonly class="row" rows="3"
-                                        name="comment-space"> Good Focus ,great pictures .</textarea><br>
-
+                                <div class="margint50 center width80">
+                                    <div class="width90">
+                                        <textarea readonly class="row" rows="3"
+                                            name="comment-space"> Good Focus ,great pictures .</textarea><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
