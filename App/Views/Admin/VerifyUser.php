@@ -53,16 +53,19 @@
                 <?php 
                   if(isset($this->pendSellers) and !empty($this->pendSellers) and $this->pendSellers->num_rows>0){
                     while($row = $this->pendSellers->fetch_assoc()){   
-                      echo "<tr><td>".$row['userID']."</td>"; 
+                      // echo "<tr><td><a href='../Admin/PendSeller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/PendSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['email']."</td>"; 
                       echo "<td>".$row['city']."</td>"; 
                       echo "<form method='post' action ='../Admin/UpdateSellStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='1' class='button button1'>Approve</button></td>";
-                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></tr></form>";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></form>";
+                      // echo "<td><button onclick='location.href='../Admin/PendSeller?id=".$row['userID']."'' class='button button1'>View</button></td></tr>";
+                      // echo "<td><button onclick='location.href='../Admin/PendSeller?id=abcdeeewqq'' class='button button1'>View</button></td></tr>";
                     }	
                   }else{
-                    echo "<tr><td colspan='5'>No Pending Sellers</td></tr>";
+                    echo "<tr><td colspan='6'>No Pending Sellers</td></tr>";
                   }  
                 ?>
               </table>
@@ -81,16 +84,18 @@
                 <?php 
                   if(isset($this->pendPromoters) and !empty($this->pendPromoters) and $this->pendPromoters->num_rows>0){
                     while($row = $this->pendPromoters->fetch_assoc()){   
-                      echo "<tr><td>".$row['userID']."</td>"; 
+                      echo "<tr><td><a href='../Admin/PendPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['email']."</td>"; 
                       echo "<td>".$row['city']."</td>"; 
                       echo "<form method='post' action ='../Admin/UpdateProStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='1' class='button button1'>Approve</button></td>";
-                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></tr></form>";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Deny</button></td></form>";
+                      // echo "<td><button onclick='location.href='../Admin/PendPromoter?id=".$row['userID']."'' class='button button1'>View</button></td></tr>";
+                      // echo "<td><button onclick='location.href='../Admin/PendSeller?id=abcdeeewqq'' class='button button1'>View</button></td></tr>";
                     }	
                   }else{
-                    echo "<tr><td colspan='5'>No Pending Promoters</td></tr>";
+                    echo "<tr><td colspan='6'>No Pending Promoters</td></tr>";
                   }  
                 ?>
               </table>

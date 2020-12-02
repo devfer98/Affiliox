@@ -27,19 +27,26 @@ class Feedback  extends \Core\Connect{
     }
     
 
-    public function addReply() {
-
+    public function addReply($feedbackID, $reply) {
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE feedback SET reply = ? WHERE feedbackID = ?");
+        $stmt->bind_param("ss", $reply, $feedbackID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
     }
 
     public function getFeedSell($userID) {
         $conn=static::connectDB();
 
-        $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
-        $stmt = $conn->prepare("SELECT product.prodName, buyer.name, feedback. FROM feedback
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT product.prodName, buyer.userID, feedback.comment, feedback.rating, feedback.feedbackID FROM ((feedback
         INNER JOIN buyer ON feedback.userID = buyer.userID)
         INNER JOIN product ON feedback.productID = product.productID)
-        WHERE feedback.productID = ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);");
-        $stmt->bind_param("s", "Pending");
+        WHERE feedback.reply = '' AND feedback.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        $stmt->bind_param("s", $userID);
         if($stmt->execute()){
             $result = $stmt->get_result();
             $stmt->close();

@@ -18,9 +18,9 @@
 	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
 		<div class="row row-padding">	
-			<div class="col12 center title">
+			<!-- <div class="col12 center title">
 				<p>Review Feedbacks</p>
-			</div>  <!-- top -->
+			</div>  
 
 			<div class="feedback row col8 col-center inner-part">
 				<table id="overall-review-table">
@@ -55,34 +55,47 @@
 					<td style="border: none;">5%</td>
 					</tr>
 				</table>
-			</div> <!--overall-review -->
+			</div>  -->
 
-			<div class="col12 center title">
+			<div class="col12 center title" style="margin-bottom: 15px;">
 				<p>Customer Reviews Feedbacks</p>
 			</div> 
 
-			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
-			<form action="" method="post">
-				<div class="row col12 padding">
-					<h3 class="center">Nike Shoe - John Smith</h3>
-				</div>
-				<div class="row">
-				<div class="col6 padding">
-					<label>Comment</label><br/>
-					<!-- <input readonly type="text" id="Birth" name="comment" placeholder="very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot"> -->
-					<textarea readonly type="text" id="Birth" name="comment" placeholder="very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot"></textarea>
-					<!-- <p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p> -->
-				</div>
-				<div class="col6 padding fitcontent">
-					<label>Reply</label><br/>
-					<input type="text" id="Birth" name="dob" placeholder="">
-				</div>
-				</div>
-				<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
-			</form>
-			</div>
+			<?php 
+				if(isset($this->buyerFeedbacks) and !empty($this->buyerFeedbacks) and $this->buyerFeedbacks->num_rows>0){
+                while($row = $this->buyerFeedbacks->fetch_assoc()){
+					echo '<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
+					<form action="../Seller/addReply" method="post">
+						<div class="row col12">
+							<h3 class="center">'.$row['prodName'].' - '.$row['userID'].'</h3>
+						</div>
+						<div class="row">
+						<div class="col6 padding col-center">
+							<label>Comment</label><br/>
+							<textarea readonly type="text" id="Birth" name="comment" placeholder="'.$row['comment'].'"></textarea>
+						</div>
+						<div class="col2 padding fitcontent col-center">
+							<label>Rating</label><br/>
+							<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 50px;" placeholder="'.$row['rating'].'">
+						</div>
+						</div>
+						<div class="row">
+						<div class="col6 padding fitcontent col-center">
+							<label>Reply</label><br/>
+							<input type="text" id="Birth" name="reply">
+						</div>
+						</div>
+						<input type="hidden" name="feedbackID" value="'.$row['feedbackID'].'" />
+						<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
+					</form>
+					</div>';
+				}
+				}else{
+                    echo "No Buyer Feedbacks";
+                }    		
+			?>
 
-			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
+			<!-- <div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
 				<form action="" method="post">
 					<div class="row col12">
 						<h3 class="center">Nike Shoe - John Smith</h3>
@@ -98,25 +111,7 @@
 					</div>
 					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
 				</form>
-			</div>
-
-			<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px;">
-				<form action="" method="post">
-					<div class="row col12">
-						<h3 class="center">Nike Shoe - John Smith</h3>
-					</div>
-					<div class="row">
-					<div class="col6 padding">
-						<p class="center">very very happy whit this seller,come to Badulla in 2 days,everithing he wrote is corect,th you seller a lot</p>
-					</div>
-					<div class="col6 padding fitcontent">
-						<label>Reply</label><br/>
-						<input type="text" id="Birth" name="dob" placeholder="">
-					</div>
-					</div>
-					<div class="row col12 padding"><button class="center" type="submit" value="submit">Send</button></div>
-				</form>
-			</div>
+			</div> -->
 			
 		</div>
 	</div> 

@@ -49,12 +49,16 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/ReviewFeedback.php');
     }
 
-    public function PendPromoterAction(){
-        $this->view->display('Admin/PendPromoter.php');
+    public function PendSellerAction(){
+        $seller = new SellerM();
+        $this->view->sellDetails = $seller->getSeller($_GET['id']);
+        $this->view->display('Admin/SellerProfile.php');
     }
 
-    public function PendSellerAction(){
-        $this->view->display('Admin/PendSeller.php');
+    public function PendPromoterAction(){
+        $promoter= new PromoterM();
+        $this->view->proDetails = $promoter->getPromoterProfile($_GET['id']);
+        $this->view->display('Admin/PromoterProfile.php');
     }
 
     public function UpdateSellStatusAction(){
