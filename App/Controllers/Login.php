@@ -190,7 +190,6 @@ class Login extends \Core\Controller {
         }else{
 
             $url=$_SERVER['QUERY_STRING'];
-            echo $url;
             $code =$this->urlpart($url);
             $getEmail=$this->Decode_getCode($code);
 

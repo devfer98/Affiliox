@@ -28,6 +28,19 @@
 	</div> 
 	<!------------------------Sign in text-boxs------------------->
   <form method="POST" onsubmit="return  ValidatePassword();" action="../login/ResetPassword?<?php echo $this->Code;?>">
+
+  <div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                </div>
 	<div class="row ">
 		<div class= " col12 search signin center">
      

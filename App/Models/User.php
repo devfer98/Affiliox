@@ -132,18 +132,18 @@ class User extends \Core\Connect
       $stmt2->execute();
       $stmt3->execute();
 
-      if ($stmt1->error) {
-         echo "FAILURE!!! " . $stmt1->error;
-       }
-       else echo "Updated {$stmt1->affected_rows} rows";
+      // if ($stmt1->error) {
+      //    echo "FAILURE!!! " . $stmt1->error;
+      //  }
+       
 
 
-      if(isset($data_col)){
-         $stmt5 = $conn->prepare(" UPDATE buyer SET password='Doe' WHERE id=2 ");
-         $stmt5->bind_param("s", $data_col);
-      }else{
-         return false;
-      }  
+      // if(isset($data_col)){
+      //    $stmt5 = $conn->prepare(" UPDATE buyer SET password='Doe' WHERE id=2 ");
+      //    $stmt5->bind_param("s", $data_col);
+      // }else{
+      //    return false;
+      // }  
 
 
    }
