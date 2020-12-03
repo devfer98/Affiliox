@@ -73,6 +73,10 @@ class Promoter extends \Core\Controller {
         $this->view->display('Common/SelllerReg.php');     
      }
 
+    public function viewProductAction(){
+        $this->view->display('Promoter/view-product.php'); 
+    }
+
     public function generateLinkAction() {
         $this->view->display('Promoter/generate-link.php');
     }
@@ -96,6 +100,14 @@ class Promoter extends \Core\Controller {
     public function IndexAction(){
         $this->view->display('Promoter/index.php');
      }
+
+    public function aboutUsAction(){
+        $this->view->display('Common/AboutUs.php');
+    }
+
+    public function contactUsAction(){
+        $this->view->display('Common/ContactUs.php');
+    }
 
     public function promoterTransToDBAction(){
         

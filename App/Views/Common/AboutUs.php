@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/Common/Aboutus.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
     <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -104,16 +105,14 @@
             </div>
         </div>
     </div>
-    <!-- bottom-part-------------------------------------------->
-
-
-    <!-- bottom-part -->
-
+    <!-- bottom-part--->
+    
     <span onclick="openNav()"></span>
-
+    <hr style="height:1px;border:none;color:#333;background-color:#333;">
 
     </div>
-    <!--Container------------------------------------------>
+    <!--Container--->
+
 </body>
 
 </html>
