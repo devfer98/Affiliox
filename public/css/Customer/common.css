@@ -147,7 +147,10 @@ hr{
 .width90{
 	width: 90%;
 }
-
+.font-awesome .fa{
+	font-family: "Font Awesome 5 Free", 'Open Sans';
+	font-weight:501;
+  }
 .profileTable {
     font-family: 'Open Sans', sans-serif;
     margin-top: 60px;
@@ -230,14 +233,14 @@ hr{
 	border: 1px solid #28a745; 
 	font-family: 'Open Sans', sans-serif;
 	border-radius: 0.25rem;
-	cursor: pointer;
 	font-weight: bold;
+	cursor: pointer;
 	font-size: 15px;
 	color: #1f3d7a;
 	
   }
   .selector select option{
-	font-size: 15px;
+	font-size: 14px;
 	padding:6px;
   }
 

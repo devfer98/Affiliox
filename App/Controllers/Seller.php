@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use Core\View;
 use App\Models\User;
-
+use App\Models\Feedback;
 
 class Seller extends \Core\Controller {
 
@@ -43,9 +43,16 @@ class Seller extends \Core\Controller {
     }
 
     public function feedbackAction(){
-
+        $feedback= new Feedback();
+        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_GET['id']);
         $this->view->display('Seller/sellerFeedback.php');
-        
+    }
+
+    public function addReplyAction(){
+        $feedback= new Feedback(); 
+        $feedback->addReply($_POST['feedbackID'], $_POST['reply']);
+        // $this->feedbackAction();
+        header("Location:../Seller/feedback?id=".$_SESSION["username"]);
     }
 
     public function transactionAction(){

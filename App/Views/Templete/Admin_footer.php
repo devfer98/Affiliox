@@ -58,13 +58,13 @@
 
       <div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="AdminDashboard.html">Dashboard<i class='fas fa-ellipsis-h'></i></a>
-	<a href="AdminProfile.html">User Profile<i class="far fa-user"></i></a>
+	<a href="../Admin/AdminDashboard">Dashboard<i class='fas fa-ellipsis-h'></i></a>
+	<a href="../Admin/AdminProfile">User Profile<i class="far fa-user"></i></a>
 	<a href="../Admin/ManageAccount">Manage Accounts<i class='fas fa-users-cog'></i></a>
 	<a href="../Admin/ApproveReg">Approve Registrations<i class="fas fa-user-check"></i></a>
 	<a href="../Admin/AddAdmins">Add Admins<i class='fas fa-user-plus'></i></a>
-	<a href="AdminStatistics.html">View Statistics<i class="fas fa-chart-line"></i></i></a>
-	<a href="ReviewFeedback.html">Review Feedbacks<i class='fas fa-comments'></i></a>
+	<a href="../Admin/AdminStatistics">View Statistics<i class="fas fa-chart-line"></i></i></a>
+	<a href="../Admin/ReviewFeedback">Review Feedbacks<i class='fas fa-comments'></i></a>
       </div>
 <span onclick="openNav()"></span>
       

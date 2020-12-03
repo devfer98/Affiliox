@@ -98,7 +98,7 @@
         <a href="/Seller/statistics">Statstics<i class="fas fa-chart-line"></i></i></a>
         <a href="/Seller/order">View Orders<i class="fas fa-chart-line"></i></i></a>
         <a href="/Seller/transaction">Transactions<i class="fas fa-money-check-alt"></i></a>
-        <a href="/Seller/feedback">Feedback<i class="fas fa-phone-square"></i></i></a>
+        <a href="/Seller/feedback?id=<?php echo $_SESSION["username"]; ?>">Feedback<i class="fas fa-phone-square"></i></i></a>
         <a href="/Seller/support">Support<i class="fas fa-envelope-open-text"></i></a>
     </div>
     <span onclick="openNav()"></span>

@@ -116,7 +116,7 @@ class User extends \Core\Connect
       
       $conn = static::connectDB();
       $accstatus = 'Active';
-      
+      $flag=0;
       $stmt0 = $conn->prepare("UPDATE promoter SET password=? WHERE email=?  AND accountStatus=?");
       $stmt1 = $conn->prepare("UPDATE buyer SET password=? WHERE email=?");
       $stmt2 = $conn->prepare("UPDATE seller SET password=? WHERE email=?  AND accountStatus=?");
@@ -133,18 +133,25 @@ class User extends \Core\Connect
       $stmt3->execute();
 
       if ($stmt1->error) {
+         $flag=1;
          echo "FAILURE!!! " . $stmt1->error;
-       }
-       else echo "Updated {$stmt1->affected_rows} rows";
-
-
-      if(isset($data_col)){
-         $stmt5 = $conn->prepare(" UPDATE buyer SET password='Doe' WHERE id=2 ");
-         $stmt5->bind_param("s", $data_col);
-      }else{
+       }else   
+      if ($stmt0->error) {
+            $flag=1;
+            echo "FAILURE!!! " . $stmt0->error;
+          }
+      if ($stmt2->error) {
+            $flag=1;
+            echo "FAILURE!!! " . $stmt2->error;
+          }
+      if ($stmt3->error) {
+            $flag=1;
+            echo "FAILURE!!! " . $stmt3->error;
+          }
+      if($flag==0){
+         return true;
+      }else
          return false;
-      }  
-
 
    }
 }

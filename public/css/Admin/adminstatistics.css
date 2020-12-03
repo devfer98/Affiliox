@@ -4,7 +4,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box;}
 
-.container {
+.containerB {
 width: 1000px; 
 margin: 0 auto;
 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

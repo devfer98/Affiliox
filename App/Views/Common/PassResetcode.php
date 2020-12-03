@@ -55,6 +55,7 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
             <?php if(isset($this->UImsg) and !empty($this->UImsg)){
                         if($this->State==1) {
 
@@ -66,6 +67,7 @@
                   }  ?>
                     <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
                 </div>
+                </div> 
 
         </form>
 

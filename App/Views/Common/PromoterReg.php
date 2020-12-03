@@ -32,8 +32,19 @@
 				<div class=" marginl100">
 				<h2>Promoter Details</h2>
 				</div>
-			</div>
-		</div>
+				<div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                </div>
+                </div>
 		
 			<div class="row rowMargin ">
 				<div class="col12">
@@ -65,7 +76,7 @@
 				<div class="col6">
 					<div>
 						<label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
-						<input type="date" id="Birth" name="dob"><br><br>
+						<input type="date" id="Birth" name="dob" required><br><br>
 					</div>
 				</div>
 				<div class="col6">

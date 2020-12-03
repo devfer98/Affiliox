@@ -22,6 +22,19 @@
                     <h2>Product Feedback</h2>
                 </div>
                 <div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+               	 </div>
+                </div>
+                <div class="row">
                     <div clas="sm-width center">
                         <div class="boxsummery shoppingBlock marginb100 margint20 center ">
                             <div class="row">
@@ -47,7 +60,7 @@
 
                                 <div class="col3">
                                     <div class="margint20">
-                                        <h4>ETA : 24/Nov/2020</h4>
+                                        <h4></h4>
 
                                     </div>
                                 </div>
@@ -100,7 +113,7 @@
                                                 Feedback</label><br>
                                             <br>
                                             <textarea rows="7" cols="55" name="description" minlength="5"
-                                                maxlength="250"  pattern="^[a-zA-Z0-9,-.'()/ ]*$" required placeholder="...."></textarea><br>
+                                                maxlength="250"  pattern="^[a-zA-Z0-9,-.'()/ ]*$" placeholder="...."></textarea><br>
                                             <p class="font-heavy">Your Feedback will help many customers</p>
                                         </div>
                                     </div>
