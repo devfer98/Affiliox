@@ -85,12 +85,14 @@
   					<p>Nike Running Shoe_Imported Quality</p>
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
+
 			<div class="card">
-  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/drone.jpg" alt="Denim Jeans" style="width:100%">
+  					<h4>Inspire 1</h4>
+  					<p class="price">$10.74</p>
+  					<p>Inspire 1 -Rotatable Drone</p>
+					  <p><button onclick="location.href='../Promoter/Product'">Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button>
+					  <button onclick="location.href='../User/ShoppingCart'">Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
@@ -138,14 +140,15 @@
   					<p>i12 Pods TWS Wireless Bluetooth headset</p>
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
-
+			
 			<div class="card">
-  				<img src="/images/promoter/watch.png" alt="Denim Jeans" style="width:100%">
-  					<h4>Bostanten Watches</h4>
-  					<p class="price">$10.74</p>
-  					<p>Bostanten Watches For Men Latest Business Original</p>
+  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Apple iPhone 11 Pro</h4>
+  					<p class="price">$1311.02</p>
+  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
+			
 
 			<div class="card">
   				<img src="/images/promoter/nike-shoe.png" alt="Denim Jeans" style="width:100%">

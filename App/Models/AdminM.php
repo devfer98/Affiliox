@@ -1,21 +1,33 @@
 <?php
 
-class Admin {
-
+namespace App\Models;
+class Admin extends \Core\Connect{
+ 
     function __construct() {
-        include ("php/connect.php");
-    }
-    
-    public function addAdmin() {
         
     }
-
-    public function getAdmin() {
-
-    }
-
-    public function getStatistics() {
-
-    }
     
+    public function getAdminProfile($userID){
+        $conn=static::connectDB();
+
+        $query = "select * from admin WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows >0)
+            {
+                return $result;
+            }
+            
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
+    }
+
+        
 }

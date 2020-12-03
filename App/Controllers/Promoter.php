@@ -109,6 +109,14 @@ class Promoter extends \Core\Controller {
         $this->view->display('Common/ContactUs.php');
     }
 
+    public function ProductAction(){
+       $this->view->display('Customer/productDetails.php');
+    }
+
+    public function ShoppingCartAction(){
+        $this->view->display('Customer/ShoppingCart.php');
+    }
+
     public function promoterTransToDBAction(){
         
         $user = new TransactionPromo();

@@ -13,7 +13,7 @@
         <select name="direction" id="select-nav" onchange="location = this.value;">
             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                echo '<option value="" selected disabled hidden></option>';
+                echo '<option value="" selected disabled hidden>SELECT</option>';
                 echo '<option value="../login/logout">Logout</option>';
                 } else {
                 echo '<option value="" selected disabled hidden></option>';

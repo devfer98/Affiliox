@@ -11,14 +11,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-
 		<!---Navigation bar-------------------------------------------->
-		<div class="container">
-		  
-		</div>
+		
 		<div class="container1">
 			<h2><i class="fas fa-user"></i>&nbsp; &nbsp;Admin Profile Details</h2>
-			<!-- <div class="inner-part"> -->
 			<div>
 				<table>
 					<tr>
@@ -66,14 +62,9 @@
 				<form action="EditAdmin.php">
 					<input type="submit" name="edit-details" value="Edit Details">
 				</form>					
-			</div><!-- inner-part -->
+			</div>
 	
-		</div> <!-- container -->
-
-	<div class="container">
-  
-	</div>
-	<!--Container------------------------------------------>
+		</div> <!-- container1 -->
   </body>
   
   </html>

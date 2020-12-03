@@ -81,28 +81,14 @@
   					<p>Nike Running Shoe_Imported Quality</p>
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
-			<div class="card">
-  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
-			</div>
+			
 
 			<div class="card">
-<<<<<<< HEAD
-  				<img src="/images/promoter/i pod.png" alt="Denim Jeans" style="width:100%">
-  					<h4>i12 Pods</h4>
-  					<p class="price">$7.27</p>
-  					<p>i12 Pods TWS Wireless Bluetooth headset</p>
-  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
-=======
   				<img src="/images/promoter/drone.jpg" alt="Denim Jeans" style="width:100%">
   					<h4>Inspire 1</h4>
   					<p class="price">$256.02</p>
   					<p>Inspire 1 -Rotatable Drone</p>
   					<p><button onclick="location.href='../User/Product'">Buy Now <i class="fab fa-cc-visa"></i></button><button onclick="location.href='../User/ShoppingCart'">Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
->>>>>>> f05fde07c5c67febd37e3189daf6374d25ffaa7c
 			</div>
 
 			<div class="card">
@@ -115,6 +101,13 @@
 
 			<div class="card">
   				<img src="/images/promoter/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Nike Running Shoe</h4>
+  					<p class="price">$42.07</p>
+  					<p>Nike Running Shoe_Imported Quality</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+			</div>
+			<div class="card">
+  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
   					<h4>Nike Running Shoe</h4>
   					<p class="price">$42.07</p>
   					<p>Nike Running Shoe_Imported Quality</p>
