@@ -33,6 +33,19 @@
                     <div class=" marginl100">
                         <h2>Seller Details</h2>
                     </div>
+
+            <div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                </div>
                 </div>
             </div>
 
@@ -151,7 +164,7 @@
                     <div>
                         <label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
                         <input type="text" name="Username-field" placeholder="Username" minlength="5" maxlength="100"
-                        pattern="[a-zA-Z0-9'-'\s]*" title="Invalid USername Format." required><br>
+                        pattern="[a-zA-Z0-9'-'\s]*" title="Invalid Username Format." required><br>
                     </div>
                 </div>
             </div>

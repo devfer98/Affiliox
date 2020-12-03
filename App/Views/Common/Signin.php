@@ -30,7 +30,7 @@
     <form method="POST" action="../Login/auth">
 
         <div class="row  center">
-            <div class="errorMsg">
+            <div class="errorMsgFailed">
                 <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
             </div>
         </div>

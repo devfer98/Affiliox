@@ -20,16 +20,12 @@
 	<div class="row ">
 
 		<div class=" col12 sign-note center ">
-      <div class="marginb100 margint50">
+      <div class=" margint50">
 			<h1>Reset your Password</h1>
 
 		</div>
 
-	</div> 
-	<!------------------------Sign in text-boxs------------------->
-  <form method="POST" onsubmit="return  ValidatePassword();" action="../login/ResetPassword?<?php echo $this->Code;?>">
-
-  <div class="row">
+	  <div class="row">
             <?php if(isset($this->UImsg) and !empty($this->UImsg)){
                         if($this->State==1) {
 
@@ -41,6 +37,12 @@
                   }  ?>
                     <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
                 </div>
+    </div>
+	  </div>
+	<!------------------------Sign in text-boxs------------------->
+  <form method="POST" onsubmit="return  ValidatePassword();" action="../login/ResetPassword?<?php echo $this->Code;?>">
+
+
 	<div class="row ">
 		<div class= " col12 search signin center">
      

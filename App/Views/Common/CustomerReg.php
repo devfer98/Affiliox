@@ -29,13 +29,21 @@
 			<div class="col12">
 				<div class=" marginl100">
 				<h2>User Details</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row  center">
-            <div class="errorMsg">
-				
-            <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p></div></div>
+				</div>		
+	
+		<div class="row">
+            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+               	 </div>
+                </div>
 			<div class="row rowMargin ">
 				<div class="col12">
 					<div>

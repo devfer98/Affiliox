@@ -6,14 +6,16 @@ class User extends \Core\Controller{
     public function indexAction(){
        $this->view->display('Common/index.php');
     }
-
+    public function Error4(){
+        $this->view->display('Common/E404.php');
+     }
     // public function PasswordResetAction(){
     //     $Email = $_POST['email'];
     //     $user= new User();
     //     $result = $user->Email($userID);
         
     //  }
-
+    
     public function get(){
         echo "get method is called";
         echo'<pre>';
@@ -24,6 +26,11 @@ class User extends \Core\Controller{
     public function MarketAction(){
         $this->view->display('Customer/market.php');
     }
+
+    public function ShoppingCartAction(){
+        $this->view->display('Customer/ShoppingCart.php');
+    }
+
 
     public function ProductAction()
     {

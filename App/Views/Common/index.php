@@ -91,10 +91,10 @@
 
 			<div class="card">
   				<img src="/images/promoter/drone.jpg" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  					<h4>Inspire 1</h4>
+  					<p class="price">$256.02</p>
+  					<p>Inspire 1 -Rotatable Drone</p>
+  					<p><button onclick="location.href='../User/Product'">Buy Now <i class="fab fa-cc-visa"></i></button><button onclick="location.href='../User/ShoppingCart'">Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
@@ -183,7 +183,7 @@
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 		</div> <!-- latest -->
-			<hr>
+
 		</div> <!-- container -->
 
 		<!-- bottom-part-------------------------------------------->

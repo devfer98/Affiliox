@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <div class=" row margint50 marginb50 ">
+          <div class=" row  marginb50 ">
             <div class="left">
               <h2><i class="fas fa-clock fa"></i>&nbsp;Completed Orders</h2>
               <div class="row">
@@ -47,8 +47,9 @@
                     <img class="images" src="/images/Products/drone.jpg" style="width:100%">
                   </div>
                   <div class="col4">
-                    <div class="margint20 left">
+                    <div class="margint20  left">
                       <h3>Inspire 1</h3>
+                      <p>Status:Completed</p>
                       <p>Price:Rs 4000.00</p>
                       <p>Delivery:Free</p>
                     </div>
@@ -69,7 +70,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row margint20">
                   <h4>Order ID :123DEFS213DS423</h4>
                 </div>
               </div>
@@ -83,8 +84,9 @@
                     <img class="images" src="/images/Products/action-camera.jpg" style="width:100%">
                   </div>
                   <div class="col4">
-                    <div class="margint20 left">
+                    <div class="margint20  left">
                       <h3>Go Pro-G4</h3>
+                      <p>Status:Completed</p>
                       <p>Price:Rs 7200.00</p>
                       <p>Delivery:Charged</p>
                     </div>

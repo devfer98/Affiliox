@@ -69,13 +69,18 @@ class Router
             if(is_callable([$con_object,$action])){
                 $con_object->$action();
             }else{
+                
+        
                 echo "method $action  not found in $controller" ;
 
             }
         }else {
+     
             echo "controller class  not found in $controller";
         }
     }else{
+
+        // header("Location:/User/Error4");
         echo '404';
     }
     }

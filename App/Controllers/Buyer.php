@@ -105,7 +105,10 @@ class Buyer extends \Core\Controller
 
       $this->view->display('Customer/CompletedOrders.php');
    }
-
+   public function FailedOrderAction()
+   {
+      $this->view->display('Customer/OrderNotReceived.php');
+   }
    public function ContactSellerAction()
    {
       $this->view->display('Customer/contactSeller.php');
@@ -125,31 +128,34 @@ class Buyer extends \Core\Controller
 
    public function SubmitFeedbackAction()
    {
+       if (isset($_POST['description'])) {
+           $message = $_POST['description'];
+           $rating = $_POST['rating'];
+           $username = $_SESSION['username'];
+           $prodID = 12345;
+            if(empty($message)){
+               $message="NULL";
+            }
 
-      if (isset($_POST['description'])) {
-         $message = $_POST['description'];
-         $rating = $_POST['rating'];
-         $username = $_SESSION['username'];
-         $prodID = 12345;
-
-         $entry = new Feedback();
-         $result = $entry->addFeedback($message, $rating, $username, $prodID);
-         if ($result) {
-            $UImsg = 'Feedback Submitted Successfully';
-            $this->view->UImsg->$UImsg;
-            $this->view->display('Customer/feedback.php');
-            header('Refresh: 4; URL=../Buyer/CompletedOrders');
-         }
-         $UImsg = 'Error Occured While Submitting Please try again later';
-
-         $this->view->display('Templete/Buyer_header.php');
-         $this->view->$UImsg->$UImsg;
-         $this->view->display('Customer/feedback.php');
-      }
-      $this->view->display('Customer/feedback.php');
+           $entry = new Feedback();
+           $result = $entry->addFeedback($message, $rating, $username, $prodID);
+           if ($result) {
+               $State=1;
+               $UImsg = 'Feedback Submitted Successfully';
+               $this->view->UImsg =$UImsg;
+               $this->view->State = $State;
+               $this->view->display('Customer/feedback.php');
+               header('Refresh: 4; URL=../Buyer/CompletedOrders');
+           } else {
+               $State=0;
+               $UImsg = 'Error Occured While Submitting Please try again later';
+               $this->view->$UImsg= $UImsg;
+               $this->view->State = $State;
+               $this->view->display('Customer/feedback.php');
+           }
+          
+       } $this->view->display('Customer/feedback.php');
    }
-
-
    // Buyer Feedbacks Functions -----------------------------//
    public function HelpAction()
    {

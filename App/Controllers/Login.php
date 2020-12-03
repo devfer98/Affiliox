@@ -22,9 +22,26 @@ class Login extends \Core\Controller {
         $user = new User();
         $UImsg="Username or password incorrect!";
       
-    
         $name       =$_POST['Username-field'];
         $password   =$_POST['Password-field'];	
+
+
+        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {
+
+            $UImsg= 'Invalid password Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/Signin.php');
+            exit;  
+        }
+
+        
+        if (!preg_match("/^[a-zA-Z0-9]*$/",$name)) {
+
+            $UImsg= 'Invalid Username Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/Signin.php');
+            exit;  
+        }
         $pw_md5=md5($password);
        
                $result= $user->authenticate($name,$pw_md5);
@@ -166,6 +183,16 @@ class Login extends \Core\Controller {
        if(isset($_POST['password'])){
             $pass=$_POST['password'];
 
+            if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$pass)) {
+                $State=0;
+                $this->view->State = $State;
+                $UImsg= 'Invalid password Format, Please Try Again !';
+                $this->view->UImsg = $UImsg;
+                $this->view->display('Common/PassReset.php');
+                exit;  
+            }
+
+            
             $pass=md5($pass);
             
             $user =new User();
@@ -181,6 +208,7 @@ class Login extends \Core\Controller {
                 $this->view->UImsg = $UImsg;  
                 $this->view->display('Common/PassReset.php');
             }else{
+                
                 $State=0;
                 $this->view->State = $State;
                 $UImsg ='Error Occured, Please Try Again From The Link Provided'; 

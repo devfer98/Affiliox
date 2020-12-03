@@ -5,7 +5,7 @@ use App\Models;
 class MiniStore extends \Core\Controller {
 
     public function indexAction(){
-        View::display('User/Interfaces/productDetails.html');
+        $this->view->display('User/Interfaces/productDetails.html');
     }
 
     public function addAction(){

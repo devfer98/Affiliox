@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col12 nav-bar center">
-                    <button onclick="location.href='../Buyer/shoppingCart'">Add to cart </button>
+                    <button onclick="location.href='../User/shoppingCart'">Add to cart </button>
                     <button onclick="location.href='../Buyer/Delivery'">Delivery Charges </button>
                 </div>
             </div>
