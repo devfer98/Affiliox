@@ -30,6 +30,12 @@ class Seller extends \Core\Controller {
         
     }
 
+    public function passEditAction(){
+
+        $this->view->display('Seller/sellerPass.php');
+        
+    }
+
     public function marketAction(){
 
         $this->view->display('Common/market.php');

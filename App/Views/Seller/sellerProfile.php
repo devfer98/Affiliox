@@ -76,8 +76,9 @@
 					</tr>
 				</table>
 			
-				<div class="row col12 commonB">
+				<div class="row col12 commonB padding">
 				<!-- <form action="update-promoter.php" style="text-align: center;"> -->
+					<button class="center" onclick="location.href='/Seller/passEdit';">Change Password</button>
 					<button class="center" onclick="location.href='/Seller/profileEdit';">Edit Details</button>
 				<!-- </form>					 -->
 				</div>

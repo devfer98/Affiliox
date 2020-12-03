@@ -13,20 +13,20 @@
 </head>
 <body>
 	<!-- welcome-note --------------------------------------------->	
-	<div class="container">
+	<!-- <div class="container"> -->
 		<div class="row row-padding dialogBox commonB">
 			<button class="center" onclick="location.href='../Ministore/update';">Change</button>
 			<button class="center" onclick="location.href='../Ministore/ministore';">Done</button>
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<?php
-		// $header="../App/Views/Templete/User_header.php";
-		// include $header;
+		$header="../App/Views/Templete/User_header.php";
+		include $header;
 		$file="../App/Views/Common/index.php";
 		require $file;
-		// $footer="../App/Views/Templete/User_footer.php";
-		// include $footer;
+		$footer="../App/Views/Templete/User_footer.php";
+		include $footer;
 	?>
 </body>
 </html>

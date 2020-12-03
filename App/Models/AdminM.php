@@ -11,7 +11,7 @@ class Admin {
     }
 
     public function getAdmin() {
-
+        
     }
 
     public function getStatistics() {

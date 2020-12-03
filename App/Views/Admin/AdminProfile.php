@@ -39,7 +39,7 @@
 					</tr>
 					<tr>
 						<td id="td-1">Marital Status:</td>
-						<td>Sample status is here/td>
+						<td>Sample status is here</td>
 					</tr>
 					<tr>
 						<td id="td-1">Address:</td>
