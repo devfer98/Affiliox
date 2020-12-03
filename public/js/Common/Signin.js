@@ -24,12 +24,12 @@ function passVisibility() {
 
 // email validation
 function validateEmail(email) {
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-  {
-    return (true)
-  }
-    alert("You have entered an invalid email address!")
-    return (false)
+//  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+//   {
+//     return (true)
+//   }
+//     alert("You have entered an invalid email address!")
+//     return (false)
 }
 function ValidatePassword() {
     
@@ -47,9 +47,9 @@ var userEmail = document.getElementById("email");
 
 function validateForm() {
     var isValidatePassword = ValidatePassword();
-    var isValidEmail = validateEmail(userEmail.value);
+    // var isValidEmail = validateEmail(userEmail.value);
     
-    if(isValidatePassword && isValidEmail){
+    if(isValidatePassword){
         return true;
     }else   
         return false;

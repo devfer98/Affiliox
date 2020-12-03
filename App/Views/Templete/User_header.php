@@ -2,7 +2,8 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
+    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
@@ -13,8 +14,8 @@
 </head>
 
 <body>
-    <div class="container3">
-        <div class=" ">
+    <div class="container3 ">
+        <div class=" backcolor">
             <div class="row hidden-xm marginb100 backcolor">
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
 
@@ -27,10 +28,10 @@
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>SELECT</option>';
                             echo '<option value="../login/logout">Logout</option>';
                         }else{
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>Main</option>';
                             echo '<option value="../Signup/create">Signup</option>';
                             echo '<option value="../login/index">Login</option>';
                    
@@ -69,10 +70,10 @@
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>SELECT</option>';
                             echo '<option value="../login/logout">Logout</option>';
                         }else{
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>SELECT</option>';
                             echo '<option value="../Signup/create">Signup</option>';
                             echo '<option value="../login/index">Login</option>';
                    

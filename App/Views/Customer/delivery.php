@@ -108,8 +108,8 @@
                             </div>
                         </div>
                         <div class="col12 ">
-                            <div class="marginb100 boxsummery">
-                                <h2>Total : RS 4400.00</h2>
+                            <div class="marginb100 center boxsummery">
+                                <h4>Total : RS 4400.00</h4>
                             </div>
                         </div>
                     </div>

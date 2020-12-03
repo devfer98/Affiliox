@@ -22,7 +22,7 @@ class Signup extends \Core\Controller {
     }
 
     public function sellerAction(){
-        $this->view->display('Common/SelllerReg.php');
+        $this->view->display('Common/SellerReg.php');
     }
 
     public function promoterAction(){
@@ -51,9 +51,56 @@ class Signup extends \Core\Controller {
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
         $pw_md5 =md5($password);
-        if($password != $con_password){
+ 
 
+        if (($userDob) && ($userID) && ($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo) && ($password)) {
+        
+        }else{
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Empty Entries Detected, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/CustomerReg.php');
+            exit;   
         }
+
+        if($password != $con_password){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Password not matched, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/CustomerReg.php');
+            exit;   
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Email format invalid, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/CustomerReg.php');
+            exit;  
+        }
+
+        if (!preg_match("/^[a-zA-Z0-9]*$/",$userID)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid Username Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/CustomerReg.php');
+            exit;  
+        }
+
+
+        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid password Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/CustomerReg.php');
+            exit;  
+        }
+
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
                     $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
@@ -63,7 +110,7 @@ class Signup extends \Core\Controller {
                 $this->view->UImsg = $UImsg;
                 $this->view->display('Common/CustomerReg.php');   
                     
-                echo "User already exist";
+                
                 
             }	
     }
@@ -94,19 +141,67 @@ class Signup extends \Core\Controller {
         $pw_md5 =md5($password);
 
 
-        if($password != $con_password){
-            
+
+        if (($userDob) && ($userID) && ($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo) && ($password) && ($storeName)) {
+        
+        }else{
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Empty Entries Detected, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;   
         }
+
+        if($password != $con_password){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Password not matched, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;   
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Email format invalid, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;  
+        }
+
+        if (!preg_match("/^[a-zA-Z0-9]*$/",$userID)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid Username Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;  
+        }
+
+
+        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid password Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;  
+        }
+
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
                     $user->addSeller($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2,$storeName,$accStatus,$wCount);
                     header('Location:../Signup/SellerSuccess');
             }else{
+                $State=0;
+                $this->view->State = $State;
                 $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
                 $this->view->UImsg = $UImsg;
                 $this->view->display('Common/SellerReg.php');   
                     
-                echo "User already exist";
+                
                 
             }	
           
@@ -137,8 +232,54 @@ class Signup extends \Core\Controller {
         $Chnnels = $_POST['description'];
         $arrs=explode(";",$Chnnels);
         $pw_md5 =md5($password);
-        if($password != $con_password){
+        
 
+        if (($userDob) && ($userID) && ($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo) && ($password) && ($Chnnels)) {
+        
+        }else{
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Empty Entries Detected, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/PromoterReg.php');
+            exit;   
+        }
+
+        if($password != $con_password){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Password not matched, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/PromoterReg.php');
+            exit;   
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Email format invalid, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/PromoterReg.php');
+            exit;  
+        }
+
+        if (!preg_match("/^[a-zA-Z0-9]*$/",$userID)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid Username Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/PromoterReg.php');
+            exit;  
+        }
+
+
+        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid password Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/PromoterReg.php');
+            exit;  
         }
 
         $res =$user->EmailCompair($email,$userID);
@@ -150,7 +291,7 @@ class Signup extends \Core\Controller {
                 $this->view->UImsg = $UImsg;
                 $this->view->display('Common/PromoterReg.php');   
                     
-                echo "User already exist";
+                
                 
             }	    
     }

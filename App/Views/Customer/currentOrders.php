@@ -34,7 +34,7 @@
 
                     </div>
                 </div>
-                <div class=" row margint50 marginb50 ">
+                <div class=" row marginb50 ">
 
                     <div class="left">
                         <h2><i class="fas fa-clock fa"></i>&nbsp;Current Orders</h2>
@@ -84,7 +84,7 @@
                                             Seller &nbsp;&nbsp;</button>
                                         <button onclick="location.href='../Buyer/OrderSuccess'">&nbsp; Order Received
                                             &nbsp;</button>
-                                        <button onclick="location.href='../Buyer/ContactSeller'">Order not
+                                        <button onclick="location.href='../Buyer/FailedOrder'">Order not
                                             Received</button>
 
                                     </div>

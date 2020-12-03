@@ -15,16 +15,16 @@
       <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome <?php echo $_SESSION["username"];  ?> to the Market Place</h2>
 		<div class="top-part">
 			<input type="search" name="search" placeholder="seach">
-			<button type="search" name="submit">Search</button>
+			<a href="../Promoter/Market"><button type="search" name="submit">Search</button></a>
 		</div> <!-- top-part -->
 
 			<div class="card">
 				<p class = "title">Title:- DJI Mavic Air 2 Fly More Combo</p>
   				<img src="/images/promoter/drone.jpg" alt="Drone">
   			<div class="promote-button">
-  				<form action="../Promoter/generateLink" name="" method="">
+  				<form action="../Promoter/viewProduct" name="" method="">
             		<p>Price 99.9 USD</p>
-  					<input id="promoter-button" type="submit" name="" value="Promote"></a>
+  					<input id="promoter-button" type="submit" name="" value="View More"></a>
   				</form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -37,7 +37,7 @@
   			<div class="promote-button">
   				<form action="../Promoter/generateLink" name="" method="">
               		<p>Price 52.9 USD</p>
-  					<input id="promoter-button" type="submit" name="" value="Promote"></a>
+  					<input id="promoter-button" type="submit" name="" value="View More"></a>
   				</form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -50,7 +50,7 @@
   			<div class="promote-button">
   				<form action="../Promoter/generateLink" name="" method="">
             		<p>Price 65.9 USD</p>
-  					<input id="promoter-button" type="submit" name="" value="Promote"></a>
+  					<input id="promoter-button" type="submit" name="" value="View More"></a>
   				</form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -63,7 +63,7 @@
   			<div class="promote-button">
   				<form action="../Promoter/generateLink" name="" method="">
             		<p>Price 32.9 USD</p>
-  					<input id="promoter-button" type="submit" name="" value="Promote"></a>
+  					<input id="promoter-button" type="submit" name="" value="View More"></a>
   				</form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -76,7 +76,7 @@
   			<div class="promote-button">
   				  <form action="../Promoter/generateLink" name="" method="">
               		<p>Price 47.9 USD</p>
-  					 <input  id="promoter-button" type="submit" name="" value="Promote"></a>
+  					 <input  id="promoter-button" type="submit" name="" value="View More"></a>
   				  </form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -89,7 +89,7 @@
   			<div class="promote-button">
   				  <form action="../Promoter/generateLink" name="" method="">
               		<p>Price 47.9 USD</p>
-  					 <input  id="promoter-button" type="submit" name="" value="Promote"></a>
+  					 <input  id="promoter-button" type="submit" name="" value="View More"></a>
   				  </form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -102,7 +102,7 @@
   			<div class="promote-button">
   				  <form action="../Promoter/generateLink" name="" method="">
               		<p>Price 47.9 USD</p>
-  					 <input  id="promoter-button" type="submit" name="" value="Promote"></a>
+  					 <input  id="promoter-button" type="submit" name="" value="View More"></a>
   				  </form>
   			</div> <!-- promote-button -->
     			  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
