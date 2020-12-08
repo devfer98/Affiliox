@@ -24,7 +24,7 @@
 		</div>
 		<div class="row row-padding">	
 			<div class="col8 col-center inner-part inp">
-			<form method="post" action ="../Ministore/createProduct">
+			<form enctype='multipart/form-data' method="post" action ="../Ministore/createProduct">
 				<!-- <div class= "inp"> -->
 				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
 				<div class="row">
