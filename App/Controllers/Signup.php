@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Core\View;
 use App\Models\BuyerM;
 use App\Models\SellerM;
+use App\Models\AdminM;
 use App\Models\PromoterM;
 
 
@@ -295,6 +296,94 @@ class Signup extends \Core\Controller {
                 
             }	    
     }
+
+
+    public function AdminToDBAction(){
+        
+        $user = new AdminM();
+        $userDob= $_POST['dob'];  
+        $now = time();   
+        $dob = strtotime($userDob); 
+        $difference = $now - $dob;
+        $age = floor($difference / 31556926);
+        
+        $userID  	=$_POST['Username-field'];
+        $name       =$_POST['fullname'];
+        $aLine1	    =$_POST['aline1'];
+        $aLine2     =$_POST['aline2'];	    
+        $city       =$_POST['acity'];      	
+        $country    =$_POST['country'];	
+        $gender 	=$_POST['gender'];
+        $status 	=$_POST['status'];
+        $email  	=$_POST['email'];
+        $phoneNo    =$_POST['phn-no'];	
+        $password   =$_POST['Password-field'];	
+        $con_password   =$_POST['Confirm-Password-field'];	
+        $pw_md5 =md5($password);
+ 
+
+        if (($userDob) && ($userID) && ($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo) && ($password)) {
+        
+        }else{
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Empty Entries Detected, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Admin/AddAdmin.php');
+            exit;   
+        }
+
+        if($password != $con_password){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Password not matched, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Admin/AddAdmin.php');
+            exit;   
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Email format invalid, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Admin/AddAdmin.php');
+            exit;  
+        }
+
+        if (!preg_match("/^[a-zA-Z0-9]*$/",$userID)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid Username Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Admin/AddAdmin.php');
+            exit;  
+        }
+
+
+        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid password Format, Please Try Again !';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Admin/AddAdmin.php');
+            exit;  
+        }
+
+        $res =$user->EmailCompair($email,$userID);
+            if($res==true){
+                    $user->addAdmin($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
+                    header('Location:../Signup/AdminSuccess');
+            }else{
+                $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
+                $this->view->UImsg = $UImsg;
+                $this->view->display('Admin/AddAdmin.php'); 
+                    
+                
+                
+            }	
+    }
+
   
     public function BuyerSuccessAction(){
         $this->view->display('Common/Cus_RegSuccess.php');
