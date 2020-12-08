@@ -80,7 +80,7 @@
 				</div>
 				<div class="row col6 padding">
 				<label for="Address"><i class="fas fa-images"></i>&nbsp;Other Images</label><br>
-				<input type="file" id="line2" name="otherImages" placeholder="" accept="image/*" multiple><br>
+				<input type="file" id="line2" name="otherImages[]" placeholder="" accept="image/*" multiple><br>
 				</div>
 				</div>
 				<!-- </div> -->

@@ -56,8 +56,7 @@ class MiniStore extends \Core\Controller {
         $ministore = $ministore->getMinistore($_SESSION['username']);
         if(isset($ministore) and !empty($ministore) and $ministore->num_rows>0){
             $row = $ministore->fetch_assoc();
-            echo $row['name'];
-            $product->add($_POST['proName'], $_POST['availQuantity'], $_POST['description'], $_POST['price'], $_POST['comRate'], $row['name'], $_POST['category'], $_FILES['mainImage'], NULL);
+            $product->add($_POST['proName'], $_POST['availQuantity'], $_POST['description'], $_POST['price'], $_POST['comRate'], $row['name'], $_POST['category'], $_FILES['mainImage'], $_FILES['otherImages']);
             $this->addProductAction();
         }
     }
