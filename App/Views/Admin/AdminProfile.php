@@ -59,8 +59,8 @@
 					</tr>
 				</table>
 	
-				<form action="EditAdmin.php">
-					<input type="submit" name="edit-details" value="Edit Details">
+				<form>
+					<input type="button" name="edit-details" value="Edit Details" onclick="location.href='../Admin/EditAdmin'">
 				</form>					
 			</div>
 	
