@@ -6,6 +6,7 @@
 	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/Seller/tabs.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
 	<script src="/js/Seller/common-dashboard.js"></script>
@@ -23,10 +24,12 @@
 				<!------------------Seller Registration Form------------------->
 		</div>
 		<div class="row row-padding">	
-			<div class="col8 col-center inner-part inp">
+			<div class="col8 col-center inner-part">
 			<form enctype='multipart/form-data' method="post" action ="../Ministore/createProduct">
-				<!-- <div class= "inp"> -->
-				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
+				<div class= "inp">
+				<div class="row col12 padding commonB">
+				<h2 style="font-family: 'Lato', sans-serif;">Product Details</h2>
+				</div>
 				<div class="row">
 				<div class="col6 padding">
 				<label for="fname"><i class="fas fa-file-signature"></i> &nbsp;Name</label><br>
@@ -39,7 +42,7 @@
 						echo '<input type="hidden" name="ministore" value="'.$row["name"].'" />';
 					}
 				?> -->
-				<label for="fname"><i class="fas fa-file-signature"></i> &nbsp;Category</label><br>
+				<label for="fname"><i class="fas fa-filter"></i> &nbsp;Category</label><br>
 				<select name="category" id="categories">
 					<option value="" style="display:none"></option>
 					<?php 
@@ -83,15 +86,171 @@
 				<input type="file" id="line2" name="otherImages[]" placeholder="" accept="image/*" multiple><br>
 				</div>
 				</div>
-				<!-- </div> -->
-			<!------------------Buttons------------------->
-				<div class="row col12 padding commonB">
-					<button class="center" type="submit" value="submit">Save</button>	
+
+				<div class="row col8 padding">
+				<h2 style="font-family: 'Lato', sans-serif;">Delivery Details</h2>
+                </div>
+				<div class="row">
+				<div class="col6 padding">
+				<label for="Address"><i class="fas fa-weight"></i>&nbsp;Weight</label><br>
+				<input type="number" id="line1" name="comRate" placeholder="">
 				</div>
-			<!-- </div> -->
+				<div class="col4 padding">
+				<label for="fname"><i class="fas fa-map-marker-alt"></i> &nbsp;Dispatch District</label><br>
+				<select name="category" id="categories">
+					<option value="" style="display:none"></option>
+					<option value="">Colombo</option>;
+                </select>
+				</div>
+				</div>
+				<!-- </div> -->
+				<div class="row col12 padding">
+					<div id="tab1" class="tabcontent row" style="display: block;">
+						<div class="col-center" style="width: 95%;">
+						<div class="row heading">
+							<div class="col4">Delivery District</div>
+							<div class="col4">Delivery Period(days)</div>
+							<div class="col4">Price(Rs.)</div>
+						</div>
+						<div class="row record">
+							<div class="col4">Ampara</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Anuradhapura</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period2" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price2" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Badulla</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period3" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price3" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Batticaloa</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period4" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price4" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						<div class="row record">
+							<div class="col4">Jaffna</div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="period1" placeholder="Enter Period"></div>
+							<div style="padding:0px;"class="col4"><input class="col3" type="number" id="fname" name="price1" placeholder="Enter Price"></div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+				<div class="row col12 padding commonB">
+					<button class="center" type="submit" value="submit">Add</button>	
+				</div>
+				
+			</div>
 			</form>
 			</div>
+			
 		</div>
+		
 	</div>	
 
 </body>

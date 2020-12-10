@@ -246,7 +246,7 @@ hr{
     border-radius: 9px;
 }
 
-.inp div input:focus {
+.inp div input:focus, .inp select:focus {
     
     outline: none !important;
     border:1px solid #719ECE;
