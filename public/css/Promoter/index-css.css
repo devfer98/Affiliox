@@ -4,11 +4,6 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box;}
 
-.container {
-  width: 1200px; 
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
 
 html { font-family: 'Open Sans', sans-serif;}
 
@@ -241,69 +236,6 @@ input:focus{
   display: none;
 }
 
-*/
-.card {
-	margin-bottom: 50px;
-	display: inline-block;
-  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	width: 200px;
-	margin-left: 79px;
-	text-align: center;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-.text {
-  color: black;
-  font-size: 30px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-.card p button {
-	border: none;
-	outline: 0;
-	padding: 12px;
-	color: white;
-	background-color: #000;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-}
-  
-.card button:hover {
-	opacity: 0.7;
-}
-
-.show-hide-button-1 {
-	margin-top: 50px;
-	margin-left: 550px;
-	padding: 8px;
-	background: no-repeat;
-	border: 2px solid #9999ff; 
-	border-radius: 8px;
-	width: 200px;
-}
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
 .dot {
   cursor: pointer;
   height: 10px;
@@ -319,74 +251,62 @@ input:focus{
   background-color: #717171;
 }
 
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+/*-----------------------Inner Part--------------------------*/
+.product {
+  margin: 0 160px 0 160px;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+.container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+  grid-gap: 80px;
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.card {
-	display: inline-block;
-  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  	max-width: 300px;
-  	margin-left: 79px;
-  	text-align: center;
-  	font-family: arial;
-}
-
-.price {
-  	color: grey;
-  	font-size: 18px;
-} 
-
-/*-----------------------featured item list------------------------*/
-.card {
-  display: inline-block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 250px;
-  margin: 50px 23px 100px 23px;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-}
-
-.card h4, p {
-  font-family: 'Open Sans', sans-serif;
+.zone {
+  width: 250px;
+  cursor:pointer;
   text-align: center;
+  font-size:10em;
+  border-radius:4px;
+  border:1px solid #bbb;
+  transition: all 0.3s linear;
+  margin-bottom: 40px;
 }
 
-.price {
-  color: grey;
-  font-size: 18px;
-  margin: 10px 0 10px 0;
-}
 
-.card p button {
-  background: #d6e0f5;
-  outline: #9999ff;
-  cursor: pointer;
-  width: 100%;
+.zone h3,h4,p {
   font-size: 15px;
-  font-weight: bold;
-  color: #1f3d7a;
-  margin-top: 10px;
-  font-family: 'Open Sans', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.card button:hover {
-  color: #1a3365;
-  background:  rgb(215, 225, 244);
-  border-bottom: 2px solid #1f3d7a;
+.zone a {
+    font-size: 15px;
+    line-height: 1em;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    color: #3d3eee;
+    background: #d0d0fb;
+    /* opacity: 0.7;
+    border:1px solid #bbb; */
+    width: 249px;
+}
+
+.zone a:hover {
+  background: #e8e8fd;
+}
+
+.zone a:last-child {
+  margin-top: 20px;
+}
+
+.zone img {
+  border-radius: 4px 4px 0 0;
+  width: 249px;
+  height: 250px;
 }
 
 
@@ -415,11 +335,7 @@ input:focus{
   .bottom-part table tr td a:hover {
 	  color: red;
   }
-  
-  /*table i {
-	  color: #99ff99
-  }*/
-  
+
 /*--------------------footer-tag--------------------*/
 .footer {
   text-align: center;
