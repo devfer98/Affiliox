@@ -319,6 +319,7 @@ class Signup extends \Core\Controller {
         $phoneNo    =$_POST['phn-no'];	
         $password   =$_POST['Password-field'];	
         $con_password   =$_POST['Confirm-Password-field'];	
+        $position = $_POST['position'];
         $pw_md5 =md5($password);
  
 
@@ -372,7 +373,7 @@ class Signup extends \Core\Controller {
 
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
-                    $user->addAdmin($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
+                    $user->addAdmin($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2,$position);
                     header('Location:../Signup/AdminSuccess');
             }else{
                 $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
