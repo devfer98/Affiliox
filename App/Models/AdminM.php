@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-class Admin extends \Core\Connect{
+class AdminM extends \Core\Connect{
  
     function __construct() {
         
@@ -29,5 +29,4 @@ class Admin extends \Core\Connect{
         }
     }
 
-        
 }
