@@ -4,7 +4,7 @@ use Core\View;
 use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
-
+use App\Models\AdminM;
 class Admin extends \Core\Controller {
 
     public function indexAction(){
@@ -36,11 +36,11 @@ class Admin extends \Core\Controller {
     }
 
     public function AdminDashboardAction(){
-        $userID = $_SESSION['username'];
-        $user = new AdminM();
-        $result = $user->getAdminProfile($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
+        // $userID = $_SESSION['username'];
+        // $user = new AdminM();
+        // $result = $user->getAdminProfile($userID);
+        // $UImsg = $result;
+        // $this->view->UImsg=$UImsg;
         $this->view->display('Admin/AdminDashboard.php');
     }
 

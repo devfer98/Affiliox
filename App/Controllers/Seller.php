@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Core\View;
 use App\Models\User;
 use App\Models\Feedback;
+use App\Models\MinistoreM;
 
 class Seller extends \Core\Controller {
 
@@ -30,6 +31,30 @@ class Seller extends \Core\Controller {
         
     }
 
+    public function noMinistoreAction(){
+        $ministore= new MinistoreM();
+        if($ministore-> isMinistore($_SESSION['username'])==0){
+            $this->view->display('Seller/ministoreNotCreated.php');
+        }else{
+            header("Location:../Ministore/ministore");
+        }
+    }
+
+    public function createMinistoreAction(){
+        $ministore= new MinistoreM();
+        if($ministore-> isMinistore($_SESSION['username'])==0){
+            $this->view->display('Seller/createMinistore.php');
+        }else{
+            header("Location:../Ministore/ministore");
+        }
+    }
+
+    public function passEditAction(){
+
+        $this->view->display('Seller/sellerPass.php');
+        
+    }
+
     public function marketAction(){
 
         $this->view->display('Common/market.php');
@@ -44,7 +69,7 @@ class Seller extends \Core\Controller {
 
     public function feedbackAction(){
         $feedback= new Feedback();
-        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_GET['id']);
+        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_SESSION['username']);
         $this->view->display('Seller/sellerFeedback.php');
     }
 
@@ -52,7 +77,7 @@ class Seller extends \Core\Controller {
         $feedback= new Feedback(); 
         $feedback->addReply($_POST['feedbackID'], $_POST['reply']);
         // $this->feedbackAction();
-        header("Location:../Seller/feedback?id=".$_SESSION["username"]);
+        header("Location:../Seller/feedback");
     }
 
     public function transactionAction(){
@@ -90,7 +115,7 @@ class Seller extends \Core\Controller {
         if(session_id() == '') {
             session_start();
         }
-        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ){
+        if(isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') && isset($_SESSION['username'])){
             return true;
         }else{
             header("Location:../Login/index");

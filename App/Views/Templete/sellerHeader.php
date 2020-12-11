@@ -25,7 +25,7 @@
                     <div class="sm-2N">
                         <div class="selectorN margint20N">
                         <select name="direction" id="select-nav" onchange="location = this.value;">
-                            <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
+                        <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
                             echo '<option value="" selected disabled hidden></option>';
                             echo '<option value="../login/logout">Logout</option>';
@@ -67,10 +67,10 @@
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>SELECT</option>';
                             echo '<option value="../login/logout">Logout</option>';
                         }else{
-                            echo '<option value="" selected disabled hidden></option>';
+                            echo '<option value="" selected disabled hidden>SELECT</option>';
                             echo '<option value="../Signup/create">Signup</option>';
                             echo '<option value="../login/index">Login</option>';
                    
@@ -94,11 +94,11 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/Seller/profile">User profile<i class="far fa-user"></i></a>
         <a href="/MiniStore/ministore">Mini Store<i class="fas fa-store"></i></a>
-        <a href="/Seller/market">Marker Place<i class="fab fa-shopify"></i></a>
+        <a href="/Seller/market">Market Place<i class="fab fa-shopify"></i></a>
         <a href="/Seller/statistics">Statstics<i class="fas fa-chart-line"></i></i></a>
         <a href="/Seller/order">View Orders<i class="fas fa-chart-line"></i></i></a>
         <a href="/Seller/transaction">Transactions<i class="fas fa-money-check-alt"></i></a>
-        <a href="/Seller/feedback?id=<?php echo $_SESSION["username"]; ?>">Feedback<i class="fas fa-phone-square"></i></i></a>
+        <a href="/Seller/feedback">Feedback<i class="fas fa-phone-square"></i></i></a>
         <a href="/Seller/support">Support<i class="fas fa-envelope-open-text"></i></a>
     </div>
     <span onclick="openNav()"></span>

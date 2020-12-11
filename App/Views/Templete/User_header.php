@@ -28,10 +28,10 @@
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                            echo '<option value="" selected disabled hidden>SELECT</option>';
+                            echo '<option value="" selected disabled hidden></option>';
                             echo '<option value="../login/logout">Logout</option>';
                         }else{
-                            echo '<option value="" selected disabled hidden>Main</option>';
+                            echo '<option value="" selected disabled hidden></option>';
                             echo '<option value="../Signup/create">Signup</option>';
                             echo '<option value="../login/index">Login</option>';
                    
@@ -70,10 +70,10 @@
                         <select name="direction" id="select-nav" onchange="location = this.value;">
                             <?php if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
 
-                            echo '<option value="" selected disabled hidden>SELECT</option>';
+                            echo '<option value="" selected disabled hidden>Select</option>';
                             echo '<option value="../login/logout">Logout</option>';
                         }else{
-                            echo '<option value="" selected disabled hidden>SELECT</option>';
+                            echo '<option value="" selected disabled hidden>Select</option>';
                             echo '<option value="../Signup/create">Signup</option>';
                             echo '<option value="../login/index">Login</option>';
                    

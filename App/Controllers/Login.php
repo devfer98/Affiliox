@@ -48,7 +48,7 @@ class Login extends \Core\Controller {
                 if($result==1){
                     header("Location:../Buyer/Market");
                 }elseif ($result==2) {
-                    header("Location:../Seller/accountIndex");
+                    header("Location:../Seller/Market");
                 }elseif ($result==3){
                     header("Location:../Promoter/Market");
                  }elseif ($result==4){

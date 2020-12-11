@@ -35,7 +35,7 @@
 					</tr>
 					<tr>
 						<td id="td-1">Marital Status:</td>
-						<td>Sample status is here/td>
+						<td>Sample status is here</td>
 					</tr>
 					<tr>
 						<td id="td-1">Address:</td>
@@ -59,8 +59,8 @@
 					</tr>
 				</table>
 	
-				<form action="EditAdmin.php">
-					<input type="submit" name="edit-details" value="Edit Details">
+				<form>
+					<input type="button" name="edit-details" value="Edit Details" onclick="location.href='../Admin/EditAdmin'">
 				</form>					
 			</div>
 	
