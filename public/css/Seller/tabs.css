@@ -50,6 +50,32 @@
     text-align: center;
 }
 
+.tabcontent .record input{
+    padding: 10px;
+	width: 80%;
+	min-width: 0px;
+	border: 2px solid rgb(235, 235, 235);
+    background:rgb(248, 248, 248); 
+    margin-top: 0px;
+    border-radius: 9px;
+}
+
+/* .tabcontent .record input:focus {
+    outline: none !important;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+} */
+
+.tabcontent .record1{
+    /* border: 2px solid orange; */
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    border: 2px solid #dddddd;
+    /* height: 40px; */
+    /* margin: auto; */
+}
+
 .heading{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -62,6 +88,13 @@
 	border-style: none;
 	border: 2px solid #dddddd;
 }
+
+/* .record2{
+    margin-bottom: 10px;
+    border-radius: 5px;
+	border-style: none;
+    border: 2px solid #dddddd;
+} */
 
 
   /* table {

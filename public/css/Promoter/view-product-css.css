@@ -243,7 +243,7 @@ top: 8px;
 
 .btn button{
   cursor: pointer;
-  background: none;
+  background: white;
   line-height: 1.5;
   padding: .375rem .75rem;
   font-size: 1rem;

@@ -40,6 +40,10 @@ class Product extends \Core\Connect {
         // Valid file extensions
         $extensions_arr = array("jpg","jpeg","png","gif");
 
+        $temp = explode(".", $mainImage["name"]);
+        $extension=end($temp);
+        $mainImage["name"] = $productID."_main_1.".$extension;
+        
         $target_file = $target_dir . basename($mainImage['name']);
         // Select file type
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -47,7 +51,7 @@ class Product extends \Core\Connect {
         // Check extension
         if( in_array($imageFileType,$extensions_arr) ){
             // Insert record
-            $stmt = $conn->prepare("INSERT INTO productimage (productID, imageCode, status) VALUES ( ?, ?, 'main')");
+            $stmt = $conn->prepare("INSERT INTO productimage (productID, imageCode) VALUES ( ?, ?)");
             $stmt->bind_param("is", $productID, $mainImage['name']);
             if ($stmt->execute()) {
                 $stmt->close();
@@ -66,7 +70,11 @@ class Product extends \Core\Connect {
         }
 
         if(count($otherImages['name'])<=5){
+            $no=1;
             foreach($otherImages['name'] as $key=>$val){
+                $temp = explode(".", $otherImages["name"][$key]);
+                $extension=end($temp);
+                $otherImages["name"][$key] = $productID."_other_".$no.".".$extension;
                 $target_file = $target_dir . basename($otherImages['name'][$key]);
                 // Select file type
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -74,7 +82,7 @@ class Product extends \Core\Connect {
                 // Check extension
                 if( in_array($imageFileType,$extensions_arr) ){
                     // Insert record
-                    $stmt = $conn->prepare("INSERT INTO productimage (productID, imageCode, status) VALUES ( ?, ?, 'other')");
+                    $stmt = $conn->prepare("INSERT INTO productimage (productID, imageCode) VALUES ( ?, ?)");
                     $stmt->bind_param("is", $productID, $otherImages['name'][$key]);
                     if ($stmt->execute()) {
                         $stmt->close();
@@ -91,6 +99,7 @@ class Product extends \Core\Connect {
                     // $noError=false;
                     $errorMssg="Wrong File Format";
                 }
+                $no++;
             }
         }else{
             $errorMssg="5 Other images allowed";
