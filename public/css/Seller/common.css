@@ -140,7 +140,7 @@ hr{
 	color: #1f3d7a;
 	text-decoration: none;
 	font-weight: bold;
-	margin-left: 3px;
+	/* margin-left: 3px; */
 	padding: 8px;
 	border-radius: 0.25rem;
 	transition: all 0.4s ease 0.3s;
@@ -165,16 +165,20 @@ hr{
 .blockN button:active , .nav-bar ul a:active  ,button:active{
  color: rgb(255, 255, 255);  
   }
-.searchN input,textarea{
-  
+  .searchN input,textarea{
+	
     border: none;
     background:rgb(235, 235, 235); 
 	border-radius: 6px;
 	width: 70%;
 	margin-top: 0px;
-	padding: 11px;
+	/* padding :11px; */
+	padding-top: 11px;
+	padding-bottom: 11px;
+	text-indent: 10px;
 	resize: none;
 	border: 1px solid #ced4da;
+	
  
   }
   .selectorN select{
