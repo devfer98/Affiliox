@@ -20,9 +20,27 @@ class AdminM extends \Core\Connect{
             return false;
         }
     }
+    
+    public function getAdminProfile($userID){
+        $conn=static::connectDB();
 
-    public function getAdmin() {
+        $query = "select * from admin WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
 
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows >0)
+            {
+                return $result;
+            }
+            
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
     }
 
     public function getStatistics() {

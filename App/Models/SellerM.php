@@ -73,17 +73,17 @@ class SellerM extends \Core\Connect {
 
     public function getPending() {
         $conn=static::connectDB();
-                // $flag=0;
+        // $flag=0;
 
-                $stmt = $conn->prepare("SELECT * FROM seller WHERE accountStatus = 'Pending'");
-                // $stmt->bind_param("s", "Pending");
-                if($stmt->execute()){
-                    $result = $stmt->get_result();
-                    $stmt->close();
-                    return $result;
-                }else{
-                    echo 'SQL Error';
-                }
+        $stmt = $conn->prepare("SELECT * FROM seller WHERE accountStatus = 'Pending'");
+        // $stmt->bind_param("s", "Pending");
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
     }
 
     public function getStatistics() {

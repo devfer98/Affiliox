@@ -12,8 +12,9 @@
 
 html { font-family: 'Open Sans', sans-serif;}
 
-hr { background-color: black; border: 0 none; color: #eee; height: 2px; }
+hr { background-color: black; border: 0 none; color: #eee; height: 1px; }
 
+a {text-decoration:none; color: #1f3d7a;;}
 /*-------------------side navigation bar--------------------*/
 header {
 	background: #fafafa;
@@ -215,8 +216,8 @@ input:focus{
 .welcome-note p {
 	text-align: center;
 	margin-top: 50px;
-	font-size: 40px;
-	border-bottom: 2px solid black;
+  font-size: 40px;
+	/* border-bottom: 2px solid black; */
 }
 
 .welcome-noteL p {
@@ -230,6 +231,7 @@ input:focus{
 
 .slideshow-container {
   max-width: 1000px;
+  /* height: 500px; */
   position: relative;
   margin: auto;
   margin-top: 20px;

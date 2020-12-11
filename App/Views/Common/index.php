@@ -21,19 +21,19 @@
 
 			  <div class="mySlides fade">
 			    <div class="numbertext">1 / 3</div>
-			    <img src="/images/Promoter/carousel-1.jpg" style="width: 100%">
+			    <img src="/images/Promoter/carousel1.jpg" style="width: 100%">
 			    <div class="text">Hello Customer !</div>
 			  </div>
 
 			  <div class="mySlides fade">
 			    <div class="numbertext">2 / 3</div>
-			    <img src="/images/promoter/carousel-2.jpg" style="width: 100%">
+			    <img src="/images/promoter/carousel2.jpg" style="width: 100%">
 			    <div class="text">Hello Seller !</div>
 			  </div>
 
 			  <div class="mySlides fade">
 			    <div class="numbertext">3 / 3</div>
-			    <img src="/images/promoter/carousel-3.jpg" style="width: 100%">
+			    <img src="/images/promoter/carousel3.jpg" style="width: 100%">
 			    <div class="text">Hello Promoter !</div>
 			  </div>
 		</div>  <!-- slideshow-container -->
@@ -81,13 +81,7 @@
   					<p>Nike Running Shoe_Imported Quality</p>
   					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
-			<div class="card">
-  				<img src="/images/promoter/action-camera.jpg" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
-			</div>
+			
 
 			<div class="card">
   				<img src="/images/promoter/drone.jpg" alt="Denim Jeans" style="width:100%">
@@ -98,19 +92,26 @@
 			</div>
 
 			<div class="card">
-  				<img src="/images/promoter/t-shirt.png" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/watch.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Bostanten Watches</h4>
+  					<p class="price">$10.74</p>
+  					<p>Bostanten Watches For Men Latest Business Original</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
-  				<img src="/images/promoter/dslr.jpg" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Nike Running Shoe</h4>
+  					<p class="price">$42.07</p>
+  					<p>Nike Running Shoe_Imported Quality</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+			</div>
+			<div class="card">
+  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Nike Running Shoe</h4>
+  					<p class="price">$42.07</p>
+  					<p>Nike Running Shoe_Imported Quality</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 		</div> <!-- featured -->
 			<br>
@@ -120,35 +121,35 @@
 			<h2>Latest Items</h2>
 			<hr>
 			<div class="card">
-  				<img src="/images/promoter/action-camera.jpg" alt="Denim Jeans" style="width:100%">
+  				<img src="/images/promoter/i-phone.png" alt="Denim Jeans" style="width:100%">
   					<h4>Apple iPhone 11 Pro</h4>
   					<p class="price">$1311.02</p>
   					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
-  				<img src="/images/promoter/drone.jpg" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/i pod.png" alt="Denim Jeans" style="width:100%">
+  					<h4>i12 Pods</h4>
+  					<p class="price">$7.27</p>
+  					<p>i12 Pods TWS Wireless Bluetooth headset</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
-  				<img src="/images/promoter/t-shirt.png" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/watch.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Bostanten Watches</h4>
+  					<p class="price">$10.74</p>
+  					<p>Bostanten Watches For Men Latest Business Original</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">
-  				<img src="/images/promoter/dslr.jpg" alt="Denim Jeans" style="width:100%">
-  					<h4>Apple iPhone 11 Pro</h4>
-  					<p class="price">$1311.02</p>
-  					<p>Apple iPhone 11 Pro 64GB ROM - 4GB RAM - Green</p>
-  					<p><button>Buy Now <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
+  				<img src="/images/promoter/nike-shoe.png" alt="Denim Jeans" style="width:100%">
+  					<h4>Nike Running Shoe</h4>
+  					<p class="price">$42.07</p>
+  					<p>Nike Running Shoe_Imported Quality</p>
+  					<p><button>Buy Now &nbsp; <i class="fab fa-cc-visa"></i></button><button>Add to Cart <i class="fas fa-shopping-cart"></i></button></p>
 			</div>
 
 			<div class="card">

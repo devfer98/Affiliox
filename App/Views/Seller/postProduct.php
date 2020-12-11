@@ -24,37 +24,65 @@
 		</div>
 		<div class="row row-padding">	
 			<div class="col8 col-center inner-part inp">
-			<form>
+			<form enctype='multipart/form-data' method="post" action ="../Ministore/createProduct">
 				<!-- <div class= "inp"> -->
 				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
-				<div class="row col6 padding">
-				<label for="fname"> &nbsp;Name</label><br>
-				<input type="text" id="fname" name="fullname" placeholder="">
+				<div class="row">
+				<div class="col6 padding">
+				<label for="fname"><i class="fas fa-file-signature"></i> &nbsp;Name</label><br>
+				<input type="text" id="fname" name="proName" placeholder="">
+				</div>
+				<div class="col4 padding">
+				<!-- <?php
+					if(isset($this->ministore) and !empty($this->ministore) and $this->ministore->num_rows>0){
+						$row = $this->ministore->fetch_assoc();
+						echo '<input type="hidden" name="ministore" value="'.$row["name"].'" />';
+					}
+				?> -->
+				<label for="fname"><i class="fas fa-file-signature"></i> &nbsp;Category</label><br>
+				<select name="category" id="categories">
+					<option value="" style="display:none"></option>
+					<?php 
+					if(isset($this->categories) and !empty($this->categories) and $this->categories->num_rows>0){
+						while($row = $this->categories->fetch_assoc()){
+							echo '<option value="'.$row["CatID"].'">'.$row["name"].'</option>';
+						}
+					}else{
+						echo '<option value="">Not loaded</option>';
+					}
+					?>
+                </select>
+				</div>
 				</div>
 				<div class="row col8 padding">
-				<label for="lname">&nbsp; Description</label><br>
-				<textarea id="email" name="email" placeholder=""></textarea>
+				<label for="lname"><i class="fas fa-info"></i>&nbsp; Description</label><br>
+				<textarea id="email" name="description" placeholder=""></textarea>
                 </div>
                 <div class="row">
 				<div class="col6 fitcontent padding">
-				<label for="phn-no">&nbsp; Quantity</label><br>
-				<input type="text" id="phn-no" name="phn-no" placeholder="">
+				<label for="phn-no"><i class="fas fa-boxes"></i>&nbsp; Quantity</label><br>
+				<input type="number" id="phn-no" name="availQuantity" placeholder="">
 				</div>
 				<div class="col6 padding">
-				<label for="dob">&nbsp; Price</label><br>
-				<input type="text" id="Birth" name="dob" placeholder="">
+				<label for="dob"><i class="fas fa-money-bill-wave"></i>&nbsp; Price</label><br>
+				<input type="number" id="Birth" name="price" placeholder="">
                 </div>
                 </div>
 				<!------------------Address section------------------->
 				<div class="row col6 padding">
-				<label for="Address">Commission Rate</label><br>
-				<input type="text" id="line1" name="aline1" placeholder="">
+				<label for="Address"><i class="fas fa-percent"></i>&nbsp;Commission Rate</label><br>
+				<input type="number" id="line1" name="comRate" placeholder="">
+				</div>
+				<div class="row">
+				<div class="col6 padding">
+				<label for="Address"><i class="fas fa-images"></i>&nbsp;Main Images</label><br>
+				<input type="file" id="line2" name="mainImage" placeholder="" accept="image/*"><br>
 				</div>
 				<div class="row col6 padding">
-				<label for="Address">Images</label><br>
-				<input type="file" id="line2" name="aline2" placeholder=""><br>
+				<label for="Address"><i class="fas fa-images"></i>&nbsp;Other Images</label><br>
+				<input type="file" id="line2" name="otherImages[]" placeholder="" accept="image/*" multiple><br>
 				</div>
-
+				</div>
 				<!-- </div> -->
 			<!------------------Buttons------------------->
 				<div class="row col12 padding commonB">

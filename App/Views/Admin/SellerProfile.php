@@ -86,6 +86,10 @@
                         <td id="td-1">Country:</td>
                         <td><?php echo $row['country'] ?></td>
                     </tr>
+                    <tr>
+                        <td id="td-1">Store Name:</td>
+                        <td><?php echo $row['storeName'] ?></td>
+                    </tr>
                 </table>
 
                 <?php

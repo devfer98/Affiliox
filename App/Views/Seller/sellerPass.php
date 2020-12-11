@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Ministore</title>
+	<title>Seller Edit Profile</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../css/common-dashboard.css"> -->
-	<link rel="shortcut icon" href="../images/logoOnly.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
@@ -14,38 +13,38 @@
 <body>
 	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
+		
 		<!-- <div class="Reg-container"> -->
 		<div class="row">
-			<div class="col12 center title">
-				<p>Seller Support</p>
+			<div class="col6 col-center title">
+				<p>Change Password</p>
 				<!-- <hr> -->
 			</div> 
 				<!------------------Seller Registration Form------------------->
 		</div>
 		<div class="row row-padding">	
 			<div class="col6 col-center inner-part inp">
-			<form>
-				<!-- <div class= "inp"> -->
-				<div class="row col8 padding">
-				<label for="fname"> &nbsp;Problem</label><br>
-				<input type="text" id="fname" name="fullname" placeholder="">
-                </div>
-				<div class="row col12 padding">
-				<label for="dob">&nbsp; Description</label><br>
-				<textarea id="Birth" name="dob" placeholder=" "></textarea>
-                </div>
-                <!-- </div> -->
-				<!-- </div> -->
+			<form action="" method="post">
+				<div class="padding">
+				<label for="fname">Current Password</label><br>
+				<input type="text" id="fname" name="fullname" placeholder="" minlength="5" maxlength="100" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Please fill the filed required format." required > <br>
+				</div>
+				<div class="padding">
+				<label for="lname">New Password</label><br>
+				<input type="text" id="email" name="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." required ><br>
+				</div>
+				<div class="padding">
+				<label for="phn-no">Confirm New Password</label><br>
+				<input type="text" id="email" name="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." required ><br>
+				</div>
+				
 			<!------------------Buttons------------------->
 				<div class="row col12 padding commonB">
-					<button class="center" type="submit" value="submit">Submit</button>	
+					<button class="center " type="submit" value="submit">Save</button>	
 				</div>
-			<!-- </div> -->
 			</form>
 			</div>
 		</div>
-
 	</div> 
-
 </body>
 </html>

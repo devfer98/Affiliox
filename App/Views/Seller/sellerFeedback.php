@@ -91,7 +91,11 @@
 					</div>';
 				}
 				}else{
-                    echo "No Buyer Feedbacks";
+					echo '<div class="col8 col-center inp boxsummery commonB" style="margin-bottom: 20px; height: 150px;">
+						<div class="row col12">
+							<h3 class="center">No Buyer Feedbacks</h3>
+						</div>
+					</div>';
                 }    		
 			?>
 
