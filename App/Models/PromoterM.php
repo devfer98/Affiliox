@@ -80,6 +80,20 @@ class PromoterM extends \Core\Connect {
         }
     }
 
+    public function getActive() {
+        $conn=static::connectDB();
+                // $flag=0;
+
+                $stmt = $conn->prepare("SELECT * FROM promoter WHERE accountStatus = 'Active'");
+                // $stmt->bind_param("s", "Pending");
+                if($stmt->execute()){
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }else{
+                    echo 'SQL Error';
+                }
+    }
     public function getStatistics() {
 
     }
@@ -91,6 +105,26 @@ class PromoterM extends \Core\Connect {
             $accStatus="Active";
         }elseif($status==2){
             $accStatus="Rejected";
+            // echo $accStatus;  
+        }else{
+
+        }
+        $stmt = $conn->prepare("UPDATE promoter SET accountStatus = ? WHERE userID = ?");
+        $stmt->bind_param("ss", $accStatus, $userID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function banStatus($userID, $status) {
+        $conn=static::connectDB();
+        $accStatus;
+        if($status==1){
+            $accStatus="Active";
+        }elseif($status==2){
+            $accStatus="Banned";
             // echo $accStatus;  
         }else{
 

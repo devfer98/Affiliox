@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 use Core\View;
+use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
 use App\Models\AdminM;
@@ -18,14 +19,17 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/VerifyUser.php');
     }
 
+    public function ManageAccountAction(){
+        $seller= new SellerM();
+        $this->view->actSellers=$seller->getActive();
+        $promoter= new PromoterM();
+        $this->view->actPromoters=$promoter->getActive();
+        $this->view->display('Admin/ManageAccount.php');
+    }
+
     public function ApprovesSellerAction(){
         $this->view->display('Admin/AddAdmin.php');
     } 
-
-    public function ManageAccountAction(){
-        
-        $this->view->display('Admin/ManageAccount.php');
-    }
 
     public function AddAdminsAction(){
         $this->view->display('Admin/AddAdmin.php');
@@ -80,6 +84,32 @@ class Admin extends \Core\Controller {
         $promoter->updateStatus($_POST['username'], $_POST['status']);
         // header("Location:../Admin/ApproveReg");
         $this->ApproveRegAction();
+    }
+
+    public function ActSellerAction(){
+        $seller = new SellerM();
+        $this->view->sellDetails = $seller->getSeller($_GET['id']);
+        $this->view->display('Admin/SellerProfile.php');
+    }
+
+    public function ActPromoterAction(){
+        $promoter= new PromoterM();
+        $this->view->proDetails = $promoter->getPromoterProfile($_GET['id']);
+        $this->view->display('Admin/PromoterProfile.php');
+    }
+
+    public function BanSellStatusAction(){
+        $seller = new SellerM();
+        $seller->banStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ManageAccount");
+        $this->ManageAccountAction();
+    }
+
+    public function BanProStatusAction(){
+        $promoter = new PromoterM();
+        $promoter->banStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ManageAccount");
+        $this->ManageAccountAction();
     }
 
     protected function before()

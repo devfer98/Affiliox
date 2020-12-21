@@ -4,13 +4,14 @@
   <title>Affiliox-ReviewFeedbacks</title>
 	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
-	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
-  <link rel="stylesheet" type="text/css" href="/css/Admin/manage.css">
-  <link rel="stylesheet" type="text/css" href="/css/Admin/verify.css">
+  <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
   <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
-  <script type="text/javascript" src="js/Admin/tab.js"></script>
-	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/Admin/verify.css" />
+  <link rel="stylesheet" type="text/css" href="/css/Admin/manage.css">
+  <script type="text/javascript" src="/js/Admin/manage.js"></script>
+  <script type="text/javascript" src="/js/Common/Signin.js"></script>
+  <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>

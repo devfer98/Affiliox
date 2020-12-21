@@ -179,7 +179,7 @@ hr{
 	color: #1f3d7a;
 	text-decoration: none;
 	font-weight: bold;
-	margin-left: 3px;
+	/* margin-left: 3px; */
 	padding: 8px;
 	border-radius: 0.25rem;
 	transition: all 0.4s ease 0.3s;
