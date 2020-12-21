@@ -3,6 +3,8 @@
 namespace App\Models;
 class Product extends \Core\Connect {
 
+    static $lastProID;
+
     function __construct() {
     }
 
@@ -15,6 +17,7 @@ class Product extends \Core\Connect {
         if ($stmt->execute()) {
             // echo "m working";
             $productID = mysqli_insert_id($conn);
+            $lastProID = $productID;
             $stmt->close();
             $errorMssg=$this->addImages($productID, $mainImage, $otherImages);
             // if($this->addImages($productID, $mainImage, $otherImages)){

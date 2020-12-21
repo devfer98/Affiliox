@@ -67,7 +67,7 @@
 				<input type="number" id="phn-no" name="availQuantity" placeholder="">
 				</div>
 				<div class="col6 padding">
-				<label for="dob"><i class="fas fa-money-bill-wave"></i>&nbsp; Price</label><br>
+				<label for="dob"><i class="fas fa-money-bill-wave"></i>&nbsp; Price(Rs.)</label><br>
 				<input type="number" id="Birth" name="price" placeholder="">
                 </div>
                 </div>
@@ -92,12 +92,12 @@
                 </div>
 				<div class="row">
 				<div class="col6 padding">
-				<label for="Address"><i class="fas fa-weight"></i>&nbsp;Weight</label><br>
-				<input type="number" id="line1" name="comRate" placeholder="">
+				<label for="Address"><i class="fas fa-weight"></i>&nbsp;Weight(kg)</label><br>
+				<input type="number" id="line1" name="proWeight" placeholder="">
 				</div>
 				<div class="col4 padding">
 				<label for="fname"><i class="fas fa-map-marker-alt"></i> &nbsp;Dispatch District</label><br>
-				<select name="category" id="categories">
+				<select name="startDis" id="categories">
 					<option value="" style="display:none"></option>
 					<option value="">Colombo</option>;
                 </select>
