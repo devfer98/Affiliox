@@ -1,5 +1,7 @@
 <?php
 namespace App\Controllers;
+
+use App\Models\User as ModelsUser;
 use Core\View;
 class User extends \Core\Controller{
 
@@ -23,7 +25,23 @@ class User extends \Core\Controller{
         echo'</pre>';
     }
 
+
+
     public function MarketAction(){
+        
+        if(!empty($_GET['search'])){
+            $name=$_GET['search'];
+                      
+        }else
+              
+              $name='AllProducts';
+              
+
+        $prod =new ModelsUser;
+        echo $name;  
+        $UImsg = $prod->listProducts($name);
+        $this->view->UImsg = $UImsg;
+        
         $this->view->display('Customer/market.php');
     }
 
@@ -34,6 +52,7 @@ class User extends \Core\Controller{
 
     public function ProductAction()
     {
+        
        $this->view->display('Customer/productDetails.php');
     }
 

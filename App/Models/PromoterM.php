@@ -28,8 +28,6 @@ class PromoterM extends \Core\Connect {
             return false;
         }
 
-
-
     }
 
     public function getPromoterProfile($userID){

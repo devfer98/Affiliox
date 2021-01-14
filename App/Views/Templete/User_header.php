@@ -58,12 +58,15 @@
                     </ul>
                 </div>
 
+                <form method="GET" action="../User/Market">
                 <div class="col4 search fitcontent center">
                     <ul>
                         <input type="text" name="search" placeholder=" Search" pattern="^[a-zA-Z0-9 ]*$" />
-                        <a href="../User/Market"><i class="fas fa-search"></i></a>
+                        <button type= "submit" value="submit"><i class="fas fa-search"></i></a>
                     </ul>
                 </div>
+                    </form>
+
                 <div class="col1 hidden-sm ">
                     <div class="selector margint20">
 
