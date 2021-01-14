@@ -241,6 +241,9 @@ class Login extends \Core\Controller {
         }
         unset($_SESSION['type']);
         unset($_SESSION['username']);
+        if(isset($_SESSION['ministore'])){
+            unset($_SESSION['ministore']);
+        }
 
         if(session_id() != '') {
             session_destroy();
