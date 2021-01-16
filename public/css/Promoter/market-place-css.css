@@ -245,65 +245,46 @@ input:focus{
   border-color: #28a745; 
 }
 
-.card {
-	border: 1px solid black;
-	margin-bottom: 40px;
-  clear: both;
-}
-
-.card:last-child {
+.product-card table {
+  /* margin: 0 auto; */
+  width: 1000px;
   margin-bottom: 100px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 0.25rem;
 }
 
-.title {
-  margin: 20px 0 0 20px;
-  font-weight: bold;  
+#title {
+  font-weight: bold;
 }
 
-.card img {
-  position: relative;
-  top: 20px;
-  left: 20px;
-  margin-bottom: 30px;
-	width: 230px;
-	height: 200px;
+.product-card table tr td img {
+  width: 250px;
+  height: 250px;
+  border-radius: 0.25rem;
 }
 
-.card h4 {
-  margin-left: 20px;
-  margin-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
+.product-card table tr td a {
+  text-decoration: none;
+  width: 100px; 
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  color: white;
+  background-color: #28a745;
+  border-color: #28a745;
+  cursor: pointer;
+  margin-bottom: 50px;
 }
 
-.card:hover {
-  box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
-}
-
-.promote-button  {
-	float: right;
-	margin: 90px 120px 0 0;
-}
-
-#promoter-button {
-    margin-top: 10px;
-    width: 100px; 
-    line-height: 1.5;
-    font-size: 1rem;
-    padding: .375rem .75rem;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
+.product-card table tr td a:hover {
+    background-color:white;
     color: #28a745;
-    background-color: white;
-    border-color: #28a745;
-    cursor: pointer;
-    margin-bottom: 50px;
 }
 
-#promoter-button:hover {
-    background-color: #28a745;
-    color: white;
-}
+
 
 /*-----------------------bottom part----------------------------------------------*/
 .bottom-part table {
