@@ -154,4 +154,40 @@ class User extends \Core\Connect
          return false;
 
    }
+
+   public function listProducts($name)
+
+   {
+
+       $conn = static::connectDB();
+
+       if($name == 'AllProducts'){
+         
+         $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID GROUP BY productimage.productID");
+         
+       }else{
+         //   $name = '%'.$name.'%';
+            
+         //  $stmt0 = $conn->prepare("SELECT * FROM product  WHERE prodName REGEXP ? ");
+          // $stmt0 = $conn->prepare("SELECT p.prodName , p.description,p.price GROUP_CONCAT(i.imageCode ORDER BY i.imageCode ) AS images FROM products p LEFT JOIN images i ON p.productID = i.productID   WHERE prodName REGEXP ? GROUP BY p.productName ");
+            $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? GROUP BY productimage.productID ");
+           //echo $stmt0 ->error;die; 
+           $stmt0->bind_param("s",  $name);
+           
+         }
+       
+      //  $stmt0->execute();
+       if ($stmt0->execute()) {
+           $result = $stmt0->get_result();
+           
+           if ($result->num_rows >0) {
+              
+               return $result;
+               // while($row = $result->fetch_assoc()){
+
+               //  echo  $row['description'];
+          //   }
+           }
+       }
+   }
 }

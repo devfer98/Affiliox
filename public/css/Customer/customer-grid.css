@@ -316,7 +316,9 @@ h1 {
         width: 100%;
         padding: 0px;
       }
-
+    .hidden-xm-marginauto{
+      margin: auto;
+    }
       .hidden-xm{
         display:block;
       }

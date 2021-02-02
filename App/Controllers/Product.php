@@ -1,25 +1,45 @@
 <?php
+
 namespace App\Controllers;
+
 use Core\View;
 use App\Models;
-class Product extends \Core\Controller {
+use App\Models\Product as ModelsProduct;
 
-    public function indexAction(){
+class Product extends \Core\Controller
+{
 
-        View::display('User/Interfaces/productDetails.html');
-        
+    public function indexAction()
+    {
+
+        // View::display('User/Interfaces/productDetails.html');
     }
 
-    public function addAction(){
+    public function addAction()
+    {
         echo 'Product add method is called';
         echo '<p>Query string parameters: <pre>' .
-        htmlspecialchars(print_r($_GET, true)) . '</pre></p>';
+            htmlspecialchars(print_r($_GET, true)) . '</pre></p>';
     }
 
-    public function viewAction(){
+    public function viewAction()
+    {
+        if (!empty($_GET['id'])) {
+            $prodID = $_GET['id'];
+            $prod = new ModelsProduct;
 
-        $data=User::showData();
-        View::display('User/Interfaces/productDetails.html',['data'=>$data]);
+
+            $UIfeedbacks = $prod->feedbackDetails($prodID);
+            $this->view->UIfeedbacks = $UIfeedbacks;
+
+            $UIrelated=$prod->related($prodID);
+            $this->view->UImsg = $UIrelated;
+
+            $UImsg = $prod->productDetails($prodID);
+            $this->view->UImsg = $UImsg;
+            
+            $this->view->display('Customer/productDetails.php');
+        } else
+             header("Location:../User/Market");
     }
-
 }

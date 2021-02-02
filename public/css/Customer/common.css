@@ -352,7 +352,12 @@ option:hover{
 .marginl100{
 	margin-left: 100px;
 }
-
+.marginl200{
+	margin-left: 200px;
+}
+.marginl150{
+	margin-left: 150px;
+}
 .marginr100{
 
 	margin-right: 100px;

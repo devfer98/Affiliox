@@ -39,7 +39,68 @@ class Product extends \Core\Connect {
         }
         return $errorMssg;
     }
+    public function productDetails($prodID)
+    {
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT( productimage.imageCode ORDER BY productimage.imageCode) AS images  FROM product LEFT JOIN productimage ON product.productID = productimage.productID  where product.productID=?");
+        
+        $stmt0->bind_param("i", $prodID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            
+            if ($result->num_rows >0) {   
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid product ID";
+            return $error;
+        }
+    }
+    public function feedbackDetails($prodID)
+    {
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("SELECT * FROM feedback WHERE feedback.productID =?");
+        $stmt0->bind_param("i", $prodID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            
+            if ($result->num_rows >0) {
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid Feedback request";
+            return $error;
+        }
+    }
 
+    public function related($prodID)
+    {
+        $conn = static::connectDB();
+        $result=$this->productDetails($prodID);
+        $cat=0;
+        while ($row = $result->fetch_assoc()) {
+            $cat= $row['catID']."<br>";
+        }
+        $stmt1 = $conn->prepare("SELECT * FROM product WHERE catID = ? ORDER BY RAND() LIMIT 3");
+        $stmt1->bind_param("i", $cat);
+        if ($stmt1->execute()) {
+            $result = $stmt1->get_result();
+            
+            if ($result->num_rows >0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo $row['prodName']."<br>";
+                }
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid CAT ID";
+            return $error;
+        }
+    }
+    
     public function addImages($productID, $mainImage, $otherImages) {
         
         $conn=static::connectDB();
