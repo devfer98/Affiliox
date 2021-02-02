@@ -3,21 +3,27 @@
 namespace App\Models;
 class Product extends \Core\Connect {
 
-    static $lastProID;
+    public $lastProID;
 
     function __construct() {
     }
 
-    public function add( $prodName, $availQuantity, $description, $price, $comRate, $name, $catID, $mainImage, $otherImages) {
+    public function updateStatus($productID, $status){
+
+    }
+
+    public function add( $prodName, $availQuantity, $description, $status, $price, $comRate, $name, $catID, $mainImage, $otherImages) {
         
         $errorMssg="";
         $conn=static::connectDB();
-        $stmt = $conn->prepare("INSERT INTO product (prodName,availQuantity,description,status,price,overallRating,comRate,name,catID) VALUES ( ?, ?, ?, 'available', ?, 0.0, ?, ?, ?)");
-        $stmt->bind_param("sisddsi", $prodName, $availQuantity, $description, $price, $comRate, $name, $catID);
+        $stmt = $conn->prepare("INSERT INTO product (prodName,availQuantity,description,status,price,overallRating,comRate,name,catID) VALUES ( ?, ?, ?, ?, ?, 0.0, ?, ?, ?)");
+        $stmt->bind_param("sissddsi", $prodName, $availQuantity, $description, $status, $price, $comRate, $name, $catID);
         if ($stmt->execute()) {
             // echo "m working";
             $productID = mysqli_insert_id($conn);
-            $lastProID = $productID;
+            $this->lastProID = $productID;
+            // session_start();
+            // $_SESSION["lastProID"] = $productID;
             $stmt->close();
             $errorMssg=$this->addImages($productID, $mainImage, $otherImages);
             // if($this->addImages($productID, $mainImage, $otherImages)){

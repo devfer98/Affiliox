@@ -49,12 +49,18 @@ class MiniStore extends \Core\Controller {
 
     public function createProductAction(){
         $product= new Product();
+        $delivery = new Delivery();
         // $ministore= new MinistoreM();
         // $ministore = $ministore->getMinistore($_SESSION['username']);
         // if(isset($ministore) and !empty($ministore) and $ministore->num_rows>0){
             // $row = $ministore->fetch_assoc();
-            $product->add($_POST['proName'], $_POST['availQuantity'], $_POST['description'], $_POST['price'], $_POST['comRate'], $_SESSION['ministore'], $_POST['category'], $_FILES['mainImage'], $_FILES['otherImages']);
-            $this->addProductAction();
+        $product->add($_POST['proName'], $_POST['availQuantity'], $_POST['description'], "Active", $_POST['price'], $_POST['comRate'], $_SESSION['ministore'], $_POST['category'], $_FILES['mainImage'], $_FILES['otherImages']);
+        $districts = array('Ampara','Anuradhapura','Badulla','Batticaloa','Colombo','Galle','Gampaha','Hambantota','Jaffna','Kalutara','Kandy','Kegalle','Kilinochchi','Kurunegala','Mannar','Matale','Matara','Monaragala','Mullaitivu','Nuwara Eliya','Polonnaruwa','Puttalam','Ratnapura','Trincomalee','Vavuniya');
+        for ($x = 2; $x <= 26; $x++) {
+            $delivery->add($product->lastProID, $_POST['price'.$x], $_POST['startDis'], $districts[$x-2], $_POST['period'.$x]);
+            echo $x, $product->lastProID, $_POST['price'.$x], $_POST['startDis'], $districts[$x-2], $_POST['period'.$x],"<br/>";
+        }
+        $this->ministoreViewAction();
         // }
         // $delivery = new Delivery();
         // $districts = array("Colombo");
@@ -68,7 +74,6 @@ class MiniStore extends \Core\Controller {
     }
 
     // public function viewAction(){
-
     //     $data=User::showData();
     //     View::display('User/Interfaces/productDetails.html',['data'=>$data]);
     // }
