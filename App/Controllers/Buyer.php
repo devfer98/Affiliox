@@ -38,7 +38,7 @@ class Buyer extends \Core\Controller
    // Buyer Market Functions -----------------------------//
    public function MarketAction()
    {
-      $this->view->display('Customer/market.php');
+      header("Location:../user/market");
    }
 
    // Buyer password reset Functions -----------------------------//

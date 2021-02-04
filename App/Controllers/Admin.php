@@ -4,7 +4,7 @@ use Core\View;
 use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
-use App\Models\AdminM;
+
 class Admin extends \Core\Controller {
 
     public function indexAction(){

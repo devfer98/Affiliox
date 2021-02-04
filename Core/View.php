@@ -7,6 +7,12 @@ Class View{
             session_start();
             
         }
+        if (!isset($_COOKIE["items"])) {
+            echo "hi";
+            $cookie_name = "items";
+            $cookie_value = 0;
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30 * 12), "/"); 
+        }
 
         if(isset($_SESSION['type']) && ($_SESSION['type'] == 'buyer') ){
 

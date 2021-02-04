@@ -25,7 +25,7 @@
                 ?>
         <!-- Container content  --------------------------------------------->
         <!-- Image container --------------------------------------------->
-
+        <form method ="POST" action="../user/ADDShoppingCart">                 
         <div class="row margint50">
             <div class="col6">
 
@@ -63,12 +63,12 @@
                     <div class="col6 quantity center">
                         <div class="margint50">
                             <label for="price"><i class="fa fa-dollar-sign"></i> &nbsp;Price</label><br>
-                            <input style="width: 60%;" type="number" id="price" name="price"
-                                value="<?php echo $row['price']?>.00" readonly> <br>
+                            <input style="width: 60%;" type="text" id="price" name="price"
+                                value="<?php echo $row['price']?>" readonly> <br>
                         </div>
                         <p id="test" class="center">Price without Delivery Charges</p>
                     </div>
-
+                    
                     <div class="col6 quantity center">
                         <form action="" method="POST">
                             <div class="margint50">
@@ -77,9 +77,8 @@
                                 <input style="z-index: 1;" type="number" id="quantity" name="quantity" value="1">
                                 <br>
                             </div>
-
-                        </form>
                     </div>
+                    </form>
                 </div>
                 <div class="col12">
                     <div class="row col11 hidden-xm-marginauto">
@@ -88,9 +87,14 @@
                         <p> <?php echo $row['description'] ?></p>
                     </div>
                 </div>
+                <input  type="hidden"  name="productID" value="<?php echo $row['productID']?>" readonly> <br>
+                <input  type="hidden"  name="frontimg" value="<?php echo $images[0]?>" readonly> <br>
+                <input  type="hidden"  name="prodName" value="<?php echo $row['prodName']?>" readonly> <br>
                 <div class="col12 nav-bar center">
-                    <button onclick="location.href='../User/shoppingCart'">Add to cart </button>
+                <div class="col12 nav-bar center">
+                    <button value="submit" type="submit" >Add to cart </button>
                     <button onclick="location.href='../Buyer/Delivery'">Delivery Charges </button>
+                    </form>
                 </div>
             </div>
 
