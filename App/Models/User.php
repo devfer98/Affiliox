@@ -156,37 +156,67 @@ class User extends \Core\Connect
    }
 
    public function listProducts($name)
+   {  
 
+      $conn = static::connectDB();  
+       if($name == 'AllProducts'){   
+         $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price  ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID GROUP BY productimage.productID");        
+       }else if (!empty($_GET['price'])){
+         $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ?  AND product.price < ? GROUP BY productimage.productID ");
+         $stmt0->bind_param("sd",  $name,$price);      
+      }else{
+          $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? GROUP BY productimage.productID ");
+          $stmt0->bind_param("s", $name);
+      }
+       if ($stmt0->execute()) {
+           $result = $stmt0->get_result();          
+           if ($result->num_rows >0) {    
+            // while ($row = $result->fetch_assoc()) {
+            //    echo $row['prodName'];
+            // }          
+               return $result;
+           }
+       }
+   }
+
+   public function listCATProducts($name)
    {
 
-       $conn = static::connectDB();
-
-       if($name == 'AllProducts'){
-         
-         $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID GROUP BY productimage.productID");
-         
-       }else{
-         //   $name = '%'.$name.'%';
-            
-         //  $stmt0 = $conn->prepare("SELECT * FROM product  WHERE prodName REGEXP ? ");
-          // $stmt0 = $conn->prepare("SELECT p.prodName , p.description,p.price GROUP_CONCAT(i.imageCode ORDER BY i.imageCode ) AS images FROM products p LEFT JOIN images i ON p.productID = i.productID   WHERE prodName REGEXP ? GROUP BY p.productName ");
-            $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? GROUP BY productimage.productID ");
-           //echo $stmt0 ->error;die; 
-           $stmt0->bind_param("s",  $name);
-           
-         }
-       
-      //  $stmt0->execute();
-       if ($stmt0->execute()) {
-           $result = $stmt0->get_result();
-           
-           if ($result->num_rows >0) {
-              
+      $conn = static::connectDB();
+       if (!empty($_GET['price'])){
+         $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.catID REGEXP ? AND  product.price < ? GROUP BY productimage.productID ");
+         $stmt0->bind_param("sd",  $name,$price);        
+      }else{
+          $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.catID REGEXP ? GROUP BY productimage.productID ");
+          $stmt0->bind_param("s", $name);
+      }
+         if ($stmt0->execute()) {
+           $result = $stmt0->get_result();          
+           if ($result->num_rows >0) {     
+            // while ($row = $result->fetch_assoc()) {
+            //    echo $row['prodName'];
+            // }            
                return $result;
-               // while($row = $result->fetch_assoc()){
+           }
+       }
+   }
 
-               //  echo  $row['description'];
-          //   }
+   public function listCAT_Search_Products($name,$cat)
+   {
+
+         $conn = static::connectDB();
+         if (!empty($_GET['price'])){
+            $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? AND product.catID = ?  AND product.price < ?  GROUP BY productimage.productID ");
+            $stmt0->bind_param("sid",  $name,$cat,$price);        
+         }else{
+             $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? AND product.catID = ? GROUP BY productimage.productID ");
+             $stmt0->bind_param("si", $name, $cat);
+   
+            } 
+         if ($stmt0->execute()) {
+             $result = $stmt0->get_result();          
+           if ($result->num_rows >0) {            
+               return $result;
            }
        }
    }

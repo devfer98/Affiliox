@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\User as ModelsUser;
+use App\Models\BuyerM as ModelsBuyerM;
 use Core\View;
 class User extends \Core\Controller{
 
@@ -27,28 +28,120 @@ class User extends \Core\Controller{
 
 
 
-    public function MarketAction(){
-        
-        if(!empty($_GET['search'])){
-            $name=$_GET['search'];
-                      
-        }else
-              
-              $name='AllProducts';
-              
-
+    public function MarketSearchAction(){
+        if (!empty($_GET['search'])) {
+                $name=$_GET['search'];
+         } else {
+                $name='AllProducts';
+            }
         $prod =new ModelsUser;
-        echo $name;  
         $UImsg = $prod->listProducts($name);
         $this->view->UImsg = $UImsg;
-        
         $this->view->display('Customer/market.php');
+        
+    }
+    public function MarketCATAction(){
+
+        $name=$_GET['cat'];
+        $prod =new ModelsUser;
+        $UImsg = $prod->listCATProducts($name);
+        $this->view->UImsg = $UImsg;
+        $this->view->display('Customer/market.php');
+        
+    }   
+    public function Market_catsearch_Action(){
+
+        $name=$_GET['search'];
+        $cat=$_GET['cat'];
+        $prod =new ModelsUser;
+        $UImsg = $prod->listCAT_Search_Products($name,$cat);
+        $this->view->UImsg = $UImsg;
+        $this->view->display('Customer/market.php');
+        
+    }   
+    public function MarketAction(){
+        
+
+        if(empty($_GET['search']) && empty($_GET['cat'])){
+            $this->MarketSearchAction();    
+            exit;
+        }elseif (!empty($_GET['search']) && empty($_GET['cat'])) {
+            
+            $this->MarketSearchAction();
+            
+        }elseif (empty($_GET['search']) && !empty($_GET['cat'])) {
+            
+            $this->MarketCATAction();
+            
+        }else{
+            
+            $this->Market_catsearch_Action();
+        }
+
+    }
+    private function calculateTot()
+    {   
+        $buy =new ModelsBuyerM;
+        $value =  (!empty($_COOKIE["items"]) ) ? $_COOKIE["items"] : "[]";   
+        $value = json_decode($value,true);
+        $UImsg = $buy->total_cal($value);
+
+        // return $UImsg;
+        return $UImsg;
+        
     }
 
-    public function ShoppingCartAction(){
+
+    public function ADDShoppingCartAction(){
+
+
+        if(!empty($_POST['productID'])){
+            $image =$_POST["frontimg"];
+            $prodName=$_POST["prodName"];
+            $price=$_POST["price"];
+            $quantity = $_POST["quantity"];
+            $productCode = $_POST["productID"];
+
+            $value =  (!empty($_COOKIE["items"]) ) ? $_COOKIE["items"] : "[]";
+            
+            $value = json_decode($value,true);
+            array_push($value, array(
+                "productID" => $productCode,
+                "quantity" => $quantity,
+                "price" => $price,
+                "productName" =>$prodName,
+                "image" =>$image
+            ));
+
+            
+
+            setcookie("items",json_encode($value), time() + (86400 * 30 * 12), "/"); 
+
+            $UItotal=$this->calculateTot();
+            $this->view->UItotal = $UItotal;
+            header("Location:../user/AddShoppingCart");
+        }
+        $UItotal=$this->calculateTot();
+        $this->view->UItotal = $UItotal;
         $this->view->display('Customer/ShoppingCart.php');
     }
-
+    public function deleteShoppingCart()
+    {
+        $id=$_GET['id'];
+        $value =  (!empty($_COOKIE["items"]) ) ? $_COOKIE["items"] : "[]";
+        $value = json_decode($value);
+        $new_cart = array();
+        foreach ($value as $c)
+        {
+            if ($c->productID != $id)
+            {
+                array_push($new_cart, $c);
+            }
+        }   
+        
+        setcookie("items", json_encode($new_cart), time() + (86400 * 30 * 12), "/");
+        header("Location:../user/ADDShoppingCart");
+    }
 
     public function ProductAction()
     {

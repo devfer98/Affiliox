@@ -42,7 +42,7 @@ class Product extends \Core\Connect {
     public function productDetails($prodID)
     {
         $conn = static::connectDB();
-        $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT( productimage.imageCode ORDER BY productimage.imageCode) AS images  FROM product LEFT JOIN productimage ON product.productID = productimage.productID  where product.productID=?");
+        $stmt0 = $conn->prepare("SELECT product.* , FORMAT(product.price,2) as price ,GROUP_CONCAT( productimage.imageCode ORDER BY productimage.imageCode) AS images  FROM product LEFT JOIN productimage ON product.productID = productimage.productID  where product.productID=?");
         
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {

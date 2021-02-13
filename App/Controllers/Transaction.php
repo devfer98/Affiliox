@@ -12,7 +12,7 @@ class Transaction extends \Core\Controller{
    
     public function promoToDBAction(){
 
-        $user = new Promoter();
+        // $user = new Promoter();
         
           
     }
