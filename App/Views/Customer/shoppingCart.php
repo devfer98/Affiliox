@@ -15,7 +15,7 @@
     <div class="container">
 
         <!-- Container content  --------------------------------------------->
-
+        
         <div class="row center">
 
             <div class="col9 ">
@@ -33,8 +33,11 @@
                     }else{
                         $items = isset($_COOKIE["items"]) ? $_COOKIE["items"] : "[]";
                         $items = json_decode($items,true);
-                        foreach ($items as $item) { ?>
                         
+                        foreach ($this->UItotal[3] as $cat=>$item) { 
+                            
+                            ?>
+                      
                 <div class="row">
                     <div clas="sm-width center">
                         <div class="boxsummery shoppingBlock marginb20 margint20 center ">
@@ -44,8 +47,8 @@
 
                             <div class="col5 ">
                                 <div class="margint20 left">
-                                    <h3><?php echo $item['price'] ?></h3>
-                                    <p><?php echo $item['productName'] ?></p>
+                                    <h3><?php echo $item['name'] ?></h3>
+                                    <p><?php echo $item['price'] ?></p>
                                     <p>Delivery:Free</p>
                                 </div>
                             </div>
@@ -54,13 +57,13 @@
                                 <div class="margint20">
                                     <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
                                     <input style="z-index: 1;" type="number" id="quantity" name="quantity"
-                                       value ="<?php echo $item['quantity'] ?>" placeholder="1"> <br>
+                                       value ="<?php echo $item['Q'] ?>" placeholder="1"> <br>
                                 </div>
                             </div>
 
                             <div class="col1">
                                 <div class="margint50 link-trash ">
-                                    <a href="../user/deleteShoppingCart?id=<?php echo $item['productID'] ?>"> <i class="fas fa-trash fa-1x"></i></a>
+                                    <a href="../user/deleteShoppingCart?id=<?php echo $item['ID'] ?>"> <i class="fas fa-trash fa-1x"></i></a>
                                 </div>
                             </div>
 
@@ -98,6 +101,7 @@
                                 <h3>
                                     <div>Total</div>
                                     <div> <?php echo $this->UItotal[2] ?>
+
                                 </h3>
                             </div>
 
