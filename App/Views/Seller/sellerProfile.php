@@ -49,32 +49,61 @@
 			</div>
 			<div class="row row-padding">
 			<div class="col6 col-center inner-part inp data">
+			<div class="row">
+                <?php  
+                if(isset($this->sellerUser) and !empty($this->sellerUser)){
+					while($row = $this->sellerUser->fetch_assoc()){           
+            	?>
 				<table>
 					<tr>
 						<td id="td-1">Your Name:</td>
-						<td>Sample name is here</td>
+						<td><?php echo $row['name'] ?></td>
+					</tr>
+					<tr>
+						<td id="td-1">Username:</td>
+						<td><?php echo $row['userID'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Date of Birth:</td>
-						<td>Sample DOB is here</td>
+						<td><?php echo $row['dob'] ?></td>
+					</tr>
+					<tr>
+						<td id="td-1">Gender:</td>
+						<td><?php echo $row['gender'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Primary Email:</td>
-						<td>sample@gmail.com</td>
+						<td><?php echo $row['email'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Mobile Number:</td>
-						<td>Sample number is here</td>
+						<td><?php echo $row['phoneNo'] ?>e</td>
+					</tr>
+					<tr>
+						<td id="td-1">Marital Status:</td>
+						<td><?php echo $row['status'] ?>e</td>
 					</tr>
 					<tr>
 						<td id="td-1">Address:</td>
-						<td>Sample address is here</td>
+						<td><?php echo $row['aLine1'] ;echo $row['aLine2']; echo $row['city'] ?></td>
 					</tr>
 					<tr>
-						<td id="td-1">State:</td>
-						<td>Sample state is here</td>
+						<td id="td-1">Country:</td>
+						<td><?php echo $row['country'] ?></td>
+					</tr>
+					<tr>
+						<td id="td-1">Store Name:</td>
+						<td><?php echo $row['storeName'] ?></td>
+					</tr>
+					<tr>
+						<td id="td-1">Warning Count:</td>
+						<td><?php echo $row['warningCount'] ?></td>
 					</tr>
 				</table>
+				<?php
+                     }
+                }
+                ?>
 			
 				<div class="row col12 commonB padding">
 				<!-- <form action="update-promoter.php" style="text-align: center;"> -->

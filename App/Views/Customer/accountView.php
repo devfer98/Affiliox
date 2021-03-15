@@ -81,7 +81,7 @@
                     <tr>
                         <td id="td-1" >Address:</td>
                         <td><?php echo $row['aLine1'] ;echo $row['aLine2']; echo $row['city'] ?> </td>
-                    </tr>
+                    </tr>]
                     <tr>
                         <td id="td-1">Country:</td>
                         <td><?php echo $row['country'] ?></td>
