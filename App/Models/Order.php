@@ -1,21 +1,12 @@
 <?php
-
-class Admin {
+namespace App\Models;
+class Order extends \Core\Connect {
 
     function __construct() {
         include ("connect.php");
     }
     
-    public function addAdmin() {
+    
 
-    }
-
-    public function getAdmin() {
-
-    }
-
-    public function getStatistics() {
-
-    }
     
 }

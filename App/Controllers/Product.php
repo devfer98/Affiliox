@@ -31,7 +31,7 @@ class Product extends \Core\Controller
 
             $UIfeedbacks = $prod->feedbackDetails($prodID);
             $this->view->UIfeedbacks = $UIfeedbacks;
-
+            
             $UIrelated=$prod->related($prodID);
             $this->view->UImsg = $UIrelated;
 
