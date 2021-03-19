@@ -33,7 +33,14 @@ class Product extends \Core\Controller
             $this->view->UIfeedbacks = $UIfeedbacks;
             
             $UIrelated=$prod->related($prodID);
-            $this->view->UImsg = $UIrelated;
+            // $this->view->UImsg = $UIrelated;
+            $UImsg0 = $prod->productDetails($UIrelated[0]);
+            $this->view->UImsg0 = $UImsg0;
+            $UImsg1 = $prod->productDetails($UIrelated[1]);
+            $this->view->UImsg1 = $UImsg1;
+            $UImsg2 = $prod->productDetails($UIrelated[2]);
+            $this->view->UImsg2 = $UImsg2;
+            
 
             $UImsg = $prod->productDetails($prodID);
             $this->view->UImsg = $UImsg;

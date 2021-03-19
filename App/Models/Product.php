@@ -118,10 +118,12 @@ class Product extends \Core\Connect {
             $result = $stmt1->get_result();
             
             if ($result->num_rows >0) {
+                $i=0;
                 while ($row = $result->fetch_assoc()) {
-                    echo $row['prodName']."<br>";
+                    $pic[$i]=$row['productID'];
+                    $i++;
                 }
-                return $result;
+                return $pic;
             }
             
         } else {
