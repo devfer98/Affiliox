@@ -2,15 +2,15 @@
 namespace App\Models;
 class AdminM extends \Core\Connect{
     function __construct() {
-        include ("php/connect.php");
+     //  include ("php/connect.php");
     }
     
     public function addAdmin($userID, $name, $status,$email, $password, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2,$position) {
 
         $conn=static::connectDB();
-        $createdUser=$_SESSION['username'];
-        $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password,createdUserID,position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
-        $stmt->bind_param("sssssssisssssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password,$createdUser,$position);
+        //$createdUser=$_SESSION['username'];
+        $stmt = $conn->prepare("INSERT INTO admin (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password,createdUserID,position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
+        $stmt->bind_param("sssssssissssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password,$createdUser,$position);
         if ($stmt->execute()) {
             $stmt->close();
             return true;
@@ -19,8 +19,8 @@ class AdminM extends \Core\Connect{
             return false;
         }
     }
-    
-    public function getAdminProfile($userID){
+
+    public function getAdmin($userID){
         $conn=static::connectDB();
 
         $query = "select * from admin WHERE userID = ?";

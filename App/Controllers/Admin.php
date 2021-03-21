@@ -27,9 +27,9 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/ManageAccount.php');
     }
 
-    public function ApprovesSellerAction(){
-        $this->view->display('Admin/AddAdmin.php');
-    } 
+    //public function ApprovesSellerAction(){
+    //   $this->view->display('Admin/AddAdmin.php');
+    //} 
 
     public function AddAdminsAction(){
         $this->view->display('Admin/AddAdmin.php');
@@ -53,6 +53,11 @@ class Admin extends \Core\Controller {
     }
 
     public function EditAdminAction(){
+        $userID = $_SESSION['username'];
+        $user = new AdminM();
+        $result = $user->getAdmin($userID);
+        $UImsg = $result;
+        $this->view->UImsg = $UImsg;
         $this->view->display('Admin/EditAdmin.php');
     }
 

@@ -98,7 +98,29 @@
          
           <div id="BannedUserAcc" class="tabcontent" style="display: block;">
             <div class="body">
-         
+            <table>
+                <tr>
+                  <th>Username</th>
+                  <th>Fullname</th>
+                  <th>warning Count</th>
+                  <th>Action</th>
+                </tr>
+                <?php 
+                  if(isset($this->actSellers) and !empty($this->actSellers) and $this->actSellers->num_rows>0){
+                    while($row = $this->actSellers->fetch_assoc()){   
+                      // echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                      echo "<td>".$row['name']."</td>"; 
+                      echo "<td>".$row['warningCount']."</td>"; 
+                      echo "<form method='post' action ='../Admin/BanSellStatus'>";
+                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='6'>No Active Sellers</td></tr>";
+                  }  
+                ?>
+              </table>
             </div>	
           </div>   
           
