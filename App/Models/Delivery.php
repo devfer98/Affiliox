@@ -20,6 +20,24 @@ class Delivery extends \Core\Connect{
         }
     }
 
+    public function deliverycharges($prodID)
+    {
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("SELECT * FROM Delivery WHERE productID = ? wwwwwwORDER BY endDis");
+        $stmt->bind_param("i",$prodID);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+
+        }else{
+
+        echo $stmt->error;
+            return false;
+        }
+        
+    }
+
     public function getDelivery($productID) {
         $conn=static::connectDB();
 

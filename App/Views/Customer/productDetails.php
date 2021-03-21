@@ -93,7 +93,7 @@
                             <div class="col12 nav-bar center">
                                 <button value="submit" type="submit">Add to cart </button>
                                 </form>
-                                <button onclick="location.href='../Buyer/Delivery'">Delivery Charges </button>
+                                <button onclick="openNav3()"> View Delivery Charges </button>
 
                             </div>
                         </div>
@@ -213,8 +213,31 @@
             }
             ?>
             <!-- bottom-part-------------------------------------------->
+     
+        <div id="mySidenav2" class="sidenav-fil drp-btn">
+            <a href="javascript:void(0)" class="closebtn " onclick="closeNav3()">&times;</a>
+          <table class="deliverytable" >
+            <tr>
+            <th>Destination </th>
+            <th>Delivery Time (Days)</th>
+            <th>Price</th>
+            </tr>
+           <?php while ($row2 = $this->UImsg3->fetch_assoc()) {
+               echo "<tr>";
+               echo "<td>" . $row2['endDis'] . "</td>";
+               echo "<td>" . $row2['dPeriod'] . " Days</td>";
+               echo "<td>" . $row2['price'] . ".00</td>";
+               echo "</tr>";
 
-                </div>
+           } ?>
+
+          </table>
+
+
+        </div>
+
+        <!-- <span onclick="openNav3()"></span> -->
+        
                 <script>
                     show(Index);
                 </script>
