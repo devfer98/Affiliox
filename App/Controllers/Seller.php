@@ -31,7 +31,10 @@ class Seller extends \Core\Controller {
     }
 
     public function profileEditAction(){
-
+        $userID = $_SESSION['username'];
+        $seller = new SellerM();
+        $result = $seller->getSeller($userID);
+        $this->view->sellerUser = $result;
         $this->view->display('Seller/editSeller.php');
         
     }

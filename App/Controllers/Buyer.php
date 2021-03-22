@@ -88,11 +88,11 @@ class Buyer extends \Core\Controller
       $this->view->display('Customer/shoppingCart.php');
    }
 
-      // Delivery  Functions -----------------------------//
-      public function DeliveryAction()
-      {
-         $this->view->display('Customer/delivery.php');
-      }
+   // Delivery  Functions -----------------------------//
+   public function DeliveryAction()
+   {
+      $this->view->display('Customer/delivery.php');
+   }
 
    // Buyer Orders Functions -----------------------------//
    public function CurrentOrdersAction()
@@ -102,13 +102,14 @@ class Buyer extends \Core\Controller
 
    public function CompletedOrdersAction()
    {
-
       $this->view->display('Customer/CompletedOrders.php');
    }
+
    public function FailedOrderAction()
    {
       $this->view->display('Customer/OrderNotReceived.php');
    }
+   
    public function ContactSellerAction()
    {
       $this->view->display('Customer/contactSeller.php');
