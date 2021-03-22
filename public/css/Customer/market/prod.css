@@ -34,12 +34,50 @@
     border: none;
     background-color: white;
     box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    text-decoration: none;
   }
+  .relatedbox a label{
+  
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .relatedbox  a label:hover{
+    color: blue;
+    transition: all 0.4s ease 0.3s;
+  }
+  
+  .remove{
+    text-decoration: none;
+  }
+
 
   .imgbox label{
     
     padding: 10px 20px;
 
+  }
+  .deliverytable {
+    
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .deliverytable td, #deliverytable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .deliverytable tr:nth-child(even){background-color: #ffffff;}
+  
+  .deliverytable tr:hover {background-color: rgb(150, 150, 150);}
+  
+  .deliverytable th {
+    padding: 4px;
+    padding-left:20px;
+    text-align: left;
+    background-color: #434343;
+    color: white;
   }
 
   @media only screen and (max-width: 600px) {

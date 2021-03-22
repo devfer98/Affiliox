@@ -49,7 +49,7 @@
                                 <div class="margint20 left">
                                     <h3><?php echo $item['name'] ?></h3>
                                     <p><?php echo $item['price'] ?></p>
-                                    <p>Delivery:Free</p>
+                                    
                                 </div>
                             </div>
 
@@ -90,22 +90,12 @@
 
                         <div class="col12 hrCustom">
                             <div>
-                                <p> SUBTOTAL : <?php echo $this->UItotal[0] ?></p>
-
-                                <p> Delivery :  <?php echo $this->UItotal[1] ?></p>
+                                <p> Total : <?php echo $this->UItotal[0] ?></p>  <br><br><br> 
+                                <p> Please Confirm the Delivery deatils for the Delivery charges.</p><br>                         
                                 <hr />
                             </div>
                         </div>
-                        <div class="col12">
-                            <div class="marginb100 boxsummery center">
-                                <h3>
-                                    <div>Total</div>
-                                    <div> <?php echo $this->UItotal[2] ?>
 
-                                </h3>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>

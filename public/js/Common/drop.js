@@ -14,13 +14,13 @@ for (i = 0; i < dropdown.length; i++) {
 }
 
 function openNav2() {
+  // document.getElementById("main").style.marginRight = "250px";
   document.getElementById("mySidenav2").style.width = "250px";
-  // document.getElementById("main").style.marginLeft = "250px";
+  // 
 }
 
 function closeNav2() {
   document.getElementById("mySidenav2").style.width = "0";
   // document.getElementById("main").style.marginLeft = "0";
 }
-
 

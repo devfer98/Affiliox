@@ -106,7 +106,7 @@ class BuyerM extends \Core\Connect{
 
         $total=0.00;
         $prodPrice =0.00;
-        $delivery  =350.00;
+        $delivery  =0.00;
         $out =array();
         foreach ($value as $c) {
             $data =new ModelsProduct;

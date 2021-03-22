@@ -101,14 +101,15 @@
 			<div class="row rowMargin">
 				<div class="col6">
 					<div>
-						<label for="city"><i class="fa fa-city"></i> City</label><br>
-						<input type="text" id="city" name="acity" placeholder="Current city" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required>
+						<label for="city"><i class="fa fa-city"></i>District</label><br>
+						<input type="text" id="city" name="acity" placeholder="Gampaha" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required>
 					</div>
 				</div>
 				<div class="col6">
 					<div>
 						<label for="country"><i class="fa fa-globe"></i> Country</label><br>
 						<input type="text" id="country" name="country" placeholder="Country" minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+					
 					</div>
 				</div>
 			</div>

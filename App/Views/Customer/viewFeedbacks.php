@@ -31,7 +31,7 @@
                 </div>
                 <!-- Loop area --------------------------------------------->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div clas="center">
                         <div class="boxsummery shoppingBlock marginb20 margint20 center ">
 
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row center ">
                     <div clas="center">
@@ -84,6 +84,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

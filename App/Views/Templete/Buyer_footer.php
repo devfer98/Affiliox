@@ -57,7 +57,7 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="../Buyer/Account">User profile<i class="far fa-user"></i></a>
           <a href="../Buyer/Market">Market Place<i class="fab fa-shopify"></i></a>
-          <a href="../Buyer/ShoppingCart">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
+          <a href="../User/ADDShoppingCart">Shopping cart<i class="fas fa-shopping-cart"></i></i></a>
           <a href="../Buyer/CurrentOrders">Orders<i class="fas fa-chart-line"></i></i></a>
           <a href="../Buyer/FeedbackView">Feedback<i class="fas fa-phone-square"></i></i></a>
           <a href="../Buyer/Help">Support<i class="fas fa-envelope-open-text"></i></a>
