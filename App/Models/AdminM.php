@@ -9,8 +9,8 @@ class AdminM extends \Core\Connect{
 
         $conn=static::connectDB();
         //$createdUser=$_SESSION['username'];
-        $stmt = $conn->prepare("INSERT INTO admin (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password,createdUserID,position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
-        $stmt->bind_param("sssssssissssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password,$createdUser,$position);
+        $stmt = $conn->prepare("INSERT INTO admin (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssssissssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password, $position);
         if ($stmt->execute()) {
             $stmt->close();
             return true;
@@ -42,6 +42,27 @@ class AdminM extends \Core\Connect{
         }
     }
 
+    public function updatePassword($current_passs,$new_pass,$username)
+    {
+        $conn=static::connectDB();
+        $query = "select * from admin WHERE userID = ? && password =? ";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss",$username,$current_passs);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result(); 
+            if ($result->num_rows >0) {
+                $query2 = "UPDATE admin SET password=? WHERE userID=?";
+                $stmt2 = $conn->prepare($query2);
+                $stmt2->bind_param("ss",$new_pass,$username);
+                if ($stmt2->execute()) {
+                    return true;
+                }else
+                    return false;
+            }else{
+                return false;
+            }
+        }
+    }
     public function getStatistics() {
 
     }

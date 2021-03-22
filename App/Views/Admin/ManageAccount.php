@@ -103,21 +103,20 @@
                   <th>Username</th>
                   <th>Fullname</th>
                   <th>warning Count</th>
-                  <th>Action</th>
                 </tr>
                 <?php 
-                  if(isset($this->actSellers) and !empty($this->actSellers) and $this->actSellers->num_rows>0){
-                    while($row = $this->actSellers->fetch_assoc()){   
-                      // echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
-                      echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                  if(isset($this->banUsers) and !empty($this->banUsers) and $this->banUsers->num_rows>0){
+                    while($row = $this->banUsers->fetch_assoc()){   
+                      // echo "<tr><td><a href='../Admin/r?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/getBanned?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
                       echo "<td>".$row['warningCount']."</td>"; 
-                      echo "<form method='post' action ='../Admin/BanSellStatus'>";
-                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
-                      echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
+                      //echo "<form method='post' action ='../Admin/BanSellStatus'>";
+                      //echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      //echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
                     }	
                   }else{
-                    echo "<tr><td colspan='6'>No Active Sellers</td></tr>";
+                    echo "<tr><td colspan='6'>No Banned Users</td></tr>";
                   }  
                 ?>
               </table>
