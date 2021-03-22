@@ -39,6 +39,35 @@ class Product extends \Core\Connect {
         }
         return $errorMssg;
     }
+
+    // public function total_cal($value)
+    // {
+    //     $conn=static::connectDB();
+    //     $total=0.00;
+    //     $prodPrice =0.00;
+    //     $delivery  =350.00;
+
+    //     foreach ($value as $c) {
+    //         $stmt0 = $conn->prepare("SELECT  price from product where productID = ? "); // to be add delivery
+    //         $stmt0->bind_param("i", $c['productID']);
+    //         if ($stmt0->execute()) {
+    //             $result = $stmt0->get_result();
+    //             if ($result->num_rows >0) {
+    //                 while ($row = $result->fetch_assoc()) {
+    //                     $prodPrice= $row['price'];    
+    //                     echo  $prodPrice; 
+    //                 }
+    //             }
+    //             $total =(float)$total + (float)$prodPrice*$c['quantity'] ;
+    //             echo $total;                
+    //         }
+    //     }
+        
+    //     $final_tot =$total+$delivery;
+        
+    //     return array ($total,$delivery,$final_tot);
+    // }
+
     public function productDetails($prodID)
     {
         $conn = static::connectDB();
@@ -89,10 +118,12 @@ class Product extends \Core\Connect {
             $result = $stmt1->get_result();
             
             if ($result->num_rows >0) {
+                $i=0;
                 while ($row = $result->fetch_assoc()) {
-                    echo $row['prodName']."<br>";
+                    $pic[$i]=$row['productID'];
+                    $i++;
                 }
-                return $result;
+                return $pic;
             }
             
         } else {

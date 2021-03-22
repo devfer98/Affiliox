@@ -123,6 +123,7 @@ class Buyer extends \Core\Controller
    // Buyer Feedbacks Functions -----------------------------//
    public function FeedbackViewAction()
    {
+      
       $this->view->display('Customer/viewFeedbacks.php');
    }
 

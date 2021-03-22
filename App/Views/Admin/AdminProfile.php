@@ -11,60 +11,86 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-		<!---Navigation bar-------------------------------------------->
-		
-		<div class="container1">
-			<h2><i class="fas fa-user"></i>&nbsp; &nbsp;Admin Profile Details</h2>
-			<div>
-				<table>
-					<tr>
-						<td id="td-1">Full Name:</td>
-						<td>Sample name is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Primary Email:</td>
-						<td>sample@gmail.com</td>
-					</tr>
-					<tr>
-						<td id="td-1">Mobile Number:</td>
-						<td>Sample number is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Date of Birth:</td>
-						<td>Sample DOB is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Marital Status:</td>
-						<td>Sample status is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Address:</td>
-						<td>Sample address is here</td>
-					</tr>					
-					<tr>
-						<td id="td-1">City:</td>
-						<td>Sample city is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Country:</td>
-						<td>Sample country is here</td>
-					</tr>
-					<tr>
-						<td id="td-1">Gender:</td>
-						<td>Male/Female</td>
-					</tr>			
+		<!---Body-------------------------------------------->
+		<div class="container">
+
+        <div class="row">
+            <div class="row  marginb50 margint50">
+                <h2 class="marginl100"><i class="fas fa-user"></i>&nbsp; &nbsp;Admin Profile Details</h2>
+                <div class="col12">
+                    <div class="hrCustom">
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <?php  
+                if(isset($this->UImsg) and !empty($this->UImsg)){
+					
+					while($row = $this->UImsg->fetch_assoc()){           
+           		 ?>
+                <table class="profileTable">
+                    <tr>
+                        <td id="td-1">Your Name:</td>
+                        <td><?php echo $row['name'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Username:</td>
+                        <td><?php echo $row['userID'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Password:</td>
+                        <td> ********** </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Date of Birth:</td>
+                        <td><?php echo $row['dob'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Gender:</td>
+                        <td><?php echo $row['gender'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Email:</td>
+                        <td><?php echo $row['email'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Mobile Number:</td>
+                        <td><?php echo $row['phoneNo'] ?> </td>
+                    </tr>
+                    <tr>
+                        <td id="td-1">Marital Status:</td>
+                        <td><?php echo $row['status'] ?></td>
+                    </tr>
+                    <tr>
+                        <td id="td-1" >Address:</td>
+                        <td><?php echo $row['aLine1'] ;echo $row['aLine2']; echo $row['city'] ?> </td>
+                    </tr>]
+                    <tr>
+                        <td id="td-1">Country:</td>
+                        <td><?php echo $row['country'] ?></td>
+                    </tr>			
 					<tr>
 						<td id="td-1">Position:</td>
-						<td>Sample position is here</td>
+						<td><?php echo $row['position'] ?></td>
 					</tr>
-				</table>
-	
-				<form>
-					<input type="button" name="edit-details" value="Edit Details" onclick="location.href='../Admin/EditAdmin'">
-				</form>					
-			</div>
-	
-		</div> <!-- container1 -->
+
+                </table>
+
+                <?php
+                     }
+                }
+                ?>
+            </div>
+            <div class="center margint20 marginb50">
+       
+                    <button onclick="location.href='../Admin/PasswordReset'" name="change-pw" >Change password</button>
+                    <button  onclick="location.href='../Admin/EditAdmin'"  name="change-data" >Edit Details</button>
+
+            </div>
+        </div>
+    </div>
+
   </body>
   
   </html>

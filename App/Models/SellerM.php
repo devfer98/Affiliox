@@ -99,6 +99,22 @@ class SellerM extends \Core\Connect {
                     echo 'SQL Error';
                 }
     }
+
+    public function getBanned() {
+        $conn=static::connectDB();
+                // $flag=0;
+
+                $stmt = $conn->prepare("SELECT * FROM seller WHERE accountStatus = 'Banned'");
+                // $stmt->bind_param("s", "Pending");
+                if($stmt->execute()){
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }else{
+                    echo 'SQL Error';
+                }
+    }
+
     public function getStatistics() {
         
     }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Product as ModelsProduct;
 class BuyerM extends \Core\Connect{
  
     function __construct() {
@@ -105,27 +106,42 @@ class BuyerM extends \Core\Connect{
 
         $total=0.00;
         $prodPrice =0.00;
-        $delivery  =350.00;
-
+        $delivery  =0.00;
+        $out =array();
         foreach ($value as $c) {
-            $stmt0 = $conn->prepare("SELECT  price from product where productID = ? "); // to be add delivery
-            $stmt0->bind_param("i", $c['productID']);
+            $data =new ModelsProduct;
+            $list = $data->productDetails($c['ID']);
+            while ($row = $list->fetch_assoc()) {
+                $images = explode(',', $row['images']);
+                array_push($out, array(
+                    "ID" => $row['productID'],
+                    "Q" => $c['Q'],
+                    "name" => $row['prodName'],
+                    "price" => $row['price'],
+                    "image" =>$images[0]
+
+                ));
+
+
+            }
+
+            $stmt0 = $conn->prepare("SELECT * from product where productID = ? "); // to be add delivery
+            $stmt0->bind_param("i", $c['ID']);
             if ($stmt0->execute()) {
                 $result = $stmt0->get_result();
                 if ($result->num_rows >0) {
                     while ($row = $result->fetch_assoc()) {
                         $prodPrice= $row['price'];    
-                        echo  $prodPrice; 
                     }
                 }
-                $total =(float)$total + (float)$prodPrice*$c['quantity'] ;
-                echo $total;                
+                $total =(float)$total + (float)$prodPrice*$c['Q'] ;
+                              
             }
         }
         
         $final_tot =$total+$delivery;
         
-        return array ($total,$delivery,$final_tot);
+        return array ($total,$delivery,$final_tot,$out);
     }
 
     function EmailCompair($email,$username){
