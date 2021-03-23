@@ -34,14 +34,14 @@
                     <div class="sm-text-width ">
                         <label for="channels"><i class="fa fa-address-book"></i> &nbsp;Address Line</label><br>
                         <br>
-                        <textarea rows="7" name="description" placeholder="Address lines 1,2"></textarea><br>
+                        <textarea rows="7" name="description" placeholder="Address"></textarea><br>
                     </div>
                 </div>
                 <div class="col12">
                     <div class="col6">
                         <div>
-                            <label for="city"><i class="fa fa-city"></i> City</label><br><br>
-                            <input type="text" id="city" name="acity" placeholder="Warakapola">
+                            <label for="District"><i class="fa fa-city"></i> District</label><br><br>
+                            <input type="text" id="District" name="District" placeholder="Gampaha">
                         </div>
                     </div>
                     <div class="col6">

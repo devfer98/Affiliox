@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\View;
 use App\Models;
 use App\Models\Product as ModelsProduct;
+use App\Models\Delivery as ModelsDelivery;
 
 class Product extends \Core\Controller
 {
@@ -27,13 +28,23 @@ class Product extends \Core\Controller
         if (!empty($_GET['id'])) {
             $prodID = $_GET['id'];
             $prod = new ModelsProduct;
-
+            $delivery =new ModelsDelivery;
 
             $UIfeedbacks = $prod->feedbackDetails($prodID);
             $this->view->UIfeedbacks = $UIfeedbacks;
-
+            
             $UIrelated=$prod->related($prodID);
-            $this->view->UImsg = $UIrelated;
+            // $this->view->UImsg = $UIrelated;
+            $UImsg0 = $prod->productDetails($UIrelated[0]);
+            $this->view->UImsg0 = $UImsg0;
+            $UImsg1 = $prod->productDetails($UIrelated[1]);
+            $this->view->UImsg1 = $UImsg1;
+            $UImsg2 = $prod->productDetails($UIrelated[2]);
+            $this->view->UImsg2 = $UImsg2;
+
+            $UImsg3=$delivery->deliverycharges($prodID);
+            $this->view->UImsg3 = $UImsg3;
+            
 
             $UImsg = $prod->productDetails($prodID);
             $this->view->UImsg = $UImsg;

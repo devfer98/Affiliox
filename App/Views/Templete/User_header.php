@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
+    
     <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/Common/drop.css" />
     <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
 </head>
 
 <body>

@@ -15,7 +15,7 @@
     <div class="container">
 
         <!-- Container content  --------------------------------------------->
-
+        
         <div class="row center">
 
             <div class="col9 ">
@@ -26,19 +26,30 @@
                     </div>
                 </div>
                 <!-- Loop area --------------------------------------------->
-
+                <?php 
+                    if(empty($_COOKIE['items']) || $_COOKIE['items']=="[]" ){
+                        $flag=1;
+                        echo "<p class=\"center font-heavy margint100 marginb100\" >Shopping Cart empty , Please add products ...<p>" ;
+                    }else{
+                        $items = isset($_COOKIE["items"]) ? $_COOKIE["items"] : "[]";
+                        $items = json_decode($items,true);
+                        
+                        foreach ($this->UItotal[3] as $cat=>$item) { 
+                            
+                            ?>
+                      
                 <div class="row">
                     <div clas="sm-width center">
                         <div class="boxsummery shoppingBlock marginb20 margint20 center ">
                             <div class="col3 imgw">
-                                <img class="images" src="/images/Products/drone.jpg" style="width:100%">
+                                <img class="images" src="/images/upload/<?php echo $item['image'] ?>" style="width:100%">
                             </div>
 
                             <div class="col5 ">
                                 <div class="margint20 left">
-                                    <h3>Inspire 1</h3>
-                                    <p>Price:Rs 4000.00</p>
-                                    <p>Delivery:Free</p>
+                                    <h3><?php echo $item['name'] ?></h3>
+                                    <p><?php echo $item['price'] ?></p>
+                                    
                                 </div>
                             </div>
 
@@ -46,13 +57,13 @@
                                 <div class="margint20">
                                     <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
                                     <input style="z-index: 1;" type="number" id="quantity" name="quantity"
-                                        placeholder="1"> <br>
+                                       value ="<?php echo $item['Q'] ?>" placeholder="1"> <br>
                                 </div>
                             </div>
 
                             <div class="col1">
                                 <div class="margint50 link-trash ">
-                                    <a href=""> <i class="fas fa-trash fa-1x"></i></a>
+                                    <a href="../user/deleteShoppingCart?id=<?php echo $item['ID'] ?>"> <i class="fas fa-trash fa-1x"></i></a>
                                 </div>
                             </div>
 
@@ -61,76 +72,9 @@
                     </div>
                 </div>
 
-
-                <div class="row center">
-                    <div clas="sm-width center">
-                        <div class="boxsummery shoppingBlock marginb20 margint20 center">
-                            <div class="col3 imgw center">
-                                <img class="images" src="/images/Products/action-camera.jpg" style="width:100%">
-                            </div>
-
-                            <div class="col5">
-                                <div class="margint20 left">
-                                    <h3>Go Pro-G4</h3>
-                                    <p>Price :Rs 4200.00</p>
-                                    <p>Delivery: Charged</p>
-                                </div>
-                            </div>
-
-                            <div class="col3 search label">
-                                <div class="margint20">
-                                    <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-                                    <input type="number" id="quantity" name="quantity" placeholder="1"> <br>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="margint50 link-trash">
-                                    <a href=""> <i class="fas fa-trash fa-1x"></i></a>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="row ">
-                    <div class="">
-
-                        <div class="boxsummery shoppingBlock marginb20 margint20 center">
-
-                            <div class="col3 imgw">
-                                <img class="images" src="/images/Products/i-phone.png" style="width:100%">
-                            </div>
-
-                            <div class="col5 ">
-                                <div class=" left">
-                                    <h3>I-Phone Xs</h3>
-                                    <p>Price :Rs 72000.00</p>
-                                    <p>Delivery: Charged</p>
-                                </div>
-                            </div>
-
-                            <div class="col3 search label">
-                                <div class="margint20">
-                                    <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-                                    <input style="z-index: 1;" type="number" id="quantity" name="quantity"
-                                        placeholder="1"> <br>
-                                </div>
-                            </div>
-
-                            <div class="col1">
-                                <div class="margint50 link-trash">
-                                    <a href=""> <i class="fas fa-trash fa-1x"></i></a>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
+                <?php   }
+                    }
+                ?>
                 <!-- Loop area --------------------------------------------->
             </div>
 
@@ -146,21 +90,12 @@
 
                         <div class="col12 hrCustom">
                             <div>
-                                <p> SUBTOTAL : 82200.00 </p>
-
-                                <p> TAXES : 400.00 </p>
+                                <p> Total : <?php echo $this->UItotal[0] ?></p>  <br><br><br> 
+                                <p> Please Confirm the Delivery deatils for the Delivery charges.</p><br>                         
                                 <hr />
                             </div>
                         </div>
-                        <div class="col12">
-                            <div class="marginb100 boxsummery center">
-                                <h3>
-                                    <div>Total</div>
-                                    <div>RS 82600.00
-                                </h3>
-                            </div>
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -175,8 +110,13 @@
 
             <div class="col12 ">
                 <div class="center marginb50">
-                    <button onclick="location.href='../Buyer/Delivery'" type="submit" value="submit"> &nbsp; Proceed &nbsp; </button>
-
+                    <?php 
+                    if((isset($flag)) && ($flag==1)){
+                        
+                        echo "<button class=\"disabled \" onclick=\"location.href='../Buyer/Delivery'\" type=\"submit\" value=\"submit\" disabled> &nbsp; Proceed &nbsp; </button>";
+                    }else
+                        echo "<button onclick=\"location.href='../Buyer/Delivery'\" type=\"submit\" value=\"submit\"> &nbsp; Proceed &nbsp; </button>"
+                    ?>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
 	<!---Navigation bar-------------------------------------------->
     <div class="container">
 
-		<!-- Customer Registration Text--------------------------------------------->
+		<!-- Admin Registration Text--------------------------------------------->
 		<div class="row">
 			<div class="col12">
 				<div class="margint50 marginb100 center ">
@@ -22,9 +22,9 @@
 				</div>
 			</div>
 		</div>
-		<!-----------------Customer-Registration Form------------------->
+		<!-----------------Admin-Registration Form------------------->
 		
-			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Signup/buyerToDB">
+			<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Signup/AdminToDB">
 		<div class="row ">
 			<div class="col12">
 				<div class=" marginl100">

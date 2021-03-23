@@ -4,7 +4,7 @@ use Core\View;
 use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
-use App\Models\AdminM;
+
 class Admin extends \Core\Controller {
 
     public function indexAction(){
@@ -27,9 +27,9 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/ManageAccount.php');
     }
 
-    public function ApprovesSellerAction(){
-        $this->view->display('Admin/AddAdmin.php');
-    } 
+    //public function ApprovesSellerAction(){
+    //   $this->view->display('Admin/AddAdmin.php');
+    //} 
 
     public function AddAdminsAction(){
         $this->view->display('Admin/AddAdmin.php');
@@ -45,7 +45,12 @@ class Admin extends \Core\Controller {
     }
 
     public function AdminProfileAction(){
-        $this->view->display('Admin/AdminProfile.php');
+      $userID = $_SESSION['username'];
+      $user = new AdminM();
+      $result = $user->getAdmin($userID);
+      $UImsg = $result;
+      $this->view->UImsg = $UImsg;
+      $this->view->display('Admin/AdminProfile.php');
     }
 
     public function AdminStatisticsAction(){
@@ -53,6 +58,11 @@ class Admin extends \Core\Controller {
     }
 
     public function EditAdminAction(){
+        $userID = $_SESSION['username'];
+        $user = new AdminM();
+        $result = $user->getAdmin($userID);
+        $UImsg = $result;
+        $this->view->UImsg = $UImsg;
         $this->view->display('Admin/EditAdmin.php');
     }
 
@@ -98,6 +108,15 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/PromoterProfile.php');
     }
 
+    public function BanUserAction(){
+        $promoter= new PromoterM();
+        $this->view->proDetails = $promoter->getPromoterProfile($_GET['id']);
+        $this->view->display('Admin/PromoterProfile.php');
+        $seller = new SellerM();
+        $this->view->sellDetails = $seller->getSeller($_GET['id']);
+        $this->view->display('Admin/SellerProfile.php');    
+    }
+
     public function BanSellStatusAction(){
         $seller = new SellerM();
         $seller->banStatus($_POST['username'], $_POST['status']);
@@ -110,6 +129,38 @@ class Admin extends \Core\Controller {
         $promoter->banStatus($_POST['username'], $_POST['status']);
         // header("Location:../Admin/ManageAccount");
         $this->ManageAccountAction();
+    }
+
+    public function PasswordResetAction()
+    {
+ 
+       if (isset($_POST['current_password'])) {
+     
+          $current_pass= $_POST['current_password'];
+          $md5_pass=md5($current_pass);
+          $new_pass = $_POST['password'];
+          $md5_new_pass=md5($new_pass);
+          $username = $_SESSION['username'];
+          $user = new AdminM();
+          $result = $user->updatePassword($md5_pass,$md5_new_pass, $username);
+          if ($result) {
+             $State =1;
+             $UImsg = 'Password Reset Successfull';
+             $this->view->State=$State;
+             $this->view->UImsg=$UImsg;
+             $this->view->display('Admin/PasswordReset.php');
+            
+          }else{
+              $State =0;
+              $UImsg = 'Incorrect Password ,Please Try Again';
+              $this->view->State=$State;
+              $this->view->UImsg=$UImsg;
+              $this->view->display('Admin/PasswordReset.php');
+          }
+ 
+       }else{
+           $this->view->display('Admin/PasswordReset.php');
+       }
     }
 
     protected function before()

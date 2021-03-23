@@ -58,7 +58,6 @@ class MiniStore extends \Core\Controller {
         $districts = array('Ampara','Anuradhapura','Badulla','Batticaloa','Colombo','Galle','Gampaha','Hambantota','Jaffna','Kalutara','Kandy','Kegalle','Kilinochchi','Kurunegala','Mannar','Matale','Matara','Monaragala','Mullaitivu','Nuwara Eliya','Polonnaruwa','Puttalam','Ratnapura','Trincomalee','Vavuniya');
         for ($x = 2; $x <= 26; $x++) {
             $delivery->add($product->lastProID, $_POST['price'.$x], $_POST['startDis'], $districts[$x-2], $_POST['period'.$x]);
-            echo $x, $product->lastProID, $_POST['price'.$x], $_POST['startDis'], $districts[$x-2], $_POST['period'.$x],"<br/>";
         }
         $this->ministoreViewAction();
         // }

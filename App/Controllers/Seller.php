@@ -5,6 +5,7 @@ use Core\View;
 use App\Models\User;
 use App\Models\Feedback;
 use App\Models\MinistoreM;
+use App\Models\sellerM;
 
 class Seller extends \Core\Controller {
 
@@ -21,13 +22,26 @@ class Seller extends \Core\Controller {
      
     public function profileAction(){
 
+        $userID = $_SESSION['username'];
+        $seller = new SellerM();
+        $result = $seller->getSeller($userID);
+        $this->view->sellerUser = $result;
         $this->view->display('Seller/sellerProfile.php');
         
     }
 
     public function profileEditAction(){
-
+        $userID = $_SESSION['username'];
+        $seller = new SellerM();
+        $result = $seller->getSeller($userID);
+        $this->view->sellerUser = $result;
         $this->view->display('Seller/editSeller.php');
+        
+    }
+
+    public function passEditAction(){
+
+        $this->view->display('Seller/sellerPass.php');
         
     }
 
@@ -47,12 +61,6 @@ class Seller extends \Core\Controller {
         }else{
             header("Location:../Ministore/ministore");
         }
-    }
-
-    public function passEditAction(){
-
-        $this->view->display('Seller/sellerPass.php');
-        
     }
 
     public function marketAction(){

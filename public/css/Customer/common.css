@@ -189,6 +189,24 @@ hr{
 	background:rgb(255, 255, 255); 
 }
 
+.disabled{
+	border: 1px solid #555755; 
+	margin:auto;
+	display:inline-flex;
+	font-size: 15px;
+	color: #8d8d8d;
+	text-decoration: none;
+	font-weight: bold;
+	/* margin-left: 3px; */
+	padding: 8px;
+	border-radius: 0.25rem;
+	transition: all 0.4s ease 0.3s;
+	margin-top: 10px;
+	z-index: 10;
+	outline: none;
+	background:rgb(255, 255, 255); 
+}
+
 .nav-bar ul a:hover , button:hover , .icon:hover{
 	
 	background: #28a745;
@@ -271,6 +289,12 @@ option:hover{
 	  -webkit-box-shadow: 0px -35px 40px -10px rgba(0,0,0,0.57);
 	  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	  box-shadow: 0px 4px 10px rgba(0,0,0,0.57);
+  }
+
+  .relatedbox{
+	  display: block;
+	  text-decoration: none;
+
   }
   .signin input{
 
