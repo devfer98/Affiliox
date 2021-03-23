@@ -43,42 +43,51 @@
                   <th>Full Name</th>
                   <th>UserID</th>
                   <th>Email</th>
-                  <th>Date Created</th>
-                  <th>Action</th>
+                  <th>Rating</th>
                 </tr>
-                <tr>
-                  <td>Peter</td>
-                  <td>seller1</td>
-                  <td>peter@gmail.com</td>
-                  <td>19th September 2020</td>
-                  <td><button>View Feedback</button></td>
-                </tr>
-                <tr>
-                  <td>Griffin</td>
-                  <td>seller2</td>
-                  <td>griffin@gmail.com</td>
-                  <td>22nd September 2020</td>
-                  <td><button>View Feedback</button></td>
-                </tr>
-                <tr>
-                  <td>Lily</td>
-                  <td>seller3</td>
-                  <td>lily@gmail.com</td>
-                  <td>10th October 2020</td>
-                  <td><button>View Feedback</button></td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>seller4</td>
-                  <td>john@gmail.com</td>
-                  <td>15th October 2020</td>
-                  <td><button>View Feedback</button></td>
-                </tr>
+                <?php 
+                  if(isset($this->actPromoters) and !empty($this->actPromoters) and $this->actPromoters->num_rows>0){
+                    while($row = $this->actPromoters->fetch_assoc()){   
+                      // echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                      echo "<td>".$row['name']."</td>"; 
+                      echo "<td>".$row['email']."</td>"; 
+                      echo "<td>".$row['rating']."</td>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='6'>No Seller Feedbacks</td></tr>";
+                  }  
+                ?>
               </table>
             </div>	
           </div>
          
           <div id="PromoterFeedback" class="tabcontent">
+            <div class="body">
+              <table>
+                <tr>
+                  <th>Full Name</th>
+                  <th>UserID</th>
+                  <th>Email</th>
+                  <th>Rating</th>
+                </tr>
+                <?php 
+                  if(isset($this->actPromoters) and !empty($this->actPromoters) and $this->actPromoters->num_rows>0){
+                    while($row = $this->actPromoters->fetch_assoc()){   
+                      // echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                      echo "<td>".$row['name']."</td>"; 
+                      echo "<td>".$row['email']."</td>"; 
+                      echo "<td>".$row['rating']."</td>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='6'>No Promoter Feedbacks</td></tr>";
+                  }  
+                ?>
+              </table>
+            </div>	
+          </div>
+          <!-- <div id="PromoterFeedback" class="tabcontent">
             <div class="body">
               <table>
                 <tr>
@@ -118,7 +127,7 @@
                 </tr>
               </table>
             </div>
-          </div>
+          </div> -->
          
          </div> 
         </div>
