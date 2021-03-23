@@ -245,6 +245,21 @@ input:focus{
   border-color: #28a745; 
 }
 
+.btn-first {
+  margin-right: 100px;
+  /* width: 200px; */
+}
+
+ .top {
+   text-decoration: none;
+   float: right;
+   font-weight: bold;
+ }
+
+ .top:hover {
+   color: #ff4d4d;
+ }
+
 .product-card table {
   /* margin: 0 auto; */
   width: 1000px;
