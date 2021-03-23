@@ -234,8 +234,13 @@ input:focus{
   box-shadow: 0 0 10px #719ECE;
 }
 
+.area p {
+  color: #3333ff;
+  font-weight: bold;
+}
+
 .area button {
-    width: 75px; 
+    width: 100px; 
     line-height: 1.5;
     font-size: 1rem;
     padding: .375rem .75rem;
@@ -251,6 +256,14 @@ input:focus{
 .area button:hover {
     background-color: white;
     color: #28a745;
+}
+
+.error-msg p {
+  color: red;
+}
+
+.success-msg p {
+  color: #28a745;
 }
 
 /*-----------------------bottom part----------------------------------------------*/

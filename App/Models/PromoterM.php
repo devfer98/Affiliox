@@ -51,6 +51,64 @@ class PromoterM extends \Core\Connect {
             return $result;
         }
     }
+    
+
+    public function addLinksPromo($link, $date, $userID) {
+
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("INSERT INTO prolink (link, date, userID) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $link, $date, $userID);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
+    }
+
+    public function getLinksPromo($userID)  {
+        $conn=static::connectDB();
+
+        $query = "select * from prolink WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows > 0 ){
+                return $result;
+            } else {
+                $result = null;
+                return  $result ;
+            }
+        } 
+    }
+
+    public function getProductDetails($userID){
+        $conn=static::connectDB();
+
+        $query = "select * from promoter WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows >0)
+            {
+                return $result;
+            }
+            
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
+    }
+
 
     public function updatePromoter() {
 

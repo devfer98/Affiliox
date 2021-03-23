@@ -15,10 +15,24 @@
           <h2><i class="fas fa-link"></i></i>&nbsp; &nbsp;Generate Link</h2>
 
         <div class="area">
-            <p>Genrate Link</p> <br>
-            <label>Encrypted Link:</label>
+            <label>Encrypted Link:</label> <br> <br>
             <input type="text" name="link" id="myInput" placeholder="You can Copy this Link">
-            <button onclick="myFunction()">Copy</button>
+            <button onclick="myFunction()">Copy <i class="far fa-copy"></i></button>
+
+            <p>This allows you to add your link to the database for future promotions.</p><br>
+
+                <div class="error-msg">
+                  <p><?php if(isset($this->errmsg) and !empty($this->errmsg)){echo $this->errmsg;}  ?></p>
+                </div>
+                <div class="success-msg">
+                  <p><?php if(isset($this->successmsg) and !empty($this->successmsg)){echo $this->successmsg;}  ?></p>
+                </div>
+
+            <form method="post" action="../Promoter/promoterLinkToDB">
+              <input type="text" name="link">
+              <button type="submit" name="submit" onclick="return confirm('Your link was successfully added to the database.')">Upload <i class="fas fa-upload"></i></button>
+            </form>
+
         </div> <!-- area -->	
         </div> <!-- container -->
         <hr style="height:2px;border:none;color:#333;background-color:#333;">

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use Core\View;
 use App\Models\TransactionPromo;
-use App\Models\PromoterProfile;
+use App\Models\PromoterM;
 use App\Models\User;
 use App\Models\Buyer;
 use App\Models\Seller;
@@ -15,7 +15,7 @@ class Promoter extends \Core\Controller {
     public function promoterProfileAction() {
 
          $userID = $_SESSION['username'];
-         $user = new PromoterProfile();
+         $user = new PromoterM();
          $result = $user->getPromoterProfile($userID);
          $UImsg = $result;
          $this->view->UImsg=$UImsg;
@@ -25,12 +25,26 @@ class Promoter extends \Core\Controller {
     public function promoterProfileUpdateAction() {
 
         $userID = $_SESSION['username'];
-        $user = new PromoterProfile();
+        $user = new PromoterM();
         $result = $user->getPromoterProfile($userID);
         $UImsg = $result;
         $this->view->UImsg=$UImsg;
         $this->view->display('Promoter/update-promoter.php');
     }
+
+
+
+    public function productDetailsAction(){
+
+        $userID = $_SESSION['username'];
+        $user = new PromoterM();
+        $result = $user->getProductDetails($userID);
+        $UImsg = $result;
+        $this->view->UImsg=$UImsg;
+        $this->view->display('Promoter/market-place.php');
+    }
+
+
 
     public function transHistoryAction() {
 
@@ -50,18 +64,17 @@ class Promoter extends \Core\Controller {
             $this->view->display('Promoter/payout-history.php');
         }
 
-
-
-        // $UImsg = $result;
-        // $this->view->UImsg=$UImsg;
-        // $this->view->display('Promoter/payout-history.php');
-        
     }
     
 
 
     public function MarketAction(){
-        $this->view->display('Promoter/market-place.php');    
+        $userID = $_SESSION['username'];
+        $user = new PromoterM();
+        $result = $user->getPromoterProfile($userID);
+        $UImsg = $result;
+        $this->view->UImsg=$UImsg;
+        $this->view->display('Promoter/market-place.php');
      }
      
     public function accountIndexAction(){
@@ -79,6 +92,10 @@ class Promoter extends \Core\Controller {
 
     public function generateLinkAction() {
         $this->view->display('Promoter/generate-link.php');
+    }
+
+    public function linkAction() {
+        $this->view->display('Promoter/old-link.php');
     }
 
     public function staticPromoterAction() {
@@ -142,6 +159,51 @@ class Promoter extends \Core\Controller {
         $successmsg= 'Your Transaction Process is Success!';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
+    }
+
+
+    public function promoterLinkToDBAction() {
+        $user = new PromoterM();
+        $link= $_POST['link'];
+        $date = date("Y-m-d");
+        $userID = $_SESSION["username"];
+        
+        if($_POST['link'] ) {
+            $user->addLinksPromo($link, $date, $userID);
+            header('Location:../Promoter/linkSubmitSuccess');
+            $this->view->display('Promoter/generate-link.php');
+
+        } else    {
+            $errmsg= 'Please Enter the Link to store.';
+            $this->view->errmsg = $errmsg;
+            $this->view->display('Promoter/generate-link.php');
+        }      
+    }
+
+    public function linkSubmitSuccessAction(){
+        $successmsg= 'Your Link Submission Process is Success!';
+        $this->view->successmsg = $successmsg;
+        $this->view->display('Promoter/generate-link.php');
+    }
+
+
+    public function linkHistoryAction() {
+
+        $userID = $_SESSION['username'];
+        $user = new PromoterM();
+        
+        $result = $user->getLinksPromo($userID);
+
+        if($result == null) {
+            $empty= "You have not yet post any Link!";
+            $this->view->empty=$empty;
+            $this->view->display('Promoter/old-link.php');
+        } else {
+            $UImsg = $result;
+            $this->view->UImsg=$UImsg;
+            $this->view->display('Promoter/old-link.php');
+        }
+
     }
 
     protected function before() {   
