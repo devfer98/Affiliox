@@ -90,8 +90,6 @@ class User extends \Core\Controller
         $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
         $value = json_decode($value, true);
         $UImsg = $buy->total_cal($value);
-
-        // return $UImsg;
         return $UImsg;
     }
     public function viewCartitemAction()

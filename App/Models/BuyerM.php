@@ -8,11 +8,11 @@ class BuyerM extends \Core\Connect{
         
     }
     
-    public function addBuyer($userID, $name, $status,$email, $password, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2) {
+    public function addBuyer($userID, $name, $status,$email, $password, $phoneNo, $age, $dob, $gender, $country, $district, $city, $line1, $line2) {
 
         $conn=static::connectDB();
-        $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2, city, country, gender, age, status, dob, email, phoneNo, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssisssss", $userID, $name, $line1, $line2, $city, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password);
+        $stmt = $conn->prepare("INSERT INTO buyer (userID, name, aLine1, aLine2,city,district, country, gender, age, status, dob, email, phoneNo, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssisssss", $userID, $name, $line1, $line2, $city,$district, $country, $gender, $age,$status, $dob, $email, $phoneNo, $password);
         if ($stmt->execute()) {
             $stmt->close();
             return true;
@@ -76,24 +76,6 @@ class BuyerM extends \Core\Connect{
                 //    return  $row['userID'];  
                 // }
             }
-               
-
-            // while ($row = $result->fetch_assoc()) {
-            //     // $arry['username'] = $row['userID'];
-            //     // $arry['fullname'] = $row['name'];
-            //     // $arry['address1'] = $row['aLine1'];
-            //     // $arry['address2'] = $row['aLine2'];
-            //     // $arry['city'] = $row['city'];
-            //     // $arry['country'] = $row['country'];
-            //     // $arry['gender'] = $row['gender'];
-            //     // $arry['age'] = $row['age'];
-            //     // $arry['marital'] = $row['status'];
-            //     // $arry['dob'] = $row['dob'];
-            //     // $arry['gender'] = $row['gender'];
-            //     // $arry['email'] = $row['email'];
-            //     // $arry['num'] = $row['phoneNo'];
-                
-            // }
             
         }else{
             $result = 'Error sql';
@@ -107,10 +89,14 @@ class BuyerM extends \Core\Connect{
         $total=0.00;
         $prodPrice =0.00;
         $delivery  =0.00;
+
         $out =array();
+
         foreach ($value as $c) {
             $data =new ModelsProduct;
+            $deliveryPrice = new Delivery;
             $list = $data->productDetails($c['ID']);
+            
             while ($row = $list->fetch_assoc()) {
                 $images = explode(',', $row['images']);
                 array_push($out, array(
@@ -143,6 +129,72 @@ class BuyerM extends \Core\Connect{
         
         return array ($total,$delivery,$final_tot,$out);
     }
+
+
+    public function checkout($value,$endDis)
+    {
+        $conn=static::connectDB();
+
+        $total=0.00;
+        $prodPrice =0.00;
+        $delivery  =0.00;
+        $deadline_peroid =0;
+        $out =array();
+
+        foreach ($value as $c) {
+            $data =new ModelsProduct;
+            $deliveryPrice = new Delivery;
+            $list = $data->productDetails($c['ID']);
+            $price = $deliveryPrice->checkoutDelivery($c['ID'],$endDis);
+
+            while ($row = $list->fetch_assoc()) {
+                $dprice =0.00;
+                $dperiod=0;
+                
+                $images = explode(',', $row['images']);
+
+
+                while ($row2 = $price->fetch_assoc()) {
+                    $dprice=$row2['price'];
+                    $dperiod=$row2['dPeriod'];
+                    if($deadline_peroid<$dperiod){
+                        $deadline_peroid=$dperiod;
+                    }
+                    $delivery =$delivery + $dprice*$c['Q']  ;
+                }
+                array_push($out, array(
+                    "ID" => $row['productID'],
+                    "Q" => $c['Q'],
+                    "name" => $row['prodName'],
+                    "price" => $row['price'],
+                    "image" =>$images[0],
+                    "dprice" =>$dprice,
+                    "dperiod" =>$dperiod
+                ));              
+            }
+
+            $stmt0 = $conn->prepare("SELECT * from product where productID = ? "); // to be add delivery
+            $stmt0->bind_param("i", $c['ID']);
+            if ($stmt0->execute()) {
+                $result = $stmt0->get_result();
+                if ($result->num_rows >0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $prodPrice= $row['price'];   
+                    }
+                }
+                
+                $total =$total + (float)$prodPrice*$c['Q'] ;
+
+                              
+            }
+        }
+        
+        $final_tot = $total+$delivery;
+        $PGfee=round(($final_tot)/100 *3.3 ,2);
+        $final_tot =(float)$PGfee+(float)$final_tot;
+        return array ($total,$delivery,$final_tot,$out,$PGfee,$deadline_peroid);
+    }
+
 
     function EmailCompair($email,$username){
 

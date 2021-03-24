@@ -42,8 +42,9 @@ class Signup extends \Core\Controller {
         $userID  	=$_POST['Username-field'];
         $name       =$_POST['fullname'];
         $aLine1	    =$_POST['aline1'];
-        $aLine2     =$_POST['aline2'];	    
-        $city       =$_POST['acity'];      	
+        $aLine2     =$_POST['aline2'];	 
+        $district   =$_POST['district'];    
+        $city       =$_POST['city'];      	
         $country    =$_POST['country'];	
         $gender 	=$_POST['gender'];
         $status 	=$_POST['status'];
@@ -82,6 +83,15 @@ class Signup extends \Core\Controller {
             $this->view->display('Common/CustomerReg.php');
             exit;  
         }
+        $array2=array('Ampara', 'Anuradhapura', 'Badulla', 'Batticaloa', 'Colombo','Galle','Gampaha','Hambantota','Jaffna','Kalutara','Kandy','Kegalle','Kilinochchi','Kurunegala','Mannar','Matale','Matara','Monaragala','Mullaitivu','Nuwara Eliya','Polonnaruwa','Puttalam','Ratnapura','Trincomalee','Vavuniya');
+        if (!in_array($district,$array2)){
+            $State=0;
+            $this->view->State = $State;
+            $UImsg= 'Invalid District Entry , Please try again!';
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Common/SellerReg.php');
+            exit;  
+            }
 
         if (!preg_match("/^[a-zA-Z0-9]*$/",$userID)) {
             $State=0;
@@ -104,7 +114,7 @@ class Signup extends \Core\Controller {
 
         $res =$user->EmailCompair($email,$userID);
             if($res==true){
-                    $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2);
+                    $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$district,$city,$aLine1,$aLine2);
                     header('Location:../Signup/BuyerSuccess');
             }else{
                 $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
@@ -127,7 +137,8 @@ class Signup extends \Core\Controller {
         $userID  	=$_POST['Username-field'];
         $name       =$_POST['fullname'];
         $aLine1	    =$_POST['aline1'];
-        $aLine2     =$_POST['aline2'];	    
+        $aLine2     =$_POST['aline2'];	 
+       
         $city       =$_POST['acity'];      	
         $country    =$_POST['country'];	
         $gender 	=$_POST['gender'];
@@ -180,6 +191,7 @@ class Signup extends \Core\Controller {
             $this->view->display('Common/SellerReg.php');
             exit;  
         }
+
 
 
         if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",$password)) {

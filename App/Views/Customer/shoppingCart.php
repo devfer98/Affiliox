@@ -48,7 +48,7 @@
                             <div class="col5 ">
                                 <div class="margint20 left">
                                     <h3><?php echo $item['name'] ?></h3>
-                                    <p><?php echo $item['price'] ?></p>
+                                    <p> Rs <?php echo $item['price'] ?></p>
                                     
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="col3 search label">
                                 <div class="margint20">
                                     <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-                                    <input style="z-index: 1;" type="number" id="quantity" name="quantity"
+                                    <input disabled style="z-index: 1;" type="number" id="quantity" name="quantity"
                                        value ="<?php echo $item['Q'] ?>" placeholder="1"> <br>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
 
                         <div class="col12 hrCustom">
                             <div>
-                                <p> Total : <?php echo $this->UItotal[0] ?></p>  <br><br><br> 
+                                <p> Total : Rs <?php echo $this->UItotal[0] ?></p>  <br><br><br> 
                                 <p> Please Confirm the Delivery deatils for the Delivery charges.</p><br>                         
                                 <hr />
                             </div>

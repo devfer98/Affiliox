@@ -4,6 +4,8 @@ namespace App\Controllers;
 use Core\View;
 use App\Models\BuyerM;
 use App\Models\Feedback;
+use App\Models\Order as ModelsOrder;
+
 
 class Buyer extends \Core\Controller
 {
@@ -91,7 +93,74 @@ class Buyer extends \Core\Controller
       // Delivery  Functions -----------------------------//
       public function DeliveryAction()
       {
+         $userID = $_SESSION['username'];
+         $data = new BuyerM();
+         $data-> getBuyer($userID);
+         $this->view->data= $data-> getBuyer($userID);
          $this->view->display('Customer/delivery.php');
+      }
+
+      public function checkoutAction()
+      {  
+         
+         $district= $_POST['district'];
+         $buy = new BuyerM;
+         $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
+         $value = json_decode($value, true);
+         $UImsg = $buy->checkout($value,$district);
+         $this->view->UItotal=$UImsg;    
+         $this->view->display('Customer/Checkout.php');
+      }
+
+
+
+      public function paymentAction()
+      {
+         $district= $_POST['district'];
+         $buy = new BuyerM;
+         $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
+         $value = json_decode($value, true);
+         $UImsg = $buy->checkout($value,$district);
+       
+         $order = new ModelsOrder;
+         $status = "Pending";
+         $datetime = date("Y-m-d");
+         $start_date = date_create($datetime);
+         $datetime = date_format($start_date,"Y-m-d");
+      
+         date_add($start_date,date_interval_create_from_date_string($UImsg[5]. " Days" ));// longest peroid
+         $deliveryDeadline = date_format($start_date,"Y-m-d");
+         $deliveryAddress = $_POST['address'];
+         $amount =$UImsg[2];
+         $buyUserID=$_SESSION['username'];
+
+         ///////////////////////////////////////////
+         $proUserID=12345;   // promoter ckeck here from cookie find commision from products
+         $totalCommission=300;
+
+         ///////////////////////////////////////////
+         $data= $order->addOrder($status,$amount,$datetime,$deliveryAddress, $deliveryDeadline ,$buyUserID ,$proUserID ,$totalCommission);
+         
+         // $url = 'https://sandbox.payhere.lk/pay/checkout';
+         $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/CurrentOrders','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data );
+         $this->view->data=$data;    
+         $this->view->display('Customer/PG-confirm.php');   
+         
+         // $options = array(
+         //    'https' => array(
+         //       'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+         //       'method'  => 'POST',
+         //       'content' => http_build_query($data)
+         //    )
+         // );
+         // $context  = stream_context_create($options);
+         // $result = file_get_contents($url, false, $context);
+         // if ($result === FALSE) { /* Handle error */ }
+         // var_dump($result);
+
+
+
+         
       }
 
    // Buyer Orders Functions -----------------------------//
@@ -122,8 +191,10 @@ class Buyer extends \Core\Controller
    // Buyer Feedbacks Functions -----------------------------//
    public function FeedbackViewAction()
    {
-      
+      $entry = new Feedback();
+      $result = $entry-> getFeedbacks($_SESSION['username']);
       $this->view->display('Customer/viewFeedbacks.php');
+
    }
 
 
