@@ -97,20 +97,59 @@
 					</div>
 				</div>
 			</div>
-
+			
 			<div class="row rowMargin">
 				<div class="col6">
 					<div>
-						<label for="city"><i class="fa fa-city"></i>District</label><br>
-						<input type="text" id="city" name="acity" placeholder="Gampaha" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required>
+						<label for="district"><i class="fa fa-city"></i>District</label><br>
+
+						
+						<input  list ="districts"  id="district" name="district" placeholder="Gampaha" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required>
+						<datalist id="districts">
+						
+						<option value="Ampara">
+						<option value="Anuradhapura">
+						<option value="Badulla">
+						<option value="Batticaloa">
+						<option value="Colombo">
+						<option value="Galle">
+						<option value="Gampaha">
+						<option value="Hambantota">
+						<option value="Jaffna">
+						<option value="Kalutara">
+						<option value="Kandy">
+						<option value="Kegalle">
+						<option value="Kilinochchi">
+						<option value="Kurunegala">
+						<option value="Mannar">
+						<option value="Matale">
+						<option value="Matara">
+						<option value="Monaragala">
+						<option value="Mullaitivu">
+						<option value="Nuwara Eliya">
+						<option value="Polonnaruwa">
+						<option value="Puttalam">
+						<option value="Ratnapura">
+						<option value="Trincomalee">
+						<option value="Vavuniya">						
+						
+						</datalist>
 					</div>
 				</div>
 				<div class="col6">
 					<div>
-						<label for="country"><i class="fa fa-globe"></i> Country</label><br>
-						<input type="text" id="country" name="country" placeholder="Country" minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+						<label for="city"><i class="fa fa-globe"></i> City</label><br>
+						<input type="text" id="city" name="city" placeholder="Kiribathgoda" minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
 					
 					</div>
+				</div>
+			</div>
+			<div class="row rowMargin ">
+				<div class="col12">
+					<div>
+					<label for="country"><i class="fa fa-globe"></i> Country</label><br>
+						<input type="text" id="country" value="Srilanka" name="country"  minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required><br>
+						</div>
 				</div>
 			</div>
 

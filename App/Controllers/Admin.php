@@ -4,6 +4,7 @@ use Core\View;
 use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
+use App\Models\Feedback;
 
 class Admin extends \Core\Controller {
 
@@ -22,9 +23,12 @@ class Admin extends \Core\Controller {
     public function ManageAccountAction(){
         $seller= new SellerM();
         $this->view->actSellers=$seller->getActive();
+        $this->view->banSellers=$seller->getBanned();
         $promoter= new PromoterM();
         $this->view->actPromoters=$promoter->getActive();
+        $this->view->banPromoters=$promoter->getBanned();
         $this->view->display('Admin/ManageAccount.php');
+
     }
 
     //public function ApprovesSellerAction(){
@@ -67,6 +71,8 @@ class Admin extends \Core\Controller {
     }
 
     public function ReviewFeedbackAction(){
+        $feedback= new Feedback();
+        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_SESSION['username']);
         $this->view->display('Admin/ReviewFeedback.php');
     }
 
@@ -108,15 +114,6 @@ class Admin extends \Core\Controller {
         $this->view->display('Admin/PromoterProfile.php');
     }
 
-    public function BanUserAction(){
-        $promoter= new PromoterM();
-        $this->view->proDetails = $promoter->getPromoterProfile($_GET['id']);
-        $this->view->display('Admin/PromoterProfile.php');
-        $seller = new SellerM();
-        $this->view->sellDetails = $seller->getSeller($_GET['id']);
-        $this->view->display('Admin/SellerProfile.php');    
-    }
-
     public function BanSellStatusAction(){
         $seller = new SellerM();
         $seller->banStatus($_POST['username'], $_POST['status']);
@@ -131,6 +128,31 @@ class Admin extends \Core\Controller {
         $this->ManageAccountAction();
     }
 
+    public function BanSellerAction(){
+        $seller = new SellerM();
+        $this->view->sellDetails = $seller->getSeller($_GET['id']);
+        $this->view->display('Admin/SellerProfile.php');
+    }
+
+    public function BanPromoterAction(){
+        $promoter= new PromoterM();
+        $this->view->proDetails = $promoter->getPromoterProfile($_GET['id']);
+        $this->view->display('Admin/PromoterProfile.php');
+    }
+
+    public function UnBanSellStatusAction(){
+        $seller = new SellerM();
+        $seller->UnbanStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ManageAccount");
+        $this->ManageAccountAction();
+    }
+
+    public function UnBanProStatusAction(){
+        $promoter = new PromoterM();
+        $promoter->UnbanStatus($_POST['username'], $_POST['status']);
+        // header("Location:../Admin/ManageAccount");
+        $this->ManageAccountAction();
+    }
     public function PasswordResetAction()
     {
  

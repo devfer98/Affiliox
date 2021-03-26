@@ -38,9 +38,10 @@
          <div class="tab marginb50 ">
           <button class="tablinks button1 active" de onclick="openPage(event,'SellerAcc')" id="defaultOpen">Seller Accounts</button>
           <button class="tablinks button1" onclick="openPage(event,'PromoterAcc')">Promoter Accounts</button>
-		      <button class="tablinks button1" onclick="openPage(event,'BannedUserAcc')">Banned User Accounts</button>
+		      <button class="tablinks button1" onclick="openPage(event,'BannedSellAcc')">Banned Seller Accounts</button>
+          <button class="tablinks button1" onclick="openPage(event,'BannedProAcc')">Banned Promoter Accounts</button>
 
-          <div id="SellerAcc" class="tabcontent" style="display: block;">
+          <div id="SellerAcc" class="tabcontent" style="display:block">
             <div class="body">
             <table>
                 <tr>
@@ -96,32 +97,61 @@
             </div>	
           </div>
          
-          <div id="BannedUserAcc" class="tabcontent" style="display: block;">
+          <div id="BannedSellAcc" class="tabcontent">
             <div class="body">
             <table>
                 <tr>
                   <th>Username</th>
                   <th>Fullname</th>
                   <th>warning Count</th>
+                  <th>Action</th>
                 </tr>
                 <?php 
-                  if(isset($this->banUsers) and !empty($this->banUsers) and $this->banUsers->num_rows>0){
-                    while($row = $this->banUsers->fetch_assoc()){   
-                      // echo "<tr><td><a href='../Admin/r?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
-                      echo "<tr><td><a href='../Admin/getBanned?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                  if(isset($this->banSellers) and !empty($this->banSellers) and $this->banSellers->num_rows>0){
+                    while($row = $this->banSellers->fetch_assoc()){  
+                      // echo "<tr><td><a href='../Admin/Banseller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/BanSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
                       echo "<td>".$row['warningCount']."</td>"; 
-                      //echo "<form method='post' action ='../Admin/BanSellStatus'>";
-                      //echo "<input type='hidden' name='username' value='".$row['userID']."' />";
-                      //echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
+                      echo "<form method='post' action ='../Admin/UnBanSellStatus'>";
+                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>UnBan</button></td></form>";
                     }	
                   }else{
-                    echo "<tr><td colspan='6'>No Banned Users</td></tr>";
+                    echo "<tr><td colspan='6'>No Banned Sellers</td></tr>";
                   }  
                 ?>
               </table>
             </div>	
-          </div>   
+          </div>  
+
+          <div id="BannedProAcc" class="tabcontent">
+            <div class="body">
+            <table>
+                <tr>
+                  <th>Username</th>
+                  <th>Fullname</th>
+                  <th>warning Count</th>
+                  <th>Action</th>
+                </tr>
+                <?php 
+                  if(isset($this->banPromoters) and !empty($this->banPromoters) and $this->banPromoters->num_rows>0){
+                    while($row = $this->banPromoters->fetch_assoc()){   
+                      // echo "<tr><td><a href='../Admin/Banpromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
+                      echo "<tr><td><a href='../Admin/BanPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
+                      echo "<td>".$row['name']."</td>"; 
+                      echo "<td>".$row['warningCount']."</td>"; 
+                      echo "<form method='post' action ='../Admin/UnBanProStatus'>";
+                      echo "<input type='hidden' name='username' value='".$row['userID']."' />";
+                      echo "<td><button name='status' type='submit' value='2' class='button button2'>UnBan</button></td></form>";
+                    }	
+                  }else{
+                    echo "<tr><td colspan='6'>No Banned Promoters</td></tr>";
+                  }  
+                ?>
+              </table>
+            </div>	
+          </div>    
           
          </div> 
         </div>

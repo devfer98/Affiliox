@@ -158,6 +158,26 @@ class SellerM extends \Core\Connect {
             echo 'SQL Error';
         }
     }
+
+    public function UnbanStatus($userID, $status) {
+        $conn=static::connectDB();
+        $accStatus;
+        if($status==1){
+            $accStatus="Banned";
+        }elseif($status==2){
+            $accStatus="Active";
+            // echo $accStatus;  
+        }else{
+
+        }
+        $stmt = $conn->prepare("UPDATE seller SET accountStatus = ? WHERE userID = ?");
+        $stmt->bind_param("ss", $accStatus, $userID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
+    }
     
     function EmailCompair($email,$username){
 
