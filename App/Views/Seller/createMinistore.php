@@ -24,58 +24,67 @@
 		</div>
 		<div class="row row-padding">	
 			<div class="col6 col-center inner-part inp">
-			<form>
+			<div class="row col12">
+				<p style="color:red;"><?php if(isset($this->errorMssg) and !empty($this->errorMssg)){echo $this->errorMssg;}  ?></p>
+			</div>
+			<form enctype='multipart/form-data' method="post" action ="../Seller/createMinistore">
 				<!-- <div class= "inp"> -->
 				<h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Details</h2>
 				<div class="row col8 padding">
 				<label for="fname"> &nbsp;Store Name</label><br>
-				<input type="text" id="fname" name="fullname" placeholder="">
+				<input type="text" id="fname" name="storeName" placeholder="">
                 </div>
                 <div class="row col6 padding">
                 <label for="Address">Logo</label><br>
-                <input type="file" id="line2" name="aline2" placeholder=""><br>
+                <input type="file" id="line2" name="logoImage" placeholder="" accept="image/*"><br>
                 </div>
-				<div class="row col12 padding">
+				<!-- <div class="row col12 padding">
 				<label for="lname">&nbsp; Home Page Title</label><br>
 				<input type="text" id="email" name="email" placeholder="">
-                </div>
+                </div> -->
                 <!-- <div class="row" style="padding:0px;"> -->
 				<div class="row col12 padding">
 				<label for="phn-no">&nbsp; Description</label><br>
-				<textarea id="phn-no" name="phn-no" placeholder=""></textarea>
+				<textarea id="phn-no" name="description" placeholder=""></textarea>
 				</div>
-				<div class="row col12 padding">
+				<!-- <div class="row col12 padding">
 				<label for="dob">&nbsp; About Us</label><br>
 				<textarea id="Birth" name="dob" placeholder=" "></textarea>
                 </div>
-                <!-- </div> -->
+                
 				<div class="row col12 padding">
 				<label for="Address">Contact Us</label><br>
 				<textarea type="text" id="line1" name="aline1" placeholder=""></textarea>
-                </div>
+                </div> -->
 
                 <h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Design</h2>
 				<div class="row col6 padding">
-				<label for="Address">Home Page Images</label><br>
-				<input type="file" id="line2" name="aline2" placeholder=""><br>
+				<label for="Address">Slider Images</label><br>
+				<input type="file" id="line2" name="sliderImages[]" placeholder="" accept="image/*" multiple><br>
                 </div>
                 <div class="row">
                 <div class="col6 fitcontent padding">
                 <label for="Address">Navigation Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder=""><br>
+                <input type="color" id="line2" name="navColor" placeholder=""><br>
                 </div>
                 <div class="col6 padding">
                 <label for="Address">Button Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder=""><br>
+                <input type="color" id="line2" name="buttonColor" placeholder=""><br>
                 </div>
                 </div>
                 <div class="row col4 padding">
                 <label for="Address">Font</label><br>
-                <select name="cars" id="cars">
-                    <option value="volvo"> Arial</option>
-                    <option value="saab">Times New Roman</option>
-                    <option value="mercedes">Helvetica</option>
-                    <option value="audi">Times</option>
+                <select name="font" id="font">
+                    <option value="Arial"> Arial</option>
+					<option value="Verdana"> Verdana</option>
+					<option value="Helvetica">Helvetica</option>
+					<option value="Tahoma">Tahoma</option>
+					<option value="Trebuchet MS">Trebuchet MS</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Georgia">Georgia</option>
+					<option value="Garamond">Garamond</option>
+					<option value="Courier New">Courier New</option>
+                    <option value="Brush Script MT">Brush Script MT</option>
                 </select>
                 </div>
 				<!-- </div> -->

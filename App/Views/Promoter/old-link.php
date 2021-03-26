@@ -24,7 +24,7 @@
                         echo "<tr>";
                             echo "<th>Number</th>";
                             echo "<th>Promoted Date</th>";
-                            echo "<th>generated Date</th>";
+                            echo "<th>Generated Link</th>";
                             echo "<th>Copy</th>";
                         echo "</tr>";     
 					while($row = $this->UImsg->fetch_assoc()) {

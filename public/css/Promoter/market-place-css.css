@@ -269,8 +269,16 @@ input:focus{
   border-radius: 0.25rem;
 }
 
-#title {
+.item-name {
   font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.item-price {
+  /* font-weight: bold; */
+  font-size: 18px;
 }
 
 .product-card table tr td img {

@@ -54,6 +54,7 @@
       <!--Container------------------------------------------>
 
       <div id="mySidenav" class="sidenav">
+           <p class= "center "> <b>Hi ,<?php echo $_SESSION['username'];?></b></p><br><br>
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="../Buyer/Account">User profile<i class="far fa-user"></i></a>
           <a href="../Buyer/Market">Market Place<i class="fab fa-shopify"></i></a>

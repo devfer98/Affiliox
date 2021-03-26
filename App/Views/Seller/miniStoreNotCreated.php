@@ -19,7 +19,7 @@
 			</div>
 		</div>
         <div class="row commonB" style="margin-top: 20px; height: 200px;">
-			<button class="center" style="margin:auto;" onclick="location.href='../Seller/createMinistore';">Create Ministore</button>
+			<button class="center" style="margin:auto;" onclick="location.href='../Seller/addMinistore';">Create Ministore</button>
 		</div>
 	</div>
 

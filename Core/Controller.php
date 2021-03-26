@@ -24,7 +24,7 @@ abstract class Controller
 
     protected function before()
     {
-     //Logged in?
+    //Logged in?
     }
 
     protected function after()

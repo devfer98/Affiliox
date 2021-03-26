@@ -19,24 +19,47 @@ class MiniStore extends \Core\Controller {
     // }
 
     public function ministoreAction(){
-        // $ministore= new MinistoreM();
-        // if($ministore-> isMinistore($_GET['id'])==0){
-        //     $this->view->display('Seller/miniStoreNotCreated.php');
-        // }else{
         $this->view->display('Seller/miniStore.php');
-        // }
     }
 
-    public function ministoreNotAction(){
-        $this->view->display('Seller/miniStoreNotCreated.php');
+    // public function ministoreNotAction(){
+    //     $this->view->display('Seller/miniStoreNotCreated.php');
+    // }
+
+    public function ViewAction(){
+        $userID = $_SESSION['username'];
+        $ministore = new MinistoreM();
+        $result = $ministore->getMinistore($userID);
+        $this->view->store = $result;
+        $this->view->display('Seller/miniStoreView.php');  
     }
 
     public function ministoreViewAction(){
+        $userID = $_SESSION['username'];
+        $ministore = new MinistoreM();
+        $result = $ministore->getMinistore($userID);
+        $this->view->store = $result;
         $this->view->display('Seller/miniStoreView.php');  
     }
 
     public function updateAction(){
+        $userID = $_SESSION['username'];
+        $ministore = new MinistoreM();
+        $result = $ministore->getMinistore($userID);
+        $this->view->store = $result;
         $this->view->display('Seller/updateMiniStore.php'); 
+    }
+
+    public function editAction(){
+        $ministore= new MinistoreM();
+        $errorMssg = $ministore->edit($_SESSION['username'], $_POST['description'], $_POST['font'], $_POST['navColor'], $_POST['buttonColor'], $_FILES['logoImage'], $_FILES['sliderImages']);
+
+        if($errorMssg=="" || $errorMssg=="Image not added"){
+            header("Location:../Ministore/ministoreView");
+        }else{
+            $this->view->errorMssg=$errorMssg;
+            $this->updateAction();
+        }
     }
 
     public function addProductAction(){
@@ -59,7 +82,8 @@ class MiniStore extends \Core\Controller {
         for ($x = 2; $x <= 26; $x++) {
             $delivery->add($product->lastProID, $_POST['price'.$x], $_POST['startDis'], $districts[$x-2], $_POST['period'.$x]);
         }
-        $this->ministoreViewAction();
+        $this->ministoreAction();
+
         // }
         // $delivery = new Delivery();
         // $districts = array("Colombo");
@@ -89,7 +113,7 @@ class MiniStore extends \Core\Controller {
                     $row = $ministore->fetch_assoc();
                     $_SESSION["ministore"] = $row['name'];
                 }
-                echo $_SESSION['ministore'];
+                // echo $_SESSION['ministore'];
                 return true;
             }else{
                 header("Location:../Seller/noMinistore");

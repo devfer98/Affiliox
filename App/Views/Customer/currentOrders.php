@@ -65,7 +65,6 @@
                                     <p>Delivery:Free</p>
                                 </div>
                             </div>
-
                             <div class="col2 search label">
                                 <div class="margint20">
                                     <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
@@ -73,12 +72,9 @@
                                         placeholder="1"> <br>
                                 </div>
                             </div>
-
                             <div class="col3">
                                 <div class="">
                                     <p>ETA : 24/Nov/2020</p>
-
-
                                     <div class="col12 nav-bar center">
                                         <button onclick="location.href='../Buyer/ContactSeller'">&nbsp;&nbsp; Contact
                                             Seller &nbsp;&nbsp;</button>

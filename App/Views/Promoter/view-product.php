@@ -14,12 +14,15 @@
 	<div class="container">
         <h2><i class="fas fa-puzzle-piece"></i></i>&nbsp; &nbsp;Check Product Details</h2>
        
-       
-
        <div class="inner-content">
+       <?php  
+                if(isset($this->UImsg) and !empty($this->UImsg)){
+					
+					while($row = $this->UImsg->fetch_assoc()){           
+        ?>
             <table >
                 <tr>
-                    <td colspan = 3 id=pName>DJI Mavic Air 2 Fly More Combo</td>
+                    <td colspan = 3 id=pName><?php echo $row['prodName'] ?></td>
                 </tr>
                 <tr>
                     <td rowspan=5>
@@ -39,20 +42,21 @@
                     <td id=imp>Discount Rate</td>
                 </tr>
                 <tr>
-                    <td>99.9 USD</td>
-                    <td>8%</td>
+                    <td><?php echo $row['price'] ?> LKR</td>
+                    <td><?php echo $row['comRate'] ?> %</td>
                 </tr>
                 <tr>
-                    <td colspan=2 id=desc>A video camera is mounted on the unmanned aerial vehicle and this camera broadcasts the 
-                    live video to the pilot on the ground. Depending on the drone, the receiver of the live video signals can be either the 
-                    remote control unit, 
-                    a computer, tablet or smartphone device.</td>
+                    <td colspan=2 id=desc>Sepecifications :- <br>&#9733; <?php echo $row['description'] ?></td>
                 </tr>
                 <tr>
                     <td><a href="../Promoter/Market">Go Back <i class="fas fa-arrow-circle-left"></i></a></td>
-                    <td><a href="../Promoter/generateLink">Proceed to Promote <i class="fas fa-check"></i></a></td>
+                    <td><a href="../Promoter/generateLink?id=<?php echo $row['productID']?>proid=<?php echo $row['comRate']?>">Proceed to Promote <i class="fas fa-check"></i></a></td>
                 </tr>
             </table>
+            <?php
+					}
+				}
+			?>  
        </div> <!-- inner-content --> 
 	</div> <!-- container -->
 		
