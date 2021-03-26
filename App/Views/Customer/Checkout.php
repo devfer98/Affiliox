@@ -27,14 +27,14 @@
 
                     <div class="left marginl100">
                                 <p> <b>Name : </b> <?php echo $_POST['name'] ?>
-                                <p> <b>Address : </b><?php echo $_POST['address']  ?> ,<?php echo $_POST['city']  ?> ,<?php echo $_POST['district']  ?>
+                                <p> <b>Address : </b><?php echo $_POST['address']  ?> , <?php echo $_POST['city']  ?> ,<?php echo $_POST['district']  ?>
                                 <p> <b>Phone-num : </b><?php  echo $_POST['phoneNo'] ?>
                                 <p> <b>Special Note : </b><?php  echo $_POST['note'] ?>
                 </div>
                 </div>
                 <!-- Loop area --------------------------------------------->
                 <?php 
-                    
+                              
                     if(empty($_COOKIE['items']) || $_COOKIE['items']=="[]" ){
                        
                     }else{
@@ -120,7 +120,7 @@
         <form method="post" action="../buyer/payment">
 
             <input type="hidden" name="merchant_id" value="1216939" hidden> 
-            <input type="hidden" name="return_url" value="http://localhost/Buyer/CurrentOrders" hidden>
+            <input type="hidden" name="return_url" value="http://localhost/Buyer/PGreply" hidden>
             <input type="hidden" name="cancel_url" value="http://127.0.0.1/buyer/checkout" hidden>
             <input type="hidden" name="notify_url" value="http://127.0.0.1/user/market" hidden>  
            <input type="text" name="first_name" value="<?php echo $_POST['name'] ?>" hidden> 
@@ -130,10 +130,11 @@
            <input type="text" name="phone" value="<?php  echo $_POST['phoneNo'] ?>" hidden><br>
            <input type="text" name="city" value="<?php  echo $_POST['city'] ?>" hidden>
            <input type="text" name="email" value="<?php  echo $_POST['email'] ?>" hidden>
+           <input type="text" name="custom_1" value="<?php  echo json_encode($this->UItotal[3]) ?>" hidden>
            <input type="text" name="country" value="Srilanka" hidden>
            <input type="text" name="district" value="<?php  echo $_POST['district'] ?>" hidden>
            <input type="text" name="amount" value=" <?php echo $this->UItotal[2] ?> " hidden>
-           <input type="text" name="items" value="Curve Neck T-Shirt" hidden><br>
+           <input type="text" name="items" value="<?php  echo $this->UItotal[3] ?>" hidden><br>
            <input type="text" name="currency" value="LKR" hidden>
 
         

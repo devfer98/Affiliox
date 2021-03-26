@@ -37,7 +37,7 @@
             <input type="hidden" name="return_url" value="http://localhost/Buyer/CurrentOrders" hidden>
             <input type="hidden" name="cancel_url" value="http://127.0.0.1/buyer/checkout" hidden>
             <input type="hidden" name="notify_url" value="http://127.0.0.1/user/market" hidden>  
-            <input type="text" name="first_name" value="<?php echo $this->data['first_name'] ?>" > 
+            <input type="text" name="first_name" value="<?php echo $this->data['first_name'] ?> "hidden > 
             <input type="text" name="last_name" value=" " hidden>
             <input type="text" name="order_id" value=" <?php echo $this->data['order_id']  ?>" hidden>
             <input type="text" name="address" value="<?php  $this->data['address']  ?> " hidden>
@@ -48,6 +48,7 @@
             <input type="text" name="amount" value=" <?php echo $this->data['amount']  ?> " hidden>
             <input type="text" name="items" value=" <?php echo $this->data['items']  ?> " hidden><br>
             <input type="text" name="currency" value="LKR" hidden>
+            <input type="text" name="custom_1" value="<?php  echo $this->UItotal[3] ?>" hidden>
 
                 <div class="row ">
                     <div class="col12 ">

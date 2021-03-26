@@ -115,7 +115,8 @@ class Buyer extends \Core\Controller
 
 
       public function paymentAction()
-      {
+      {  
+         $custom_1 =$_POST['custom_1'];
          $district= $_POST['district'];
          $buy = new BuyerM;
          $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
@@ -140,35 +141,43 @@ class Buyer extends \Core\Controller
 
          ///////////////////////////////////////////
          $data= $order->addOrder($status,$amount,$datetime,$deliveryAddress, $deliveryDeadline ,$buyUserID ,$proUserID ,$totalCommission);
-         
-         // $url = 'https://sandbox.payhere.lk/pay/checkout';
-         $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/CurrentOrders','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data );
+  
+         $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/CurrentOrders','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data ,'custom_1' =>$custom_1);
          $this->view->data=$data;    
          $this->view->display('Customer/PG-confirm.php');   
-         
-         // $options = array(
-         //    'https' => array(
-         //       'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-         //       'method'  => 'POST',
-         //       'content' => http_build_query($data)
-         //    )
-         // );
-         // $context  = stream_context_create($options);
-         // $result = file_get_contents($url, false, $context);
-         // if ($result === FALSE) { /* Handle error */ }
-         // var_dump($result);
-
-
 
          
       }
 
    // Buyer Orders Functions -----------------------------//
+
+   public function PGreply()
+
+   {
+      $order = new ModelsOrder;
+      $data= $order->getOrderID();
+      $this->view->data=$data;    
+      $this->view->display('Customer/PG reply.php');  
+   }
+   
    public function CurrentOrdersAction()
    {
-      $this->view->display('Customer/currentOrders.php');
-   }
+       if (isset($_POST['status_code'])) {
+           if ($_POST['status_code']==2) {   // if success 
+              $order = new ModelsOrder;
+              $data= $_SESSION['custom_1'] ;
+              $order_ID = $_POST['order_id'];
+              $order->updateDelivery($data,$order_ID);
+              $order-> Ordersuccess($order_ID);
+              setcookie("items", "", time() - 3600, "/");
+              
+           }
 
+
+           $this->view->display('Customer/currentOrders.php');
+       }
+       $this->view->display('Customer/currentOrders.php');
+   }  
    public function CompletedOrdersAction()
    {
 
@@ -232,6 +241,12 @@ class Buyer extends \Core\Controller
    public function HelpAction()
    {
       $this->view->display('Common/ContactUs.php');
+   }
+
+   public function PG_reply()
+   {
+
+      $this->view->display('Common/PG reply.php');
    }
 
    protected function before()

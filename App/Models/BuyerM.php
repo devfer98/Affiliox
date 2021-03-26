@@ -134,7 +134,7 @@ class BuyerM extends \Core\Connect{
     public function checkout($value,$endDis)
     {
         $conn=static::connectDB();
-
+        $dID=0;
         $total=0.00;
         $prodPrice =0.00;
         $delivery  =0.00;
@@ -155,6 +155,7 @@ class BuyerM extends \Core\Connect{
 
 
                 while ($row2 = $price->fetch_assoc()) {
+                    $dID=$row2['deliveryID'];
                     $dprice=$row2['price'];
                     $dperiod=$row2['dPeriod'];
                     if($deadline_peroid<$dperiod){
@@ -168,6 +169,7 @@ class BuyerM extends \Core\Connect{
                     "name" => $row['prodName'],
                     "price" => $row['price'],
                     "image" =>$images[0],
+                    "dID" =>$dID,
                     "dprice" =>$dprice,
                     "dperiod" =>$dperiod
                 ));              
@@ -188,7 +190,7 @@ class BuyerM extends \Core\Connect{
                               
             }
         }
-        
+        $_SESSION['custom_1'] = $out;
         $final_tot = $total+$delivery;
         $PGfee=round(($final_tot)/100 *3.3 ,2);
         $final_tot =(float)$PGfee+(float)$final_tot;

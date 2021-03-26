@@ -106,9 +106,7 @@ class User extends \Core\Controller
             $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
             $value = json_decode($value);
             
-            foreach ($value as $c) {
- 
-                
+            foreach ($value as $c) {  
                 if ($c->ID != $productCode) {
                     array_push($new_cart, $c);
                 } else {
