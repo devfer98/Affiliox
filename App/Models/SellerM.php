@@ -99,6 +99,22 @@ class SellerM extends \Core\Connect {
                     echo 'SQL Error';
                 }
     }
+
+    public function getBanned() {
+        $conn=static::connectDB();
+                // $flag=0;
+
+                $stmt = $conn->prepare("SELECT * FROM seller WHERE accountStatus = 'Banned'");
+                // $stmt->bind_param("s", "Pending");
+                if($stmt->execute()){
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }else{
+                    echo 'SQL Error';
+                }
+    }
+
     public function getStatistics() {
         
     }
@@ -130,6 +146,26 @@ class SellerM extends \Core\Connect {
             $accStatus="Active";
         }elseif($status==2){
             $accStatus="Banned";
+            // echo $accStatus;  
+        }else{
+
+        }
+        $stmt = $conn->prepare("UPDATE seller SET accountStatus = ? WHERE userID = ?");
+        $stmt->bind_param("ss", $accStatus, $userID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function UnbanStatus($userID, $status) {
+        $conn=static::connectDB();
+        $accStatus;
+        if($status==1){
+            $accStatus="Banned";
+        }elseif($status==2){
+            $accStatus="Active";
             // echo $accStatus;  
         }else{
 

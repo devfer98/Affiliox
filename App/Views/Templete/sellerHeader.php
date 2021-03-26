@@ -3,6 +3,7 @@
 
 <head>
     <!-- <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" /> -->
+    <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Seller/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Seller/customer-grid.css" />
     <script type="text/javascript" src="/js/Seller/sideNav.js"></script>

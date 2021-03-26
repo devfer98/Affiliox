@@ -407,6 +407,9 @@ class Signup extends \Core\Controller {
     public function PromoterSuccessAction(){
         $this->view->display('Common/SP-RegSuccess.php');
     }
+    public function AdminSuccessAction(){
+        $this->view->display('Common/Adm_RegSuccess.php');
+    }
 
     protected function before()
     {   

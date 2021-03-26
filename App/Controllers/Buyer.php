@@ -180,13 +180,14 @@ class Buyer extends \Core\Controller
    }  
    public function CompletedOrdersAction()
    {
-
       $this->view->display('Customer/CompletedOrders.php');
    }
+
    public function FailedOrderAction()
    {
       $this->view->display('Customer/OrderNotReceived.php');
    }
+   
    public function ContactSellerAction()
    {
       $this->view->display('Customer/contactSeller.php');

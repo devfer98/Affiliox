@@ -31,7 +31,17 @@
                 <img src="/images/Common/help.png " style="width:100%">
               </div>
               <div class="acolumn">
-                <form action="/action_page.php">
+                <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                <form method="post" onsubmit="return validateForm();" action ="../User/HelpToDB.php">
                   <label for="fname">Full Name</label>
                   <input type="text" id="fname" name="firstname" placeholder="Your name..">
                   <label for="lname">Email</label>

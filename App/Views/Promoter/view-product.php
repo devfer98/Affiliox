@@ -14,6 +14,8 @@
 	<div class="container">
         <h2><i class="fas fa-puzzle-piece"></i></i>&nbsp; &nbsp;Check Product Details</h2>
        
+       
+
        <div class="inner-content">
             <table >
                 <tr>

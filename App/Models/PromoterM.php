@@ -51,6 +51,64 @@ class PromoterM extends \Core\Connect {
             return $result;
         }
     }
+    
+
+    public function addLinksPromo($link, $date, $userID) {
+
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("INSERT INTO prolink (link, date, userID) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $link, $date, $userID);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
+    }
+
+    public function getLinksPromo($userID)  {
+        $conn=static::connectDB();
+
+        $query = "select * from prolink WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows > 0 ){
+                return $result;
+            } else {
+                $result = null;
+                return  $result ;
+            }
+        } 
+    }
+
+    public function getProductDetails($userID){
+        $conn=static::connectDB();
+
+        $query = "select * from promoter WHERE userID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows >0)
+            {
+                return $result;
+            }
+            
+        }else{
+            $result = 'Error sql';
+            return $result;
+        }
+    }
+
 
     public function updatePromoter() {
 
@@ -92,6 +150,22 @@ class PromoterM extends \Core\Connect {
                     echo 'SQL Error';
                 }
     }
+
+    public function getBanned() {
+        $conn=static::connectDB();
+                // $flag=0;
+
+                $stmt = $conn->prepare("SELECT * FROM promoter WHERE accountStatus = 'Banned'");
+                // $stmt->bind_param("s", "Pending");
+                if($stmt->execute()){
+                    $result = $stmt->get_result();
+                    $stmt->close();
+                    return $result;
+                }else{
+                    echo 'SQL Error';
+                }
+    }
+
     public function getStatistics() {
 
     }
@@ -123,6 +197,26 @@ class PromoterM extends \Core\Connect {
             $accStatus="Active";
         }elseif($status==2){
             $accStatus="Banned";
+            // echo $accStatus;  
+        }else{
+
+        }
+        $stmt = $conn->prepare("UPDATE promoter SET accountStatus = ? WHERE userID = ?");
+        $stmt->bind_param("ss", $accStatus, $userID);
+        if($stmt->execute()){
+            $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function UnbanStatus($userID, $status) {
+        $conn=static::connectDB();
+        $accStatus;
+        if($status==1){
+            $accStatus="Banned";
+        }elseif($status==2){
+            $accStatus="Active";
             // echo $accStatus;  
         }else{
 
