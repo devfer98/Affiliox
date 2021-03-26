@@ -11,37 +11,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-
+					
 	<!---Navigation bar-------------------------------------------->
 	<div class="container">
 		<br/><br/>
 		<!-- <div class="inner-part"> -->
+
 		<div class="row">
 			<div class="column">
 				<div class="card">
-					<h3>Admin Balance</h3>
-					<p>$41,194.62</p>						
+				<?php 
+                  if(isset($this->countPromoters) and !empty($this->countPromoters and $this->countPromoters->num_rows>0)){
+                   while($row = $this->countPromoters->fetch_assoc()){
+						//echo $row['COUNT(userID)'];
+					//echo "<h3>.Promoter Count </h3>"
+						echo "<h3>Promoter Count</h3><p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  				 
 				</div>
 			</div>
 
 			<div class="column">
 				<div class="card">
-					<h3>Admin Actions</h3>
-					<p>0/$0.00</p>					
+				<?php 
+                  if(isset($this->countSellers) and !empty($this->countSellers and $this->countSellers->num_rows>0)){
+                   while($row = $this->countSellers->fetch_assoc()){
+						echo "<h3>Seller Count</h3><p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  								
 				</div>
 			</div>
   
 			<div class="column">
 				<div class="card">
-					<h3>All Clicks</h3>
-					<p>104/$98.75</p>					
+				<?php 
+                  if(isset($this->countBuyers) and !empty($this->countBuyers and $this->countBuyers->num_rows>0)){
+                   while($row = $this->countBuyers->fetch_assoc()){
+						echo "<h3>Buyer Count</h3><p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  							
 				</div>
 			</div>
   
 			<div class="column">
 				<div class="card">
-					<h3>Total Sales</h3>
-					<p>$300,263.54</p>
+				<?php 
+                  if(isset($this->countMinistores) and !empty($this->countMinistores and $this->countMinistores->num_rows>0)){
+                   while($row = $this->countMinistores->fetch_assoc()){
+						echo "<h3>Ministore Count</h3><p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  				
 				</div>
 			</div>
 		</div>
@@ -49,33 +72,57 @@
 		<div class="row">
 			<div class="column">
 				<div class="card">
-					<h3>Weekly Earning</h3>
-					<p>$</p>						
+				<?php 
+                  if(isset($this->countOrders) and !empty($this->countOrders and $this->countOrders->num_rows>0)){
+                   while($row = $this->countOrders->fetch_assoc()){
+						echo "Orders<p>".$row['COUNT(orderID)']."</p>";	
+					}  
+				}
+			?>  									
 				</div>
 			</div>
 
 			<div class="column">
 				<div class="card">
-					<h3>Monthly Earning</h3>
-					<p>$</p>					
+				<?php 
+                  if(isset($this->countPromoters) and !empty($this->countPromoters and $this->countPromoters->num_rows>0)){
+                   while($row = $this->countPromoters->fetch_assoc()){
+						echo "Promoter Count<p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  								
 				</div>
 			</div>
   
 			<div class="column">
 				<div class="card">
-					<h3>Yearly Earning</h3>
-					<p>$</p>					
+				<?php 
+                  if(isset($this->countPromoters) and !empty($this->countPromoters and $this->countPromoters->num_rows>0)){
+                   while($row = $this->countPromoters->fetch_assoc()){
+						echo "Promoter Count<p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  								
 				</div>
 			</div>
   
 			<div class="column">
 				<div class="card">
-					<h3>Total Online</h3>
-					<p>1</p>
+					<?php 
+                  if(isset($this->countPromoters) and !empty($this->countPromoters and $this->countPromoters->num_rows>0)){
+                   while($row = $this->countPromoters->fetch_assoc()){
+						echo "Promoter Count<p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  				
 				</div>
 			</div>
 		</div>
 		<br/><br/><br/><br/><br/><br/>
+    </div>
+					
+</div>
+</div>
 </div>
 <!--Container------------------------------------------>
 </body>

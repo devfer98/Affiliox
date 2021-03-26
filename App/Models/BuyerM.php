@@ -144,6 +144,25 @@ class BuyerM extends \Core\Connect{
         return array ($total,$delivery,$final_tot,$out);
     }
 
+    public function getCount() {
+        $conn=static::connectDB();
+
+        // $query = $conn->prepare('select * from promoter');
+        // $query->execute();
+        // $count = $query->num_rows;
+        // return $count;
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM buyer;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     function EmailCompair($email,$username){
 
         $conn=static::connectDB();

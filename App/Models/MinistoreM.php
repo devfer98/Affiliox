@@ -38,6 +38,20 @@ class MinistoreM extends \Core\Connect {
             echo 'SQL Error';
         }
     }
+
+    public function getCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM ministore;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
    
 }
     

@@ -22,7 +22,7 @@
 </div>
 <!-----------------Admin-Registration Form------------------->
 
-<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Update/UpdateToDB">
+<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Admin/updateAdmin">
     <div class="row ">
         <div class="col12">
             <div class=" marginl100">
