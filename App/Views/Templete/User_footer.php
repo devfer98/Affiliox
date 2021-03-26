@@ -44,7 +44,7 @@
           </div>
 
       </div>
-      <div class="row footer backcolor paddingt20">
+      <div class="row footer backcolor paddingt20" >
 
           <ul>
               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -52,7 +52,6 @@
               <li> Affiliox &trade;</li>
           </ul>
       </div>
-
 
       <!--Container------------------------------------------>
 
@@ -66,4 +65,5 @@
           <a href="../Common/Help">Support<i class="fas fa-envelope-open-text"></i></a>
       </div>
       <span onclick="openNav()"></span>
+      
       

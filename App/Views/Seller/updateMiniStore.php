@@ -12,8 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+	<!-------------- Top-Navigation-Bar ---------------------->
 	<div id="main" class="container navigation">
-		
 		<!-- <div class="Reg-container"> -->
 		<div class="row">
 			<div class="col12 center title">
@@ -24,60 +24,78 @@
 		</div>
 		<div class="row row-padding">	
 			<div class="col6 col-center inner-part inp">
-			<form>
+			<div class="row col12">
+				<p style="color:red;"><?php if(isset($this->errorMssg) and !empty($this->errorMssg)){echo $this->errorMssg;}  ?></p>
+			</div>
+			<form enctype='multipart/form-data' method="post" action ="../Ministore/edit">
 				<!-- <div class= "inp"> -->
+				<?php  
+                if(isset($this->store) and !empty($this->store)){
+					while($row = $this->store->fetch_assoc()){ 
+						$attributes=explode(", ", $row["design"]);    
+            	?>
 				<h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Details</h2>
 				<div class="row col8 padding">
 				<label for="fname"> &nbsp;Store Name</label><br>
-				<input type="text" id="fname" name="fullname" placeholder="">
+				<input readonly type="text" id="fname" name="storeName" value="<?php echo $row['name'] ?>" placeholder="">
                 </div>
                 <div class="row col6 padding">
-                <label for="Address">Logo</label><br>
-                <input type="file" id="line2" name="aline2" placeholder="" required><br>
+                <label for="Address">Logo (add image to update)</label><br>
+                <input type="file" id="line2" name="logoImage" placeholder="" accept="image/*"><br>
                 </div>
-				<div class="row col12 padding">
+				<!-- <div class="row col12 padding">
 				<label for="lname">&nbsp; Home Page Title</label><br>
-				<input type="text" id="lname" name="lname" placeholder="Home page name" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required> <br>
-                </div>
+				<input type="text" id="email" name="email" placeholder="">
+                </div> -->
                 <!-- <div class="row" style="padding:0px;"> -->
 				<div class="row col12 padding">
 				<label for="phn-no">&nbsp; Description</label><br>
-				<textarea id="phn-no" name="phn-no" placeholder="" minlength="15" maxlength="100" required></textarea>
+				<textarea id="phn-no" name="description" placeholder=""><?php echo $row['Description'] ?></textarea>
 				</div>
-				<div class="row col12 padding">
+				<!-- <div class="row col12 padding">
 				<label for="dob">&nbsp; About Us</label><br>
-				<textarea id="Birth" name="dob" placeholder=" " minlength="15" maxlength="100" required></textarea>
+				<textarea id="Birth" name="dob" placeholder=" "></textarea>
                 </div>
-                <!-- </div> -->
+                
 				<div class="row col12 padding">
 				<label for="Address">Contact Us</label><br>
-				<textarea type="text" id="line1" name="aline1" placeholder="" minlength="15" maxlength="100" required></textarea>
-                </div>
+				<textarea type="text" id="line1" name="aline1" placeholder=""></textarea>
+                </div> -->
 
                 <h2 class="row col12" style="font-family: 'Lato', sans-serif;">Store Design</h2>
 				<div class="row col6 padding">
-				<label for="Address">Home Page Images</label><br>
-				<input type="file" id="line2" name="aline2" placeholder="" required><br>
+				<label for="Address">Slider Images (add images to update)</label><br>
+				<input type="file" id="line2" name="sliderImages[]" placeholder="" accept="image/*" multiple><br>
                 </div>
                 <div class="row">
                 <div class="col6 fitcontent padding">
-                <label for="Address">Navigation Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder="" required><br>
+                <label for="Address">Background Colour</label><br>
+                <input type="color" id="line2" name="navColor" value="<?php echo $attributes[1] ?>" placeholder=""><br>
                 </div>
                 <div class="col6 padding">
-                <label for="Address">Button Background Colour</label><br>
-                <input type="color" id="line2" name="aline2" placeholder="" required><br>
+                <label for="Address">Font Colour</label><br>
+                <input type="color" id="line2" name="buttonColor" value="<?php echo $attributes[2] ?>" placeholder=""><br>
                 </div>
                 </div>
                 <div class="row col4 padding">
                 <label for="Address">Font</label><br>
-                <select name="cars" id="cars" required>
-                    <option value="volvo"> Arial</option>
-                    <option value="saab">Times New Roman</option>
-                    <option value="mercedes">Helvetica</option>
-                    <option value="audi">Times</option>
+                <select name="font" id="font">
+                    <option value="Arial" <?php if ($attributes[0] == 'Arial') echo ' selected="selected"'; ?>> Arial</option>
+					<option value="Verdana" <?php if ($attributes[0] == 'Verdana') echo ' selected="selected"'; ?>> Verdana</option>
+					<option value="Helvetica" <?php if ($attributes[0] == 'Helvetica') echo ' selected="selected"'; ?>>Helvetica</option>
+					<option value="Tahoma" <?php if ($attributes[0] == 'Tahoma') echo ' selected="selected"'; ?>>Tahoma</option>
+					<option value="Trebuchet MS" <?php if ($attributes[0] == 'Trebuchet MS') echo ' selected="selected"'; ?>>Trebuchet MS</option>
+                    <option value="Times New Roman" <?php if ($attributes[0] == 'Times New Roman') echo ' selected="selected"'; ?>>Times New Roman</option>
+                    <option value="Georgia" <?php if ($attributes[0] == 'Georgia') echo ' selected="selected"'; ?>>Georgia</option>
+					<option value="Garamond" <?php if ($attributes[0] == 'Garamond') echo ' selected="selected"'; ?>>Garamond</option>
+					<option value="Courier New" <?php if ($attributes[0] == 'Courier New') echo ' selected="selected"'; ?>>Courier New</option>
+                    <option value="Brush Script MT" <?php if ($attributes[0] == 'Brush Script MT') echo ' selected="selected"'; ?>>Brush Script MT</option>
                 </select>
                 </div>
+				<?php
+                    }
+                }
+                ?>
 				<!-- </div> -->
 			<!------------------Buttons------------------->
 				<div class="row col12 padding commonB">
@@ -87,6 +105,8 @@
 			</form>
 			</div>
 		</div>
+
 	</div> 
+
 </body>
 </html>

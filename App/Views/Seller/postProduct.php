@@ -79,7 +79,7 @@
 				</div>
 				<div class="row">
 				<div class="col6 padding">
-				<label for="Address"><i class="fas fa-images"></i>&nbsp;Main Images</label><br>
+				<label for="Address"><i class="fas fa-images"></i>&nbsp;Main Image</label><br>
 				<input type="file" id="line2" name="mainImage" placeholder="" accept="image/*"><br>
 				</div>
 				<div class="row col6 padding">
