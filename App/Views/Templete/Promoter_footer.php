@@ -39,7 +39,7 @@
 	<div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   		<a href="../Promoter/promoterProfile">User profile<i class="far fa-user"></i></a>
-  		<a href="../Promoter/Market">Marker Place<i class="fab fa-shopify"></i></a>
+  		<a href="../Promoter/market">Marker Place<i class="fab fa-shopify"></i></a>
   		<a href="../Promoter/staticPromoter">Statstics<i class="fas fa-chart-line"></i></i></a>
   		<a href="../Promoter/promoterTrans">Transactions<i class="fas fa-money-check-alt"></i></a>
   		<a href="../Promoter/promoterFeedback">Feedback<i class="fas fa-phone-square"></i></i></a>

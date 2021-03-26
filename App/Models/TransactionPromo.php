@@ -25,7 +25,7 @@ class TransactionPromo extends \Core\Connect{
         }
     }
 
-    // WHERE userID = '{$_SESSION["userID"]}' 
+    
     public function getTransPromo($userID)  {
         $conn=static::connectDB();
 
@@ -57,8 +57,6 @@ class TransactionPromo extends \Core\Connect{
     {
         echo ' Bye ? ';
     }
-
-    
-    
+ 
     
 }

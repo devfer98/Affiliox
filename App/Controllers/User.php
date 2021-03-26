@@ -90,8 +90,6 @@ class User extends \Core\Controller
         $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
         $value = json_decode($value, true);
         $UImsg = $buy->total_cal($value);
-
-        // return $UImsg;
         return $UImsg;
     }
     public function viewCartitemAction()
@@ -108,9 +106,7 @@ class User extends \Core\Controller
             $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
             $value = json_decode($value);
             
-            foreach ($value as $c) {
- 
-                
+            foreach ($value as $c) {  
                 if ($c->ID != $productCode) {
                     array_push($new_cart, $c);
                 } else {
