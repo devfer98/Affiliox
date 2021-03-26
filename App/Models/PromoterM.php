@@ -87,13 +87,12 @@ class PromoterM extends \Core\Connect {
         } 
     }
 
-    public function getProductDetails($userID){
+    public function getProductDetails(){
         $conn=static::connectDB();
 
-        $query = "select * from promoter WHERE userID = ?";
+        $query = "select * from product WHERE status = 'Active' ";
         
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("s",$userID);
 
         if ($stmt->execute()) {
             $result = $stmt->get_result();
@@ -107,6 +106,47 @@ class PromoterM extends \Core\Connect {
             $result = 'Error sql';
             return $result;
         }
+    }
+
+    public function getProductImage(){
+    
+    }
+
+    public function getproductFeatures($prodID){
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
+        $stmt0->bind_param("i", $prodID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            
+            if ($result->num_rows >0) {
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid product request";
+            return $error;
+        }
+       
+    }
+
+    public function getUniqueLink($prodID){
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
+        // $stmt0 = $conn->prepare("SLECT product.productID, product.prodName, product.price, product.comRate, product.description, promoter.userID FROM product INNER JOIN promoter ON product.userID=promoter.userID WHERE product.productID, promoter.userID = ? ");
+        $stmt0->bind_param("i", $prodID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            
+            if ($result->num_rows >0) {
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid product ID";
+            return $error;
+        }
+       
     }
 
 

@@ -31,55 +31,27 @@ class Promoter extends \Core\Controller {
         $this->view->UImsg=$UImsg;
         $this->view->display('Promoter/update-promoter.php');
     }
+   
 
-
-
-    public function productDetailsAction(){
-
-        $userID = $_SESSION['username'];
+    public function MarketAction(){
         $user = new PromoterM();
-        $result = $user->getProductDetails($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
-        $this->view->display('Promoter/market-place.php');
-    }
-
-
-
-    public function transHistoryAction() {
-
-        $userID = $_SESSION['username'];
-        $user = new TransactionPromo();
         
-        $result = $user->getTransPromo($userID);
+        $result = $user->getProductDetails();
+        // $resultNew = $user->getProductImage();
 
         if($result == null) {
-            // $empty = $result;
-            $empty= "You have not yet made any transaction!";
+            $empty= "Still there are no Products in store!";
             $this->view->empty=$empty;
-            $this->view->display('Promoter/payout-history.php');
+            $this->view->display('Promoter/market-place.php');
         } else {
             $UImsg = $result;
             $this->view->UImsg=$UImsg;
-            $this->view->display('Promoter/payout-history.php');
+            $this->view->display('Promoter/market-place.php');
         }
-
     }
-    
-
-
-    public function MarketAction(){
-        $userID = $_SESSION['username'];
-        $user = new PromoterM();
-        $result = $user->getPromoterProfile($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
-        $this->view->display('Promoter/market-place.php');
-     }
      
     public function accountIndexAction(){
         $this->view->display('Promoter/market-place.php');
-        // $this->view->display('Common/market.php');
     }
 
     public function helpIndexAction(){
@@ -87,10 +59,28 @@ class Promoter extends \Core\Controller {
      }
 
     public function viewProductAction(){
+        if (!empty($_GET['id'])) {
+            $prodID = $_GET['id'];
+            $prod = new promoterM;
+            $UImsg = $prod->getproductFeatures($prodID);
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Promoter/view-product.php');
+           
+        } else
         $this->view->display('Promoter/view-product.php'); 
     }
 
+
     public function generateLinkAction() {
+        if (!empty($_GET['id'])) {
+            $prodID = $_GET['id'];
+            // $promID = $_GET['id'];            
+            $prod = new promoterM;
+            $UImsg = $prod->getUniqueLink($prodID);
+            $this->view->UImsg = $UImsg;
+            $this->view->display('Promoter/generate-link.php');
+           
+        } else
         $this->view->display('Promoter/generate-link.php');
     }
 
@@ -137,7 +127,7 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         
         $user = new TransactionPromo();
-        $limit = 82.14;
+        $limit = 100;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
@@ -159,6 +149,26 @@ class Promoter extends \Core\Controller {
         $successmsg= 'Your Transaction Process is Success!';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
+    }
+
+    public function transHistoryAction() {
+
+        $userID = $_SESSION['username'];
+        $user = new TransactionPromo();
+        
+        $result = $user->getTransPromo($userID);
+
+        if($result == null) {
+            // $empty = $result;
+            $empty= "You have not yet made any transaction!";
+            $this->view->empty=$empty;
+            $this->view->display('Promoter/payout-history.php');
+        } else {
+            $UImsg = $result;
+            $this->view->UImsg=$UImsg;
+            $this->view->display('Promoter/payout-history.php');
+        }
+
     }
 
 
@@ -205,6 +215,7 @@ class Promoter extends \Core\Controller {
         }
 
     }
+
 
     protected function before() {   
         if(session_id() == '') {
