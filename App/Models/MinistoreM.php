@@ -40,6 +40,20 @@ class MinistoreM extends \Core\Connect {
         }
     }
 
+    public function getStore($name) {
+        $conn=static::connectDB();
+        // $userID="nothing";
+        $stmt = $conn->prepare("SELECT * FROM ministore WHERE name= ?");
+        $stmt->bind_param("s", $name);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function isNameUsed($storename){
         $conn=static::connectDB();
         $stmt = $conn->prepare("SELECT * FROM ministore WHERE name= ?");

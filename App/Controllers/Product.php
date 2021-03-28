@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\View;
 use App\Models;
+use App\Models\MinistoreM;
 use App\Models\Product as ModelsProduct;
 use App\Models\Delivery as ModelsDelivery;
 
@@ -52,5 +53,16 @@ class Product extends \Core\Controller
             $this->view->display('Customer/productDetails.php');
         } else
              header("Location:../User/Market");
+    }
+
+    public function storeViewAction(){
+        $ministore = new MinistoreM();
+        if (!empty($_GET['id'])) {
+            $result = $ministore->getStore($_GET['id']);
+            $this->view->store = $result;
+            $this->view->display('Seller/miniStoreCusView.php');  
+        } else{
+            header("Location:../");
+        }
     }
 }
