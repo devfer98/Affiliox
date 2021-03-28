@@ -90,7 +90,7 @@ class PromoterM extends \Core\Connect {
     public function getProductDetails(){
         $conn=static::connectDB();
 
-        $query = "select * from product WHERE status = 'Active' ";
+        $query = "select * from product LEFT JOIN productimage on product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE status = 'Active'";
         
         $stmt = $conn->prepare($query);
 

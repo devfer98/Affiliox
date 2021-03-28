@@ -32,7 +32,7 @@
 						<td class="item-name" colspan=3 id=title><?php echo $row['prodName'] ?></td>
 					</tr>
 					<tr>
-						<td class="item-img" rowspan = 3> <img src="/images/Promoter/drone.jpg" > </td>
+						<td class="item-img" rowspan = 3> <img src="/images/upload/<?php echo $row['imageCode'] ?>" > </td>
 					</tr>
 					<tr>
 						<td class="item-price"><?php echo $row['price'] ?> LKR</td>
