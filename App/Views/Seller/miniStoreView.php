@@ -21,12 +21,13 @@
 	<!-- </div> -->
 
 	<?php
-		$header="../App/Views/Templete/User_header.php";
-		include $header;
-		$file="../App/Views/Common/index.php";
+		// $header="../App/Views/Templete/User_header.php";
+		// include $header;
+		// $file="../App/Views/Common/index.php";
+		$file="../App/Views/Seller/miniStoreCusView.php";
 		require $file;
-		$footer="../App/Views/Templete/User_footer.php";
-		include $footer;
+		// $footer="../App/Views/Templete/User_footer.php";
+		// include $footer;
 	?>
 </body>
 </html>

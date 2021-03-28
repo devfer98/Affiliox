@@ -1,0 +1,353 @@
+.clearfix {
+	  overflow: auto;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+
+html { font-family: 'Open Sans', sans-serif;}
+
+hr { background-color: black; border: 0 none; color: #eee; height: 1px; }
+
+a {text-decoration:none; color: #1f3d7a;;}
+/*-------------------side navigation bar--------------------*/
+header {
+	background: #fafafa;
+	/*overflow: auto;*/
+	/*padding: 20px;*/
+	font-family: 'Open Sans', sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+}
+  
+header .open-btn {
+	float: left;
+	position: relative;
+	top: 40px;
+	margin-left: 80px;
+	margin-right: 50px;
+}
+  
+hr {
+	  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+  
+.sidenav {
+	height: 100%; 
+	width: 0; 
+	position: fixed;
+	z-index: 1; 
+	top: 0;
+	left: 0;
+	background: #eee; 
+	overflow-x: hidden;
+	padding-top: 60px; 
+	transition: 0.5s; 
+}
+  
+.sidenav  a {
+	padding: 10px 10px 10px 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	color: black;
+	display: block;
+	margin-bottom: 18px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.sidenav a:hover {
+  color: #28a745;
+  /* font-weight: bold; */
+}
+  
+.sidenav a i {
+	margin-left: 10px;
+}
+  
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	color: black; 
+}
+  
+#main {
+	transition: margin-left .5s;
+	padding: 20px;
+}
+  
+/*------------------------nav-bar-------------------*/
+header {
+  background: #fafafa;
+  /*overflow: auto;*/
+  /*padding: 20px;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#first-hr {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5);
+} 
+/*------------------main navigation---------------------------------*/
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 20;
+}
+
+li  {
+  padding: 15px;
+}
+
+.logo-name a {
+  /*position: relative;*/
+  /*top: 12px;*/
+  color: #1f3d7a;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 200px;
+  position: relative;
+  left: 15px; 
+}
+
+.item  {
+  position: relative;
+  left: 70px;
+  top: 30px;
+}
+
+
+.item  a {
+  text-decoration: none;
+  border: 1px solid #28a745;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: -10px;
+  padding: 7px;
+  border-radius: 0.25rem;
+  color: #1f3d7a;
+
+}
+
+.item a:hover {
+  background: #28a745;
+  opacity: 1;
+  letter-spacing: 0.5px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  color: #f5f5f6;
+  font-weight: bold;
+}
+
+.push {
+  margin-left: auto;
+  position: relative;
+  top: 25px;
+}
+
+.push button i {
+  padding: 5px; 
+}
+
+.last {
+  position: relative;
+  top: 18px;
+}
+
+.push input {
+  padding: 8px;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid #ced4da; 
+  width: 300px;
+}
+
+input:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+  text-decoration: underline;
+}
+
+.push button {
+  padding: 6px;
+  margin-left: 5px;
+  background: none;
+  border-radius: 0.25rem;
+  font-family: 'Open Sans', sans-serif;
+  border:  1px solid #28a745;
+  font-weight: bold;
+}
+
+.push button:hover {
+  background:#28a745;
+  color: #f5f5f6;
+}
+
+.last select{
+  padding: 7px;
+  width: 90px;
+  border: 1px solid black;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 0.25rem;
+  position: relative;
+  top: 8px;
+}
+
+/*------------------------welcome-note-------------------*/
+.welcome-note p {
+	text-align: center;
+	margin-top: 50px;
+  font-size: 40px;
+	/* border-bottom: 2px solid black; */
+}
+
+.welcome-noteL p {
+
+  padding-top: 100px;
+	font-size: 40px;
+
+}
+
+/*-----------------------Inner carousel--------------------------*/
+
+.slideshow-container {
+  max-width: 1000px;
+  /* height: 500px; */
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/*-----------------------Inner Part--------------------------*/
+.product {
+  margin: 0 160px 0 160px;
+}
+
+.container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+  grid-gap: 80px;
+}
+
+.zone {
+  width: 250px;
+  cursor:pointer;
+  text-align: center;
+  font-size:10em;
+  border-radius:4px;
+  border:1px solid #bbb;
+  transition: all 0.3s linear;
+  margin-bottom: 40px;
+}
+
+
+.zone h3,h4,p {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.zone a {
+    font-size: 15px;
+    line-height: 1em;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    color: #3d3eee;
+    background: #d0d0fb;
+    /* opacity: 0.7;
+    border:1px solid #bbb; */
+    width: 249px;
+}
+
+.zone a:hover {
+  background: #e8e8fd;
+}
+
+.zone a:last-child {
+  margin-top: 20px;
+}
+
+.zone img {
+  border-radius: 4px 4px 0 0;
+  width: 249px;
+  height: 250px;
+}
+
+
+/*-----------------------bottom part----------------------------------------------*/
+.bottom-part table {
+	font-family: 'Open Sans', sans-serif;
+	margin: 30px 0 10px 120px;
+	/* margin-left: 110px; */
+	  /* width: 1200px; */
+  }
+  
+  .thead td{
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: underline;
+	width: 500px;
+  }
+  
+  table tr { line-height: 40px; }
+  
+  .bottom-part table tr td a {
+	  text-decoration: none;
+	  color: #1f3d7a;
+  }
+  
+  .bottom-part table tr td a:hover {
+	  color: red;
+  }
+
+/*--------------------footer-tag--------------------*/
+.footer {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer ul li {
+  font-size: 17px;
+  display: inline-block;
+}
+
+
+
+
+

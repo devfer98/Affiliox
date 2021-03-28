@@ -274,6 +274,25 @@ class PromoterM extends \Core\Connect {
         }
     }
 
+    public function getCount() {
+        $conn=static::connectDB();
+
+        // $query = $conn->prepare('select * from promoter');
+        // $query->execute();
+        // $count = $query->num_rows;
+        // return $count;
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     function EmailCompair($email,$username){
 
         $conn=static::connectDB();

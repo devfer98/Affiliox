@@ -15,7 +15,6 @@ Class View{
         }
 
         if(isset($_SESSION['type']) && ($_SESSION['type'] == 'buyer') ){
-
             $header="../App/Views/Templete/Buyer_header.php";
             $footer="../App/Views/Templete/Buyer_footer.php";
         }elseif (isset($_SESSION['type']) && ($_SESSION['type'] == 'seller') ) {
@@ -35,21 +34,21 @@ Class View{
 
         $file = "../App/Views/$view";
         if(is_readable($file)){
-            if($view!="Seller/miniStoreView.php"){
+            // if($view!="Seller/miniStoreView.php"){
                 include $header;
                 // require $header;
                 require $file;
                 include $footer;
                 // require $footer;
-            }else{
-                // $header="../App/Views/Templete/User_header.php";
-                // $footer="../App/Views/Templete/User_footer.php";
-                // include $header;
-                // require $header;
-                require $file;
-                // include $footer;
-                // require $footer;
-            }
+            // }else{
+            //     // $header="../App/Views/Templete/User_header.php";
+            //     // $footer="../App/Views/Templete/User_footer.php";
+            //     // include $header;
+            //     // require $header;
+            //     require $file;
+            //     // include $footer;
+            //     // require $footer;
+            // }
         }else {
 
             echo "$file not Found";
