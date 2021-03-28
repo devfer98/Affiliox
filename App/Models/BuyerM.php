@@ -212,6 +212,21 @@ class BuyerM extends \Core\Connect{
         return array ($total,$delivery,$final_tot,$out,$PGfee,$deadline_peroid);
     }
 
+    public function orderCommision($val)
+    {
+        $total =0;
+        foreach ($val as $c) {
+
+            $data =new ModelsProduct;
+            $list = $data->productDetails($c['ID']);
+            while ($row = $list->fetch_assoc()) {
+                (float)$total = $total + (float)$row['price']*(float)$row['comRate']*$c['Q'];
+            }
+        }
+
+        return $total;
+    }
+
 
     function EmailCompair($email,$username){
 

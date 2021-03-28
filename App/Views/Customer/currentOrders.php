@@ -63,7 +63,7 @@
 
                                 <div class="right marginr100">
                                     <h3>Order ID  :<?php echo $row['orderID'] ?></h3>
-                                    <p>Ammount :<?php echo $row['amount'] ?></p>
+                                    <p>Amount :<?php echo number_format($row['amount'] ,2)?></p>
                                     <p>Delivery Date  :<?php echo $row['deliveryDeadline'] ?></p>
                                     <p>Delivery Address  :<?php echo $row['deliveryAddress'] ?></p>
                                 </div>
@@ -86,7 +86,7 @@
                             
                                     <h3><?php echo $row2['prodName'] ?></h3>
                                     <p>Order ID :<?php echo $row['orderID'] ?></p>
-                                    <p> Price   : Rs.<?php  echo $row2['price'] ?></p>
+                                    <p>price : Rs.<?php  echo number_format($row2['price'],2)?></p>
                                     
                                 </div>
                             </div>
@@ -102,17 +102,18 @@
                                 <div class="">
                                     
                                     <div class="col12 nav-bar center">
-                                        <button onclick="location.href='../Buyer/ContactSeller?ProdID=<?php echo $row2['productID'] ?>&OrderID=<?php echo $row2['orderID'] ?>'">&nbsp;&nbsp; Contact
-                                            Seller &nbsp;&nbsp;</button>
+
 
                                         <form method ="POST" action="../Buyer/OrderSuccess">
                                         <input type="text" name ="ProdID" value ="<?php echo $row2['productID'] ?> " hidden>
                                         <input type="text" name ="OrderID" value ="<?php echo $row2['orderID'] ?>" hidden>
                                         <button value="submit" type="submit" >&nbsp; Order Received
                                             &nbsp;</button></form>
-                                        <button onclick="location.href='../Buyer/FailedOrder?ProdID=<?php echo $row2['productID'] ?>&OrderID=<?php echo $row2['orderID'] ?>'">Order not
-                                            Received</button>
-
+                                        <form method ="POST" action="../Buyer/ContactSeller">
+                                            <input type="text" name ="ProdID" value ="<?php echo $row2['productID'] ?> " hidden>
+                                            <input type="text" name ="OrderID" value ="<?php echo $row2['orderID'] ?>" hidden>
+                                        <button value="submit" type="submit" >Contact Seller</button>
+                                        </form>
                                     </div>
 
                                 </div>

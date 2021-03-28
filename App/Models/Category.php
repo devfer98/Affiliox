@@ -5,21 +5,21 @@ class Category extends \Core\Connect{
     function __construct() {
     }
     
-    public function addFeedback($message,$rating,$username,$prodID) {
+    // public function addFeedback($message,$rating,$username,$prodID) {
         
-        $conn=static::connectDB();
-        $reply="no";
-        $stmt = $conn->prepare("INSERT INTO feedback (reply,comment,rating,userID,productID) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdss",$reply,$message,$rating,$username,$prodID);
-        if ($stmt->execute()) {
+    //     $conn=static::connectDB();
+    //     $reply="no";
+    //     $stmt = $conn->prepare("INSERT INTO feedback (reply,comment,rating,userID,productID) VALUES (?, ?, ?, ?, ?)");
+    //     $stmt->bind_param("ssdss",$reply,$message,$rating,$username,$prodID);
+    //     if ($stmt->execute()) {
 
-            $stmt->close();
-            return true;
-        }else{
-        echo $stmt->error;
-            return false;
-        }
-    }
+    //         $stmt->close();
+    //         return true;
+    //     }else{
+    //     echo $stmt->error;
+    //         return false;
+    //     }
+    // }
 
     public function getCategories() {
         $conn=static::connectDB();

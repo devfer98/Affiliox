@@ -136,8 +136,17 @@ class Buyer extends \Core\Controller
          $buyUserID=$_SESSION['username'];
 
          ///////////////////////////////////////////
-         $proUserID=12345;   // promoter ckeck here from cookie find commision from products
-         $totalCommission=300;
+         $value =  (!empty($_COOKIE["promoter"])) ? $_COOKIE["promoter"] : "[]";
+         $value = json_decode($value);
+         $proUserID=$value;
+         echo $proUserID;
+         $value2 =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
+         $value2 = json_decode($value2, true);
+         $totalcommision = new BuyerM;
+         $totalCommission = $totalcommision->orderCommision($value2);
+         
+            // promoter ckeck here from cookie find commision from products
+         
 
          ///////////////////////////////////////////
          $data= $order->addOrder($status,$amount,$datetime,$deliveryAddress, $deliveryDeadline ,$buyUserID ,$proUserID ,$totalCommission);
@@ -225,7 +234,16 @@ class Buyer extends \Core\Controller
    }
    
    public function ContactSellerAction()
-   {
+
+   { 
+      if(!empty($_POST['ProdID'])){
+         $prdID=$_POST['ProdID'];
+         $orderID=$_POST['OrderID'];
+      }
+      $orders = new ModelsOrder;
+      $orders = $orders->productReceivedConfirmation($prdID,$orderID);
+      $this->view->order=$orders;
+
       $this->view->display('Customer/contactSeller.php');
    }
 
@@ -281,7 +299,10 @@ class Buyer extends \Core\Controller
                $this->view->display('Customer/feedback.php');
            }
           
-       } $this->view->display('Customer/feedback.php');
+       } 
+       
+       
+       $this->view->display('Customer/feedback.php');
    }
    // Buyer Feedbacks Functions -----------------------------//
    public function HelpAction()

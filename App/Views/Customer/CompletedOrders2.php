@@ -64,7 +64,7 @@
                                 <div class="right marginr100">
                                     
                                     <h2>Order ID  :<?php echo $row['orderID'] ?></h2>
-                                    <p>Ammount :<?php echo $row['amount'] ?></p>
+                                    <p>Amount :<?php echo number_format($row['amount'] ,2)?></p>
                                     <p>Delivery Date  :<?php echo $row['deliveryDeadline'] ?></p>
                                     <p>Delivery Address  :<?php echo $row['deliveryAddress'] ?></p>
                                 </div>
@@ -104,7 +104,7 @@
                                 <div class="">
                                     
                                 <div class="col12 nav-bar center">
-                                    <button onclick="location.href='../Buyer/ContactSeller'">&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
+                                    
                                     <button onclick="location.href='../Buyer/SubmitFeedback'">Provide Feedback</button>
                                 </div>
 

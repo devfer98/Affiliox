@@ -24,8 +24,17 @@ class Product extends \Core\Controller
     }
 
     public function viewAction()
-    {
+    {   
+
+
         if (!empty($_GET['id'])) {
+
+            if(!empty($_GET['promid'])){
+                $promoterID= $_GET['promid'];
+                setcookie("promoter", json_encode($promoterID), time() + (86400 * 30), "/");
+
+    
+            }
             $prodID = $_GET['id'];
             $prod = new ModelsProduct;
             $delivery =new ModelsDelivery;

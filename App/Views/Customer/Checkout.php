@@ -104,7 +104,7 @@
                                 <p> Products : <?php echo $this->UItotal[0] ?></p>  
                                 <p> Delivery &nbsp;: <?php echo $this->UItotal[1] ?> </p>
                                 <p> Taxes&nbsp;&nbsp;&nbsp; &nbsp; : <?php echo $this->UItotal[4] ?> </p><br>    
-                                <p class="font-heavy"> Sub-Total : <?php echo $this->UItotal[2] ?> </p><br>                     
+                                <p class="font-heavy"> Sub-Total : <?php echo number_format($this->UItotal[2],2 )?> </p><br>                     
                                 <hr />
 
 
