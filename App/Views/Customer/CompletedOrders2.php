@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Affiliox-Current-Orders</title>
+    <title>Affiliox-Completed-Orders</title>
     <link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
@@ -37,7 +37,7 @@
                 <div class=" row marginb50 ">
 
                     <div class="left">
-                        <h2><i class="fas fa-clock fa"></i>&nbsp;Current Orders</h2>
+                        <h2><i class="fas fa-clock fa"></i>&nbsp;Completed Orders</h2>
                         <div class="row">
                             <div class="col12 hrCustom lm-half-width">
                                 <hr />
@@ -62,7 +62,8 @@
                 <div class="row boxsummery shoppingBlock marginb100">
 
                                 <div class="right marginr100">
-                                    <h3>Order ID  :<?php echo $row['orderID'] ?></h3>
+                                    
+                                    <h2>Order ID  :<?php echo $row['orderID'] ?></h2>
                                     <p>Ammount :<?php echo $row['amount'] ?></p>
                                     <p>Delivery Date  :<?php echo $row['deliveryDeadline'] ?></p>
                                     <p>Delivery Address  :<?php echo $row['deliveryAddress'] ?></p>
@@ -85,6 +86,7 @@
                                 <div class="margint20 left">
                             
                                     <h3><?php echo $row2['prodName'] ?></h3>
+                                    <p>Status :<?php echo $row['receiveStatus'] ?></p>
                                     <p>Order ID :<?php echo $row['orderID'] ?></p>
                                     <p> Price   : Rs.<?php  echo $row2['price'] ?></p>
                                     
@@ -101,19 +103,10 @@
                             <div class="col3">
                                 <div class="">
                                     
-                                    <div class="col12 nav-bar center">
-                                        <button onclick="location.href='../Buyer/ContactSeller?ProdID=<?php echo $row2['productID'] ?>&OrderID=<?php echo $row2['orderID'] ?>'">&nbsp;&nbsp; Contact
-                                            Seller &nbsp;&nbsp;</button>
-
-                                        <form method ="POST" action="../Buyer/OrderSuccess">
-                                        <input type="text" name ="ProdID" value ="<?php echo $row2['productID'] ?> " hidden>
-                                        <input type="text" name ="OrderID" value ="<?php echo $row2['orderID'] ?>" hidden>
-                                        <button value="submit" type="submit" >&nbsp; Order Received
-                                            &nbsp;</button></form>
-                                        <button onclick="location.href='../Buyer/FailedOrder?ProdID=<?php echo $row2['productID'] ?>&OrderID=<?php echo $row2['orderID'] ?>'">Order not
-                                            Received</button>
-
-                                    </div>
+                                <div class="col12 nav-bar center">
+                                    <button onclick="location.href='../Buyer/ContactSeller'">&nbsp;&nbsp; Contact Seller &nbsp;&nbsp;</button>
+                                    <button onclick="location.href='../Buyer/SubmitFeedback'">Provide Feedback</button>
+                                </div>
 
                                 </div>
                             </div>

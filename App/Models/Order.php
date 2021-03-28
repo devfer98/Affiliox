@@ -69,12 +69,120 @@ class Order extends \Core\Connect
         $stmt = $conn->prepare("UPDATE `order` SET status = ? WHERE orderID = ? ");
         $stmt->bind_param("si",$status,$orderID);
         if($stmt->execute()){
-            
+            $result = $stmt->get_result();
+            return $result;
         }else{
             
             $error = $conn->errno . ' ' . $conn->error;
             echo $error;
         }
+    
+    }
+
+    public function getSuccessOrders($userID)
+    {
+        $conn = static::connectDB();
+        $status="Success";
+        $receiveStatus="Pending";
+        $stmt = $conn->prepare("SELECT * FROM `order` AS orders LEFT JOIN prodsinorder on prodsinorder.orderID = orders.orderID WHERE buyUserID = ? AND status = ? AND prodsinorder.receiveStatus = ? GROUP by prodsinorder.orderID ORDER BY prodsinorder.orderID ASC");
+        $stmt->bind_param("sss",$userID,$status,$receiveStatus);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if ($result->num_rows >0) {
+                return $result;
+
+            }
+        }else{
+            
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+    }
+    public function productReceivedConfirmation($orderID,$prodID)
+    {
+        $conn = static::connectDB();
+        
+        $stmt = $conn->prepare("SELECT * from `prodsinorder` LEFT JOIN product on prodsinorder.productID =product.productID LEFT JOIN productimage ON productimage.productID = prodsinorder.productID AND productimage.imageCode LIKE '%main%' where prodsinorder.productID =? and prodsinorder.orderID= ?");
+        $stmt->bind_param("ss",$orderID,$prodID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            return $result;
+        }else{
+            
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        } 
+    }
+    public function productReceived ($prodID,$orderID)
+    {
+        $conn = static::connectDB();
+        $status = "Received";
+        $stmt = $conn->prepare("UPDATE prodsinorder SET receiveStatus = ? WHERE orderID = ? AND productID = ?");
+        $stmt->bind_param("sii",$status,$orderID,$prodID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            return $result;
+        }else{
+            
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+        
+    }
+
+    public function getCompletedOrders($userID)
+    {
+        $conn = static::connectDB();
+        $status="Success";
+        $receiveStatus="Received";
+        $stmt = $conn->prepare("SELECT * FROM `order` AS orders LEFT JOIN prodsinorder on prodsinorder.orderID = orders.orderID WHERE buyUserID = ? AND status = ? AND prodsinorder.receiveStatus = ? GROUP by prodsinorder.orderID ORDER BY prodsinorder.orderID DESC");
+        $stmt->bind_param("sss",$userID,$status,$receiveStatus);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            if ($result->num_rows >0) {
+                return $result;
+
+            }
+        }else{
+            
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+    }
+    public function getOrderproducts($userID)
+    {
+       
+       $conn = static::connectDB();
+  
+        $receiveStatus="Pending";
+        $status = "Success";
+        $stmt0 = $conn->prepare("SELECT * FROM `prodsinorder` LEFT JOIN product ON product.productID = prodsinorder.productID LEFT JOIN productimage ON productimage.productID = prodsinorder.productID AND productimage.imageCode LIKE '%main%' WHERE orderID IN ( SELECT orderID FROM `order` WHERE buyUserID = ? AND status = ? ) AND receiveStatus = ?");
+        $stmt0->bind_param("sss",$userID,$status,$receiveStatus);
+        if($stmt0->execute()){
+
+            $results=$stmt0->get_result();
+            return $results;
+            
+        }     
+
+    }
+    public function getReceivedproducts($userID)
+
+    {
+       
+       $conn = static::connectDB();
+  
+        $receiveStatus="Received";
+        $status = "Success";
+        $stmt0 = $conn->prepare("SELECT * FROM `prodsinorder` LEFT JOIN product ON product.productID = prodsinorder.productID LEFT JOIN productimage ON productimage.productID = prodsinorder.productID AND productimage.imageCode LIKE '%main%' WHERE orderID IN ( SELECT orderID FROM `order` WHERE buyUserID = ? AND status = ? ) AND receiveStatus = ?");
+        $stmt0->bind_param("sss",$userID,$status,$receiveStatus);
+        if($stmt0->execute()){
+
+            $results=$stmt0->get_result();
+            return $results;
+            
+        }     
+
     }
 
     public function updateDelivery($data,$order_ID)

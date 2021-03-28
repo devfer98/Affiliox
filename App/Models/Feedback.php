@@ -10,7 +10,7 @@ class Feedback  extends \Core\Connect{
         $conn=static::connectDB();
         $reply="no";
         $stmt = $conn->prepare("INSERT INTO feedback (reply,comment,rating,userID,productID) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssdss",$reply,$message,$rating,$username,$prodID);
+        $stmt->bind_param("ssdsd",$reply,$message,$rating,$username,$prodID);
         if ($stmt->execute()) {
 
             $stmt->close();
