@@ -11,49 +11,52 @@
 </head>
 <body>
       <div class="container">
-      <h2><i class="fas fa-link"></i></i>&nbsp; &nbsp;Generate Link</h2>
+      <h2><i class="fas fa-link"></i></i>&nbsp; &nbsp;Generate Link <a href="../Promoter/market">Go Back / Exit</a></h2>
       
           <?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
-					      while($row = $this->UImsg->fetch_assoc()){         
+				    
+                    while($row = $this->UImsg->fetch_assoc()){         
           ?>
-          <table>
+           
+          <table class=linkArea>        
             <tr>
                 <td class="topic">Generated Link</td>
             </tr>
+            <?php  
+                if(isset($this->UImsg1) and !empty($this->UImsg1)){
+				    
+                    while($row1 = $this->UImsg1->fetch_assoc()){         
+            ?>
             <tr>
-                <td><input type="text" name="link" id="myInput" value="http://localhost/product/view?id=<?php echo $row['productID']?>proid=<?php echo $row['comRate']?>" readonly >
-                <button onclick="myFunction()">Copy <i class="far fa-copy"></i></button></td>
-            </tr>
-            <tr>
-                <td class="topic">This Allows You to Save Your Link for Future Promotions</td>
+                <td class="topic">This Allows You to Copy & Save Your Link for Future Promotions.</td>
             </tr>
             <tr>
                 <td>
+                        
                 <form method="post" action="../Promoter/promoterLinkToDB">
-                    <input type="text" name="link" value="http://localhost/product/view?id=<?php echo $row['productID']?>proid=<?php echo $row['comRate']?>" readonly >
-                    <button type="submit" name="submit" onclick="return confirm('Your link was successfully added to the database.')">Upload <i class="fas fa-upload"></i></button>
+                    <input type="text" name="link" id="myInput" value="http://localhost/product/view?id=<?php echo $row['productID']?>&promid=<?php echo strtolower($row1['userID']) ?>" readonly >
+                    <button type="submit" name="submit" onclick="myFunction()">Copy <i class="far fa-copy"></i></button>
                 </form>
-                
                 </td>
             </tr>
+            <?php
+                  }
+                }
+            ?>
             </table>
             <?php
                   }
                 }
             ?>
-            <tr>
-                <td>
-                <div class="error-msg">
-                    <p><?php if(isset($this->errmsg) and !empty($this->errmsg)){echo $this->errmsg;}  ?></p>
-                </div>
-                <div class="success-msg">
-                    <p><?php if(isset($this->successmsg) and !empty($this->successmsg)){echo $this->successmsg;}  ?></p>
-                </div>
-                </td>
-            </tr>
             
-
+            <div class="error-msg">
+                <p><?php if(isset($this->errmsg) and !empty($this->errmsg)){echo $this->errmsg;}  ?></p>
+            </div>
+            <div class="success-msg">
+                <p><?php if(isset($this->successmsg) and !empty($this->successmsg)){echo $this->successmsg;}  ?></p>
+            </div>
+             
         </div> <!-- container -->              
       <hr style="height:2px;border:none;color:#333;background-color:#333;">
 </body>
