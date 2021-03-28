@@ -54,12 +54,25 @@ class Seller extends \Core\Controller {
         }
     }
 
-    public function createMinistoreAction(){
+    public function addMinistoreAction(){
         $ministore= new MinistoreM();
         if($ministore-> isMinistore($_SESSION['username'])==0){
             $this->view->display('Seller/createMinistore.php');
         }else{
             header("Location:../Ministore/ministore");
+        }
+    }
+
+    public function createMinistoreAction(){
+        $ministore= new MinistoreM();
+        $errorMssg = $ministore->add($_SESSION['username'], $_POST['storeName'], $_POST['description'], $_POST['font'], $_POST['navColor'], $_POST['buttonColor'], $_FILES['logoImage'], $_FILES['sliderImages']);
+
+        if($errorMssg==""){
+            header("Location:../Ministore/ministore");
+            // $this->ministoreAction();
+        }else{
+            $this->view->errorMssg=$errorMssg;
+            $this->addMinistoreAction();
         }
     }
 

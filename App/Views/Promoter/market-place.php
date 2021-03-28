@@ -22,26 +22,30 @@
 		<?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
 					
-					while($row = $this->UImsg->fetch_assoc()){           
+					while($row = $this->UImsg->fetch_assoc()){ 
+					// $images = explode(',', $row['images']);          
         ?>	
 
 			<div class="product-card">
 				<table>
 					<tr>
-						<td colspan=3 id=title><?php echo $row['prodName'] ?></td>
+						<td class="item-name" colspan=3 id=title><?php echo $row['prodName'] ?></td>
 					</tr>
 					<tr>
-						<td rowspan = 3><img src="/images/promoter/drone.jpg" alt="Drone"></td>
+						<td class="item-img" rowspan = 3> <img src="/images/Promoter/drone.jpg" > </td>
 					</tr>
 					<tr>
-						<td><?php echo $row['gender'] ?></td>
+						<td class="item-price"><?php echo $row['price'] ?> LKR</td>
 					</tr>
 					<tr>
-						<td><a href="../Promoter/viewProduct">View More <i class="fas fa-angle-double-right"></i></a></td>
+						<td><a href="../Promoter/viewProduct?id=<?php echo $row['productID']?>">View More <i class="fas fa-angle-double-right"></i></a></td>
+						<td>
+						<!-- <form method="get" action="../Promoter/viewProduct">
+							<input type="submit" value="View More">
+						</form>
+						</td> -->
 					</tr>
-					<tr>
-						<td colspan=3><?php echo $row['description'] ?></td>
-					</tr>
+					
 				</table>
 			</div>
             
@@ -49,7 +53,7 @@
 					}
 				}
 			?>
-
+	
 			 </div> <!-- container -->
 			 
 			

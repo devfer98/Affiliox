@@ -202,30 +202,35 @@ input:focus{
 }
 /*-------------------Inner content-------------------*/
 
-.area {
-  border: 1px solid black;
-  background: #fafafa;
-  border-radius: .25rem;
-  padding: 70px;
-  width: auto;
-  margin-top: 50px;
-  margin-bottom: 200px;
+table {
+  width: 90%;
+  margin-top: 60px;
+  margin-bottom: 150px;
   font-family: 'Open Sans', sans-serif;
+  border: 1px solid #b3b3b3;
+  border-radius: 0.25rem;
+  background-color: #f2f2f2;
 }
 
-.area label {
+.topic {
+  font-size: 18px;
   font-weight: bold;
+  padding-left:50px
 }
 
-.area input {
-    width: 500px;
+table tr td input {
+    width: 450px;
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: 15px;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+    color:  #551A8B;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+    margin-left: 50px;
 }
 
 input:focus{
@@ -234,36 +239,45 @@ input:focus{
   box-shadow: 0 0 10px #719ECE;
 }
 
-.area p {
+table p {
   color: #3333ff;
   font-weight: bold;
 }
 
-.area button {
+table tr td button {
     width: 100px; 
     line-height: 1.5;
     font-size: 1rem;
-    padding: .375rem .75rem;
+    padding: .365rem .60rem;
     border: 1px solid #ced4da;
     border-radius: .25rem;
     color: white;
     background-color: #28a745;
     border-color: #28a745;
     cursor: pointer;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    letter-spacing: 0.5px;
 }
 
-.area button:hover {
+table tr td button:hover {
     background-color: white;
     color: #28a745;
 }
 
 .error-msg p {
   color: red;
+  font-weight: bold;
+  font-size: 17px;
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 .success-msg p {
+  font-weight: bold;
+  font-size: 17px;
   color: #28a745;
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 /*-----------------------bottom part----------------------------------------------*/

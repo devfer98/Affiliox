@@ -82,6 +82,21 @@ class BuyerM extends \Core\Connect{
             return $result;
         }
     }
+
+    public function getCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM buyer;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function total_cal($value)
     {
         $conn=static::connectDB();

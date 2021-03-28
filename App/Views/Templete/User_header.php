@@ -15,12 +15,11 @@
 </head>
 
 <body>
-    <div class="container3 ">
-        <div class=" backcolor">
+    <div class="container3" >
+        <div class="backcolor">
             <div class="row hidden-xm marginb100 backcolor">
                 <div class=" nav-bar sm-logo-nav hidden-xm  sm-header backcolor ">
-
-                    
+     
                     <div class="sm-10">
                         <a href="../"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                     </div>
@@ -41,7 +40,6 @@
                         </div>
                     </div>
 
-
                 </div>
             </div>
             <div class=" nav-bar center backcolor">
@@ -52,7 +50,7 @@
 
                 <div class="col5 center">
                     <ul>
-                        <a href="../"><i class="fas fa-home"></i>&nbsp;Home</a>
+                        <a href="../" ><i class="fas fa-home"></i>&nbsp;Home</a>
                         <a href="../User/AboutUs"><i class="fas fa-users"></i>&nbsp;About Us</a>
                         <a href="../User/Help"><i class="fas fa-inbox"></i>&nbsp;Help</a>
                         <a href="../login/index"><i class="fas fa-users"></i>&nbsp;Account</a>

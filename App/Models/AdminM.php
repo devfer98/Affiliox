@@ -63,6 +63,23 @@ class AdminM extends \Core\Connect{
             }
         }
     }
+
+    public function updateAdmin($name, $status, $email, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2,$position)
+    {
+        $conn=static::connectDB();
+        $query = "UPDATE admin SET name='".$name."',status='".$status."',email='".$email."',phoneNo='".$phoneNo."', age='".$age."',dob='".$dob."', gender='".$gender."', 
+        country='".$country."', city='".$city."', aLine1='".$line1."', aLine2='".$line2."', position='".$position."', WHERE userID='".$userID."'";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ssssisssssss", $name, $status, $email, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2, $position);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
+    }
+    
     public function getStatistics() {
 
     }
