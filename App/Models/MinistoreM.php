@@ -150,7 +150,7 @@ class MinistoreM extends \Core\Connect {
                 // Upload file
                 move_uploaded_file($logoImage['tmp_name'],$target_dir.$logoImage['name']);
                 // echo count($sliderImages['name']);
-                $errorMssg=$this->addSliderImages($storename, $sliderImages);
+                //$errorMssg=$this->addSliderImages($storename, $sliderImages);
             }else{
                 $errorMssg="Wrong File Format";
             }
