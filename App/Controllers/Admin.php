@@ -4,6 +4,8 @@ use Core\View;
 use App\Models\AdminM;
 use App\Models\SellerM;
 use App\Models\PromoterM;
+use App\Models\BuyerM;
+use App\Models\MinistoreM;
 use App\Models\Feedback;
 
 class Admin extends \Core\Controller {
@@ -40,12 +42,20 @@ class Admin extends \Core\Controller {
     }
 
     public function AdminDashboardAction(){
+        $seller = new SellerM();
+        $this->view->countSellers=$seller->getCount  ();
+        $promoter= new PromoterM();
+        $this->view->countPromoters=$promoter->getCount();
+        $Buyer= new BuyerM();
+        $this->view->countBuyers=$Buyer->getCount   ();
+        $Ministore= new MinistoreM();
+        $this->view->countMinistores=$Ministore->getCount   ();
+        $this->view->display('Admin/AdminDashboard.php');
         // $userID = $_SESSION['username'];
         // $user = new AdminM();
         // $result = $user->getAdminProfile($userID);
         // $UImsg = $result;
         // $this->view->UImsg=$UImsg;
-        $this->view->display('Admin/AdminDashboard.php');
     }
 
     public function AdminProfileAction(){
@@ -64,7 +74,7 @@ class Admin extends \Core\Controller {
     public function EditAdminAction(){
         $userID = $_SESSION['username'];
         $user = new AdminM();
-        $result = $user->getAdmin($userID);
+        $result = $user->updateAdmin($userID);
         $UImsg = $result;
         $this->view->UImsg = $UImsg;
         $this->view->display('Admin/EditAdmin.php');

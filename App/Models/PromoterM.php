@@ -90,7 +90,7 @@ class PromoterM extends \Core\Connect {
     public function getProductDetails(){
         $conn=static::connectDB();
 
-        $query = "select * from product WHERE status = 'Active' ";
+        $query = "select * from product LEFT JOIN productimage on product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE status = 'Active'";
         
         $stmt = $conn->prepare($query);
 
@@ -133,7 +133,8 @@ class PromoterM extends \Core\Connect {
     public function getUniqueLink($prodID){
         $conn = static::connectDB();
         $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
-        // $stmt0 = $conn->prepare("SLECT product.productID, product.prodName, product.price, product.comRate, product.description, promoter.userID FROM product INNER JOIN promoter ON product.userID=promoter.userID WHERE product.productID, promoter.userID = ? ");
+    
+        
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {
             $result = $stmt0->get_result();
@@ -143,11 +144,14 @@ class PromoterM extends \Core\Connect {
             }
             
         } else {
-            $error = "Invalid product ID";
+            $error = "Invalid product ID and promoter ID";
             return $error;
         }
+        
        
     }
+
+    
 
 
     public function updatePromoter() {
@@ -265,6 +269,25 @@ class PromoterM extends \Core\Connect {
         $stmt->bind_param("ss", $accStatus, $userID);
         if($stmt->execute()){
             $stmt->close();
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getCount() {
+        $conn=static::connectDB();
+
+        // $query = $conn->prepare('select * from promoter');
+        // $query->execute();
+        // $count = $query->num_rows;
+        // return $count;
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
         }else{
             echo 'SQL Error';
         }

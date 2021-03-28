@@ -71,6 +71,18 @@ class MinistoreM extends \Core\Connect {
         }
     }
 
+    public function getCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM ministore;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }
+    }
+    
     public function add($username, $storename, $desc, $font, $navColor, $buttonColor, $logoImage, $sliderImages) {
         $errorMssg="";
         $conn=static::connectDB();

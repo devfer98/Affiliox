@@ -37,7 +37,6 @@ class Promoter extends \Core\Controller {
         $user = new PromoterM();
         
         $result = $user->getProductDetails();
-        // $resultNew = $user->getProductImage();
 
         if($result == null) {
             $empty= "Still there are no Products in store!";
@@ -60,24 +59,40 @@ class Promoter extends \Core\Controller {
 
     public function viewProductAction(){
         if (!empty($_GET['id'])) {
+
             $prodID = $_GET['id'];
+            $userID = $_SESSION['username'];
+
+
             $prod = new promoterM;
             $UImsg = $prod->getproductFeatures($prodID);
             $this->view->UImsg = $UImsg;
+
+            $user = new promoterM;
+            $UImsg1 = $prod->getPromoterProfile($userID);
+            $this->view->UImsg1 = $UImsg1;
+
             $this->view->display('Promoter/view-product.php');
            
         } else
-        $this->view->display('Promoter/view-product.php'); 
+        $this->view->display('Promoter/view-product.php');  
     }
 
 
     public function generateLinkAction() {
         if (!empty($_GET['id'])) {
+
             $prodID = $_GET['id'];
-            // $promID = $_GET['id'];            
+            $userID = $_SESSION['username'];
+
             $prod = new promoterM;
             $UImsg = $prod->getUniqueLink($prodID);
             $this->view->UImsg = $UImsg;
+
+            $user = new promoterM;
+            $UImsg1 = $prod->getPromoterProfile($userID);
+            $this->view->UImsg1 = $UImsg1;
+
             $this->view->display('Promoter/generate-link.php');
            
         } else
@@ -191,7 +206,7 @@ class Promoter extends \Core\Controller {
     }
 
     public function linkSubmitSuccessAction(){
-        $successmsg= 'Your Link Submission Process is Success!';
+        $successmsg= '<br>' . 'This link will be added to your Promotional Links collection for later access.!' . '<br><br>' . 'THANK YOU!' . '<br><br>';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/generate-link.php');
     }

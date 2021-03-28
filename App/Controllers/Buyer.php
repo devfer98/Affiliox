@@ -136,13 +136,22 @@ class Buyer extends \Core\Controller
          $buyUserID=$_SESSION['username'];
 
          ///////////////////////////////////////////
-         $proUserID=12345;   // promoter ckeck here from cookie find commision from products
-         $totalCommission=300;
+         $value =  (!empty($_COOKIE["promoter"])) ? $_COOKIE["promoter"] : "[]";
+         $value = json_decode($value);
+         $proUserID=$value;
+         echo $proUserID;
+         $value2 =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
+         $value2 = json_decode($value2, true);
+         $totalcommision = new BuyerM;
+         $totalCommission = $totalcommision->orderCommision($value2);
+         
+            // promoter ckeck here from cookie find commision from products
+         
 
          ///////////////////////////////////////////
          $data= $order->addOrder($status,$amount,$datetime,$deliveryAddress, $deliveryDeadline ,$buyUserID ,$proUserID ,$totalCommission);
   
-         $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/CurrentOrders','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data ,'custom_1' =>$custom_1);
+         $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/PGreply','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data ,'custom_1' =>$custom_1);
          $this->view->data=$data;    
          $this->view->display('Customer/PG-confirm.php');   
 
@@ -158,12 +167,14 @@ class Buyer extends \Core\Controller
       $data= $order->getOrderID();
       $this->view->data=$data;    
       $this->view->display('Customer/PG reply.php');  
+      
    }
    
    public function CurrentOrdersAction()
    {
        if (isset($_POST['status_code'])) {
-           if ($_POST['status_code']==2) {   // if success 
+           if ($_POST['status_code']==2) {  
+                                                             // if success 
               $order = new ModelsOrder;
               $data= $_SESSION['custom_1'] ;
               $order_ID = $_POST['order_id'];
@@ -172,15 +183,49 @@ class Buyer extends \Core\Controller
               setcookie("items", "", time() - 3600, "/");
               
            }
-
-
-           $this->view->display('Customer/currentOrders.php');
        }
-       $this->view->display('Customer/currentOrders.php');
+
+       
+       $orders = new ModelsOrder;
+     
+       $orders2 = new ModelsOrder;
+       $orders = $orders->getSuccessOrders($_SESSION['username']);
+      //  $orders1 = $orders1->getSuccessOrders($_SESSION['username']);
+      //  while ($row = $orders1->fetch_assoc()) {
+      //     }
+
+          $orders2 = $orders2->getOrderproducts($_SESSION['username']);
+         // while ($row = $orders2->fetch_assoc()) {
+         //  print_r($row);
+         //  }
+          $this->view->orders=$orders; 
+          $this->view->details=$orders2;  
+
+          $this->view->display('Customer/currentOrders.php');
    }  
    public function CompletedOrdersAction()
    {
-      $this->view->display('Customer/CompletedOrders.php');
+
+      if(!empty($_POST['rating'])){
+         
+         $prodID =$_POST['ProdID'];
+         $msg=$_POST['description'];
+         $rating =$_POST['rating'];
+         $ID= $_SESSION['username'];
+
+         $orders3 = new ModelsOrder;
+         $orders3 = $orders3->productReceived($_POST['ProdID'],$_POST['OrderID']);
+         $entry = new Feedback();
+         $result = $entry->addFeedback($msg,$rating, $ID, $prodID);
+         
+      }
+      $orders = new ModelsOrder;
+      $orders2 = new ModelsOrder;
+      $orders = $orders->getCompletedOrders($_SESSION['username']);
+      $orders2 = $orders2->getReceivedproducts($_SESSION['username']);
+      $this->view->orders=$orders; 
+      $this->view->details=$orders2;  
+      $this->view->display('Customer/CompletedOrders2.php');
    }
 
    public function FailedOrderAction()
@@ -189,12 +234,27 @@ class Buyer extends \Core\Controller
    }
    
    public function ContactSellerAction()
-   {
+
+   { 
+      if(!empty($_POST['ProdID'])){
+         $prdID=$_POST['ProdID'];
+         $orderID=$_POST['OrderID'];
+      }
+      $orders = new ModelsOrder;
+      $orders = $orders->productReceivedConfirmation($prdID,$orderID);
+      $this->view->order=$orders;
+
       $this->view->display('Customer/contactSeller.php');
    }
 
    public function OrderSuccessAction()
    {
+      $prdID=$_POST['ProdID'];
+      $orderID=$_POST['OrderID'];
+      $orders = new ModelsOrder;
+
+     $orders = $orders->productReceivedConfirmation($prdID,$orderID);
+     $this->view->order=$orders;
       $this->view->display('Customer/ConfirmReceived.php');
    }
 
@@ -211,10 +271,13 @@ class Buyer extends \Core\Controller
    public function SubmitFeedbackAction()
    {
        if (isset($_POST['description'])) {
+         if(empty($message)){
+            $message="NULL";
+         }else
            $message = $_POST['description'];
            $rating = $_POST['rating'];
            $username = $_SESSION['username'];
-           $prodID = 12345;
+           $prodID = 31;
             if(empty($message)){
                $message="NULL";
             }
@@ -236,7 +299,10 @@ class Buyer extends \Core\Controller
                $this->view->display('Customer/feedback.php');
            }
           
-       } $this->view->display('Customer/feedback.php');
+       } 
+       
+       
+       $this->view->display('Customer/feedback.php');
    }
    // Buyer Feedbacks Functions -----------------------------//
    public function HelpAction()

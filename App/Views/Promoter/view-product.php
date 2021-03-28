@@ -15,18 +15,22 @@
         <h2><i class="fas fa-puzzle-piece"></i></i>&nbsp; &nbsp;Check Product Details</h2>
        
        <div class="inner-content">
-       <?php  
+        <?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
 					
-					while($row = $this->UImsg->fetch_assoc()){           
-        ?>
+					while($row = $this->UImsg->fetch_assoc()){ 
+					        
+        ?>	
+           
+            
             <table >
+               
                 <tr>
                     <td colspan = 3 id=pName><?php echo $row['prodName'] ?></td>
                 </tr>
                 <tr>
                     <td rowspan=5>
-                        <img class="images" src="/images/promoter/drone.jpg" alt="Drone">
+                        <img class="images" src="/images/promoter/drone.jpg">
                         <img class="images" src="/images/promoter/drone2.jpg">
                         <img class="images" src="/images/promoter/drone3.jpg" >
                     
@@ -37,6 +41,7 @@
                         
                     </td>
                 </tr>
+                
                 <tr>
                     <td id=imp>Product Price</td>
                     <td id=imp>Discount Rate</td>
@@ -48,15 +53,27 @@
                 <tr>
                     <td colspan=2 id=desc>Sepecifications :- <br>&#9733; <?php echo $row['description'] ?></td>
                 </tr>
+                <?php  
+                if(isset($this->UImsg1) and !empty($this->UImsg1)){
+					
+					while($row1 = $this->UImsg1->fetch_assoc()){ 
+					        
+        ?>
                 <tr>
                     <td><a href="../Promoter/Market">Go Back <i class="fas fa-arrow-circle-left"></i></a></td>
-                    <td><a href="../Promoter/generateLink?id=<?php echo $row['productID']?>proid=<?php echo $row['comRate']?>">Proceed to Promote <i class="fas fa-check"></i></a></td>
+                    <td><a href="../Promoter/generateLink?id=<?php echo $row['productID']?>&promid=<?php echo strtolower($row1['userID']) ?>">Proceed to Promote <i class="fas fa-check"></i></a></td>
                 </tr>
+                <?php
+					}
+				}
+			?>  
             </table>
             <?php
 					}
 				}
 			?>  
+
+            
        </div> <!-- inner-content --> 
 	</div> <!-- container -->
 		

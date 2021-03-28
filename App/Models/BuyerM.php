@@ -82,6 +82,21 @@ class BuyerM extends \Core\Connect{
             return $result;
         }
     }
+
+    public function getCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM buyer;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function total_cal($value)
     {
         $conn=static::connectDB();
@@ -195,6 +210,21 @@ class BuyerM extends \Core\Connect{
         $PGfee=round(($final_tot)/100 *3.3 ,2);
         $final_tot =(float)$PGfee+(float)$final_tot;
         return array ($total,$delivery,$final_tot,$out,$PGfee,$deadline_peroid);
+    }
+
+    public function orderCommision($val)
+    {
+        $total =0;
+        foreach ($val as $c) {
+
+            $data =new ModelsProduct;
+            $list = $data->productDetails($c['ID']);
+            while ($row = $list->fetch_assoc()) {
+                (float)$total = $total + (float)$row['price']*(float)$row['comRate']*$c['Q'];
+            }
+        }
+
+        return $total;
     }
 
 
