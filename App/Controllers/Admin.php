@@ -72,10 +72,25 @@ class Admin extends \Core\Controller {
     }
 
     public function AdminStatisticsAction(){
+        $seller = new SellerM();
+        $this->view->countSellers=$seller->getCount  ();
+        $promoter= new PromoterM();
+        $this->view->countPromoters=$promoter->getCount();
+        $this->view->PromoteCount=$promoter->getPromoteCount();
+        $this->view->ClickCount=$promoter->getClickCount();
+        $Buyer= new BuyerM();
+        $this->view->countBuyers=$Buyer->getCount   ();
+        $Ministore= new MinistoreM();
+        $this->view->countMinistores=$Ministore->getCount   ();
         $this->view->display('Admin/AdminStatistics.php');
     }
 
     public function EditAdminAction(){
+        $userID = $_SESSION['username'];
+        $user = new AdminM();
+        $result = $user->getAdmin($userID);
+        $UImsg = $result;
+        $this->view->UImsg = $UImsg;
         $this->view->display('Admin/EditAdmin.php');
     }
     //     $id = $_GET['id'];
@@ -124,8 +139,9 @@ class Admin extends \Core\Controller {
 
 
     public function ReviewFeedbackAction(){
-        $feedback= new Feedback();
-        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_SESSION['username']);
+        $entry = new Feedback();
+        $result = $entry-> getFeedbacks($_SESSION['username']);
+        $this->view->data= $result;
         $this->view->display('Admin/ReviewFeedback.php');
     }
 

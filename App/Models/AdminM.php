@@ -78,9 +78,10 @@ class AdminM extends \Core\Connect{
         }
     }
 
-    public function EditAdmin(){
-
+    public function updateAdmin($userID, $name, $email, $phoneNo, $country, $city, $line1, $line2, $position) {
+        
     }
+    
     // public function updateAdmin($data)
     // {
        

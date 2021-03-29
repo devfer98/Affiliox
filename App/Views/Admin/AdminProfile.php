@@ -4,11 +4,10 @@
 	<title>Affiliox-AdminProfile</title>
 	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
-	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="/css/Admin/adminprofile.css">
+    <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
-	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 		<!---Body-------------------------------------------->
