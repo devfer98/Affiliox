@@ -202,8 +202,6 @@ class Order extends \Core\Connect
                     echo $error;
                 }
 
-                echo $datas['ID'];
-                echo $datas['dID'];
             }
             return;
         }

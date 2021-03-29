@@ -75,6 +75,7 @@ class Promoter extends \Core\Controller {
             $this->view->display('Promoter/view-product.php');
            
         } else
+
         $this->view->display('Promoter/view-product.php');  
     }
 
@@ -90,12 +91,13 @@ class Promoter extends \Core\Controller {
             $this->view->UImsg = $UImsg;
 
             $user = new promoterM;
-            $UImsg1 = $prod->getPromoterProfile($userID);
+            $UImsg1 = $user->getPromoterProfile($userID);
             $this->view->UImsg1 = $UImsg1;
 
             $this->view->display('Promoter/generate-link.php');
            
         } else
+        
         $this->view->display('Promoter/generate-link.php');
     }
 
@@ -104,10 +106,33 @@ class Promoter extends \Core\Controller {
     }
 
     public function staticPromoterAction() {
+
+        $userID = $_SESSION['username'];
+
+        $user = new PromoterM();
+        $result = $user->getStaticPromo($userID);
+        $UImsg1 = $result;
+        $this->view->UImsg1=$UImsg1;
+       
+        $totalC = new PromoterM();
+        $result1 = $totalC->getTotalCommission($userID);
+        $UImsg2 = $result1;
+        $this->view->UImsg2=$UImsg2;
+
+        $totalL = new PromoterM();
+        $result2 = $totalL->getTotalLinks($userID);
+        $UImsg3 = $result2;
+        $this->view->UImsg3=$UImsg3;
+
         $this->view->display('Promoter/promoter-statistics.php');
     }
 
     public function promoterTransAction() {
+        $userID = $_SESSION['username'];
+        $totalC = new PromoterM();
+        $result1 = $totalC->getTotalCommission($userID);
+        $UImsg2 = $result1;
+        $this->view->UImsg2=$UImsg2;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
@@ -140,23 +165,34 @@ class Promoter extends \Core\Controller {
     }
 
     public function promoterTransToDBAction(){
+        $userID = $_SESSION["username"];
+
         
+
         $user = new TransactionPromo();
         $limit = 100;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
-        $userID = $_SESSION["username"];
+        
+        $totalC = new PromoterM();
+        $result1 = $totalC->getTotalCommission($userID);
+        $UImsg2 = $result1;
+        $this->view->UImsg2=$UImsg2;
+        $this->view->display('Promoter/withdraw-earnings.php');
+        
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
             $user->addTransPromo($ammount, $status, $userID, $date);
             header('Location:../Promoter/promoterTransSuccess');
            
         } else    {
-            $errmsg= 'Please enter the valid amount of transfer and try again.';
+            $errmsg= 'Please enter a valid amount of transfer and try again.';
             $this->view->errmsg = $errmsg;
             $this->view->display('Promoter/withdraw-earnings.php');
-        }             
+        }        
+        
+        
     }
 
 

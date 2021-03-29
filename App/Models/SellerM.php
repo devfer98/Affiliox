@@ -67,6 +67,22 @@ class SellerM extends \Core\Connect {
         }
     }
 
+    public function getsellerEmail($storeName)
+    {
+        $conn=static::connectDB();
+        
+        $stmt = $conn->prepare("SELECT * FROM ministore LEFT JOIN seller ON ministore.userID=seller.userID WHERE ministore.name = ?");
+        $stmt->bind_param("s",$storeName);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function getSellers() {
         echo "seller model called";
     }

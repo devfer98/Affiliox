@@ -48,7 +48,7 @@
                             <div class="col5 ">
                                 <div class="margint20 left">
                                     <h3><?php echo $item['name'] ?></h3>
-                                    <p> Rs <?php echo $item['price'] ?></p>
+                                    <p>Product Price : Rs <?php echo $item['price'] ?></p>
                                     
                                 </div>
                             </div>

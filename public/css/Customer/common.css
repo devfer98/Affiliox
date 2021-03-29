@@ -144,8 +144,12 @@ hr{
 	 padding:2%; 
 	padding-top: 30px;
 }
-
-
+.width70{
+	width: 70%;
+}
+.width60{
+	width: 60%;
+}
 .width90{
 	width: 90%;
 }
@@ -350,12 +354,21 @@ option:hover{
 	
 	margin-top: 100px;
 }
+
+.margint300{
+	
+	margin-top: 300px;
+}
 .margint50p{
 	
 	margin-top: 50%;
 }
 .marginb100{
 	margin-bottom: 100px;
+}
+
+.marginb300{
+	margin-bottom: 300px;
 }
 
 .marginb50p{
