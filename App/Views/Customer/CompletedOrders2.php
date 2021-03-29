@@ -104,8 +104,12 @@
                                 <div class="">
                                     
                                 <div class="col12 nav-bar center">
-                                    
-                                    <button onclick="location.href='../Buyer/SubmitFeedback'">Provide Feedback</button>
+                                <form method ="POST" action="../Buyer/SubmitFeedback">
+                                            <input type="text" name ="ProdID" value ="<?php echo $row2['productID'] ?> " hidden>
+                                            <input type="text" name ="OrderID" value ="<?php echo $row2['orderID'] ?>" hidden>
+                                            
+                                        <button value="submit" type="submit" >Provide Feedback</button>
+                                        </form>
                                 </div>
 
                                 </div>

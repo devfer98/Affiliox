@@ -56,8 +56,8 @@
                             <div class="col5 ">
                                 <div class="margint20 left">
                                     <h3><?php echo $item['name'] ?></h3>
-                                    <p>Product Price   : Rs<?php echo $item['price'] ?></p>
-                                    <p>Delivery Price  : Rs<?php echo $item['dprice'] ?></p>
+                                    <p>Product Price   : Rs<?php echo $item['price']?></p>
+                                    <p>Delivery Price  : Rs<?php echo number_format($item['dprice'] ,2)?></p>
                                     <p>Delivery period :<?php echo $item['dperiod'] ?> Days</p>
 
                                    

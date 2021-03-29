@@ -53,8 +53,8 @@
 
                             <div class="col1 search fitcontent " onclick="openNav2()"><i class="icon fas fa-filter"></i>
                             </div>
-                            <div class="col1 search fitcontent "><i class="icon fas fa-sort-amount-down-alt"></i></div>
-                            <div class="col1 search fitcontent "><i class="icon fas fa-sort-amount-up-alt"></i></div>
+                            <!-- <div class="col1 search fitcontent "><i class="icon fas fa-sort-amount-down-alt"></i></div>
+                            <div class="col1 search fitcontent "><i class="icon fas fa-sort-amount-up-alt"></i></div> -->
                         </div>
                     </div>
 
@@ -63,8 +63,8 @@
                             <div class="margint20  icon-flo search center">
                                 <div class=" search fitcontent center" onclick="openNav2()"><i class="icon fas fa-filter"></i>
                                 </div>
-                                <div class=" search fitcontent "><i class="icon fas fa-sort-amount-down-alt"></i></div>
-                                <div class=" search fitcontent "><i class="icon fas fa-sort-amount-up-alt"></i></div>
+                                <!-- <div class=" search fitcontent "><i class="icon fas fa-sort-amount-down-alt"></i></div>
+                                <div class=" search fitcontent "><i class="icon fas fa-sort-amount-up-alt"></i></div> -->
                             </div>
                         </div>
                     </div>

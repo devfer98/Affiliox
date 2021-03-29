@@ -18,12 +18,27 @@
 		  <!-- inner-part-------------------------------------------->
 		  
 		  <br/><br/>
+      
+            <?php if(isset($this->UImsgNotice) and !empty($this->UImsgNotice)){
+                        if($this->State==1) {
+
+                           ?><div class="center  marginb100 margint100 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center  margint100 marginb100 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsgNotice) and !empty($this->UImsgNotice)){echo $this->UImsgNotice;}  ?></p>
+                </div>
+ 
+	  
           <div class="acontainer margint100">
+
             <div class="margint100" style="text-align:center">
                 <h2>Get in Touch</h2>
 				<br/>
 				<h3>Want to find out how Affiliox can solve problems
-                    specific to your business? Let's Talk
+                    specific to your need? Let's Talk
                 </h3>
             </div>
             <div class="arow">
@@ -41,7 +56,7 @@
                         }                 
                   }  ?>
                     <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
-                <form method="post" onsubmit="return validateForm();" action ="../User/HelpToDB.php">
+                <form method="post" onsubmit="return validateForm();" action ="../User/Help">
                   <label for="fname">Full Name</label>
                   <input type="text" id="fname" name="firstname" placeholder="Your name..">
                   <label for="lname">Email</label>
@@ -52,7 +67,7 @@
                     <option value="canada">Canada</option>
                     <option value="usa">USA</option>
                   </select> -->
-                  <label for="subject">Subject</label>
+                  <label for="subject">Message</label>
                   <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
                   <button class="button">Send Message</button>
                 </form>
