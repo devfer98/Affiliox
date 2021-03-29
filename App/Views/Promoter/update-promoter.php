@@ -19,7 +19,7 @@
             if(isset($this->UImsg) and !empty($this->UImsg)){
 				while($row = $this->UImsg->fetch_assoc()) {          
         ?>
-			<form action="../Promoter/promoterProfile" method="post">
+			<form action="../Promoter/promoterProfileUpdate" method="post">
 				<table>
 					<tr>
 						<td id="td-1">Your ID: <p style="font-size: 12px; color: red">* View only</p></td>
@@ -27,35 +27,36 @@
 					</tr>
 					<tr>
 						<td id="td-1"> Full Name:</td>
-						<td id="td-2"><input type="text" name="name" value="<?php echo $row['name'] ?>" min="0" max="50"></td>
+						<td id="td-2"><input type="text" name="name" value="<?php echo $row['name'] ?>" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Email:</td>
-						<td id="td-2"><input type="text" name="email" value="<?php echo $row['email'] ?>"></td>
+						<td id="td-2"><input type="text" name="email" value="<?php echo $row['email'] ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Phone Number:</td>
-						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" pattern="[0-9]{10}"></td>
+						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" minlength="10" maxlength="10"  pattern="[0-9]*"
+       					title="Please enter a valid phone number" required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Date of Birth:</td>
-						<td id="td-2"><input type="date" name="dob" value="<?php echo $row['dob'] ?>"></td>
+						<td id="td-2"><input type="date" name="dob" value="<?php echo $row['dob'] ?>" required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Address Line 1:</td>
-						<td id="td-2"><input type="text" name="aLine1" value="<?php echo $row['aLine1'] ?>"></td>
+						<td id="td-2"><input type="text" name="aLine1" value="<?php echo $row['aLine1'] ?>"minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Address Line 2:</td>
-						<td id="td-2"><input type="text" name="aLine2" value="<?php echo $row['aLine2'] ?>"></td>
+						<td id="td-2"><input type="text" name="aLine2" value="<?php echo $row['aLine2'] ?>"minlength="5" maxlength="100" pattern="^[a-zA-Z0-9,-.'()/ ]*$"  title="Remove unwanted characters." required></td>
 					</tr>
 					<tr>
 						<td id="td-1">City</td>
-						<td id="td-2"><input type="text" name="city" value="<?php echo $row['city'] ?>"></td>
+						<td id="td-2"><input type="text" name="city" value="<?php echo $row['city'] ?>" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required></td>
 					</tr>
 					<tr>
 						<td id="td-1">Country:</td>
-						<td id="td-2"><input type="text" name="country" value="<?php echo $row['country'] ?>"></td>
+						<td id="td-2"><input type="text" name="country" value="<?php echo $row['country'] ?>"minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required></td>
 					</tr>
 					
 				</table>

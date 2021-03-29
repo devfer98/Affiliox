@@ -12,7 +12,7 @@
 <body>
 	
 	<div class="container">
-    <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Alredy Promoted Items</h2>
+    <h2><i class="fas fa-link"></i>&nbsp; &nbsp;Alredy Promoted Items</h2>
         <!-- <div class="table-list"> -->
         <div class="error-msg">
 			<p><?php if(isset($this->empty) and !empty($this->empty)){echo $this->empty;}  ?></p>

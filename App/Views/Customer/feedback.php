@@ -22,7 +22,7 @@
                     <h2>Product Feedback</h2>
                 </div>
                 <div class="row">
-            <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                <?php if(isset($this->UImsg) and !empty($this->UImsg)){
                         if($this->State==1) {
 
                            ?><div class="center marginb50 errorMsgSuccess"><?php
@@ -32,6 +32,7 @@
                         }                 
                   }  ?>
                     <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                    
                	 </div>
                 </div>
                 <div class="row">

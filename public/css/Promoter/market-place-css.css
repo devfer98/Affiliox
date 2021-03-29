@@ -262,6 +262,7 @@ input:focus{
 
 .product-card table {
   /* margin: 0 auto; */
+  background-color:rgba(225, 225, 207, 0.1);
   width: 1000px;
   margin-bottom: 100px;
   border: 1px solid black;

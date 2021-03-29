@@ -35,7 +35,7 @@
 					while($row = $this->UImsg->fetch_assoc()) {
 						echo "<tr>";
                             echo "<td>" . $row['transID'] . "</td>";
-                        	echo "<td>" . "$ " . $row['ammount'] . "</td>";
+                        	echo "<td>" . number_format($row['ammount'],2) . " Rs" . "</td>";
                             echo "<td>" . $row['status'] . "</td>";
                             echo "<td>" . $row['date'] . "</td>";
 						echo "</tr>";
