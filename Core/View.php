@@ -7,8 +7,7 @@ Class View{
             session_start();
             
         }
-        if (!isset($_COOKIE["items"])) {
-            echo "hi";
+        if (!isset($_COOKIE["items"])) {           
             $cookie_name = "items";
             $cookie_value = 0;
             setcookie($cookie_name, $cookie_value, time() + (86400 * 30 * 12), "/"); 
