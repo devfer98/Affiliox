@@ -207,4 +207,24 @@ class Order extends \Core\Connect
         }
                 
     }
+
+    public function getSellOrders($userID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT buyer.userID, `order`.deliveryAddress, `order`.amount
+        FROM ((`order` 
+        INNER JOIN buyer ON order.buyUserID = buyer.userID)
+        INNER JOIN prodsinorder ON order.orderID = prodsinorder.orderID)
+        WHERE prodsinorder.dispatchStatus = 'Pending' AND prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        echo $conn->error;
+        $stmt->bind_param("s", $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
 }

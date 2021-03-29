@@ -282,7 +282,35 @@ class PromoterM extends \Core\Connect {
         // $count = $query->num_rows;
         // return $count;
 
-        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter;");
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter WHERE accountStatus='Active';");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getPromoteCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promote;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getClickCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT SUM(noClicks) FROM promote;");
         
         if($stmt->execute()){
             $result = $stmt->get_result();

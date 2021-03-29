@@ -39,21 +39,19 @@
 						<div class="col6">Address</div>
 						<div class="col3">Total Price</div>
 					</div>
-					<div class="row record" onclick="location.href='../Seller/orderPro'">
-						<div class="col3">david98</div>
-						<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-						<div class="col3">Rs. 2,000</div>
-					</div>
+					<?php  
+					if(isset($this->orderPend) and !empty($this->orderPend)){
+						while($row = $this->orderPend->fetch_assoc()){     
+					?>
 					<div class="row record">
-						<div class="col3">david98</div>
-						<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-						<div class="col3">Rs. 2,000</div>
+						<div class="col3"><?php echo $row['userID'] ?></div>
+						<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
+						<div class="col3"><?php echo $row['amount'] ?></div>
 					</div>
-					<div class="row record">
-						<div class="col3">david98</div>
-						<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-						<div class="col3">Rs. 2,000</div>
-					</div>
+					<?php
+						}
+					}
+					?>
 					</div>
 				</div>
 				  
@@ -63,16 +61,6 @@
 							<div class="col3">User</div>
 							<div class="col6">Address</div>
 							<div class="col3">Last Date to be Deliverd</div>
-						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
-						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
 						</div>
 						<div class="row record">
 							<div class="col3">david98</div>

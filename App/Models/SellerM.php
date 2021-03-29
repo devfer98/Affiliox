@@ -139,7 +139,7 @@ class SellerM extends \Core\Connect {
         // $count = $query->num_rows;
         // return $count;
 
-        $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller;");
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller WHERE accountStatus='Active';");
         
         if($stmt->execute()){
             $result = $stmt->get_result();
