@@ -40,6 +40,20 @@ class MinistoreM extends \Core\Connect {
         }
     }
 
+    public function getStore($name) {
+        $conn=static::connectDB();
+        // $userID="nothing";
+        $stmt = $conn->prepare("SELECT * FROM ministore WHERE name= ?");
+        $stmt->bind_param("s", $name);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function isNameUsed($storename){
         $conn=static::connectDB();
         $stmt = $conn->prepare("SELECT * FROM ministore WHERE name= ?");
@@ -148,7 +162,7 @@ class MinistoreM extends \Core\Connect {
                 // Upload file
                 move_uploaded_file($logoImage['tmp_name'],$target_dir.$logoImage['name']);
                 // echo count($sliderImages['name']);
-                $errorMssg=$this->addSliderImages($storename, $sliderImages);
+                //$errorMssg=$this->addSliderImages($storename, $sliderImages);
             }else{
                 $errorMssg="Wrong File Format";
             }

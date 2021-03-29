@@ -16,6 +16,13 @@ h2 {
   border-bottom: 2px solid black;
 }
 
+h2 a {
+  float: right;
+  text-decoration: none;
+  color: #1f3d7a;
+  font-size: 22px;
+}
+
 /*-------------------side navigation bar--------------------*/
 header {
   background: #fafafa;
@@ -202,24 +209,26 @@ input:focus{
 }
 /*-------------------Inner content-------------------*/
 
-table {
+.linkArea {
   width: 90%;
+  padding: 30px;
   margin-top: 60px;
   margin-bottom: 150px;
   font-family: 'Open Sans', sans-serif;
   border: 1px solid #b3b3b3;
   border-radius: 0.25rem;
-  background-color: #f2f2f2;
+  background-color: rgba(226, 238, 232, 0.32)
+
 }
 
 .topic {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding-left:50px
 }
 
 table tr td input {
-    width: 450px;
+    width: 500px;
     padding: .375rem .75rem;
     font-size: 15px;
     line-height: 1.5;
@@ -229,6 +238,7 @@ table tr td input {
     border-radius: .25rem;
     color:  #551A8B;
     margin-right: 10px;
+    margin-top: 20px;
     letter-spacing: 0.5px;
     margin-left: 50px;
 }
@@ -273,9 +283,15 @@ table tr td button:hover {
 }
 
 .success-msg p {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  text-align: center;
+  /* border: 1px solid red; */
+  background-color: rgba(100, 230, 165, 0.3);
+  /* padding: 10px; */
   font-weight: bold;
-  font-size: 17px;
-  color: #28a745;
+  font-size: 25px;
+  color: #1f3d7a;;
   font-family: 'Open Sans', sans-serif;
   
 }

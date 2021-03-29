@@ -17,7 +17,10 @@
 
 
   <div class="container">
-
+  <?php  
+                if (isset($this->order) and !empty($this->order)) {
+                    while ($row = $this->order->fetch_assoc()) {
+                        ?>
     
     <div class="row center">
 
@@ -33,37 +36,30 @@
               <div class="boxsummery shoppingBlock marginb100 margint20 center  ">
                 <div class="row" >
             <div class="col3 imgw">
-              <img class="images" src="/images/Products/drone.jpg" style="width:100%">
+            <img class="images" src="/images/upload/<?php echo $row['imageCode'] ?>" style="width:100%">
             </div>
 
             <div class="col4">
               <div class="margint20 left">
-              <h3>Inspire 1</h3>
-              <p>Price:Rs 4000.00</p>
-              <p>Delivery:Free</p>
+              <h3><?php echo $row['prodName'] ?></h3>
+              <p>Price:Rs <?php echo number_format($row['price'],2) ?></p>
               </div>
             </div>
 
             <div class="col2 search label">
               <div class="margint20">
               <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
-              <input style="z-index: 1;" type="number" id="quantity" name="quantity" readonly placeholder="1"> <br>
+              <input style="z-index: 1;" type="number" id="quantity" name="quantity"   value="<?php echo $row['quantity'] ?>" readonly placeholder="1"> <br>
             </div>
             </div>
 
             <div class="col3">
-              <div class="margint20">
-                <h4>ETA : 24/Nov/2020</h4>
-                
-              </div>
+            <h4>Order Code :<?php echo $row['orderID'] ?></h4>
+              <h4>Seller Store :<?php echo $row['name'] ?>
             </div>
               </div>
-              <div class="row left margint50 " >
-                <h4>Store Name :Shan's Tech area</h4></br>
-                <h4>Order Code :213ZWE31YASD092</h4>
 
-              </div>
-
+              <form method = "POST" action = "../Buyer/ContactSeller">      
               <div class="row rowMargin label search">
                 <div class="col12">
                   <div class="margint20">
@@ -78,10 +74,15 @@
               <div class="row rowMargin marginb100 search">
                 <div class="col12 center">
                   <div class=>
-                    <button type="submit" value="submit">Send Message</button>
+                  <input type="text" name ="ProdID" value ="<?php echo $row['productID'] ?> " hidden>
+                  <input type="text" name ="OrderID" value ="<?php echo $row['orderID'] ?>" hidden>
+                    
+                  <button type="submit" value="submit">Send Message</button>
+
                   </div>
                 </div>
               </div>
+              </form>
             </div>
 
           </div>
@@ -92,6 +93,10 @@
         </div>
 
         </div>
+
+        <?php
+              }
+          }?>
 
     </div>  
 

@@ -26,13 +26,7 @@ class MiniStore extends \Core\Controller {
     //     $this->view->display('Seller/miniStoreNotCreated.php');
     // }
 
-    public function ViewAction(){
-        $userID = $_SESSION['username'];
-        $ministore = new MinistoreM();
-        $result = $ministore->getMinistore($userID);
-        $this->view->store = $result;
-        $this->view->display('Seller/miniStoreView.php');  
-    }
+    
 
     public function ministoreViewAction(){
         $userID = $_SESSION['username'];

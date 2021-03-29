@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
 </head>
 <?php
 	if(isset($this->store) and !empty($this->store)){
@@ -24,7 +26,8 @@
 	// require $header;
 	?>
 <body>
-	<div style="position:absolute;background-color:<?php echo $navColor ?>;width:100%;height:50px;">
+	<div class="row dialogBox commonB"></div>
+	<div  style="position:absolute;background-color:<?php echo $navColor ?>;width:100%;height:50px;">
 		</div>
 	<!---Navigation bar-------------------------------------------->
 	<div class="design"style="background-color:<?php echo $navColor ?>;">
@@ -102,13 +105,14 @@
 		<!-- <hr style="height:2px;border:none;color:#333;background-color:#333;">	 -->
     	<script src="/js/Promoter/index-script.js"></script>
 
-	<?php
-			}
-		}	
-	?>
+	
 		</div>
 </body>
 </html>
+<?php
+			}
+		}	
+	?>
 <?php
 	// include $footer;
 	?>

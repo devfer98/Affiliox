@@ -14,11 +14,11 @@
 	<div class="container">
       <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome <?php echo $_SESSION["username"];  ?> to the Market Place</h2>
 		<div class="top-part">
-		<a href="../Promoter/linkHistory" class="top">Already Promoted Items <i class="fas fa-history"></i> </a> <br><br>
+		<a href="../Promoter/linkHistory" class="top">Already Promoted Items  <i class="fas fa-history"></i> </a> <br><br>
 			<input type="search" name="search" placeholder="seach">
 			<a href="../Promoter/Market"><button type="search" name="submit">Search</button></a>
 		</div> <!-- top-part -->
-
+		
 		<?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
 					
@@ -32,7 +32,7 @@
 						<td class="item-name" colspan=3 id=title><?php echo $row['prodName'] ?></td>
 					</tr>
 					<tr>
-						<td class="item-img" rowspan = 3> <img src="/images/Promoter/drone.jpg" > </td>
+						<td class="item-img" rowspan = 3> <img src="/images/upload/<?php echo $row['imageCode'] ?>" > </td>
 					</tr>
 					<tr>
 						<td class="item-price"><?php echo $row['price'] ?> LKR</td>

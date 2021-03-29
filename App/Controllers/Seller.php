@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Core\View;
 use App\Models\User;
 use App\Models\Feedback;
+use App\Models\Order;
 use App\Models\MinistoreM;
 use App\Models\sellerM;
 
@@ -114,7 +115,9 @@ class Seller extends \Core\Controller {
     }
 
     public function orderAction(){
-
+        $userID = $_SESSION['username'];
+        $order= new Order();
+        $this->view->orderPend=$order->getSellOrders($userID);
         $this->view->display('Seller/viewOrders.php');
         
     }
