@@ -19,21 +19,16 @@
 
 
     <!-- Container content  --------------------------------------------->
-   
-    <div class="row center">
-
-        <div class=" ">
+        <div class="row">
           <div class=" row margint50 marginb50 ">
-            <div class="left">
-            <h2 ><i class='fas fa-user-cog'></i>&nbsp;Manage Accounts</h2>
+            <h2 class="marginl100"><i class='fas fa-user-cog'></i>&nbsp;&nbsp;Manage Accounts</h2>
             <div class="row">
-
-              <div class="col12 hrCustom lm-half-width">
-                <hr />
-              </div>
+                <div class="hrCustom">
+                        <hr />
+                </div>
             </div>
           </div>
-          </div>
+        </div>
          <!-- content area --------------------------------------------->
          <div class="tab marginb50 ">
           <button class="tablinks button1 active" de onclick="openPage(event,'SellerAcc')" id="defaultOpen">Seller Accounts</button>

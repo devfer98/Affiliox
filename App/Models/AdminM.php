@@ -78,35 +78,38 @@ class AdminM extends \Core\Connect{
         }
     }
 
-    public function updateAdmin($data)
-    {
-       
-        $id = $data['userID'];
-        $name = $data['name'];
-        $status = $data['status'];
-        $email = $data['email'];
-        $phoneNo = $data['phoneNo'];
-        $age = $data['age'];
-        $dob = $data['dob'];
-        $country = $data['country'];
-        $city = $data['city'];
-        $aLine1 = $data['aLine1'];
-        $aLine2 = $data['aLine2'];
-        $position = $data['position'];
-       
-        $conn=static::connectDB();
-        $query = "UPDATE admin SET name='$name',status='$status',email='$email',phoneNo='$phoneNo', age='$age',dob='$dob', gender='$gender', 
-        country='$country', city='$city', aLine1='$line1', aLine2='$line2', position='$position', WHERE userID='$userID'";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("ssssissssssss", $name, $status, $email, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2, $position, $userID);
-        if ($stmt->execute()) {
-            $stmt->close();
-            return true;
-        }else{
-            echo 'SQL Error';
-            return false;
-        }
+    public function EditAdmin(){
+
     }
+    // public function updateAdmin($data)
+    // {
+       
+    //     $id = $data['userID'];
+    //     $name = $data['name'];
+    //     $status = $data['status'];
+    //     $email = $data['email'];
+    //     $phoneNo = $data['phoneNo'];
+    //     $age = $data['age'];
+    //     $dob = $data['dob'];
+    //     $country = $data['country'];
+    //     $city = $data['city'];
+    //     $aLine1 = $data['aLine1'];
+    //     $aLine2 = $data['aLine2'];
+    //     $position = $data['position'];
+       
+    //     $conn=static::connectDB();
+    //     $query = "UPDATE admin SET name='$name',status='$status',email='$email',phoneNo='$phoneNo', age='$age',dob='$dob', gender='$gender', 
+    //     country='$country', city='$city', aLine1='$line1', aLine2='$line2', position='$position', WHERE userID='$userID'";
+    //     $stmt = $conn->prepare($query);
+    //     $stmt->bind_param("ssssissssssss", $name, $status, $email, $phoneNo, $age, $dob, $gender, $country, $city, $line1, $line2, $position, $userID);
+    //     if ($stmt->execute()) {
+    //         $stmt->close();
+    //         return true;
+    //     }else{
+    //         echo 'SQL Error';
+    //         return false;
+    //     }
+    // }
     
     public function getStatistics() {
 

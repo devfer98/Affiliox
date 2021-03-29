@@ -22,7 +22,7 @@
 </div>
 <!-----------------Admin-Registration Form------------------->
 
-<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Admin/updateAdmin?id=<?php echo $userID; ?>">
+<form class="search label marginl100 sm-center" method="post" onsubmit="return validateForm();" action ="../Admin/EditAdmin">
     <div class="row ">
         <div class="col12">
             <div class=" marginl100">
@@ -39,7 +39,7 @@
         <div class="col12">
             <div>
                 <label for="fname"><i class="fa fa-user"></i> &nbsp;Full Name</label><br>
-                <input type="text" id="fname" name="fullname" value="<?php echo $row['name'] ?>" placeholder="Kamal sachintha"> <br>
+                <input type="text" id="fname" name="fullname" value="<?php echo $row['name'] ?>"> <br>
             </div>
         </div>
     </div>
@@ -48,13 +48,13 @@
         <div class="col6">
             <div>
                 <label for="lname"><i class="fa fa-mail-bulk"></i>&nbsp; Email</label><br>
-                <input type="text" id="email" name="email" value="<?php echo $row['email'] ?>" placeholder="KSPerera@gmail.com"><br>
+                <input type="text" id="email" name="email" value="<?php echo $row['email'] ?>"><br>
             </div>
         </div>
         <div class="col6">
             <div class="">
                 <label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br>
-                <input type="text" id="phn-no" name="phn-no" value="<?php echo $row['phoneNo'] ?>" placeholder="0771123344"><br>
+                <input type="text" id="phn-no" name="phn-no" value="<?php echo $row['phoneNo'] ?>"><br>
             </div>
         </div>
 
@@ -65,14 +65,14 @@
             <div>
             <!-----------------DOB ------------------>
                 <label for="dob"><i class="fa fa-birthday-cake"></i>&nbsp; Date of Birth</label><br>
-                <input type="date" id="Birth" name="dob" disabled value="<?php echo $row['dob'] ?>" readonly placeholder="Perera"><br><br>
+                <input type="date" id="Birth" name="dob" value="<?php echo $row['dob'] ?>"><br><br>
             </div>
         </div>
         <div class="col6">
             <div>
             <!------------------Status ------------------>
                 <label for="status">Marital status</label><br>
-                <input type="text" id="status" name="status" value="<?php echo $row['status'] ?>" placeholder="Married"><br>
+                <input type="text" id="status" name="status" value="<?php echo $row['status'] ?>"><br>
             </div>
         </div>
     </div>
@@ -83,9 +83,9 @@
                 <!------------------Address section------------------->
 
                 <label for="Addressl1"><i class="fa fa-address-card"></i> Address Line 1</label><br>
-                <input type="text" id="line1" name="aline1" value="<?php echo $row['aLine1'] ?>" placeholder="No 23/3 B"><br><br>
+                <input type="text" id="line1" name="aline1" value="<?php echo $row['aLine1'] ?>"><br><br>
                 <label for="Addressl2"><i class="fa fa-address-card"></i> Address Line 2</label><br>
-                <input type="text" id="line2" name="aline2"value="<?php echo $row['aLine2'] ?>" placeholder="Jayasekara Mawatha"><br>
+                <input type="text" id="line2" name="aline2"value="<?php echo $row['aLine2'] ?>"><br>
                 <!------------------ ------------------->
             </div>
         </div>
@@ -95,13 +95,13 @@
         <div class="col6">
             <div>
                 <label for="city"><i class="fa fa-city"></i> City</label><br>
-                <input type="text" id="city" name="acity" value="<?php echo $row['city'] ?>" placeholder="Warakapola">
+                <input type="text" id="city" name="acity" value="<?php echo $row['city'] ?>">
             </div>
         </div>
         <div class="col6">
             <div>
                 <label for="country"><i class="fa fa-globe"></i> Country</label><br>
-                <input type="text" id="country"value="<?php echo $row['country'] ?>" name="country" placeholder="Srilanka"><br>
+                <input type="text" id="country"value="<?php echo $row['country'] ?>" name="country"><br>
             </div>
         </div>
     </div>
@@ -126,7 +126,7 @@
 					<div>
                     <!------------------Position------------------>
 						<label for="position"><i class="fa fa-briefcase"></i>&nbsp; Position</label><br>
-						<input type="text" id="position" name="position" value="<?php echo $row['position'] ?>" placeholder="IT Consultant"><br>
+						<input type="text" id="position" name="position" value="<?php echo $row['position'] ?>"><br>
 					</div>
 				</div>
 			</div>
@@ -143,7 +143,7 @@
         <div class="col12">
             <div>
                 <label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
-                <input type="text" value="<?php echo $row['userID'] ?>" name="Username-field" placeholder="Username"><br>
+                <input type="text" value="<?php echo $row['userID'] ?>" name="Username-field"><br>
             </div>
         </div>
     </div>
@@ -156,7 +156,6 @@
         <div class="col12 center">
             <div class=>
                 <button type="submit" value="submit">Submit Changes</button>
-                <button type="reset" value="reset">Reset</button>
             </div>
         </div>
     </div>

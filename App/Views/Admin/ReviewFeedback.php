@@ -17,17 +17,14 @@
 <body>
   <!---Navigation bar-------------------------------------------->
   <div class="container">
-    <div class="row center">
 
-        <div class=" ">
+        <div class="row ">
           <div class=" row margint50 marginb50 ">
-            <div class="left">
-            <h2 ><i class='fas fa-star'></i>&nbsp;Review Feedbacks</h2>
+            <h2 class="marginl100"><i class='fas fa-star'></i>&nbsp;&nbsp;Review Feedbacks</h2>
             <div class="row">
-
-              <div class="col12 hrCustom lm-half-width">
-                <hr />
-              </div>
+                <div class="hrCustom">
+                      <hr />
+                </div>
             </div>
           </div>
           </div>
