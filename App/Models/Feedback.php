@@ -8,7 +8,7 @@ class Feedback  extends \Core\Connect{
     public function addFeedback($message,$rating,$username,$prodID) {
         
         $conn=static::connectDB();
-        $reply="no";
+        $reply=NULL;
         $stmt = $conn->prepare("INSERT INTO feedback (reply,comment,rating,userID,productID) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssdsd",$reply,$message,$rating,$username,$prodID);
         if ($stmt->execute()) {
@@ -55,7 +55,19 @@ class Feedback  extends \Core\Connect{
 
     }
 
-    public function getFeedbacks() {
+    public function getFeedbacks($userID) {
+        
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("SELECT * FROM `feedback` LEFT JOIN product ON product.productID = feedback.productID LEFT JOIN productimage ON productimage.productID = feedback.productID AND productimage.imageCode LIKE '%main%' WHERE userID =? order by feedbackID DESC");
+        $stmt->bind_param("s", $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+
+        }else{
+            echo 'SQL Error';
+        }
 
     }
 

@@ -17,6 +17,25 @@
 
 
   <div class="container">
+    <div class="row">
+            <div class="margint100 marginb50 center">
+              <h2>Start a Conversation with the Seller</h2>
+            </div>
+    </div>
+            <?php if(isset($this->UImsgNotice) and !empty($this->UImsgNotice)){
+                        if($this->State==1) {
+
+                           ?><div class="center  marginb100 margint100 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center  margint100 marginb100 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsgNotice) and !empty($this->UImsgNotice)){echo $this->UImsgNotice;}  ?></p>
+                </div>
+
+
+
   <?php  
                 if (isset($this->order) and !empty($this->order)) {
                     while ($row = $this->order->fetch_assoc()) {
@@ -26,10 +45,9 @@
 
         <div class="col12">
 
-          <div class="margint50 marginb50 ">
-            <h2>Start a Conversation with the Seller</h2>
-          </div>
+
          <!-- Loop area --------------------------------------------->
+         
           
           <div class="row" >
             <div clas="sm-width center">
@@ -76,7 +94,9 @@
                   <div class=>
                   <input type="text" name ="ProdID" value ="<?php echo $row['productID'] ?> " hidden>
                   <input type="text" name ="OrderID" value ="<?php echo $row['orderID'] ?>" hidden>
-                    
+                  <input type="number" name ="quantity" value ="<?php echo $row['quantity'] ?>" hidden>
+                  <input type="text" name ="storename" value ="<?php echo $row['name'] ?>" hidden>
+                   <input type="text" name ="prodName" value ="<?php echo $row['prodName'] ?>" hidden>  
                   <button type="submit" value="submit">Send Message</button>
 
                   </div>

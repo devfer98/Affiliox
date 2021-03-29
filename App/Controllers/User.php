@@ -14,7 +14,7 @@ class User extends \Core\Controller
     {
         $this->view->display('Common/index.php');
     }
-    public function Error4()
+    public function Error4Action()
     {
         $this->view->display('Common/E404.php');
     }
@@ -162,8 +162,62 @@ class User extends \Core\Controller
     {
         $this->view->display('Common/AboutUs.php');
     }
-    public function HelpAction()
+
+    public function privacyAction()
     {
+        header("Location:https://www.freeprivacypolicy.com/live/172354e5-7e63-4feb-ba01-45bf5bd741b3");
+        //$this->view->display('Common/privacy.php');
+    }
+
+    public function helpMessage($send_mail,$name,$email,$msg)
+    {
+        $subject = "HELP Inquiry ";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+        $headers .= '"From: Affiliox.com@gmail.com' . "\r\n";     
+         $message = '<html><body>';
+         $message .= '<table style="border-color: #666;" cellpadding="10">';
+         $message .= "<tr><td>Name : $name</td></tr>";
+         $message .= "<tr><td>Email : $email</td></tr>";
+ 
+         $message .= "<tr><td>Message : $msg</td></tr>";
+         $message .= "</table>";
+         $message .= "</body></html>";
+                 
+        if (mail($send_mail,$subject,$message,$headers)) {
+            return true;
+        } else {
+           return false;
+        }
+    }
+    public function HelpAction()
+
+    {   if(!empty($_POST['subject'])){
+        $name =$_POST['firstname'];
+        $email =$_POST['email'];
+        $subject =$_POST['subject'];
+        $send_mail ="affiliox.com@gmail.com";
+        $result=$this->helpMessage($send_mail,$name,$email,$subject);
+        if($result){
+            $State=1;
+            $UImsg = 'Email Sent Successfully, We will Get back to you ASAP! ';
+            $this->view->UImsgNotice =$UImsg;
+            $this->view->State = $State;    
+            header('refresh:1; url=../User/Market');
+            $this->view->display('Common/ContactUs.php');  
+            exit();
+         }else{
+            $State=0;
+            $UImsg = 'Error Occured While sending Email, Please try again later';
+            $this->view->UImsgNotice= $UImsg;
+            $this->view->State = $State;
+            header('refresh:1; url=../User/Market');
+            $this->view->display('Common/ContactUs.php');  
+           
+            exit();
+         }
+
+    }
         $this->view->display('Common/ContactUs.php');
     }
 
@@ -173,10 +227,7 @@ class User extends \Core\Controller
         echo 'add method is called';
     }
 
-    public function FacebookAction()
-    {
-        echo 'add method is called';
-    }
+
 
     protected function before()
     {

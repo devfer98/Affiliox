@@ -67,6 +67,22 @@ class SellerM extends \Core\Connect {
         }
     }
 
+    public function getsellerEmail($storeName)
+    {
+        $conn=static::connectDB();
+        
+        $stmt = $conn->prepare("SELECT * FROM ministore LEFT JOIN seller ON ministore.userID=seller.userID WHERE ministore.name = ?");
+        $stmt->bind_param("s",$storeName);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
     public function getSellers() {
         echo "seller model called";
     }
@@ -123,7 +139,7 @@ class SellerM extends \Core\Connect {
         // $count = $query->num_rows;
         // return $count;
 
-        $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller;");
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller WHERE accountStatus='Active';");
         
         if($stmt->execute()){
             $result = $stmt->get_result();

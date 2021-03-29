@@ -178,16 +178,16 @@ class Promoter extends \Core\Controller {
         $totalC = new PromoterM();
         $result1 = $totalC->getTotalCommission($userID);
         $UImsg2 = $result1;
-        
+        $this->view->UImsg2=$UImsg2;
+        $this->view->display('Promoter/withdraw-earnings.php');
         
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
             $user->addTransPromo($ammount, $status, $userID, $date);
-            
             header('Location:../Promoter/promoterTransSuccess');
            
         } else    {
-            $errmsg= 'Please enter the valid amount of transfer and try again.';
+            $errmsg= 'Please enter a valid amount of transfer and try again.';
             $this->view->errmsg = $errmsg;
             $this->view->display('Promoter/withdraw-earnings.php');
         }        

@@ -29,6 +29,7 @@
 					
 					while($row = $this->UImsg->fetch_assoc()){           
            		 ?>
+
                 <table class="profileTable">
                     <tr>
                         <td id="td-1">Your Name:</td>
@@ -85,7 +86,7 @@
             <div class="center margint20 marginb50">
        
                     <button onclick="location.href='../Admin/PasswordReset'" name="change-pw" >Change password</button>
-                    <button  onclick="location.href='../Admin/EditAdmin'"  name="change-data" >Edit Details</button>
+                    <button  onclick="location.href='../Admin/EditAdmin?id=<?php echo $result['id']; ?>'"  name="change-data" >Edit Details</button>
 
             </div>
         </div>
