@@ -15,99 +15,63 @@
               
     <div class="container">
       <h2><i class="fas fa-chart-line"></i>&nbsp; &nbsp;Promoter Statistics</h2>
-     
-            <div class="heading">
-              <p>Overall List Statistics</p>
-                <table>
-                  <tr>
-                    <th>Color Category</th>
-                    <th>Amount</th>
-                  </tr>
-                  <tr>
-                    <td>Total Promoted Items</td>
-                    <td>89</td>
-                  </tr>
-                  <tr>
-                    <td>Total Sale Items</td>
-                    <td>41</td>
-                  </tr>
-                  <tr>
-                    <td>Total Return Items</td>
-                    <td>13</td>
-                  </tr>
-                  <tr>
-                    <td>Most Selling Items</td>
-                    <td>10</td>
-                  </tr>
-                </table>
-          </div> <!-- heading --> 
+   
+      <div class="inner-part">
+          <br>
+            <p>Their effectiveness can be determined based on the current statistics of the promoter. The order number, the full amount of the order and the total commission earned from the promotion. Also available is a collection of Spian used for promotion.</p>
+            <div class="error-msg">
+              <p><?php if(isset($this->empty) and !empty($this->empty)){echo $this->empty;}  ?></p>
+            </div>
+          <div class="inner-part">
+              <?php  
+                    if(isset($this->UImsg1) and !empty($this->UImsg1)){
+                    echo "<table>";    
+                          echo "<tr>";
+                              echo "<th>Order ID</th>";
+                              echo "<th>All charges on the order</th>";
+                              echo "<th>Commision Earned</th>";
+                          echo "</tr>";     
+                    while($row1 = $this->UImsg1->fetch_assoc()) {
+                      echo "<tr>";
+                              echo "<td>" . $row1['orderID'] . "</td>";
+                              echo "<td>" . number_format($row1['amount'],2) . " Rs" . "</td>";
+                              echo "<td>" . number_format($row1['totalCommission'],2) . " Rs" . "</td>";
+                      echo "</tr>";
+                      }   	
+                    }
+                  echo "</table>";   
+              ?>
 
-     <br><br>
-                <div class="inner-part">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Consequuntur soluta, ab quod! Iure dolore est perspiciatis voluptatem corporis sed quas, excepturi mollitia possimus commodi, nobis maiores necessitatibus quo, aspernatur debitis!</p>
-                  <table>
-                    <tr>
-                      <th colspan="2" >Total Promoted Items</th>
-                    </tr>
-                    <tr>
-                      <td>Items</td>
-                      <td>89</td>
-                    </tr>
-                  </table>
-
-                  <table>
-                    <tr>
-                      <th colspan="2" >Total Sales</th>
-                    </tr>
-                    <tr>
-                      <td>Amount</td>
-                      <td>$USD 476.63</td>
-                    </tr>
-                  </table>
-                  <table>
-                    <tr>
-                      <th>Total Amount of Returns</th>
-                      <th>Total Value Per Month</th>
-                    </tr>
-                    <tr>
-                      <td>Amount</td>
-                      <td>$USD 75.00</td>
-                    </tr>
-                  </table>
-                  <table>
-                    <tr>
-                      <th>Most Selling Items</th>
-                      <th>Amount Per Month</th>
-                    </tr>
-                    <tr>
-                      <td>Electonics</td>
-                      <td>85</td>
-                    </tr>
-                  </table>
-                  <table>
-                    <tr>
-                      <th colspan="2">Net Income</th>
-                    </tr>
-                    <tr>
-                      <td>Total Sales</td>
-                      <td>$USD 476.63</td>
-                    </tr>
-                    <tr>
-                      <td>Amount of Return</td>
-                      <td>$USD 75.00</td>
-                    </tr>
-                    <tr>
-                      <td>Net Income</td>
-                      <td>$USD 471.63</td>
-                    </tr>
-                    <tr>
-                      <td>Total Profit Related to the Net Income</td>
-                      <td>$USD 88.54</td>
-                    </tr>
-                  </table>
-                </div> <!-- inner-part -->
-                </div> <!-- container --> 
-                <hr style="height:2px;border:none;color:#333;background-color:#333;">
+                  <?php  
+                    if(isset($this->UImsg3) and !empty($this->UImsg3)){
+                      while($row3 = $this->UImsg3->fetch_assoc()){               
+                  ?>
+                    <table>
+                      <tr>
+                          <th>Total Selected Items for Promote</th>
+                          <th><?php echo $row3['num_of_links']?></th>  
+                      </tr>
+                      <?php  
+                        if(isset($this->UImsg2) and !empty($this->UImsg2)){
+                        while($row2 = $this->UImsg2->fetch_assoc()){   
+                      ?>
+                      <tr>
+                          <th>Total Commission Earned</th>
+                          <th><?php echo number_format($row2['total'],2)?> Rs </th>
+                      </tr>
+                      <?php
+                          }
+                        }
+                    ?>
+                    </table>
+                  <?php
+                    }
+                  }
+                  ?>
+          </div>  
+          </div> <!-- inner-part -->
+        </div> <!-- container --> 
+        <hr style="height:2px;border:none;color:#333;background-color:#333;">
            
       <!-- bottom-part-------------------------------------------->
 </body>

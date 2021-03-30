@@ -30,10 +30,11 @@
                 </tr>
                 <tr>
                     <td rowspan=5>
-                        <img class="images" src="/images/promoter/drone.jpg">
+                        <!-- <img class="images" src="/images/promoter/drone.jpg">
                         <img class="images" src="/images/promoter/drone2.jpg">
-                        <img class="images" src="/images/promoter/drone3.jpg" >
-                    
+                        <img class="images" src="/images/promoter/drone3.jpg" > -->
+                        <img src="/images/upload/<?php echo $row['imageCode'] ?>" >
+                        
                        <div class="btn">
                             <button class="" onclick="increment(-1)"><i class="fas fa-angle-left"></i></button>
                             <button class="" onclick="increment(1)"><i class="fas fa-angle-right"></i></button>
@@ -47,7 +48,7 @@
                     <td id=imp>Discount Rate</td>
                 </tr>
                 <tr>
-                    <td><?php echo $row['price'] ?> LKR</td>
+                    <td><?php echo number_format($row['price'],2) ?> Rs</td>
                     <td><?php echo $row['comRate'] ?> %</td>
                 </tr>
                 <tr>

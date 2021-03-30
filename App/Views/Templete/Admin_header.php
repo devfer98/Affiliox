@@ -20,7 +20,7 @@
 
                     <div class="sm-1 open-btn" onclick="openNav()">&#9776;</div>
                     <div class="sm-9">
-                        <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
+                        <a href="../"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                     </div>
                     <div class="sm-2 ">
                         <div class="selector margint20">
@@ -52,19 +52,22 @@
 
                 <div class="col4 center">
                     <ul>
-                        <a href="../Buyer/Index"><i class="fas fa-home"></i>&nbsp;Home</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;About Us</a>
-                        <a href=""><i class="fas fa-inbox"></i>&nbsp;Help</a>
-                        <a href=""><i class="fas fa-users"></i>&nbsp;Account</a>
+                        <a href=""><i class="fas fa-home"></i>&nbsp;Home</a>
+                        <a href="../User/AboutUs"><i class="fas fa-users"></i>&nbsp;About Us</a>
+                        <a href="../User/Help"><i class="fas fa-inbox"></i>&nbsp;Help</a>
+                        <a href="../Admin/AdminProfile"><i class="fas fa-users"></i>&nbsp;Account</a>
                     </ul>
                 </div>
 
-                <div class="col4 search fitcontent center">
+                <form method ="GET" action ="../user/market" >               
+                <div class="col4 search  fullWidth center">
                     <ul>
-                        <input type="text" name="search" placeholder="Headsets" />
-                        <a href=""><i class="fas fa-search"></i></a>
+                        <input type="text" name="search" placeholder=" Search" pattern="^[a-zA-Z0-9 ]*$" />
+                        <button value=submit value=name><i class="fas fa-search"></i></a>
                     </ul>
                 </div>
+                    </form> 
+
                 <div class="col1 hidden-sm ">
                     <div class="selector margint20">
 

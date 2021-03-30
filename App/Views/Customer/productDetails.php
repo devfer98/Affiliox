@@ -72,7 +72,7 @@
                                     <div class="margint50">
                                         <label for="quantity"><i class="fa fa-truck-loading"></i>
                                             &nbsp;Quantity</label><br>
-                                        <input style="z-index: 1;" type="number" id="quantity" name="quantity" value="1">
+                                        <input style="z-index: 1;" type="number" id="quantity" min="1" max="50" name="quantity" value="1">
                                         <br>
                                     </div>
                                     <!-- </form> -->

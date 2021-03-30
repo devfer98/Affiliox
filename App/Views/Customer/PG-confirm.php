@@ -19,6 +19,17 @@
                 <div class="col12 ">
                     <div class="hrCustom">
                         <h2>One more step</h2>
+                        <?php if (isset($this->UImsgNotice) and !empty($this->UImsgNotice)) {
+                        if ($this->State == 1) {
+
+                                 ?><div class="center marginb100 margint20 errorMsgSuccess"><?php
+
+                                } else {
+                                      ?><div class="center marginb100 margint100 errorMsgFailed"> <?php
+                                     }
+                                ?> <p>  <?php  echo $this->UImsgNotice ?>  </p></div>    
+
+                              <?php   }  ?>
                         <div class="col6">
                             <hr />
                         </div>

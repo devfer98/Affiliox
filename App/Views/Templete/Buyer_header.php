@@ -45,7 +45,7 @@
             <div class="nav-bar center backcolor">
                 <div class="col1 open-btn hidden-sm" onclick="openNav()"> &#9776;</div>
                 <div class="col2 hidden-sm">
-                    <a href="/index.html"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
+                    <a href="../"><img src="/images/Logo/Sidelogo.png" alt="Affiliox LOGO" /></a>
                 </div>
 
                 <div class="col4 center">

@@ -15,8 +15,9 @@
 <body>
     <div class="containerB">
       <h2>&nbsp;<i class="fas fa-chart-line"></i>&nbsp; &nbsp;Admin Statistics</h2>
+      <br/><br/><br/>
         
-        <div id="piechart">
+        <!-- <div id="piechart">
         <script type="text/javascript">
             google.charts.load("current", {packages:['corechart']});
             google.charts.setOnLoadCallback(drawChart);
@@ -38,7 +39,7 @@
 				chart.draw(data, options);
 				}
       </script>
-      </div>
+      </div> -->
 
       <div class="heading">
         <p>&nbsp; <i class="fas fa-chart-line"></i> Overall Statistics </p>
@@ -49,23 +50,53 @@
              </tr>
              <tr>
                <td>Number of Sellers</td>
-               <td>8</td>
+               <td><?php 
+                  if(isset($this->countSellers) and !empty($this->countSellers and $this->countSellers->num_rows>0)){
+                   while($row = $this->countSellers->fetch_assoc()){
+						echo $row['COUNT(userID)'];	
+					}  
+				}
+			?>  				</td>
              </tr>
              <tr>
                <td>Number of Buyers</td>
-               <td>13</td>
+               <td><?php 
+                  if(isset($this->countBuyers) and !empty($this->countBuyers and $this->countBuyers->num_rows>0)){
+                   while($row = $this->countBuyers->fetch_assoc()){
+						echo $row['COUNT(userID)'];	
+					}  
+				}
+			?>  	</td>
              </tr>
              <tr>
                <td>Number of Promoters</td>
-               <td>6</td>
+               <td><?php 
+                  if(isset($this->countPromoters) and !empty($this->countPromoters and $this->countPromoters->num_rows>0)){
+                   while($row = $this->countPromoters->fetch_assoc()){
+						echo $row['COUNT(userID)'];	
+					}  
+				}
+			?>  				 </td>
              </tr>
              <tr>
-               <td>Number of Product Refunds</td>
-               <td>26</td>
+               <td>Number of Ministores</td>
+               <td><?php 
+                  if(isset($this->countMinistores) and !empty($this->countMinistores and $this->countMinistores->num_rows>0)){
+                   while($row = $this->countMinistores->fetch_assoc()){
+						echo $row['COUNT(userID)'];	
+					}  
+				}
+			?>  				</td>
              </tr>
 			      <tr>
-               <td>Number of Product Promoted</td>
-               <td>6</td>
+               <td>Number of Products Promoted</td>
+               <td><?php 
+                  if(isset($this->PromoteCount) and !empty($this->PromoteCount and $this->PromoteCount->num_rows>0)){
+                   while($row = $this->PromoteCount->fetch_assoc()){
+						echo $row['COUNT(userID)'];	
+					}  
+				}
+			?>  	</td>
              </tr>
            </table>
      </div> <!-- heading --> 

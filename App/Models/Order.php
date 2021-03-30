@@ -184,6 +184,17 @@ class Order extends \Core\Connect
         }     
 
     }
+    public function OrderFailled($orderID)
+    {
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("DELETE FROM `order` WHERE `order`.`orderID` = ?");
+        $stmt0->bind_param("i",$orderID);
+        if($stmt0->execute()){
+        }else {
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+    }
 
     public function updateDelivery($data,$order_ID)
     {
@@ -202,8 +213,6 @@ class Order extends \Core\Connect
                     echo $error;
                 }
 
-                echo $datas['ID'];
-                echo $datas['dID'];
             }
             return;
         }

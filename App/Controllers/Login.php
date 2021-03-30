@@ -52,7 +52,7 @@ class Login extends \Core\Controller {
                 }elseif ($result==3){
                     header("Location:../Promoter/Market");
                  }elseif ($result==4){
-                    header("Location:../Admin/ApproveReg");
+                    header("Location:../Admin/AdminDashboard");
                 }else{
                     $this->view->UImsg = $UImsg;
                     $this->view->display('Common/Signin.php');

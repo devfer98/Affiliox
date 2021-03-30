@@ -90,7 +90,7 @@ class PromoterM extends \Core\Connect {
     public function getProductDetails(){
         $conn=static::connectDB();
 
-        $query = "select * from product LEFT JOIN productimage on product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE status = 'Active'";
+        $query = "select * from product LEFT JOIN productimage on product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE status = 'Active' AND comRate > 0";
         
         $stmt = $conn->prepare($query);
 
@@ -108,13 +108,11 @@ class PromoterM extends \Core\Connect {
         }
     }
 
-    public function getProductImage(){
-    
-    }
 
     public function getproductFeatures($prodID){
         $conn = static::connectDB();
-        $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
+        // $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
+        $stmt0 = $conn->prepare("SELECT * FROM product LEFT JOIN productimage ON product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE product.productID = ?");
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {
             $result = $stmt0->get_result();
@@ -128,13 +126,13 @@ class PromoterM extends \Core\Connect {
             return $error;
         }
        
+       
     }
 
     public function getUniqueLink($prodID){
         $conn = static::connectDB();
         $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
     
-        
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {
             $result = $stmt0->get_result();
@@ -151,8 +149,65 @@ class PromoterM extends \Core\Connect {
        
     }
 
-    
+    public function getStaticPromo($userID)  {
+        $conn=static::connectDB();
 
+        $query = "SELECT * FROM `order` WHERE proUserID = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows > 0 ){
+                return $result;
+            } else {
+                $result = null;
+                return  $result ;
+            }
+        } 
+    }
+
+    public function getTotalCommission($userID) {
+        $conn=static::connectDB();
+
+        $query = "SELECT SUM(totalCommission) AS total FROM `order` WHERE proUserID = ?";
+    
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result1 = $stmt->get_result();
+            
+            if ($result1->num_rows > 0 ){
+                return $result1;
+            } else {
+                $result1 = null;
+                return  $result1 ;
+            }
+        } 
+    }
+
+    public function getTotalLinks($userID) {
+        $conn=static::connectDB();
+
+        $query = "SELECT COUNT(DISTINCT link ) AS num_of_links FROM prolink WHERE userID = ? GROUP By userID";
+    
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$userID);
+
+        if ($stmt->execute()) {
+            $result2 = $stmt->get_result();
+            
+            if ($result2->num_rows > 0 ){
+                return $result2;
+            } else {
+                $result2 = null;
+                return  $result2 ;
+            }
+        } 
+    }
 
     public function updatePromoter() {
 
@@ -282,7 +337,35 @@ class PromoterM extends \Core\Connect {
         // $count = $query->num_rows;
         // return $count;
 
-        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter;");
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promoter WHERE accountStatus='Active';");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getPromoteCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM promote;");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getClickCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT SUM(noClicks) FROM promote;");
         
         if($stmt->execute()){
             $result = $stmt->get_result();

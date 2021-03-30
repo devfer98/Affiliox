@@ -17,17 +17,14 @@
 <body>
   <!---Navigation bar-------------------------------------------->
   <div class="container">
-    <div class="row center">
 
-        <div class=" ">
+        <div class="row ">
           <div class=" row margint50 marginb50 ">
-            <div class="left">
-            <h2 ><i class='fas fa-star'></i>&nbsp;Review Feedbacks</h2>
+            <h2 class="marginl100"><i class='fas fa-star'></i>&nbsp;&nbsp;Review Feedbacks</h2>
             <div class="row">
-
-              <div class="col12 hrCustom lm-half-width">
-                <hr />
-              </div>
+                <div class="hrCustom">
+                      <hr />
+                </div>
             </div>
           </div>
           </div>
@@ -37,55 +34,139 @@
           <button class="tablinks button1" onclick="openPage(event,'PromoterFeedback')">Promoter Feedbacks</button>
          
           <div id="SellerFeedback" class="tabcontent" style="display: block;">
-            <div class="body">
-              <table>
-                <tr>
-                  <th>Full Name</th>
-                  <th>UserID</th>
-                  <th>Email</th>
-                  <th>Rating</th>
-                </tr>
-                <?php 
-                  if(isset($this->actPromoters) and !empty($this->actPromoters) and $this->actPromoters->num_rows>0){
-                    while($row = $this->actPromoters->fetch_assoc()){   
-                      // echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
-                      echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
-                      echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['email']."</td>"; 
-                      echo "<td>".$row['rating']."</td>";
-                    }	
-                  }else{
-                    echo "<tr><td colspan='6'>No Seller Feedbacks</td></tr>";
-                  }  
+          <div class="container">
+
+<!-- Container content  --------------------------------------------->
+
+    <div class="row">
+        <div class=" row margint50 marginb50 ">
+                <h3 class="marginl100"><i class="fas fa-comments"></i>&nbsp;Seller Feedbacks</h3>
+                <div class="row">
+                  <div class="hrCustom">
+                      <hr />
+                  </div>
+                </div>
+        </div>
+    </div>
+        <!-- Loop area --------------------------------------------->
+        <?php  
+        
+        if(isset($this->data) and !empty($this->data)){
+  
+            while ($row = $this->data->fetch_assoc()) {
+                
                 ?>
-              </table>
-            </div>	
+        <div class="row center ">
+            <div clas="center">
+                <div class="boxsummery shoppingBlock marginb20 margint20 center">
+
+                <div class="col2 imgw">
+                    <img class="images" src="/images/upload/<?php echo $row['imageCode'] ?>" style="width:100%">
+                </div>
+                    <div class="col3">
+                        <div class="margint20 left">
+                            
+                            <h4><?php echo $row['prodName'] ?></h4>
+                            <p> Price   : Rs.<?php  echo $row['price'] ?></p>
+                            <p> Seller Name :<?php  echo $row['name'] ?></p>
+                            <p> Rating  :<?php  echo $row['rating'] ?></p>
+                        </div>
+                    </div>
+                    <div class="col7">
+                        <div class="margint20 center width80">
+                            <div class="width90">
+                                <textarea readonly class="row" rows="5"
+                                    name="comment-space"><?php  if(empty($row['comment'])){ echo "Feedback message not given"; } else echo $row['comment'] ?></textarea><br>
+                            </div>
+                        </div>
+                        <div><?php if(empty($row['reply'])){} else { ?> 
+                            <div class="margint20 marginl20 center width90">
+                                <div class="width70">
+                                    <textarea readonly class="row" rows="3"
+                                        name="comment-space2"> <?php  echo 'Seller Reply : '. $row['reply'] ?></textarea><br>
+                                </div>
+                            </div>
+                             <?php }  ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<?php
+            }
+            
+    }?>
+
+</div>
           </div>
          
           <div id="PromoterFeedback" class="tabcontent">
-            <div class="body">
-              <table>
-                <tr>
-                  <th>Full Name</th>
-                  <th>UserID</th>
-                  <th>Email</th>
-                  <th>Rating</th>
-                </tr>
-                <?php 
-                  if(isset($this->actPromoters) and !empty($this->actPromoters) and $this->actPromoters->num_rows>0){
-                    while($row = $this->actPromoters->fetch_assoc()){   
-                      // echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
-                      echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
-                      echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['email']."</td>"; 
-                      echo "<td>".$row['rating']."</td>";
-                    }	
-                  }else{
-                    echo "<tr><td colspan='6'>No Promoter Feedbacks</td></tr>";
-                  }  
+          <div class="row">
+        <div class=" row margint50 marginb50 ">
+                <h3 class="marginl100"><i class="fas fa-comments"></i>&nbsp;Promoter Feedbacks</h3>
+                <div class="row">
+                  <div class="hrCustom">
+                      <hr />
+                  </div>
+                </div>
+        </div>
+    </div>
+        <!-- Loop area --------------------------------------------->
+        <?php  
+        
+        if(isset($this->data) and !empty($this->data)){
+  
+            while ($row = $this->data->fetch_assoc()) {
+                
                 ?>
-              </table>
-            </div>	
+        <div class="row center ">
+            <div clas="center">
+                <div class="boxsummery shoppingBlock marginb20 margint20 center">
+
+                <div class="col2 imgw">
+                    <img class="images" src="/images/upload/<?php echo $row['imageCode'] ?>" style="width:100%">
+                </div>
+                    <div class="col3">
+                        <div class="margint20 left">
+                            
+                            <h4><?php echo $row['prodName'] ?></h4>
+                            <p> Price   : Rs.<?php  echo $row['price'] ?></p>
+                            <p> Seller Name :<?php  echo $row['name'] ?></p>
+                            <p> Rating  :<?php  echo $row['rating'] ?></p>
+                        </div>
+                    </div>
+                    <div class="col7">
+                        <div class="margint20 center width80">
+                            <div class="width90">
+                                <textarea readonly class="row" rows="5"
+                                    name="comment-space"><?php  if(empty($row['comment'])){ echo "Feedback message not given"; } else echo $row['comment'] ?></textarea><br>
+                            </div>
+                        </div>
+                        <div><?php if(empty($row['reply'])){} else { ?> 
+                            <div class="margint20 marginl20 center width90">
+                                <div class="width70">
+                                    <textarea readonly class="row" rows="3"
+                                        name="comment-space2"> <?php  echo 'Seller Reply : '. $row['reply'] ?></textarea><br>
+                                </div>
+                            </div>
+                             <?php }  ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<?php
+            }
+            
+    }?>
+
+</div>
           </div>
           <!-- <div id="PromoterFeedback" class="tabcontent">
             <div class="body">

@@ -69,19 +69,24 @@ class Router
             if(is_callable([$con_object,$action])){
                 $con_object->$action();
             }else{
-                
-        
-                echo "method $action  not found in $controller" ;
+                        
+            include '../app/views/Common/E404.php';
+            header('refresh:2; url=../');
 
             }
         }else {
-     
-            echo "controller class  not found in $controller";
+
+            include '../app/views/Common/E404.php';
+            header('refresh:2; url=../');
+
+            include '../app/views/Common/E404.php';
+            header('refresh:2; url=../');
         }
     }else{
-
-        // header("Location:/User/Error4");
-        echo '404';
+        include '../app/views/Common/E404.php';
+        header('refresh:2; url=../');
+        
+        
     }
     }
 
