@@ -72,58 +72,76 @@ class Admin extends \Core\Controller {
     }
 
     public function AdminStatisticsAction(){
+        $seller = new SellerM();
+        $this->view->countSellers=$seller->getCount  ();
+        $promoter= new PromoterM();
+        $this->view->countPromoters=$promoter->getCount();
+        $this->view->PromoteCount=$promoter->getPromoteCount();
+        $this->view->ClickCount=$promoter->getClickCount();
+        $Buyer= new BuyerM();
+        $this->view->countBuyers=$Buyer->getCount   ();
+        $Ministore= new MinistoreM();
+        $this->view->countMinistores=$Ministore->getCount   ();
         $this->view->display('Admin/AdminStatistics.php');
     }
 
     public function EditAdminAction(){
-        $id = $_GET['id'];
+        $userID = $_SESSION['username'];
         $user = new AdminM();
-        $result = $user->getAdmin($id);
-        print_r($result);
-        die;
-         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-             $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-             $data = [
-                'userID' => $_GET['id'],
-                'name' => trim($_POST['name']),
-                'status' => trim($_POST['status']),
-                'email' => trim($_POST['email']),
-                'phoneNo' => trim($_POST['phoneNo']),
-                'age' => trim($_POST['age']),
-                'dob' => trim($_POST['dob']),
-                'gender' => trim($_POST['gender']),
-                'country' => trim($_POST['country']),
-                'city' => trim($_POST['city']),
-                'aLine1' => trim($_POST['aLine1']),
-                'aLine2' => trim($_POST['aLine2']),
-                'position' => trim($_POST['position'])
-             ];
-
-             $user = new AdminM();
-             if($user->updateAdmin($data)){
-                 header('location:AdminProfile');
-             } else {
-                 die('Something Went Wrong');
-             }
-         }
-        $view = new View("Admin/EditAdmin");
-        $view->assign('userID',$result['id']);
-        $view->assign('name',$result['name']);
-        $view->assign('status',$result['status']);
-        $view->assign('email',$result['email']);
-        $view->assign('phoneNo',$result['phoneNo']);
-        $view->assign('age',$result['age']);
-        $view->assign('dob',$result['dob']);
-        $view->assign('country',$result['country']);
-        $view->assign('city',$result['city']);
-        $view->assign('aLine1',$result['aLine1']);
-        $view->assign('aLine2',$result['aLine2']);
-        $view->assign('position',$result['position']);
+        $result = $user->getAdmin($userID);
+        $UImsg = $result;
+        $this->view->UImsg = $UImsg;
+        $this->view->display('Admin/EditAdmin.php');
     }
+    //     $id = $_GET['id'];
+    //     $user = new AdminM();
+    //     $result = $user->getAdmin($id);
+    //     print_r($result);
+    //     die;
+    //      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //          $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+    //          $data = [
+    //             'userID' => $_GET['id'],
+    //             'name' => trim($_POST['name']),
+    //             'status' => trim($_POST['status']),
+    //             'email' => trim($_POST['email']),
+    //             'phoneNo' => trim($_POST['phoneNo']),
+    //             'age' => trim($_POST['age']),
+    //             'dob' => trim($_POST['dob']),
+    //             'gender' => trim($_POST['gender']),
+    //             'country' => trim($_POST['country']),
+    //             'city' => trim($_POST['city']),
+    //             'aLine1' => trim($_POST['aLine1']),
+    //             'aLine2' => trim($_POST['aLine2']),
+    //             'position' => trim($_POST['position'])
+    //          ];
+
+    //          $user = new AdminM();
+    //          if($user->updateAdmin($data)){
+    //              header('location:AdminProfile');
+    //          } else {
+    //              die('Something Went Wrong');
+    //          }
+    //      }
+    //     $view = new View("Admin/EditAdmin");
+    //     $view->assign('userID',$result['id']);
+    //     $view->assign('name',$result['name']);
+    //     $view->assign('status',$result['status']);
+    //     $view->assign('email',$result['email']);
+    //     $view->assign('phoneNo',$result['phoneNo']);
+    //     $view->assign('age',$result['age']);
+    //     $view->assign('dob',$result['dob']);
+    //     $view->assign('country',$result['country']);
+    //     $view->assign('city',$result['city']);
+    //     $view->assign('aLine1',$result['aLine1']);
+    //     $view->assign('aLine2',$result['aLine2']);
+    //     $view->assign('position',$result['position']);
+
 
     public function ReviewFeedbackAction(){
-        $feedback= new Feedback();
-        $this->view->buyerFeedbacks=$feedback-> getFeedSell($_SESSION['username']);
+        $entry = new Feedback();
+        $result = $entry-> getFeedbacks($_SESSION['username']);
+        $this->view->data= $result;
         $this->view->display('Admin/ReviewFeedback.php');
     }
 

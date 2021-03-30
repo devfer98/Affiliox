@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
     <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -22,6 +22,50 @@
                     <h2>Product Feedback</h2>
                 </div>
                 <div class="row">
+<<<<<<< HEAD
+                <?php if(isset($this->UImsg) and !empty($this->UImsg)){
+                        if($this->State==1) {
+
+                           ?><div class="center marginb50 errorMsgSuccess"><?php
+                           
+                        }else{
+                          ?><div class="center marginb50 errorMsgFailed"> <?php
+                        }                 
+                  }  ?>
+                    <p><?php if(isset($this->UImsg) and !empty($this->UImsg)){echo $this->UImsg;}  ?></p>
+                    
+               	 </div>
+                </div>
+                <div class="row">
+                    <div clas="sm-width center">
+                        <div class="boxsummery shoppingBlock marginb100 margint20 center ">
+                            <div class="row">
+                                <div class="col3 imgw">
+                                    <img class="images" src="/images/Products/drone.jpg" style="width:100%">
+                                </div>
+
+                                <div class="col4">
+                                    <div class="margint20 left">
+                                        <h3>Inspire 1</h3>
+                                        <p>Price:Rs 4000.00</p>
+                                        <p>Delivery:Free</p>
+                                    </div>
+                                </div>
+
+                                <div class="col2 search label">
+                                    <div class="margint20">
+                                        <label for="quantity"><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>
+                                        <input style="z-index: 1;" type="number" id="quantity" name="quantity" readonly
+                                            placeholder="1"> <br>
+                                    </div>
+                                </div>
+
+                                <div class="col3">
+                                    <div class="margint20">
+                                        <h4></h4>
+
+                                    </div>
+=======
                     <?php if (isset($this->UImsgNotice) and !empty($this->UImsgNotice)) {
                         if ($this->State == 1) {
 
@@ -36,6 +80,7 @@
                                 }  
                                 
                                 ?></p>
+>>>>>>> b1a4f20eee03a7db5e74ffcf1e20f72f8d2da981
                                 </div>
                             </div>
 

@@ -21,23 +21,18 @@
   <!-- <?php echo $_SESSION["type"] ?> -->
     <!-- Container content  --------------------------------------------->
    
-    <div class="row center">
-
-        <div class=" ">
+      <div class="row">
           <div class=" row margint50 marginb50 ">
-            <div class="left">
-            <h2 ><i class='fas fa-star'></i>&nbsp;Verify Users</h2>
+            <h2 class="marginl100"><i class='fas fa-star'></i>&nbsp;&nbsp;Verify Users</h2>
             <div class="row">
-
-              <div class="col12 hrCustom lm-half-width">
-                <hr />
-              </div>
+                <div class="hrCustom">
+                      <hr />
+                </div>
             </div>
           </div>
-          </div>
+      </div>
          <!-- content area --------------------------------------------->
-         <div class="tab marginb50
-         ">
+         <div class="tab marginb50">
           <button class="tablinks button1 active" de onclick="openPage(event,'SellerReg')" id="defaultOpen">Seller Pending Approvals</button>
           <button class="tablinks button1" onclick="openPage(event,'PromoterReg')">Promoter Pending Approvals</button>
          

@@ -23,20 +23,35 @@
 		<div class="success-msg">
 			<p><?php if(isset($this->successmsg) and !empty($this->successmsg)){echo $this->successmsg;}  ?></p>
 		</div>
+		
 		<div class="money-withdrawal-form">
+		
 			<form method="post" action="../Promoter/promoterTransToDB">
+			
 				<table>
-					<tr>
-						<td class = td1>Current Amount :</td>
-						<td>82.14 USD</td>
-					</tr>
+					
+                      <tr>
+
+                          <td class = td1>Total Commission Earned :</td>
+						  <?php  
+                        if(isset($this->UImsg2) and !empty($this->UImsg2)){
+                        while($row2 = $this->UImsg2->fetch_assoc()){   
+                      ?>
+                          <td><?php echo number_format($row2['total'],2)?> Rs </td>
+						  <?php
+                          }
+                        }
+                    ?>
+                      </tr>
+                      
+					
 					<tr>
 						<td class = td1>Change Amount :</td>
-						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0"></td>
+						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0" ></td>
 					</tr>
 					<tr>
 						<td class = td1>Transfer Cost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-						<td>$ 0</td>
+						<td>0.00 Rs</td>
 					</tr>
 					<tr>
 						<td colspan =2> *By requesting a transfer you agree with Affiliox.com terms and conditions.</td>
@@ -51,7 +66,9 @@
 					</td>
 				</tr>
 			</table>
+			
 			</form>
+			
 		</div> <!-- money-withdrawal-form -->
 		</div> <!-- container -->
 		<hr style="height:2px;border:none;color:#333;background-color:#333;">

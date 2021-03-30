@@ -4,11 +4,10 @@
 	<title>Affiliox-AdminProfile</title>
 	<link rel="shortcut icon" href="/images/Logo/logoOnly.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
-	<link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
-	<link rel="stylesheet" type="text/css" href="/css/Admin/adminprofile.css">
+    <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
-	<script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/6cdc06033e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 		<!---Body-------------------------------------------->
@@ -86,7 +85,7 @@
             <div class="center margint20 marginb50">
        
                     <button onclick="location.href='../Admin/PasswordReset'" name="change-pw" >Change password</button>
-                    <button  onclick="location.href='../Admin/EditAdmin?id=<?php echo $result['id']; ?>'"  name="change-data" >Edit Details</button>
+                    <button  onclick="location.href='../Admin/EditAdmin'"  name="change-data" >Edit Details</button>
 
             </div>
         </div>
