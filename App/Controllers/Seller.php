@@ -117,9 +117,11 @@ class Seller extends \Core\Controller {
     public function orderAction(){
         $userID = $_SESSION['username'];
         $order= new Order();
-        $this->view->orderPend=$order->getSellOrders($userID);
-        $this->view->display('Seller/viewOrders.php');
-        
+        $this->view->orderPend=$order->getSellOrders($userID, "Pending", "Pending");
+        $this->view->orderDispatched=$order->getSellOrders($userID, "Dispatched", "Pending");
+        $this->view->orderSuccess=$order->getSellOrders($userID, "Dispatched", "Received");
+        $this->view->orderUnSuccess=$order->getSellOrders($userID, "Dispatched", "Not Received");
+        $this->view->display('Seller/viewOrders.php');    
     }
 
     public function orderProAction(){
