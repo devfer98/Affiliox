@@ -170,16 +170,12 @@ class Promoter extends \Core\Controller {
         
 
         $user = new TransactionPromo();
-        $limit = 100;
+        $limit = 1000;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
         
-        $totalC = new PromoterM();
-        $result1 = $totalC->getTotalCommission($userID);
-        $UImsg2 = $result1;
-        $this->view->UImsg2=$UImsg2;
-        $this->view->display('Promoter/withdraw-earnings.php');
+        
         
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
@@ -187,9 +183,8 @@ class Promoter extends \Core\Controller {
             header('Location:../Promoter/promoterTransSuccess');
            
         } else    {
-            $errmsg= 'Please enter a valid amount of transfer and try again.';
-            $this->view->errmsg = $errmsg;
-            $this->view->display('Promoter/withdraw-earnings.php');
+            header('Location:../Promoter/promoterTransFail');
+            
         }        
         
         
@@ -197,8 +192,28 @@ class Promoter extends \Core\Controller {
 
 
     public function promoterTransSuccessAction(){
+        $userID = $_SESSION["username"];
+        $totald = new PromoterM();
+        $result1 = $totald->getTotalCommission($userID);
+        $UImsg2 = $result1;
+        $this->view->UImsg2=$UImsg2;
+       
+
         $successmsg= 'Your Transaction Process is Success!';
         $this->view->successmsg = $successmsg;
+        $this->view->display('Promoter/withdraw-earnings.php');
+    }
+
+    public function promoterTransFailAction(){
+        $userID = $_SESSION["username"];
+        $totald = new PromoterM();
+        $result1 = $totald->getTotalCommission($userID);
+        $UImsg2 = $result1;
+        $this->view->UImsg2=$UImsg2;
+        
+
+        $errmsg= 'Please enter a valid amount of transfer and try again.';
+        $this->view->errmsg = $errmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
@@ -210,7 +225,7 @@ class Promoter extends \Core\Controller {
         $result = $user->getTransPromo($userID);
 
         if($result == null) {
-            // $empty = $result;
+            
             $empty= "You have not yet made any transaction!";
             $this->view->empty=$empty;
             $this->view->display('Promoter/payout-history.php');

@@ -111,7 +111,6 @@ class PromoterM extends \Core\Connect {
 
     public function getproductFeatures($prodID){
         $conn = static::connectDB();
-        // $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
         $stmt0 = $conn->prepare("SELECT * FROM product LEFT JOIN productimage ON product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE product.productID = ?");
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {
@@ -152,7 +151,7 @@ class PromoterM extends \Core\Connect {
     public function getStaticPromo($userID)  {
         $conn=static::connectDB();
 
-        $query = "SELECT * FROM `order` WHERE proUserID = ?";
+        $query = "SELECT * FROM `order` WHERE proUserID = ? AND status = 'Success'";
         
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s",$userID);
@@ -172,7 +171,7 @@ class PromoterM extends \Core\Connect {
     public function getTotalCommission($userID) {
         $conn=static::connectDB();
 
-        $query = "SELECT SUM(totalCommission) AS total FROM `order` WHERE proUserID = ?";
+        $query = "SELECT SUM(totalCommission) AS total FROM `order` WHERE proUserID = ? AND status = 'Success'";
     
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s",$userID);
