@@ -5,6 +5,7 @@ use Core\View;
 use App\Models\BuyerM;
 use App\Models\Feedback;
 use App\Models\Order as ModelsOrder;
+use App\Models\Product;
 use App\Models\SellerM;
 use App\Models\User;
 
@@ -103,13 +104,26 @@ class Buyer extends \Core\Controller
 
       public function checkoutAction()
       {  
-         
+         $State=1;
          $district= $_POST['district'];
+         $array2=array('Ampara', 'Anuradhapura', 'Badulla', 'Batticaloa', 'Colombo','Galle','Gampaha','Hambantota','Jaffna','Kalutara','Kandy','Kegalle','Kilinochchi','Kurunegala','Mannar','Matale','Matara','Monaragala','Mullaitivu','Nuwara Eliya','Polonnaruwa','Puttalam','Ratnapura','Trincomalee','Vavuniya');
+         if (!in_array($district,$array2)){
+         $State=0;  
+         echo "hi";
+         $UImsg2= "Invalid District Entered ,Please Insert a Correct District";
+         $this->view->UImsgNotice=$UImsg2;    
+         $this->view->State = $State;   
+         }
+
+
          $buy = new BuyerM;
          $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
          $value = json_decode($value, true);
          $UImsg = $buy->checkout($value,$district);
-         $this->view->UItotal=$UImsg;    
+         $this->view->UItotal=$UImsg;  
+         if($State==0)  {
+            header('refresh:1 , URL =../User/ADDShoppingCart ');
+         }
          $this->view->display('Customer/Checkout.php');
       }
 
@@ -136,12 +150,24 @@ class Buyer extends \Core\Controller
          $amount =$UImsg[2];
          $buyUserID=$_SESSION['username'];
 
+         $subtractProduct = new Product;
+         $subtractProduct =$subtractProduct->subProducts($value);
+
+         if($subtractProduct == 0){
+            $State =0;
+            $UImsg5 = 'Insufficient Product Quantity , Please try Again Later';
+            $this->view->State=$State;
+            $this->view->UImsgNotice=$UImsg5;
+            header('refresh:2 , URL =../User/ADDShoppingCart ');
+            $this->view->display('Customer/PG-confirm.php');
+         }
+
          ///////////////////////////////////////////
          if(!empty($_COOKIE["promoter"])){
             $value =  (!empty($_COOKIE["promoter"])) ? $_COOKIE["promoter"] : "[]";
             $value = json_decode($value,true);
             $proUserID=$value;
-            echo $proUserID;
+            
             $value2 =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
             $value2 = json_decode($value2, true);
             $totalcommision = new BuyerM;
@@ -152,6 +178,7 @@ class Buyer extends \Core\Controller
             $totalCommission=NULL;
 
          }
+
 
          
             // promoter ckeck here from cookie find commision from products
@@ -180,7 +207,8 @@ class Buyer extends \Core\Controller
    }
    
    public function CurrentOrdersAction()
-   {
+   {   $MSG ="";
+       $State=1;
        if (isset($_POST['status_code'])) {
            if ($_POST['status_code']==2) {  
                                                              // if success 
@@ -190,13 +218,23 @@ class Buyer extends \Core\Controller
               $order->updateDelivery($data,$order_ID);
               $order-> Ordersuccess($order_ID);
               setcookie("items", "", time() - 3600, "/");
+              setcookie("promoter", "", time() - 3600, "/");
+              $MSG = "Payment Successfull , Seller will Dispatch the products Soon";
               
+           }elseif ($_POST['status_code']==-2) {
+               $order = new ModelsOrder;
+               $order_ID = $_POST['order_id'];
+               $order-> OrderFailled($order_ID);
+               $data= $_SESSION['custom_1'] ;
+               $order2 = new Product;
+               $order2->addFailedproducts($data);
+               $MSG = "Payment Failled , Please try again";
+               $State=0;
            }
-       }
 
-       
+         
+       }   
        $orders = new ModelsOrder;
-     
        $orders2 = new ModelsOrder;
        $orders = $orders->getSuccessOrders($_SESSION['username']);
       //  $orders1 = $orders1->getSuccessOrders($_SESSION['username']);
@@ -209,7 +247,8 @@ class Buyer extends \Core\Controller
          //  }
           $this->view->orders=$orders; 
           $this->view->details=$orders2;  
-
+          $this->view->State=$State;
+          $this->view->UImsgNotice=$MSG;
           $this->view->display('Customer/currentOrders.php');
    }  
    public function CompletedOrdersAction()
@@ -274,7 +313,7 @@ class Buyer extends \Core\Controller
       $msg =$_POST['description'];
       $prodName =$_POST['prodName'];
       $email="";
-      $seller_mail="thenuka.ops@gmail.com";
+      $seller_mail="";
       $storeName=$_POST['storename'];
       $prdID=$_POST['ProdID'];
       $orderID=$_POST['OrderID'];

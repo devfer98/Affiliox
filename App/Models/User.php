@@ -159,11 +159,14 @@ class User extends \Core\Connect
    {  
 
       $conn = static::connectDB();  
-       if($name == 'AllProducts'){   
+       if(($name == 'AllProducts') && (empty($_GET['price'])) ){   
          $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price  ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID GROUP BY productimage.productID");        
-       }else if (!empty($_GET['price'])){
+       }else if(($name != 'AllProducts') && (!empty($_GET['price'])) ){
          $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ?  AND product.price < ? GROUP BY productimage.productID ");
-         $stmt0->bind_param("sd",  $name,$price);      
+         $stmt0->bind_param("sd",  $name,$_GET['price']);      
+      }else if (($name == 'AllProducts') && (!empty($_GET['price'])) ){
+         $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.price < ? GROUP BY productimage.productID ");
+         $stmt0->bind_param("d", $_GET['price']);      
       }else{
           $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? GROUP BY productimage.productID ");
           $stmt0->bind_param("s", $name);
@@ -185,7 +188,7 @@ class User extends \Core\Connect
       $conn = static::connectDB();
        if (!empty($_GET['price'])){
          $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.catID REGEXP ? AND  product.price < ? GROUP BY productimage.productID ");
-         $stmt0->bind_param("sd",  $name,$price);        
+         $stmt0->bind_param("sd",  $name,$_GET['price']);        
       }else{
           $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.catID REGEXP ? GROUP BY productimage.productID ");
           $stmt0->bind_param("s", $name);
@@ -207,7 +210,7 @@ class User extends \Core\Connect
          $conn = static::connectDB();
          if (!empty($_GET['price'])){
             $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? AND product.catID = ?  AND product.price < ?  GROUP BY productimage.productID ");
-            $stmt0->bind_param("sid",  $name,$cat,$price);        
+            $stmt0->bind_param("sid",  $name,$cat,$_GET['price']);        
          }else{
              $stmt0 = $conn->prepare("SELECT product.*, FORMAT(product.price,2) as price   ,GROUP_CONCAT(productimage.imageCode ORDER BY productimage.imageCode) AS images FROM product LEFT JOIN productimage ON product.productID = productimage.productID where product.prodName REGEXP ? AND product.catID = ? GROUP BY productimage.productID ");
              $stmt0->bind_param("si", $name, $cat);

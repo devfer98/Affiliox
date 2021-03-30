@@ -16,10 +16,11 @@
  .dropdown-btn:hover {
   color: #f1f1f1;
 }
-.dropdown-container {
+.dropdown-container button {
   display:block;
   color: #818181;
-  padding-left: 8px;
+  padding-left: 18px;
+
   
 
 }
