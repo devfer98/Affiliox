@@ -248,10 +248,12 @@ class User extends \Core\Controller
 
     public function storeAction(){
         $ministore= new MinistoreM();
-        if (!empty($_GET['id'])) {
-
+        $result=$ministore->getStore($_GET['id']);
+        if (!empty($_GET['id']) && $result->num_rows>0) {
+            $this->view->store=$result;
+            $this->view->display('Seller/miniStoreCusView.php');  
         }else{
-
+            $this->view->display('Common/E404.php');
         }
     }
 
