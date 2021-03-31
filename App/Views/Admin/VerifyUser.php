@@ -73,7 +73,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Email</th>
-                  <th>city</th>
+                  <th>City</th>
                   <th colspan="2">Action</th>
                 </tr>
                 <?php 

@@ -54,6 +54,8 @@ class Admin extends \Core\Controller {
         $this->view->countBuyers=$Buyer->getCount   ();
         $Ministore= new MinistoreM();
         $this->view->countMinistores=$Ministore->getCount   ();
+       // $order= new Order();
+        //$this->view->CountSuccessOrders=$order->getCompletedOrders($userID);
         $this->view->display('Admin/AdminDashboard.php');
         // $userID = $_SESSION['username'];
         // $user = new AdminM();
@@ -86,57 +88,79 @@ class Admin extends \Core\Controller {
     }
 
     public function EditAdminAction(){
-        $userID = $_SESSION['username'];
-        $user = new AdminM();
-        $result = $user->getAdmin($userID);
-        $UImsg = $result;
-        $this->view->UImsg = $UImsg;
-        $this->view->display('Admin/EditAdmin.php');
-    }
-    //     $id = $_GET['id'];
-    //     $user = new AdminM();
-    //     $result = $user->getAdmin($id);
-    //     print_r($result);
-    //     die;
-    //      if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    //          $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-    //          $data = [
-    //             'userID' => $_GET['id'],
-    //             'name' => trim($_POST['name']),
-    //             'status' => trim($_POST['status']),
-    //             'email' => trim($_POST['email']),
-    //             'phoneNo' => trim($_POST['phoneNo']),
-    //             'age' => trim($_POST['age']),
-    //             'dob' => trim($_POST['dob']),
-    //             'gender' => trim($_POST['gender']),
-    //             'country' => trim($_POST['country']),
-    //             'city' => trim($_POST['city']),
-    //             'aLine1' => trim($_POST['aLine1']),
-    //             'aLine2' => trim($_POST['aLine2']),
-    //             'position' => trim($_POST['position'])
-    //          ];
-
-    //          $user = new AdminM();
-    //          if($user->updateAdmin($data)){
-    //              header('location:AdminProfile');
-    //          } else {
-    //              die('Something Went Wrong');
-    //          }
-    //      }
-    //     $view = new View("Admin/EditAdmin");
-    //     $view->assign('userID',$result['id']);
-    //     $view->assign('name',$result['name']);
-    //     $view->assign('status',$result['status']);
-    //     $view->assign('email',$result['email']);
-    //     $view->assign('phoneNo',$result['phoneNo']);
-    //     $view->assign('age',$result['age']);
-    //     $view->assign('dob',$result['dob']);
-    //     $view->assign('country',$result['country']);
-    //     $view->assign('city',$result['city']);
-    //     $view->assign('aLine1',$result['aLine1']);
-    //     $view->assign('aLine2',$result['aLine2']);
-    //     $view->assign('position',$result['position']);
-
+        
+            if(!empty($_POST['fullname'])){
+               
+               $user = new AdminM();
+               $ID =$_SESSION['username'];
+               $name =$_POST['fullname'];
+               $aLine1 =$_POST['aline1'];
+               $aLine2 =$_POST['aline2'];	 
+               $city =$_POST['city'];      	
+               $country =$_POST['country'];	
+               $gender =$_POST['gender'];
+               $status =$_POST['status'];
+               $email =$_POST['email'];
+               $phoneNo =$_POST['phn-no'];
+               $position =$_POST['position'];
+               if (($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo) && ($position)) {
+              
+               }else{
+                  
+                   $State=0;
+                   $this->view->State = $State;
+                   $UImsg= 'Empty Entries Detected, Please Try Again !';
+                   $this->view->UImsg = $UImsg;
+                   header('refresh:1 , URL =../Admin/AdminProfile ');
+                   $this->view->display('Admin/EditAdmin.php');
+                   exit;   
+               }
+       
+       
+               if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                 
+                   $State=0;
+                   $this->view->State = $State;
+                   $UImsg= 'Email format invalid, Please Try Again !';
+                   $this->view->UImsg = $UImsg;
+                   $this->view->display('Admin/EditAdmin.php');
+                   exit;  
+               }
+      
+       
+               $res =$user->EmailCompair4admin($email,$ID);
+                   if($res==true){
+                         
+                           $data =$user->updateAdmin($ID, $name, $email, $phoneNo, $country,$gender,$status, $city, $aLine1, $aLine2, $position);
+                           
+                           $UImsg= 'Successfully Updated';
+                           $this->view->UImsg = $UImsg;
+                           $State=1;
+                           $this->view->State = $State;
+                           header('refresh:1 , URL =../Admin/AdminProfile ');
+                           $this->view->display('Admin/EditAdmin.php');
+                           exit();
+                   }else{
+                       
+                       $State=0;
+                       $this->view->State = $State;
+                       $UImsg= "Email-Address Already Taken Please Try Again";
+                       $this->view->UImsg = $UImsg;
+                       $this->view->display('Admin/EditAdmin.php'); 
+                       exit();
+                           
+                       
+                       
+                   }	
+            }
+            
+            $userID = $_SESSION['username'];
+            $user = new AdminM();
+            $result = $user->getAdmin($userID);
+            $UImsg = $result;
+            $this->view->UImsg2 = $UImsg;
+            $this->view->display('Admin/EditAdmin.php');
+         }
 
     public function ReviewFeedbackAction(){
         $entry = new Feedback();

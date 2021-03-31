@@ -98,6 +98,16 @@
 				}
 			?>  	</td>
              </tr>
+             <tr>
+               <td>Number of Clicks</td>
+               <td><?php 
+                  if(isset($this->ClickCount) and !empty($this->ClickCount and $this->ClickCount->num_rows>0)){
+                   while($row = $this->ClickCount->fetch_assoc()){
+						echo $row['SUM(noClicks)'];	
+					}  
+				}
+			?>  				</td>
+             </tr>
            </table>
      </div> <!-- heading --> 
 

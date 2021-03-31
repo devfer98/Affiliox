@@ -80,7 +80,7 @@ class Seller extends \Core\Controller {
 
     public function marketAction(){
 
-        $this->view->display('Common/market.php');
+        $this->view->display('Customer/market.php');
         
     }
 
