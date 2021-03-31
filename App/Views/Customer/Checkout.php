@@ -12,6 +12,9 @@
 
 <body>
     <!---Navigation bar-------------------------------------------->
+
+
+
     <div class="container">
 
         <!-- Container content  --------------------------------------------->
@@ -24,12 +27,24 @@
                     <div class="margint50 marginb50">
                         <h2><i class="fas fa-shopping-cart"></i> &nbsp; Checkout</h2>
                     </div>
+                    <?php if (isset($this->UImsgNotice) and !empty($this->UImsgNotice)) {
+                        if ($this->State == 1) {
 
+                    ?><div class="center marginb100 margint20 errorMsgSuccess"><?php
+
+                                } else {
+                                      ?><div class="center marginb100 margint100 errorMsgFailed"> <?php
+                                     }
+                                ?> <p>  <?php  echo $this->UImsgNotice ?>  </p></div>    
+
+                              <?php   }  ?>
+
+                                    
                     <div class="left marginl100">
                                 <p> <b>Name : </b> <?php echo $_POST['name'] ?>
                                 <p> <b>Address : </b><?php echo $_POST['address']  ?> , <?php echo $_POST['city']  ?> ,<?php echo $_POST['district']  ?>
                                 <p> <b>Phone-num : </b><?php  echo $_POST['phoneNo'] ?>
-                                <p> <b>Special Note : </b><?php  echo $_POST['note'] ?>
+                                
                 </div>
                 </div>
                 <!-- Loop area --------------------------------------------->
@@ -58,12 +73,9 @@
                                     <h3><?php echo $item['name'] ?></h3>
                                     <p>Product Price   : Rs<?php echo $item['price']?></p>
                                     <p>Delivery Price  : Rs<?php echo number_format($item['dprice'] ,2)?></p>
-                                    <p>Delivery period :<?php echo $item['dperiod'] ?> Days</p>
-
-                                   
+                                    <p>Delivery period :<?php echo $item['dperiod'] ?> Days</p>                                  
                                 </div>
                             </div>
-
                             <div class="col3 search label">
                                 <div class="margint20">
                                     <label for="quantity" ><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label>

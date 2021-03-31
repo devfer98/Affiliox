@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/Seller/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/Seller/grid.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
-	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&family=Roboto+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
 	<script src="/js/Seller/common-dashboard.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -80,12 +80,12 @@
 				</div>
 				<!------------------ ------------------->
 	
-				<h2 style="font-family: 'Lato', sans-serif;">Login Details</h2>
+				<!-- <h2 style="font-family: 'Lato', sans-serif;">Login Details</h2>
 				
 				<div class="padding">
 				<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
 				<input type="text" name="Username-field" value="<?php echo $row['userID'] ?>" placeholder=""  minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required ><br>
-				</div>
+				</div> -->
 				<?php
                      }
                 }

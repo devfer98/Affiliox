@@ -18,7 +18,7 @@
    
       <div class="inner-part">
           <br>
-            <p>Their effectiveness can be determined based on the current statistics of the promoter. The order number, the full amount of the order and the total commission earned from the promotion. Also available is a collection of Spian used for promotion.</p>
+            <p>Their effectiveness can be determined based on the current statistics of the promoter. The order number, the full amount of the order and the total commission earned from the promotion. Also available is a collection of Links used for promotion.</p>
             <div class="error-msg">
               <p><?php if(isset($this->empty) and !empty($this->empty)){echo $this->empty;}  ?></p>
             </div>
@@ -48,7 +48,7 @@
                   ?>
                     <table>
                       <tr>
-                          <th>Total Selected Items for Promote</th>
+                          <th>Total Selected Links for Promote</th>
                           <th><?php echo $row3['num_of_links']?></th>  
                       </tr>
                       <?php  

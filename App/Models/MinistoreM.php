@@ -212,8 +212,23 @@ class MinistoreM extends \Core\Connect {
             $errorMssg="Image not added";
         }
         return $errorMssg;
+    }  
+
+    public function totalSold($userID) {
+        $conn=static::connectDB();
+        $stmt =$conn->prepare("SELECT COUNT(prodsinorder.orderID) AS totalSold
+            FROM (`order` AS orders 
+            INNER JOIN prodsinorder ON orders.orderID = prodsinorder.orderID)
+            WHERE prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        $stmt->bind_param("s", $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }
     }
-   
 }
+
+
     
 

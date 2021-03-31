@@ -30,30 +30,20 @@
 					<div class="col3">Date & Time</div>
 					<div class="col3">Amount</div>
 				</div>
+				<?php  
+					if(isset($this->TransHis) and !empty($this->TransHis)){
+						while($row = $this->TransHis->fetch_assoc()){
+					?>
 				<div class="row record">
-					<div class="col3">000001</div>
-					<div class="col3">Succesful</div>
-					<div class="col3">2020/12/28 11:27:02</div>
-					<div class="col3">Rs. 2,000</div>
+					<div class="col3"><?php echo $row['transID'] ?></div>
+					<div class="col3"><?php if($row['status']==1)echo "Success"; else echo "Pending"; ?></div>
+					<div class="col3"><?php echo $row['date'] ?></div>
+					<div class="col3">Rs. <?php echo $row['ammount'] ?></div>
 				</div>
-				<div class="row record">
-					<div class="col3">000001</div>
-					<div class="col3">Succesful</div>
-					<div class="col3">2020/12/28 11:27:02</div>
-					<div class="col3">Rs. 2,000</div>
-				</div>
-				<div class="row record">
-					<div class="col3">000001</div>
-					<div class="col3">Succesful</div>
-					<div class="col3">2020/12/28 11:27:02</div>
-					<div class="col3">Rs. 2,000</div>
-				</div>
-				<div class="row record">
-					<div class="col3">000001</div>
-					<div class="col3">Succesful</div>
-					<div class="col3">2020/12/28 11:27:02</div>
-					<div class="col3">Rs. 2,000</div>
-				</div>
+				<?php
+						}
+					}
+					?>
 				</div>
 			</div>
         </div>

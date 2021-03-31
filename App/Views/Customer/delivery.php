@@ -26,11 +26,14 @@
                     </div>
                 </div>
 
+                                    
                 <?php  
-                if (isset($this->data) and !empty($this->data)) {
+                if (isset($this->data) and !empty($this->data) or ($this->UInotice) ) {
                     while ($row = $this->data->fetch_assoc()) {
-                        ?>
-                    
+                      ?>
+
+
+
                 <form method ="POST" action= "../buyer/checkout">
                 <div class="col12">
                     <div>
@@ -42,7 +45,7 @@
                     <div class="sm-text-width ">
                         <label for="channels"><i class="fa fa-address-book"></i> &nbsp;Address Line</label><br>
                         <br>
-                        <textarea  required rows="7" name="address" placeholder="Address"><?php echo $row['aLine1'].","?> <?php echo $row['aLine2'].","?>  <?php echo $row['city']."."?> </textarea><br>
+                        <textarea  required rows="7" name="address" placeholder="Address"><?php echo $row['aLine1'].","?> <?php echo $row['aLine2'].","?>   </textarea><br>
                     </div>
                 </div>
                 <div class="col12">
@@ -102,7 +105,7 @@
                 <div class="col12">
                     <div class="">
                         <label for="phn-no"><i class="fa fa-phone"></i>&nbsp; Phone Number</label><br><br>
-                        <input type="text" id="phoneNo" required name="phoneNo"  value="<?php echo $row['phoneNo'] ?>" placeholder="0771123344"><br>
+                        <input type="text" id="phoneNo" required name="phoneNo" min="10" max="10" value="<?php echo $row['phoneNo'] ?>" placeholder="0771123344"><br>
                     </div>
                 </div> 
                 <div class="col12">
@@ -111,76 +114,11 @@
                         <input type="text" id="email" required name="email"  value="<?php echo $row['email'] ?>" placeholder="xyz@affiliox.xyz"><br>
                     </div>
                 </div>                       
-                <div class="col12">
-                    <div class="sm-text-width ">
-                        <label for="channels"><i class="fa fa-sticky-note"></i> &nbsp;Special Note</label><br>
-                        <br>
-                        <textarea rows="7" name="note" placeholder="note"></textarea><br>
-                    </div>
-                </div>
+
                 <?php
                     }
                 } ?>
-                <!-- <form>
-                    <div class="col12 ">
-                        <div class="col6 labelHover">
-                            <label>
-                                <div class="boxsummery radio-hover sm-width center margint20">
-                                    <input class="sm-width" type="radio" name="delivery-type" />
-                                    <h3> Free Delivery </h3>
-                                    <p> ETA :within 7-14 Days </p>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="col6">
-                            <label>
-                                <div class="boxsummery  radio-hover sm-width center margint20">
-                                    <input type="radio" name="delivery-type" />
-                                    <h3> Charged Delivery </h3>
-                                    <p> ETA :within 3-6 Days </p>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </form> -->
 
-
-
-                <div class="row">
-                    <div class="col12 hrCustom">
-                        <hr>
-                    </div>
-                </div>
-           
-                </div>
-            </div>
-
-            <!-- <div class="col3 ">
-                <div class="margint50 marginb50">
-                    <div class="boxsummery">
-                        <div class="col12 hrCustom">
-                            <div class="margint100 center">
-                                <h2>Summary</h2>
-                                <hr />
-                            </div>
-                        </div>
-
-                        <div class="col12 hrCustom">
-                            <div>
-                                <p> SUBTOTAL : Rs 4000.00 </p>
-                                <p> SHIPPING : FREE </p>
-                                <p> TAXES : Rs 400.00 </p>
-                                <hr />
-                            </div>
-                        </div>
-                        <div class="col12 ">
-                            <div class="marginb100 center boxsummery">
-                                <h4>Total : RS 4400.00</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <div class="row ">

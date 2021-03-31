@@ -24,20 +24,101 @@ class Promoter extends \Core\Controller {
 
     public function promoterProfileUpdateAction() {
 
+        if(!empty($_POST['name'])){
+         
+            $user = new PromoterM();
+            $ID =$_SESSION['username'];
+            $name       =$_POST['name'];
+            $aLine1	    =$_POST['aLine1'];
+            $aLine2     =$_POST['aLine2'];	 
+            $city       =$_POST['city'];      	
+            $country    =$_POST['country'];	
+            $status 	=$_POST['status'];
+            $phoneNo    =$_POST['phoneNo'];
+            if (($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($status) && ($phoneNo)) {
+           
+            }else{
+               
+                $State=0;
+                $this->view->State = $State;
+                $UImsg= 'Empty Entries Detected, Please Try Again !';
+                $this->view->UImsg = $UImsg;
+                header('refresh:2 , URL =../Promoter/promoterProfile ');    
+                $this->view->display('Promoter/update-promoter.php');
+                exit;   
+            }
+ 
+            $data =$user->updatePromoter($ID, $name,$phoneNo, $country,$status, $city, $aLine1, $aLine2 );
+   
+            $UImsg= '<br>' . 'Successfully Updated!' . '<br><br>' . 'THANK YOU!' . '<br><br>';
+            $this->view->UImsg = $UImsg;
+            $State=1;
+            $this->view->State = $State;
+            header('refresh:2 , URL =../Promoter/promoterProfile ');
+            $this->view->display('Promoter/update-promoter.php');
+            
+            exit();
+                
+         }
+
         $userID = $_SESSION['username'];
         $user = new PromoterM();
         $result = $user->getPromoterProfile($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
+        $UImsg1 = $result;
+        $this->view->UImsg1=$UImsg1;
         $this->view->display('Promoter/update-promoter.php');
+    }
+    
+    public function helpMessage($send_mail,$name,$email,$msg,$prb)
+    {
+        $subject =  "Promoter Request : " .$prb;
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+        $headers .= '"From: Affiliox.com@gmail.com' . "\r\n";     
+         $message = '<html><body>';
+         $message .= '<table style="border-color: #666;" cellpadding="10">';
+         $message .= "<tr><td>Name : $name</td></tr>";
+         $message .= "<tr><td>Email : $email</td></tr>";
+ 
+         $message .= "<tr><td>Message : $msg</td></tr>";
+         $message .= "</table>";
+         $message .= "</body></html>";
+                 
+        if (mail($send_mail,$subject,$message,$headers)) {
+            
+
+            return true;
+            
+        } else {
+            
+           return false;
+        }
     }
    
 
     public function MarketAction(){
+
+        if(isset($_POST['textdata'])){
+            
+            $email = "";
+            $send_mail ="affiliox.com@gmail.com";
+            $userID = $_SESSION['username'];
+            $prb =$_POST['problem'];
+            
+            $msg =$_POST['textdata'];
+            $user = new PromoterM();
+            $result = $user->getPromoterProfile($userID);
+            while ($row =$result->fetch_assoc()) {
+                
+                $email = $row['email'];
+            }
+            $this->helpMessage($send_mail,$userID,$email,$msg,$prb);
+            
+        }
         $user = new PromoterM();
         
         $result = $user->getProductDetails();
-
+        
         if($result == null) {
             $empty= "Still there are no Products in store!";
             $this->view->empty=$empty;
@@ -128,24 +209,48 @@ class Promoter extends \Core\Controller {
     }
 
     public function promoterTransAction() {
+
+
         $userID = $_SESSION['username'];
         $totalC = new PromoterM();
+        $total = 0;
         $result1 = $totalC->getTotalCommission($userID);
-        $UImsg2 = $result1;
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
         $this->view->UImsg2=$UImsg2;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
-    public function promoterFeedbackAction() {
-        $this->view->display('Promoter/review-feedback.php');
-    }
 
     public function promoterSupportAction() {
         $this->view->display('Promoter/support-center.php');
     }
 
     public function IndexAction(){
-        $this->view->display('Promoter/index.php');
+
+        $latest = new PromoterM();
+        $featured = new PromoterM();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
      }
 
     public function aboutUsAction(){
@@ -167,29 +272,25 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         $userID = $_SESSION["username"];
 
-        
-
         $user = new TransactionPromo();
-        $limit = 100;
+        
         $ammount= $_POST['ammount'];
         $status = 1 ;
+        $total=0;
         $date = date("Y-m-d");
-        
         $totalC = new PromoterM();
         $result1 = $totalC->getTotalCommission($userID);
-        $UImsg2 = $result1;
-        $this->view->UImsg2=$UImsg2;
-        $this->view->display('Promoter/withdraw-earnings.php');
-        
-        
-        if($limit > $ammount && $ammount = $_POST['ammount'] ) {
-            $user->addTransPromo($ammount, $status, $userID, $date);
+        while($row = $result1->fetch_assoc() ){
+            echo $total;
+            $total =$row['total'];
+        }
+        $res = $user->addTransPromo($ammount, $status, $userID, $date,$total);
+        if($res){
             header('Location:../Promoter/promoterTransSuccess');
            
-        } else    {
-            $errmsg= 'Please enter a valid amount of transfer and try again.';
-            $this->view->errmsg = $errmsg;
-            $this->view->display('Promoter/withdraw-earnings.php');
+        } else {
+            header('Location:../Promoter/promoterTransFail');
+            
         }        
         
         
@@ -197,8 +298,47 @@ class Promoter extends \Core\Controller {
 
 
     public function promoterTransSuccessAction(){
-        $successmsg= 'Your Transaction Process is Success!';
+
+        $userID = $_SESSION['username'];
+        $totalC = new PromoterM();
+        $total = 0;
+        $result1 = $totalC->getTotalCommission($userID);
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
+        $this->view->UImsg2=$UImsg2;
+       
+        $successmsg= 'Your payout will be sent to your Wallet!';
         $this->view->successmsg = $successmsg;
+        $this->view->display('Promoter/withdraw-earnings.php');
+    }
+
+    public function promoterTransFailAction(){
+
+
+        $userID = $_SESSION['username'];
+        $totalC = new PromoterM();
+        $total = 0;
+        $result1 = $totalC->getTotalCommission($userID);
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
+        $this->view->UImsg2=$UImsg2;
+
+        $errmsg= 'Please enter a valid amount of transfer and try again.';
+        $this->view->errmsg = $errmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
@@ -210,7 +350,7 @@ class Promoter extends \Core\Controller {
         $result = $user->getTransPromo($userID);
 
         if($result == null) {
-            // $empty = $result;
+            
             $empty= "You have not yet made any transaction!";
             $this->view->empty=$empty;
             $this->view->display('Promoter/payout-history.php');

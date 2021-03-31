@@ -184,6 +184,17 @@ class Order extends \Core\Connect
         }     
 
     }
+    public function OrderFailled($orderID)
+    {
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("DELETE FROM `order` WHERE `order`.`orderID` = ?");
+        $stmt0->bind_param("i",$orderID);
+        if($stmt0->execute()){
+        }else {
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+    }
 
     public function updateDelivery($data,$order_ID)
     {
@@ -208,16 +219,73 @@ class Order extends \Core\Connect
                 
     }
 
-    public function getSellOrders($userID){
+    public function getSellOrders($userID, $dispatchStatus, $receiveStatus){
         $conn=static::connectDB();
         // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
-        $stmt = $conn->prepare("SELECT buyer.userID, `order`.deliveryAddress, `order`.amount
-        FROM ((`order` 
-        INNER JOIN buyer ON order.buyUserID = buyer.userID)
-        INNER JOIN prodsinorder ON order.orderID = prodsinorder.orderID)
-        WHERE prodsinorder.dispatchStatus = 'Pending' AND prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        $stmt = $conn->prepare("SELECT buyer.userID, orders.deliveryAddress, orders.amount, orders.orderID, orders.deliveryDeadline
+        FROM ((`order` AS orders 
+        INNER JOIN buyer ON orders.buyUserID = buyer.userID)
+        INNER JOIN prodsinorder ON orders.orderID = prodsinorder.orderID)
+        WHERE prodsinorder.dispatchStatus = ? AND prodsinorder.receiveStatus = ?
+        AND prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?))
+        GROUP BY orders.orderID;");
         echo $conn->error;
-        $stmt->bind_param("s", $userID);
+        $stmt->bind_param("sss", $dispatchStatus, $receiveStatus, $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function viewOrder($orderID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT *
+        FROM `order` AS orders 
+        WHERE orderID = ?");
+        echo $conn->error;
+        $stmt->bind_param("s", $orderID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function viewOrderPros($orderID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT productimage.imageCode, product.prodName, product.price AS proPrice, delivery.price, prodsinorder.quantity, product.productID, prodsinorder.dispatchStatus
+        FROM (((delivery
+        INNER JOIN prodsinorder ON delivery.deliveryID = prodsinorder.deliveryID)
+        INNER JOIN product ON prodsinorder.productID = product.productID)
+        INNER JOIN productimage ON product.productID = productimage.productID)
+        WHERE productimage.imageCode LIKE '%_main_1%' 
+        AND prodsinorder.orderID = ? ;");
+        echo $conn->error;
+        $stmt->bind_param("s", $orderID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function orderDispatch($orderID, $prodID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("UPDATE prodsinorder
+        SET dispatchStatus='Dispatched'
+        WHERE orderID = ? AND productID=?");
+        echo $conn->error;
+        $stmt->bind_param("ss", $orderID, $prodID);
         if($stmt->execute()){
             $result = $stmt->get_result();
             $stmt->close();

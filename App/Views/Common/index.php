@@ -43,32 +43,51 @@
 			</div>
 
 			<div class="product">
-			<h2>Featured Items</h2>
-			<hr>
-
-			<div class="container">
-				<div class="zone">
-					<img src="/images/promoter/drone.jpg" alt="">
-					<h3>Apple i-phone 11 Pro</h3>
-					<h4>125.34 USD</h4>
-					<p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p>
-					<a href="">Buy Now <i class="fab fa-cc-visa"></i></a> 
-					<a href="">Add to Cart <i class="fas fa-shopping-cart"></i></a>
-				</div>
-			</div> <!-- container -->	
-			
 			<h2>Latest Items</h2>
 			<hr>
 
 			<div class="container">
+
+			<?php  
+                if(isset($this->UImsg1) and !empty($this->UImsg1)){
+					
+					while($row1 = $this->UImsg1->fetch_assoc()){           
+        	?>	
 				<div class="zone">
-					<img src="/images/promoter/drone.jpg" alt="">
-					<h3>Apple i-phone 11 Pro</h3>
-					<h4>125.34 USD</h4>
-					<p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p>
-					<a href="">Buy Now <i class="fab fa-cc-visa"></i></a>
-					<a href="">Add to Cart <i class="fas fa-shopping-cart"></i></a>
+					<img src="/images/upload/<?php echo $row1['imageCode'] ?>" >
+					<h3><?php echo $row1['prodName'] ?></h3>
+					<h4><?php echo number_format($row1['price'],2) ?> Rs</h4>
+					<!-- <p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p> -->
+					<a href="../user/market">Buy Now <i class="fab fa-cc-visa"></i></a> 
+					
 				</div>
+				<?php
+						}
+					}
+				?>
+			</div> <!-- container -->	
+			
+			<h2>Featured Items</h2>
+			<hr>
+
+			<div class="container">
+			<?php  
+                if(isset($this->UImsg2) and !empty($this->UImsg2)){
+					
+					while($row2 = $this->UImsg2->fetch_assoc()){           
+        	?>	
+				<div class="zone">
+					<img src="/images/upload/<?php echo $row2['imageCode'] ?>" >
+					<h3><?php echo $row2['prodName'] ?></h3>
+					<h4><?php echo number_format($row2['price'],2) ?> Rs</h4>
+					<!-- <p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p> -->
+					<a href="../user/market">Buy Now <i class="fab fa-cc-visa"></i></a> 
+					
+				</div>
+				<?php
+						}
+					}
+				?>
 				
   			</div> <!-- container -->		
 		</div> <!-- product -->

@@ -31,7 +31,7 @@
                 <form method="GET" action="../user/market">
                     <div class="col8 search fitcontent center">
                         <ul>
-                            <input type="text" name="search" pattern="^[a-zA-Z0-9 ]*$" placeholder="Clothing , Phones , Toys"
+                            <input type="text" name="search" pattern="^[a-zA-Z0-9 ]*$" placeholder="Tshirt, Drone, IphoneX"
                             <?php if(!empty($_GET['search'])){
                                 $val=$_GET['search'];
                                  echo " value =\"$val\" ";
@@ -110,6 +110,10 @@
                                                     &nbsp;&nbsp;</button>
                                             </div>
                                         </div>
+                                        <div class ="margint20">          
+                                               </br> </br> </br><i style ="color:gold"class="fas fa-star "> </i> <?php echo number_format($row['overallRating'] ,1)?>
+                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +141,7 @@
                         }?>
             <div class="dropdown-container">
                 <button value=1 name=cat type=submit>Mens </button>  
-                <button value=3 name=cat type=submit>Wemen </button>  
+                <button value=2 name=cat type=submit>Women </button>  
             </div>
             <button class="dropdown-btn">Electrical
                 <!-- <i class="fa fa-caret-down"></i> -->
@@ -153,7 +157,7 @@
                 <!-- <i class="fa fa-caret-down"></i> -->
             </button>
             <div class="dropdown-container">
-            <button value=3 name=cat type=submit>Phones </button> 
+            <button value=7 name=cat type=submit>Phones </button> 
             <button value=8 name=cat type=submit>Go-pro </button> 
             <button value=9 name=cat type=submit>Tents </button> 
 
@@ -171,7 +175,7 @@
                 <!-- <i class="fa fa-caret-down"></i> -->
             </button>
             <div class="dropdown-container">
-            <button value=12 name=cat type=submit>>Blenders </button> 
+            <button value=12 name=cat type=submit>Blenders </button> 
             <button value=13 name=cat type=submit>Ovens </button> 
             <button value=14 name=cat type=submit>Fans</button> 
 
@@ -191,27 +195,27 @@
                 <button class="dropdown-btn">Price
                 </button>
                 <label class="dropdown-price">
-                    <input type="radio" checked="checked"  value =1000.00 name="price">&nbsp; Rs :upto 1000
+                    <input type="radio" checked="checked"  value =1000.00 name="price">&nbsp; Rs : Below 1000.00
 
                 </label>
                 <label class="dropdown-price">
-                    <input type="radio" checked="checked" value =5000.00 name="price">&nbsp; Rs : upto 5000
+                    <input type="radio" checked="checked" value =5000.00 name="price">&nbsp; Rs : Below 5000.00
 
                 </label>
                 <label class="dropdown-price">
-                    <input type="radio" checked="checked" value =10000.00 name="price">&nbsp; Rs : upto 10000
+                    <input type="radio" checked="checked" value =10000.00 name="price">&nbsp; Rs : Below 10,000.00
 
                 </label>
                 <label class="dropdown-price">
-                    <input type="radio" checked="checked"  value=10000.00 name="price">&nbsp; Rs : upto 100000
+                    <input type="radio" checked="checked"  value=100000.00 name="price">&nbsp; Rs : Below 100,000.00
 
                 </label>
 
             </div>
 
-            <div class="margint20 marginb100">
+            <div class="margint20 center marginb100">
                 <button type="submit">Filter with price </button>
-                <button type="reset" value="reset">Reset Filter</button>
+                
             </div>
            </form>
         </div>

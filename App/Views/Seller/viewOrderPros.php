@@ -23,77 +23,78 @@
 			</div> 
             <div class="col8 col-center inner-part data">
                 <table>
+					<?php  
+						$orderID;
+						if(isset($this->order) and !empty($this->order)){
+							while($row = $this->order->fetch_assoc()){
+								$orderID=$row['orderID'];
+						?>
 					<tr>
 						<td id="td-1">Order ID</td>
-						<td>D0001</td>
+						<td><?php echo $row['orderID'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Status</td>
-						<td>Sample DOB is here</td>
+						<td><?php echo $row['status'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Issued Date and Time</td>
-						<td>sample@gmail.com</td>
+						<td><?php echo $row['datetime'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Delivery Address</td>
-						<td>Sample number is here</td>
+						<td><?php echo $row['deliveryAddress'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1">Delivery Deadline Date</td>
-						<td>Sample address is here</td>
+						<td><?php echo $row['deliveryDeadline'] ?></td>
 					</tr>
 					<tr>
 						<td id="td-1" style="border: none;">Total Amount</td>
-						<td style="border: none;">Sample state is here</td>
+						<td style="border: none;">Rs. <?php echo $row['amount'] ?></td>
 					</tr>
+					<?php
+							}
+						}
+						?>
 				</table>
 			</div>
 			<div class="col12 center title">
 				<p>Ordered Products</p>
 			</div> 
+			<?php  
+			if(isset($this->orderPros) and !empty($this->orderPros)){
+				while($row = $this->orderPros->fetch_assoc()){
+			?>
 			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
+				<div class="col3"><img class="imgw" src="/images/Seller/<?php echo $row['imageCode'] ?>"></div>
 				<div class="col5 padding">
-					<h3>Nike Shoe</h3>
-					<p>Price :Rs 4000.00</p>
-					<p>Delivery:Free</p>
+					<h3><?php echo $row['prodName'] ?></h3>
+					<p>Price : Rs. <?php echo $row['proPrice'] ?></p>
+					<p>Delivery: Rs. <?php echo $row['price'] ?></p>
 				</div>
 				<div class="col3 fitcontent padding commonB">
 					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
-					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
-					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
+					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="<?php echo $row['quantity'] ?>"><br/>
+					<form action="../Seller/orderDispatch" method="post">
+						<input type="hidden" name="orderID" value="<?php echo $orderID ?>" />
+						<input type="hidden" name="productID" value="<?php echo $row['productID'] ?>" />
+						<?php 
+						if($row['dispatchStatus']=='Pending'){
+							echo '<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button><br/>';
+						}else{
+							echo '<button class="center" type="submit" value="submit" style="margin-top: 20px; color:red;" disabled>Dispatched</button><br/>';
+						}
+						
+						?>
+					</form>
+					<!-- <button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button> -->
 				</div>
 			</div>
-
-			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
-				<div class="col5 padding">
-					<h3>Nike Shoe</h3>
-					<p>Price :Rs 4000.00</p>
-					<p>Delivery:Free</p>
-				</div>
-				<div class="col3 fitcontent padding commonB">
-					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
-					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
-					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
-				</div>
-			</div>
-
-			<div class="col8 col-center boxsummery inp row" style="margin-bottom: 20px;">
-				<div class="col3"><img class="imgw" src="/images/Seller/nike-shoe.png"></div>
-				<div class="col5 padding">
-					<h3>Nike Shoe</h3>
-					<p>Price :Rs 4000.00</p>
-					<p>Delivery:Free</p>
-				</div>
-				<div class="col3 fitcontent padding commonB">
-					<label><i class="fa fa-truck-loading"></i>&nbsp;Quantity</label><br/>
-					<input readonly  type="number" id="quantity" name="quantity" style="min-width: 50px; width: 70px;" placeholder="1"><br/>
-					<button class="center" type="submit" value="submit" style="margin-top: 20px;">Dispatch</button>
-				</div>
-			</div>
-
+			<?php
+				}
+			}
+			?>
 			<div class="row col12 commonB" style="margin-top: 10px;">
 				<button class="center" onclick="location.href='../Seller/order';">Back</button>
 			</div>

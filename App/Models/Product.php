@@ -103,7 +103,70 @@ class Product extends \Core\Connect {
             return $error;
         }
     }
+    public function addFailedproducts($data)
+    {
+        $conn=static::connectDB();
+      if (is_array($data) || is_object($data))
+        {
+            foreach ($data as $datas)
+            {
+                $stmt = $conn->prepare("UPDATE product SET availQuantity =availQuantity + ? WHERE productID =? ");
+                $stmt->bind_param("ii",$datas['Q'],$datas['ID']);
+                if ($stmt->execute()) {
+                } else {
+                    $error = $conn->errno . ' ' . $conn->error;
+                    echo $error;
+                }
 
+            }
+            return 1;
+        }       
+
+    }
+    public function subProducts($value)
+    { 
+        $conn=static::connectDB();
+        $pass =1;
+        $quantity=0;
+        
+        foreach ($value as $c) {
+          
+            $stmt =$conn->prepare("SELECT availQuantity FROM product WHERE productID = ?");
+            $stmt->bind_param("i", $c['ID']);
+
+            if($stmt->execute()){
+                $result = $stmt->get_result();
+                while($row= $result->fetch_assoc()){
+                    $quantity= $row['availQuantity'];
+                    if(0>($quantity-$c['Q'])){
+                        $pass=0;
+                    }
+                }
+                
+            }else{
+                echo 'SQL Error';
+            }
+        }
+        if($pass == 0){
+            return 0;
+            
+        }
+
+        foreach ($value as $c) {
+            
+            $stmt1 =$conn->prepare("UPDATE  product SET availQuantity= availQuantity-? WHERE productID = ?");
+            $stmt1->bind_param("ii", $c['Q'],$c['ID']);
+            if($stmt1->execute()){
+
+            }else{
+                echo 'SQL error';
+            }
+        }
+
+        return 1;
+
+
+    }
     public function related($prodID)
     {
         $conn = static::connectDB();
@@ -207,6 +270,42 @@ class Product extends \Core\Connect {
         }
 
         // return $noError;
+        return $errorMssg;
+    }
+
+    public function getStorePros($userID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT productimage.imageCode, product.prodName, product.price, product.productID
+        FROM (product
+        INNER JOIN productimage ON product.productID = productimage.productID)
+        WHERE productimage.imageCode LIKE '%_main_1%' 
+        AND product.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        echo $conn->error;
+        $stmt->bind_param("s", $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function edit($productID, $availQuantity) {
+        $errorMssg="";
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE product SET availQuantity=? WHERE productID=?;");
+        $stmt->bind_param("ss", $availQuantity, $productID);
+        if ($stmt->execute()) {
+            // echo "m working";
+            $stmt->close();
+        }else{
+            // echo 'm not working';
+            echo $stmt->error;
+            // return false;
+            $errorMssg="SQLError";
+        }
         return $errorMssg;
     }
 

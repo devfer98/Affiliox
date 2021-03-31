@@ -72,7 +72,7 @@
                                     <div class="margint50">
                                         <label for="quantity"><i class="fa fa-truck-loading"></i>
                                             &nbsp;Quantity</label><br>
-                                        <input style="z-index: 1;" type="number" id="quantity" name="quantity" value="1">
+                                        <input style="z-index: 1;" type="number" id="quantity" min="1" max="50" name="quantity" value="1">
                                         <br>
                                     </div>
                                     <!-- </form> -->
@@ -82,6 +82,7 @@
                         <div class="col12">
                             <div class="row col11 hidden-xm-marginauto">
                                 <h4>Description:</h4>
+                                <div class="right marginb20" ><h4> Rating : <?php echo number_format($row['overallRating'] ,1)?>&nbsp; <i style ="color:gold"class="fas fa-star "></i></h4></div>
 
                                 <p> <?php echo $row['description'] ?></p>
                             </div>

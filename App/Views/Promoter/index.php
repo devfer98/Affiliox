@@ -45,21 +45,30 @@
 			</div>
 
 			<div class="product">
-			<h2>Featured Items</h2>
+			<h2>Latest Items</h2>
 			<hr>
 
 			<div class="container">
+			<?php  
+                if(isset($this->UImsg) and !empty($this->UImsg)){
+					
+					while($row = $this->UImsg->fetch_assoc()){           
+        	?>	
 				<div class="zone">
-					<img src="/images/promoter/drone.jpg" alt="">
-					<h3>Apple i-phone 11 Pro</h3>
-					<h4>125.34 USD</h4>
-					<p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p>
-					<a href="">Buy Now <i class="fab fa-cc-visa"></i></a> 
-					<a href="">Add to Cart <i class="fas fa-shopping-cart"></i></a>
+					<img src="/images/upload/<?php echo $row['imageCode'] ?>" >
+					<h3><?php echo $row['prodName'] ?></h3>
+					<h4><?php echo number_format($row['price'],2) ?> Rs</h4>
+					<!-- <p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p> -->
+					<a href="../user/market">Buy Now <i class="fab fa-cc-visa"></i></a> 
+					
 				</div>
-			</div> <!-- container -->	
+				<?php
+						}
+					}
+				?>
 			
-			<h2>Latest Items</h2>
+			
+			<h2>Featured Items</h2>
 			<hr>
 
 			<div class="container">

@@ -15,37 +15,29 @@
       <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome <?php echo $_SESSION["username"];  ?> to the Market Place</h2>
 		<div class="top-part">
 		<a href="../Promoter/linkHistory" class="top">Already Promoted Items  <i class="fas fa-history"></i> </a> <br><br>
-			<input type="search" name="search" placeholder="search">
-			<a href="../Promoter/Market"><button type="search" name="submit">Search</button></a>
+			<!-- <input type="search" name="search" placeholder="search"> -->
+			<!-- <a href="../Promoter/Market"><button type="search" name="submit">Search</button></a> -->
 		</div> <!-- top-part -->
 		
 		<?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
 					
-					while($row = $this->UImsg->fetch_assoc()){ 
-					// $images = explode(',', $row['images']);          
+					while($row = $this->UImsg->fetch_assoc()){           
         ?>	
 
 			<div class="product-card">
 			<table>
 					<tr>
+						<td colspan="2" rowspan="6" class="item-img"><img src="/images/upload/<?php echo $row['imageCode'] ?>" ></td>
 						<td class="item-name" colspan=3 id=title><?php echo $row['prodName'] ?></td>
-					</tr>
-					<tr>
-						<td class="item-img" rowspan = 3> <img src="/images/upload/<?php echo $row['imageCode'] ?>" > </td>
-					</tr>
-					<tr>
-						<td class="item-price"><?php echo number_format($row['price'],2) ?> Rs</td>
-					</tr>
-					<tr>
-						<td><a href="../Promoter/viewProduct?id=<?php echo $row['productID']?>">View More <i class="fas fa-angle-double-right"></i></a></td>
 						<td>
-						<!-- <form method="get" action="../Promoter/viewProduct">
-							<input type="submit" value="View More">
-						</form>
-						</td> -->
+							<a href="../Promoter/viewProduct?id=<?php echo $row['productID']?>">View More <i class="fas fa-angle-double-right"></i></a>
+						</td>
 					</tr>
-					
+					<tr>
+						<td class="item-price"><p>Product price</p> <?php echo number_format($row['price'],2) ?> Rs</td>
+					</tr>
+
 				</table>
 			</div>
             
@@ -54,8 +46,6 @@
 				}
 			?>
 
-
-	
 			 </div> <!-- container -->
 			 
 			

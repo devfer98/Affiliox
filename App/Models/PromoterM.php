@@ -111,7 +111,6 @@ class PromoterM extends \Core\Connect {
 
     public function getproductFeatures($prodID){
         $conn = static::connectDB();
-        // $stmt0 = $conn->prepare("SELECT * FROM product WHERE product.productID =?");
         $stmt0 = $conn->prepare("SELECT * FROM product LEFT JOIN productimage ON product.productID = productimage.productID AND productimage.imageCode LIKE '%main%' WHERE product.productID = ?");
         $stmt0->bind_param("i", $prodID);
         if ($stmt0->execute()) {
@@ -128,6 +127,7 @@ class PromoterM extends \Core\Connect {
        
        
     }
+
 
     public function getUniqueLink($prodID){
         $conn = static::connectDB();
@@ -152,7 +152,7 @@ class PromoterM extends \Core\Connect {
     public function getStaticPromo($userID)  {
         $conn=static::connectDB();
 
-        $query = "SELECT * FROM `order` WHERE proUserID = ?";
+        $query = "SELECT * FROM `order` WHERE proUserID = ? AND status = 'Success'";
         
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s",$userID);
@@ -172,7 +172,7 @@ class PromoterM extends \Core\Connect {
     public function getTotalCommission($userID) {
         $conn=static::connectDB();
 
-        $query = "SELECT SUM(totalCommission) AS total FROM `order` WHERE proUserID = ?";
+        $query = "SELECT SUM(totalCommission) AS total FROM `order` WHERE proUserID = ? AND status = 'Success'";
     
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s",$userID);
@@ -209,8 +209,59 @@ class PromoterM extends \Core\Connect {
         } 
     }
 
-    public function updatePromoter() {
+    public function getMarketLatestProduct() {
+        $conn=static::connectDB();
+  
+          $query = "SELECT * FROM `product` LEFT JOIN productimage ON productimage.productID = product.productID AND productimage.imageCode LIKE '%main%' WHERE status= 'Active' ORDER BY product.productID DESC limit 10";
+          
+          $stmt = $conn->prepare($query);
+  
+          if ($stmt->execute()) {
+              $result1 = $stmt->get_result();
+              
+              if ($result1->num_rows >0)
+              {
+                  return $result1;
+              }
+              
+          }else{
+              $result1 = 'Error sql';
+              return $result1;
+          }
+     }
 
+     public function getMarketFeaturedProduct() {
+        $conn=static::connectDB();
+  
+          $query = "SELECT * FROM `product` LEFT JOIN productimage ON productimage.productID = product.productID AND productimage.imageCode LIKE '%main%' WHERE status= 'Active' ORDER BY product.productID ASC limit 10";
+          
+          $stmt = $conn->prepare($query);
+  
+          if ($stmt->execute()) {
+              $result2 = $stmt->get_result();
+              
+              if ($result2->num_rows >0)
+              {
+                  return $result2;
+              }
+              
+          }else{
+              $result2 = 'Error sql';
+              return $result2;
+          }
+     }
+
+     public function updatePromoter($ID, $name,$phoneNo, $country,$status, $city, $aLine1, $aLine2 ) {
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE promoter SET name= ? , aLine1 = ?, aLine2= ?,city= ?, country= ?,status = ?, phoneNo=  ?  WHERE userId=?");
+        $stmt->bind_param("ssssssss",$name,$aLine1, $aLine2,$city,$country, $status,$phoneNo,$ID);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
     }
 
     public function removePromoter() {
