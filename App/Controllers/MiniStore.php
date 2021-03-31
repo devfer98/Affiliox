@@ -8,10 +8,6 @@ use App\Models\Product;
 use App\Models\Delivery;
 class MiniStore extends \Core\Controller {
 
-    // public function indexAction(){
-    //     $this->view->display('User/Interfaces/productDetails.html');
-    // }
-
     // public function addAction(){
     //     echo 'Product add method is called';
     //     echo '<p>Query string parameters: <pre>' .
@@ -21,12 +17,6 @@ class MiniStore extends \Core\Controller {
     public function ministoreAction(){
         $this->view->display('Seller/miniStore.php');
     }
-
-    // public function ministoreNotAction(){
-    //     $this->view->display('Seller/miniStoreNotCreated.php');
-    // }
-
-    
 
     public function ministoreViewAction(){
         $userID = $_SESSION['username'];
