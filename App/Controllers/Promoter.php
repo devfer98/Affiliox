@@ -31,13 +31,57 @@ class Promoter extends \Core\Controller {
         $this->view->UImsg=$UImsg;
         $this->view->display('Promoter/update-promoter.php');
     }
+    
+    public function helpMessage($send_mail,$name,$email,$msg,$prb)
+    {
+        $subject =  "Promoter Request : " .$prb;
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+        $headers .= '"From: Affiliox.com@gmail.com' . "\r\n";     
+         $message = '<html><body>';
+         $message .= '<table style="border-color: #666;" cellpadding="10">';
+         $message .= "<tr><td>Name : $name</td></tr>";
+         $message .= "<tr><td>Email : $email</td></tr>";
+ 
+         $message .= "<tr><td>Message : $msg</td></tr>";
+         $message .= "</table>";
+         $message .= "</body></html>";
+                 
+        if (mail($send_mail,$subject,$message,$headers)) {
+            
+
+            return true;
+            
+        } else {
+            
+           return false;
+        }
+    }
    
 
     public function MarketAction(){
+
+        if(isset($_POST['textdata'])){
+            
+            $email = "";
+            $send_mail ="affiliox.com@gmail.com";
+            $userID = $_SESSION['username'];
+            $prb =$_POST['problem'];
+            
+            $msg =$_POST['textdata'];
+            $user = new PromoterM();
+            $result = $user->getPromoterProfile($userID);
+            while ($row =$result->fetch_assoc()) {
+                
+                $email = $row['email'];
+            }
+            $this->helpMessage($send_mail,$userID,$email,$msg,$prb);
+            
+        }
         $user = new PromoterM();
         
         $result = $user->getProductDetails();
-
+        
         if($result == null) {
             $empty= "Still there are no Products in store!";
             $this->view->empty=$empty;
@@ -138,6 +182,8 @@ class Promoter extends \Core\Controller {
 
 
     public function promoterSupportAction() {
+
+
         $this->view->display('Promoter/support-center.php');
     }
 

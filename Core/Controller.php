@@ -18,7 +18,8 @@ abstract class Controller
 
             }
         }else{
-            echo "$method not found in controller" .get_class ($this);
+            include '../app/views/Common/E404.php';
+            header('refresh:3; url=../');
         }
     }
 

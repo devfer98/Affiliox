@@ -22,7 +22,7 @@
 		</div> 
 
 		<div class="row col6 col-center inner-part inp">
-			<form action="" method="post">
+			<form action="../Seller/addTransaction" method="post">
 			<div class="row">
 				<p><b>Withdraw Earn:</b> Use this page to transfer your balance to your preferred method of payout. 
 					You should have minimum payout amount available in your account. To see the list and status of your payouts.
@@ -31,7 +31,18 @@
 			<div class="row col8 col-center center padding">
 				<label class="col12 center">Current Amount</label>
 				<!-- <div class="col12 center" >Rs. 20,000</div> -->
-				<input readonly  type="text" id="quantity" name="quantity" class="center" style="width: 250px;" placeholder="Rs. 20,000">
+				<div class="row col12">
+				<p style="color:red;"><?php if(isset($this->errorMssg) and !empty($this->errorMssg)){echo $this->errorMssg;}  ?></p>
+				</div>
+				<?php  
+					if(isset($this->salesAmount) and !empty($this->salesAmount)){
+						while($row = $this->salesAmount->fetch_assoc()){
+					?>
+				<input readonly  type="text" id="quantity" name="quantity" class="center" style="width: 250px;" placeholder="Rs. <?php echo number_format((float)$row['salesAmount'], 2, '.', '') ?>">
+				<?php
+						}
+					}
+					?>
 			</div>
 			<div class="row col8 col-center padding">
 				<label for="fname">&nbsp;Tansfer Method</label><br>
@@ -43,7 +54,7 @@
 			</div>
 			<div class="row col8 col-center padding">
 				<label for="dob">&nbsp;Amount</label><br>
-				<input type="number" name="amount" required="" placeholder="$ 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a">
+				<input type="number" name="amount" required="" placeholder="Rs. 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a">
 			</div>
 			<div class="row col12 padding commonB">
 				<button class="center" type="submit" value="submit">Submit</button>	

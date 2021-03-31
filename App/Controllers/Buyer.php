@@ -29,13 +29,78 @@ class Buyer extends \Core\Controller
    }
 
    public function EditAccountAction()
-   {
+   {  
+      if(!empty($_POST['fullname'])){
+         
+         $user = new BuyerM();
+         $ID =$_SESSION['username'];
+         $name       =$_POST['fullname'];
+         $aLine1	    =$_POST['aline1'];
+         $aLine2     =$_POST['aline2'];	 
+         $city       =$_POST['city'];      	
+         $country    =$_POST['country'];	
+         $gender 	=$_POST['gender'];
+         $status 	=$_POST['status'];
+         $email  	=$_POST['email'];
+         $phoneNo    =$_POST['phn-no'];
+         if (($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($gender) && ($status) && ($email) && ($phoneNo)) {
+        
+         }else{
+            
+             $State=0;
+             $this->view->State = $State;
+             $UImsg= 'Empty Entries Detected, Please Try Again !';
+             $this->view->UImsg = $UImsg;
+             header('refresh:1 , URL =../Buyer/Account ');
+             $this->view->display('Customer/UpdateAccount.php');
+             exit;   
+         }
+ 
+ 
+         if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+           
+             $State=0;
+             $this->view->State = $State;
+             $UImsg= 'Email format invalid, Please Try Again !';
+             $this->view->UImsg = $UImsg;
+             $this->view->display('Customer/UpdateAccount.php');
+             exit;  
+         }
 
+ 
+         $res =$user->EmailCompair4buyer($email,$ID);
+             if($res==true){
+                   
+                     $data =$user->updateBuyer($ID, $name, $email, $phoneNo, $country,$gender,$status, $city, $aLine1, $aLine2 );
+                     echo $data;
+
+                     $UImsg= 'Successfully Updated';
+                     $this->view->UImsg = $UImsg;
+                     $State=1;
+                     $this->view->State = $State;
+                     header('refresh:1 , URL =../Buyer/Account ');
+                     $this->view->display('Customer/UpdateAccount.php');
+                     // header('Location:../ /BuyerSuccess');
+                     exit();
+             }else{
+                 
+                 $State=0;
+                 $this->view->State = $State;
+                 $UImsg= "Emaill-Address Already Taken Please Try Again";
+                 $this->view->UImsg = $UImsg;
+                 $this->view->display('Customer/UpdateAccount.php'); 
+                 exit();
+                     
+                 
+                 
+             }	
+      }
+      
       $userID = $_SESSION['username'];
       $user = new BuyerM();
       $result = $user->getBuyer($userID);
       $UImsg = $result;
-      $this->view->UImsg = $UImsg;
+      $this->view->UImsg2 = $UImsg;
       $this->view->display('Customer/UpdateAccount.php');
    }
 
@@ -131,29 +196,26 @@ class Buyer extends \Core\Controller
 
       public function paymentAction()
       {  
-         $custom_1 =$_POST['custom_1'];
+         $custom_1 =$_POST['custom_1'];  
          $district= $_POST['district'];
          $buy = new BuyerM;
          $value =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
          $value = json_decode($value, true);
-         $UImsg = $buy->checkout($value,$district);
-       
+         $UImsg = $buy->checkout($value,$district);   // details with product with delivery    
          $order = new ModelsOrder;
          $status = "Pending";
-         $datetime = date("Y-m-d");
+         $datetime = date("Y-m-d"); 
          $start_date = date_create($datetime);
          $datetime = date_format($start_date,"Y-m-d");
-      
-         date_add($start_date,date_interval_create_from_date_string($UImsg[5]. " Days" ));// longest peroid
+         date_add($start_date,date_interval_create_from_date_string($UImsg[5]. " Days" ));// longest peroid taken 
          $deliveryDeadline = date_format($start_date,"Y-m-d");
          $deliveryAddress = $_POST['address'];
          $amount =$UImsg[2];
          $buyUserID=$_SESSION['username'];
-
          $subtractProduct = new Product;
-         $subtractProduct =$subtractProduct->subProducts($value);
+         $subtractProduct =$subtractProduct->subProducts($value);  // subtract available quantity from products in order
 
-         if($subtractProduct == 0){
+         if($subtractProduct == 0){   //if quantity <=0
             $State =0;
             $UImsg5 = 'Insufficient Product Quantity , Please try Again Later';
             $this->view->State=$State;
@@ -162,7 +224,7 @@ class Buyer extends \Core\Controller
             $this->view->display('Customer/PG-confirm.php');
          }
 
-         ///////////////////////////////////////////
+         ///////////////////////////////////////////     promoter code from cookie
          if(!empty($_COOKIE["promoter"])){
             $value =  (!empty($_COOKIE["promoter"])) ? $_COOKIE["promoter"] : "[]";
             $value = json_decode($value,true);
@@ -171,22 +233,16 @@ class Buyer extends \Core\Controller
             $value2 =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
             $value2 = json_decode($value2, true);
             $totalcommision = new BuyerM;
-            $totalCommission = $totalcommision->orderCommision($value2);
+            $totalCommission = $totalcommision->orderCommision($value2); // generate total commision for the order
 
-         }else{
+         }else{   //if no promoter cookie found
             $proUserID=NULL;
             $totalCommission=NULL;
 
          }
 
-
-         
-            // promoter ckeck here from cookie find commision from products
-         
-
-         ///////////////////////////////////////////
          $data= $order->addOrder($status,$amount,$datetime,$deliveryAddress, $deliveryDeadline ,$buyUserID ,$proUserID ,$totalCommission);
-  
+         // add order as pending to database
          $data = array('merchant_id' => '1216939', 'return_url' => 'http://localhost/Buyer/PGreply','cancel_url' => 'http://127.0.0.1/buyer/checkout' ,'notify_url' => 'http://127.0.0.1/user/market' ,'first_name' =>$_POST['first_name'] ,'last_name' => '' ,'address' => $_POST['address'] , 'phone' => $_POST['phone'],'city' => $_POST['city'] ,'email' => $_POST['email'],'country' => 'Srilanka','amount' => $_POST['amount'],'items' =>$data,'currency' =>'LKR' ,'order_id' =>$data ,'custom_1' =>$custom_1);
          $this->view->data=$data;    
          $this->view->display('Customer/PG-confirm.php');   
@@ -209,25 +265,31 @@ class Buyer extends \Core\Controller
    public function CurrentOrdersAction()
    {   $MSG ="";
        $State=1;
+
+       //payment gateway  responce codes
+       // status_code =  2    - payment successfull
+       // status_code = -2    - payment failed
+       // status_code = -1    - payment cancelled
+
        if (isset($_POST['status_code'])) {
-           if ($_POST['status_code']==2) {  
-                                                             // if success 
+           if ($_POST['status_code']==2) {      // successfull
+                                                             
               $order = new ModelsOrder;
               $data= $_SESSION['custom_1'] ;
               $order_ID = $_POST['order_id'];
-              $order->updateDelivery($data,$order_ID);
-              $order-> Ordersuccess($order_ID);
-              setcookie("items", "", time() - 3600, "/");
+              $order->updateDelivery($data,$order_ID);      //update to prodinorder table
+              $order-> Ordersuccess($order_ID);             //change order state from pending to success
+              setcookie("items", "", time() - 3600, "/");   // delete cookies
               setcookie("promoter", "", time() - 3600, "/");
               $MSG = "Payment Successfull , Seller will Dispatch the products Soon";
               
-           }elseif ($_POST['status_code']==-2) {
+           }elseif ($_POST['status_code']==-2) { // failed
                $order = new ModelsOrder;
                $order_ID = $_POST['order_id'];
-               $order-> OrderFailled($order_ID);
+               $order-> OrderFailled($order_ID); // delete the order 
                $data= $_SESSION['custom_1'] ;
                $order2 = new Product;
-               $order2->addFailedproducts($data);
+               $order2->addFailedproducts($data); //add the subtrated products back to the db
                $MSG = "Payment Failled , Please try again";
                $State=0;
            }
@@ -236,16 +298,9 @@ class Buyer extends \Core\Controller
        }   
        $orders = new ModelsOrder;
        $orders2 = new ModelsOrder;
-       $orders = $orders->getSuccessOrders($_SESSION['username']);
-      //  $orders1 = $orders1->getSuccessOrders($_SESSION['username']);
-      //  while ($row = $orders1->fetch_assoc()) {
-      //     }
-
-          $orders2 = $orders2->getOrderproducts($_SESSION['username']);
-         // while ($row = $orders2->fetch_assoc()) {
-         //  print_r($row);
-         //  }
-          $this->view->orders=$orders; 
+       $orders = $orders->getSuccessOrders($_SESSION['username']);   // view current successfull orders
+       $orders2 = $orders2->getOrderproducts($_SESSION['username']); // get product details for the order
+          $this->view->orders=$orders;   // UI messages
           $this->view->details=$orders2;  
           $this->view->State=$State;
           $this->view->UImsgNotice=$MSG;
@@ -265,6 +320,7 @@ class Buyer extends \Core\Controller
          $orders3 = $orders3->productReceived($_POST['ProdID'],$_POST['OrderID']);
          $entry = new Feedback();
          $result = $entry->addFeedback($msg,$rating, $ID, $prodID);
+         $entry->addRating($prodID);
          
       }
       $orders = new ModelsOrder;
@@ -377,9 +433,8 @@ class Buyer extends \Core\Controller
       $prdID=$_POST['ProdID'];
       $orderID=$_POST['OrderID'];
       $orders = new ModelsOrder;
-
-     $orders = $orders->productReceivedConfirmation($prdID,$orderID);
-     $this->view->order=$orders;
+      $orders = $orders->productReceivedConfirmation($prdID,$orderID);
+      $this->view->order=$orders;
       $this->view->display('Customer/ConfirmReceived.php');
    }
 
@@ -419,6 +474,8 @@ class Buyer extends \Core\Controller
 
            $entry = new Feedback();
            $result = $entry->addFeedback($message, $rating, $username, $prodID);
+
+           $entry->addRating($prodID);
            if ($result) {
                $State=1;
                $UImsg = 'Feedback Submitted Successfully';

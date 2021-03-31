@@ -7,6 +7,7 @@ use App\Models\Feedback;
 use App\Models\Order;
 use App\Models\MinistoreM;
 use App\Models\sellerM;
+use App\Models\TransactionPromo;
 
 class Seller extends \Core\Controller {
 
@@ -84,7 +85,8 @@ class Seller extends \Core\Controller {
     }
 
     public function statisticsAction(){
-
+        $ministore= new MinistoreM();
+        $this->view->totalSold=$ministore->totalSold($_SESSION['username']);
         $this->view->display('Seller/sellerStatistics.php');
         
     }
@@ -103,29 +105,69 @@ class Seller extends \Core\Controller {
     }
 
     public function transactionAction(){
+        $transaction= new TransactionPromo;
+        $this->view->salesAmount=$transaction->getSalesAmount($_SESSION['username']);
+        $this->view->display('Seller/sellerTransactions.php');   
+    }
 
-        $this->view->display('Seller/sellerTransactions.php');
-        
+    public function addtransactionAction(){
+        $transaction= new TransactionPromo;
+        $sales=$transaction->getSalesAmount($_SESSION['username']);
+        $saleAmount;
+        if(isset($this->sales) and !empty($this->sales)){
+            while($row = $this->sales->fetch_assoc()){
+                $saleAmount=$row["salesAmount"];
+            }
+        }else{
+            $saleAmount=0.0;
+        }
+        if($_POST['amount']<=$saleAmount){
+            $date = date("Y-m-d");
+            $transaction->addTransPromo(number_format((float)$_POST['amount'], 2, '.', ''), 0, $_SESSION['username'], $date);
+            $this->transactionAction();
+        }else{
+            $this->view->errorMssg="Entered amount is Invalid";
+            $this->view->display('Seller/sellerTransactions.php');
+        }
+           
     }
 
     public function transactionHisAction(){
-
-        $this->view->display('Seller/sellerTransHis.php');
-        
+        $transaction= new TransactionPromo;
+        $this->view->TransHis=$transaction->getTransPromo($_SESSION['username']);
+        $this->view->display('Seller/sellerTransHis.php');  
     }
 
     public function orderAction(){
         $userID = $_SESSION['username'];
         $order= new Order();
-        $this->view->orderPend=$order->getSellOrders($userID);
-        $this->view->display('Seller/viewOrders.php');
-        
+        $this->view->orderPend=$order->getSellOrders($userID, "Pending", "Pending");
+        $this->view->orderDispatched=$order->getSellOrders($userID, "Dispatched", "Pending");
+        $this->view->orderSuccess=$order->getSellOrders($userID, "Dispatched", "Received");
+        $this->view->orderUnSuccess=$order->getSellOrders($userID, "Dispatched", "Not Received");
+        $this->view->display('Seller/viewOrders.php');    
     }
 
     public function orderProAction(){
+        $order= new Order();
+        if (!empty($_GET['id'])) {
+            $result=$order->viewOrder($_GET['id']);
+            if ($result->num_rows>0){
+                $this->view->orderPros=$order->viewOrderPros($_GET['id']);
+                $this->view->order=$result;
+                $this->view->display('Seller/viewOrderPros.php');
+            }else{ 
+                $this->view->display('Common/E404.php');
+            }
+        }else{
+            $this->view->display('Common/E404.php');
+        }  
+    }
 
-        $this->view->display('Seller/viewOrderPros.php');
-        
+    public function orderDispatchAction(){
+        $order= new Order();
+        $errorMssg=$order->orderDispatch($_POST['orderID'], $_POST['productID']);
+        header("Location:../Seller/orderPro?id=".$_POST['orderID']);
     }
 
     public function supportAction(){

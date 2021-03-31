@@ -10,6 +10,7 @@ use Core\View;
 class User extends \Core\Controller
 {
 
+<<<<<<< HEAD
     public function indexAction() {
         $latest = new ModelsUser();
         $featured = new ModelsUser();
@@ -28,6 +29,11 @@ class User extends \Core\Controller
             $this->view->display('Common/index.php');
         }
         
+=======
+    public function indexAction()
+    { 
+        $this->view->display('Common/index.php');
+>>>>>>> 6a30cb711371a8d80181022c6afb12a24124cde9
     }
 
     public function Error4Action()
@@ -60,6 +66,7 @@ class User extends \Core\Controller
         }
         $prod = new ModelsUser;
         $UImsg = $prod->listProducts($name);
+        
         $this->view->UImsg = $UImsg;
         $this->view->display('Customer/market.php');
     }

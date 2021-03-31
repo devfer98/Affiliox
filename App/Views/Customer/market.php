@@ -31,7 +31,7 @@
                 <form method="GET" action="../user/market">
                     <div class="col8 search fitcontent center">
                         <ul>
-                            <input type="text" name="search" pattern="^[a-zA-Z0-9 ]*$" placeholder="Clothing , Phones , Toys"
+                            <input type="text" name="search" pattern="^[a-zA-Z0-9 ]*$" placeholder="Tshirt, Drone, IphoneX"
                             <?php if(!empty($_GET['search'])){
                                 $val=$_GET['search'];
                                  echo " value =\"$val\" ";
@@ -110,6 +110,10 @@
                                                     &nbsp;&nbsp;</button>
                                             </div>
                                         </div>
+                                        <div class ="margint20">          
+                                               </br> </br> </br><i style ="color:gold"class="fas fa-star "> </i> <?php echo number_format($row['overallRating'] ,1)?>
+                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +141,7 @@
                         }?>
             <div class="dropdown-container">
                 <button value=1 name=cat type=submit>Mens </button>  
-                <button value=2 name=cat type=submit>Wemen </button>  
+                <button value=2 name=cat type=submit>Women </button>  
             </div>
             <button class="dropdown-btn">Electrical
                 <!-- <i class="fa fa-caret-down"></i> -->

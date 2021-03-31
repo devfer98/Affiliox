@@ -43,7 +43,7 @@
 					if(isset($this->orderPend) and !empty($this->orderPend)){
 						while($row = $this->orderPend->fetch_assoc()){     
 					?>
-					<div class="row record">
+					<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
 						<div class="col3"><?php echo $row['userID'] ?></div>
 						<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
 						<div class="col3"><?php echo $row['amount'] ?></div>
@@ -60,13 +60,22 @@
 						<div class="row heading">
 							<div class="col3">User</div>
 							<div class="col6">Address</div>
-							<div class="col3">Last Date to be Deliverd</div>
+							<div class="col3">Delivery Deadline</div>
 						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
+						<?php  
+						if(isset($this->orderDispatched) and !empty($this->orderDispatched)){
+							while($row = $this->orderDispatched->fetch_assoc()){
+								// echo $row['orderID'];
+						?>
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
+							<div class="col3"><?php echo $row['userID'] ?></div>
+							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
+							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>
 						</div>
+						<?php
+							}
+						}
+						?>
 					</div>
 					<!-- <table>
 						<tr>
@@ -87,23 +96,22 @@
 						<div class="row heading">
 							<div class="col3">User</div>
 							<div class="col6">Address</div>
-							<div class="col3">Received Date</div>
+							<div class="col3">Delivery Deadline</div>
 						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
+						<?php  
+						if(isset($this->orderSuccess) and !empty($this->orderSuccess)){
+							while($row = $this->orderSuccess->fetch_assoc()){
+								// echo $row['orderID'];
+						?>
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
+							<div class="col3"><?php echo $row['userID'] ?></div>
+							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
+							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>
 						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
-						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
-						</div>
+						<?php
+							}
+						}
+						?>
 					</div>
 				</div>
 				<div id="tab4" class="row tabcontent">
@@ -113,21 +121,19 @@
 							<div class="col6">Address</div>
 							<div class="col3">Delivery Deadline</div>
 						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
+						<?php  
+						if(isset($this->orderSuccess) and !empty($this->orderSuccess)){
+							while($row = $this->orderSuccess->fetch_assoc()){
+						?>
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
+							<div class="col3"><?php echo $row['userID'] ?></div>
+							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
+							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>
 						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
-						</div>
-						<div class="row record">
-							<div class="col3">david98</div>
-							<div class="col6">No.20, Araliya road, Bangalaatta, Wattala</div>
-							<div class="col3">2020/12/22</div>
-						</div>
+						<?php
+							}
+						}
+						?>
 					</div>
 				</div>
 			</div>

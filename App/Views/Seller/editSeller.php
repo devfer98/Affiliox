@@ -80,12 +80,12 @@
 				</div>
 				<!------------------ ------------------->
 	
-				<h2 style="font-family: 'Lato', sans-serif;">Login Details</h2>
+				<!-- <h2 style="font-family: 'Lato', sans-serif;">Login Details</h2>
 				
 				<div class="padding">
 				<label for="Username-field"><i class="fa fa-user-alt"></i> Username</label><br>
 				<input type="text" name="Username-field" value="<?php echo $row['userID'] ?>" placeholder=""  minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required ><br>
-				</div>
+				</div> -->
 				<?php
                      }
                 }
