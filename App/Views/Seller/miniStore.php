@@ -33,25 +33,34 @@
                     <button class="center">Add Product</button>
                 </div> -->
                 <div class="row commonB">
+                    <?php
+                        if(isset($this->products) and !empty($this->products)){
+							while($row = $this->products->fetch_assoc()){
+						?>
                     <div class="card">
-                          <img src="/images/Seller/i-phone.png" alt="Denim Jeans" style="width:100%">
-                              <h4>Tailored Jeans</h4>
-                              <p class="price">$19.99</p>
-                              <p>Some text about the jeans..</p>
-                              <p><button onclick="location.href='../Ministore/updateProduct';">Update Product</button></p>
+                          <img src="/images/upload/<?php echo $row['imageCode'] ?>" style="width:100%; height:200px;">
+                            <div style="height:70px;">
+                              <h4><?php echo $row['prodName'] ?></h4>
+                              <p class="price">Rs. <?php echo $row['price'] ?></p>
+                            </div>
+                              <p><button onclick="location.href='../Ministore/updateProduct?id=<?php echo $row['productID'] ?>';">Update Product</button></p>
                               <button>Delete Product</button>
                     </div>
+                    <?php
+                        }
+                    }
+                    ?>
         
-                    <div class="card">
+                    <!-- <div class="card">
                           <img src="/images/Seller/i-phone-earphone.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
                               <p>Some text about the jeans..</p>
                               <p><button>Update Product</button></p>
                               <button>Delete Product</button>
-                    </div>
+                    </div> -->
         
-                    <div class="card">
+                    <!-- <div class="card">
                           <img src="/images/Seller/nike-shoe.png" alt="Denim Jeans" style="width:100%">
                               <h4>Tailored Jeans</h4>
                               <p class="price">$19.99</p>
@@ -67,7 +76,7 @@
                               <p>Some text about the jeans..</p>
                               <p><button>Update Product</button></p>
                               <button>Delete Product</button>
-                    </div>
+                    </div> -->
                     </div>
             </div>
 		</div>

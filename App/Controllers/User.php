@@ -246,7 +246,10 @@ class User extends \Core\Controller
         echo 'add method is called';
     }
 
-
+    public function AccountAction(){
+        $product= new Product();
+        if (!empty($_GET['id'])) {
+    }
 
     protected function before()
     {
