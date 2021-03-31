@@ -33,10 +33,15 @@
                             echo "<th>Withdraw Date</th>";
                         echo "</tr>";     
 					while($row = $this->UImsg->fetch_assoc()) {
+							IF($row['status'] == 1){
+								$data = "Success";
+							}else{
+                                $data = "Failed";
+                            }
 						echo "<tr>";
                             echo "<td>" . $row['transID'] . "</td>";
                         	echo "<td>" . number_format($row['ammount'],2) . " Rs" . "</td>";
-                            echo "<td>" . $row['status'] . "</td>";
+                            echo "<td>" . $data . "</td>";
                             echo "<td>" . $row['date'] . "</td>";
 						echo "</tr>";
 					 

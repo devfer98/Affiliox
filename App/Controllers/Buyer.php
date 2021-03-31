@@ -72,8 +72,7 @@ class Buyer extends \Core\Controller
              if($res==true){
                    
                      $data =$user->updateBuyer($ID, $name, $email, $phoneNo, $country,$gender,$status, $city, $aLine1, $aLine2 );
-                     echo $data;
-
+                     
                      $UImsg= 'Successfully Updated';
                      $this->view->UImsg = $UImsg;
                      $State=1;
