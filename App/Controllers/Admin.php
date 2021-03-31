@@ -54,6 +54,8 @@ class Admin extends \Core\Controller {
         $this->view->countBuyers=$Buyer->getCount   ();
         $Ministore= new MinistoreM();
         $this->view->countMinistores=$Ministore->getCount   ();
+       // $order= new Order();
+        //$this->view->CountSuccessOrders=$order->getCompletedOrders($userID);
         $this->view->display('Admin/AdminDashboard.php');
         // $userID = $_SESSION['username'];
         // $user = new AdminM();

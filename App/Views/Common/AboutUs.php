@@ -66,7 +66,7 @@
         </div>
 
         <br />
-        <div>
+        <!-- <div>
             <h2 style="text-align:center">Our Team</h2>
         </div>
         <div class="abtcolumn">
@@ -79,9 +79,9 @@
                     <p>lily@example.com</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="abtcolumn">
+        <!-- <div class="abtcolumn">
             <div class="card">
                 <img src="/images/Common/profile1.jpg" alt="Mike" style="width:100%">
                 <div class="acontainer">
@@ -91,9 +91,9 @@
                     <p>mike@example.com</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="abtcolumn">
+        <!-- <div class="abtcolumn">
             <div class="card">
                 <img src="/images/Common/profile3.jpg" alt="John" style="width:100%">
                 <div class="acontainer">
@@ -103,7 +103,7 @@
                     <p>john@example.com</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- bottom-part--->
     

@@ -105,16 +105,16 @@
 				</div>
 			</div>
   
-			<div class="column">
+			<!-- <div class="column">
 				<div class="card">
-					<?php 
-                  if(isset($this->countOrders) and !empty($this->countOrders and $this->countOrders->num_rows>0)){
-                   while($row = $this->countOrders->fetch_assoc()){
-						echo "<i class='fas fa-shipping-fast'></i><h3>Total Orders</h3><br/><br/><p>".$row['COUNT(userID)']."</p>";	
+				<?php 
+                  if(isset($this->CountSuccessOrders) and !empty($this->CountSuccessOrders and $this->CountSuccessOrders->num_rows>0)){
+                  while($row = $this->CountSuccessOrders->fetch_assoc()){
+						echo "<i class='fas fa-shipping-fast'></i><h3>Total Orders</h3><br/><br/><p>".$row['userID']."</p>";	
 					}  
 				}
 			?>  				
-				</div>
+				</div> -->
 			</div>
 		</div>
 
