@@ -25,13 +25,25 @@
 		</div>
 		<div class="row row-padding">	
 			<div class="col6 col-center inner-part inp">
-			<form>
+			<form method="post" action="../Ministore/editProduct">
 				<!-- <div class= "inp"> -->
 				<!-- <h2 style="font-family: 'Lato', sans-serif;">Seller Details</h2> -->
-				<div class="row col8 padding">
-					<label for="fname"> &nbsp;Quantity</label><br>
-					<input type="number" id="fname" name="fullname" placeholder="">
+				<div class="row col12">
+					<p style="color:red;"><?php if(isset($this->errorMssg) and !empty($this->errorMssg)){echo $this->errorMssg;}  ?></p>
 				</div>
+				<?php  
+					if(isset($this->product) and !empty($this->product)){
+						while($row = $this->product->fetch_assoc()){
+					?>
+				<div class="row col8 padding">
+					<input type="hidden" name="productID" value="<?php echo $row['productID'] ?>" />
+					<label for="fname"> &nbsp;Quantity</label><br>
+					<input type="number" id="fname" name="availQuantity" placeholder="" value="<?php echo $row['availQuantity'] ?>">
+				</div>
+				<?php
+                        }
+                    }
+                    ?>
 
 				<!-- </div> -->
 			<!------------------Buttons------------------->

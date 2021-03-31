@@ -24,11 +24,48 @@ class Promoter extends \Core\Controller {
 
     public function promoterProfileUpdateAction() {
 
+        if(!empty($_POST['name'])){
+         
+            $user = new PromoterM();
+            $ID =$_SESSION['username'];
+            $name       =$_POST['name'];
+            $aLine1	    =$_POST['aLine1'];
+            $aLine2     =$_POST['aLine2'];	 
+            $city       =$_POST['city'];      	
+            $country    =$_POST['country'];	
+            $status 	=$_POST['status'];
+            $phoneNo    =$_POST['phoneNo'];
+            if (($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($status) && ($phoneNo)) {
+           
+            }else{
+               
+                $State=0;
+                $this->view->State = $State;
+                $UImsg= 'Empty Entries Detected, Please Try Again !';
+                $this->view->UImsg = $UImsg;
+                header('refresh:2 , URL =../Promoter/promoterProfile ');    
+                $this->view->display('Promoter/update-promoter.php');
+                exit;   
+            }
+ 
+            $data =$user->updatePromoter($ID, $name,$phoneNo, $country,$status, $city, $aLine1, $aLine2 );
+   
+            $UImsg= '<br>' . 'Successfully Updated!' . '<br><br>' . 'THANK YOU!' . '<br><br>';
+            $this->view->UImsg = $UImsg;
+            $State=1;
+            $this->view->State = $State;
+            header('refresh:2 , URL =../Promoter/promoterProfile ');
+            $this->view->display('Promoter/update-promoter.php');
+            
+            exit();
+                
+         }
+
         $userID = $_SESSION['username'];
         $user = new PromoterM();
         $result = $user->getPromoterProfile($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
+        $UImsg1 = $result;
+        $this->view->UImsg1=$UImsg1;
         $this->view->display('Promoter/update-promoter.php');
     }
     
@@ -180,18 +217,29 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
-    public function promoterFeedbackAction() {
-        $this->view->display('Promoter/review-feedback.php');
-    }
 
     public function promoterSupportAction() {
-
-
         $this->view->display('Promoter/support-center.php');
     }
 
     public function IndexAction(){
-        $this->view->display('Promoter/index.php');
+
+        $latest = new PromoterM();
+        $featured = new PromoterM();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
      }
 
     public function aboutUsAction(){
@@ -213,15 +261,11 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         $userID = $_SESSION["username"];
 
-        
-
         $user = new TransactionPromo();
         $limit = 1000;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
-        
-        
         
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
@@ -244,8 +288,7 @@ class Promoter extends \Core\Controller {
         $UImsg2 = $result1;
         $this->view->UImsg2=$UImsg2;
        
-
-        $successmsg= 'Your Transaction Process is Success!';
+        $successmsg= 'Your payout will be sent to your Wallet!';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }

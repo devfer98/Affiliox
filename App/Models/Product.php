@@ -273,6 +273,42 @@ class Product extends \Core\Connect {
         return $errorMssg;
     }
 
+    public function getStorePros($userID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT productimage.imageCode, product.prodName, product.price, product.productID
+        FROM (product
+        INNER JOIN productimage ON product.productID = productimage.productID)
+        WHERE productimage.imageCode LIKE '%_main_1%' 
+        AND product.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        echo $conn->error;
+        $stmt->bind_param("s", $userID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function edit($productID, $availQuantity) {
+        $errorMssg="";
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE product SET availQuantity=? WHERE productID=?;");
+        $stmt->bind_param("ss", $availQuantity, $productID);
+        if ($stmt->execute()) {
+            // echo "m working";
+            $stmt->close();
+        }else{
+            // echo 'm not working';
+            echo $stmt->error;
+            // return false;
+            $errorMssg="SQLError";
+        }
+        return $errorMssg;
+    }
+
    
 }
     

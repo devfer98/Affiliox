@@ -5,15 +5,33 @@ namespace App\Controllers;
 use App\Models\User as ModelsUser;
 use App\Models\BuyerM as ModelsBuyerM;
 use App\Models\Product as ModelsProduct;
+use App\Models\MinistoreM;
 use Core\View;
 
 class User extends \Core\Controller
 {
 
-    public function indexAction()
-    { 
-        $this->view->display('Common/index.php');
+    public function indexAction() {
+        $latest = new ModelsUser();
+        $featured = new ModelsUser();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
+        
     }
+    
+
     public function Error4Action()
     {
         $this->view->display('Common/E404.php');
@@ -228,7 +246,14 @@ class User extends \Core\Controller
         echo 'add method is called';
     }
 
+    public function storeAction(){
+        $ministore= new MinistoreM();
+        if (!empty($_GET['id'])) {
 
+        }else{
+
+        }
+    }
 
     protected function before()
     {
