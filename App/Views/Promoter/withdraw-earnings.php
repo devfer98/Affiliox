@@ -34,9 +34,9 @@
 
                           <td class = td1>Total Commission Earned :</td>
 						  <?php  
-                        if(isset($this->UImsg2) and !empty($this->UImsg2)){
-                        while($row2 = $this->UImsg2->fetch_assoc()){   
-                      ?>
+								if(isset($this->UImsg2) and !empty($this->UImsg2)){
+									while($row2 = $this->UImsg2->fetch_assoc()){   
+                      	  ?>
                           <td><?php echo number_format($row2['total'],2)?> Rs </td>
 						  <?php
                           }

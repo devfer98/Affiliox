@@ -31,13 +31,57 @@ class Promoter extends \Core\Controller {
         $this->view->UImsg=$UImsg;
         $this->view->display('Promoter/update-promoter.php');
     }
+    
+    public function helpMessage($send_mail,$name,$email,$msg,$prb)
+    {
+        $subject =  "Promoter Request : " .$prb;
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";   
+        $headers .= '"From: Affiliox.com@gmail.com' . "\r\n";     
+         $message = '<html><body>';
+         $message .= '<table style="border-color: #666;" cellpadding="10">';
+         $message .= "<tr><td>Name : $name</td></tr>";
+         $message .= "<tr><td>Email : $email</td></tr>";
+ 
+         $message .= "<tr><td>Message : $msg</td></tr>";
+         $message .= "</table>";
+         $message .= "</body></html>";
+                 
+        if (mail($send_mail,$subject,$message,$headers)) {
+            
+
+            return true;
+            
+        } else {
+            
+           return false;
+        }
+    }
    
 
     public function MarketAction(){
+
+        if(isset($_POST['textdata'])){
+            
+            $email = "";
+            $send_mail ="affiliox.com@gmail.com";
+            $userID = $_SESSION['username'];
+            $prb =$_POST['problem'];
+            
+            $msg =$_POST['textdata'];
+            $user = new PromoterM();
+            $result = $user->getPromoterProfile($userID);
+            while ($row =$result->fetch_assoc()) {
+                
+                $email = $row['email'];
+            }
+            $this->helpMessage($send_mail,$userID,$email,$msg,$prb);
+            
+        }
         $user = new PromoterM();
         
         $result = $user->getProductDetails();
-
+        
         if($result == null) {
             $empty= "Still there are no Products in store!";
             $this->view->empty=$empty;
@@ -136,16 +180,31 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
-    public function promoterFeedbackAction() {
-        $this->view->display('Promoter/review-feedback.php');
-    }
 
     public function promoterSupportAction() {
+
+
         $this->view->display('Promoter/support-center.php');
     }
 
     public function IndexAction(){
-        $this->view->display('Promoter/index.php');
+
+        $latest = new PromoterM();
+        $featured = new PromoterM();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
      }
 
     public function aboutUsAction(){
@@ -167,15 +226,11 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         $userID = $_SESSION["username"];
 
-        
-
         $user = new TransactionPromo();
         $limit = 1000;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
-        
-        
         
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
@@ -198,8 +253,7 @@ class Promoter extends \Core\Controller {
         $UImsg2 = $result1;
         $this->view->UImsg2=$UImsg2;
        
-
-        $successmsg= 'Your Transaction Process is Success!';
+        $successmsg= 'Your payout will be sent to your Wallet!';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }

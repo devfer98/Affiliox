@@ -235,10 +235,12 @@ input:focus{
       color: #145cee;
       background: none;
       text-decoration: underline; 
-      width: 280px;
+      width: 380px;
       font-size: 15px;
       border: none;
       cursor: pointer;
+      height: 25px;
+      border-radius: 0.25rem;
       
   }
 

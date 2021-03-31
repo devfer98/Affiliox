@@ -71,20 +71,18 @@ class Router
             }else{
                         
             include '../app/views/Common/E404.php';
-            header('refresh:2; url=../');
+            header('refresh:3; url=../');
 
             }
         }else {
 
             include '../app/views/Common/E404.php';
-            header('refresh:2; url=../');
+            header('refresh:3; url=../');
 
-            include '../app/views/Common/E404.php';
-            header('refresh:2; url=../');
         }
     }else{
         include '../app/views/Common/E404.php';
-        header('refresh:2; url=../');
+        header('refresh:3; url=../');
         
         
     }

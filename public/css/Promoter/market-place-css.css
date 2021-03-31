@@ -203,6 +203,7 @@ input:focus{
 .top-part {
   float: right;
   margin-top: 30px;
+  margin-bottom: 40px;
   /*clear: both;*/
 }
 
@@ -260,6 +261,7 @@ input:focus{
    color: #ff4d4d;
  }
 
+ 
 .product-card table {
   /* margin: 0 auto; */
   background-color:rgba(225, 225, 207, 0.1);

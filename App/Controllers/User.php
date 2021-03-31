@@ -10,10 +10,32 @@ use Core\View;
 class User extends \Core\Controller
 {
 
+<<<<<<< HEAD
+    public function indexAction() {
+        $latest = new ModelsUser();
+        $featured = new ModelsUser();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
+        
+=======
     public function indexAction()
-    {
+    { 
         $this->view->display('Common/index.php');
+>>>>>>> 6a30cb711371a8d80181022c6afb12a24124cde9
     }
+
     public function Error4Action()
     {
         $this->view->display('Common/E404.php');
@@ -44,6 +66,7 @@ class User extends \Core\Controller
         }
         $prod = new ModelsUser;
         $UImsg = $prod->listProducts($name);
+        
         $this->view->UImsg = $UImsg;
         $this->view->display('Customer/market.php');
     }

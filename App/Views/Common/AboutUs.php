@@ -65,51 +65,12 @@
             </div>
         </div>
 
-        <br />
-        <div>
-            <h2 style="text-align:center">Our Team</h2>
-        </div>
-        <div class="abtcolumn">
-            <div class="card">
-                <img src="/images/Common/profile2.jpg" alt="Lily" style="width:100%">
-                <div class="acontainer">
-                    <h3>Lily Jane</h3>
-                    <p class="title"><b>IT Administrator</b></p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>lily@example.com</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="abtcolumn">
-            <div class="card">
-                <img src="/images/Common/profile1.jpg" alt="Mike" style="width:100%">
-                <div class="acontainer">
-                    <h3>Mike Ross</h3>
-                    <p class="title"><b>Web Developer</b></p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="abtcolumn">
-            <div class="card">
-                <img src="/images/Common/profile3.jpg" alt="John" style="width:100%">
-                <div class="acontainer">
-                    <h3>John Doe</h3>
-                    <p class="title"><b>Designer</b></p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>john@example.com</p>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- bottom-part--->
     
     <span onclick="openNav()"></span>
-    <hr style="height:1px;border:none;color:#333;background-color:#333;">
-
+   
     </div>
     <!--Container--->
 

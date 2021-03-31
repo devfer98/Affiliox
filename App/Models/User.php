@@ -223,4 +223,46 @@ class User extends \Core\Connect
            }
        }
    }
+
+   public function getMarketLatestProduct() {
+      $conn=static::connectDB();
+
+        $query = "SELECT * FROM `product` LEFT JOIN productimage ON productimage.productID = product.productID AND productimage.imageCode LIKE '%main%' WHERE status= 'Active' ORDER BY product.productID DESC limit 10";
+        
+        $stmt = $conn->prepare($query);
+
+        if ($stmt->execute()) {
+            $result1 = $stmt->get_result();
+            
+            if ($result1->num_rows >0)
+            {
+                return $result1;
+            }
+            
+        }else{
+            $result1 = 'Error sql';
+            return $result1;
+        }
+   }
+
+   public function getMarketFeaturedProduct() {
+      $conn=static::connectDB();
+
+        $query = "SELECT * FROM `product` LEFT JOIN productimage ON productimage.productID = product.productID AND productimage.imageCode LIKE '%main%' WHERE status= 'Active' ORDER BY product.productID ASC limit 10";
+        
+        $stmt = $conn->prepare($query);
+
+        if ($stmt->execute()) {
+            $result2 = $stmt->get_result();
+            
+            if ($result2->num_rows >0)
+            {
+                return $result2;
+            }
+            
+        }else{
+            $result2 = 'Error sql';
+            return $result2;
+        }
+   }
 }
