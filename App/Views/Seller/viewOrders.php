@@ -43,7 +43,7 @@
 					if(isset($this->orderPend) and !empty($this->orderPend)){
 						while($row = $this->orderPend->fetch_assoc()){     
 					?>
-					<div class="row record" onclick="location.href='../Ministore/update';">
+					<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
 						<div class="col3"><?php echo $row['userID'] ?></div>
 						<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
 						<div class="col3"><?php echo $row['amount'] ?></div>
@@ -67,7 +67,7 @@
 							while($row = $this->orderDispatched->fetch_assoc()){
 								// echo $row['orderID'];
 						?>
-						<div class="row record">
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
 							<div class="col3"><?php echo $row['userID'] ?></div>
 							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
 							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>
@@ -103,7 +103,7 @@
 							while($row = $this->orderSuccess->fetch_assoc()){
 								// echo $row['orderID'];
 						?>
-						<div class="row record">
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
 							<div class="col3"><?php echo $row['userID'] ?></div>
 							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
 							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>
@@ -125,7 +125,7 @@
 						if(isset($this->orderSuccess) and !empty($this->orderSuccess)){
 							while($row = $this->orderSuccess->fetch_assoc()){
 						?>
-						<div class="row record">
+						<div class="row record" onclick="location.href='../Seller/orderPro?id=<?php echo $row['orderID'] ?>';">
 							<div class="col3"><?php echo $row['userID'] ?></div>
 							<div class="col6"><?php echo $row['deliveryAddress'] ?></div>
 							<div class="col3"><?php echo $row['deliveryDeadline'] ?></div>

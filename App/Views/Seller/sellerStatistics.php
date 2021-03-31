@@ -52,7 +52,7 @@
   <div id="main" class="container navigation">
     <div class="row row-padding">
       <div class="col12 center title">
-        <p><i class="fas fa-chart-line"></i>&nbsp; &nbsp;Seller Statistics</p>
+        <p><i class="fas fa-chart-line"></i>&nbsp; &nbsp;Seller Statistics (Within Last 30 days)</p>
       </div> 
       
       <div class="row">
@@ -66,8 +66,16 @@
             <th>Amount</th>
           </tr> -->
           <tr>
+            <?php  
+						if(isset($this->totalSold) and !empty($this->totalSold)){
+							while($row = $this->totalSold->fetch_assoc()){
+						?>
             <td id="td-1">Total Sold Items</td>
-            <td>89</td>
+            <td><?php echo $row['totalSold'] ?></td>
+            <?php
+							}
+						}
+						?>
           </tr>
           <tr>
             <td id="td-1">Total Promoted Items</td>

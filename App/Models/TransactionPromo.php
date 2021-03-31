@@ -46,7 +46,21 @@ class TransactionPromo extends \Core\Connect{
         } 
     }
 
-  
+    public function getSalesAmount($userID)  {
+        $conn=static::connectDB();
+        $stmt =$conn->prepare("SELECT SUM(product.price) AS salesAmount
+            FROM (product 
+            INNER JOIN prodsinorder ON product.productID = prodsinorder.productID)
+            WHERE prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
+        echo $conn->error;
+        $stmt->bind_param("s", $userID);
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }
+    }
 
     protected function before()
     {

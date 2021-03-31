@@ -240,4 +240,59 @@ class Order extends \Core\Connect
         }
     }
 
+    public function viewOrder($orderID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT *
+        FROM `order` AS orders 
+        WHERE orderID = ?");
+        echo $conn->error;
+        $stmt->bind_param("s", $orderID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function viewOrderPros($orderID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("SELECT productimage.imageCode, product.prodName, product.price AS proPrice, delivery.price, prodsinorder.quantity, product.productID, prodsinorder.dispatchStatus
+        FROM (((delivery
+        INNER JOIN prodsinorder ON delivery.deliveryID = prodsinorder.deliveryID)
+        INNER JOIN product ON prodsinorder.productID = product.productID)
+        INNER JOIN productimage ON product.productID = productimage.productID)
+        WHERE productimage.imageCode LIKE '%_main_1%' 
+        AND prodsinorder.orderID = ? ;");
+        echo $conn->error;
+        $stmt->bind_param("s", $orderID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function orderDispatch($orderID, $prodID){
+        $conn=static::connectDB();
+        // $stmt = $conn->prepare("SELECT * FROM Feedback WHERE accountStatus = 'Pending'");
+        $stmt = $conn->prepare("UPDATE prodsinorder
+        SET dispatchStatus='Dispatched'
+        WHERE orderID = ? AND productID=?");
+        echo $conn->error;
+        $stmt->bind_param("ss", $orderID, $prodID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
 }
