@@ -292,7 +292,7 @@ input:focus{
     background: #d0d0fb;
     /* opacity: 0.7;
     border:1px solid #bbb; */
-    width: 249px;
+    width: 251px;
 }
 
 .zone a:hover {
@@ -305,7 +305,7 @@ input:focus{
 
 .zone img {
   border-radius: 4px 4px 0 0;
-  width: 249px;
+  width: 248px;
   height: 250px;
 }
 

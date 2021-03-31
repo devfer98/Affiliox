@@ -15,15 +15,14 @@
       <h2><i class="fab fa-shopify"></i>&nbsp; &nbsp;Welcome <?php echo $_SESSION["username"];  ?> to the Market Place</h2>
 		<div class="top-part">
 		<a href="../Promoter/linkHistory" class="top">Already Promoted Items  <i class="fas fa-history"></i> </a> <br><br>
-			<input type="search" name="search" placeholder="search">
-			<a href="../Promoter/Market"><button type="search" name="submit">Search</button></a>
+			<!-- <input type="search" name="search" placeholder="search"> -->
+			<!-- <a href="../Promoter/Market"><button type="search" name="submit">Search</button></a> -->
 		</div> <!-- top-part -->
 		
 		<?php  
                 if(isset($this->UImsg) and !empty($this->UImsg)){
 					
-					while($row = $this->UImsg->fetch_assoc()){ 
-					// $images = explode(',', $row['images']);          
+					while($row = $this->UImsg->fetch_assoc()){           
         ?>	
 
 			<div class="product-card">

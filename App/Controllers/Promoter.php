@@ -136,16 +136,29 @@ class Promoter extends \Core\Controller {
         $this->view->display('Promoter/withdraw-earnings.php');
     }
 
-    public function promoterFeedbackAction() {
-        $this->view->display('Promoter/review-feedback.php');
-    }
 
     public function promoterSupportAction() {
         $this->view->display('Promoter/support-center.php');
     }
 
     public function IndexAction(){
-        $this->view->display('Promoter/index.php');
+
+        $latest = new PromoterM();
+        $featured = new PromoterM();
+        $result1 = $latest->getMarketLatestProduct();
+        $result2 = $featured->getMarketFeaturedProduct();
+
+        if($result1 && $result2 == null) {
+            $empty= "Still there are no Products in store!";
+            $this->view->empty=$empty;
+            $this->view->display('Common/index.php');
+        } else {
+            $UImsg1 = $result1;
+            $UImsg2 = $result2;
+            $this->view->UImsg1=$UImsg1;
+            $this->view->UImsg2=$UImsg2;
+            $this->view->display('Common/index.php');
+        }
      }
 
     public function aboutUsAction(){
@@ -167,15 +180,11 @@ class Promoter extends \Core\Controller {
     public function promoterTransToDBAction(){
         $userID = $_SESSION["username"];
 
-        
-
         $user = new TransactionPromo();
         $limit = 1000;
         $ammount= $_POST['ammount'];
         $status = 1 ;
         $date = date("Y-m-d");
-        
-        
         
         
         if($limit > $ammount && $ammount = $_POST['ammount'] ) {
@@ -198,8 +207,7 @@ class Promoter extends \Core\Controller {
         $UImsg2 = $result1;
         $this->view->UImsg2=$UImsg2;
        
-
-        $successmsg= 'Your Transaction Process is Success!';
+        $successmsg= 'Your payout will be sent to your Wallet!';
         $this->view->successmsg = $successmsg;
         $this->view->display('Promoter/withdraw-earnings.php');
     }

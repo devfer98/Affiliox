@@ -8,6 +8,8 @@
     font-family: 'Open Sans', sans-serif;
     border-bottom: 2px solid black;
 } */
+* {font-family: 'Open Sans', sans-serif;}
+a {font-family: 'Open Sans', sans-serif;}
 
 /*-------------------Inner content-------------------*/
   .data table {
