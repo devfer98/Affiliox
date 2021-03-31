@@ -11,7 +11,7 @@ class User extends \Core\Controller
 {
 
     public function indexAction()
-    {
+    { 
         $this->view->display('Common/index.php');
     }
     public function Error4Action()
@@ -44,6 +44,7 @@ class User extends \Core\Controller
         }
         $prod = new ModelsUser;
         $UImsg = $prod->listProducts($name);
+        
         $this->view->UImsg = $UImsg;
         $this->view->display('Customer/market.php');
     }

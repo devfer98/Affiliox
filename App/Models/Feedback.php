@@ -20,6 +20,28 @@ class Feedback  extends \Core\Connect{
             return false;
         }
     }
+
+    public function addRating($prodID) {
+        $conn=static::connectDB();
+        $rating =0;
+        $stmt = $conn->prepare("SELECT avg(rating) AS OverallRating,productID FROM `feedback` WHERE productID= ?");
+        $stmt->bind_param("i",$prodID);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            while ($row=$result->fetch_assoc()) {
+                $rating = $row['OverallRating'];
+                echo $rating;
+            }      
+        }else{
+            echo 'SQL Error';
+        }
+
+        $stmt0 = $conn->prepare("UPDATE product SET overallRating = ? WHERE productID = ?");
+        $stmt0->bind_param("di",$rating,$prodID);
+        if ($stmt0->execute()) {
+            $stmt0->close();
+        }
+    }
     
 
     public function addReply($feedbackID, $reply) {

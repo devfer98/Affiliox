@@ -21,15 +21,15 @@
 			consequat. <br> <br>Duis aute irure dolor in reprehenderit in voluptate velit esse
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<form action="" method="post">
+			<form action="../promoter/market" method="post">
 				<select name="problem" id="problem" required="">
 					<option value="">Pleace Select Your Request</option>
-					<option value="AP">Account Problem</option>
-					<option value="VP">Verification Problem</option>
-					<option value="PP">Payout Problem</option>
-					<option value="SU">Suggestion</option>
-					<option value="AC">Account Cancellation</option>
-					<option value="O">Other</option>
+					<option value="Account Problem">Account Problem</option>
+					<option value="Verification Problem">Verification Problem</option>
+					<option value="Payout Problem">Payout Problem</option>
+					<option value="Suggestion">Suggestion</option>
+					<option value="Account Cancellation">Account Cancellation</option>
+					<option value="Other">Other</option>
 				</select> <br>
 				<div class="text-area">
 					<textarea name="textdata" placeholder="Explain your problem" required=""></textarea>

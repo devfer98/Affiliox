@@ -22,10 +22,17 @@ class BuyerM extends \Core\Connect{
         }
     }
 
-    public function updateBuyer($userID, $name, $email, $phoneNo, $country, $city, $line1, $line2) {
-        // $updateBuyer = "update buyer SET name='".$name."',aLine1='".$line1."', aLine2='".$line2."', city='".$city."'
-        // , country='".$country."', email='".$email."', phoneNo='".$phoneNo."' WHERE userID='".$userID."'";
-        // mysqli_query($conn,$updateBuyer)or die (mysqli_error($conn));
+    public function updateBuyer($ID, $name, $email, $phoneNo, $country,$gender,$status, $city, $aLine1, $aLine2 ) {
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE buyer SET name= ? , aLine1 = ?, aLine2= ?,city= ?, country= ?, gender= ?,status = ? ,email =?,phoneNo=  ?  WHERE userId=?");
+        $stmt->bind_param("ssssssssss",$name,$aLine1, $aLine2,$city,$country,$gender, $status,$email,$phoneNo,$ID);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
     }
 
     public function updatePassword($current_passs,$new_pass,$username)
@@ -226,8 +233,43 @@ class BuyerM extends \Core\Connect{
 
         return $total;
     }
+    
+    function EmailCompair4buyer($email,$ID)
+    {   $conn=static::connectDB();
+        $email2="";
+        $stmt0 = $conn->prepare('select * from buyer where userID = ? ');
+        $stmt0->bind_param("s", $ID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            if ($result->num_rows > 0) {
+                
+                while ($row =  $result->fetch_assoc()) {
+                    
+                    $email2 = $row['email'];
+                }
+            }
+               
+        }
 
 
+        $stmt1 = $conn->prepare('select * from buyer where email = ?');
+        $stmt1->bind_param("s", $email);
+        if ($stmt1->execute()) {
+            $result2 = $stmt1->get_result();
+            if ($result2 ->num_rows > 0) {
+                
+                while ($row =  $result2->fetch_assoc()) {
+                   
+                   if( $email2 == $row['email']){
+                    return true;
+                   }else{
+                    return false;
+                   }
+                }
+            }
+               return true;
+        }
+    }
     function EmailCompair($email,$username){
 
         $conn=static::connectDB();
