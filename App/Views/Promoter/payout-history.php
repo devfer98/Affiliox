@@ -28,7 +28,7 @@
 					echo "<table>";    
                         echo "<tr>";
                             echo "<th>Transaction ID</th>";
-                            echo "<th>Withdraw Ammount (USD)</th>";
+                            echo "<th>Withdraw Amount </th>";
                             echo "<th>Withdraw Status</th>";
                             echo "<th>Withdraw Date</th>";
                         echo "</tr>";     

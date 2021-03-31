@@ -42,12 +42,11 @@
                           }
                         }
                     ?>
-                      </tr>
-                      
+                    </tr>
 					
 					<tr>
 						<td class = td1>Change Amount :</td>
-						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0" ></td>
+						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0"></td>
 					</tr>
 					<tr>
 						<td class = td1>Transfer Cost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
