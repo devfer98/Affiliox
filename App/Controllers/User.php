@@ -5,12 +5,12 @@ namespace App\Controllers;
 use App\Models\User as ModelsUser;
 use App\Models\BuyerM as ModelsBuyerM;
 use App\Models\Product as ModelsProduct;
+use App\Models\MinistoreM;
 use Core\View;
 
 class User extends \Core\Controller
 {
 
-<<<<<<< HEAD
     public function indexAction() {
         $latest = new ModelsUser();
         $featured = new ModelsUser();
@@ -29,11 +29,6 @@ class User extends \Core\Controller
             $this->view->display('Common/index.php');
         }
         
-=======
-    public function indexAction()
-    { 
-        $this->view->display('Common/index.php');
->>>>>>> 6a30cb711371a8d80181022c6afb12a24124cde9
     }
 
     public function Error4Action()
@@ -250,9 +245,13 @@ class User extends \Core\Controller
         echo 'add method is called';
     }
 
-    public function AccountAction(){
-        $product= new Product();
+    public function storeAction(){
+        $ministore= new MinistoreM();
         if (!empty($_GET['id'])) {
+
+        }else{
+
+        }
     }
 
     protected function before()
