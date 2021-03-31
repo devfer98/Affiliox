@@ -118,8 +118,19 @@ class Buyer extends \Core\Controller
          $current_pass= $_POST['current_password'];
          $md5_pass=md5($current_pass);
          $new_pass = $_POST['password'];
+         $pass=$_POST['con-password'];
+
          $md5_new_pass=md5($new_pass);
          $username = $_SESSION['username'];
+
+         if($pass != $new_pass){
+            $State =0;
+            $UImsg = 'Incorrect Password ,Please Try Again';
+            $this->view->State=$State;
+            $this->view->UImsg=$UImsg;
+            $this->view->display('Customer/PassReset-afterLogin.php');
+            exit();
+         }
          $user = new BuyerM();
          $result = $user->updatePassword($md5_pass,$md5_new_pass, $username);
          if ($result) {
@@ -231,6 +242,7 @@ class Buyer extends \Core\Controller
             
             $value2 =  (!empty($_COOKIE["items"])) ? $_COOKIE["items"] : "[]";
             $value2 = json_decode($value2, true);
+            
             $totalcommision = new BuyerM;
             $totalCommission = $totalcommision->orderCommision($value2); // generate total commision for the order
 

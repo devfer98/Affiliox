@@ -59,7 +59,7 @@
 				<div class="col6">
 					<div>
 						<label for="email"><i class="fa fa-mail-bulk"></i>&nbsp; Email</label><br>
-						<input type="text" id="email" name="email" placeholder="enter your e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." required ><br>
+						<input type="text" id="email" name="email" placeholder="enter your e-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  title="Please fill the filed required format." required ><br>
 					</div>
 				</div>
 				<div class="col6">

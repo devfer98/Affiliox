@@ -248,7 +248,8 @@ class Login extends \Core\Controller {
         if(session_id() != '') {
             session_destroy();
         }
-        $this->view->display('Common/index.php');
+        header('refresh:0; url=../');
+       // $this->view->display('Common/index.php');
     }
 
 
