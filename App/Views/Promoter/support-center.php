@@ -18,7 +18,7 @@
 			<p>You can submit your Account Issues or Authentication Issues, Payment Issues, Suggestions, 
 				Account Cancellations or other issues with us at any time to any promoter you have registered 
 				with our system. We look forward to providing you with an efficient service.</p>
-			<form action="" method="post">
+			<form action="../Promoter/market" method="post">
 				<select name="problem" id="problem" required="">
 					<option value="">Pleace Select Your Request</option>
 					<option value="Account Problem">Account Problem</option>
