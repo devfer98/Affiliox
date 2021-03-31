@@ -15,6 +15,10 @@ class MiniStore extends \Core\Controller {
     // }
 
     public function ministoreAction(){
+        $userID = $_SESSION['username'];
+        $product = new Product();
+        $result = $product->getStorePros($userID);
+        $this->view->products = $result;
         $this->view->display('Seller/miniStore.php');
     }
 
@@ -77,13 +81,31 @@ class MiniStore extends \Core\Controller {
     }
 
     public function updateProductAction(){
-        $this->view->display('Seller/updateProduct.php');
+        $product= new Product();
+        if (!empty($_GET['id'])) {
+            $result=$product->productDetails($_GET['id']);
+            if ($result->num_rows>0){
+                $this->view->product=$result;
+                $this->view->display('Seller/updateProduct.php');
+            }else{ 
+                $this->view->display('Common/E404.php');
+            }
+        }else{
+            $this->view->display('Common/E404.php');
+        }  
     }
 
-    // public function viewAction(){
-    //     $data=User::showData();
-    //     View::display('User/Interfaces/productDetails.html',['data'=>$data]);
-    // }
+    public function editProductAction(){
+        $product= new Product();
+        $errorMssg = $product->edit($_POST['productID'], $_POST['availQuantity']);
+
+        if($errorMssg==""){
+            header("Location:../Ministore/ministore");
+        }else{
+            $this->view->errorMssg=$errorMssg;
+            $this->updateProductAction();
+        }  
+    }
 
     protected function before(){
         if (session_id() == '') {
@@ -106,5 +128,10 @@ class MiniStore extends \Core\Controller {
             header("Location:../Login/index");
         }
    }
+
+   // public function viewAction(){
+    //     $data=User::showData();
+    //     View::display('User/Interfaces/productDetails.html',['data'=>$data]);
+    // }
 
 }
