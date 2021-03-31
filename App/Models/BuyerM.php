@@ -270,6 +270,7 @@ class BuyerM extends \Core\Connect{
                return true;
         }
     }
+    
     function EmailCompair($email,$username){
 
         $conn=static::connectDB();
