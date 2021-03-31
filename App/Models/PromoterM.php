@@ -251,8 +251,17 @@ class PromoterM extends \Core\Connect {
           }
      }
 
-    public function updatePromoter() {
-
+     public function updatePromoter($ID, $name,$phoneNo, $country,$status, $city, $aLine1, $aLine2 ) {
+        $conn=static::connectDB();
+        $stmt = $conn->prepare("UPDATE promoter SET name= ? , aLine1 = ?, aLine2= ?,city= ?, country= ?,status = ?, phoneNo=  ?  WHERE userId=?");
+        $stmt->bind_param("ssssssss",$name,$aLine1, $aLine2,$city,$country, $status,$phoneNo,$ID);
+        if ($stmt->execute()) {
+            $stmt->close();
+            return true;
+        }else{
+            echo 'SQL Error';
+            return false;
+        }
     }
 
     public function removePromoter() {
