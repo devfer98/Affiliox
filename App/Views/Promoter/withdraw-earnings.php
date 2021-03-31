@@ -33,25 +33,16 @@
                       <tr>
 
                           <td class = td1>Total Commission Earned :</td>
-						  <?php  
-								if(isset($this->UImsg2) and !empty($this->UImsg2)){
-									while($row2 = $this->UImsg2->fetch_assoc()){   
-                      	  ?>
-                          <td><?php echo number_format($row2['total'],2)?> Rs </td>
-						  <?php
-                          }
-                        }
-                    ?>
+
+                          <td><?php echo number_format($this->UImsg2,2)?> Rs </td>
+
                     </tr>
 					
 					<tr>
 						<td class = td1>Change Amount :</td>
 						<td><input type="number" name="ammount"  id="c-a" step="0.01"  min="0"></td>
 					</tr>
-					<tr>
-						<td class = td1>Transfer Cost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
-						<td>0.00 Rs</td>
-					</tr>
+
 					<tr>
 						<td colspan =2> *By requesting a transfer you agree with Affiliox.com terms and conditions.</td>
 					</tr>

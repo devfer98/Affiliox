@@ -209,10 +209,21 @@ class Promoter extends \Core\Controller {
     }
 
     public function promoterTransAction() {
+
+
         $userID = $_SESSION['username'];
         $totalC = new PromoterM();
+        $total = 0;
         $result1 = $totalC->getTotalCommission($userID);
-        $UImsg2 = $result1;
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
         $this->view->UImsg2=$UImsg2;
         $this->view->display('Promoter/withdraw-earnings.php');
     }
@@ -262,17 +273,22 @@ class Promoter extends \Core\Controller {
         $userID = $_SESSION["username"];
 
         $user = new TransactionPromo();
-        $limit = 1000;
+        
         $ammount= $_POST['ammount'];
         $status = 1 ;
+        $total=0;
         $date = date("Y-m-d");
-        
-        
-        if($limit > $ammount && $ammount = $_POST['ammount'] ) {
-            $user->addTransPromo($ammount, $status, $userID, $date);
+        $totalC = new PromoterM();
+        $result1 = $totalC->getTotalCommission($userID);
+        while($row = $result1->fetch_assoc() ){
+            echo $total;
+            $total =$row['total'];
+        }
+        $res = $user->addTransPromo($ammount, $status, $userID, $date,$total);
+        if($res){
             header('Location:../Promoter/promoterTransSuccess');
            
-        } else    {
+        } else {
             header('Location:../Promoter/promoterTransFail');
             
         }        
@@ -282,10 +298,20 @@ class Promoter extends \Core\Controller {
 
 
     public function promoterTransSuccessAction(){
-        $userID = $_SESSION["username"];
-        $totald = new PromoterM();
-        $result1 = $totald->getTotalCommission($userID);
-        $UImsg2 = $result1;
+
+        $userID = $_SESSION['username'];
+        $totalC = new PromoterM();
+        $total = 0;
+        $result1 = $totalC->getTotalCommission($userID);
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
         $this->view->UImsg2=$UImsg2;
        
         $successmsg= 'Your payout will be sent to your Wallet!';
@@ -294,12 +320,22 @@ class Promoter extends \Core\Controller {
     }
 
     public function promoterTransFailAction(){
-        $userID = $_SESSION["username"];
-        $totald = new PromoterM();
-        $result1 = $totald->getTotalCommission($userID);
-        $UImsg2 = $result1;
+
+
+        $userID = $_SESSION['username'];
+        $totalC = new PromoterM();
+        $total = 0;
+        $result1 = $totalC->getTotalCommission($userID);
+        while($row = $result1->fetch_assoc() ){
+           
+            $total =$row['total'];
+            echo $total;
+        }
+        $tot = new TransactionPromo();
+        $availableTot = $tot->availtot($total,$userID);
+        echo $availableTot;
+        $UImsg2 = $availableTot;
         $this->view->UImsg2=$UImsg2;
-        
 
         $errmsg= 'Please enter a valid amount of transfer and try again.';
         $this->view->errmsg = $errmsg;
