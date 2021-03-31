@@ -14,33 +14,47 @@
 		<!-- inner part of the evry dashboard -->
 	<div class="container">
 		<h2><i class="fas fa-user"></i>&nbsp; &nbsp; Update Personal Information</h2>
+
+		<?php 
+			if (isset($this->UImsg) and !empty($this->UImsg)) {
+                if ($this->State == 1) {
+
+                    ?><div class="error-msg"><?php
+
+                                } else {
+                                      ?><div class="success-msg"> <?php
+                                     }
+                                ?> <p>  <?php  echo $this->UImsg ?>  </p></div>    
+
+                              <?php   }  ?>
+        </div>
 		<div class="inner-part">
 		<?php  
-            if(isset($this->UImsg) and !empty($this->UImsg)){
-				while($row = $this->UImsg->fetch_assoc()) {          
+            if(isset($this->UImsg1) and !empty($this->UImsg1)){
+				while($row = $this->UImsg1->fetch_assoc()) {          
         ?>
 			<form action="../Promoter/promoterProfileUpdate" method="post">
 				<table>
 					<tr>
-						<td id="td-1">Your ID: <p style="font-size: 12px; color: red">* View only</p></td>
-						<td id="td-2"><input type="" name="userID" value="<?php echo $row['userID'] ?>" readonly></td>
+						<td id="td-1"> Full Name: </td>
+						<td id="td-2"><input type="text" name="name" value="<?php echo $row['name'] ?>" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." ></td>
 					</tr>
 					<tr>
-						<td id="td-1"> Full Name:</td>
-						<td id="td-2"><input type="text" name="name" value="<?php echo $row['name'] ?>" minlength="5" maxlength="100" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required></td>
-					</tr>
-					<tr>
-						<td id="td-1">Email:</td>
-						<td id="td-2"><input type="text" name="email" value="<?php echo $row['email'] ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." required></td>
+						<td id="td-1">Email: <p style="font-size: 12px; color: red">* View only</p></td>
+						<td id="td-2"><input type="text" name="email" value="<?php echo $row['email'] ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please fill the filed required format." readonly></td>
 					</tr>
 					<tr>
 						<td id="td-1">Phone Number:</td>
 						<td id="td-2"><input type="tel" name="phoneNo" value="<?php echo $row['phoneNo'] ?>" minlength="10" maxlength="10"  pattern="[0-9]*"
-       					title="Please enter a valid phone number" required></td>
+       					title="Please enter a valid phone number" ></td>
 					</tr>
 					<tr>
-						<td id="td-1">Date of Birth:</td>
-						<td id="td-2"><input type="date" name="dob" value="<?php echo $row['dob'] ?>" required></td>
+						<td id="td-1">Date of Birth: </td>
+						<td id="td-2"><input type="date" name="dob" value="<?php echo $row['dob'] ?>" readonly></td>
+					</tr>
+					<tr>
+						<td id="td-1">Material Status: </td>
+						<td id="td-2"><input type="text" name="status" value="<?php echo $row['status'] ?>"></td>
 					</tr>
 					<tr>
 						<td id="td-1">Address Line 1:</td>
@@ -58,9 +72,13 @@
 						<td id="td-1">Country:</td>
 						<td id="td-2"><input type="text" name="country" value="<?php echo $row['country'] ?>"minlength="3" maxlength="50" pattern="[a-zA-Z'-'\s]*" title="Remove unwanted characters." required></td>
 					</tr>
-					
+					<tr>
+						<td id="td-1">User Name: <p style="font-size: 12px; color: red">* View only</p></td>
+						<td id="td-2"><input type="" name="userID" value="<?php echo $row['userID'] ?>" readonly></td>
+					</tr>
 				</table>
 				<input type="submit" name="submit" value="Submit" class="btn">
+				<!-- <button type="submit" value="submit" class="btn">Submit Changes</button> -->
 			</form>	
 			<?php
 				}

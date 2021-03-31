@@ -30,6 +30,7 @@ class User extends \Core\Controller
         }
         
     }
+    
 
     public function Error4Action()
     {

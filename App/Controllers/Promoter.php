@@ -24,11 +24,48 @@ class Promoter extends \Core\Controller {
 
     public function promoterProfileUpdateAction() {
 
+        if(!empty($_POST['name'])){
+         
+            $user = new PromoterM();
+            $ID =$_SESSION['username'];
+            $name       =$_POST['name'];
+            $aLine1	    =$_POST['aLine1'];
+            $aLine2     =$_POST['aLine2'];	 
+            $city       =$_POST['city'];      	
+            $country    =$_POST['country'];	
+            $status 	=$_POST['status'];
+            $phoneNo    =$_POST['phoneNo'];
+            if (($name) && ($aLine1) && ($aLine2) &&($city) && ($country) && ($status) && ($phoneNo)) {
+           
+            }else{
+               
+                $State=0;
+                $this->view->State = $State;
+                $UImsg= 'Empty Entries Detected, Please Try Again !';
+                $this->view->UImsg = $UImsg;
+                header('refresh:2 , URL =../Promoter/promoterProfile ');    
+                $this->view->display('Promoter/update-promoter.php');
+                exit;   
+            }
+ 
+            $data =$user->updatePromoter($ID, $name,$phoneNo, $country,$status, $city, $aLine1, $aLine2 );
+   
+            $UImsg= '<br>' . 'Successfully Updated!' . '<br><br>' . 'THANK YOU!' . '<br><br>';
+            $this->view->UImsg = $UImsg;
+            $State=1;
+            $this->view->State = $State;
+            header('refresh:2 , URL =../Promoter/promoterProfile ');
+            $this->view->display('Promoter/update-promoter.php');
+            
+            exit();
+                
+         }
+
         $userID = $_SESSION['username'];
         $user = new PromoterM();
         $result = $user->getPromoterProfile($userID);
-        $UImsg = $result;
-        $this->view->UImsg=$UImsg;
+        $UImsg1 = $result;
+        $this->view->UImsg1=$UImsg1;
         $this->view->display('Promoter/update-promoter.php');
     }
     
@@ -182,8 +219,6 @@ class Promoter extends \Core\Controller {
 
 
     public function promoterSupportAction() {
-
-
         $this->view->display('Promoter/support-center.php');
     }
 
