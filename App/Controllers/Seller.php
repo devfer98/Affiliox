@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\MinistoreM;
 use App\Models\sellerM;
 use App\Models\TransactionPromo;
+use App\Controllers\User as Userc;
 
 class Seller extends \Core\Controller {
 
@@ -79,9 +80,10 @@ class Seller extends \Core\Controller {
     }
 
     public function marketAction(){
-
-        $this->view->display('Customer/market.php');
-        
+        // $this->view->display('Common/notMarket.php');
+        // $user= new Userc();
+        // $user->MarketAction();
+        header("Location:../User/market");
     }
 
     public function statisticsAction(){

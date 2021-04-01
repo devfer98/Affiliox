@@ -7,12 +7,12 @@
 
 <body>
     <!---Navigation bar-------------------------------------------->
-    <!-- <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Common/Signin.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/common.css" />
     <link rel="stylesheet" type="text/css" href="/css/Customer/customer-grid.css" />
     <script type="text/javascript" src="/js/Customer/nav-fixed.js"></script>
     <script src="/js/Common/drop.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/Common/drop.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/Common/drop.css" />
     <!-- Container content  --------------------------------------------->
     <div class="container">
         <div class="row center">

@@ -22,7 +22,7 @@ class TransactionPromo extends \Core\Connect{
             $result = $stmt0->get_result();
             while($row =$result->fetch_assoc()){
                 $widrowTot = $row['amount'];
-                echo  $widrowTot;
+                // echo  $widrowTot;
             }
         }else{
             echo 'SQL Error';
