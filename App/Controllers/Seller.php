@@ -106,7 +106,12 @@ class Seller extends \Core\Controller {
 
     public function transactionAction(){
         $transaction= new TransactionPromo;
-        $this->view->salesAmount=$transaction->getSalesAmount($_SESSION['username']);
+        $salesDone=$transaction->getSalesAmount($_SESSION['username']);
+        // $salesTot;
+        while($row =$salesDone->fetch_assoc()){
+            $salesTot = $row['salesAmount'];
+        }
+        $this->view->salesAmount=$transaction->availtot($salesTot,$_SESSION['username']);
         $this->view->display('Seller/sellerTransactions.php');   
     }
 
@@ -114,17 +119,19 @@ class Seller extends \Core\Controller {
         $transaction= new TransactionPromo;
         $sales=$transaction->getSalesAmount($_SESSION['username']);
         $saleAmount;
-        if(isset($this->sales) and !empty($this->sales)){
-            while($row = $this->sales->fetch_assoc()){
+        if(isset($sales) and !empty($sales)){
+            while($row = $sales->fetch_assoc()){
                 $saleAmount=$row["salesAmount"];
             }
         }else{
             $saleAmount=0.0;
         }
-        if($_POST['amount']<=$saleAmount){
+        // echo $saleAmount;
+        // echo $_POST['amount'];
+        if($_POST['amount']<=$saleAmount || $_POST['amount']>0.0){
             $date = date("Y-m-d");
-            $transaction->addTransPromo(number_format((float)$_POST['amount'], 2, '.', ''), 0, $_SESSION['username'], $date);
-            $this->transactionAction();
+            $transaction->addTransPromo(number_format($_POST['amount'],2), 0, $_SESSION['username'], $date, $saleAmount);
+            header("Location:../Seller/transaction");
         }else{
             $this->view->errorMssg="Entered amount is Invalid";
             $this->view->display('Seller/sellerTransactions.php');

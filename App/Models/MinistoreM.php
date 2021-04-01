@@ -214,6 +214,22 @@ class MinistoreM extends \Core\Connect {
         return $errorMssg;
     }  
 
+    public function getProducts($name) {
+        $conn=static::connectDB();
+        $stmt =$conn->prepare("SELECT *
+            FROM (product
+            INNER JOIN productimage ON product.productID = productimage.productID)
+            WHERE productimage.imageCode LIKE '%_main_1%'
+            AND product.name = ?;");
+        echo $conn->error;
+        $stmt->bind_param("s", $name);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }
+    }
+
     public function totalSold($userID) {
         $conn=static::connectDB();
         $stmt =$conn->prepare("SELECT COUNT(prodsinorder.orderID) AS totalSold

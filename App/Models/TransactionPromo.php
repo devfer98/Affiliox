@@ -100,7 +100,7 @@ class TransactionPromo extends \Core\Connect{
             FROM (product 
             INNER JOIN prodsinorder ON product.productID = prodsinorder.productID)
             WHERE prodsinorder.productID = ANY (SELECT productID FROM product WHERE name = ANY (SELECT name FROM ministore WHERE userID= ?));");
-        echo $conn->error;
+        // echo $conn->error;
         $stmt->bind_param("s", $userID);
         
         if($stmt->execute()){

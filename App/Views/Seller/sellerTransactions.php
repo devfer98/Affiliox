@@ -35,13 +35,13 @@
 				<p style="color:red;"><?php if(isset($this->errorMssg) and !empty($this->errorMssg)){echo $this->errorMssg;}  ?></p>
 				</div>
 				<?php  
-					if(isset($this->salesAmount) and !empty($this->salesAmount)){
-						while($row = $this->salesAmount->fetch_assoc()){
+					// if(isset($this->salesAmount) and !empty($this->salesAmount)){
+					// 	while($row = $this->salesAmount->fetch_assoc()){
 					?>
-				<input readonly  type="text" id="quantity" name="quantity" class="center" style="width: 250px;" placeholder="Rs. <?php echo number_format((float)$row['salesAmount'], 2, '.', '') ?>">
+				<input readonly  type="text" id="quantity" name="quantity" class="center" style="width: 250px;" placeholder="Rs. <?php echo number_format((float)$this->salesAmount, 2, '.', '') ?>">
 				<?php
-						}
-					}
+					// 	}
+					// }
 					?>
 			</div>
 			<div class="row col8 col-center padding">
@@ -54,7 +54,7 @@
 			</div>
 			<div class="row col8 col-center padding">
 				<label for="dob">&nbsp;Amount</label><br>
-				<input type="number" name="amount" required="" placeholder="Rs. 00.00" pattern="[$]{1}[0-9]{2}.[0-9]{2}" id="c-a">
+				<input type="number" name="amount" required="" placeholder="Rs. 00.00" id="c-a" min="0">
 			</div>
 			<div class="row col12 padding commonB">
 				<button class="center" type="submit" value="submit">Submit</button>	
@@ -63,7 +63,7 @@
 			</form>
 		</div>
 
-		<div class="row col12 title">
+		<!-- <div class="row col12 title">
 			<p class="center">Successful Orders</p>
 		</div> 
 
@@ -102,7 +102,7 @@
 				</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div> 
 
 </body>

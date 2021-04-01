@@ -25,8 +25,16 @@ class MiniStore extends \Core\Controller {
     public function ministoreViewAction(){
         $userID = $_SESSION['username'];
         $ministore = new MinistoreM();
-        $result = $ministore->getMinistore($userID);
-        $this->view->store = $result;
+        $result1 = $ministore->getMinistore($userID);
+        $this->view->store = $result1;
+        $result2 = $ministore->getMinistore($userID);
+        $storeName;
+        if(isset($result2) and !empty($result2)){
+            while($row2 = $result2->fetch_assoc()){
+                $storeName = $row2["name"]; 
+            }
+        }
+        $this->view->storePros=$ministore->getProducts($storeName); 
         $this->view->display('Seller/miniStoreView.php');  
     }
 

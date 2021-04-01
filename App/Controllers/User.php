@@ -251,6 +251,7 @@ class User extends \Core\Controller
         $result=$ministore->getStore($_GET['id']);
         if (!empty($_GET['id']) && $result->num_rows>0) {
             $this->view->store=$result;
+            $this->view->storePros=$ministore->getProducts($_GET['id']);
             $this->view->display('Seller/miniStoreCusView.php');  
         }else{
             $this->view->display('Common/E404.php');
