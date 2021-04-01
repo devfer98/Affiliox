@@ -153,26 +153,26 @@
                 <!-- <i class="fa fa-caret-down"></i> -->
             </button>
             <div class="dropdown-container">
-            <button value=3 name=cat type=submit>Phones </button>  
-            <button value=4 name=cat type=submit>Headsets </button>  
-            <button value=5 name=cat type=submit>Speakers </button>  
-            <button value=6 name=cat type=submit>Accessories </button>  
+            <button value=3 name=cat type=submit>Drones</button>  
+            <button value=4 name=cat type=submit>Phones </button>  
+            <button value=5 name=cat type=submit>Headsets </button>  
+            <button value=6 name=cat type=submit>Speakers</button>  
 
             </div>
             <button class="dropdown-btn">Travel
                 <!-- <i class="fa fa-caret-down"></i> -->
             </button>
             <div class="dropdown-container">
-            <button value=7 name=cat type=submit>Phones </button> 
-            <button value=8 name=cat type=submit>Go-pro </button> 
-            <button value=9 name=cat type=submit>Tents </button> 
+            <button value=7 name=cat type=submit>Accessories </button> 
+            <button value=8 name=cat type=submit>camera </button> 
+            <button value=9 name=cat type=submit>Go-pro </button> 
 
             </div>
             <button class="dropdown-btn">Kids
                 <!-- <i class="fa fa-caret-down"></i> -->
             </button>
             <div class="dropdown-container">
-            <button value=10 name=cat type=submit>Drones </button> 
+            <button value=10 name=cat type=submit>Model cars </button> 
             <button value=11 name=cat type=submit>RC Toys </button> 
 
             </div>

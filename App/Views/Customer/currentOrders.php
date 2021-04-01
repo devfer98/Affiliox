@@ -98,6 +98,7 @@
                                     <h3><?php echo $row2['prodName'] ?></h3>
                                     <p>Order ID :<?php echo $row['orderID'] ?></p>
                                     <p>price : Rs.<?php  echo number_format($row2['price'],2)?></p>
+                                    <p>Dispatch status :<?php echo $row2['dispatchStatus'] ?></p>
                                     
                                 </div>
                             </div>
