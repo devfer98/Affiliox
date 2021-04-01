@@ -42,13 +42,13 @@
                 </div>
                 <div class=" col12 search signin center">
                     
-                    Current Password &nbsp; : <input type="password" name="current_password" id="current-pass-field"
+                    Current Password &nbsp; : <input   required type="password" name="current_password" id="current-pass-field"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         title="Password should be same to the required type." placeholder="*********"> <br></br>
-                    New Password &nbsp; &nbsp; &nbsp; : <input type="password" name="password" id="con-pass-field"
+                    New Password &nbsp; &nbsp; &nbsp; : <input   required type="password" name="password" id="con-pass-field"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         title="Password should be same to the required type." placeholder="*********"> <br></br>
-                    Confirm Password : <input type="password" name="con-password" id="pass-field"
+                    Confirm Password : <input  type="password"  required name="con-password" id="pass-field"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         title="Password should be same to the required type." placeholder="********"><br><br>
                     <input style="width:5%;box-shadow: 0 0 0px #719ECE;" type="checkbox" onclick="passVisibility()">Show

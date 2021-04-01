@@ -19,9 +19,25 @@
                 </div>
             </div>
         </div>
-        <!-----------------Admin-Profile Form------------------->
+        <?php if (isset($this->UImsg) and !empty($this->UImsg)) {
+                        if ($this->State == 1) {
 
-        <form class="search label marginl100 sm-center">
+                    ?><div class="center marginb100 margint100 errorMsgSuccess"><?php
+
+                                } else {
+                                      ?><div class="center marginb100 margint100 errorMsgFailed"> <?php
+                                     }
+                                ?> <p>  <?php  echo $this->UImsg ?>  </p></div>    
+
+                              <?php   }  ?>
+        </div>
+        <!-----------------Admin-Profile Form------------------->
+        <?php  
+                if(isset($this->UImsg2) and !empty($this->UImsg2)){
+					
+					while($row = $this->UImsg2->fetch_assoc()){           
+            ?>
+        <form class="search label marginl100 sm-center" method= "POST" action ="../Admin/EditAdmin">
             <div class="row ">
                 <div class="col12">
                     <div class=" marginl100">
@@ -29,11 +45,7 @@
                     </div>
                 </div>
             </div>
-            <?php  
-                if(isset($this->UImsg) and !empty($this->UImsg)){
-					
-					while($row = $this->UImsg->fetch_assoc()){           
-            ?>
+
             <div class="row rowMargin ">
                 <div class="col12">
                     <div>
@@ -92,7 +104,7 @@
                 <div class="col6">
                     <div>
                         <label for="city"><i class="fa fa-city"></i> City</label><br>
-                        <input type="text" id="city" name="acity" value="<?php echo $row['city'] ?>" placeholder="Warakapola">
+                        <input type="text" id="city" name="city" value="<?php echo $row['city'] ?>" placeholder="Warakapola">
                     </div>
                 </div>
                 <div class="col6">

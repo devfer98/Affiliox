@@ -225,9 +225,10 @@ class BuyerM extends \Core\Connect{
         foreach ($val as $c) {
 
             $data =new ModelsProduct;
-            $list = $data->productDetails($c['ID']);
+            $list = $data->productprice($c['ID']);
             while ($row = $list->fetch_assoc()) {
-                (float)$total = $total + (float)$row['price']*(float)$row['comRate']*$c['Q'];
+                (float)$total = $total + $row['price']*$row['comRate']*$c['Q']/100;
+
             }
         }
 

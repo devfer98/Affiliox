@@ -42,7 +42,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Fullname</th>
-                  <th>warning Count</th>
+                  <!-- <th>warning Count</th> -->
                   <th>Action</th>
                 </tr>
                 <?php 
@@ -51,7 +51,7 @@
                       // echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
                       echo "<tr><td><a href='../Admin/ActSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['warningCount']."</td>"; 
+                      // echo "<td>".$row['warningCount']."</td>"; 
                       echo "<form method='post' action ='../Admin/BanSellStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
@@ -70,7 +70,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Fullname</th>
-                  <th>warning Count</th>
+                  <!-- <th>warning Count</th> -->
                   <th>Action</th>
                 </tr>
                 <?php 
@@ -79,7 +79,7 @@
                       // echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
                       echo "<tr><td><a href='../Admin/ActPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['warningCount']."</td>"; 
+                      // echo "<td>".$row['warningCount']."</td>"; 
                       echo "<form method='post' action ='../Admin/BanProStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='2' class='button button2'>Ban</button></td></form>";
@@ -98,7 +98,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Fullname</th>
-                  <th>warning Count</th>
+                  <!-- <th>warning Count</th> -->
                   <th>Action</th>
                 </tr>
                 <?php 
@@ -107,7 +107,7 @@
                       // echo "<tr><td><a href='../Admin/Banseller?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
                       echo "<tr><td><a href='../Admin/BanSeller?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['warningCount']."</td>"; 
+                      // echo "<td>".$row['warningCount']."</td>"; 
                       echo "<form method='post' action ='../Admin/UnBanSellStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='2' class='button button2'>UnBan</button></td></form>";
@@ -126,7 +126,7 @@
                 <tr>
                   <th>Username</th>
                   <th>Fullname</th>
-                  <th>warning Count</th>
+                  <!-- <th>warning Count</th> -->
                   <th>Action</th>
                 </tr>
                 <?php 
@@ -135,7 +135,7 @@
                       // echo "<tr><td><a href='../Admin/Banpromoter?id=".$row['userID']."' style='text-decoration:None; color:black;'>".$row['userID']."</a></td>"; 
                       echo "<tr><td><a href='../Admin/BanPromoter?id=".$row['userID']."' style='color:green;'>".$row['userID']."</a></td>"; 
                       echo "<td>".$row['name']."</td>"; 
-                      echo "<td>".$row['warningCount']."</td>"; 
+                      // echo "<td>".$row['warningCount']."</td>"; 
                       echo "<form method='post' action ='../Admin/UnBanProStatus'>";
                       echo "<input type='hidden' name='username' value='".$row['userID']."' />";
                       echo "<td><button name='status' type='submit' value='2' class='button button2'>UnBan</button></td></form>";

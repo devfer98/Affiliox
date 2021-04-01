@@ -58,7 +58,7 @@
 					<h3><?php echo $row1['prodName'] ?></h3>
 					<h4><?php echo number_format($row1['price'],2) ?> Rs</h4>
 					<!-- <p>Apple i-phone 11 Pro 64GB ROM - 4GB RAM Green</p> -->
-					<a href="../user/market">Buy Now <i class="fab fa-cc-visa"></i></a> 
+					<a href="../Product/View?id=<?php echo $row1['productID'] ?>">Buy Now <i class="fab fa-cc-visa"></i></a> 
 					
 				</div>
 				<?php

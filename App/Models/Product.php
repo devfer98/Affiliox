@@ -86,6 +86,25 @@ class Product extends \Core\Connect {
             return $error;
         }
     }
+
+    public function productprice($prodID)
+    {
+        $conn = static::connectDB();
+        $stmt0 = $conn->prepare("SELECT product.* ,GROUP_CONCAT( productimage.imageCode ORDER BY productimage.imageCode) AS images  FROM product LEFT JOIN productimage ON product.productID = productimage.productID  where product.productID=?");
+        
+        $stmt0->bind_param("i", $prodID);
+        if ($stmt0->execute()) {
+            $result = $stmt0->get_result();
+            
+            if ($result->num_rows >0) {   
+                return $result;
+            }
+            
+        } else {
+            $error = "Invalid product ID";
+            return $error;
+        }
+    }
     public function feedbackDetails($prodID)
     {
         $conn = static::connectDB();

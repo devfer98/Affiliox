@@ -117,6 +117,8 @@ class Signup extends \Core\Controller {
                     $user->addBuyer($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$district,$city,$aLine1,$aLine2);
                     header('Location:../Signup/BuyerSuccess');
             }else{
+                $State=0;
+                $this->view->State = $State;
                 $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
                 $this->view->UImsg = $UImsg;
                 $this->view->display('Common/CustomerReg.php');   
@@ -300,6 +302,8 @@ class Signup extends \Core\Controller {
                     $user->addPromoter($userID ,$name,$status,$email,$pw_md5,$phoneNo,$age,$userDob,$gender,$country,$city,$aLine1,$aLine2,$accStatus,$arrs);
                     header('Location:../Signup/PromoterSuccess');
             }else{
+                $State=0;
+                $this->view->State = $State;
                 $UImsg= 'Username Or Emaill-Address Already Taken Please Try Again';
                 $this->view->UImsg = $UImsg;
                 $this->view->display('Common/PromoterReg.php');   
