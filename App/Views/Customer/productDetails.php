@@ -75,9 +75,10 @@
                                         <input style="z-index: 1;" type="number" id="quantity" min="1" max="50" name="quantity" value="1">
                                         <br>
                                     </div>
+                                    <div style="margin-top:10px"><a style="text-decoration :none " href="http://localhost/User/store?id=<?php echo$row['name'] ?> ">Go to Store</a></div>
                                     <!-- </form> -->
                             </div>
-
+                            
                         </div>
                         <div class="col12">
                             <div class="row col11 hidden-xm-marginauto">
@@ -86,6 +87,8 @@
 
                                 <p> <?php echo $row['description'] ?></p>
                             </div>
+
+                        
                         </div>
                         <input type="hidden" name="productID" value="<?php echo $row['productID'] ?>" readonly> <br>
                         <input type="hidden" name="frontimg" value="<?php echo $images[0] ?>" readonly> <br>
@@ -162,6 +165,8 @@
                 </div>
                 <?php } ?>
             </div>
+
+            
             <!-- Feedback------------------------------------------->
 
             <div class="row">
