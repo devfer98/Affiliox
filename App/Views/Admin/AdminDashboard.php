@@ -69,7 +69,7 @@
 		<br/><br/>	
 
 		<div class="row">
-		<div class="column">
+			<div class="column">
 				<div class="card">
 				<?php 
                   if(isset($this->countMinistores) and !empty($this->countMinistores and $this->countMinistores->num_rows>0)){
@@ -105,19 +105,33 @@
 				</div>
 			</div>
   
-			<!-- <div class="column">
+			<div class="column">
 				<div class="card">
 				<?php 
-                  if(isset($this->CountSuccessOrders) and !empty($this->CountSuccessOrders and $this->CountSuccessOrders->num_rows>0)){
-                  while($row = $this->CountSuccessOrders->fetch_assoc()){
-						echo "<i class='fas fa-shipping-fast'></i><h3>Total Orders</h3><br/><br/><p>".$row['userID']."</p>";	
+                  if(isset($this->countBanPromoters) and !empty($this->countBanPromoters and $this->countBanPromoters->num_rows>0)){
+                   while($row = $this->countBanPromoters->fetch_assoc()){
+						echo "<i class='fas fa-user'></i><h3>Banned Promoters<h3><p>".$row['COUNT(userID)']."</p>";	
 					}  
 				}
-			?>  				
-				</div> -->
+			?>  								
+				</div>
 			</div>
 		</div>
+		<br/><br/>
 
+			<div class="row">
+			<div class="column">
+				<div class="card">
+				<?php 
+                  if(isset($this->countBanSellers) and !empty($this->countBanSellers and $this->countBanSellers->num_rows>0)){
+                   while($row = $this->countBanSellers->fetch_assoc()){
+						echo "<i class='fas fa-user'></i><h3>Banned Sellers<h3><p>".$row['COUNT(userID)']."</p>";	
+					}  
+				}
+			?>  								
+				</div>
+			</div>
+			</div>
 		<br/><br/><br/><br/><br/><br/>
     </div>
 <!--Container------------------------------------------>

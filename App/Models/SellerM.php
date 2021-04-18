@@ -134,12 +134,21 @@ class SellerM extends \Core\Connect {
     public function getCount() {
         $conn=static::connectDB();
 
-        // $query = $conn->prepare('select * from promoter');
-        // $query->execute();
-        // $count = $query->num_rows;
-        // return $count;
-
         $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller WHERE accountStatus='Active';");
+        
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $stmt->close();
+            return $result;
+        }else{
+            echo 'SQL Error';
+        }
+    }
+
+    public function getBanCount() {
+        $conn=static::connectDB();
+
+        $stmt =$conn->prepare("SELECT COUNT(userID) FROM seller WHERE accountStatus='Banned';");
         
         if($stmt->execute()){
             $result = $stmt->get_result();

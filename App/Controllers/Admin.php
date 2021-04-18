@@ -46,22 +46,17 @@ class Admin extends \Core\Controller {
         $this->view->countAdmins=$Admin->getCount  ();
         $seller = new SellerM();
         $this->view->countSellers=$seller->getCount  ();
+        $this->view->countBanSellers=$seller->getBanCount  ();
         $promoter= new PromoterM();
         $this->view->countPromoters=$promoter->getCount();
         $this->view->PromoteCount=$promoter->getPromoteCount();
         $this->view->ClickCount=$promoter->getClickCount();
+        $this->view->countBanPromoters=$promoter->getBanCount();
         $Buyer= new BuyerM();
         $this->view->countBuyers=$Buyer->getCount   ();
         $Ministore= new MinistoreM();
         $this->view->countMinistores=$Ministore->getCount   ();
-       // $order= new Order();
-        //$this->view->CountSuccessOrders=$order->getCompletedOrders($userID);
         $this->view->display('Admin/AdminDashboard.php');
-        // $userID = $_SESSION['username'];
-        // $user = new AdminM();
-        // $result = $user->getAdminProfile($userID);
-        // $UImsg = $result;
-        // $this->view->UImsg=$UImsg;
     }
 
     public function AdminProfileAction(){
